@@ -696,8 +696,8 @@ body > .header{
       border-radius: var(--border-radius-circle, 9999px);
       span{
         display: block;
-        width: 14px;
-        height: 14px;
+        width: 100%;
+        height: 100%;
         background: no-repeat center;
         &.icon_alarm{background-image: url(../images/icon_alarm.png);}
       }
@@ -716,8 +716,8 @@ body > .header{
 
       span{
         display: block;
-        width: 16px;
-        height: 16px;
+        width: 100%;
+        height: 100%;
         background: no-repeat center;
         &.icon_user{background-image: url(../images/icon_user.png);}
       }
