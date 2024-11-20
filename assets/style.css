@@ -5,7 +5,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -31,10 +30,11 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+html{font-size: 62.5%;}
 body {
 	line-height: 1;
     font-family: 'SUIT', "Noto Sans KR", '맑은고딕', 'Malgun Gothic', sans-serif;
-    letter-spacing: -1px;
+    letter-spacing: -.1rem;
 }
 ol, ul {
 	list-style: none;
@@ -54,61 +54,66 @@ table {
 /* //reset */
 
 .wrapper{
-    padding: 20px 80px;
+    padding: 2rem 8rem;
     min-height: 100vh;
     background: #f7f7f7;
     box-sizing: border-box;
 }
 
 header{
-    padding: 12px 0;
+    padding: 1.2rem 0;
 }
 header h1{
-    font-size: 28px;
+    font-size: 2.8rem;
     font-weight: 800;
 }
 
 .container{
-    padding: 20px;
-    border-radius: 18px;
+    padding: 2rem;
+    border-radius: 1.8rem;
     background: #fff;
 }
 
 .container h2{
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding-top: 24px;
+    gap: .8rem;
+    padding-top: 2.4rem;
 }
 .container section:first-of-type h2{padding-top: 0;}
-.container h2+div{padding-top: 8px;}
+.container h2+div{padding-top: .8rem;}
 .container span{
-    font-size: 16px;
+    font-size: 1.6rem;
     background: #e6e6e6;
-    padding: 4px 8px;
-    border-radius: 12px;
+    padding: .4rem .8rem;
+    border-radius: 1.2rem;
 }
 .container dl{
-    padding: 20px 0;
+    padding: 2rem 0;
     border-bottom: 1px solid #e6e6e6;
 }
 .container dl:first-of-type{padding-top: 0;}
 .container dl dt{
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 600;
-    padding: 8px 0;
+    padding: .8rem 0;
 }
 .container dl dd{
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 6px;
+    gap: .8rem;
+    padding: .6rem;
     background: #f7f7f7;
     border-bottom: 1px solid #e6e6e6;
 }
 .container dl dd:last-of-type{border-bottom-width: 0;}
 .container dl dd p,
-.container dl dd a{font-size: 16px;}
+.container dl dd a{font-size: 1.6rem;}
 .container dl dd a::before{
     content: ': ';
+}
+
+@media screen and (max-width: 720px) {
+    *{font-size: 60%;}
+    .wrapper{padding: 2rem;}
 }
