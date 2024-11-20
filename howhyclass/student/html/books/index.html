@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<title>하와이클래쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="shortcut icon" href="https://img.howhyclass.com/hmath/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<link href="https://img.howhyclass.com/hclass/css/custom.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/modal.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/add.css" rel="stylesheet">
+
+	
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            tex2jax: { displayMath: [ ["$$","$$"] ] },
+            "HTML-CSS": { fonts: ["Latin-Modern"] }
+        });
+    </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1731985359"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1731985359"></script>
+</head>
+
+<body>
+	
+<div class='header'>
+	<div>
+		<a href="/home/main"><img class='logo' src='https://img.howhyclass.com/hclass/images/logo.png' alt='' style="width:160px;"/></a>
+	</div>
+	<ul class='link'>
+		<li>
+			<ul><a href='/books/index'><span class="selected">교재학습</span></a></ul>
+		</li>
+		<li>
+			<ul><a href='/ai_studies/index'><span >AI 학습</span></a></ul>
+		</li>
+		<li>
+			<ul><a href='/daily_studies/index'><span >일일학습</span></a></ul>
+		</li>
+		<li>
+			<ul><a href='/homeworks/index'><span >숙제</span></a></ul>
+		</li>
+	</ul>
+	<div class='menu'>
+		<button class='subscribe' onclick="location.href='/teachers/index';">선생님등록</button>
+		<button class='subscribe' onclick="location.href='/payments/index';">구독하기</button>
+		<button class='alarm-icon' onclick="location.href='/notices/index';">
+			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+				<path d="M5.3335 25.3333V22.6667H8.00016V13.3333C8.00016 11.4889 8.55572 9.84999 9.66683 8.41666C10.7779 6.98332 12.2224 6.04443 14.0002 5.59999V4.66666C14.0002 4.1111 14.1946 3.63888 14.5835 3.24999C14.9724 2.8611 15.4446 2.66666 16.0002 2.66666C16.5557 2.66666 17.0279 2.8611 17.4168 3.24999C17.8057 3.63888 18.0002 4.1111 18.0002 4.66666V5.59999C19.7779 6.04443 21.2224 6.98332 22.3335 8.41666C23.4446 9.84999 24.0002 11.4889 24.0002 13.3333V22.6667H26.6668V25.3333H5.3335ZM16.0002 29.3333C15.2668 29.3333 14.6391 29.0722 14.1168 28.55C13.5946 28.0278 13.3335 27.4 13.3335 26.6667H18.6668C18.6668 27.4 18.4057 28.0278 17.8835 28.55C17.3613 29.0722 16.7335 29.3333 16.0002 29.3333ZM10.6668 22.6667H21.3335V13.3333C21.3335 11.8667 20.8113 10.6111 19.7668 9.56666C18.7224 8.52221 17.4668 7.99999 16.0002 7.99999C14.5335 7.99999 13.2779 8.52221 12.2335 9.56666C11.1891 10.6111 10.6668 11.8667 10.6668 13.3333V22.6667Z" fill="#1A1A1A" />
+				</svg>
+		</button>
+		<div id="info-dropbox" class='info-icon drop-box'>
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+			<path d="M10 10C8.625 10 7.44792 9.51042 6.46875 8.53125C5.48958 7.55208 5 6.375 5 5C5 3.625 5.48958 2.44792 6.46875 1.46875C7.44792 0.489583 8.625 0 10 0C11.375 0 12.5521 0.489583 13.5312 1.46875C14.5104 2.44792 15 3.625 15 5C15 6.375 14.5104 7.55208 13.5312 8.53125C12.5521 9.51042 11.375 10 10 10ZM0 20V16.5C0 15.7917 0.182292 15.1406 0.546875 14.5469C0.911458 13.9531 1.39583 13.5 2 13.1875C3.29167 12.5417 4.60417 12.0573 5.9375 11.7344C7.27083 11.4115 8.625 11.25 10 11.25C11.375 11.25 12.7292 11.4115 14.0625 11.7344C15.3958 12.0573 16.7083 12.5417 18 13.1875C18.6042 13.5 19.0885 13.9531 19.4531 14.5469C19.8177 15.1406 20 15.7917 20 16.5V20H0ZM2.5 17.5H17.5V16.5C17.5 16.2708 17.4427 16.0625 17.3281 15.875C17.2135 15.6875 17.0625 15.5417 16.875 15.4375C15.75 14.875 14.6146 14.4531 13.4688 14.1719C12.3229 13.8906 11.1667 13.75 10 13.75C8.83333 13.75 7.67708 13.8906 6.53125 14.1719C5.38542 14.4531 4.25 14.875 3.125 15.4375C2.9375 15.5417 2.78646 15.6875 2.67188 15.875C2.55729 16.0625 2.5 16.2708 2.5 16.5V17.5ZM10 7.5C10.6875 7.5 11.276 7.25521 11.7656 6.76562C12.2552 6.27604 12.5 5.6875 12.5 5C12.5 4.3125 12.2552 3.72396 11.7656 3.23438C11.276 2.74479 10.6875 2.5 10 2.5C9.3125 2.5 8.72396 2.74479 8.23438 3.23438C7.74479 3.72396 7.5 4.3125 7.5 5C7.5 5.6875 7.74479 6.27604 8.23438 6.76562C8.72396 7.25521 9.3125 7.5 10 7.5Z" fill="#1A1A1A" />
+			</svg>
+			<div id="info-dropbox-content" class="drop-box-content">
+				<div class="dropdown-button-box">
+				<button onclick="location.href='/mypage/index';">나의 정보</button>
+				<button onclick="location.href='/mypage/setting';">설정 &amp; FAQ</button>
+				<button class="logout" onclick="location.href='/users/logout_student';">
+					<img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/>
+					<div>로그아웃</div>
+				</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+const infoBox = document.getElementById('info-dropbox');
+const infoContent = document.getElementById('info-dropbox-content');
+  
+infoBox.addEventListener('click', function() {
+    infoContent.style.display = infoContent.style.display === 'block' ? 'none' : 'block';
+});
+</script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<style>
+.chapter_result {
+	flex: 1;
+	border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);
+	border-left: 1px solid var(--color-border-tertiary, #E5E5E5);
+	text-align: center;
+}
+.item-box {
+	padding-bottom: 10px !important;
+}
+</style>
+	
+<div class='content tutorial-container'> 
+	<div class='content-container'>
+		<div class='overlay' style="display:none;" id="help-box">
+			<div class='relative-container'>
+				<div class='white-board' style="width:300px;">
+						<button id="regist_Button" onclick="toggle_overlay('n');">
+							<img src='https://img.howhyclass.com/hclass/images/icon_add.png' alt=''/>
+							닫기
+						</button>
+				</div>
+				<div class='tutorial1'>
+					<div class='relative-container'>
+						<div class='item'>
+							<div class='index'>1</div>
+							<div><img src='https://img.howhyclass.com/hclass/images/icon_correct.png' alt=''/></div>
+						</div>
+						<img class='arrow1' src='https://img.howhyclass.com/hclass/images/icon_tutorial_arrow1.png' alt=''/>
+						<div class='text'>1. 도형을 클릭하여 정오답을 체크하세요.</div>
+					</div>
+				</div>
+				<div class='tutorial2'>
+					<div class='relative-container flex align-items-center'>
+						<div class='item'>
+							<div class='index'>12P</div>
+							<button class='save-btn'>저장</button>
+						</div>
+						<img class='arrow2' src='https://img.howhyclass.com/hclass/images/icon_tutorial_arrow2.png' alt=''/>
+						<div class='text'>2. 정오답 체크가 끝나면 저장하세요.</div>
+					</div>
+				</div>
+				<div class='tutorial3'>
+					<div class='relative-container'>
+						<div class='row' style="margin:0;">
+							<div class='page '>9P</div>
+							<div class='progress' style="height:100%;"><img src='https://img.howhyclass.com/hclass/images/icon_circle_check_green.png' alt=''/></div>
+						</div>
+						<div class='row' style="margin:0;">
+							<div class='page '>10P</div>
+							<div class='progress' style="height:100%;"><img src='https://img.howhyclass.com/hclass/images/icon_circle_check_green.png' alt=''/></div>
+						</div>
+						<img class='arrow3' src='https://img.howhyclass.com/hclass/images/icon_tutorial_arrow3.png' alt=''/>
+						<div class='text'>3. 저장하면 완료 표시로 전환되어요</div>
+					</div>
+				</div>
+				<div class='tutorial4'>
+					<div class='relative-container'>
+						
+						<img class='arrow4' style="" src='https://img.howhyclass.com/hclass/images/icon_tutorial_arrow4.png' alt=''/>
+						<div class='text'>선택하면 체크가 안된 페이지만 볼 수 있어요.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class='top-container white-container'>
+			<div class='top'>
+				<div class='left'>
+									<div class='selected'>진행 교재</div>
+					<div onclick="location.href='/books/index?sv_done_yn=y';">완료 교재</div>
+								</div>
+				<div class='right'>
+					<div class='search-box'>
+						<input name="sv_keyword" value="" id=sv_keyword placeholder='교재명'/>
+						<img src='https://img.howhyclass.com/hclass/images/icon_search.png' alt=''  onclick="search()" />
+					</div>
+					<button onclick="location.href='/books/add_book';">
+					<img src='https://img.howhyclass.com/hclass/images/icon_add.png' alt='' />
+						사용 교재 등록
+					</button>
+				</div>
+			</div>
+			<div class='middle'>
+				<div class="swiper mySwiper" style='padding-bottom:25px;'>
+					<div class="swiper-wrapper">
+											<div class="swiper-slide book-item" data-id="1642">
+							<div class='item-box'>
+								<div class='left'>
+																		<img src='https://img.howhyclass.com/q/07/f6/s.2038/in.png' alt='' style="height:130px;">
+																	</div>
+								<div class='right'>
+									<div class='title'> 교과서 익힘 (와이비엠) </div>
+									<div class='author'>저자 | 교과서 </div>
+									<div class='progress' style="height:unset;">
+																			<div class='ing'>진행</div>
+										<div onclick="change_book_student_state( 1642, 'don' );">완료</div>
+																		</div>
+								</div>
+							</div>
+						</div>
+											<div class="swiper-slide book-item" data-id="1643">
+							<div class='item-box'>
+								<div class='left'>
+																		<img src='https://img.howhyclass.com/q/0a/4e/s.2638/in.png' alt='' style="height:130px;">
+																	</div>
+								<div class='right'>
+									<div class='title'> 교과서 익힘 (금성출판사) </div>
+									<div class='author'>저자 | 교과서 </div>
+									<div class='progress' style="height:unset;">
+																			<div class='ing'>진행</div>
+										<div onclick="change_book_student_state( 1643, 'don' );">완료</div>
+																		</div>
+								</div>
+							</div>
+						</div>
+											<div class="swiper-slide book-item" data-id="1644">
+							<div class='item-box'>
+								<div class='left'>
+																		<img src='https://img.howhyclass.com/q/0a/47/s.2631/in.png' alt='' style="height:130px;">
+																	</div>
+								<div class='right'>
+									<div class='title'> 교과서 익힘 (아이스크림) </div>
+									<div class='author'>저자 | 교과서 </div>
+									<div class='progress' style="height:unset;">
+																			<div class='ing'>진행</div>
+										<div onclick="change_book_student_state( 1644, 'don' );">완료</div>
+																		</div>
+								</div>
+							</div>
+						</div>
+										</div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class='bottom-container' style="margin-top:25px;" id='book_scorings'></div> -->
+		<div class="bottom-container" style="margin-top:25px;" id="book_scorings"><div class="right white-container">
+			<div class="header">
+				<div class="head-left"> 교과서 익힘 (와이비엠) 채점</div>
+				<div class="head-right">
+					<input type="checkbox" onclick="show_complete(this);">
+					<div>완료페이지 숨기기</div>
+					<!-- img src='https://img.howhyclass.com/hclass/images/icon_help.png' onclick="toggle_overlay('y');"/-->
+				</div>
+			</div>
+			<div class="check-table scroll-container" id="book_scorings">
+				<div id="markingContainer" class="scroll-content" style="">
+					<div class="header">자연수의 혼합 계산</div>
+					<div class="table-content page-done table2-302141">
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div class="page-content">
+								<div class="page">6p</div>
+								<button class="bright-green-btn save-btn-302141" onclick="save_score(302141);">수정</button>
+							</div>
+						</div>
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div><span class="correct_count-302141">3</span>/3 </div>
+						</div>
+						<div class="check">
+							<div class="item-box" style="padding-bottom: 10px;">
+								<div class="item">
+									<div class="index">1</div>
+									<img class="ox_img ox-302141" src="https://img.howhyclass.com/hclass/images/icon_wrong.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">2</div>
+									<img class="ox_img ox-302141" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">3</div>
+									<img class="ox_img ox-302141" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="table-content page-done table2-302142">
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div class="page-content">
+								<div class="page">7p</div>
+								<button class="bright-green-btn save-btn-302142" onclick="save_score(302142);">수정</button>
+							</div>
+						</div>
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div><span class="correct_count-302142">3</span>/3 </div>
+						</div>
+						<div class="check">
+							<div class="item-box" style="padding-bottom: 10px;">
+								<div class="item">
+									<div class="index">4</div>
+									<img class="ox_img ox-302142" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">5</div>
+									<img class="ox_img ox-302142" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">6</div>
+									<img class="ox_img ox-302142" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="table-content page-done table2-302143">
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div class="page-content">
+								<div class="page">8p</div>
+								<button class="bright-green-btn save-btn-302143" onclick="save_score(302143);">수정</button>
+							</div>
+						</div>
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div><span class="correct_count-302143">3</span>/3 </div>
+						</div>
+						<div class="check">
+								<div class="item-box" style="padding-bottom: 10px;">
+									<div class="item">
+									<div class="index">1</div>
+									<img class="ox_img ox-302143" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">2</div>
+									<img class="ox_img ox-302143" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">3</div>
+									<img class="ox_img ox-302143" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="table-content  table2-302144">
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div class="page-content">
+								<div class="page">9p</div>
+								<button class="edit save-btn-302144" onclick="save_score(302144);">저장</button>
+							</div>
+						</div>
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div><span class="correct_count-302144">-</span>/3 </div>
+						</div>
+						<div class="check">
+							<div class="item-box" style="padding-bottom: 10px;">
+								<div class="item">
+									<div class="index">4</div>
+									<img class="ox_img ox-302144" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">5</div>
+									<img class="ox_img ox-302144" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">6</div>
+									<img class="ox_img ox-302144" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="table-content  table2-302145">
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div class="page-content">
+								<div class="page">10p</div>
+								<button class="edit save-btn-302145" onclick="save_score(302145);">저장</button>
+							</div>
+						</div>
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div><span class="correct_count-302145">-</span>/3 </div>
+						</div>
+						<div class="check">
+							<div class="item-box" style="padding-bottom: 10px;">
+								<div class="item">
+									<div class="index">1</div>
+									<img class="ox_img ox-302145" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">2</div>
+									<img class="ox_img ox-302145" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">3</div>
+									<img class="ox_img ox-302145" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="table-content  table2-302146">
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div class="page-content">
+								<div class="page">11p</div>
+								<button class="edit save-btn-302146" onclick="save_score(302146);">저장</button>
+							</div>
+						</div>
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div><span class="correct_count-302146">-</span>/3 </div>
+						</div>
+						<div class="check">
+							<div class="item-box" style="padding-bottom: 10px;">
+								<div class="item">
+									<div class="index">4</div>
+									<img class="ox_img ox-302146" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">5</div>
+									<img class="ox_img ox-302146" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">6</div>
+									<img class="ox_img ox-302146" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="table-content  table2-302147">
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div class="page-content">
+								<div class="page">12p</div>
+								<button class="edit save-btn-302147" onclick="save_score(302147);">저장</button>
+							</div>
+						</div>
+						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
+							<div><span class="correct_count-302147">-</span>/3 </div>
+						</div>
+						<div class="check">
+							<div class="item-box" style="padding-bottom: 10px;">
+								<div class="item">
+									<div class="index">1</div>
+									<img class="ox_img ox-302147" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">2</div>
+									<img class="ox_img ox-302147" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+								<div class="item">
+									<div class="index">3</div>
+									<img class="ox_img ox-302147" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+		$( document ).ready(function() {
+			$(".ox_img").on( 'click', function() {
+				if( $(this).attr('src').indexOf('icon_correct') != -1 )
+					$(this).attr('src', 'https://img.howhyclass.com/hclass/images/icon_wrong.png' );
+				else
+					$(this).attr('src', 'https://img.howhyclass.com/hclass/images/icon_correct.png' );
+			});
+		});
+		
+		function save_score( category_id )
+		{
+			var ox_arr = [];
+			var correct_count = 0;
+		
+			$('.ox-'+category_id).each( function( index, item ){
+				if( $(this).attr('src').indexOf('icon_correct') != -1 )
+				{
+					ox_arr.push( 'o' );
+					correct_count ++;
+				}
+				else
+					ox_arr.push( 'x' );
+			});
+		
+			$('.save-btn-'+category_id).html('수정');
+			$('.save-btn-'+category_id).removeClass('edit');
+			$('.save-btn-'+category_id).addClass('bright-green-btn');
+		
+			$('.correct_count-'+category_id).html( correct_count.toString() );
+			$('.table1-'+category_id).addClass( 'page-done' );
+			$('.table2-'+category_id).addClass( 'page-done' );
+		
+			fx_submit_link( "/books/save_scoring?category_id=" + category_id + "&ox_str=" + ox_arr.join(',') );
+		}
+		</script>
+		
+		
+		</div>
+
+	</div>
+</div>
+
+<script>
+
+var current_id = '';
+
+$( document ).ready(function() {
+	const swiper = new Swiper('.swiper', {
+		pagination: {
+		el: '.swiper-pagination',
+		type: 'bullets',
+		},
+	
+		spaceBetween: 16,
+		slidesPerView : '4', // 한 슬라이드에 보여줄 갯수
+	
+		// Navigation arrows
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+
+	$(".book-item").on( 'click', function() { 
+		current_id = $(this).data('id');
+		// fx_load_widget( 'book_chapters', '/books/book_chapters?id='+current_id );
+		fx_load_widget( 'book_scorings', '/books/book_scorings?id='+current_id );
+
+/*
+		if( $(".check_complete").is(':checked') == true )
+			$(".page-done").hide();
+		else
+			$(".page-done").show();
+*/
+
+	});
+
+/*
+	$(".check_complete").on( 'click', function() { 
+		if( $(this).is(':checked') == true ) $(".page-done").hide();
+		else                                 $(".page-done").show();
+	});
+*/
+
+			current_id = 1642;
+		// fx_load_widget( 'book_chapters', '/books/book_chapters?id=1642' );
+		fx_load_widget( 'book_scorings', '/books/book_scorings?id=1642' );
+	
+});
+
+function show_complete( obj )
+{
+	if( $(obj).is(':checked') == true ) $(".page-done").hide();
+	else                                 $(".page-done").show();
+}
+
+function toggle_overlay( show_yn )
+{
+	if( show_yn == 'y' )
+		$('#help-box').show();
+	else
+		$('#help-box').hide();
+}
+
+function search()
+{
+    var sv_keyword = $("#sv_keyword").val();
+    var search_url = '/books/index?sv_keyword=' + encodeURI(sv_keyword) + '&sv_done_yn=n';
+    location.href = search_url;
+}
+
+
+function change_book_student_state( answer_book_student_id, state )
+{
+	fx_submit_link( '/books/change_book_student_state?answer_book_student_id=' + answer_book_student_id + '&state=' + state );
+}
+
+</script>
+
+	
+<div class='footer'>
+	<div class='left'>
+		<div class='footer-content'>
+			<div>하와이컴퍼니(주)</div>
+			<div class='vertical-line'></div>
+			<div>HOWHY COMPANY</div>
+			<div class='vertical-line'></div>
+			<div>대표이사 : 박종화</div>
+		</div>
+
+		<div class='footer-content'>
+			<div>사업자등록번호 760-87-02737</div>
+			<div class='vertical-line'></div>
+			<div>통신판매신고 : 제 2024-서울강남-03953호</div>
+			<div class='vertical-line'></div>
+			<div>고객센터 <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+		</div>
+		<div class='footer-content'>
+			<div>본사 : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> 하와이수학연구소 : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+		</div>
+		<div class='footer-content'>
+			2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+		</div>
+	</div>
+	<div class='right'>
+		<div class='footer-content'>
+            <div onclick="window.open('https://student.howhyclass.com/users/agreement??user_type=s', '_blank');">서비스 이용약관</div>
+            <div onclick="window.open('https://student.howhyclass.com/users/privacy_policy?user_type=s', '_blank');">개인정보처리방침</div>
+		</div>
+		<div class='footer-content'>
+			<div id="footer-dropbox" class="drop-box full-width">
+				<div class="flex full-width">
+					<div>Family site</div>
+					<div><img class='selectCategory' src='https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png' alt='' /></div>
+
+				</div>
+				<div id="footer-dropbox-content" class="drop-box-content">
+                    <button onclick="window.open('https://www.howhymath.com', '_blank');">하와이매쓰</button>
+                    <button onclick="window.open('https://www.fren.co.kr', '_blank');">프렌매쓰</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropBox = document.getElementById('footer-dropbox');
+    const dropBoxContent = document.getElementById('footer-dropbox-content');
+  
+    // drop-box를 클릭했을 때의 이벤트 핸들러
+    dropBox.addEventListener('click', function() {
+        // .drop-box-content의 표시 상태를 토글합니다.
+        dropBoxContent.style.display = dropBoxContent.style.display === 'block' ? 'none' : 'block';
+    });
+  
+  });
+</script>
+
+
+<script>
+</script>
+
+</body>
+</html>

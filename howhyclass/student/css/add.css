@@ -1,0 +1,122 @@
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.fc-scrollgrid-sync-inner > a  {
+    color: #000;
+    text-decoration: none;
+}
+
+.fc-daygrid-day-number {
+    color: #000;
+    text-decoration: none;
+}
+
+.fc-day-today a.fc-daygrid-day-number {
+    color: #fff;
+}
+
+*::before, *::after {
+    box-sizing: unset;
+}
+
+
+.grey-btn {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--unit-8, 8px);
+  background: var(--color-bg-disabled, #CCC) !important;
+}
+
+.col-md-1  { margin:0; padding:0; }
+.col-md-2  { margin:0; padding:0; }
+.col-md-3  { margin:0; padding:0; }
+.col-md-4  { margin:0; padding:0; }
+.col-md-5  { margin:0; padding:0; }
+.col-md-6  { margin:0; padding:0; }
+.col-md-7  { margin:0; padding:0; }
+.col-md-8  { margin:0; padding:0; }
+.col-md-9  { margin:0; padding:0; }
+.col-md-10 { margin:0; padding:0; }
+.col-md-11 { margin:0; padding:0; }
+.col-md-12 { margin:0; padding:0; }
+
+.col-sm-1  { margin:0; padding:0; }
+.col-sm-2  { margin:0; padding:0; }
+.col-sm-3  { margin:0; padding:0; }
+.col-sm-4  { margin:0; padding:0; }
+.col-sm-5  { margin:0; padding:0; }
+.col-sm-6  { margin:0; padding:0; }
+.col-sm-7  { margin:0; padding:0; }
+.col-sm-8  { margin:0; padding:0; }
+.col-sm-9  { margin:0; padding:0; }
+.col-sm-10 { margin:0; padding:0; }
+.col-sm-11 { margin:0; padding:0; }
+.col-sm-12 { margin:0; padding:0; }
+
+.row, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.modal-body {
+	padding: 20px;
+}
+
+.modal-bottom-btn-box {
+	border-top: 1px solid #eaf0f9;
+	padding: 20px;
+	text-align: right;
+}
+
+.save-btn {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--unit-8, 8px);
+    background: var(--color-howhy-400, #49D581);
+}
+
+.cancle-btn {
+    border-radius: var(--unit-8, 8px);
+    background: var(--color-bg-tertiary, #F1F1F1);
+    border: none;
+    color: var(--color-text-primary, #1A1A1A);
+    padding: 10px 25px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+}
+
+.modal-body {
+	display: flex;
+	flex-direction: column;
+	gap: 26px;
+	padding: 20px;
+}
+
+.form-select {
+    padding: 14px 10px;
+    font-weight: 600;
+    font-size: 14px;
+    color:#808080;
+    border-radius: 8px;
+    border: 1px solid #b3b3b3;
+}
+
+.modal-header .left {
+    font-weight: 900;
+    font-size: 18px;
+}
+
+
