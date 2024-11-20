@@ -699,7 +699,7 @@ body > .header{
         width: 100%;
         height: 100%;
         background: no-repeat center;
-        &.icon_alarm{background-image: url(../images/icon_alarm.png);}
+        &.icon_alarm{background-image: url(../images/icon_alarm.gif);}
       }
     }
 
