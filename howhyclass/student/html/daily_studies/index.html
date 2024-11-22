@@ -106,8 +106,8 @@ infoBox.addEventListener('click', function() {
             <dt>일일학습</dt>
             <dd>
                 <ul>
-                    <li>매일 매일 새로운 문제가 업데이트 됩니다.</li>
-                    <li>매일 꾸준히 학습하게 되면 실력이 많이 향상 됩니다.</li>
+                    <li>매일 5문제, 나에게 딱 맞는 문제로</li>
+                    <li>수학 실력을 차곡차곡 쌓아갑니다.</li>
                     <!-- 문구 변경될 수 있습니다. -->
                 </ul>
             </dd>
@@ -136,7 +136,13 @@ infoBox.addEventListener('click', function() {
 
 <div class='content' id="load_study_box">
     <div class="content-container dailylearning-container">
-        <div class="title"><span>2024년 11월 20일 47주 3일차</span> 학습</div><!--241122 span 태그 추가-->
+        <!--241122 span 태그 / 개정분류 추가 시작-->
+        <div class="title">
+            <span>2024년 11월 20일 47주 3일차</span> 학습
+            <i class="type15">15 개정</i>
+            <i class="type22">22 개정</i>
+        </div>
+        <!--241122 span 태그 추가 끝-->
         <div class="top-container white-container ai_learning_container">
             <div class="chapter-container">
                 <div class="chapter-title">
@@ -149,7 +155,7 @@ infoBox.addEventListener('click', function() {
                         <div class="left">
                             <img src="https://img.howhyclass.com/hclass/images/img_check_circle_gray.png" alt="">
                             <!-- <div>[초5 (2015)] Ⅳ. 소수의 곱셈 &gt; 3. (소수)X(소수)</div> -->
-                            <div><i>초5 (2015)</i> Ⅳ. 소수의 곱셈 &gt; 3. (소수)X(소수)</div><!-- 학년구분 i태그로 분리(대괄호 삭제 가능하면 해주세요) 241122 -->
+                            <div><i>초5</i> Ⅳ. 소수의 곱셈 &gt; 3. (소수)X(소수)</div><!-- 학년구분 i태그로 분리(대괄호, 년도 삭제 해주세요) 241122 -->
                         </div>
                         <div class="right">
                             <!-- <button class="bright-green-btn padding-10-30" onclick="view_movie(872);">다시보기</button> -->
@@ -483,8 +489,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="left">
             표준 진도표
         </div>
-        <!-- <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" data-bs-dismiss="modal" aria-label="Close" /> -->
-        <img src="../../images/icon_close_black.png" data-bs-dismiss="modal" aria-label="Close" />
+        <!-- <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" data-bs-dismiss="modal" aria-label="Close" /> 241122 이미지 변경 -->
+        <img src="../../images/icon_close_black.svg" data-bs-dismiss="modal" aria-label="Close" />
     </div>
     <div class="modal-body">
         <p style="padding: 5px;font-size: 16px;margin:0;text-align:center;"> <b>47주차 3일차 </b>/ 52주차 주5일 </p>
@@ -768,8 +774,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="modal-content" id="view_movie-content">
             <div class="modal-header">
                 <div class="left">[초5 (2015)] Ⅳ. 소수의 곱셈 &gt; 3. (소수)X(소수)</div>
-                <!-- <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" onclick="close_popup();"> -->
-                <img src="../../images/icon_close_black.png" onclick="close_popup();">
+                <!-- <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" onclick="close_popup();"> 241122 이미지 변경 -->
+                <img src="../../images/icon_close_black.svg" onclick="close_popup();">
             </div>
             <div class="modal-body">
                 <div class="row">

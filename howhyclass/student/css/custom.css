@@ -255,7 +255,7 @@ button {
   color: #fff;
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   /* 25.6px */
   border: none;
   padding: 5px 15px !important;
@@ -273,7 +273,7 @@ button {
   border-radius: var(--unit-20, 20px);
   font-family: 'SUIT';
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
   color: #0ad08d;
   padding: 3px 15px !important;
   &::before{
@@ -281,7 +281,7 @@ button {
     display: block;
     width: 15px;
     height: 15px;
-    background: url(../images/icon_video_green.png) no-repeat center / 15px auto;
+    background: url(../images/icon_video_green.svg) no-repeat center / 15px auto;
   }
 }
 .blue-btn {
@@ -344,7 +344,7 @@ button {
 /* 241121 수정 시작 */
 .green-btn {
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 600;
   padding: 5px 20px !important;
   border: none;
   border-radius: var(--unit-20, 20px);
@@ -568,14 +568,16 @@ body > .header{
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  z-index: 999;
   &::before{
     content: '';
     display: block;
     width: calc(100vw - 8px);
     border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);
     position: absolute;
-    top: 100%;
+    top: calc(100% - 1px);
     left: calc(50% - ((100vw - 8px) / 2));
+    z-index: -1;
   }
 }
 /* //스타일 추가 241120 */
@@ -635,7 +637,7 @@ body > .header{
     font-style: normal;
     font-weight: 500;
     list-style-type: none;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin: 0px;
     font-family: 'SUIT';/*241120 추가*/
 
@@ -652,14 +654,20 @@ body > .header{
       text-decoration: none;
     }
 
+    li{
+      
+    }
+
     li .selected {}
 
     /* 241120 수정 시작 */
     span {
+      display: block;
       color: var(--color-text-tertiary, #000);
       padding: 20px;
       font-size: 18px;
       font-weight: 700;
+      padding-bottom: 23px;
     }
     /* 241120 수정 끝 */
 
@@ -673,7 +681,9 @@ body > .header{
       display: inline-block;
       padding-bottom: 20px;
       border-bottom: 3px solid #06b57a;
-      border-top: 3px solid #fff;
+      /* border-top: 3px solid #fff; */
+      border-top-width: 0;
+      box-sizing: border-box;
     }
   }
 
@@ -3427,10 +3437,10 @@ line-height: 160%; /* 25.6px */
             margin-right: 10px;
             color: #7196ff;
             box-sizing: border-box;
-            margin-left: -50px;
+            margin-left: -62px;
           }
           /* &>div>span{padding-left: 50px;} */
-          &>div{padding-left: 50px;}
+          &>div{padding-left: 62px;}
           /* 241121 수정 끝 */
         }
 
@@ -3878,6 +3888,7 @@ line-height: 160%; /* 25.6px */
         font-size: 26px;
         line-height: 1;
         font-family: 'SUIT';
+        color: #1c1c1c;
       }
       dd{
         margin: 20px 0 0;
@@ -3919,7 +3930,7 @@ line-height: 160%; /* 25.6px */
       align-items: center;
       gap: 4px;
       font-size: 18px;
-      font-weight: 700;
+      font-weight: 600;
       padding: 8px 20px;
       background: #278171;
       border: 0;
@@ -3935,28 +3946,29 @@ line-height: 160%; /* 25.6px */
     }
 
     .calendar-yearmonth{
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-family: 'SUIT';
       font-weight: 700;
       font-size: 18px;
       line-height: 1;
       position: relative;
       z-index: 3;
-      &::before{
+      padding: 12px 20px;
+      background: #ebebeb;
+      border-radius: 6px;
+      margin-right: 10px;
+
+      &::after{
         content: '';
         display: block;
-        width: calc(100% + 84px);
-        height: 100%;
-        background: #ebebeb;
-        position: absolute;
-        top: -13px;
-        left: -24px;
-        padding: 13px 0;
-        border-radius: 6px;
-        z-index: -1;
-        box-sizing: content-box;
+        width: 20px;
+        height: 20px;
+        background: url(../images/img_calendar.svg) no-repeat center / cover;
       }
-
       &+img {
+        display: none;
         width: 24px;
         height: 24px;
         margin-left: 10px;
@@ -3990,7 +4002,7 @@ line-height: 160%; /* 25.6px */
       table th {
         color: var(--color-text-tertiary, #7b7b7b);
         font-size: 14px;
-        font-weight: 700;
+        font-weight: 600;
         padding: 0px 40px;
         white-space: nowrap;
         text-align: center;
@@ -4096,7 +4108,7 @@ line-height: 160%; /* 25.6px */
     gap: 12px;
     font-family: 'SUIT';
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 700;
     color: #1c1c1c;
     margin-left: 25px;
     &::before{
@@ -4108,6 +4120,19 @@ line-height: 160%; /* 25.6px */
       background: #08bd80;
     }
     span{color: #08bd80;}
+    i{
+      font-family: "Noto Sans KR";
+      font-style: normal;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 7px;
+      border: 1px solid;
+      &.type15{color: #7174ff;}
+      &.type22{color: #04a6cf;}
+      &:not(:first-of-type){margin-left: -5px;}
+    }
   }
   /* 241121 수정 끝 */
 
@@ -8547,7 +8572,8 @@ line-height: 140%; /* 16.8px */
 }
 
 @media screen and (max-width: 1024px) {
-  body > .header::before{
+  body > .header::before,
+  .header .link li .lnb{
     width: 100% !important;
     left: 0 !important;
   }
