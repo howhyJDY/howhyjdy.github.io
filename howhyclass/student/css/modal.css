@@ -2254,20 +2254,23 @@
   }
   
 /* 표준진도표 팝업 스타일 분리 시작 241122 */
-.diagram-table {
-    gap: 0;
+#all_progress{
+  .diagram-table {
+      gap: 0;
+  }
+  .diagram {
+      border-right: 1px dotted #d2d2d2;
+      border-bottom: 1px solid #d2d2d2;
+      border-radius: 0;
+      background: #fff;
+      color: #515151;
+      font-size: 14px;
+      line-height: 193%;
+      &:nth-child(15n){
+        border-right-width: 0;
+      }
+  }
+  .diagram-table {.selected {background: #f5fae4;}}
 }
-.diagram {
-    border-right: 1px dotted #d2d2d2;
-    border-bottom: 1px solid #d2d2d2;
-    border-radius: 0;
-    background: #fff;
-    color: #515151;
-    font-size: 14px;
-    line-height: 193%;
-    &:nth-child(15n){
-      border-right-width: 0;
-    }
-}
-.diagram-table {.selected {background: #f5fae4;}}
+
 /* 표준진도표 팝업 스타일 분리 끝 241122 */
