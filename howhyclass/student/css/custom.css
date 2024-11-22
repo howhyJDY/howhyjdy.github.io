@@ -548,6 +548,11 @@ line-height: 160%; /* 22.4px */
   .logout {
     display: flex;
     gap: 10px;
+    img{
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+    }
   }
 }
 
@@ -657,7 +662,45 @@ body > .header{
     }
 
     li{
-      
+      .lnb{
+        width: calc(100vw - 8px);
+        position: absolute;
+        top: 100%;
+        left: calc(50% - ((100vw - 8px) / 2));
+        background: #f7f7f7;
+        height: 0;
+        overflow: hidden;
+        transition: .4s ease;
+        ul{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          li{
+            list-style: none;
+            span{
+              font-size: 15px;
+              line-height: 1;
+              font-weight: 500;
+              padding: 10px 20px !important;
+            }
+            a{
+              display: block;
+              padding: 15px 0 25px;
+            }
+            .selected{
+              background: #06b57a;
+              color: #fff;
+              border-radius: 17px;
+              border-width: 0;
+              border-bottom-width: 0;
+            }
+          }
+        }
+      }
+      /* 교재학습 */
+      &:nth-of-type(1) .lnb ul{margin-left: calc(-25%);}
+      /* AI학습 */
+      &:nth-of-type(2) .lnb ul{margin-left: calc(-10%);}
     }
 
     li .selected {}

@@ -38,7 +38,8 @@
 	<div>
 		<a href="/home/main"><img class='logo' src='../../images/logo.svg' alt='하와이클래쓰' /></a><!--241120 로고 이미지 확장자 변경-->
 	</div>
-	<ul class='link'>
+	<!-- 241122 gnb 구조 변경 시작 -->
+	<!-- <ul class='link'>
 		<li>
 			<ul><a href='/books/index'><span class="selected">교재학습</span></a></ul>
 		</li>
@@ -51,7 +52,36 @@
 		<li>
 			<ul><a href='/homeworks/index'><span >숙제</span></a></ul>
 		</li>
+	</ul> -->
+	<ul class="link">
+		<li>
+			<a href='/books/index'><span class="selected">교재학습</span></a>
+			<div class="lnb">
+				<ul>
+					<li><a href='/books/index'><span class="selected">진행교재</span></a></li>
+					<li><a href='/books/index?sv_done_yn=y'><span>완료교재</span></a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<a href='/ai_studies/index'><span >AI 학습</span></a>
+			<div class="lnb">
+				<ul>
+					<li><a href='/ai_studies/index'><span>AI 성취도 분석 결과</span></a></li>
+					<li><a href='/ai_studies/post_studies'><span>AI 학습 추천</span></a></li>
+					<li><a href='/ai_studies/weakness'><span>전체 수학 교육 결손점</span></a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<a href='/daily_studies/index'><span >일일학습</span></a>
+		</li>
+		<li>
+			<a href='/homeworks/index'><span >숙제</span></a>
+		</li>
 	</ul>
+	<!-- 241122 gnb 구조 변경 끝 -->
+
 	<div class='menu'>
 		<!-- 241120 아이콘 변경 및 태그 추가 시작 -->
 		<button class='subscribe' onclick="location.href='/teachers/index';"><span class="icon_add_tutor"></span>선생님등록</button>
@@ -72,7 +102,8 @@
 				<button onclick="location.href='/mypage/index';">나의 정보</button>
 				<button onclick="location.href='/mypage/setting';">설정 &amp; FAQ</button>
 				<button class="logout" onclick="location.href='/users/logout_student';">
-					<img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/>
+					<!-- <img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/> 241122 이미지 변경 -->
+					<img src="../../images/icon_logout.svg" alt=""/>
 					<div>로그아웃</div>
 				</button>
 				</div>
@@ -89,6 +120,30 @@ const infoContent = document.getElementById('info-dropbox-content');
 infoBox.addEventListener('click', function() {
     infoContent.style.display = infoContent.style.display === 'block' ? 'none' : 'block';
 });
+
+
+/** 241122 gnb 스크립트 추가 시작 **/
+const gnbLinks = document.querySelectorAll('.link>li>a');
+gnbLinks.forEach((item)=>{
+	const lnbContainer = item.nextElementSibling;
+	if( lnbContainer ){
+		const lnbHeight = lnbContainer.querySelector('ul').offsetHeight;
+		item.addEventListener('mouseenter', ()=>{
+			lnbContainer.style.height=`${lnbHeight}px`;
+		})
+		item.addEventListener('mouseleave', ()=>{
+			lnbContainer.style.height=0;
+		})
+
+		lnbContainer.addEventListener('mouseenter', ()=>{
+			lnbContainer.style.height=`${lnbHeight}px`;
+		})
+		lnbContainer.addEventListener('mouseleave', ()=>{
+			lnbContainer.style.height=0;
+		})
+	}
+})
+/** 241122 gnb 스크립트 추가 끝 **/
 </script>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
