@@ -118,6 +118,19 @@ header h1{
 }
 
 @media screen and (max-width: 720px) {
-    *{font-size: 60%;}
+    html{font-size: 60%;}
     .wrapper{padding: 2rem;}
+    .container dl dt{font-size: 1.8rem;}
+    .container dl dd{
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+    .container h2 img{width: 15rem;}
+    .container dl dd p{width: 100%;}
+    .container dl dd a{padding-left: .8rem;}
+    .container dl dd i{
+        width: 100%;
+        margin-left: 0;
+        padding-left: .8rem;
+    }
 }
