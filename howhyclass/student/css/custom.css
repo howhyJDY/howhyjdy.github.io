@@ -3444,7 +3444,10 @@ line-height: 160%; /* 25.6px */
             margin-left: -62px;
           }
           /* &>div>span{padding-left: 50px;} */
-          &>div{padding-left: 62px;}
+          &>div{
+            padding-left: 62px;
+            width: 100%;
+          }
           /* 241121 수정 끝 */
         }
 
@@ -3965,6 +3968,7 @@ line-height: 160%; /* 25.6px */
       background: #ebebeb;
       border-radius: 6px;
       margin-right: 10px;
+      color: #666666;
 
       &::after{
         content: '';
