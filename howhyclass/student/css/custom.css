@@ -253,6 +253,7 @@ button {
   border-radius: var(--unit-20, 20px);
   background: var(--color-howhy-400, #0ad08d);
   color: #fff;
+  font-family: 'SUIT';
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -343,6 +344,7 @@ button {
 
 /* 241121 수정 시작 */
 .green-btn {
+  font-family: 'SUIT';
   font-size: 16px;
   font-weight: 600;
   padding: 5px 20px !important;
@@ -3929,6 +3931,7 @@ line-height: 160%; /* 25.6px */
       display: flex;
       align-items: center;
       gap: 4px;
+      font-family: 'SUIT';
       font-size: 18px;
       font-weight: 600;
       padding: 8px 20px;
@@ -4248,7 +4251,7 @@ line-height: 160%; /* 25.6px */
           top: 0;
           left: 0;
           z-index: -1;
-          border-bottom: 1px solid #c0c0c0;
+          border-bottom: 1px solid #e6e6e6;
           border-radius: 14px 14px 0 0;
         }
       }
