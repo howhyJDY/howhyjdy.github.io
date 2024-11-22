@@ -35,7 +35,7 @@
     <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1731985359"></script>
 </head>
 
-<body>
+<body class="modal-open" style="overflow: hidden; padding-right: 8px;" data-bs-padding-right="">
     <div class='header'>
         <div>
             <a href="/home/main"><img class='logo' src='../../images/logo.svg' alt='하와이클래쓰' /></a><!--로고변경 교재학습 참고-->
@@ -457,7 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <!-- 표준진도표(팝업) -->
-<div class="modal fade show" id="all_progress" tabindex="-1" style="display: none;" aria-modal="true" role="dialog"><div class="modal-dialog modal-lg modal-dialog-centered" role="document"><div class="modal-content" id="all_progress-content">
+<div class="modal fade show" id="all_progress" tabindex="-1" style="display: block;" aria-modal="true" role="dialog"><div class="modal-dialog modal-lg modal-dialog-centered" role="document"><div class="modal-content" id="all_progress-content">
     <style>
         .diagram-table {
             display: grid;
@@ -761,33 +761,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 <!-- //표준진도표(팝업) -->
-
-<!-- 다시보기/개념영상(팝업) -->
-<div class="modal fade show" id="view_movie" tabindex="-1" style="display: block;" aria-modal="true" role="dialog">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content" id="view_movie-content">
-            <div class="modal-header">
-                <div class="left">[초5 (2015)] Ⅳ. 소수의 곱셈 &gt; 3. (소수)X(소수)</div>
-                <!-- <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" onclick="close_popup();"> -->
-                <img src="../../images/icon_close_black.png" onclick="close_popup();">
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12 movie-box" style="height:400px;">
-                        <iframe width="100%" height="392" src="https://www.youtube.com/embed/c7aIK5UrosY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-                    </div>
-                </div>
-            </div>
-            <script>
-                function close_popup(){
-                    $(".movie-box").html("");
-                    fx_layer_popup_v2_close_by_id('view_movie');
-                }
-            </script>
-        </div>
-    </div>
-</div>
-<!-- //다시보기/개념영상(팝업) -->
+<div class="modal-backdrop fade show"></div>
 
 
 </body>

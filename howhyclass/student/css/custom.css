@@ -623,7 +623,7 @@ body > .header{
     width: 202px !important;
     height: 100%;
     object-fit: contain;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     /*241120 수정 끝*/
   }
 
@@ -680,7 +680,8 @@ body > .header{
 
   .menu {
     display: flex;
-    padding: 14px 20px;
+    /* padding: 14px 20px; */
+    padding: 14px 0 14px 20px;
     gap: 10px;/*241120 수정*/
 
     button {
@@ -8530,6 +8531,7 @@ line-height: 140%; /* 16.8px */
 
 /* 반응형 추가 241120 241121 */
 @media screen and (max-width: 1440px) {
+  body > .header{padding: 0 20px;}
   .daily-learning-top{width: calc(100% - 40px);}
 }
 

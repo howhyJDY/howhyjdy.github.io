@@ -9,6 +9,52 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
   }
+
+  /* 241122 모달 공통 수정 시작 */
+  .modal-content{
+    border-radius: 15px;
+  }
+  .modal-header{
+    background: #eee;
+    border-radius: 15px 15px 0 0;
+    padding: 15px 30px;
+    border-bottom: 1px solid #e6e6e6;
+    
+    .left{
+      font-family: 'SUIT';
+      font-size: 14px;
+      font-weight: 800;
+      color: #333333;
+      &+img{
+        cursor: pointer;
+        width: 13px;
+        height: 13px;
+        object-fit: contain;
+      }
+    }
+  }
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 26px 30px 20px;
+    &>p{
+      font-family: 'SUIT';
+      font-size: 18px !important;
+      font-weight: 500;
+      color: #333;
+      padding: 0 !important;
+      b{
+        color: #0ad08d;
+        font-weight: 900;
+      }
+    }
+    .modal-content{
+      border: 2px solid #7e7e7e;
+      overflow: hidden;
+    }
+  }
+  /* 241122 모달 공통 수정 끝 */
   
   .help-modal {
     width: 480px;
@@ -48,7 +94,7 @@
       }
     }
   }
-  
+
   /* LEARNINGSTART_MODAL START */
   
   .learning-start-modal {
@@ -2207,3 +2253,21 @@
     }
   }
   
+/* 표준진도표 팝업 스타일 분리 시작 241122 */
+.diagram-table {
+    gap: 0;
+}
+.diagram {
+    border-right: 1px dotted #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+    border-radius: 0;
+    background: #fff;
+    color: #515151;
+    font-size: 14px;
+    line-height: 193%;
+    &:nth-child(15n){
+      border-right-width: 0;
+    }
+}
+.diagram-table {.selected {background: #f5fae4;}}
+/* 표준진도표 팝업 스타일 분리 끝 241122 */

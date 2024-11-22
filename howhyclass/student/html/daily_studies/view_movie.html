@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이클래쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="shortcut icon" href="https://img.howhyclass.com/hmath/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<!-- <link href="https://img.howhyclass.com/hclass/css/custom.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/modal.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/add.css" rel="stylesheet"> -->
+	<link href="../../css/custom.css" rel="stylesheet">
+	<link href="../../css/modal.css" rel="stylesheet">
+	<link href="../../css/add.css" rel="stylesheet">
+
+	
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            tex2jax: { displayMath: [ ["$$","$$"] ] },
+            "HTML-CSS": { fonts: ["Latin-Modern"] }
+        });
+    </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1731985359"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1731985359"></script>
+</head>
+
+<body class="modal-open" style="overflow: hidden; padding-right: 8px;" data-bs-padding-right="">
+    <div class='header'>
+        <div>
+            <a href="/home/main"><img class='logo' src='../../images/logo.svg' alt='하와이클래쓰' /></a><!--로고변경 교재학습 참고-->
+        </div>
+        <ul class='link'>
+            <li>
+                <ul><a href='/books/index'><span>교재학습</span></a></ul>
+            </li>
+            <li>
+                <ul><a href='/ai_studies/index'><span>AI 학습</span></a></ul>
+            </li>
+            <li>
+                <ul><a href='/daily_studies/index'><span class="selected">일일학습</span></a></ul>
+            </li>
+            <li>
+                <ul><a href='/homeworks/index'><span >숙제</span></a></ul>
+            </li>
+        </ul>
+        <div class='menu'>
+            <!-- 아이콘 변경 및 태그 추가 교재학습 참고 -->
+            <button class='subscribe' onclick="location.href='/teachers/index';"><span class="icon_add_tutor"></span>선생님등록</button>
+            <button class='subscribe' onclick="location.href='/payments/index';"><span class="icon_subscribe"></span>구독하기</button>
+            <button class='alarm-icon' onclick="location.href='/notices/index';" title="알림">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M5.3335 25.3333V22.6667H8.00016V13.3333C8.00016 11.4889 8.55572 9.84999 9.66683 8.41666C10.7779 6.98332 12.2224 6.04443 14.0002 5.59999V4.66666C14.0002 4.1111 14.1946 3.63888 14.5835 3.24999C14.9724 2.8611 15.4446 2.66666 16.0002 2.66666C16.5557 2.66666 17.0279 2.8611 17.4168 3.24999C17.8057 3.63888 18.0002 4.1111 18.0002 4.66666V5.59999C19.7779 6.04443 21.2224 6.98332 22.3335 8.41666C23.4446 9.84999 24.0002 11.4889 24.0002 13.3333V22.6667H26.6668V25.3333H5.3335ZM16.0002 29.3333C15.2668 29.3333 14.6391 29.0722 14.1168 28.55C13.5946 28.0278 13.3335 27.4 13.3335 26.6667H18.6668C18.6668 27.4 18.4057 28.0278 17.8835 28.55C17.3613 29.0722 16.7335 29.3333 16.0002 29.3333ZM10.6668 22.6667H21.3335V13.3333C21.3335 11.8667 20.8113 10.6111 19.7668 9.56666C18.7224 8.52221 17.4668 7.99999 16.0002 7.99999C14.5335 7.99999 13.2779 8.52221 12.2335 9.56666C11.1891 10.6111 10.6668 11.8667 10.6668 13.3333V22.6667Z" fill="#1A1A1A" />
+                    </svg> -->
+                <span class="icon_alarm"></span>
+            </button>
+            <div id="info-dropbox" class='info-icon drop-box'>
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 10C8.625 10 7.44792 9.51042 6.46875 8.53125C5.48958 7.55208 5 6.375 5 5C5 3.625 5.48958 2.44792 6.46875 1.46875C7.44792 0.489583 8.625 0 10 0C11.375 0 12.5521 0.489583 13.5312 1.46875C14.5104 2.44792 15 3.625 15 5C15 6.375 14.5104 7.55208 13.5312 8.53125C12.5521 9.51042 11.375 10 10 10ZM0 20V16.5C0 15.7917 0.182292 15.1406 0.546875 14.5469C0.911458 13.9531 1.39583 13.5 2 13.1875C3.29167 12.5417 4.60417 12.0573 5.9375 11.7344C7.27083 11.4115 8.625 11.25 10 11.25C11.375 11.25 12.7292 11.4115 14.0625 11.7344C15.3958 12.0573 16.7083 12.5417 18 13.1875C18.6042 13.5 19.0885 13.9531 19.4531 14.5469C19.8177 15.1406 20 15.7917 20 16.5V20H0ZM2.5 17.5H17.5V16.5C17.5 16.2708 17.4427 16.0625 17.3281 15.875C17.2135 15.6875 17.0625 15.5417 16.875 15.4375C15.75 14.875 14.6146 14.4531 13.4688 14.1719C12.3229 13.8906 11.1667 13.75 10 13.75C8.83333 13.75 7.67708 13.8906 6.53125 14.1719C5.38542 14.4531 4.25 14.875 3.125 15.4375C2.9375 15.5417 2.78646 15.6875 2.67188 15.875C2.55729 16.0625 2.5 16.2708 2.5 16.5V17.5ZM10 7.5C10.6875 7.5 11.276 7.25521 11.7656 6.76562C12.2552 6.27604 12.5 5.6875 12.5 5C12.5 4.3125 12.2552 3.72396 11.7656 3.23438C11.276 2.74479 10.6875 2.5 10 2.5C9.3125 2.5 8.72396 2.74479 8.23438 3.23438C7.74479 3.72396 7.5 4.3125 7.5 5C7.5 5.6875 7.74479 6.27604 8.23438 6.76562C8.72396 7.25521 9.3125 7.5 10 7.5Z" fill="#1A1A1A" />
+                </svg> -->
+                <span class="icon_user"></span>
+                <div id="info-dropbox-content" class="drop-box-content">
+                    <div class="dropdown-button-box">
+                    <button onclick="location.href='/mypage/index';">나의 정보</button>
+                    <button onclick="location.href='/mypage/setting';">설정 &amp; FAQ</button>
+                    <button class="logout" onclick="location.href='/users/logout_student';">
+                        <img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/>
+                        <div>로그아웃</div>
+                    </button>
+                    </div>
+                </div>
+            </div>
+            <!-- //아이콘 변경 및 태그 추가 교재학습 참고 -->
+        </div>
+    </div>
+
+<script>
+const infoBox = document.getElementById('info-dropbox');
+const infoContent = document.getElementById('info-dropbox-content');
+  
+infoBox.addEventListener('click', function() {
+    infoContent.style.display = infoContent.style.display === 'block' ? 'none' : 'block';
+});
+</script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link href="https://img.howhyclass.com/hclass/css/slider.css" rel="stylesheet">
+
+<div class="daily-learning-top">
+	<div class="left">
+		<!-- <span class="calendar-yearmonth"></span>
+		<img src="https://img.howhyclass.com/hclass/images/img_calendar.png" alt=""/> 241122 위치 변경(left->right) -->
+        <!-- 241122 텍스트 추가 시작 -->
+        <dl>
+            <dt>일일학습</dt>
+            <dd>
+                <ul>
+                    <li>매일 매일 새로운 문제가 업데이트 됩니다.</li>
+                    <li>매일 꾸준히 학습하게 되면 실력이 많이 향상 됩니다.</li>
+                    <!-- 문구 변경될 수 있습니다. -->
+                </ul>
+            </dd>
+        </dl>
+        <!-- 241122 텍스트 추가 끝 -->
+	</div>
+	<div class="center">
+		<div class="calendar">
+			<div class="calendar-header">
+				<div class="calendar-views">
+				</div>
+			</div>
+			<img class="calendar-prev cursor" src="../../images/img_left_arrow_circle.png" alt=""/>
+			<div id="calendar"></div>
+			<img class="calendar-next cursor" src="../../images/img_right_arrow_circle.png" alt=""/>
+		</div>
+	</div>
+	<div class="right">
+        <!-- 241122 위치변경 시작(left->right) -->
+        <span class="calendar-yearmonth"></span>
+        <img src="https://img.howhyclass.com/hclass/images/img_calendar.png" alt=""/>
+        <!-- 241122 위치변경 끝(left->right) -->
+		<button onclick="all_progress()">표준 진도표</button>
+	</div>
+</div>
+
+<div class='content' id="load_study_box">
+    <div class="content-container dailylearning-container">
+        <div class="title"><span>2024년 11월 20일 47주 3일차</span> 학습</div><!--241122 span 태그 추가-->
+        <div class="top-container white-container ai_learning_container">
+            <div class="chapter-container">
+                <div class="chapter-title">
+                    <div class="highlight">초5</div>
+                    <div>04. 소수의 곱셈</div>
+                    <div>06. (소수)×(소수) 알아보기(2)</div>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-content">
+                        <div class="left">
+                            <img src="https://img.howhyclass.com/hclass/images/img_check_circle_gray.png" alt="">
+                            <!-- <div>[초5 (2015)] Ⅳ. 소수의 곱셈 &gt; 3. (소수)X(소수)</div> -->
+                            <div><i>초5 (2015)</i> Ⅳ. 소수의 곱셈 &gt; 3. (소수)X(소수)</div><!-- 학년구분 i태그로 분리(대괄호 삭제 가능하면 해주세요) 241122 -->
+                        </div>
+                        <div class="right">
+                            <!-- <button class="bright-green-btn padding-10-30" onclick="view_movie(872);">다시보기</button> -->
+                            <button class="green-line-btn" onclick="view_movie(872);">개념영상</button><!--문구(다시보기->개념영상), 클래스 변경 241122-->
+                        </div>
+                    </div>
+                </div>
+                <div class="chapter">
+                    <div class="chapter-content">
+                        <div class="left">
+                            <img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt="">
+                            <div>일일학습</div>
+                        </div>
+                        <div class="right">
+                            <div class="progress-box">
+                                <span>점수 : </span><!--추가 241122-->
+                                <div>- </div>
+                                <div>/</div>
+                                <div class="total"> 5 </div>
+                            </div>
+                            <!-- <button class="bright-green-btn padding-10-30" onclick="study_card( 753 );">학습하기</button> -->
+                            <button class="bright-green-btn" onclick="study_card( 753 );">학습하기</button><!--클래스 변경 241122-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-container ai_learning_container">
+            <div class="left white-container chapter-container" style="margin: 0;">
+                <div class="header">
+                    <div class="head-left">스마트 오답학습</div>
+                    <div class="head-right">
+                        <!-- img src='https://img.howhyclass.com/hclass/images/img_question_mark.png' /-->
+                    </div>
+                </div>
+                <div class="middle">
+                    <div class="top">
+                        <div class="left">
+                            <div>오답출제</div>
+                            <input type="hidden" name="print_type" value="q2" id="print_type" class="wrong1-select-input">
+                            <div id="smart-level-dropbox" class="drop-box ">
+                                <div class="flex">
+                                    <div class="wrong1-select-name">오답문항 + 유사2문항</div>
+                                    <div><img class="selectCategory" src="https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png" alt="" onclick="show_select('wrong1-select');"></div>
+                                </div>
+                                <div class="drop-box-content wrong1-select">
+                                    <div class="dropdown-button-box">
+                                        <button onclick="select_option( 'wrong1-select','오답문항만', 'q0' );">오답문항만</button>
+                                        <button onclick="select_option( 'wrong1-select','오답문항 + 유사1문항', 'q1');">오답문항 + 유사1문항</button>
+                                        <button onclick="select_option( 'wrong1-select','오답문항 + 유사2문항', 'q2');">오답문항 + 유사2문항</button>
+                                        <button onclick="select_option( 'wrong1-select','유사1문항', 'x1');">유사1문항</button>
+                                        <button onclick="select_option( 'wrong1-select','유사1문항', 'x2');">유사2문항</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>AI필수오답</div>
+                            <input type="hidden" name="smart_filter_yn" value="n" id="smart_filter_yn" class="wrong2-select-input">
+                            <div id="smart-question-dropbox" class="drop-box ">
+                                <div class="flex">
+                                    <div class="wrong2-select-name">미적용</div>
+                                    <div><img class="selectCategory" src="https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png" alt="" onclick="show_select('wrong2-select');"></div>
+                                </div>
+                                <div class="drop-box-content wrong2-select">
+                                    <div class="dropdown-button-box">
+                                        <button onclick="select_option( 'wrong2-select','적용','y' );">적용</button>
+                                        <button onclick="select_option( 'wrong2-select','미적용','n' );">미적용</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <button class="green-btn" onclick="create_wrong( 4953 );">생성하기</button>
+                        </div>
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+            </div>
+            <div class="right white-container chapter-container" style="margin: 0; flex: 1;">
+                <div class="header">
+                    <div class="head-left">개인 맞춤학습</div>
+                    <div class="head-right">
+                        <!-- img src='https://img.howhyclass.com/hclass/images/img_question_mark.png' /-->
+                    </div>
+                </div>
+                <div class="middle">
+                    <div class="top">
+                        <div class="left">
+                            <div>맞춤출제</div>
+                            <input type="hidden" name="rtype" value="bsc" id="rtype" class="rec1-select-input">
+                            <div id="individual-level-dropbox" class="drop-box ">
+                                <div class="flex">
+                                    <div class="rec1-select-name">기초튼튼</div>
+                                    <div><img class="selectCategory" src="https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png" alt="" onclick="show_select('rec1-select');"></div>
+                                </div>
+                                <div class="drop-box-content rec1-select">
+                                    <div class="dropdown-button-box">
+                                        <button onclick="select_option( 'rec1-select','기초튼튼','bsc' );">기초튼튼</button>
+                                        <button onclick="select_option( 'rec1-select','실력향상','dep' );">실력향상</button>
+                                        <button onclick="select_option( 'rec1-select','미학습개념','mct' );">미학습개념</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>문항수</div>
+                            <input type="hidden" name="question_count" value="10" id="question_count" class="rec2-select-input">
+                            <div id="individual-question-dropbox" class="drop-box ">
+                                <div class="flex">
+                                    <div class="rec2-select-name">10문항</div>
+                                    <div><img class="selectCategory" src="https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png" alt="" onclick="show_select('rec2-select');"></div>
+                                </div>
+                                <div class="drop-box-content rec2-select">
+                                    <div class="dropdown-button-box">
+                                        <button onclick="select_option( 'rec2-select','5문항','5' );">5문항</button>
+                                        <button onclick="select_option( 'rec2-select','10문항','10' );">10문항</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <button class="green-btn" onclick="create_rec( 4953 );">생성하기</button>
+                        </div>
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+        });
+
+        function show_select( css_name )
+        {
+            var obj = $("."+css_name);
+            
+            if( obj.is(':visible') )
+                obj.hide();
+            else
+                obj.show();
+        }
+
+        function select_option( css_name, name, value )
+        {
+            var obj = $("."+css_name);
+            obj.hide();
+
+            $("."+css_name+"-name").html( name );
+            $("."+css_name+"-input").val( value );
+        }
+
+        function create_wrong( study_card_id )
+        {
+            var print_type = $(".wrong1-select-input").val();
+            var smart_filter_yn = $(".wrong2-select-input").val();
+
+            fx_submit_link( "/daily_studies/make_wnote?study_card_id="+study_card_id+"&print_type="+print_type+"&smart_filter_yn="+smart_filter_yn );
+        }
+
+        function create_rec( study_card_id )
+        {
+            var rtype = $(".rec1-select-input").val();
+            var question_count = $(".rec2-select-input").val();
+
+            fx_submit_link( "/daily_studies/make_recommend?study_card_id="+study_card_id+"&rtype="+rtype+"&question_count="+question_count );
+        }
+            
+    </script>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script src="https://img.howhyclass.com/hclass/js/weekly_calendar.js"></script> 
+
+
+<script>
+
+window.addEventListener("message", function (event) {
+	if( event.data  == 'reload' )
+		location.reload();
+}, false);
+  
+
+$(document).ready(function() {
+	load_study( '2024-11-20' );
+});
+
+function all_progress()
+{
+    fx_layer_popup_v2( 'all_progress', '/daily_studies/all_progress', 'modal-lg modal-dialog-centered' );
+}
+
+function load_study( study_on )
+{
+	fx_load_widget( 'load_study_box', '/daily_studies/studying?study_on='+study_on );
+}
+
+function getToday(){
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = ("0" + (1 + date.getMonth())).slice(-2);
+    var day = ("0" + date.getDate()).slice(-2);
+
+    return year + "-" + month + "-" + day;
+}
+
+function view_movie( movie_id )
+{
+	fx_layer_popup_v2( 'view_movie',  "/daily_studies/view_movie?movie_id=" + movie_id, 'modal-lg modal-dialog-centered' );
+}
+
+function study_card( online_curriculum_id )
+{
+	fx_submit_link( "/daily_studies/study_card?online_curriculum_id=" + online_curriculum_id );
+}
+
+function study_card2( study_card_id )
+{
+	fx_submit_link( "/daily_studies/study_card2?study_card_id=" + study_card_id );
+}
+
+function load_studying( argvs )
+{
+    var w = window.screen.width;
+    var h = window.screen.height;
+    var left = 0;
+    var top = 0;
+
+    window.open(  "https://bonsa.howhyclass.com/su/ss?" + argvs, 'load_studying', 'toolbar=no, location=no, directories=no, status=no, menubar=no,scrollbars=no, resizable=no, copyhistory=no,  width=' + w + ', height=' + h + ', top=' + top +  ', left=' + left);
+}
+
+	
+</script>
+
+	
+<!-- 푸터수정 교재학습 참고 -->
+<div class='footer'>
+	<div class="top">
+		<div class="left">
+			<div class='footer-content'>
+				<span class="footer_logo"><img src="../../images/footer_logo.svg" alt="하와이클래쓰" /></span>
+				<div onclick="window.open('https://student.howhyclass.com/users/agreement??user_type=s', '_blank');">서비스 이용약관</div>
+				<div onclick="window.open('https://student.howhyclass.com/users/privacy_policy?user_type=s', '_blank');">개인정보처리방침</div>
+			</div>
+		</div>
+		<div class='right'>
+			<div class='footer-content'>
+				<div id="footer-dropbox" class="drop-box full-width">
+					<div class="flex full-width">
+						<div>Family site</div>
+						<div><img class='selectCategory' src='https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png' alt='' /></div>
+	
+					</div>
+					<div id="footer-dropbox-content" class="drop-box-content">
+						<button onclick="window.open('https://www.howhymath.com', '_blank');">하와이매쓰</button>
+						<button onclick="window.open('https://www.fren.co.kr', '_blank');">프렌매쓰</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='left'>
+		<div class='footer-content'>
+			<div><b>하와이컴퍼니(주)</b></div>
+			<div class='vertical-line'></div>
+			<div><b>HOWHY COMPANY</b></div>
+			<div class='vertical-line'></div>
+			<div><b>대표이사 : 박종화</b></div>
+		</div>
+
+		<div class='footer-content'>
+			<div><b>사업자등록번호</b> 760-87-02737</div>
+			<div class='vertical-line'></div>
+			<div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+			<div class='vertical-line'></div>
+			<div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+		</div>
+		<div class='footer-content'>
+			<div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+		</div>
+		<div class='footer-content'>
+			2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+		</div>
+	</div>
+</div>
+<!-- //푸터수정 교재학습 참고 -->
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropBox = document.getElementById('footer-dropbox');
+    const dropBoxContent = document.getElementById('footer-dropbox-content');
+  
+    // drop-box를 클릭했을 때의 이벤트 핸들러
+    dropBox.addEventListener('click', function() {
+        // .drop-box-content의 표시 상태를 토글합니다.
+        dropBoxContent.style.display = dropBoxContent.style.display === 'block' ? 'none' : 'block';
+    });
+  
+  });
+</script>
+
+
+<script>
+</script>
+
+<!-- 다시보기/개념영상(팝업) -->
+<div class="modal fade show" id="view_movie" tabindex="-1" style="display: block;" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content" id="view_movie-content">
+            <div class="modal-header">
+                <div class="left">[초5 (2015)] Ⅳ. 소수의 곱셈 &gt; 3. (소수)X(소수)</div>
+                <!-- <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" onclick="close_popup();"> -->
+                <img src="../../images/icon_close_black.png" onclick="close_popup();">
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 movie-box" style="height:400px;">
+                        <iframe width="100%" height="392" src="https://www.youtube.com/embed/c7aIK5UrosY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function close_popup(){
+                    $(".movie-box").html("");
+                    fx_layer_popup_v2_close_by_id('view_movie');
+                }
+            </script>
+        </div>
+    </div>
+</div>
+<!-- //다시보기/개념영상(팝업) -->
+<div class="modal-backdrop fade show"></div>
+
+</body>
+</html>

@@ -67,14 +67,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     justify-content: center;
 }
 
-.modal-body {
+/* .modal-body {
 	padding: 20px;
-}
+} */
 
 .modal-bottom-btn-box {
-	border-top: 1px solid #eaf0f9;
-	padding: 20px;
+	/* border-top: 1px solid #eaf0f9; */
+	padding: 0 20px 20px;
 	text-align: right;
+	text-align: center;
 }
 
 .save-btn {
@@ -86,8 +87,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     background: var(--color-howhy-400, #49D581);
 }
 
+/* 모달 닫기 버튼 수정 241122 */
 .cancle-btn {
-    border-radius: var(--unit-8, 8px);
+    /* border-radius: var(--unit-8, 8px);
     background: var(--color-bg-tertiary, #F1F1F1);
     border: none;
     color: var(--color-text-primary, #1A1A1A);
@@ -95,14 +97,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
-    line-height: 160%;
-}
-
-.modal-body {
-	display: flex;
-	flex-direction: column;
-	gap: 26px;
-	padding: 20px;
+    line-height: 160%; */
+    border-radius: var(--unit-16, 16px);
+    background: #0ad08d;
+    border: none;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
 }
 
 .form-select {
@@ -114,9 +117,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     border: 1px solid #b3b3b3;
 }
 
-.modal-header .left {
+/* .modal-header .left {
     font-weight: 900;
     font-size: 18px;
 }
+.modal-body {
+	display: flex;
+	flex-direction: column;
+	gap: 26px;
+	padding: 20px;
+} */
 
 
