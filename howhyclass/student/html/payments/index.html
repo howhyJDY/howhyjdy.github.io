@@ -308,5 +308,209 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 </script>
 
+<!-- 구독하기 팝업 시작 -->
+<div class="modal fade show" id="popup_pay" tabindex="-1" role="dialog" aria-modal="true" style="display: none;">
+	<div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content" id="popup_pay-content">
+		<form id="SendPayForm_id_0512965001732517161" name="form_no_fx" method="POST" style="display:none;">
+			<input type="hidden" name="version" value="1.0"> 
+			<input type="text" name="gopaymethod" value="Card:vbank">
+			<input type="text" name="mid" value="howhyclass">
+			<input type="text" name="oid" value="PG202411251546010000005">
+			<input type="text" name="price" value="8800">
+			<input type="text" name="timestamp" value="1732517162513"> 
+			<input type="hidden" name="use_chkfake" value="Y">
+			<input type="hidden" name="signature" value="8e393c5802987ae026a5fe9f28efd1a8be70f292058ec293599f7446d25ee6d4">
+			<input type="hidden" name="verification" value="81b5433a568317196fc27d30cfa5f995374726c5eda487ea066ab4e61921bc8b">
+			<input type="hidden" name="mKey" value="12578cc97c2f4ee755fd27f922b536119f829a0718e2678d07fc11c1e633a795">
+			<input type="hidden" name="currency" value="WON">
+		
+			<input type="text" name="goodname" value="1개월 이용권 구매">
+			<input type="text" name="buyername" value="정다영(학생)">
+			<input type="text" name="buyertel" value="01094962811">
+			<input type="text" name="buyeremail" value="dayeong310@daum.net">
+			<input type="hidden" name="returnUrl" value="https://student.howhyclass.com/payments/pay_return">
+			<input type="hidden" name="closeUrl" value="https://student.howhyclass.com/payments/pay_close">
+			<input type="text" name="acceptmethod" value="HPP(1):below1000:centerCd(Y)">
+		</form>
+		
+		<style>
+		.bottom {
+			display: flex;
+			padding: var(--spacing-12, 12px) var(--spacing-16, 16px);
+			flex-direction: column;
+			align-items: flex-start;
+			gap: var(--spacing-12, 12px);
+			border-radius: var(--border-radius-8, 8px);
+			border: 1px solid var(--color-border-tertiary, #E5E5E5);
+			background: var(--color-bg-secondary, #FAFAFA);
+		}
+		
+		.content-1 {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			color: var(--color-text-primary, #1A1A1A);
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 160%;
+		}
+		
+		.content-2 {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			color: var(--color-text-primary, #1A1A1A);
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 160%;
+		}
+		</style>
+		
+		<div class="modal-header modal-title">
+			<div class="left">
+				이용 요금 결제
+			</div>
+			<!-- <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" data-bs-dismiss="modal" aria-label="Close"> 241125 이미지 변경 -->
+			<img src="../../images/icon_close_black.svg" data-bs-dismiss="modal" aria-label="Close" />
+		</div>
+		
+		<div class="modal-body">
+			<div class="bottom">
+				<div class="content-1">
+					<div class="left">1개월 결제금액</div>
+					<div class="right">8,800원</div>
+				</div>
+				<div class="content-2">
+					<div class="left">이용기간</div>
+					<div class="right">2024-11-25 ~ 2024-12-24 </div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal-bottom-btn-box">
+			<button type="button" class="cancle-btn" data-bs-dismiss="modal">취소하기</button>
+			<button type="button" class="save-btn" onclick="pay_card_0512965001732517161()">결제하기</button>
+		</div>
+		
+		<script>
+		$( document ).ready(function() {
+		});
+		
+		function pay_card_0512965001732517161()
+		{
+			INIStdPay.pay('SendPayForm_id_0512965001732517161');
+		
+			fx_layer_popup_v2_close_by_id('popup_pay');
+		}
+		
+		</script>
+		
+		</div>
+	</div>
+</div>
+<!-- 구독하기 팝업 끝 -->
+
+<!-- 자동결제 등록 팝업 시작 -->
+<div class="modal fade show" id="popup_billing" tabindex="-1" role="dialog" aria-modal="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content" id="popup_billing-content">
+        <form name="" id="SendPayForm_id_0609815001732517293" method="post" style="display:none;">
+            <input type="hidden" name="version" value="1.0">
+            <input type="text" name="gopaymethod" value="Card">
+            <input type="text" name="mid" value="howhyclasB">
+            <input type="text" name="oid" value="BL202411251548130000008">
+            <input type="text" name="price" value="8800">
+            <input type="text" name="timestamp" value="1732517294610"> 
+            <input type="hidden" name="use_chkfake" value="Y">
+            <input type="hidden" name="signature" value="6e775e10aa55047c5675be30139b9233dbd12c484465b8d634c8d0ad871f4978">
+            <input type="hidden" name="verification" value="a120d7b4480080e3c67be4b2bcf5fe98f4365f7fb2b3ceea5b5a906150210cea">
+            <input type="hidden" name="mKey" value="29e486d602b16c8529b6c71098daa79b0280fa3098b8361b2ffe5a12d19c1798">
+            <input type="hidden" name="currency" value="WON">				    		
+        
+            <input type="text" name="goodname" value="정기구매">
+            <input type="text" name="buyername" value="정다영(학생)">
+            <input type="text" name="buyertel" value="01094962811">
+            <input type="text" name="buyeremail" value="dayeong310@daum.net">
+            <input type="hidden" name="returnUrl" value="https://student.howhyclass.com/payments/billing_return">
+            <input type="hidden" name="closeUrl" value="https://student.howhyclass.com/payments/billing_close">
+            <input type="text" name="acceptmethod" value="HPP(1):below1000:va_receipt:BILLAUTH(Card):centerCd(Y)"> 
+        </form>
+        
+        <style>
+        .bottom {
+            display: flex;
+            padding: var(--spacing-12, 12px) var(--spacing-16, 16px);
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--spacing-12, 12px);
+            border-radius: var(--border-radius-8, 8px);
+            border: 1px solid var(--color-border-tertiary, #E5E5E5);
+            background: var(--color-bg-secondary, #FAFAFA);
+        }
+        
+        .content-1 {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            color: var(--color-text-primary, #1A1A1A);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%;
+        }
+        
+        .content-2 {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            color: var(--color-text-primary, #1A1A1A);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%;
+        }
+        </style>
+        
+        
+        <div class="modal-header">
+            <div class="left">
+                이용 요금 결제
+            </div>
+            <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" data-bs-dismiss="modal" aria-label="Close">
+        </div>
+        
+        
+        <div class="modal-body">
+            <div class="bottom">
+                <div class="content-2">
+                    <div class="left">정기 결제 금액</div>
+                    <div class="right">8,800원<span>/월</span></div><!--241125 span 추가-->
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="modal-bottom-btn-box">
+            <button type="button" class="cancle-btn" data-bs-dismiss="modal">취소하기</button>
+            <button type="button" onclick="billing_card();" class="save-btn">자동결제등록</button>
+        </div>
+        
+        <script>
+            $( document ).ready(function() {
+            });
+            
+            function billing_card()
+            {
+                INIStdPay.pay('SendPayForm_id_0609815001732517293');
+                fx_layer_popup_v2_close_by_id('popup_billing');
+            }
+        </script>
+        
+        </div>
+    </div>
+</div>
+<!-- //자동결제 등록 팝업 끝 -->
+
 </body>
 </html>
