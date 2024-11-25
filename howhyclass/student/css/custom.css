@@ -3197,7 +3197,6 @@ line-height: 160%; /* 25.6px */
         padding: 0;
         font-family: 'SUIT';
         color: #5b5b5b;
-        word-break: keep-all;
       }
 
       .bottom {
