@@ -16,7 +16,8 @@
 /* 선택한 월 이외의 날짜 데이터 안보이게 */
 .fc .fc-day-disabled{
     /* display: none; */
-    visibility: hidden;
+    /* visibility: hidden; */
+    background: transparent;
 }
 
 .fc .fc-day-disabled{
@@ -26,10 +27,20 @@
 /* 241125 수정 시작 */
 .fc-theme-standard td, .fc-theme-standard th {
     border:none;
-    border-right: 1px dotted #d2d2d2;
     border-bottom: 1px solid #d2d2d2;
+    position: relative;
+    &::after{
+        content: '';
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: url("../images/line_dotted.png") repeat-y;
+        position: absolute;
+        top: 0;right: 0;
+        /* border 도트 */
+    }
 }
-.fc-theme-standard td:last-child, .fc-theme-standard th:last-child {border-right-width: 0;}
+.fc-theme-standard td:last-child::after, .fc-theme-standard th:last-child::after{content: none;}
 /* 241125 수정 끝 */
 
 .fc-theme-standard tr{
@@ -122,11 +133,13 @@
 .fc .fc-day-today a.fc-daygrid-day-number .fc-daygrid-day-number{color: #fff;}
 
 .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
     /* margin-top: 10px; */
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 15px;
-    padding-right: 30px;
+    padding: 0 4px;
     gap: 5px;
 }
 
@@ -193,6 +206,15 @@
 }
 .fc-event-selected::after,
 .fc-event:focus::after{background: var(--fc-event-selected-overlay-color);}
+.fc-daygrid-day-number{
+    font-size: 15px;
+    color: #555;
+}
+.fc-scrollgrid-sync-inner > a{
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
+}
 
 @media screen and (max-width: 1200px) {
     .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{padding-right: 0;}

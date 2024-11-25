@@ -4433,33 +4433,74 @@ line-height: 160%; /* 25.6px */
   width: 100%;
 }
 
+/* 241125 수정 시작 */
 .subscribe-container {
-  background-color: #fff;
+  /* background-color: #fff; */
+  background: #f7f7f7;
+  padding: 50px 20px;
 
   .subscribe-content {
     margin: 0 auto;
-    width: fit-content;
+    /* width: fit-content; */
+    background: #fff;
+    border-radius: 27px;
+    max-width: 1440px;
+    padding: 80px 0;
+    
 
     .top {
-      margin-top: 100px;
+      /* margin-top: 100px; */
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 15px;
+      width: fit-content;
+      margin: 0 auto;
 
       .title {
-        color: var(--color-text-primary, #1A1A1A);
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 136%;
-        /* 43.52px */
+        color: #3b3b3b;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1;
+        b{font-weight: 700;}
       }
 
       img {
-        width: 218px;
-        height: 56px;
+        width: 332px;
+        height: auto;
         margin: 0 auto;
       }
+      
+      table{
+        margin-bottom: 0;
+        margin-top: 35px;
+        border-radius: 15px;
+        border-style: hidden;
+        box-shadow: 0 0 0 2px #7e7e7e;
+        overflow: hidden;
+
+        thead, tbody{border-width: 0;}
+        thead{background: #eeeeee;}
+        &>:not(caption)>*>*{
+          padding: 15px 20px;
+          font-size: 14px;
+          line-height: 1;
+          font-family: 'SUIT';
+          color: #3b3b3b;
+          font-weight: 400;
+        }
+        &>:not(:last-child)>:last-child>*{
+          border-width: 0;
+          box-shadow: none;
+          background: transparent;
+          font-size: 14px;
+          line-height: 1;
+          font-family: 'SUIT';
+          color: #3b3b3b;
+          font-weight: 600;
+        }
+      }
+      .table-bordered>:not(caption)>*{border-width: 0;}
+      .table-bordered>:not(caption)>*>*{border-width: 0;}
     }
 
     .middle {
@@ -4467,6 +4508,8 @@ line-height: 160%; /* 25.6px */
       flex-direction: column;
       gap: 30px;
       padding: 80px;
+      width: fit-content;
+      margin: 0 auto;
 
       .middle-top {
         display: flex;
@@ -4712,6 +4755,8 @@ line-height: 160%; /* 25.6px */
       border-radius: var(--border-radius-16, 16px);
       background: var(--color-bg-secondary, #FAFAFA);
       padding: var(--spacing-30, 30px) var(--spacing-40, 40px);
+      width: fit-content;
+      margin: 0 auto;
 
       .title {
         color: var(--color-text-primary, #1A1A1A);
@@ -4741,6 +4786,7 @@ line-height: 160%; /* 25.6px */
     }
   }
 }
+/* 241125 수정 끝 */
 
 /* SUBSCRIBE END */
 
