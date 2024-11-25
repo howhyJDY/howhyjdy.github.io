@@ -4503,7 +4503,7 @@ line-height: 160%; /* 25.6px */
           line-height: 1;
           font-family: 'SUIT';
           color: #3b3b3b;
-          font-weight: 600;
+          font-weight: 700;
         }
       }
       .table-bordered>:not(caption)>*{border-width: 0;}
