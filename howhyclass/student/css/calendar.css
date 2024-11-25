@@ -127,6 +127,8 @@
 }
 
 .fc .fc-day-today a.fc-daygrid-day-number{
+    width: 30px;
+    height: 30px;
     background-color: #0ad08d;
     border-radius: 50%;
 }
