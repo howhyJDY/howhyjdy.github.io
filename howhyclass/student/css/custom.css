@@ -556,6 +556,43 @@ line-height: 160%; /* 22.4px */
   }
 }
 
+/* 공통 인포메이션 */
+.info-txt{
+  margin: 0;
+  dt{
+    font-size: 26px;
+    line-height: 1;
+    font-family: 'SUIT';
+    color: #1c1c1c;
+  }
+  dd{
+    margin: 20px 0 0;
+    ul{
+      padding: 0;
+      margin: 0;
+      li{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        list-style: none;
+        font-size: 14px;
+        line-height: 18px;
+        color: #6d6d6d;
+        font-weight: 500;
+        position: relative;
+        &::before{
+          content: '';
+          display: block;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: #000;
+        }
+      }
+    }
+  }
+}
+
 /* 전체 적용 END */
 
 /* HEADER START */
@@ -2819,11 +2856,43 @@ line-height: 160%; /* 25.6px */
 .homework-container {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 15px;
   height: 90%;
+
+  &>.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px 60px;
+    .left{padding: 0;}
+    .right{
+      padding: 0;
+      .img{
+        display: block;
+        width: 154px;
+        height: 118px;
+        background: url(../images/icon_homwork.svg) no-repeat center;
+        margin-left: auto;
+      }
+    }
+  }
 
   .left {
     flex: 4;
+    position: relative;
+    padding: 30px 15px 70px 35px;
+    &::before{
+      content: '';
+      display: block;
+      width: 30px;
+      height: 100%;
+      background: #fff;
+      position: absolute;
+      top: 0;
+      right: -15px;
+    }
 
     .top {
 
@@ -2865,9 +2934,6 @@ line-height: 160%; /* 25.6px */
       abbr[title] {
         text-decoration: none;
       }
-
-
-
 
       .react-calendar__month-view {
         border-radius: var(--border-radius-12, 12px);
@@ -2925,8 +2991,6 @@ line-height: 160%; /* 25.6px */
       .react-calendar__navigation button:enabled:focus {
         background-color: #fff;
       }
-
-
 
       .react-calendar__tile--active:enabled:hover,
       .react-calendar__tile--active:enabled:focus {
@@ -3018,25 +3082,42 @@ line-height: 160%; /* 25.6px */
         display: flex;
         margin-left: 1px;
       }
-
-
-
     }
-
   }
 
   .right {
-    flex: 2;
+    /* flex: 2; */
+    flex: 1.5;
+    padding: 30px 35px 70px 15px;
+    min-width: 340px;
 
     .top {
-      overflow: hidden;
-      color: var(--color-text-secondary, #4D4D4D);
-      text-overflow: ellipsis;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      height: 100%;
+      color: #1c1c1c;
+      .date{
+        font-size: 18px;
+        line-height: 41px;
+        font-weight: 600;
+        color: #1c1c1c;
+        margin-bottom: 30px;
+        text-align: center;
+        /* padding-left: 45px; */
+        span{
+          color: #08bd80;
+          padding-left: 20px;
+          position: relative;
+          &::before{
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: #08bd80;
+            border-radius: 50%;
+            position: absolute;
+            top: calc(50% - 5px); left: 0;
+          }
+        }
+      }
+      .scroll-content{margin-top: 0 !important;}
     }
 
     .head {
@@ -3061,53 +3142,62 @@ line-height: 160%; /* 25.6px */
       }
     }
 
+    /* 241125 수정 시작 */
     .content-box {
-      border-radius: var(--border-radius-12, 12px);
-      border: 1px solid var(--color-border-tertiary, #E5E5E5);
-      padding: 20px 26px;
+      border-radius: var(--border-radius-15, 15px);
+      border: 1px solid #e2e2e2;
+      padding: 20px 30px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: 20px;
+      margin-bottom: 12px;
 
       .top {
         display: flex;
-        gap: 10px;
+        gap: 6px;
 
         .status-box {
-          padding: 4px 6px;
+          padding: 2px 5px;
           border-radius: var(--border-radius-4, 4px);
           font-size: 12px;
-          font-style: normal;
-          font-weight: 500;
+          font-weight: 600;
+          font-family: 'SUIT';
+        }
+
+        .complete {
+          color: #0ec184;
+          border: 1px solid #0ec184;
+          background: transparent;
         }
 
         .incomplete {
-          border: 1px solid var(--color-border-incomplete, #EF4444);
-          background: var(--color-bg-incomplete, #FEF2F2);
-          color: #B91C1C;
+          border: 1px solid #ff8989;
+          background: transparent;
+          color: #ff8989;
         }
 
         .teacher-info {
           display: flex;
           align-items: center;
-          padding: 4px 6px;
-          color: var(--color-text-primary, #1A1A1A);
+          padding: 2px 5px;
+          color: #636363;
           font-size: 12px;
-          font-style: normal;
           font-weight: 500;
           line-height: 140%;
-          /* 16.8px */
+          font-family: 'SUIT';
           border-radius: var(--border-radius-4, 4px);
           background: var(--color-bg-tertiary, #F1F1F1);
         }
       }
 
       .middle {
-        font-size: 16px;
-        font-style: normal;
+        font-size: 14px;
+        line-height: 18px;
         font-weight: 500;
         padding: 0;
+        font-family: 'SUIT';
+        color: #5b5b5b;
+        word-break: keep-all;
       }
 
       .bottom {
@@ -3115,23 +3205,27 @@ line-height: 160%; /* 25.6px */
         gap: 10px;
 
         button {
-          border-radius: var(--unit-8, 8px);
-          border: 1px solid var(--color-border-tertiary, #E5E5E5);
-          background: var(--color-bg-primary, #FFF);
-          color: var(--color-text-primary, #1A1A1A);
+          border-radius: var(--unit-16, 16px);
+          border-width: 0;
+          background: #0ad08d;
+          color: #fff;
           font-size: 14px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 160%;
+          font-weight: 600;
+          line-height: 1;
           padding: 10px 20px;
-          flex: 1 0 0;
+          max-width: 105px;
         }
 
-        .progress {
+        .progresss {
           flex: 1 0 0;
           display: flex;
           align-items: center;
           justify-content: center;
+          font-family: 'SUIT';
+          font-size: 20px;
+          line-height: 1;
+          font-weight: 700;
+          padding: 0 !important;
         }
 
         .movie {}
@@ -3139,13 +3233,14 @@ line-height: 160%; /* 25.6px */
         .test {}
       }
     }
+    /* 241125 수정 끝 */
 
     .complete-box {
       background: var(--color-bg-secondary, #FAFAFA);
 
       .complete {
-        color: var(--color-text-brand, #06b57a);
-        border: 1px solid var(--color-border-brand, #06b57a);
+        color: #0ec184;
+        border: 1px solid #0ec184;
         background: var(--color-bg-brand-lightest-2, #EFF8F3);
       }
     }
@@ -3164,9 +3259,23 @@ line-height: 160%; /* 25.6px */
 
   }
 
-
+  /* 캘린더 화살표 스타일 하던중 241125 */
+  .fc-icon-chevron-right {transform: rotate(180deg);}
+  .fc-icon-chevron-left::before,
+  .fc-icon-chevron-right::before{
+    content: none;
+  }
+  .fc-icon{
+    display: block;
+    width: 20px;
+    height: 32px;
+    background: url(../images/icon_arr_green_left2.svg) no-repeat center / cover;
+  }
+  .fc .fc-button .fc-icon{
+    font-size: 1.5em;
+    vertical-align: middle;
+  }
 }
-
 
 
 /* HOMEWORK END */
@@ -3936,6 +4045,7 @@ line-height: 160%; /* 25.6px */
       height: 24px;
     }
 
+    /* .info-txt 와 동일하게 */
     dl{
       margin: 0;
       dt{
@@ -8612,11 +8722,8 @@ line-height: 140%; /* 16.8px */
 
 /* 반응형 추가 241120 241121 */
 @media screen and (max-width: 1500px) {
-  body > .header{
-    padding: 0 20px;
-    .logo{margin-left: 0;}
-    .menu{margin-right: 0;}
-  }
+  body > .header{max-width: calc(100% - 40px);}
+  .daily-learning-top{max-width: calc(100% - 40px);}
 }
 @media screen and (max-width: 1440px) {
   .daily-learning-top{width: calc(100% - 40px);}
@@ -8634,6 +8741,19 @@ line-height: 140%; /* 16.8px */
     padding: 0;
   }
   /* //레이아웃 깨짐으로 인해 임시로 추가함 */
+  .homework-container{
+    gap: 15px 10px;
+    .left{
+      .left{
+        padding-right: 5px;
+        &::before{
+          width: 20px;
+          right: -15px;
+        }
+      }
+    }
+    .right{padding-left: 5px;}
+  }
 }
 
 @media screen and (max-width: 1024px) {

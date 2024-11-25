@@ -1,0 +1,200 @@
+.fc-direction-ltr {
+    height: 100%;
+}
+
+.fc .fc-toolbar {
+    justify-content: center;
+    /* gap: 20px; */
+    gap: 30px;
+}
+
+.fc .fc-button{
+    font-size: 1.5em;
+    padding: 0.2em;
+}
+
+/* 선택한 월 이외의 날짜 데이터 안보이게 */
+.fc .fc-day-disabled{
+    /* display: none; */
+    visibility: hidden;
+}
+
+.fc .fc-day-disabled{
+    /* display: none; */
+}
+
+/* 241125 수정 시작 */
+.fc-theme-standard td, .fc-theme-standard th {
+    border:none;
+    border-right: 1px dotted #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+}
+.fc-theme-standard td:last-child, .fc-theme-standard th:last-child {border-right-width: 0;}
+/* 241125 수정 끝 */
+
+.fc-theme-standard tr{
+    border: none;
+    border-top: 1px solid var(--fc-border-color);
+}
+.fc-theme-standard tr:last-child td{border-bottom-width: 0;}/* 241125 추가 */
+.fc-theme-standard .fc-scrollgrid {
+    border:none
+}
+
+/*241125 수정 시작*/
+.fc .fc-view-harness-active > .fc-view {
+    border-radius: var(--border-radius-19, 19px);
+    border: 2px solid #7e7e7e;
+}
+
+.fc .fc-button-primary{
+    /* border-radius: var(--border-radius-circle, 9999px);
+    background: rgba(255, 255, 255, 0.50);
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(3.5px);
+    color: #4D4D4D; */
+    background: transparent;
+    border: none;
+}
+.fc .fc-button-primary:hover{
+    /* border-radius: var(--border-radius-circle, 9999px);
+    background: rgba(255, 255, 255, 0.50);
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(3.5px);
+    color: #4D4D4D; */
+    background: transparent;
+    border: none;
+}
+.fc .fc-button-primary:active{
+    /* border-radius: var(--border-radius-circle, 9999px);
+    background: rgba(255, 255, 255, 0.50) !important;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.16) !important;
+    backdrop-filter: blur(3.5px);
+    color: #4D4D4D !important; */
+    background: transparent !important;
+    box-shadow:none;
+    border: none;
+}
+.fc .fc-button-primary:focus{
+    /* border-radius: var(--border-radius-circle, 9999px);
+    background: rgba(255, 255, 255, 0.50);
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(3.5px);
+    color: #4D4D4D; */
+    background: transparent !important;
+    box-shadow:none !important;
+    border: none;
+}
+
+.fc-col-header-cell{
+    padding: 16px !important;
+    background: #eee;
+}
+/*241125 수정 끝*/
+
+.fc-day-today {
+    color: #fff; /* 원하는 글씨 색상으로 변경 */
+    background-color: #fff !important;
+}
+
+.fc .fc-daygrid-day-frame{
+    /* padding:10px;
+    min-height: 150px; */
+    padding:3px;
+    min-height: 115px;
+}
+
+/* .fc .fc-daygrid-day-frame:active{
+    border-radius: var(--border-radius-8, 8px);
+    border: 1.5px solid var(--color-border-primary, #B3B3B3);
+} 241125 미사용 */
+
+
+.fc .fc-daygrid-day-top {
+    display: flex;
+    flex-direction: unset;
+}
+
+.fc .fc-day-today a.fc-daygrid-day-number{
+    background-color: #0ad08d;
+    border-radius: 50%;
+}
+.fc .fc-day-today a.fc-daygrid-day-number .fc-daygrid-day-number{color: #fff;}
+
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* margin-top: 10px; */
+    margin-top: 15px;
+    padding-right: 30px;
+    gap: 5px;
+}
+
+.fc-h-event {
+    
+    border: none;
+    border-radius: var(--border-radius-2, 2px);
+    .complete{
+    background-color: #FEF2F2;
+    color: #B91C1C;
+    text-align: center;
+    padding : 5px
+    }
+    .incomplete{
+        text-align: center;
+        /* background: var(--color-bg-brand-lightest-2, #EFF8F3); 241125 수정 */
+        background: transparent;
+        img{
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+        }
+    }
+    
+}
+
+.fc-daygrid-day-events::before{
+    content: unset;
+}
+
+/*241125 추가 시작*/
+.fc table{
+    font-family: 'SUIT';
+    font-size: 14px;
+    font-weight: 600;
+}
+.fc .fc-button:disabled{
+    opacity: .5;
+    cursor: default;
+}
+.fc .fc-toolbar-title{
+    font-family: 'SUIT';
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+.fc .fc-toolbar.fc-header-toolbar{
+    margin-bottom: 30px;
+}
+.fc .fc-scroller{border-radius: var(--border-radius-19, 19px) var(--border-radius-19, 19px) 0 0;}
+.fc thead .fc-scroller-harness{border-radius: 0 var(--border-radius-19, 19px) 0 0;}
+.fc tbody .fc-scroller-harness{border-radius: 0 0 var(--border-radius-19, 19px) 0;}
+.fc .fc-highlight{background: #f5fae4;}
+
+.fc-direction-ltr .fc-daygrid-event.fc-event-end,
+.fc-direction-rtl .fc-daygrid-event.fc-event-start{
+    margin: 0;
+    background: transparent;
+}
+.fc-direction-ltr .fc-daygrid-event.fc-event-start,
+.fc-direction-rtl .fc-daygrid-event.fc-event-end{
+    margin: 0;
+    background: transparent;
+}
+.fc-event-selected::after,
+.fc-event:focus::after{background: var(--fc-event-selected-overlay-color);}
+
+@media screen and (max-width: 1200px) {
+    .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{padding-right: 0;}
+}
+/*241125 추가 끝*/
