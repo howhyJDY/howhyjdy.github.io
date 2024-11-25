@@ -2296,3 +2296,136 @@
 }
 
 /* 표준진도표 팝업 스타일 분리 끝 241122 */
+
+/* 이용요금 결제 > 구독하기 팝업 시작 */
+#popup_pay{
+  .modal-body{padding: 40px 65px 45px;}
+  .bottom{
+    padding: 0;
+    border-width: 0;
+    gap: var(--spacing-24, 24px);
+  }
+  .content-1{
+    font-family: 'SUIT';
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 700;
+    align-items: center;
+    .right{
+      font-size: 30px;
+      color: #0ad08d;
+      font-weight: 800;
+    }
+  }
+  .content-2{
+    font-family: 'SUIT';
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 700;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    &::before{
+      content: '';
+      display: block;
+      width: calc(100%);
+      height: 100%;
+      background: #f5f9e9;
+      border-radius: 4px;
+      position: absolute;
+      top: -7px;left: -17px;
+      z-index: -1;
+      padding: 7px 17px;
+      box-sizing: content-box;
+    }
+    .left{font-weight: 800;}
+    .right{
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+
+  .modal-bottom-btn-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 17px 0;
+    width: calc(100% - 54px);
+    margin: 0 auto;
+    border-top: 1px solid #d3d3d3;
+    .cancle-btn {
+      background: #dddddd;
+      color: #303030;
+      font-weight: 500;
+    }
+    .save-btn {
+      border-radius: var(--unit-16, 16px);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1;
+  }
+  }
+
+  @media (min-width: 576px) {
+    .modal-dialog{max-width: 400px;}
+  }
+}
+/* 이용요금 결제 > 구독하기 팝업 끝 */
+
+/* 이용요금 결제 > 정기결제 팝업 끝 */
+#popup_billing{
+  .modal-body{padding: 40px 65px 45px;}
+  .bottom{
+    padding: 0;
+    border-width: 0;
+    gap: var(--spacing-24, 24px);
+  }
+  .content-2{
+    font-family: 'SUIT';
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 600;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    .left{font-weight: 800;}
+    .right{
+      font-size: 30px;
+      font-weight: 800;
+      color: #0ad08d;
+      span{
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .modal-bottom-btn-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 17px 0;
+    width: calc(100% - 54px);
+    margin: 0 auto;
+    border-top: 1px solid #d3d3d3;
+    .cancle-btn {
+      background: #dddddd;
+      color: #303030;
+      font-weight: 500;
+    }
+    .save-btn {
+      border-radius: var(--unit-16, 16px);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1;
+  }
+  }
+
+  @media (min-width: 576px) {
+    .modal-dialog {max-width: 400px;}
+  }
+}

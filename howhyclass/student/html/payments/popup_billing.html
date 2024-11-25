@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2F4VX2QKK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2F4VX2QKK8');
+</script>
+
+	<meta charset="utf-8" />
+	<title>하와이클래쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="shortcut icon" href="https://img.howhyclass.com/hmath/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<!-- <link href="https://img.howhyclass.com/hclass/css/custom.css?20141121" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/modal.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/add.css" rel="stylesheet"> -->
+    <link href="../../css/custom.css?20141121" rel="stylesheet">
+	<link href="../../css/modal.css" rel="stylesheet">
+	<link href="../../css/add.css" rel="stylesheet">
+
+	
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            tex2jax: { displayMath: [ ["$$","$$"] ] },
+            "HTML-CSS": { fonts: ["Latin-Modern"] }
+        });
+    </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1732503737"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1732503737"></script>
+</head>
+
+<body class="modal-open" style="overflow: hidden; padding-right: 8px;" data-bs-padding-right="">
+	<div class='header'>
+	<div>
+			<a href="/home/main"><img class='logo' src='https://img.howhyclass.com/hclass/images/logo.svg' alt=''/></a>
+	
+	</div>
+	<ul class='link'>
+
+			<li>
+				<ul><a href='/books/index'><span >교재학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/ai_studies/index'><span >AI 학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/daily_studies/index'><span >일일학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/homeworks/index'><span >숙제</span></a></ul>
+			</li>	</ul>
+	<div class='menu'>
+		<!-- 241120 아이콘 변경 및 태그 추가 시작 -->
+		<button class='subscribe' onclick="location.href='/teachers/index';"><span class="icon_add_tutor"></span>선생님등록</button>
+		<button class='subscribe' onclick="location.href='/payments/index';"><span class="icon_subscribe"></span>구독하기</button>
+		<button class='alarm-icon' onclick="location.href='/notices/index';" title="알림">
+			<span class="icon_alarm"></span>
+		</button>
+		<div id="info-dropbox" class='info-icon drop-box'>
+			<span class="icon_user"></span>
+			<div id="info-dropbox-content" class="drop-box-content">
+				<div class="dropdown-button-box">
+				<button onclick="location.href='/mypage/index';">나의 정보</button>
+				<button onclick="location.href='/mypage/setting';">설정 &amp; FAQ</button>
+				<button class="logout" onclick="location.href='/users/logout_student';">
+					<img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/>
+					<div>로그아웃</div>
+				</button>
+				</div>
+			</div>
+		</div>
+		<!-- 241120 아이콘 변경 및 태그 추가 끝 -->
+	</div>
+
+</div>
+
+<script>
+const infoBox = document.getElementById('info-dropbox');
+const infoContent = document.getElementById('info-dropbox-content');
+  
+infoBox.addEventListener('click', function() {
+    infoContent.style.display = infoContent.style.display === 'block' ? 'none' : 'block';
+});
+</script>
+
+	<script language="javascript" type="text/javascript" src="https://stdpay.inicis.com/stdjs/INIStdPay.js" charset="UTF-8"></script>
+
+<style>
+#inicisModalDiv {
+opacity : 1 !important;
+}
+th { text-align:center; }
+td { text-align:center; }
+</style>
+
+<div class='content subscribe-container bg-gradient'>
+	<div class="subscribe-content">
+		<div class="top">
+			<!-- <img src="https://img.howhyclass.com/hclass/images/img_logo_big.png" /> 241125 이미지 변경 -->
+			<img src="../../images/img_logo_big.svg" />
+			<div class="title">
+				<b>하와이클래쓰</b>로 최초의 <b>AI 후행학습</b>을 시작하세요<!--241125 태그 추가-->
+			</div>
+			<table class="table table-striped table-bordered table-hover">
+				<colgroup>
+					<col>
+					<col>
+					<col>
+					<col>
+					<col>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th class="fx-tablesorter-header" id="pay_method-sort">ID</th>
+						<th class="fx-tablesorter-header" id="pay_method-sort">결제수단</th>
+						<th class="fx-tablesorter-header" id="pay_method-sort">결제가격</th>
+						<th>사용일</th>
+						<th class="fx-tablesorter-header" id="start_on-sort">시작일</th>
+						<th class="fx-tablesorter-header" id="end_on-sort">종료일</th>
+						<th> 이용권 상태 </th>
+					</tr>
+				</thead>
+				<tbody>
+										<tr>
+						<td>
+							가입 무료 체험 프로모션						</td>
+						<td>
+													</td>
+						<td>0</td>
+											<td>5</td>
+						<td>2024-11-18</td>
+						<td>2024-11-22</td>
+											<td>
+																								사용완료 	
+																					</td>
+					</tr>
+									</tbody>
+			</table>
+		</div>
+		<div class="middle">
+			<div class="middle-top">
+				<div id="left-option" class="left selected cursor">
+					<div class="left-top">
+						<div class="left-top-1">
+							<div>하와이클래쓰</div>
+							<div class="highlight">5일 무료 체험하기</div>
+						</div>
+						<div class="left-top-2">
+							<img src="https://img.howhyclass.com/hclass/images/img_green_check.png" />
+							<div>체험 기간 동안 하와이클래쓰 전체 <br>서비스를 자유롭게 이용 가능!</div>
+						</div>
+						<div class="left-top-2">
+							<img src="https://img.howhyclass.com/hclass/images/img_green_check.png" />
+							<div>무료 체험 기간이 만료되어도 자동<br>으로 결제되지 않습니다.</div>
+						</div>
+					</div>
+					<div class="left-bottom">
+						<div>5일 무료 체험 후</div>
+						<div class="highlight">8,800원/월</div>
+					</div>
+				</div>
+			</div>
+			<div class="middle-bottom">
+				<p style="text-align:center;">  </p>
+				<div class='btn-container '>
+					<button class='green-btn' style="flex: 1;" onclick="popup_pay();">구독하기</button>
+					<button class='green-btn' style="flex: 1;" onclick="popup_billing();"> 
+													자동결제 등록
+											</button>
+									</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="title">구독 시 유의 사항</div>
+			<div class="content-box">
+				<div class="contents">
+					<img src="https://img.howhyclass.com/hclass/images/img_circle_black.png" alt="" />
+					<div>체험 기간 만료 이전에 결제 시 잔여 체험 기간도 차감 없이 이용할 수 있습니다.</div>
+				</div>
+				<div class="contents">
+					<img src="https://img.howhyclass.com/hclass/images/img_circle_black.png" alt="" />
+					<div>결제정보 입력 없이 5일 동안 자유롭게 이용하실 수 있습니다.</div>
+				</div>
+				<div class="contents">
+					<img src="https://img.howhyclass.com/hclass/images/img_circle_black.png" alt="" />
+					<div>이용 기간 내에 해지 요청이 가능합니다.</div>
+				</div>
+				<div class="contents">
+					<img src="https://img.howhyclass.com/hclass/images/img_circle_black.png" alt="" />
+					<div>그 외 규정이 없는 것은 공정거래위원회의 규정을 따릅니다.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+$( document ).ready(function() {
+});
+
+function popup_pay()
+{
+	var month = 1;
+	var price = 8800;
+
+	fx_layer_popup_v2( 'popup_pay', '/payments/pay_popup?t=1732503737&pc='+price+'&pm='+month, '' );
+}
+
+function popup_billing()
+{
+	fx_layer_popup_v2( 'popup_billing', '/payments/billing_popup', '' );
+}
+
+function remove_billing( billing_id )
+{
+	fx_remove_link( '/payments/remove_billing?billing_id=' + billing_id );
+}
+
+</script>
+
+	
+<div class='footer'>
+	<div class="top">
+		<div class="left">
+			<div class='footer-content'>
+				<span class="footer_logo"><img src="https://img.howhyclass.com/hclass/images/footer_logo.svg" alt="하와이클래쓰" /></span>
+				<div onclick="window.open('https://student.howhyclass.com/users/agreement??user_type=s', '_blank');">서비스 이용약관</div>
+				<div onclick="window.open('https://student.howhyclass.com/users/privacy_policy?user_type=s', '_blank');">개인정보처리방침</div>
+			</div>
+		</div>
+		<div class='right'>
+			<div class='footer-content'>
+				<div id="footer-dropbox" class="drop-box full-width">
+					<div class="flex full-width">
+						<div>Family site</div>
+						<div><img class='selectCategory' src='https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png' alt='' /></div>
+	
+					</div>
+					<div id="footer-dropbox-content" class="drop-box-content">
+						<button onclick="window.open('https://www.howhymath.com', '_blank');">하와이매쓰</button>
+						<button onclick="window.open('https://www.fren.co.kr', '_blank');">프렌매쓰</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='left'>
+		<div class='footer-content'>
+			<div><b>하와이컴퍼니(주)</b></div>
+			<div class='vertical-line'></div>
+			<div><b>HOWHY COMPANY</b></div>
+			<div class='vertical-line'></div>
+			<div><b>대표이사 : 박종화</b></div>
+		</div>
+
+		<div class='footer-content'>
+			<div><b>사업자등록번호</b> 760-87-02737</div>
+			<div class='vertical-line'></div>
+			<div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+			<div class='vertical-line'></div>
+			<div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+		</div>
+		<div class='footer-content'>
+			<div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+		</div>
+		<div class='footer-content'>
+			2024  Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+		</div>
+	</div>
+</div>
+<!-- 241120 푸터 수정 끝 -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropBox = document.getElementById('footer-dropbox');
+    const dropBoxContent = document.getElementById('footer-dropbox-content');
+  
+    // drop-box를 클릭했을 때의 이벤트 핸들러
+    dropBox.addEventListener('click', function() {
+        // .drop-box-content의 표시 상태를 토글합니다.
+        dropBoxContent.style.display = dropBoxContent.style.display === 'block' ? 'none' : 'block';
+    });
+  
+  });
+</script>
+
+
+<script>
+</script>
+
+<!-- 자동결제 등록 팝업 시작 -->
+<div class="modal fade show" id="popup_billing" tabindex="-1" role="dialog" aria-modal="true" style="display: block;">
+    <div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content" id="popup_billing-content">
+        <form name="" id="SendPayForm_id_0609815001732517293" method="post" style="display:none;">
+            <input type="hidden" name="version" value="1.0">
+            <input type="text" name="gopaymethod" value="Card">
+            <input type="text" name="mid" value="howhyclasB">
+            <input type="text" name="oid" value="BL202411251548130000008">
+            <input type="text" name="price" value="8800">
+            <input type="text" name="timestamp" value="1732517294610"> 
+            <input type="hidden" name="use_chkfake" value="Y">
+            <input type="hidden" name="signature" value="6e775e10aa55047c5675be30139b9233dbd12c484465b8d634c8d0ad871f4978">
+            <input type="hidden" name="verification" value="a120d7b4480080e3c67be4b2bcf5fe98f4365f7fb2b3ceea5b5a906150210cea">
+            <input type="hidden" name="mKey" value="29e486d602b16c8529b6c71098daa79b0280fa3098b8361b2ffe5a12d19c1798">
+            <input type="hidden" name="currency" value="WON">				    		
+        
+            <input type="text" name="goodname" value="정기구매">
+            <input type="text" name="buyername" value="정다영(학생)">
+            <input type="text" name="buyertel" value="01094962811">
+            <input type="text" name="buyeremail" value="dayeong310@daum.net">
+            <input type="hidden" name="returnUrl" value="https://student.howhyclass.com/payments/billing_return">
+            <input type="hidden" name="closeUrl" value="https://student.howhyclass.com/payments/billing_close">
+            <input type="text" name="acceptmethod" value="HPP(1):below1000:va_receipt:BILLAUTH(Card):centerCd(Y)"> 
+        </form>
+        
+        <style>
+        .bottom {
+            display: flex;
+            padding: var(--spacing-12, 12px) var(--spacing-16, 16px);
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--spacing-12, 12px);
+            border-radius: var(--border-radius-8, 8px);
+            border: 1px solid var(--color-border-tertiary, #E5E5E5);
+            background: var(--color-bg-secondary, #FAFAFA);
+        }
+        
+        .content-1 {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            color: var(--color-text-primary, #1A1A1A);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%;
+        }
+        
+        .content-2 {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            color: var(--color-text-primary, #1A1A1A);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%;
+        }
+        </style>
+        
+        
+        <div class="modal-header">
+            <div class="left">
+                이용 요금 결제
+            </div>
+            <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" data-bs-dismiss="modal" aria-label="Close">
+        </div>
+        
+        
+        <div class="modal-body">
+            <div class="bottom">
+                <div class="content-2">
+                    <div class="left">정기 결제 금액</div>
+                    <div class="right">8,800원<span>/월</span></div><!--241125 span 추가-->
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="modal-bottom-btn-box">
+            <button type="button" class="cancle-btn" data-bs-dismiss="modal">취소하기</button>
+            <button type="button" onclick="billing_card();" class="save-btn">자동결제등록</button>
+        </div>
+        
+        <script>
+            $( document ).ready(function() {
+            });
+            
+            function billing_card()
+            {
+                INIStdPay.pay('SendPayForm_id_0609815001732517293');
+                fx_layer_popup_v2_close_by_id('popup_billing');
+            }
+        </script>
+        
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show"></div>
+<!-- //자동결제 등록 팝업 끝 -->
+
+
+</body>
+</html>

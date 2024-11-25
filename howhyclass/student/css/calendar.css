@@ -36,7 +36,8 @@
         height: 100%;
         background: url("../images/line_dotted.png") repeat-y;
         position: absolute;
-        top: 0;right: 0;
+        top: 0;right: -1px;
+        z-index: 1;
         /* border 도트 */
     }
 }
