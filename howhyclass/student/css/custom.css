@@ -138,7 +138,8 @@ button {
   /* 세로 스크롤 활성화 */
   position: relative;
   height: 700px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+  overflow-y: auto;/*241125 수정*/
   /* 세로 스크롤 활성화 */
   scrollbar-width: thin;
   /* 스크롤 바 두께(파이어폭스) */
@@ -3254,6 +3255,8 @@ line-height: 160%; /* 25.6px */
       font-weight: 500;
       line-height: normal;
       height: 25%;
+      border: 1px solid #e2e2e2;
+      border-radius: var(--border-radius-15, 15px);
     }
 
   }
