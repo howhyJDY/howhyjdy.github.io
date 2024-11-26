@@ -3371,12 +3371,15 @@ line-height: 160%; /* 25.6px */
       .input-box{
         margin: 0 0 12px auto;
         border-bottom: 0 !important;
-        width: 25%;
+        /* width: 25%; */
+        width: 290px;
         padding: 10px 16px;
         align-items: center;
         background: #ebebeb;
         border-radius: 6px;
+        gap: 10px;
         input{
+          display: block;
           background: transparent;
           font-family: 'SUIT';
           font-size: 14px;
@@ -3384,6 +3387,7 @@ line-height: 160%; /* 25.6px */
           padding: 0;
           color: #333;
           &+img{
+            display: block;
             width: 20px;
             height: 20px;
             object-fit: contain;
