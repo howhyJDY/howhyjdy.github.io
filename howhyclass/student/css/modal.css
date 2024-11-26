@@ -2466,7 +2466,14 @@
     }
   }
 
-  .modal-body{padding-bottom: 30px;}
+  .modal-body{
+    padding-bottom: 30px;
+    center{margin: 0;}
+    h4{
+      color: #222;
+      margin: 0;
+    }
+  }
 
   .modal-bottom-btn-box{
     display: flex;
