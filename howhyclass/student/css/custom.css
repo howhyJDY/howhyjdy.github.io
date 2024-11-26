@@ -3373,7 +3373,7 @@ line-height: 160%; /* 25.6px */
         border-bottom: 0 !important;
         /* width: 25%; */
         width: 290px;
-        padding: 10px 16px;
+        padding: 10px 0 10px 16px;
         align-items: center;
         background: #ebebeb;
         border-radius: 6px;
@@ -3392,6 +3392,7 @@ line-height: 160%; /* 25.6px */
             height: 20px;
             object-fit: contain;
             cursor: pointer;
+            margin-right: 16px;
           }
         }
       }
