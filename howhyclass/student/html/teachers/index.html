@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2F4VX2QKK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2F4VX2QKK8');
+</script>
+
+	<meta charset="utf-8" />
+	<title>하와이클래쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="shortcut icon" href="https://img.howhyclass.com/hmath/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<!-- <link href="https://img.howhyclass.com/hclass/css/custom.css?20141121" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/modal.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/add.css" rel="stylesheet"> -->
+    <link href="../../css/custom.css" rel="stylesheet">
+	<link href="../../css/modal.css" rel="stylesheet">
+	<link href="../../css/add.css" rel="stylesheet">
+
+	
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            tex2jax: { displayMath: [ ["$$","$$"] ] },
+            "HTML-CSS": { fonts: ["Latin-Modern"] }
+        });
+    </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1732577484"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1732577484"></script>
+</head>
+
+<body>
+	<div class='header'>
+	<div>
+			<a href="/home/main"><img class='logo' src='https://img.howhyclass.com/hclass/images/logo.svg' alt=''/></a>
+	
+	</div>
+	<ul class='link'>
+
+			<li>
+				<ul><a href='/books/index'><span >교재학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/ai_studies/index'><span >AI 학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/daily_studies/index'><span >일일학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/homeworks/index'><span >숙제</span></a></ul>
+			</li>	</ul>
+	<div class='menu'>
+		<!-- 241120 아이콘 변경 및 태그 추가 시작 -->
+		<button class='subscribe' onclick="location.href='/teachers/index';"><span class="icon_add_tutor"></span>선생님등록</button>
+		<button class='subscribe' onclick="location.href='/payments/index';"><span class="icon_subscribe"></span>구독하기</button>
+		<button class='alarm-icon' onclick="location.href='/notices/index';" title="알림">
+			<span class="icon_alarm"></span>
+		</button>
+		<div id="info-dropbox" class='info-icon drop-box'>
+			<span class="icon_user"></span>
+			<div id="info-dropbox-content" class="drop-box-content">
+				<div class="dropdown-button-box">
+				<button onclick="location.href='/mypage/index';">나의 정보</button>
+				<button onclick="location.href='/mypage/setting';">설정 &amp; FAQ</button>
+				<button class="logout" onclick="location.href='/users/logout_student';">
+					<img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/>
+					<div>로그아웃</div>
+				</button>
+				</div>
+			</div>
+		</div>
+		<!-- 241120 아이콘 변경 및 태그 추가 끝 -->
+	</div>
+
+</div>
+
+<script>
+const infoBox = document.getElementById('info-dropbox');
+const infoContent = document.getElementById('info-dropbox-content');
+  
+infoBox.addEventListener('click', function() {
+    infoContent.style.display = infoContent.style.display === 'block' ? 'none' : 'block';
+});
+</script>
+
+	
+<div class='content'>
+	<div class='content-container addTeacher-container'>
+		<div class='modal-title'>
+			<div class='left'>
+				선생님 등록하기
+			</div>
+			<div class='right'>
+				<!-- img class='cursor' src="https://img.howhyclass.com/hclass//images/icon_close_black.png" /-->
+			</div>
+		</div>
+		<div class='white-container' style="height: 800px;">
+			<div class='input-box'>
+				<input type='text' class='input-teacher' placeholder='선생님 코드를 입력해 주세요.' id="teacher_code" />
+				<!-- <img src="https://img.howhyclass.com/hclass//images/icon_search_gray.png" alt='' onclick="search_teacher();" /> 241126 이미지 변경 -->
+				<img src="../../images/icon_search_gray.png" alt='' onclick="search_teacher();" />
+			</div>
+			<div class='gray-container'>
+				<div class='top'>
+					<!-- <div>홍길동학생이 <span> 등록한  선생님의 목록</span>입니다.</div> 241126 학생명 강조 수정 -->
+					<div><span>홍길동학생</span>이 등록한 선생님의 목록입니다.</div>
+					<div>선생님께 받은 코드를 검색하면 등록이 가능합니다.</div>
+				</div>
+				<div class="class-container">
+                    <div class='class-box'>
+						<div class='top'>
+							<div class='left'>
+								<div>하와이컴퍼니</div>
+							</div>
+                            <!-- 241126 위치 변경 시작
+							<div class='right'>
+								<img src="../../images/icon_check_inactive.png" alt="" class='teacher_check' data-id='236' onclick="check_teacher(this);"/>
+							</div>
+                            -->
+						</div>
+						<div class='bottom'>
+							<div class='teacher-info'>하와이매쓰 홍길동 선생님</div>
+                            <!-- 241126 위치 변경 -->
+                            <div class='right'>
+								<img src="../../images/icon_check_inactive.png" alt="" class='teacher_check' data-id='236' onclick="check_teacher(this);"/>
+							</div>
+                            <!-- //241126 위치 변경 끝 -->
+						</div>
+					</div>
+                    
+                    <div class='class-box'>
+						<div class='top'>
+							<div class='left'>
+								<div>하와이컴퍼니2</div>
+                                <!-- 원본 위치 -->
+                                <div class='right'>
+                                    <img src="../../images/icon_check_inactive.png" alt="" class='teacher_check' data-id='237' onclick="check_teacher(this);"/>
+                                </div>
+                                <!-- 원본 위치 -->
+							</div>
+						</div>
+						<div class='bottom'>
+							<div class='teacher-info'>하와이컴퍼니2 비키 선생님</div>
+						</div>
+					</div>
+                    <div class='class-box'>
+						<div class='top'>
+							<div class='left'>
+								<div>하와이매쓰</div>
+							</div>
+						</div>
+						<div class='bottom'>
+							<div class='teacher-info'>하와이매쓰 비키 선생님</div>
+							<div class='right'>
+								<img src="../../images/icon_check_inactive.png" alt="" class='teacher_check' data-id='237' onclick="check_teacher(this);"/>
+							</div>
+						</div>
+					</div>
+                    <div class='class-box'>
+						<div class='top'>
+							<div class='left'>
+								<div>국영수영어학원</div>
+							</div>
+						</div>
+						<div class='bottom'>
+							<div class='teacher-info'>국영수영어학원 럭키비키 선생님</div>
+							<div class='right'>
+								<img src="../../images/icon_check_inactive.png" alt="" class='teacher_check' data-id='237' onclick="check_teacher(this);"/>
+							</div>
+						</div>
+					</div>
+                    <div class='class-box'>
+						<div class='top'>
+							<div class='left'>
+								<div>위너스해법영수학원</div>
+							</div>
+						</div>
+						<div class='bottom'>
+							<div class='teacher-info'>위너스해법영수학원 홍길순 선생님</div>
+							<div class='right'>
+								<img src="../../images/icon_check_inactive.png" alt="" class='teacher_check' data-id='237' onclick="check_teacher(this);"/>
+							</div>
+						</div>
+					</div>
+                </div>
+				<div class='green-btn fit-content margin-auto cursor' onclick="remove_teachers()">선택 선생님 삭제</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+});
+
+function search_teacher()
+{
+	var teacher_code = $('#teacher_code').val();
+
+	if( fx_trim(teacher_code) == '' )
+	{
+		alert( '선생님 코드를 입력해 주세요.' );
+		return;
+	}
+
+	fx_layer_popup_v2( 'search_teacher', '/teachers/find_teacher?teacher_code=' + teacher_code, ''  );
+}
+
+function check_teacher( obj )
+{
+	if( $(obj).attr('src').indexOf( 'check_inactive.png' ) != -1 )
+		// $(obj).attr('src', 'https://img.howhyclass.com/hclass/images/icon_check_active.png' ); 241126 이미지 변경
+		$(obj).attr('src', '../../images/icon_check_active.png' );
+	else
+		// $(obj).attr('src', 'https://img.howhyclass.com/hclass/images/icon_check_inactive.png' ); 241126 이미지 변경
+		$(obj).attr('src', '../../images/icon_check_inactive.png' );
+}
+
+function remove_teachers()
+{
+    var id_arr = [];
+
+    $('.teacher_check').each( function( index, item ){
+        if( $(this).attr('src').indexOf('icon_check_active.png') != -1 )
+            id_arr.push(  $(this).data('id') );
+    });
+
+	if( id_arr.join(',') == '' )
+	{
+		alert( '삭제할 선생님을 선택해주세요.');
+		return;
+	}
+
+	fx_submit_link( '/teachers/remove_teachers?ids=' + id_arr.join(',') );
+}
+
+</script>
+
+	
+<div class='footer'>
+	<div class="top">
+		<div class="left">
+			<div class='footer-content'>
+				<span class="footer_logo"><img src="https://img.howhyclass.com/hclass/images/footer_logo.svg" alt="하와이클래쓰" /></span>
+				<div onclick="window.open('https://student.howhyclass.com/users/agreement??user_type=s', '_blank');">서비스 이용약관</div>
+				<div onclick="window.open('https://student.howhyclass.com/users/privacy_policy?user_type=s', '_blank');">개인정보처리방침</div>
+			</div>
+		</div>
+		<div class='right'>
+			<div class='footer-content'>
+				<div id="footer-dropbox" class="drop-box full-width">
+					<div class="flex full-width">
+						<div>Family site</div>
+						<div><img class='selectCategory' src='https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png' alt='' /></div>
+	
+					</div>
+					<div id="footer-dropbox-content" class="drop-box-content">
+						<button onclick="window.open('https://www.howhymath.com', '_blank');">하와이매쓰</button>
+						<button onclick="window.open('https://www.fren.co.kr', '_blank');">프렌매쓰</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='left'>
+		<div class='footer-content'>
+			<div><b>하와이컴퍼니(주)</b></div>
+			<div class='vertical-line'></div>
+			<div><b>HOWHY COMPANY</b></div>
+			<div class='vertical-line'></div>
+			<div><b>대표이사 : 박종화</b></div>
+		</div>
+
+		<div class='footer-content'>
+			<div><b>사업자등록번호</b> 760-87-02737</div>
+			<div class='vertical-line'></div>
+			<div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+			<div class='vertical-line'></div>
+			<div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+		</div>
+		<div class='footer-content'>
+			<div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+		</div>
+		<div class='footer-content'>
+			2024  Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+		</div>
+	</div>
+</div>
+<!-- 241120 푸터 수정 끝 -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropBox = document.getElementById('footer-dropbox');
+    const dropBoxContent = document.getElementById('footer-dropbox-content');
+  
+    // drop-box를 클릭했을 때의 이벤트 핸들러
+    dropBox.addEventListener('click', function() {
+        // .drop-box-content의 표시 상태를 토글합니다.
+        dropBoxContent.style.display = dropBoxContent.style.display === 'block' ? 'none' : 'block';
+    });
+  
+  });
+</script>
+
+
+<script>
+</script>
+
+</body>
+</html>

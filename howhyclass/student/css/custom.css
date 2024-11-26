@@ -2968,7 +2968,7 @@ line-height: 160%; /* 25.6px */
         background-color: #fff;
         border-radius: var(--border-radius-8, 8px);
         border: 0.1px solid var(--color-border-primary, #B3B3B3);
-        color: #000;
+        color: #222;
       }
 
       .react-calendar__navigation {
@@ -2997,13 +2997,13 @@ line-height: 160%; /* 25.6px */
       .react-calendar__tile--active:enabled:focus {
         border-radius: var(--border-radius-8, 8px);
         border: 0.1px solid var(--color-border-primary, #B3B3B3);
-        color: #000;
+        color: #222;
         background-color: #fff;
       }
 
       /* 토 / 일 글자 색상 지정 */
       .react-calendar__month-view__days__day--weekend {
-        color: #000;
+        color: #222;
       }
 
       .react-calendar__tile {
@@ -3286,7 +3286,7 @@ line-height: 160%; /* 25.6px */
 
 .modal-title {
   display: flex;
-  color: var(--color-text-primary, #1A1A1A);
+  color: #222;
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
@@ -3315,14 +3315,21 @@ line-height: 160%; /* 25.6px */
   }
 }
 
+/* 241126 수정 시작 */
 .gray-container .top {
   font-size: 20px;
   font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  font-weight: 600;
+  line-height: 28px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  font-family: 'SUIT';
+  /* gap: 10px; */
+
+  &>div+div{
+    font-size: 18px;
+    font-weight: 400;
+  }
 
   span {
     color: var(--color-text-brand, #06b57a);
@@ -3332,49 +3339,147 @@ line-height: 160%; /* 25.6px */
     line-height: normal;
   }
 }
+/* 241126 수정 끝 */
 
+/* 241126 추가 시작 */
+.addTeacher-container{
+  position: relative;
+  &>.modal-title{
+    position: absolute;
+    top: 45px;left: 60px;
+    width: fit-content;
+    .left{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'SUIT';
+      font-size: 26px;
+      line-height: 45px;
+      font-weight: 700;
+      &::before{
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: url(../images/icon_add_tutor.svg) no-repeat center / cover;
+      }
+    }
+
+    &+.white-container{
+      height: auto !important;
+      padding: 45px 60px;
+      .input-box{
+        margin: 0 0 12px auto;
+        border-bottom: 0 !important;
+        width: 25%;
+        padding: 10px 16px;
+        align-items: center;
+        background: #ebebeb;
+        border-radius: 6px;
+        input{
+          background: transparent;
+          font-family: 'SUIT';
+          font-size: 14px;
+          line-height: 18px;
+          padding: 0;
+          color: #333;
+          &+img{
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            cursor: pointer;
+          }
+        }
+      }
+      .gray-container {
+        border-radius: 0;
+        background: transparent;
+        padding: 85px 20px 40px;
+        border-top: 1px solid #9b9b9b;
+        .green-btn{
+          background: #0ad08d;
+          font-size: 20px;
+          font-weight: 600;
+          padding: 7px 25px !important;
+        }
+      }
+    }
+  }
+}
+/* 241126 추가 끝 */
+
+/* 241126 수정 시작 */
 .addTeacher-container .gray-container .class-container {
-  margin: 48px 0px;
-  display: flex;
+  margin: 60px 0px;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 26px;
 
   .top {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-between; */
     flex-direction: row;
+    padding: 15px 0;
+    background: #f9fcf1;
+    border-bottom: 1px solid #e6e6e6;
   }
 
   .left {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 10px;
     font-size: 16px;
-
+    font-family: 'SUIT';
+    font-weight: 600;
+    color: #222;
+  }
+  .right{
+    position: absolute;
+    /* bottom: 35px;
+    right: 45px; html 수정 시 디자인 재 적용 241126 */
+    top: 13px; right: 25px;
+    width: 30px;
+    height: 30px;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      cursor: pointer;
+    }
   }
 
   .class-box {
-    flex: 1;
-    max-width: 20%;
-    border-radius: var(--border-radius-12, 12px);
-    border: 1px solid var(--color-border-tertiary, #E5E5E5);
+    /* flex: 1; */
+    /* max-width: 20%; */
+    width: 100%;
+    border-radius: var(--border-radius-19, 19px);
+    border: 2px solid #7e7e7e;
     background: var(--color-bg-primary, #FFF);
-    padding: 20px;
-    cursor: pointer;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    /* cursor: pointer; */
 
     .bottom {
       display: flex;
       align-items: center;
-      padding: 4px 6px;
-      color: var(--color-text-primary, #1A1A1A);
-      font-size: 12px;
+      justify-content: center;
+      padding: 42px 0;
+      color: #555353;
+      font-size: 14px;
       font-style: normal;
       font-weight: 500;
-      line-height: 140%;
+      line-height: 18px;
+      font-family: 'SUIT';
       /* 16.8px */
-      border-radius: var(--border-radius-4, 4px);
+      /* border-radius: var(--border-radius-4, 4px);
       background: var(--color-bg-tertiary, #F1F1F1);
       width: fit-content;
-      margin-top: 26px;
+      margin-top: 26px; */
+      /* .teacher-info{padding-right: 42px;} */
     }
   }
 
@@ -3404,6 +3509,7 @@ line-height: 160%; /* 25.6px */
     }
   }
 }
+/* 241126 수정 끝 */
 
 .modal-title-border {
   border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);
@@ -3802,7 +3908,7 @@ line-height: 160%; /* 25.6px */
     margin-top: 30px;
 
     th {
-      color: #000;
+      color: #222;
       font-family: Pretendard;
       font-size: 14px;
       font-style: normal;
@@ -3857,7 +3963,7 @@ line-height: 160%; /* 25.6px */
           white-space: nowrap;
           display: none;
           padding: 2px 5px;
-          background-color: #000;
+          background-color: #222;
           color: #fff;
           border-radius: 3px;
           font-size: 12px;
@@ -4456,8 +4562,8 @@ line-height: 160%; /* 25.6px */
       display: flex;
       flex-direction: column;
       gap: 15px;
-      /* width: fit-content; */
-      width: 720px;
+      width: fit-content;
+      /* width: 720px; 임의지정 */
       margin: 0 auto;
 
       .title {
@@ -7499,7 +7605,7 @@ margin-left: 20px;
         background: var(--color-bg-tertiary, #F1F1F1);
         padding:8px;
         .donut-title{
-          color: #000;
+          color: #222;
 font-size: 14px;
 font-style: normal;
 font-weight: 700;
@@ -7674,7 +7780,7 @@ right:20px;
       margin-top: 30px;
   
       th {
-        color: #000;
+        color: #222;
         font-family: Pretendard;
         font-size: 14px;
         font-style: normal;
@@ -7941,7 +8047,7 @@ line-height: 160%; /* 25.6px */
   }
   
   .study-report-container > .title{
-    color: #000;
+    color: #222;
   font-size: 16px;
   font-weight: 700;
   }
@@ -7972,7 +8078,7 @@ line-height: 160%; /* 25.6px */
   }
   
   .study-report-container > .content > .research-box > .font-box{
-    color: #000;
+    color: #222;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -8010,7 +8116,7 @@ line-height: 160%; /* 25.6px */
   }
   
   .progress-container > .study-report-container> .header>.left {
-    color: #000;
+    color: #222;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -8849,6 +8955,7 @@ line-height: 140%; /* 16.8px */
 }
 @media screen and (max-width: 1440px) {
   .daily-learning-top{width: calc(100% - 40px);}
+  .addTeacher-container .gray-container .class-container .left{padding-right: 30px;}
 }
 
 @media screen and (max-width: 1200px) {
@@ -8875,6 +8982,10 @@ line-height: 140%; /* 16.8px */
       }
     }
     .right{padding-left: 5px;}
+  }
+  .addTeacher-container .gray-container .class-container{
+    grid-template-columns: repeat(3, 1fr);
+    .left{padding-right: 0;}
   }
 }
 
