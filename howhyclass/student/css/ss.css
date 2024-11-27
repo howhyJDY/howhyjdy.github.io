@@ -1,0 +1,330 @@
+
+/* 24.10.08 타이틀 상단 */
+
+.mylevel {
+    border-radius: var(--unit-8, 8px);
+    background: var(--color-bg-brand-lightest, #e4e4e4);
+    color: var(--color-text-brand-dark, #6b6b6b);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: -1px;
+    border: none;
+    padding: 5px 16px;
+    width: auto; 
+    display: inline-block;
+    word-spacing: 5px;
+    margin-bottom: 0;
+    b{
+        font-weight: 600;
+        padding-right: 10px;
+    }
+    span{padding: 0 3px;}
+}
+
+.level{
+    float: left;
+}
+
+.class-level {
+    border-radius: var(--unit-8, 6px);
+    background: var(--color-bg-brand-lightest, #fef3e1);
+    color: var(--color-text-brand-dark, #fe9e2d);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: -1px;
+    border: 1px solid #fe9e2d ;
+    padding: 0 10px;
+    margin-top: 10px;
+    margin-right: 10px;  
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.study-title{
+    display: inline-block;
+    color: #1A1A1A; 
+    font-size: 28px; 
+    font-style: normal; 
+    font-weight: 700;
+    line-height:160%;
+    letter-spacing: -1px;
+
+}
+
+.study-level1 /* 후행학습 */{
+    border-radius: var(--unit-8, 6px);
+    background: var(--color-bg-brand-lightest, #c7fbfc);
+    color: var(--color-text-brand-dark, #28abb7);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: -1px;
+    border: 1px solid #0de3e3 ;
+    padding: 0 10px;
+    margin-right: 8px;
+    margin-top: 10px;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.unselected {
+border-radius: var(--unit-8, 8px);
+background: var(--color-bg-disabled, #CCC);
+color: var(--color-text-inverse, #FFF);
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 160%;
+/* 22.4px */
+}
+
+.bright-green-btn {
+    font-size: 18px;
+    padding: 8px 40px !important;
+}
+.green-btn03 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: var(--unit-8, 8px);
+    background: var(--color-howhy-400, #9bc69d);
+    position: relative;
+    &#error-btn{
+        &::before{
+            content: '';
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: var(--color-howhy-400, #9bc69d) url(../images/icon_su_err.png) no-repeat center / 11px auto;
+            position: absolute;
+            top: calc(50% - 8px);
+            left: 14px;
+        }
+    }
+}
+
+.white-container {
+    /* background-color: #fff; */
+    /* border-radius: var(--border-radius-16, 16px); */
+    /* padding: 30px; */
+    /* box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+    /* transition: all 0.3s cubic-bezier(.25,.8,.25,1); */
+    box-shadow: 2px 1px 7px rgba(0, 0, 0, 0.08);
+}
+
+.subtitle {
+    flex: none;
+    /* font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -1px; */
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    float: none !important;
+    padding: 0 0 10px 0 !important;
+    margin-bottom: 0;
+    &+div{
+        width: fit-content;
+        padding: 0 !important;
+        .row{gap: 10px;}
+    }
+}
+
+.btn-container{
+    position: relative;
+    height: 44px;
+    box-sizing: content-box;
+    .green-btn05{position: absolute;}
+}
+
+.green-btn05 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: var(--unit-8, 8px);
+    background: var(--color-howhy-400, #15c488);
+    width: 100%;
+    border: none;
+}
+
+.text_group01 {
+    display: inline-block;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.content-container{
+    &>.row{
+        position: relative;
+        .col-md-10{width: 100%;}
+        .col-md-2{
+            display: flex;
+            justify-content: flex-end;
+            position: absolute;
+            bottom: -73px;
+            right: 30px;
+            z-index: 1;
+        }
+        .paint-box-bar{margin-bottom: 10px;}
+    }
+}
+.left{
+    display: flex;
+    align-items: center;
+    padding: 20px 30px !important;
+    &>.subtitle{padding-bottom: 0 !important;}
+    .row{
+        .col-sm-1{
+            width: auto !important;
+            height: auto !important;
+            div{padding: 0 !important;}
+        }
+    }
+    & + .row{
+        &>div{padding: 30px !important;}
+        .col-md-4{
+            width: calc(33.3333% - 15px) !important;
+            margin-left: 15px !important;
+        }
+    }
+}
+
+.no{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--unit-7, 7px);
+    border: 1px solid #e0e0e0;
+    background: #FFF;
+    height: 34px !important;
+    width: auto !important;
+    font-family: 'SUIT';
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0 11px;
+    &.correct {
+        border: 2px solid rgb(44, 225, 163) !important;
+        background: #defaf2 !important;
+        font-weight: 700;
+    }
+    &.wrong {
+        border: 2px solid rgb(255, 116, 94) !important;
+        background: var(--color-bg-primary, #fff0eb) !important;
+        font-weight: 700;
+    }
+}
+
+/* 토글버튼 커스텀 */
+.form-check-inline{margin-right: 0;}
+.form-check-input{
+    height: 22px;
+    margin-top: 0;
+    vertical-align: top;
+    background-color: #fff;
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; */
+    border: 1px solid #555;
+    cursor: pointer;
+    &+label{
+        font-size: 14px;
+        color: #555;
+        cursor: pointer;
+    }
+}
+.form-check-input:checked {
+    background-color: #555;
+    border-color: #555;
+}
+.form-check-input:focus {
+    border-color: #555;
+    box-shadow: none;
+}
+.form-switch{padding-left: 50px}
+.form-switch .form-check-input {
+    width: 43px;
+    margin-left: -50px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23555'/%3e%3c/svg%3e");
+    background-position: left center;
+    border-radius: 11px;
+    transition: .23s ease;
+}
+.form-switch .form-check-input:focus {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23555'/%3e%3c/svg%3e");
+}
+.form-switch .form-check-input:checked {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e")
+}
+
+/* 필기영역 스타일 */
+.paint-box{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    .text_group01:first-child{
+        .btn-paint{width: 16px;}
+    }
+    &>div{
+        padding: 0 !important;
+        text-align: left !important;
+    }
+}
+#sketch.paint-box{top: 0; left: 0;}
+
+/* 정답영역 시작 */
+#answer-box{
+    padding: 20px 0 40px !important;
+}
+/* 정답영역 끝 */
+
+/* 오류신고 입력 영역 시작 */
+#error-box{
+    padding: 10px;
+    .row>*{
+        padding: 0;
+        margin: 0;
+    }
+    .form-control{
+        font-size: 14px;
+        color: #333;
+        border-radius: 4px;
+        resize: none;
+        &:focus {
+            color: #333;
+            border-color: #e3ebf6;
+        }
+        &::placeholder{color: #999;}
+    }
+}
+/* 오류신고 입력 영역 끝 */
+
+@media screen and (max-width: 1440px) {
+    .paint-box {
+        position: static;
+        margin-bottom: 10px !important;
+    }
+}
+
+/* 부트스트랩 반응형 초기화 */
+@media (max-width: 768px) {
+    .col-md-8 {
+        flex: 0 0 auto;
+        width: 66.66667%;
+    }
+}
+
+
+/* 문제관련 cmdl 스타일쪽은 나중에 매쓰 진행할때 회의 후 수정하기로 함. */
+/* ss.css 는 수정해도 ok */
+/* 241126 학습하기 > 오류신고 버튼 쪽 진행 */

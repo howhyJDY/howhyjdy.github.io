@@ -2136,6 +2136,12 @@ line-height: 160%; /* 25.6px */
     max-width: 1440px;
     margin: 0 auto;
 
+    /* 부트스트랩 설정 삭제 */
+    .row{
+      margin: 0;
+      padding: 0 !important;
+    }
+
 
   .top-container {
 

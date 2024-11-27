@@ -1,0 +1,825 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2F4VX2QKK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2F4VX2QKK8');
+</script>
+
+	<meta charset="utf-8" />
+	<title>하와이클래쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css" />
+
+	<!-- <link href="https://img.howhyclass.com/hclass/css/custom.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/modal.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/add.css" rel="stylesheet">
+	<link href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1732589967" rel="stylesheet"> -->
+    
+	<link href="../../css/custom.css" rel="stylesheet">
+	<link href="../../css/modal.css" rel="stylesheet">
+	<link href="../../css/add.css" rel="stylesheet">
+	<link href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1732589967" rel="stylesheet">
+
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            tex2jax: { displayMath: [ ["$$","$$"] ] },
+            "HTML-CSS": { fonts: ["Latin-Modern"] }
+        });
+    </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1732589967"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1732589967"></script>
+
+<style>
+ /* 24.10.08 페이지 전체 패딩값 */
+.bodypd20 {
+	padding:16px;
+	background: var(--color-bg-bg_bg,#F7F7F7);
+}
+</style>
+
+</head>
+
+<body class="bodypd20">
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://student.howhyclass.com/lms_api/questions";
+var lms_domain = "https://student.howhyclass.com";
+</script>
+
+<!-- <link rel="stylesheet" type="text/css" href="/app/css/ss.css?1732589967" /> -->
+<link rel="stylesheet" type="text/css" href="../../css/ss.css" />
+
+<style>
+ /* 24.10.08 문항번호  */
+.no {
+	border-radius: var(--unit-8, 8px);
+	border: 1px solid var(--color-border-tertiary, #d6d6d6);
+	background: var(--color-bg-primary, #FFF);
+	/* height: 45px !important; 241127 height 삭제 */
+	height: 45px;
+	width: 45px;
+	color: var(--color-text-primary, #1A1A1A);
+	font-family: Pretendard;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 160%;
+}
+
+.correct {
+	border:2px solid rgb(44, 225, 163) !important;
+    background: #defaf2 !important
+}
+
+
+.wrong {
+	border:2px solid rgb(255, 116, 94) !important;
+    background: var(--color-bg-primary, #fff0eb);
+}
+
+.subtitle {
+	flex: none;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+    letter-spacing: -1px;
+}
+
+ /* 24.10.08 문항번호  */
+
+
+.row, *::before, *::after {
+	box-sizing: border-box;
+}
+
+
+
+/* <-- paint start --> */
+#canvas-container {
+	position: relative;
+	width: 1024px;
+	min-height: 600px;
+	background-color: #fff;
+}
+
+#question-box {
+	display: block;
+	width: 450px;
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* transform: translate(-50%, -50%); */
+}
+
+/*
+#canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1024px;
+	height: 768px;
+	pointer-events: none;
+}
+*/
+
+#sketch {
+    border: 1px solid grey;
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+	min-height: 600px;
+}
+
+#tmp_canvas {
+    position: absolute;
+    /* left: 10px; */
+    /* top: 10px; */
+	top: 0;
+	left: 0;
+    cursor: crosshair;
+}
+
+.btn-paint { 
+	font-size: 10px; 
+	padding: 5px;
+	margin: 1px;
+	border: 0px;
+}
+
+#text_tool {
+    position: absolute;
+    border: 1px dashed black;
+    outline: 0;
+    display: none;
+    /* padding: 4px 8px; */
+    padding: 0px;
+    font: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.paint-box {
+	display:none;
+}
+
+/*
+.cdml-omr-choice-item {
+    background: #eeeeee;
+    color: #666666;
+    display: inline-block;
+    padding-top: 10px;
+    width: 46px;
+    height: 46px;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid rgb(220, 220, 220);
+    text-align: center;
+    color: #666666 !important;
+    text-transform: capitalize;
+    border-radius: 100%;
+}
+*/
+
+/*
+.paint-box-bar {
+	display:none;
+}
+*/
+/* <-- /paint end --> */
+
+/* question css global setting */
+div.cdml_question *   {margin:0; padding:0; font-size:17px; }
+div.cdml_question .MathJax_Display span   { font-size:17px; }
+div.cdml_question p   {margin:0; padding:0 0 1px 0; font-size:17px; /* word-break: keep-all; */ }
+</style>
+
+
+<div class='content' style="padding:0px;">
+	<div class='content-container'>
+
+        <!-- 241127 나의 진도 추가/수정 시작 -->
+		<div>
+			<p class="mylevel">
+                <b>나의 진도</b><span>중2</span>ㅣ<span>03. 다항식의 계산</span>ㅣ<span>01. 유리수</span>
+            </p>
+		</div>
+        <!-- 241127 나의 진도 추가/수정 끝 -->
+
+		<div class="row" style="padding: 0 10px;">
+			<div class="col-md-10">
+				<div style="display: flex; flex-direction: row; align-items: center; justify-content: flex-start;">
+                    <div class="study-level1">숙제</div>
+                    <div class="class-level">중2</div>
+					
+                    <div style="color: #1A1A1A; font-size: 28px; font-style: normal; font-weight: 700;line-height:160%;letter-spacing: -1px;">
+                        01. 분수의 나눗셈 > 개념익히기 > 1.(자연수)÷(자연수)의 몫을 분수로 나타내기 (1)
+                    </div>
+                </div>
+			</div>
+			<div class="col-md-2" style="text-align:right;">
+                <button class="bright-green-btn" onclick="complete_study()">학습완료</button>
+            </div>
+		</div>
+
+		<div class="white-container left" style="position: relative;padding-bottom: 39px;">
+			<div class="subtitle col-sm-1" style="padding-top:12px;float: left;width: 75px;">문항번호</div>
+			<div class="col-sm-12">
+				<div class="row">
+                    <!-- <div class="col-sm-1" style="height:40px !important;width:60px;"> 241127 스타일 삭제 -->
+                    <div class="col-sm-1">
+						<div style="padding:5px;">
+							<!-- <button class="no correct" style="width:100%; font-weight: 500; text-decoration: underline;;" onclick="go_no( 0 );"> 1</button> 241127 스타일 삭제 -->
+							<button class="no correct" onclick="go_no( 0 );"> 1</button>
+						</div>
+					</div>
+                    <div class="col-sm-1">
+						<div style="padding:5px;">
+							<!-- <button class="no wrong" style="width:100%; font-weight: 500;" onclick="go_no( 1 );">2</button> 스타일 삭제 -->
+							<button class="no wrong" onclick="go_no( 1 );">2</button>
+						</div>
+					</div>
+                    <div class="col-sm-1">
+						<div style="padding:5px;">
+							<button class="no" onclick="go_no( 2 );">3</button>
+						</div>
+					</div>
+                    <div class="col-sm-1">
+						<div style="padding:5px;">
+							<button class="no" onclick="go_no( 3 );">4</button>
+						</div>
+					</div>
+                </div>
+			</div>
+		</div>
+
+		<div class="grid-box row" style="--bs-gutter-x: 0px !important;">
+			<div class="white-container col-md-8" style="padding:20px;">
+				<div class="row paint-box-bar">
+                    <div id="col-sm-12" style="padding: 10px 0;">
+						<div class="form-check form-switch form-check-inline" style="float:right;">
+							<input class="form-check-input" type="checkbox" id="show_check"  onclick="show_paint_box( this );">
+							<label class="form-check-label" for="show_check">필기</label>
+						</div>
+					</div>
+				</div>
+
+                <!-- 필기도구영역 -->
+                <div class="row paint-box">
+                    <div id="col-sm-12" style="padding: 10px 0; text-align:right;">
+                        <div class="text_group01">
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-red" checked="checked" value="red">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-red" style="background-color:red;">&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-orange" value="orange">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-orange" style="background-color:orange;">&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-yellow" value="yellow">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-yellow" style="background-color:yellow;">&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-lime" value="lime">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-lime" style="background-color:lime;">&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-cyan" value="cyan">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-cyan" style="background-color:cyan;">&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-blue" value="blue">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-blue" style="background-color:blue;">&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-magenta" value="magenta">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-magenta" style="background-color:magenta;">&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-purple" value="purple">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-purple" style="background-color:purple;">&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-brown" value="brown">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-brown" style="background-color:brown;">&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-black" value="black">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-black" style="background-color:black;">&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-gray" value="gray">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-gray" style="background-color:gray;">&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-lavender" value="lavender">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-lavender" style="background-color:lavender;">&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-color" id="paint-color-white" value="white">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-color-white" style="background-color:white;border: 1px solid #bbb;">&nbsp;</label>
+                        </div>
+                        <div class="text_group01">
+                            <button id="undo-tool" class="btn btn-outline-secondary btn-paint" type="button"><i class="fas fa-undo fa-fw"></i></button>
+                            <button id="redo-tool" class="btn btn-outline-secondary btn-paint" type="button"><i class="fas fa-redo fa-fw"></i></button>
+                            <button id="paint-clear" class="btn btn-outline-secondary btn-paint" type="button"><i class="fab fa-cuttlefish"></i></button>
+                        </div>
+                        <div class="text_group01">
+                            <input type="radio" class="btn-check" name="paint-tool" id="paint-tool-pencil" checked="checked" value="pencil">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-tool-pencil"><i class="fas fa-pencil-alt"></i></label>
+                            <input type="radio" class="btn-check" name="paint-tool" id="paint-tool-line" value="line">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-tool-line">&nbsp;/&nbsp;</label>
+                            <input type="radio" class="btn-check" name="paint-tool" id="paint-tool-square" value="square">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-tool-square"><i class="far fa-square"></i></label>
+                            <input type="radio" class="btn-check" name="paint-tool" id="paint-tool-fill" value="fill" style="display:none;">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-tool-fill" style="display:none;"><i class="fas fa-tint"></i></label>
+                            <input type="radio" class="btn-check" name="paint-tool" id="paint-tool-circle" value="circle">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-tool-circle"><i class="far fa-circle"></i></label>
+                            <input type="radio" class="btn-check" name="paint-tool" id="paint-tool-ellipse" value="ellipse">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-tool-ellipse"><i class="fab fa-opera"></i></label>
+                            <input type="radio" class="btn-check" name="paint-tool" id="paint-tool-text" value="text">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-tool-text"><i class="fas fa-font"></i></label>
+                            <input type="radio" class="btn-check" name="paint-tool" id="paint-tool-eraser" value="eraser">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-tool-eraser"><i class="fas fa-eraser"></i></label>
+                        </div>
+                        <div class="text_group01">
+                            <input type="radio" class="btn-check" name="paint-size" id="paint-size1" checked="checked" value="1">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-size1"><img src="/app/img/ico_size01.png"></label>
+                            <input type="radio" class="btn-check" name="paint-size" id="paint-size2" value="2">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-size2"><img src="/app/img/ico_size02.png"></label>
+                            <input type="radio" class="btn-check" name="paint-size" id="paint-size3" value="3">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-size3"><img src="/app/img/ico_size03.png"></label>
+                            <input type="radio" class="btn-check" name="paint-size" id="paint-size4" value="4">
+                            <label class="btn btn-outline-secondary btn-paint" for="paint-size4"><img src="/app/img/ico_size04.png"></label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 필기도구영역 -->
+
+				<div class="row">
+					<div class="col-md-12" style="padding:0;" id="canvas-container">
+                        <div class="desc-box" id="question-box" style="text-align:left; padding: 20px;"></div>
+                        <div id="sketch" class="paint-box"><canvas id="canvas"></canvas></div>
+                    </div>
+				</div>
+			</div>
+
+            <!-- 입력정답 영역 시작 -->
+			<div class="white-container col-md-4" style="margin-left:0.8%;padding:20px;width:32.5%;">
+				<div class="row">
+					<div class="col-md-12" style="padding:0;">
+                        <div class="subtitle" style="padding: 20px;">입력정답</div>
+                        <div style="text-align:left; padding: 20px;">
+							<div class="ccapi_score cdml-omr-row" data-id="405743" id="row-1" style="text-align:center;"></div>
+						</div>
+						
+                        <hr style="color:grey;">
+
+                        <div class="desc-box" id="answer-box" style="text-align:left; padding: 20px;"></div>
+						<p style="text-align:right;">
+							<button class="green-btn03" onclick="toggle_box('error-btn');" id="error-btn" data-id="error-box">▶  오류신고</button>
+						</p>
+
+						<div class="card" id="error-box" style="display:none;">
+							<form id="question_error_create" name="question_error_create" action="https://bonsa.howhyclass.com/su/question_error_report">
+							<input type=hidden name='up_oriname' value='' id="up_oriname" >
+							<input type=hidden name="up_ext"		value="" id="up_ext">
+							<input type=hidden name="up_filename" value="" id="up_filename">
+							<input type=hidden name="dn" value="20241126-115927.">
+
+							<input type="hidden" name="a" value="NTA3NTpobTo1MjY=">
+							<input type="hidden" name="s" value="ad5e91c5f8a7897b45c8faac0587336e">
+							<input type="hidden" name="rt" value="1732589978">
+							<input type="hidden" name="question_id" value="" id="error_question_id">
+								<div class="row">
+									<div><select title="" name="question_error_type_cd" id="fx-form-question_error_type_cd" class="form-control"><option value="">-- 오류타입 --</option><option value="prr">문제오류</option><option value="anr">정답오류</option><option value="cmr">해설오류</option><option value="car">단원오류</option><option value="etr">기타오류</option></select></div>
+									<div class="note note-error" id="fx-error-question_error_type_cd" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>								</div>
+								<div class="row">
+									<div><input type="text" title="" name="title" value="" id="fx-form-title" maxlength="255" placeholder="제목을 입력하세요." style="padding: 6px 12px;margin:0;" class="form-control" /></div>
+									<div class="note note-error" id="fx-error-title" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>								</div>
+								<div class="row">
+									<div><textarea title="" name="contents" id="fx-form-contents" placeholder="상세내용을 입력하세요." rows="4" class="form-control"></textarea></div>
+									<div class="note note-error" id="fx-error-contents" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>								</div>
+								<div class="row">
+									<div>
+										<img src="https://img.howhyclass.com/custom/none.png" style="max-width:300px;" id="upload_image">
+										<input type=hidden name="image" value="" id=fx-form-image >
+										<br>
+										<button onclick="upload_file_form();return false;" class="btn btn-md btn-info" >문항 오류 이미지 등록</button>
+											&nbsp;
+										<button onclick="remove_image_file();return false;" class="btn btn-md btn-info" id="remove-btn" style="display:none;">이미지 삭제</button>
+									</div>
+									<div class="note note-error" id="fx-error-image" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>								</div>
+							</form>
+							<button type="button" class="btn btn-md btn-success" onclick="submit_error_form();">신고하기</button>
+						</div>
+
+                    </div>
+				</div>
+				<div class="btn-container" style="padding-top: 70px;justify-content: flex-end;z-order:10000;">&nbsp;&nbsp;&nbsp;<button class="green-btn05" onclick="next_question()" >다음문제</button>
+				</div>
+			</div>
+            <!-- 입력정답 영역 끝 -->
+
+            <!-- 답안입력 영역 시작 -->
+            <div class="white-container col-md-4" style="margin-left:0.8%;padding:20px;width:32.5%; display: none;">
+				<div class="row">
+					<div class="col-md-12" style="padding:0;">
+                        <div class="subtitle" style="padding: 20px;">답안입력</div>
+                        <div style="text-align:left; padding: 20px;">
+							<div class="ccapi_score cdml-omr-row" data-id="379603" id="row-1" style="text-align:center;">
+                                <div class="cdml_question">
+                                    <div class="question_box">
+                                        <!-- 답안입력란 입력 영역 -->
+                                        <div class="cdml_question"></div>
+                                        <!-- //답안입력란 입력 영역 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+				<div class="btn-container" style="padding-top: 70px;justify-content: flex-end;z-order:10000;">
+                    <button class="green-btn05" onclick="get_user_answer();return false;">정답확인</button>
+                </div>
+			</div>
+            <!-- 답안입력 영역 끝 -->
+
+		</div>
+	</div>
+	<br>
+</div>
+
+<form id="form_file" name="form_file" enctype="multipart/form-data" action="https://bonsa.howhyclass.com/dists/upload" method="post" style="display:none;">
+	 <input type="hidden" name="a" value="bmV3OnF1ZXN0aW9uX2Vycm9yOjIwMjQxMTI2LTExNTkyNy46aW46anBlZ3xqcGd8anBlZ3xnaWZ8cG5n" />
+	 <input type="hidden" name="s" value="0921736667b60b9768498f7a10d14d9d" />
+	 <input type="hidden" name="rt" value="1732589967" />
+	 <input type="file" name="file" id="file_input" />
+</form>
+
+
+
+
+<!--
+$db4_study_card_content->question_id = 50328; // 범례
+$db4_study_card_content->question_id = 26206; // 주관식
+$db4_study_card_content->question_id = 198646; // 객관식
+set_user_answers( '[1_1],,[3_1],[4_2]' );
+set_user_answers( '370,3');
+set_user_answers( '2');
+-->
+
+<script>
+
+var cidx = 0;
+var cdmlapi = new CdmlApi();
+var score_answer = "";
+
+$(window).on( "unload", function() {
+	if( opener != null )
+		opener.postMessage('reload', "*");
+});
+
+$(document).ready(function() {
+
+	if( cidx == 0 )
+		$( "#prev_btn" ).prop( "disabled", true );
+	else
+		$( "#prev_btn" ).prop( "disabled", false );
+
+	if( cidx == 3 )
+		$( "#next_btn" ).prop( "disabled", true );
+	else
+		$( "#next_btn" ).prop( "disabled", false );
+
+
+	$(".ui-dialog-titlebar-close").on('click', function () {
+		location.reload();
+	});
+
+	 $("#file_input").change(function (ev) {
+		  fx_show_loading();
+		  fx_file_submit($("#form_file"));
+	 });
+
+
+	$('.cdml-omr-input').each( function(index, item) {
+		if( index ==  0 )
+			$(this).val( index+1 );
+	});
+
+	// var cdmlapi = new CdmlApi();
+
+    /************************************** 주관식 샘플 379599   ****************************************/
+    /************************************** 객관식 샘플 405743   ****************************************/
+	
+    cdmlapi.init( '405743' );
+
+	var question_item = cdmlapi.cdml_questions[405743];
+
+	score_answer = question_item.score_answer;
+
+	var sentence_html = "";
+	var body_html = "";
+	var answer_html = "";
+	var explanation_html = "";
+
+	sentence_html = question_item.sentence_html.replace("[#SCOPE#]",'' ) + "<br>";
+	body_html += question_item.body_html.replace("[#NO#]", '' ) + question_item.list_html + '<br><br>';
+
+	if( fx_empty(question_item.answer_html) )
+		answer_html = "<p class='subtitle'>정답</p>없음";
+	else
+		answer_html = "<p class='subtitle'>정답</p>" + question_item.answer_html;
+
+	answer_html += "<br><br>";
+
+	if( fx_empty(question_item.explanation_html) )
+		explanation_html = "<p class='subtitle'>해설</p>없음";
+	else
+		explanation_html = "<p class='subtitle'>해설</p>" + question_item.explanation_html
+
+	var html = sentence_html + body_html;
+
+
+	$("#question-box").html( html );
+
+	$("#answer-box").html( answer_html + explanation_html );
+
+	$(".cdml-omr-row").html( question_item.score_html );
+
+	cdml_mathjax_init();
+	cdmlapi.omr_init();
+
+	cdml_mathjax_rerender();
+
+	MathJax.Hub.Register.StartupHook("End",function () {
+		set_user_answers( '[1_1],[2_3],[3_2]' );
+	});
+
+
+	init_canvas();
+});
+
+var omr_answer_map = {};
+function set_user_answers( user_answer )
+{
+	if( user_answer == '' ) return;
+
+	var arr = user_answer.split(',');
+	var arr_index = 0;
+
+	$('.cdml-omr-input').each( function(index, item) {
+
+		if( $(this).hasClass( 'cdml-omr-legend' ) )
+		{
+			var p = this; 
+			$(".cdml-omr-exp").each( function(index, item) {
+				if( $(this).data( 'legend-id' ) == arr[arr_index] )
+					$(p).html( $(this).html() );
+			});
+		}
+		else if( $(this).hasClass( 'cdml-omr-choice-box' ) )
+		{
+			$(this).find( '.cdml-omr-choice-list .cdml-omr-choice-item' ).each( function (index, item ) {
+				if( $(this).data( 'choice-id' ) == user_answer )
+					$(this).addClass('cdml-omr-choice-selected');
+			});
+		}
+		else
+		{
+			if( fx_empty($(this).data('omrid')) )
+				$(this).val( arr[arr_index] );
+			else
+			{
+				var omr_arr = $(this).data('omrid').split(':');
+				var omr_key = omr_arr[1];
+				if( omr_answer_map.hasOwnProperty( omr_key ) )
+					$(this).val( omr_answer_map[omr_key] );
+				else
+				{
+					omr_answer_map[omr_key] = arr[arr_index];
+					$(this).val( arr[arr_index] );
+				}
+				
+			}
+		}
+
+		arr_index ++;
+	});
+
+	$(".cdml-omr-input").attr( 'disabled', true );
+}
+
+function remove_image_file()
+{
+	$('#upload_image').attr('src', 'https://img.howhyclass.com/custom/none.png' );
+
+	$('#up_oriname').val( '' );
+	$('#up_filename').val( '' );
+	$('#up_ext').val( '' );
+
+	$("#remove-btn").hide();
+}
+
+function upload_file_form()
+{
+	 $("#file_input").trigger("click");
+}
+
+function callback_dists( ori_filename, filename, ext )
+{
+	$('#upload_image').attr('src', 'https://bonsa.howhyclass.com/temp/20241126-115927./' + filename + "." + ext + "?t=" + Math.random() );
+
+	$('#up_oriname').val( ori_filename );
+	$('#up_filename').val( filename );
+	$('#up_ext').val( ext );
+
+	$("#remove-btn").show();
+}
+
+
+function submit_error_form()
+{
+	$('#error_question_id').val( 405743 );
+
+	if( $("[name=question_error_type_cd]").val() == "" )
+	{
+		alert("오류타입을 선택해주세요");
+		return;
+	}
+	if( $("[name=title]").val() == "" )
+	{
+		alert("오류제목을 입력해주세요.");
+		return;
+	}
+	if( $("[name=contents]").val() == "" )
+	{
+		alert("오류내용을 입력해주세요.");
+		return;
+	}
+
+	toggle_box('error-btn');
+	$("#question_error_create").submit();
+}
+
+function toggle_box(btn_id)
+{
+	 var id = $('#'+btn_id).data('id');
+
+	 var title = $('#'+btn_id).html();
+	 if( title.indexOf( "▶" ) != -1 )
+	 {
+		$("#" + id).show();
+		$('#'+btn_id).html( title.replace( "▶", "▼" ) );
+	 }
+	 else
+	 {
+		$("#" + id).hide();
+		$('#'+btn_id).html( title.replace( "▼", "▶" ) );
+	 }
+}
+
+function next_question()
+{
+	if( cidx == 3 ) return;
+
+	cidx ++;
+	location.href = '/su/ss?a=NTA3NTpobTo1MjY=&s=ad5e91c5f8a7897b45c8faac0587336e&rt=1732589978&cidx=' + cidx;
+}
+
+function get_user_answer()
+{
+	if( cdmlapi == null ) return;
+
+	var user_answer = cdmlapi.omr_user_inputs();
+	var arr = user_answer.split( '^' );
+
+	if( arr.length < 3 || arr[2] == '' )
+	{
+		var confirm_yn = confirm( "아직 정답입력을 하지 않아 오답처리됩니다. 그래도 진행하시겠습니까?" );
+		if( confirm_yn == false ) return;
+	}
+
+  	$("#user_input").val(user_answer);
+   	$("#score_answer").val(score_answer);
+
+	var canvas = document.querySelector('#canvas');
+
+	var png_data = canvas.toDataURL('image/png');
+
+	if( png_data != empty_png )
+   		$("#user_paint").val(canvas.toDataURL('image/png'));
+
+	fx_submit( $("#save_score_form") );
+}
+
+function complete_study()
+{
+		
+	fx_submit( $("#complete_score_form") );
+}
+
+function go_no( no )
+{
+	if( no == cidx ) return;
+	location.href = '/su/ss?a=NTA3NTpobTo1MjY=&s=ad5e91c5f8a7897b45c8faac0587336e&rt=1732589978&cidx=' + no;
+}
+
+// paint
+
+function show_paint_box( obj )
+{
+	if( $(obj).is(':checked') )
+		$(".paint-box").show();
+	else
+		$(".paint-box").hide();
+}
+
+function init_canvas()
+{
+	var sketch = document.querySelector('#sketch');
+	var canvas = document.querySelector('#canvas');
+	var tmp_canvas = document.createElement('canvas');
+	canvas.width = $(sketch).width();
+	canvas.height = $(sketch).height();
+	tmp_canvas.width = canvas.width;
+	tmp_canvas.height = canvas.height;
+
+	var undo_canvas = [];
+	var undo_canvas_len = 7;
+	for (var i=0; i<undo_canvas_len; ++i) {
+		var ucan = document.createElement('canvas');
+		ucan.width = canvas.width;
+		ucan.height = canvas.height;
+		var uctx = ucan.getContext('2d');
+		undo_canvas.push({'ucan':ucan, 'uctx':uctx, 'redoable':false});
+	}
+
+	var undo_canvas_top = 0;
+
+	var ctx = canvas.getContext('2d');
+	var tmp_ctx = tmp_canvas.getContext('2d');
+	tmp_canvas.id = 'tmp_canvas';
+	sketch.appendChild(tmp_canvas);
+
+	var mouse = {x: 0, y: 0};
+	var start_mouse = {x:0, y:0};
+	var eraser_width = 10;
+	var fontSize = '14px';
+
+	// Pencil Points
+	var ppts = [];
+
+	var chosen_size = 2; // by default
+	/* Drawing on Paint App */
+	tmp_ctx.lineWidth = 1;
+	tmp_ctx.lineJoin = 'round';
+	tmp_ctx.lineCap = 'round';
+	tmp_ctx.strokeStyle = 'black';
+	tmp_ctx.fillStyle = 'black';
+
+
+	var base64String = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA6YAAAJWCAYAAABLZ5pGAAAAAXNSR0IArs4c6QAAIABJREFUeF7t1zENAAAMw7CVP+nByOMRqGTtyc4RIECAAAECBAgQIECAAIFQYOG2aQIECBAgQIAAAQIECBAgcMLUExAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAG02slHAAAKvElEQVQCBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECwtQPECBAgAABAgQIECBAgEAqIExTfuMECBAgQIAAAQIECBAgIEz9AAECBAgQIECAAAECBAikAsI05TdOgAABAgQIECBAgAABAsLUDxAgQIAAAQIECBAgQIBAKiBMU37jBAgQIECAAAECBAgQICBM/QABAgQIECBAgAABAgQIpALCNOU3ToAAAQIECBAgQIAAAQLC1A8QIECAAAECBAgQIECAQCogTFN+4wQIECBAgAABAgQIECAgTP0AAQIECBAgQIAAAQIECKQCwjTlN06AAAECBAgQIECAAAECDyjCAlfkWE21AAAAAElFTkSuQmCC';
+	const img = new Image();
+	img.src = base64String;
+	img.onload = function() {
+		tmp_ctx.clearRect(0, 0, tmp_canvas.width, tmp_canvas.height); // Clear the canvas if needed
+		tmp_ctx.drawImage(img, 0, 0, tmp_canvas.width, tmp_canvas.height);
+	};
+
+}
+
+function get_pos( e )
+{
+	var x = typeof e.offsetX !== 'undefined' ? e.offsetX : e.layerX;
+	var y = typeof e.offsetY !== 'undefined' ? e.offsetY : e.layerY;
+
+	if( x === undefined )
+	{
+		const offset = e.target.getBoundingClientRect();
+		x = e.touches[0].clientX - offset.x;
+		y = e.touches[0].clientY - offset.y;
+	}
+
+	// console.log(x + " "+ y);
+
+	return { _x: x, _y: y };
+}
+
+function get_eraser_pos( sx, sy, eraser_width )
+{
+		var helf = eraser_width/2;
+
+		var sx = sx - helf;
+		var sy = sy - helf;
+		if( sx < 0 ) sx = 0;
+		if( sy < 0 ) sy = 0;
+
+	return { sx: sx, sy: sy };
+}
+
+var empty_png = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA7AAAAJWCAYAAABh12vpAAAAAXNSR0IArs4c6QAAIABJREFUeF7t10ENAAAMArHh3/R0XNIpIGUfdo4AAQIECBAgQIAAAQIECAQEFsgoIgECBAgQIECAAAECBAgQOAPWExAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiEJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDAgPUDBAgQIECAAAECBAgQIJAQMGATNQlJgAABAgQIECBAgAABAgasHyBAgAABAgQIECBAgACBhIABm6hJSAIECBAgQIAAAQIECBAwYP0AAQIECBAgQIAAAQIECCQEDNhETUISIECAAAECBAgQIECAgAHrBwgQIECAAAECBAgQIEAgIWDAJmoSkgABAgQIECBAgAABAgQMWD9AgAABAgQIECBAgAABAgkBAzZRk5AECBAgQIAAAQIECBAgYMD6AQIECBAgQIAAAQIECBBICBiwiZqEJECAAAECBAgQIECAAAED1g8QIECAAAECBAgQIECAQELAgE3UJCQBAgQIECBAgAABAgQIGLB+gAABAgQIECBAgAABAgQSAgZsoiYhCRAgQIAAAQIECBAgQMCA9QMECBAgQIAAAQIECBAgkBAwYBM1CUmAAAECBAgQIECAAAECBqwfIECAAAECBAgQIECAAIGEgAGbqElIAgQIECBAgAABAgQIEDBg/QABAgQIECBAgAABAgQIJAQM2ERNQhIgQIAAAQIECBAgQICAAesHCBAgQIAAAQIECBAgQCAhYMAmahKSAAECBAgQIECAAAECBAxYP0CAAAECBAgQIECAAAECCQEDNlGTkAQIECBAgAABAgQIECBgwPoBAgQIECBAgAABAgQIEEgIGLCJmoQkQIAAAQIECBAgQIAAAQPWDxAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiEJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDAgPUDBAgQIECAAAECBAgQIJAQMGATNQlJgAABAgQIECBAgAABAgasHyBAgAABAgQIECBAgACBhIABm6hJSAIECBAgQIAAAQIECBAwYP0AAQIECBAgQIAAAQIECCQEDNhETUISIECAAAECBAgQIECAgAHrBwgQIECAAAECBAgQIEAgIWDAJmoSkgABAgQIECBAgAABAgQMWD9AgAABAgQIECBAgAABAgkBAzZRk5AECBAgQIAAAQIECBAgYMD6AQIECBAgQIAAAQIECBBICBiwiZqEJECAAAECBAgQIECAAAED1g8QIECAAAECBAgQIECAQELAgE3UJCQBAgQIECBAgAABAgQIGLB+gAABAgQIECBAgAABAgQSAgZsoiYhCRAgQIAAAQIECBAgQMCA9QMECBAgQIAAAQIECBAgkBAwYBM1CUmAAAECBAgQIECAAAECBqwfIECAAAECBAgQIECAAIGEgAGbqElIAgQIECBAgAABAgQIEDBg/QABAgQIECBAgAABAgQIJAQM2ERNQhIgQIAAAQIECBAgQICAAesHCBAgQIAAAQIECBAgQCAhYMAmahKSAAECBAgQIECAAAECBAxYP0CAAAECBAgQIECAAAECCQEDNlGTkAQIECBAgAABAgQIECBgwPoBAgQIECBAgAABAgQIEEgIGLCJmoQkQIAAAQIECBAgQIAAAQPWDxAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiEJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDAgPUDBAgQIECAAAECBAgQIJAQMGATNQlJgAABAgQIECBAgAABAgasHyBAgAABAgQIECBAgACBhIABm6hJSAIECBAgQIAAAQIECBAwYP0AAQIECBAgQIAAAQIECCQEDNhETUISIECAAAECBAgQIECAgAHrBwgQIECAAAECBAgQIEAgIWDAJmoSkgABAgQIECBAgAABAgQMWD9AgAABAgQIECBAgAABAgkBAzZRk5AECBAgQIAAAQIECBAgYMD6AQIECBAgQIAAAQIECBBICBiwiZqEJECAAAECBAgQIECAAAED1g8QIECAAAECBAgQIECAQELAgE3UJCQBAgQIECBAgAABAgQIGLB+gAABAgQIECBAgAABAgQSAgZsoiYhCRAgQIAAAQIECBAgQMCA9QMECBAgQIAAAQIECBAgkBAwYBM1CUmAAAECBAgQIECAAAECBqwfIECAAAECBAgQIECAAIGEgAGbqElIAgQIECBAgAABAgQIEDBg/QABAgQIECBAgAABAgQIJAQM2ERNQhIgQIAAAQIECBAgQICAAesHCBAgQIAAAQIECBAgQCAhYMAmahKSAAECBAgQIECAAAECBAxYP0CAAAECBAgQIECAAAECCQEDNlGTkAQIECBAgAABAgQIECBgwPoBAgQIECBAgAABAgQIEEgIGLCJmoQkQIAAAQIECBAgQIAAAQPWDxAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiEJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDAgPUDBAgQIECAAAECBAgQIJAQMGATNQlJgAABAgQIECBAgAABAgasHyBAgAABAgQIECBAgACBhIABm6hJSAIECBAgQIAAAQIECBAwYP0AAQIECBAgQIAAAQIECCQEDNhETUISIECAAAECBAgQIECAgAHrBwgQIECAAAECBAgQIEAgIWDAJmoSkgABAgQIECBAgAABAgQMWD9AgAABAgQIECBAgAABAgkBAzZRk5AECBAgQIAAAQIECBAgYMD6AQIECBAgQIAAAQIECBBICBiwiZqEJECAAAECBAgQIECAAAED1g8QIECAAAECBAgQIECAQELAgE3UJCQBAgQIECBAgAABAgQIGLB+gAABAgQIECBAgAABAgQSAgZsoiYhCRAgQIAAAQIECBAgQMCA9QMECBAgQIAAAQIECBAgkBAwYBM1CUmAAAECBAgQIECAAAECBqwfIECAAAECBAgQIECAAIGEgAGbqElIAgQIECBAgAABAgQIEDBg/QABAgQIECBAgAABAgQIJAQM2ERNQhIgQIAAAQIECBAgQICAAesHCBAgQIAAAQIECBAgQCAhYMAmahKSAAECBAgQIECAAAECBAxYP0CAAAECBAgQIECAAAECCQEDNlGTkAQIECBAgAABAgQIECBgwPoBAgQIECBAgAABAgQIEEgIGLCJmoQkQIAAAQIECBAgQIAAAQPWDxAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiEJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDAgPUDBAgQIECAAAECBAgQIJAQMGATNQlJgAABAgQIECBAgAABAgasHyBAgAABAgQIECBAgACBhIABm6hJSAIECBAgQIAAAQIECBAwYP0AAQIECBAgQIAAAQIECCQEDNhETUISIECAAAECBAgQIECAgAHrBwgQIECAAAECBAgQIEAgIWDAJmoSkgABAgQIECBAgAABAgQMWD9AgAABAgQIECBAgAABAgkBAzZRk5AECBAgQIAAAQIECBAgYMD6AQIECBAgQIAAAQIECBBICBiwiZqEJECAAAECBAgQIECAAAED1g8QIECAAAECBAgQIECAQELAgE3UJCQBAgQIECBAgAABAgQIGLB+gAABAgQIECBAgAABAgQSAgZsoiYhCRAgQIAAAQIECBAgQMCA9QMECBAgQIAAAQIECBAgkBAwYBM1CUmAAAECBAgQIECAAAECBqwfIECAAAECBAgQIECAAIGEgAGbqElIAgQIECBAgAABAgQIEDBg/QABAgQIECBAgAABAgQIJAQM2ERNQhIgQIAAAQIECBAgQICAAesHCBAgQIAAAQIECBAgQCAhYMAmahKSAAECBAgQIECAAAECBAxYP0CAAAECBAgQIECAAAECCQEDNlGTkAQIECBAgAABAgQIECBgwPoBAgQIECBAgAABAgQIEEgIGLCJmoQkQIAAAQIECBAgQIAAAQPWDxAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiEJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDAgPUDBAgQIECAAAECBAgQIJAQMGATNQlJgAABAgQIECBAgAABAgasHyBAgAABAgQIECBAgACBhIABm6hJSAIECBAgQIAAAQIECBAwYP0AAQIECBAgQIAAAQIECCQEDNhETUISIECAAAECBAgQIECAgAHrBwgQIECAAAECBAgQIEAgIWDAJmoSkgABAgQIECBAgAABAgQMWD9AgAABAgQIECBAgAABAgkBAzZRk5AECBAgQIAAAQIECBAgYMD6AQIECBAgQIAAAQIECBBICBiwiZqEJECAAAECBAgQIECAAAED1g8QIECAAAECBAgQIECAQELAgE3UJCQBAgQIECBAgAABAgQIGLB+gAABAgQIECBAgAABAgQSAgZsoiYhCRAgQIAAAQIECBAgQMCA9QMECBAgQIAAAQIECBAgkBAwYBM1CUmAAAECBAgQIECAAAECBqwfIECAAAECBAgQIECAAIGEgAGbqElIAgQIECBAgAABAgQIEDBg/QABAgQIECBAgAABAgQIJAQM2ERNQhIgQIAAAQIECBAgQICAAesHCBAgQIAAAQIECBAgQCAhYMAmahKSAAECBAgQIECAAAECBAxYP0CAAAECBAgQIECAAAECCQEDNlGTkAQIECBAgAABAgQIECBgwPoBAgQIECBAgAABAgQIEEgIGLCJmoQkQIAAAQIECBAgQIAAAQPWDxAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiEJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDAgPUDBAgQIECAAAECBAgQIJAQMGATNQlJgAABAgQIECBAgAABAgasHyBAgAABAgQIECBAgACBhIABm6hJSAIECBAgQIAAAQIECBAwYP0AAQIECBAgQIAAAQIECCQEDNhETUISIECAAAECBAgQIECAgAHrBwgQIECAAAECBAgQIEAgIWDAJmoSkgABAgQIECBAgAABAgQMWD9AgAABAgQIECBAgAABAgkBAzZRk5AECBAgQIAAAQIECBAgYMD6AQIECBAgQIAAAQIECBBICBiwiZqEJECAAAECBAgQIECAAAED1g8QIECAAAECBAgQIECAQELAgE3UJCQBAgQIECBAgAABAgQIGLB+gAABAgQIECBAgAABAgQSAgZsoiYhCRAgQIAAAQIECBAgQMCA9QMECBAgQIAAAQIECBAgkBAwYBM1CUmAAAECBAgQIECAAAECBqwfIECAAAECBAgQIECAAIGEgAGbqElIAgQIECBAgAABAgQIEDBg/QABAgQIECBAgAABAgQIJAQM2ERNQhIgQIAAAQIECBAgQICAAesHCBAgQIAAAQIECBAgQCAhYMAmahKSAAECBAgQIECAAAECBAxYP0CAAAECBAgQIECAAAECCQEDNlGTkAQIECBAgAABAgQIECBgwPoBAgQIECBAgAABAgQIEEgIGLCJmoQkQIAAAQIECBAgQIAAAQPWDxAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiEJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDAgPUDBAgQIECAAAECBAgQIJAQMGATNQlJgAABAgQIECBAgAABAgasHyBAgAABAgQIECBAgACBhIABm6hJSAIECBAgQIAAAQIECBAwYP0AAQIECBAgQIAAAQIECCQEDNhETUISIECAAAECBAgQIECAgAHrBwgQIECAAAECBAgQIEAgIWDAJmoSkgABAgQIECBAgAABAgQMWD9AgAABAgQIECBAgAABAgkBAzZRk5AECBAgQIAAAQIECBAgYMD6AQIECBAgQIAAAQIECBBICBiwiZqEJECAAAECBAgQIECAAAED1g8QIECAAAECBAgQIECAQELAgE3UJCQBAgQIECBAgAABAgQIGLB+gAABAgQIECBAgAABAgQSAgZsoiYhCRAgQIAAAQIECBAgQMCA9QMECBAgQIAAAQIECBAgkBAwYBM1CUmAAAECBAgQIECAAAECBqwfIECAAAECBAgQIECAAIGEgAGbqElIAgQIECBAgAABAgQIEDBg/QABAgQIECBAgAABAgQIJAQM2ERNQhIgQIAAAQIECBAgQICAAesHCBAgQIAAAQIECBAgQCAhYMAmahKSAAECBAgQIECAAAECBAxYP0CAAAECBAgQIECAAAECCQEDNlGTkAQIECBAgAABAgQIECBgwPoBAgQIECBAgAABAgQIEEgIGLCJmoQkQIAAAQIECBAgQIAAAQPWDxAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiEJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDAgPUDBAgQIECAAAECBAgQIJAQMGATNQlJgAABAgQIECBAgAABAgasHyBAgAABAgQIECBAgACBhIABm6hJSAIECBAgQIAAAQIECBAwYP0AAQIECBAgQIAAAQIECCQEDNhETUISIECAAAECBAgQIECAgAHrBwgQIECAAAECBAgQIEAgIWDAJmoSkgABAgQIECBAgAABAgQMWD9AgAABAgQIECBAgAABAgkBAzZRk5AECBAgQIAAAQIECBAgYMD6AQIECBAgQIAAAQIECBBICBiwiZqEJECAAAECBAgQIECAAAED1g8QIECAAAECBAgQIECAQELAgE3UJCQBAgQIECBAgAABAgQIGLB+gAABAgQIECBAgAABAgQSAgZsoiYhCRAgQIAAAQIECBAgQMCA9QMECBAgQIAAAQIECBAgkBAwYBM1CUmAAAECBAgQIECAAAECBqwfIECAAAECBAgQIECAAIGEgAGbqElIAgQIECBAgAABAgQIEDBg/QABAgQIECBAgAABAgQIJAQM2ERNQhIgQIAAAQIECBAgQICAAesHCBAgQIAAAQIECBAgQCAhYMAmahKSAAECBAgQIECAAAECBAxYP0CAAAECBAgQIECAAAECCQEDNlGTkAQIECBAgAABAgQIECBgwPoBAgQIECBAgAABAgQIEEgIGLCJmoQkQIAAAQIECBAgQIAAAQPWDxAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiET/5voAAALwUlEQVQJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDAgPUDBAgQIECAAAECBAgQIJAQMGATNQlJgAABAgQIECBAgAABAgasHyBAgAABAgQIECBAgACBhIABm6hJSAIECBAgQIAAAQIECBAwYP0AAQIECBAgQIAAAQIECCQEDNhETUISIECAAAECBAgQIECAgAHrBwgQIECAAAECBAgQIEAgIWDAJmoSkgABAgQIECBAgAABAgQMWD9AgAABAgQIECBAgAABAgkBAzZRk5AECBAgQIAAAQIECBAgYMD6AQIECBAgQIAAAQIECBBICBiwiZqEJECAAAECBAgQIECAAAED1g8QIECAAAECBAgQIECAQELAgE3UJCQBAgQIECBAgAABAgQIGLB+gAABAgQIECBAgAABAgQSAgZsoiYhCRAgQIAAAQIECBAgQMCA9QMECBAgQIAAAQIECBAgkBAwYBM1CUmAAAECBAgQIECAAAECBqwfIECAAAECBAgQIECAAIGEgAGbqElIAgQIECBAgAABAgQIEDBg/QABAgQIECBAgAABAgQIJAQM2ERNQhIgQIAAAQIECBAgQICAAesHCBAgQIAAAQIECBAgQCAhYMAmahKSAAECBAgQIECAAAECBAxYP0CAAAECBAgQIECAAAECCQEDNlGTkAQIECBAgAABAgQIECBgwPoBAgQIECBAgAABAgQIEEgIGLCJmoQkQIAAAQIECBAgQIAAAQPWDxAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiEJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDAgPUDBAgQIECAAAECBAgQIJAQMGATNQlJgAABAgQIECBAgAABAgasHyBAgAABAgQIECBAgACBhIABm6hJSAIECBAgQIAAAQIECBAwYP0AAQIECBAgQIAAAQIECCQEDNhETUISIECAAAECBAgQIECAgAHrBwgQIECAAAECBAgQIEAgIWDAJmoSkgABAgQIECBAgAABAgQMWD9AgAABAgQIECBAgAABAgkBAzZRk5AECBAgQIAAAQIECBAgYMD6AQIECBAgQIAAAQIECBBICBiwiZqEJECAAAECBAgQIECAAAED1g8QIECAAAECBAgQIECAQELAgE3UJCQBAgQIECBAgAABAgQIGLB+gAABAgQIECBAgAABAgQSAgZsoiYhCRAgQIAAAQIECBAgQMCA9QMECBAgQIAAAQIECBAgkBAwYBM1CUmAAAECBAgQIECAAAECBqwfIECAAAECBAgQIECAAIGEgAGbqElIAgQIECBAgAABAgQIEDBg/QABAgQIECBAgAABAgQIJAQM2ERNQhIgQIAAAQIECBAgQICAAesHCBAgQIAAAQIECBAgQCAhYMAmahKSAAECBAgQIECAAAECBAxYP0CAAAECBAgQIECAAAECCQEDNlGTkAQIECBAgAABAgQIECBgwPoBAgQIECBAgAABAgQIEEgIGLCJmoQkQIAAAQIECBAgQIAAAQPWDxAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiEJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDAgPUDBAgQIECAAAECBAgQIJAQMGATNQlJgAABAgQIECBAgAABAgasHyBAgAABAgQIECBAgACBhIABm6hJSAIECBAgQIAAAQIECBAwYP0AAQIECBAgQIAAAQIECCQEDNhETUISIECAAAECBAgQIECAgAHrBwgQIECAAAECBAgQIEAgIWDAJmoSkgABAgQIECBAgAABAgQMWD9AgAABAgQIECBAgAABAgkBAzZRk5AECBAgQIAAAQIECBAgYMD6AQIECBAgQIAAAQIECBBICBiwiZqEJECAAAECBAgQIECAAAED1g8QIECAAAECBAgQIECAQELAgE3UJCQBAgQIECBAgAABAgQIGLB+gAABAgQIECBAgAABAgQSAgZsoiYhCRAgQIAAAQIECBAgQMCA9QMECBAgQIAAAQIECBAgkBAwYBM1CUmAAAECBAgQIECAAAECBqwfIECAAAECBAgQIECAAIGEgAGbqElIAgQIECBAgAABAgQIEDBg/QABAgQIECBAgAABAgQIJAQM2ERNQhIgQIAAAQIECBAgQICAAesHCBAgQIAAAQIECBAgQCAhYMAmahKSAAECBAgQIECAAAECBAxYP0CAAAECBAgQIECAAAECCQEDNlGTkAQIECBAgAABAgQIECBgwPoBAgQIECBAgAABAgQIEEgIGLCJmoQkQIAAAQIECBAgQIAAAQPWDxAgQIAAAQIECBAgQIBAQsCATdQkJAECBAgQIECAAAECBAgYsH6AAAECBAgQIECAAAECBBICBmyiJiEJECBAgAABAgQIECBAwID1AwQIECBAgAABAgQIECCQEDBgEzUJSYAAAQIECBAgQIAAAQIGrB8gQIAAAQIECBAgQIAAgYSAAZuoSUgCBAgQIECAAAECBAgQMGD9AAECBAgQIECAAAECBAgkBAzYRE1CEiBAgAABAgQIECBAgIAB6wcIECBAgAABAgQIECBAICFgwCZqEpIAAQIECBAgQIAAAQIEDFg/QIAAAQIECBAgQIAAAQIJAQM2UZOQBAgQIECAAAECBAgQIGDA+gECBAgQIECAAAECBAgQSAgYsImahCRAgAABAgQIECBAgAABA9YPECBAgAABAgQIECBAgEBCwIBN1CQkAQIECBAgQIAAAQIECBiwfoAAAQIECBAgQIAAAQIEEgIGbKImIQkQIECAAAECBAgQIEDgAd0dAldoI1pEAAAAAElFTkSuQmCC';
+
+</script>
+
+
+</body>
+</html>
