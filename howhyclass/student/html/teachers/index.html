@@ -115,7 +115,7 @@ infoBox.addEventListener('click', function() {
 			<div class='input-box'>
 				<input type='text' class='input-teacher' placeholder='선생님 코드를 입력해 주세요.' id="teacher_code" />
 				<!-- <img src="https://img.howhyclass.com/hclass//images/icon_search_gray.png" alt='' onclick="search_teacher();" /> 241126 이미지 변경 -->
-				<img src="../../images/icon_search_gray.png" alt='' onclick="search_teacher();" />
+				<img src="../../images/icon_search_gray.svg" alt='' onclick="search_teacher();" />
 			</div>
 			<div class='gray-container'>
 				<div class='top'>
@@ -137,11 +137,11 @@ infoBox.addEventListener('click', function() {
 						</div>
 						<div class='bottom'>
 							<div class='teacher-info'>하와이매쓰 홍길동 선생님</div>
-                            <!-- 241126 위치 변경 -->
+                            <!-- 241126 위치, 이미지 변경 -->
                             <div class='right'>
-								<img src="../../images/icon_check_inactive.png" alt="" class='teacher_check' data-id='236' onclick="check_teacher(this);"/>
+								<img src="../../images/icon_check_inactive.svg" alt="" class='teacher_check' data-id='236' onclick="check_teacher(this);"/>
 							</div>
-                            <!-- //241126 위치 변경 끝 -->
+                            <!-- //241126 위치, 이미지 변경 끝 -->
 						</div>
 					</div>
                     
@@ -149,15 +149,16 @@ infoBox.addEventListener('click', function() {
 						<div class='top'>
 							<div class='left'>
 								<div>하와이컴퍼니2</div>
-                                <!-- 원본 위치 -->
-                                <div class='right'>
+                                <!-- <div class='right'>
                                     <img src="../../images/icon_check_inactive.png" alt="" class='teacher_check' data-id='237' onclick="check_teacher(this);"/>
-                                </div>
-                                <!-- 원본 위치 -->
+                                </div> -->
 							</div>
 						</div>
 						<div class='bottom'>
 							<div class='teacher-info'>하와이컴퍼니2 비키 선생님</div>
+							<div class='right'>
+								<img src="../../images/icon_check_inactive.svg" alt="" class='teacher_check' data-id='237' onclick="check_teacher(this);"/>
+							</div>
 						</div>
 					</div>
                     <div class='class-box'>
@@ -169,7 +170,7 @@ infoBox.addEventListener('click', function() {
 						<div class='bottom'>
 							<div class='teacher-info'>하와이매쓰 비키 선생님</div>
 							<div class='right'>
-								<img src="../../images/icon_check_inactive.png" alt="" class='teacher_check' data-id='237' onclick="check_teacher(this);"/>
+								<img src="../../images/icon_check_inactive.svg" alt="" class='teacher_check' data-id='237' onclick="check_teacher(this);"/>
 							</div>
 						</div>
 					</div>
@@ -182,7 +183,7 @@ infoBox.addEventListener('click', function() {
 						<div class='bottom'>
 							<div class='teacher-info'>국영수영어학원 럭키비키 선생님</div>
 							<div class='right'>
-								<img src="../../images/icon_check_inactive.png" alt="" class='teacher_check' data-id='237' onclick="check_teacher(this);"/>
+								<img src="../../images/icon_check_inactive.svg" alt="" class='teacher_check' data-id='237' onclick="check_teacher(this);"/>
 							</div>
 						</div>
 					</div>
@@ -195,7 +196,7 @@ infoBox.addEventListener('click', function() {
 						<div class='bottom'>
 							<div class='teacher-info'>위너스해법영수학원 홍길순 선생님</div>
 							<div class='right'>
-								<img src="../../images/icon_check_inactive.png" alt="" class='teacher_check' data-id='237' onclick="check_teacher(this);"/>
+								<img src="../../images/icon_check_inactive.svg" alt="" class='teacher_check' data-id='237' onclick="check_teacher(this);"/>
 							</div>
 						</div>
 					</div>
@@ -225,12 +226,13 @@ function search_teacher()
 
 function check_teacher( obj )
 {
-	if( $(obj).attr('src').indexOf( 'check_inactive.png' ) != -1 )
+	// if( $(obj).attr('src').indexOf( 'check_inactive.png' ) != -1 )  241126 이미지 변경
+	if( $(obj).attr('src').indexOf( 'check_inactive.svg' ) != -1 )
 		// $(obj).attr('src', 'https://img.howhyclass.com/hclass/images/icon_check_active.png' ); 241126 이미지 변경
-		$(obj).attr('src', '../../images/icon_check_active.png' );
+		$(obj).attr('src', '../../images/icon_check_active.svg' );
 	else
 		// $(obj).attr('src', 'https://img.howhyclass.com/hclass/images/icon_check_inactive.png' ); 241126 이미지 변경
-		$(obj).attr('src', '../../images/icon_check_inactive.png' );
+		$(obj).attr('src', '../../images/icon_check_inactive.svg' );
 }
 
 function remove_teachers()
@@ -238,7 +240,8 @@ function remove_teachers()
     var id_arr = [];
 
     $('.teacher_check').each( function( index, item ){
-        if( $(this).attr('src').indexOf('icon_check_active.png') != -1 )
+        // if( $(this).attr('src').indexOf('icon_check_active.png') != -1 ) 241126 이미지 변경
+        if( $(this).attr('src').indexOf('icon_check_active.svg') != -1 )
             id_arr.push(  $(this).data('id') );
     });
 

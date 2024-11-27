@@ -65,6 +65,53 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 .pagination {
     justify-content: center;
+    align-items: center;
+    gap: 0 15px;
+    padding-top: 25px;
+    border-top: 1px solid #d2d2d2;
+    li{
+        a{
+            display: block;
+            font-family: 'SUIT';
+            font-size: 14px;
+            line-height: 1;
+            font-weight: 800;
+            color: #222;
+        }
+        &.active a{color: #0ad08d;}
+        &:nth-child(1) a{
+            font-size: 0;
+            width: 27px;
+            height: 27px;
+            background: #efefef url(../images/icon_undo_end.svg) no-repeat center / 14px auto;
+            margin-right: -25px;
+            border-radius: 50%;
+        }
+        &:nth-child(2) a{
+            font-size: 0;
+            width: 27px;
+            height: 27px;
+            background: #efefef url(../images/icon_undo.svg) no-repeat center / 14px auto;
+            margin-right: -15px;
+            border-radius: 50%;
+        }
+        &:nth-last-child(1) a{
+            font-size: 0;
+            width: 27px;
+            height: 27px;
+            background: #efefef url(../images/icon_redo_end.svg) no-repeat center / 14px auto;
+            margin-left: -25px;
+            border-radius: 50%;
+        }
+        &:nth-last-child(2) a{
+            font-size: 0;
+            width: 27px;
+            height: 27px;
+            background: #efefef url(../images/icon_redo.svg) no-repeat center / 14px auto;
+            margin-left: -15px;
+            border-radius: 50%;
+        }
+    }
 }
 
 /* .modal-body {
