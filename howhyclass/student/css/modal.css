@@ -266,42 +266,57 @@
   /* verificationQuestion_MODAL END */
   
   .school-modal {
-    width: 480px;
-    margin: auto;
-    background-color: #fefefe;
+    /* width: 480px; */
+    width: 360px;
+    /* margin: auto; */
+    background-color: #fff;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: var(--border-radius-8, 8px);
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.20);
+    border-radius: var(--border-radius-15, 15px);
+    /* box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.20); */
+    overflow: hidden;
   
     .modal-title {
-      padding: 20px;
-      border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);
-  
-      .left {}
-  
+      padding: 12px 20px;
+      border-bottom: 1px solid #e6e6e6;
+      background: #eee;
+      .left {
+        font-family: 'SUIT';
+        font-size: 16px;
+        line-height: 1;
+        font-weight: 700;
+        color: #333;
+        &+img{
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+        }
+      }
       .right {}
     }
   
     .modal-content {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      padding: 20px 0px 20px 20px;
+      /* gap: 20px; */
+      padding: 20px !important;
+      width: 100% !important;
     }
   
     .scroll-content {
-      height: 380px;
+      /* height: 380px; */
+      height: fit-content;
     }
   
     .notice {
-      color: var(--color-text-disabled, #B3B3B3);
+      color: #222;
       text-align: center;
   
       /* body/S/medium */
-      font-family: Pretendard;
+      /* font-family: Pretendard; */
+      font-family: 'SUIT';
       font-size: 14px;
       font-style: normal;
       font-weight: 500;
@@ -322,9 +337,7 @@
     .modal-title {
       padding: 20px;
       border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);
-  
       .left {}
-  
       .right {}
     }
   
@@ -2505,3 +2518,16 @@
   }
 }
 /* 선생님 등록 팝업 끝 */
+
+/* 내정보 > 학교명 검색 팝업 시작 */
+#popup_school_list-content{border-width: 0 !important;}
+#new_school-content{
+  border-width: 0 !important;
+  .school-modal .modal-content{gap: 10px;}
+  .btn-container{
+    gap: 10px;
+    justify-content: center !important;
+    margin-top: 10px;
+  }
+}
+/* 내정보 > 학교명 검색 팝업 끝 */

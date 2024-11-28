@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2F4VX2QKK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2F4VX2QKK8');
+</script>
+
+	<meta charset="utf-8" />
+	<title>하와이클래쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="shortcut icon" href="https://img.howhyclass.com/hmath/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<!-- <link href="https://img.howhyclass.com/hclass/css/custom.css?20241125" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/modal.css?20241125" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/add.css?20241125" rel="stylesheet"> -->
+	<link href="../../css/custom.css?20241125" rel="stylesheet">
+	<link href="../../css/modal.css?20241125" rel="stylesheet">
+	<link href="../../css/add.css?20241125" rel="stylesheet">
+
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            tex2jax: { displayMath: [ ["$$","$$"] ] },
+            "HTML-CSS": { fonts: ["Latin-Modern"] }
+        });
+    </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?20241125"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?20241125"></script>
+</head>
+
+<body>
+	<div class='header'>
+	<div>
+        <a href="/home/main"><img class='logo' src='https://img.howhyclass.com/hclass/images/logo.svg' alt=''/></a>
+	</div>
+	<ul class='link'>
+			<li>
+				<ul><a href='/books/index'><span >교재학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/ai_studies/index'><span >AI 학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/daily_studies/index'><span >일일학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/homeworks/index'><span >숙제</span></a></ul>
+			</li>	</ul>
+	<div class='menu'>
+		<!-- 241120 아이콘 변경 및 태그 추가 시작 -->
+		<button class='subscribe' onclick="location.href='/teachers/index';"><span class="icon_add_tutor"></span>선생님등록</button>
+		<button class='subscribe' onclick="location.href='/payments/index';"><span class="icon_subscribe"></span>구독하기</button>
+		<button class='alarm-icon' onclick="location.href='/notices/index';" title="알림">
+			<span class="icon_alarm"></span>
+		</button>
+		<div id="info-dropbox" class='info-icon drop-box'>
+			<span class="icon_user"></span>
+			<div id="info-dropbox-content" class="drop-box-content">
+				<div class="dropdown-button-box">
+				<button onclick="location.href='/mypage/index';">나의 정보</button>
+				<button onclick="location.href='/mypage/setting';">설정 &amp; FAQ</button>
+				<button class="logout" onclick="location.href='/users/logout_student';">
+					<img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/>
+					<div>로그아웃</div>
+				</button>
+				</div>
+			</div>
+		</div>
+		<!-- 241120 아이콘 변경 및 태그 추가 끝 -->
+	</div>
+
+</div>
+
+<script>
+const infoBox = document.getElementById('info-dropbox');
+const infoContent = document.getElementById('info-dropbox-content');
+  
+infoBox.addEventListener('click', function() {
+    infoContent.style.display = infoContent.style.display === 'block' ? 'none' : 'block';
+});
+</script>
+
+	<style>
+.right-ex {
+	flex: 2;
+   	padding: 16px;
+   	color: var(--color-text-secondary, #4D4D4D);
+   	font-size: 16px;
+   	font-style: normal;
+   	font-weight: 500;
+   	line-height: 160%;
+   	border-bottom: 1px solid var(--color-border-disabled, #E5E5E5);
+}
+
+.form-select form-input {
+    font-size: 16px;
+}
+.form-control {
+    font-size: 16px;
+}
+
+</style>
+
+<div class='content-container' style="margin: 0 25%;">
+	<div class='mypage-container'>
+		<div class='left white-container'>
+			<div class="title">
+				<div class="left">내 정보</div>
+				<div class="right toggle-btn" onclick="show_input();return false;">
+					<img src="https://img.howhyclass.com/hclass/images/icon_edit_gray.png" alt=""/>
+				</div>
+			</div>
+			<div class="content-container">
+			<form id="form_update" method="post" action="/mypage/update_student">
+				<input type='hidden' name="school_id" id="school_id" value="2137">
+				<input type='hidden' name="school_address" id="school_address" >
+				<input type='hidden' name="school_name" id="school_name" >
+				<div class="content-box">
+					<div class="left">이름</div>
+					<div class="right-ex">
+						<div><input type="text" title="" name="name" value="정다영(학생)" id="fx-form-name" maxlength="32" class="form-control form-input" /></div>
+             			<div class="note note-error" id="fx-error-name" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>					</div>
+				</div>
+				<div class="content-box">
+					<div class="left">이메일</div>
+					<div class="right-ex">dayeong310@daum.net</div>
+				</div>
+				<div class="content-box">
+					<div class="left">휴대폰 번호</div>
+					<div class="right-ex">01094962811</div>
+				</div>
+
+				<div class="content-box">
+					<div class="left">성별</div>
+					<div class="right-ex">
+						<div class="form-select-text">여</div>
+						<div class="form-select-box" style="display:none;">
+							<select title="" name="sex_cd" id="fx-form-sex_cd" class="form-control form-select"><option value="">-- 성별 --</option><option value="man">남</option><option value="wom" selected>여</option></select>						</div>
+             			<div class="note note-error" id="fx-error-sex_cd" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>					</div>
+				</div>
+				<div class="content-box">
+					<div class="left">14세이상</div>
+					<div class="right-ex">
+						<div class="form-select-text">y</div>
+						<div class="form-select-box" style="display:none;">
+							<select title="" name="over14_yn" id="fx-form-over14_yn" class="form-control form-select"><option value="">-- Yes/No --</option><option value="y" selected>예</option><option value="n">아니오</option></select>						</div>
+             			<div class="note note-error" id="fx-error-over14_yn" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>					</div>
+				</div>
+				<div class="content-box">
+					<div class="left">학교</div>
+					<div class="right-ex">
+						<div class="row">
+						<div class="col-md-10">
+							<div><input type="text" title="" name="school_name_show" value="진건초등학교" maxlength="32" id="school_name_show" readonly="1" class="form-control input-teacher" /></div>
+             				<div class="note note-error" id="fx-error-school_id" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>						</div>
+						<div class="col-md-2">
+                		<!-- <img style="float:right;" src="https://img.howhyclass.com/hclass/images/icon_search_gray.png" alt='' onclick="popup_school_list();return false;"> 241128 이미지 변경 -->
+                		<img style="float:right;" src="../../images/icon_search_green.svg" alt='' onclick="popup_school_list();return false;">
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="content-box">
+					<div class="left">학년</div>
+					<div class="right-ex">
+						<div class="form-select-text">초5</div>
+						<div class="form-select-box" style="display:none;">
+							<select title="" name="grade_cd" id="fx-form-grade_cd" class="form-control form-select"><option value="">-- 학년 --</option><option value="e1">초1</option><option value="e2">초2</option><option value="e3">초3</option><option value="e4">초4</option><option value="e5" selected>초5</option><option value="e6">초6</option><option value="j1">중1</option><option value="j2">중2</option><option value="j3">중3</option><option value="s1">고1</option><option value="s2">고2</option><option value="s3">고3</option></select>						</div>
+             			<div class="note note-error" id="fx-error-grade_cd" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>					</div>
+				</div>
+
+				<div class="content-box">
+					<div class="left">등급</div>
+					<div class="right-ex">
+						<div class="form-select-text">C(보통)</div>
+						<div class="form-select-box" style="display:none;">
+							<select title="" name="math_level_cd" id="fx-form-math_level_cd" class="form-control form-select form-input"><option value="">-- 수학 등급 --</option><option value="a">A(매우잘함)</option><option value="b">B(잘함)</option><option value="c" selected>C(보통)</option><option value="d">D(미흡)</option><option value="e">E(노력)</option></select>						</div>
+             			<div class="note note-error" id="fx-error-math_level_cd" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>					</div>
+				</div>
+				<div class="content-box">
+					<div class="left">일일학습</div>
+					<div class="right-ex">
+						<div class="form-select-text">2015:초5</div>
+						<div class="form-select-box" style="display:none;">
+							<select title="" name="daliy_grade" id="fx-form-daliy_grade" class="form-control form-select form-input"><option value="">-- 과목 --</option><option value="2015:초3">초3 (2015)</option><option value="2015:초4">초4 (2015)</option><option value="2015:초5" selected>초5 (2015)</option><option value="2015:초6">초6 (2015)</option><option value="2015:중1">중1 (2015)</option><option value="2015:중2">중2 (2015)</option><option value="2015:중3">중3 (2015)</option><option value="2015:수학(상)">수학(상) (2015)</option><option value="2015:수학(하)">수학(하) (2015)</option><option value="2015:수Ⅰ">수Ⅰ (2015)</option><option value="2015:수Ⅱ">수Ⅱ (2015)</option></select>						</div>
+             			<div class="note note-error" id="fx-error-math_level_cd" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>					</div>
+				</div>
+            	<div class="btn-container" style="margin-top:10px;padding:20px;text-align:right; justify-content: flex-end;">
+              		<button class="gray-btn" onclick="hide_input();return false;">취소</button>
+              		<button class="green-btn" type="submit">저장</button>
+        			            			            				<button type="button" class="gray-btn" onclick="leave_member();return false;" >탈퇴신청</button>
+            			        			            	</div>
+			</div>
+			</form>
+		</div>
+
+        <!-- 241128 faq에 있는 설정영역 이동 시작 -->
+        <div class="right white-container">
+            <div class="title">설정</div>
+            <div class="content-box">
+                <div class="content-flex">
+                    <div class="left">마케팅 동의 </div>
+                    <div class="right" onclick="toggle_setting(this,'marketing_agree_yn');">
+                        <img src="https://img.howhyclass.com/hclass/images/img_toggle_btn_gray.png" alt="" />
+                    </div>
+                </div>
+                <div class="content-flex">
+                    <div class="left">이메일 알림</div>
+                    <div class="right" onclick="toggle_setting(this,'marketing_email_yn');">
+                        <img src="https://img.howhyclass.com/hclass/images/img_toggle_btn_gray.png" alt="" />
+                    </div>
+                </div>
+                <div class="content-flex">
+                    <div class="left">문자 알림</div>
+                    <div class="right" onclick="toggle_setting(this,'marketing_sms_yn');">
+                        <img src="https://img.howhyclass.com/hclass/images/img_toggle_btn_gray.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 241128 faq에 있는 설정영역 이동 끝 -->
+	</div>
+</div>
+
+
+<script>
+$(document).ready(function() {
+	$(".form-input").attr('readonly', true );
+	// $(".btn-container").hide(); 팝업 확인용 임시변경
+    $(".mypage-container .btn-container").hide();
+});
+
+
+function hide_input()
+{
+	$(".form-input").attr('readonly', true );
+
+	$(".form-select-box").hide();
+	$(".form-select-text").show();
+
+	$(".btn-container").hide();
+	$(".toggle-btn").show();
+}
+
+function show_input()
+{
+	$(".form-input").attr('readonly', false );
+
+	$(".form-select-box").show();
+	$(".form-select-text").hide();
+
+	$(".btn-container").show();
+	$(".toggle-btn").hide();
+}
+
+function leave_member()
+{
+    fx_layer_popup_v2( 'leave_member', "/mypage/leave_newone", "" );
+}
+
+
+function popup_school_list()
+{
+    fx_layer_popup_v2( 'popup_school_list', "/users/popup_school_list", "" );
+}
+
+function new_school()
+{
+    fx_layer_popup_v2_close_by_id( 'popup_school_list' );
+    fx_layer_popup_v2( 'new_school', "/users/new_school", "" );
+}
+
+</script>
+
+<!-- 241128 설정 영역 토글버튼 시작 -->
+<script>
+    function toggle_setting( obj, field )
+    {
+        if( $(obj).html().indexOf( 'green' ) != -1 ){
+            $(obj).html( '<img src="https://img.howhyclass.com/hclass/images/img_toggle_btn_gray.png" alt="" />' );
+            $(obj).removeClass('on');//241128 토글 on 클래스 삭제
+        }else{
+            $(obj).html( '<img src="https://img.howhyclass.com/hclass/images/img_toggle_btn_green.png" alt="" />' );
+            $(obj).addClass('on');//241128 토글 on 클래스 추가
+        }
+    
+        //fx_submit_link( '/mypage/toggle?f=' + field );
+    }
+    
+    function toggle_content( box_id )
+    {
+        var obj = $('#'+box_id);
+        if( obj.is(':visible') )
+            obj.hide();
+        else
+            obj.show();
+    }
+    
+</script>
+<!-- 241128 설정 영역 토글버튼 끝 -->
+
+	
+<div class='footer'>
+	<div class="top">
+		<div class="left">
+			<div class='footer-content'>
+				<span class="footer_logo"><img src="https://img.howhyclass.com/hclass/images/footer_logo.svg" alt="하와이클래쓰" /></span>
+				<div onclick="window.open('https://student.howhyclass.com/users/agreement??user_type=s', '_blank');">서비스 이용약관</div>
+				<div onclick="window.open('https://student.howhyclass.com/users/privacy_policy?user_type=s', '_blank');">개인정보처리방침</div>
+			</div>
+		</div>
+		<div class='right'>
+			<div class='footer-content'>
+				<div id="footer-dropbox" class="drop-box full-width">
+					<div class="flex full-width">
+						<div>Family site</div>
+						<div><img class='selectCategory' src='https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png' alt='' /></div>
+	
+					</div>
+					<div id="footer-dropbox-content" class="drop-box-content">
+						<button onclick="window.open('https://www.howhymath.com', '_blank');">하와이매쓰</button>
+						<button onclick="window.open('https://www.fren.co.kr', '_blank');">프렌매쓰</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='left'>
+		<div class='footer-content'>
+			<div><b>하와이컴퍼니(주)</b></div>
+			<div class='vertical-line'></div>
+			<div><b>HOWHY COMPANY</b></div>
+			<div class='vertical-line'></div>
+			<div><b>대표이사 : 박종화</b></div>
+		</div>
+
+		<div class='footer-content'>
+			<div><b>사업자등록번호</b> 760-87-02737</div>
+			<div class='vertical-line'></div>
+			<div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+			<div class='vertical-line'></div>
+			<div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+		</div>
+		<div class='footer-content'>
+			<div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+		</div>
+		<div class='footer-content'>
+			2024  Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+		</div>
+	</div>
+</div>
+<!-- 241120 푸터 수정 끝 -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropBox = document.getElementById('footer-dropbox');
+    const dropBoxContent = document.getElementById('footer-dropbox-content');
+  
+    // drop-box를 클릭했을 때의 이벤트 핸들러
+    dropBox.addEventListener('click', function() {
+        // .drop-box-content의 표시 상태를 토글합니다.
+        dropBoxContent.style.display = dropBoxContent.style.display === 'block' ? 'none' : 'block';
+    });
+  
+  });
+</script>
+
+
+<script>
+</script>
+
+<!-- 학교명 검색 팝업 시작 -->
+<div class="modal fade show" id="popup_school_list" tabindex="-1" role="dialog" aria-modal="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" id="popup_school_list-content">
+            <div class="school-modal" style="top:40%">
+                <div class="modal-title ">
+                    <div class="left">
+                        학교명 검색
+                    </div>
+                    <!-- <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" data-bs-dismiss="modal" aria-label="Close"> 241128 이미지 변경 -->
+                    <img src="../../images/icon_close_black.svg" data-bs-dismiss="modal" aria-label="Close">
+                </div>
+                <div class="modal-content" style="padding: 10px;width: 95%;">
+                    <div class="scroll-container">
+                        <div class="scroll-content">
+                            <div class="input-box">
+                                <input type="text" name="keyword" id="keyword" class="input-teacher" placeholder="학교를 검색해 주세요.">
+                                <!-- <img src="https://img.howhyclass.com/hclass/images/icon_search_gray.png" alt="" onclick="search_school();return false;"> 241128 이미지 변경 -->
+                                <img src="../../images/icon_search_gray.svg" alt="" onclick="search_school();return false;">
+                            </div>
+                            <button class="no-have-btn" onclick="new_school();return false;" style="width: 90%;">
+                                <img src="https://img.howhyclass.com/hclass/images/icon_warning_red.png" alt="">
+                                <div class="flex-column">
+                                    <div class="title">우리 학교가 없어요!</div>
+                                    <div class="subtitle">목록에 학교가 없다면 선택 해 주세요.</div>
+                                </div>
+                            </button>
+
+                            <!-- 초기상태
+                            <div class="flex-container" style="padding: 10px;" id="schoool_list_box"></div> -->
+
+                            <!-- 검색결과 -->
+                            <div class="flex-container" style="padding: 10px;" id="schoool_list_box">
+                                <div class="flex-column" onclick="select_school( '2137', '진건초등학교');">
+                                    <div class="title">진건초등학교</div>
+                                    <div class="subtitle">경기도 남양주시 진건읍 용정리</div>
+                                </div>
+                                <div class="flex-column" onclick="select_school( '7524', '진건중학교');">
+                                    <div class="title">진건중학교</div>
+                                    <div class="subtitle">경기도 남양주시 진건읍 사능리</div>
+                                </div>
+                                <div class="flex-column" onclick="select_school( '10749', '진건고등학교');">
+                                    <div class="title">진건고등학교</div>
+                                    <div class="subtitle">경기도 남양주시 진건읍</div>
+                                </div>
+                            </div>
+
+                            <!-- 노데이터
+                            <div class="flex-container" style="padding: 10px;" id="schoool_list_box">검색결과가 없습니다.</div> -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function search_school(){
+                    var keyword = $("#keyword").val();
+                    var url = '/users/school_search?sv_keyword=' + encodeURI(keyword);
+
+                    fx_load_widget( 'schoool_list_box', url );
+                }
+
+                function select_school( school_id, school_name){
+                    $('#school_id').val(school_id);
+                    $('#school_name').val(school_name);
+                    $('#school_name_show').val(school_name);
+
+                    fx_layer_popup_v2_close_by_id( 'popup_school_list' );
+                }
+            </script>
+
+        </div>
+    </div>
+</div>
+<!-- 학교명 검색 팝업 끝 -->
+
+<!-- 학교 추가 팝업 시작 -->
+<div class="modal fade show" id="new_school" tabindex="-1" style="display: none;" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" id="new_school-content">
+            <div class="school-modal">
+                <div class="modal-title ">
+                    <div class="left">
+                        학교 추가
+                    </div>
+                    <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" data-bs-dismiss="modal" aria-label="Close">
+                </div>
+                <div class="modal-content" style="padding-right: 20px;width: 90%;">
+                    <div class="input-box">
+                        <input type="text" name="new_school_nanme" id="new_school_nanme" placeholder="학교 이름을 정확히 적어 주세요.">
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="new_school_address" id="new_school_address" placeholder="학교가 위치한 지역을 적어주세요. (예: 서울 송파구)">
+                    </div>
+                    <div class="notice">저희가 빠르게 확인 후 등록 하겠습니다.</div>
+                    <div class="btn-container" style="justify-content: end;">
+                        <button class="cancle-btn" data-bs-dismiss="modal">취소하기</button>
+                        <button class="green-btn" style="padding:10px 45px;" onclick="popup_add_school();return false;">완료</button>	
+                    </div>
+                </div>
+            </div>
+            <script>
+                function popup_add_school(){
+                    $('#school_address').val( $('#new_school_address').val() );
+                    $('#school_name').val( $('#new_school_nanme').val() );
+                    $('#school_name_show').val( $('#new_school_nanme').val() );
+
+                    fx_layer_popup_v2_close_by_id( 'new_school' );
+
+                    return false;
+                }
+            </script>
+        </div>
+    </div>
+</div>
+<!-- 학교 추가 팝업 끝 -->
+
+</body>
+</html>
