@@ -2529,5 +2529,10 @@
     justify-content: center !important;
     margin-top: 10px;
   }
+  .cancle-btn{
+    padding: 5px 20px;
+    background-color: #E5E5E5;
+    color: #1A1A1A;
+  }
 }
 /* 내정보 > 학교명 검색 팝업 끝 */
