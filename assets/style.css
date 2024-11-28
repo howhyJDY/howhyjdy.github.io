@@ -90,31 +90,42 @@ header h1{
 }
 .container dl{
     padding: 2rem 0;
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid #c4c4c4;
 }
 .container dl:first-of-type{padding-top: 0;}
 .container dl dt{
     font-size: 2rem;
     font-weight: 600;
-    padding: .8rem 0;
+    padding: 1rem 0;
+    margin-bottom: .4rem;
 }
 .container dl dd{
     display: flex;
     align-items: center;
     gap: .8rem;
-    padding: .6rem;
+    padding: 1rem;
     background: #f7f7f7;
     border-bottom: 1px solid #e6e6e6;
 }
 .container dl dd:last-of-type{border-bottom-width: 0;}
 .container dl dd p,
 .container dl dd a{font-size: 1.6rem;}
+.container dl dd a{
+    text-decoration: none;
+    color: #0ad08d;
+    font-weight: 600;
+    transition: .23s ease;
+    &:hover{color: #007e54;}
+}
 .container dl dd a::before{
     content: ': ';
+    padding-right: .4rem;
+    color: #444;
 }
 .container dl dd i{
     font-size: 1.4rem;
     margin-left: 1rem;
+    color: #444;
 }
 
 @media screen and (max-width: 720px) {
