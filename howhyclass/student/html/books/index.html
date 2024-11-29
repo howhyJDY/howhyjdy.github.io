@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,10 +11,12 @@
 	<link rel="shortcut icon" href="https://img.howhyclass.com/hmath/favicon.ico">
 
 	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
-	<!-- <link href="https://img.howhyclass.com/hclass/css/custom.css" rel="stylesheet"> -->
-	<link href="../../css/custom.css" rel="stylesheet">
+	<!-- <link href="https://img.howhyclass.com/hclass/css/custom.css" rel="stylesheet">
 	<link href="https://img.howhyclass.com/hclass/css/modal.css" rel="stylesheet">
-	<link href="https://img.howhyclass.com/hclass/css/add.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/add.css" rel="stylesheet"> -->
+	<link href="../../css/custom.css" rel="stylesheet">
+	<link href="../../css/modal.css" rel="stylesheet">
+	<link href="../../css/add.css" rel="stylesheet">
 
 	
 	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
@@ -34,84 +37,53 @@
 
 <body>
 	
-<div class='header'>
-	<div>
-		<a href="/home/main"><img class='logo' src='../../images/logo.svg' alt='하와이클래쓰' /></a><!--241120 로고 이미지 확장자 변경-->
-	</div>
-	<!-- 241122 gnb 구조 변경 시작 -->
-	<!-- <ul class='link'>
-		<li>
-			<ul><a href='/books/index'><span class="selected">교재학습</span></a></ul>
-		</li>
-		<li>
-			<ul><a href='/ai_studies/index'><span >AI 학습</span></a></ul>
-		</li>
-		<li>
-			<ul><a href='/daily_studies/index'><span >일일학습</span></a></ul>
-		</li>
-		<li>
-			<ul><a href='/homeworks/index'><span >숙제</span></a></ul>
-		</li>
-	</ul> -->
-	<ul class="link">
-		<li>
-			<a href='/books/index'><span class="selected">교재학습</span></a>
-			<div class="lnb">
-				<ul>
-					<li><a href='/books/index'><span class="selected">진행교재</span></a></li>
-					<li><a href='/books/index?sv_done_yn=y'><span>완료교재</span></a></li>
-				</ul>
-			</div>
-		</li>
-		<li>
-			<a href='/ai_studies/index'><span >AI 학습</span></a>
-			<div class="lnb">
-				<ul>
-					<li><a href='/ai_studies/index'><span>AI 성취도 분석 결과</span></a></li>
-					<li><a href='/ai_studies/post_studies'><span>AI 학습 추천</span></a></li>
-					<li><a href='/ai_studies/weakness'><span>전체 수학 교육 결손점</span></a></li>
-				</ul>
-			</div>
-		</li>
-		<li>
-			<a href='/daily_studies/index'><span >일일학습</span></a>
-		</li>
-		<li>
-			<a href='/homeworks/index'><span >숙제</span></a>
-		</li>
-	</ul>
-	<!-- 241122 gnb 구조 변경 끝 -->
-
-	<div class='menu'>
-		<!-- 241120 아이콘 변경 및 태그 추가 시작 -->
-		<button class='subscribe' onclick="location.href='/teachers/index';"><span class="icon_add_tutor"></span>선생님등록</button>
-		<button class='subscribe' onclick="location.href='/payments/index';"><span class="icon_subscribe"></span>구독하기</button>
-		<button class='alarm-icon' onclick="location.href='/notices/index';" title="알림">
-			<!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-				<path d="M5.3335 25.3333V22.6667H8.00016V13.3333C8.00016 11.4889 8.55572 9.84999 9.66683 8.41666C10.7779 6.98332 12.2224 6.04443 14.0002 5.59999V4.66666C14.0002 4.1111 14.1946 3.63888 14.5835 3.24999C14.9724 2.8611 15.4446 2.66666 16.0002 2.66666C16.5557 2.66666 17.0279 2.8611 17.4168 3.24999C17.8057 3.63888 18.0002 4.1111 18.0002 4.66666V5.59999C19.7779 6.04443 21.2224 6.98332 22.3335 8.41666C23.4446 9.84999 24.0002 11.4889 24.0002 13.3333V22.6667H26.6668V25.3333H5.3335ZM16.0002 29.3333C15.2668 29.3333 14.6391 29.0722 14.1168 28.55C13.5946 28.0278 13.3335 27.4 13.3335 26.6667H18.6668C18.6668 27.4 18.4057 28.0278 17.8835 28.55C17.3613 29.0722 16.7335 29.3333 16.0002 29.3333ZM10.6668 22.6667H21.3335V13.3333C21.3335 11.8667 20.8113 10.6111 19.7668 9.56666C18.7224 8.52221 17.4668 7.99999 16.0002 7.99999C14.5335 7.99999 13.2779 8.52221 12.2335 9.56666C11.1891 10.6111 10.6668 11.8667 10.6668 13.3333V22.6667Z" fill="#1A1A1A" />
-				</svg> -->
-			<span class="icon_alarm"></span>
-		</button>
-		<div id="info-dropbox" class='info-icon drop-box'>
-			<!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-			<path d="M10 10C8.625 10 7.44792 9.51042 6.46875 8.53125C5.48958 7.55208 5 6.375 5 5C5 3.625 5.48958 2.44792 6.46875 1.46875C7.44792 0.489583 8.625 0 10 0C11.375 0 12.5521 0.489583 13.5312 1.46875C14.5104 2.44792 15 3.625 15 5C15 6.375 14.5104 7.55208 13.5312 8.53125C12.5521 9.51042 11.375 10 10 10ZM0 20V16.5C0 15.7917 0.182292 15.1406 0.546875 14.5469C0.911458 13.9531 1.39583 13.5 2 13.1875C3.29167 12.5417 4.60417 12.0573 5.9375 11.7344C7.27083 11.4115 8.625 11.25 10 11.25C11.375 11.25 12.7292 11.4115 14.0625 11.7344C15.3958 12.0573 16.7083 12.5417 18 13.1875C18.6042 13.5 19.0885 13.9531 19.4531 14.5469C19.8177 15.1406 20 15.7917 20 16.5V20H0ZM2.5 17.5H17.5V16.5C17.5 16.2708 17.4427 16.0625 17.3281 15.875C17.2135 15.6875 17.0625 15.5417 16.875 15.4375C15.75 14.875 14.6146 14.4531 13.4688 14.1719C12.3229 13.8906 11.1667 13.75 10 13.75C8.83333 13.75 7.67708 13.8906 6.53125 14.1719C5.38542 14.4531 4.25 14.875 3.125 15.4375C2.9375 15.5417 2.78646 15.6875 2.67188 15.875C2.55729 16.0625 2.5 16.2708 2.5 16.5V17.5ZM10 7.5C10.6875 7.5 11.276 7.25521 11.7656 6.76562C12.2552 6.27604 12.5 5.6875 12.5 5C12.5 4.3125 12.2552 3.72396 11.7656 3.23438C11.276 2.74479 10.6875 2.5 10 2.5C9.3125 2.5 8.72396 2.74479 8.23438 3.23438C7.74479 3.72396 7.5 4.3125 7.5 5C7.5 5.6875 7.74479 6.27604 8.23438 6.76562C8.72396 7.25521 9.3125 7.5 10 7.5Z" fill="#1A1A1A" />
-			</svg> -->
-			<span class="icon_user"></span>
-			<div id="info-dropbox-content" class="drop-box-content">
-				<div class="dropdown-button-box">
-				<button onclick="location.href='/mypage/index';">나의 정보</button>
-				<button onclick="location.href='/mypage/setting';">설정 &amp; FAQ</button>
-				<button class="logout" onclick="location.href='/users/logout_student';">
-					<!-- <img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/> 241122 이미지 변경 -->
-					<img src="../../images/icon_logout.svg" alt=""/>
-					<div>로그아웃</div>
-				</button>
-				</div>
-			</div>
-		</div>
-		<!-- 241120 아이콘 변경 및 태그 추가 끝 -->
-	</div>
-</div>
+	<div class='header'>
+        <div>
+            <a href="/home/main"><img class='logo' src='../../images/logo.svg' alt='하와이클래쓰' /></a><!--로고변경 교재학습 참고-->
+        </div>
+        <ul class='link'>
+            <li>
+                <ul><a href='/books/index'><span class="selected">교재학습</span></a></ul>
+            </li>
+            <li>
+                <ul><a href='/ai_studies/index'><span>AI 학습</span></a></ul>
+            </li>
+            <li>
+                <ul><a href='/daily_studies/index'><span>일일학습</span></a></ul>
+            </li>
+            <li>
+                <ul><a href='/homeworks/index'><span >숙제</span></a></ul>
+            </li>
+        </ul>
+        <div class='menu'>
+            <!-- 아이콘 변경 및 태그 추가 교재학습 참고 -->
+            <button class='subscribe' onclick="location.href='/teachers/index';"><span class="icon_add_tutor"></span>선생님등록</button>
+            <button class='subscribe' onclick="location.href='/payments/index';"><span class="icon_subscribe"></span>구독하기</button>
+            <button class='alarm-icon' onclick="location.href='/notices/index';" title="알림">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M5.3335 25.3333V22.6667H8.00016V13.3333C8.00016 11.4889 8.55572 9.84999 9.66683 8.41666C10.7779 6.98332 12.2224 6.04443 14.0002 5.59999V4.66666C14.0002 4.1111 14.1946 3.63888 14.5835 3.24999C14.9724 2.8611 15.4446 2.66666 16.0002 2.66666C16.5557 2.66666 17.0279 2.8611 17.4168 3.24999C17.8057 3.63888 18.0002 4.1111 18.0002 4.66666V5.59999C19.7779 6.04443 21.2224 6.98332 22.3335 8.41666C23.4446 9.84999 24.0002 11.4889 24.0002 13.3333V22.6667H26.6668V25.3333H5.3335ZM16.0002 29.3333C15.2668 29.3333 14.6391 29.0722 14.1168 28.55C13.5946 28.0278 13.3335 27.4 13.3335 26.6667H18.6668C18.6668 27.4 18.4057 28.0278 17.8835 28.55C17.3613 29.0722 16.7335 29.3333 16.0002 29.3333ZM10.6668 22.6667H21.3335V13.3333C21.3335 11.8667 20.8113 10.6111 19.7668 9.56666C18.7224 8.52221 17.4668 7.99999 16.0002 7.99999C14.5335 7.99999 13.2779 8.52221 12.2335 9.56666C11.1891 10.6111 10.6668 11.8667 10.6668 13.3333V22.6667Z" fill="#1A1A1A" />
+                    </svg> -->
+                <span class="icon_alarm"></span>
+            </button>
+            <div id="info-dropbox" class='info-icon drop-box'>
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 10C8.625 10 7.44792 9.51042 6.46875 8.53125C5.48958 7.55208 5 6.375 5 5C5 3.625 5.48958 2.44792 6.46875 1.46875C7.44792 0.489583 8.625 0 10 0C11.375 0 12.5521 0.489583 13.5312 1.46875C14.5104 2.44792 15 3.625 15 5C15 6.375 14.5104 7.55208 13.5312 8.53125C12.5521 9.51042 11.375 10 10 10ZM0 20V16.5C0 15.7917 0.182292 15.1406 0.546875 14.5469C0.911458 13.9531 1.39583 13.5 2 13.1875C3.29167 12.5417 4.60417 12.0573 5.9375 11.7344C7.27083 11.4115 8.625 11.25 10 11.25C11.375 11.25 12.7292 11.4115 14.0625 11.7344C15.3958 12.0573 16.7083 12.5417 18 13.1875C18.6042 13.5 19.0885 13.9531 19.4531 14.5469C19.8177 15.1406 20 15.7917 20 16.5V20H0ZM2.5 17.5H17.5V16.5C17.5 16.2708 17.4427 16.0625 17.3281 15.875C17.2135 15.6875 17.0625 15.5417 16.875 15.4375C15.75 14.875 14.6146 14.4531 13.4688 14.1719C12.3229 13.8906 11.1667 13.75 10 13.75C8.83333 13.75 7.67708 13.8906 6.53125 14.1719C5.38542 14.4531 4.25 14.875 3.125 15.4375C2.9375 15.5417 2.78646 15.6875 2.67188 15.875C2.55729 16.0625 2.5 16.2708 2.5 16.5V17.5ZM10 7.5C10.6875 7.5 11.276 7.25521 11.7656 6.76562C12.2552 6.27604 12.5 5.6875 12.5 5C12.5 4.3125 12.2552 3.72396 11.7656 3.23438C11.276 2.74479 10.6875 2.5 10 2.5C9.3125 2.5 8.72396 2.74479 8.23438 3.23438C7.74479 3.72396 7.5 4.3125 7.5 5C7.5 5.6875 7.74479 6.27604 8.23438 6.76562C8.72396 7.25521 9.3125 7.5 10 7.5Z" fill="#1A1A1A" />
+                </svg> -->
+                <span class="icon_user"></span>
+                <div id="info-dropbox-content" class="drop-box-content">
+                    <div class="dropdown-button-box">
+                    <button onclick="location.href='/mypage/index';">나의 정보</button>
+                    <button onclick="location.href='/mypage/setting';">설정 &amp; FAQ</button>
+                    <button class="logout" onclick="location.href='/users/logout_student';">
+                        <img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/>
+                        <div>로그아웃</div>
+                    </button>
+                    </div>
+                </div>
+            </div>
+            <!-- //아이콘 변경 및 태그 추가 교재학습 참고 -->
+        </div>
+    </div>
 
 <script>
 const infoBox = document.getElementById('info-dropbox');
@@ -121,29 +93,6 @@ infoBox.addEventListener('click', function() {
     infoContent.style.display = infoContent.style.display === 'block' ? 'none' : 'block';
 });
 
-
-/** 241122 gnb 스크립트 추가 시작 **/
-const gnbLinks = document.querySelectorAll('.link>li>a');
-gnbLinks.forEach((item)=>{
-	const lnbContainer = item.nextElementSibling;
-	if( lnbContainer ){
-		const lnbHeight = lnbContainer.querySelector('ul').offsetHeight;
-		item.addEventListener('mouseenter', ()=>{
-			lnbContainer.style.height=`${lnbHeight}px`;
-		})
-		item.addEventListener('mouseleave', ()=>{
-			lnbContainer.style.height=0;
-		})
-
-		lnbContainer.addEventListener('mouseenter', ()=>{
-			lnbContainer.style.height=`${lnbHeight}px`;
-		})
-		lnbContainer.addEventListener('mouseleave', ()=>{
-			lnbContainer.style.height=0;
-		})
-	}
-})
-/** 241122 gnb 스크립트 추가 끝 **/
 </script>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -218,13 +167,28 @@ gnbLinks.forEach((item)=>{
 		<div class='top-container white-container'>
 			<div class='top'>
 				<div class='left'>
-									<div class='selected'>진행 교재</div>
+					<div class='selected'>진행 교재</div>
 					<div onclick="location.href='/books/index?sv_done_yn=y';">완료 교재</div>
-								</div>
+				</div>
 				<div class='right'>
+					<!-- 241129 추가 시작 -->
+					<div class="left">
+						<dl>
+							<dt>진행교재</dt>
+							<dd>
+								<ul>
+									<li>현재 진행하고 있는 교과서와 문제집의 답을 입력하세요.</li>
+									<li>O, X 로 체크 하시고 저장 버튼을 눌러 저장해 주세요.</li>
+									<!-- 문구 변경될 수 있습니다. -->
+								</ul>
+							</dd>
+						</dl>
+					</div>
+					<!-- 241129 추가 끝 -->
 					<div class='search-box'>
 						<input name="sv_keyword" value="" id=sv_keyword placeholder='교재명'/>
-						<img src='https://img.howhyclass.com/hclass/images/icon_search.png' alt=''  onclick="search()" />
+						<!-- <img src='https://img.howhyclass.com/hclass/images/icon_search.png' alt=''  onclick="search()" /> 241129 이미지 변경 -->
+						<img src='../../images/icon_search_gray.svg' alt=''  onclick="search()" />
 					</div>
 					<button onclick="location.href='/books/add_book';">
 					<img src='https://img.howhyclass.com/hclass/images/icon_add.png' alt='' />
@@ -235,52 +199,89 @@ gnbLinks.forEach((item)=>{
 			<div class='middle'>
 				<div class="swiper mySwiper" style='padding-bottom:25px;'>
 					<div class="swiper-wrapper">
-											<div class="swiper-slide book-item" data-id="1642">
+						<div class="swiper-slide book-item" data-id="1642">
 							<div class='item-box'>
 								<div class='left'>
-																		<img src='https://img.howhyclass.com/q/07/f6/s.2038/in.png' alt='' style="height:130px;">
-																	</div>
+									<img src='https://img.howhyclass.com/q/07/f6/s.2038/in.png' alt='' style="height:130px;">
+								</div>
 								<div class='right'>
 									<div class='title'> 교과서 익힘 (와이비엠) </div>
-									<div class='author'>저자 | 교과서 </div>
+
+									<!-- <div class='author'>저자 | 교과서 </div> 241129 저자 삭제, 학년 추가 -->
+									<div><span>초5-1</span><div class='author'>교과서</div></div>
+									
 									<div class='progress' style="height:unset;">
-																			<div class='ing'>진행</div>
+										<div class='ing'>진행</div>
 										<div onclick="change_book_student_state( 1642, 'don' );">완료</div>
-																		</div>
+									</div>
 								</div>
 							</div>
 						</div>
-											<div class="swiper-slide book-item" data-id="1643">
+						<div class="swiper-slide book-item" data-id="1643">
 							<div class='item-box'>
 								<div class='left'>
-																		<img src='https://img.howhyclass.com/q/0a/4e/s.2638/in.png' alt='' style="height:130px;">
-																	</div>
+									<img src='https://img.howhyclass.com/q/0a/4e/s.2638/in.png' alt='' style="height:130px;">
+								</div>
 								<div class='right'>
 									<div class='title'> 교과서 익힘 (금성출판사) </div>
-									<div class='author'>저자 | 교과서 </div>
+									<!-- <div class='author'>저자 | 교과서 </div> -->
+									<div><span>초5-1</span><div class='author'>교과서 </div></div>
 									<div class='progress' style="height:unset;">
-																			<div class='ing'>진행</div>
+										<div class='ing'>진행</div>
 										<div onclick="change_book_student_state( 1643, 'don' );">완료</div>
-																		</div>
+									</div>
 								</div>
 							</div>
 						</div>
-											<div class="swiper-slide book-item" data-id="1644">
+						<div class="swiper-slide book-item" data-id="1644">
 							<div class='item-box'>
 								<div class='left'>
-																		<img src='https://img.howhyclass.com/q/0a/47/s.2631/in.png' alt='' style="height:130px;">
-																	</div>
+									<img src='https://img.howhyclass.com/q/0a/47/s.2631/in.png' alt='' style="height:130px;">
+								</div>
 								<div class='right'>
 									<div class='title'> 교과서 익힘 (아이스크림) </div>
-									<div class='author'>저자 | 교과서 </div>
+									<!-- <div class='author'>저자 | 교과서 </div> -->
+									<div><span>초5-1</span><div class='author'>교과서 </div></div>
 									<div class='progress' style="height:unset;">
-																			<div class='ing'>진행</div>
+										<div class='ing'>진행</div>
 										<div onclick="change_book_student_state( 1644, 'don' );">완료</div>
-																		</div>
+									</div>
 								</div>
 							</div>
 						</div>
-										</div>
+
+						<div class="swiper-slide book-item" data-id="1654">
+							<div class='item-box'>
+								<div class='left'>
+									<img src='https://img.howhyclass.com/q/08/c2/s.2242/in.png' alt='' style="height:130px;">
+								</div>
+								<div class='right'>
+									<div class='title'> EBS 올림포스 (EBS) </div>
+									<div class='author'>저자 | 참고서 </div>
+									<div class='progress' style="height:unset;">
+										<div class='ing'>진행</div>
+										<div onclick="change_book_student_state( 1654, 'don' );">완료</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide book-item" data-id="1655">
+							<div class='item-box'>
+								<div class='left'>
+									<img src='https://img.howhyclass.com/q/07/f3/s.2035/in.png' alt='' style="height:130px;">
+								</div>
+								<div class='right'>
+									<div class='title'> EBS 올림포스 고난도(new) (EBS) </div>
+									<div class='author'>저자 | 참고서 </div>
+									<div class='progress' style="height:unset;">
+										<div class='ing'>진행</div>
+										<div onclick="change_book_student_state( 1655, 'don' );">완료</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
 					<div class="swiper-pagination"></div>
 					<div class="swiper-button-prev"></div>
 					<div class="swiper-button-next"></div>
@@ -291,16 +292,40 @@ gnbLinks.forEach((item)=>{
 		<!-- <div class='bottom-container' style="margin-top:25px;" id='book_scorings'></div> -->
 		<div class="bottom-container" style="margin-top:25px;" id="book_scorings"><div class="right white-container">
 			<div class="header">
-				<div class="head-left"> 교과서 익힘 (와이비엠) 채점</div>
+				<!-- 241129 span 태그 추가 시작 -->
+				<div class="head-left"> <span>교과서 익힘 (와이비엠)</span> 채점</div>
+				<!-- //241129 span 태그 추가 끝 -->
+				
 				<div class="head-right">
-					<input type="checkbox" onclick="show_complete(this);">
-					<div>완료페이지 숨기기</div>
+
+					<!-- 241129 체크박스 마크업 변경 시작 -->
+					<!-- <input type="checkbox" onclick="show_complete(this);">
+					<div>완료페이지 숨기기</div> -->
+					<input type="checkbox" id="showComplete" onclick="show_complete(this);">
+					<label for="showComplete">완료페이지 숨기기</label>
+					<!-- //241129 체크박스 마크업 변경 끝 -->
+					
 					<!-- img src='https://img.howhyclass.com/hclass/images/icon_help.png' onclick="toggle_overlay('y');"/-->
+
+					<!-- 241129 채점 저장 버튼 추가 시작 -->
+					<button type="button" class="green-btn">채점 저장</button>
+					<!-- //241129 채점 저장 버튼 추가 끝 -->
 				</div>
 			</div>
 			<div class="check-table scroll-container" id="book_scorings">
 				<div id="markingContainer" class="scroll-content" style="">
-					<div class="header">자연수의 혼합 계산</div>
+
+					<!-- 241129 .header 태그 하위 마크업 추가 시작 -->
+					<!-- <div class="header">자연수의 혼합 계산</div> -->
+					<div class="header">
+						<p>자연수의 혼합 계산</p>
+						<div class="header-div">
+							<div class="page">페이지</div>
+							<div class="correct">정답률</div>
+							<div class="numbers">문장번호</div>
+						</div>
+					</div>
+					<!-- 241129 .header 태그 하위 마크업 추가 끝 -->
 					<div class="table-content page-done table2-302141">
 						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
 							<div class="page-content">
@@ -309,21 +334,25 @@ gnbLinks.forEach((item)=>{
 							</div>
 						</div>
 						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
-							<div><span class="correct_count-302141">3</span>/3 </div>
+							<!-- <div><span class="correct_count-302141">3</span>/3 </div> 241129 정답률 %로 계산 -->
+							<div><span class="correct_count-302141">78%</span></div>
 						</div>
 						<div class="check">
 							<div class="item-box" style="padding-bottom: 10px;">
 								<div class="item">
 									<div class="index">1</div>
-									<img class="ox_img ox-302141" src="https://img.howhyclass.com/hclass/images/icon_wrong.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302141" src="https://img.howhyclass.com/hclass/images/icon_wrong.png" style="width:20px;">241129 이미지 변경 및 스타일 삭제 -->
+									<img class="ox_img ox-302141" src="../../images/icon_wrong.svg">
 								</div>
 								<div class="item">
 									<div class="index">2</div>
-									<img class="ox_img ox-302141" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302141" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302141" src="../../images/icon_correct.svg">
 								</div>
 								<div class="item">
 									<div class="index">3</div>
-									<img class="ox_img ox-302141" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302141" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302141" src="../../images/icon_correct.svg">
 								</div>
 							</div>
 						</div>
@@ -336,21 +365,25 @@ gnbLinks.forEach((item)=>{
 							</div>
 						</div>
 						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
-							<div><span class="correct_count-302142">3</span>/3 </div>
+							<!-- <div><span class="correct_count-302142">3</span>/3 </div> -->
+							<div><span class="correct_count-302142">52%</span> </div>
 						</div>
 						<div class="check">
 							<div class="item-box" style="padding-bottom: 10px;">
 								<div class="item">
 									<div class="index">4</div>
-									<img class="ox_img ox-302142" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302142" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302142" src="../../images/icon_wrong.png">
 								</div>
 								<div class="item">
 									<div class="index">5</div>
-									<img class="ox_img ox-302142" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302142" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302142" src="../../images/icon_correct.png">
 								</div>
 								<div class="item">
 									<div class="index">6</div>
-									<img class="ox_img ox-302142" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302142" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302142" src="../../images/icon_correct.png">
 								</div>
 							</div>
 						</div>
@@ -363,21 +396,25 @@ gnbLinks.forEach((item)=>{
 							</div>
 						</div>
 						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
-							<div><span class="correct_count-302143">3</span>/3 </div>
+							<!-- <div><span class="correct_count-302143">3</span>/3 </div> -->
+							<div><span class="correct_count-302143">100%</span></div>
 						</div>
 						<div class="check">
 								<div class="item-box" style="padding-bottom: 10px;">
 									<div class="item">
 									<div class="index">1</div>
-									<img class="ox_img ox-302143" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302143" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302143" src="../../images/icon_correct.png">
 								</div>
 								<div class="item">
 									<div class="index">2</div>
-									<img class="ox_img ox-302143" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302143" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302143" src="../../images/icon_correct.png">
 								</div>
 								<div class="item">
 									<div class="index">3</div>
-									<img class="ox_img ox-302143" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302143" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302143" src="../../images/icon_correct.png">
 								</div>
 							</div>
 						</div>
@@ -390,21 +427,25 @@ gnbLinks.forEach((item)=>{
 							</div>
 						</div>
 						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
-							<div><span class="correct_count-302144">-</span>/3 </div>
+							<!-- <div><span class="correct_count-302144">-</span>/3 </div> 241129 미채점 시 -->
+							<div><span class="correct_count-302144">-</span></div>
 						</div>
 						<div class="check">
 							<div class="item-box" style="padding-bottom: 10px;">
 								<div class="item">
 									<div class="index">4</div>
-									<img class="ox_img ox-302144" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302144" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302144" src="../../images/icon_correct.png">
 								</div>
 								<div class="item">
 									<div class="index">5</div>
-									<img class="ox_img ox-302144" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302144" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302144" src="../../images/icon_correct.png">
 								</div>
 								<div class="item">
 									<div class="index">6</div>
-									<img class="ox_img ox-302144" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302144" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302144" src="../../images/icon_correct.png">
 								</div>
 							</div>
 						</div>
@@ -417,21 +458,25 @@ gnbLinks.forEach((item)=>{
 							</div>
 						</div>
 						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
-							<div><span class="correct_count-302145">-</span>/3 </div>
+							<!-- <div><span class="correct_count-302145">-</span>/3 </div> -->
+							<div><span class="correct_count-302145">-</span></div>
 						</div>
 						<div class="check">
 							<div class="item-box" style="padding-bottom: 10px;">
 								<div class="item">
 									<div class="index">1</div>
-									<img class="ox_img ox-302145" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302145" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302145" src="../../images/icon_correct.png">
 								</div>
 								<div class="item">
 									<div class="index">2</div>
-									<img class="ox_img ox-302145" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302145" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302145" src="../../images/icon_correct.png">
 								</div>
 								<div class="item">
 									<div class="index">3</div>
-									<img class="ox_img ox-302145" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302145" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302145" src="../../images/icon_correct.png">
 								</div>
 							</div>
 						</div>
@@ -444,25 +489,41 @@ gnbLinks.forEach((item)=>{
 							</div>
 						</div>
 						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
-							<div><span class="correct_count-302146">-</span>/3 </div>
+							<!-- <div><span class="correct_count-302146">-</span>/3 </div> -->
+							<div><span class="correct_count-302146">-</span> </div>
 						</div>
 						<div class="check">
 							<div class="item-box" style="padding-bottom: 10px;">
 								<div class="item">
 									<div class="index">4</div>
-									<img class="ox_img ox-302146" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302146" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302146" src="../../images/icon_correct.png">
 								</div>
 								<div class="item">
 									<div class="index">5</div>
-									<img class="ox_img ox-302146" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302146" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302146" src="../../images/icon_correct.png">
 								</div>
 								<div class="item">
 									<div class="index">6</div>
-									<img class="ox_img ox-302146" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302146" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302146" src="../../images/icon_correct.png">
 								</div>
 							</div>
 						</div>
 					</div>
+
+					<!-- 241129 .header 태그 하위 마크업 추가 시작 -->
+					<div class="header">
+						<p>단원 마무리</p>
+						<div class="header-div">
+							<div class="page">페이지</div>
+							<div class="correct">정답률</div>
+							<div class="numbers">문장번호</div>
+						</div>
+					</div>
+					<!-- 241129 .header 태그 하위 마크업 추가 끝 -->
+
 					<div class="table-content  table2-302147">
 						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
 							<div class="page-content">
@@ -471,21 +532,25 @@ gnbLinks.forEach((item)=>{
 							</div>
 						</div>
 						<div class="page-status" style="border-top:0;border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);">
-							<div><span class="correct_count-302147">-</span>/3 </div>
+							<!-- <div><span class="correct_count-302147">-</span>/3 </div> -->
+							<div><span class="correct_count-302147">-</span> </div>
 						</div>
 						<div class="check">
 							<div class="item-box" style="padding-bottom: 10px;">
 								<div class="item">
 									<div class="index">1</div>
-									<img class="ox_img ox-302147" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302147" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302147" src="../../images/icon_correct.png">
 								</div>
 								<div class="item">
 									<div class="index">2</div>
-									<img class="ox_img ox-302147" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302147" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302147" src="../../images/icon_correct.png">
 								</div>
 								<div class="item">
 									<div class="index">3</div>
-									<img class="ox_img ox-302147" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;">
+									<!-- <img class="ox_img ox-302147" src="https://img.howhyclass.com/hclass/images/icon_correct.png" style="width:20px;"> -->
+									<img class="ox_img ox-302147" src="../../images/icon_correct.png">
 								</div>
 							</div>
 						</div>
@@ -498,9 +563,11 @@ gnbLinks.forEach((item)=>{
 		$( document ).ready(function() {
 			$(".ox_img").on( 'click', function() {
 				if( $(this).attr('src').indexOf('icon_correct') != -1 )
-					$(this).attr('src', 'https://img.howhyclass.com/hclass/images/icon_wrong.png' );
+					// $(this).attr('src', 'https://img.howhyclass.com/hclass/images/icon_wrong.png' ); 241129 이미지 변경
+					$(this).attr('src', 'https://img.howhyclass.com/hclass/images/icon_wrong.svg' );
 				else
-					$(this).attr('src', 'https://img.howhyclass.com/hclass/images/icon_correct.png' );
+					// $(this).attr('src', 'https://img.howhyclass.com/hclass/images/icon_correct.png' ); 241129 이미지 변경
+					$(this).attr('src', 'https://img.howhyclass.com/hclass/images/icon_correct.svg' );
 			});
 		});
 		
@@ -544,12 +611,13 @@ var current_id = '';
 $( document ).ready(function() {
 	const swiper = new Swiper('.swiper', {
 		pagination: {
-		el: '.swiper-pagination',
-		type: 'bullets',
+			el: '.swiper-pagination',
+			type: 'bullets',
 		},
 	
 		spaceBetween: 16,
-		slidesPerView : '4', // 한 슬라이드에 보여줄 갯수
+		// slidesPerView : '4', // 한 슬라이드에 보여줄 갯수 241129 수정
+		slidesPerView : '3', // 한 슬라이드에 보여줄 갯수
 	
 		// Navigation arrows
 		navigation: {
@@ -685,5 +753,43 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 </script>
 
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
