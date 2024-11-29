@@ -64,33 +64,67 @@
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: var(--border-radius-8, 8px);
+    border-radius: var(--border-radius-15, 15px);
   
     .modal-title {
-      padding: 20px;
-      border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5);
+      /* padding: 20px;
+      border-bottom: 1px solid var(--color-border-tertiary, #E5E5E5); */
+      background: #eee;
+      border-radius: 15px 15px 0 0;
+      padding: 15px 30px;
+      border-bottom: 1px solid #e6e6e6;
+      .left {
+        font-family: 'SUIT';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 800;
+        color: #333333;
+      }
   
-      .left {}
-  
-      .right {}
+      .right img{
+        display: block;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+      }
     }
   
     .modal-content {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      padding: 20px;
+      gap: 5px;
+      /* padding: 20px; */
+      padding: 26px 30px 30px;
+      font-size: 14px;
+      line-height: 1.3;
+      color: #222;
+      b{font-weight: 500;}
+
+      &>div:last-of-type{
+        position: relative;
+        &::after{
+          content: '';
+          display: block;
+          width: 100%;
+          height: 1px;
+          background: #d3d3d3;
+          position: absolute;
+          bottom: -22px; left: 0;
+        }
+      }
   
       .regist-btn {
-        margin: 10px 0px 0px auto;
-        color: var(--color-text-primary, #1A1A1A);
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 160%;
-        /* 22.4px */
-        width: 120px;
         justify-content: center;
+        width: fit-content;
+        margin: 34px auto 0;
+        border-radius: var(--unit-16, 16px);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1;
+        padding: 10px 25px;
+        background: #0ad08d;
       }
     }
   }
@@ -2535,4 +2569,5 @@
     color: #1A1A1A;
   }
 }
+#create_student_books-content{border-width: 0;}
 /* 내정보 > 학교명 검색 팝업 끝 */

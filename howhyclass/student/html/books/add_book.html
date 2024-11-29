@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이클래쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="shortcut icon" href="https://img.howhyclass.com/hmath/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<!-- <link href="https://img.howhyclass.com/hclass/css/custom.css?20241125" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/modal.css?20241125" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/add.css?20241125" rel="stylesheet"> -->
+	<link href="../../css/custom.css" rel="stylesheet">
+	<link href="../../css/modal.css" rel="stylesheet">
+	<link href="../../css/add.css" rel="stylesheet">
+
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            tex2jax: { displayMath: [ ["$$","$$"] ] },
+            "HTML-CSS": { fonts: ["Latin-Modern"] }
+        });
+    </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?20241125"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?20241125"></script>
+</head>
+
+<body>
+	<div class='header'>
+	<div>
+        <a href="/home/main"><img class='logo' src='https://img.howhyclass.com/hclass/images/logo.svg' alt=''/></a>
+	</div>
+	<ul class='link'>
+
+			<li>
+				<ul><a href='/books/index'><span class="selected">교재학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/ai_studies/index'><span >AI 학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/daily_studies/index'><span >일일학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/homeworks/index'><span >숙제</span></a></ul>
+			</li>	</ul>
+	<div class='menu'>
+		<!-- 241120 아이콘 변경 및 태그 추가 시작 -->
+		<button class='subscribe' onclick="location.href='/teachers/index';"><span class="icon_add_tutor"></span>선생님등록</button>
+		<button class='subscribe' onclick="location.href='/payments/index';"><span class="icon_subscribe"></span>구독하기</button>
+		<button class='alarm-icon' onclick="location.href='/notices/index';" title="알림">
+			<span class="icon_alarm"></span>
+		</button>
+		<div id="info-dropbox" class='info-icon drop-box'>
+			<span class="icon_user"></span>
+			<div id="info-dropbox-content" class="drop-box-content">
+				<div class="dropdown-button-box">
+				<button onclick="location.href='/mypage/index';">나의 정보</button>
+				<button onclick="location.href='/mypage/setting';">설정 &amp; FAQ</button>
+				<button class="logout" onclick="location.href='/users/logout_student';">
+					<img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/>
+					<div>로그아웃</div>
+				</button>
+				</div>
+			</div>
+		</div>
+		<!-- 241120 아이콘 변경 및 태그 추가 끝 -->
+	</div>
+
+</div>
+
+<script>
+const infoBox = document.getElementById('info-dropbox');
+const infoContent = document.getElementById('info-dropbox-content');
+  
+infoBox.addEventListener('click', function() {
+    infoContent.style.display = infoContent.style.display === 'block' ? 'none' : 'block';
+});
+</script>
+
+	<div class='content'>
+	<div class='content-container regist-book'>
+		<div class='title'> 
+			<img class="cursor" id="backButton" src='https://img.howhyclass.com/hclass/images/img_arrow_left.png' alt="" />
+			<div>사용 교재 등록하기</div>
+		</div>
+		<div class='sub-title'> 현재 학습 중인 교재를 추가하고 개인별 맞춤 후행학습을 추천 받으세요.</div>
+		<div class='white-container'>
+			<div class='flex flex-column gap20'>
+				<div class='flex gap16 align-items-center'>
+					<div class='head'>초등</div>
+					<!-- 
+					<div class='content-box cursor sv_check ' data-grade='m01'>1학년</div>
+					<div class='content-box cursor sv_check ' data-grade='m02'>2학년</div>
+					-->
+					<div class='content-box cursor sv_check ' data-grade='m03'>3학년</div>
+					<div class='content-box cursor sv_check ' data-grade='m04'>4학년</div>
+					<div class='content-box cursor sv_check selected' data-grade='m05'>5학년</div>
+					<div class='content-box cursor sv_check ' data-grade='m06'>6학년</div>
+				</div>
+				<div class='flex gap16 align-items-center'>
+					<div class='head'>중등</div>
+					<div class='content-box cursor sv_check ' data-grade='m17'>1학년</div>
+					<div class='content-box cursor sv_check ' data-grade='m18'>2학년</div>
+					<div class='content-box cursor sv_check ' data-grade='m19'>3학년</div>
+				</div>
+				<div class='flex gap16 align-items-center'>
+					<div class='head'>고등</div>
+					<div class='content-box cursor sv_check selected' data-grade='m21'>수학(상)</div>
+					<div class='content-box cursor sv_check ' data-grade='m22'>수학(하)</div>
+					<div class='content-box cursor sv_check ' data-grade='m23'>수학I</div>
+					<div class='content-box cursor sv_check ' data-grade='m24'>수학II</div>
+					<div class='content-box cursor sv_check ' data-grade='m25'>미적분</div>
+					<div class='content-box cursor sv_check ' data-grade='m26'>확률과 통계</div>
+					<div class='content-box cursor sv_check ' data-grade='m27'>기하</div>		
+					<div class='content-box cursor sv_check ' data-grade='m31'>공통수학1</div>
+					<div class='content-box cursor sv_check ' data-grade='m32'>공통수학2</div>					
+				</div>
+				<!-- <div class='flex gap16 align-items-center'>
+					<div class='head'>&nbsp;</div>
+					<div class='content-box cursor sv_check ' data-grade='m31'>공통수학1</div>
+					<div class='content-box cursor sv_check ' data-grade='m32'>공통수학2</div>
+				</div> 241129 고등영역으로 합치기 -->
+
+				<div class='flex gap16 align-items-center'>
+					<div class='head'>종류</div>
+					<div class='content-box cursor sv_check ' data-type='ggs'>교과서</div>
+					<div class='content-box cursor sv_check ' data-type='cgs'>참고서</div>
+					<div class='content-box cursor sv_check ' data-type='c22'>22개정 참고서</div>
+				</div>
+			</div>
+		</div>
+		<div class='white-container '>
+			<div class='head'>
+				<div class='left'>교재 선택</div>
+				<div class='right' style="display: flex; align-items: center; gap: 30px;">
+				<div class='search-box'>
+						<input name="sv_keyword" value="" id=sv_keyword placeholder='교재/출판사명을 입력하세요.'/>
+						<!-- <img class="cursor" src='https://img.howhyclass.com/hclass/images/icon_search.png' alt='' onclick="search()"/> 241129 이미지 변경 -->
+						<img class="cursor" src='../../images/icon_search_gray.svg' alt='검색하기' onclick="search()"/>
+					</div>
+					<button class='regist-btn' style="padding: 13px 45px; margin-top: unset;" onclick="create_student_books()">내 교재 등록</button>
+				</div>
+			</div>
+			
+			<div class='check-table'>
+			
+				<div class='header'>
+					<div>
+						<!-- <input type="checkbox" name="toggle_all" onclick="fx_all_checkbox( 'toggle_all', 'ids');" /> 241129 input태그 label태그로 감싸주세요 -->
+						<label><input type="checkbox" name="toggle_all" onclick="fx_all_checkbox( 'toggle_all', 'ids');" /></label>
+					</div>
+					<div class='text-center'>학년/과목</div>
+					<div class='text-center'>교재명</div>
+					<div class='text-center'>출판사</div>
+					<div class='text-center'>발행년도</div>
+				</div>
+
+				<div class='table-content'>
+                    <!-- <input type="checkbox" name="ids" value="1855"/> 241129 input태그 label태그로 감싸주세요 -->
+                    <label><input type="checkbox" name="ids" value="1855"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>미래엔</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="1963"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>대교</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2407"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>금성출판사</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2431"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>와이비엠</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2456"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초4 1학기 ] 우등생 해법수학 10종교과평가자료집</div>
+					<div class='text-center'>아이스크림</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2108"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘 (박교식)</div>
+					<div class='text-center'>동아출판</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="1944"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초4 1학기 ] 우등생 해법수학 10종교과평가자료집 우등생 해법수학 10종교과평가자료집</div>
+					<div class='text-center'>천재교과서</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2647"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘(안병곤)</div>
+					<div class='text-center'>동아출판</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2529"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘(한대희)</div>
+					<div class='text-center'>천재교과서</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="1909"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 2학기 ] 교과서 익힘</div>
+					<div class='text-center'>비상교육</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2097"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 2학기 ] 교과서 익힘</div>
+					<div class='text-center'>아이스크림</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2151"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 2학기 ] 교과서 익힘</div>
+					<div class='text-center'>대교</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2208"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 2학기 ] 교과서 익힘</div>
+					<div class='text-center'>미래엔</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2268"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 2학기 ] 교과서 익힘</div>
+					<div class='text-center'>와이비엠</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2437"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 2학기 ] 교과서 익힘</div>
+					<div class='text-center'>금성출판사</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2365"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 2학기 ] 교과서 익힘(박교식)</div>
+					<div class='text-center'>동아출판</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2126"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 2학기 ] 교과서 익힘(박만구)</div>
+					<div class='text-center'>천재교과서</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2328"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 2학기 ] 교과서 익힘(안병곤)</div>
+					<div class='text-center'>동아출판</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2249"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 2학기 ] 교과서 익힘(한대희)</div>
+					<div class='text-center'>천재교과서</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2172"/></label>
+                    <div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 2학기 ] 단원평가 박교식</div>
+					<div class='text-center'>동아출판</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="1836"/></label>
+                    <div class='text-center'>초4 (2015)</div>
+					<div class='text-center'>[ 초4 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>대교</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="1851"/></label>
+                    <div class='text-center'>초4 (2015)</div>
+					<div class='text-center'>[ 초4 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>미래엔</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2265"/></label>
+                    <div class='text-center'>초4 (2015)</div>
+					<div class='text-center'>[ 초4 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>와이비엠</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2381"/></label>
+                    <div class='text-center'>초4 (2015)</div>
+					<div class='text-center'>[ 초4 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>아이스크림</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2430"/></label>
+                    <div class='text-center'>초4 (2015)</div>
+					<div class='text-center'>[ 초4 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>금성출판사</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2483"/></label>
+                    <div class='text-center'>초4 (2015)</div>
+					<div class='text-center'>[ 초4 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>비상교육</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+                    <label><input type="checkbox" name="ids" value="2323"/></label>
+                    <div class='text-center'>초4 (2015)</div>
+					<div class='text-center'>[ 초4 1학기 ] 교과서 익힘(박교식)</div>
+					<div class='text-center'>동아출판</div>
+					<div class='text-center'>2024</div>
+				</div>
+
+
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<script>
+
+$(document).ready(function() {
+    $('.sv_check').on('click', function(){
+		if( $(this).hasClass('selected') )
+			 $(this).removeClass('selected')
+		else
+			 $(this).addClass('selected')
+        search();
+    });
+
+});
+
+function search()
+{
+    var sv_keyword = $("#sv_keyword").val();
+
+	var sv_types = [];
+	var sv_grades = [];
+
+	$('.sv_check').each( function( index, item ){
+		if( $(this).hasClass('selected') )
+		{
+			if( !fx_empty($(this).data('grade') ) )
+				sv_grades.push( $(this).data('grade') );
+
+			if( !fx_empty($(this).data('type') ) )
+				sv_types.push( $(this).data('type') );
+			
+		}
+	});
+
+    var search_url = '/books/add_book?sv_keyword=' + encodeURI(sv_keyword)
+                                    + '&sv_grades=' + sv_grades.join(',')
+                                    + '&sv_types=' + sv_types.join(',');
+    location.href = search_url;
+}
+
+function create_student_books()
+{
+    var ids = fx_get_checkboxes('ids');
+    if( ids == "" )
+    {
+        alert("교재를 선택해주세요.");
+        return false;
+    }
+
+	fx_layer_popup_v2( 'create_student_books', '/books/create_student_books?ids=' + ids, '' );
+}
+</script>
+
+
+	
+<div class='footer'>
+	<div class="top">
+		<div class="left">
+			<div class='footer-content'>
+				<span class="footer_logo"><img src="https://img.howhyclass.com/hclass/images/footer_logo.svg" alt="하와이클래쓰" /></span>
+				<div onclick="window.open('https://student.howhyclass.com/users/agreement??user_type=s', '_blank');">서비스 이용약관</div>
+				<div onclick="window.open('https://student.howhyclass.com/users/privacy_policy?user_type=s', '_blank');">개인정보처리방침</div>
+			</div>
+		</div>
+		<div class='right'>
+			<div class='footer-content'>
+				<div id="footer-dropbox" class="drop-box full-width">
+					<div class="flex full-width">
+						<div>Family site</div>
+						<div><img class='selectCategory' src='https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png' alt='' /></div>
+	
+					</div>
+					<div id="footer-dropbox-content" class="drop-box-content">
+						<button onclick="window.open('https://www.howhymath.com', '_blank');">하와이매쓰</button>
+						<button onclick="window.open('https://www.fren.co.kr', '_blank');">프렌매쓰</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='left'>
+		<div class='footer-content'>
+			<div><b>하와이컴퍼니(주)</b></div>
+			<div class='vertical-line'></div>
+			<div><b>HOWHY COMPANY</b></div>
+			<div class='vertical-line'></div>
+			<div><b>대표이사 : 박종화</b></div>
+		</div>
+
+		<div class='footer-content'>
+			<div><b>사업자등록번호</b> 760-87-02737</div>
+			<div class='vertical-line'></div>
+			<div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+			<div class='vertical-line'></div>
+			<div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+		</div>
+		<div class='footer-content'>
+			<div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+		</div>
+		<div class='footer-content'>
+			2024  Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+		</div>
+	</div>
+</div>
+<!-- 241120 푸터 수정 끝 -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropBox = document.getElementById('footer-dropbox');
+    const dropBoxContent = document.getElementById('footer-dropbox-content');
+  
+    // drop-box를 클릭했을 때의 이벤트 핸들러
+    dropBox.addEventListener('click', function() {
+        // .drop-box-content의 표시 상태를 토글합니다.
+        dropBoxContent.style.display = dropBoxContent.style.display === 'block' ? 'none' : 'block';
+    });
+  
+  });
+</script>
+
+
+<script>
+</script>
+
+<!-- 교재등록 완료 팝업 시작 -->
+<div class="modal fade show" id="create_student_books" tabindex="-1" role="dialog" aria-modal="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" id="create_student_books-content">
+            <div class="help-modal" style="top:40%">
+                <div class="help-modal">
+                    <div class="modal-title ">
+                        <div class="left">교재등록</div>
+                        <div class="right" onclick="location.reload();">
+                            <!-- <img class="cursor" src="https://img.howhyclass.com/hclass/images/icon_close_black.png" alt=""> -->
+                            <img class="cursor" src="../../images/icon_close_black.png" alt="">
+                        </div>
+                    </div>
+                    <div class="modal-content" style="width:unset;">
+                        <div><b>등록되었습니다.</b></div>
+                        <br>
+                        <div>학습한 페이지의 채점 결과를 입력하세요.  인공지능이 결과를 분석하여 개인별 맞춤학습을 추천합니다.  </div>
+                        <div></div>
+                        <div>‘AI학습’ 메뉴에서 1:1 학습을 진행 하세요. </div>
+                        <button class="regist-btn" onclick="location.href='/books/index';">확인</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- 교재등록 완료 팝업 끝 -->
+
+</body>
+</html>
