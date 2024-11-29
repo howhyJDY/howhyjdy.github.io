@@ -2919,7 +2919,7 @@ line-height: 160%; /* 25.6px */
         .left{
           display: block;
           position: static;
-          width: auto;
+          width: fit-content;
           height: auto;
           margin-right: auto;
           transform: none;
