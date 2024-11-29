@@ -2924,6 +2924,7 @@ line-height: 160%; /* 25.6px */
           margin-right: auto;
           transform: none;
         }
+        .search-box{max-width: 290px;}
         .search-box+button{
           font-family: 'SUIT';
           padding: 12px 20px;
