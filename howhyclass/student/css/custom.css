@@ -658,15 +658,23 @@ body > .header{
 
 
     .teacher-mark {
-      border-radius: var(--border-radius-6, 6px);
+      /* border-radius: var(--border-radius-6, 6px);
       background: var(--color-bg-brand-lightest-2, #EFF8F3);
       color: var(--color-text-brand, #06b57a);
       font-size: 14px;
       font-style: normal;
       font-weight: 500;
       line-height: 160%;
-      /* 22.4px */
-      padding: 5px 20px;
+      padding: 5px 20px; */
+      font-family: 'SUIT';
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 800;
+      color: #13798f;
+      border: 1px solid #13798f;
+      border-right: 1px solid #a2c7cd;
+      border-radius: 4px;
+      padding: 3px 9px;
     }
   }
 
@@ -2310,6 +2318,7 @@ line-height: 160%; /* 25.6px */
           .item {
             width: 10%;
             padding: 0px;
+            cursor: pointer;
             /* 요소 간 간격 */
             /* border-bottom: 1px solid #E5E5E5;  */
             /* border-top: 1px solid var(--color-border-tertiary, #E5E5E5); */
@@ -6049,6 +6058,7 @@ line-height: 160%; /* 25.6px */
       flex-direction: column;
       gap: 16px;
       margin-top: 10px;
+      br{display: none;}
       /* 정보 테이블 */
       .content-box {
         display: flex;
@@ -6786,6 +6796,11 @@ line-height: 160%; /* 25.6px */
       &::before{content: none;}
     }
 
+  }
+
+  .nodata{
+    text-align: center;
+    margin: 60px 0;
   }
 }
 
