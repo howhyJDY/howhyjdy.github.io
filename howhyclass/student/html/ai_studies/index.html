@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이클래쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="shortcut icon" href="https://img.howhyclass.com/hmath/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<!-- <link href="https://img.howhyclass.com/hclass/css/custom.css?20241125" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/modal.css?20241125" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/add.css?20241125" rel="stylesheet"> -->
+	<link href="../../css/custom.css?20241125" rel="stylesheet">
+	<link href="../../css/modal.css?20241125" rel="stylesheet">
+	<link href="../../css/add.css?20241125" rel="stylesheet">
+
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            tex2jax: { displayMath: [ ["$$","$$"] ] },
+            "HTML-CSS": { fonts: ["Latin-Modern"] }
+        });
+    </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?20241125"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?20241125"></script>
+</head>
+
+<body>
+	<div class='header'>
+	<div>
+			<a href="/home/main"><img class='logo' src='https://img.howhyclass.com/hclass/images/logo.svg' alt=''/></a>
+	
+	</div>
+	<ul class='link'>
+
+			<li>
+				<ul><a href='/books/index'><span >교재학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/ai_studies/index'><span class="selected">AI 학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/daily_studies/index'><span >일일학습</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/homeworks/index'><span >숙제</span></a></ul>
+			</li>	</ul>
+	<div class='menu'>
+		<!-- 241120 아이콘 변경 및 태그 추가 시작 -->
+		<button class='subscribe' onclick="location.href='/teachers/index';"><span class="icon_add_tutor"></span>선생님등록</button>
+		<button class='subscribe' onclick="location.href='/payments/index';"><span class="icon_subscribe"></span>구독하기</button>
+		<button class='alarm-icon' onclick="location.href='/notices/index';" title="알림">
+			<span class="icon_alarm"></span>
+		</button>
+		<div id="info-dropbox" class='info-icon drop-box'>
+			<span class="icon_user"></span>
+			<div id="info-dropbox-content" class="drop-box-content">
+				<div class="dropdown-button-box">
+				<button onclick="location.href='/mypage/index';">나의 정보</button>
+				<button onclick="location.href='/mypage/setting';">설정 &amp; FAQ</button>
+				<button class="logout" onclick="location.href='/users/logout_student';">
+					<img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/>
+					<div>로그아웃</div>
+				</button>
+				</div>
+			</div>
+		</div>
+		<!-- 241120 아이콘 변경 및 태그 추가 끝 -->
+	</div>
+
+</div>
+
+<script>
+const infoBox = document.getElementById('info-dropbox');
+const infoContent = document.getElementById('info-dropbox-content');
+  
+infoBox.addEventListener('click', function() {
+    infoContent.style.display = infoContent.style.display === 'block' ? 'none' : 'block';
+});
+</script>
+
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/vis4/vis.css">
+<script type="text/javascript" charset="utf-8" src="https://img.dtsoft.co.kr/assets.howhy/vis4/vis.js"></script>
+
+<script src="https://img.dtsoft.co.kr/assets.howhy/plugins/flot/jquery.flot.js"></script>
+<script src="https://img.dtsoft.co.kr/assets.howhy/plugins/flot/jquery.flot.pie.js"></script>
+<script src="https://img.dtsoft.co.kr/assets.howhy/plugins/peity/jquery.peity.min.js"></script>
+<script src="https://img.dtsoft.co.kr/assets.howhy/plugins/d3/d3.min.js"></script>
+<script src="https://img.dtsoft.co.kr/assets.howhy/plugins/c3/c3.min.js"></script>
+
+<style>
+#loadingBar {
+	position:absolute;
+	top:22px;
+	left:28px;
+	width: 95%;
+	height: 400px;
+	background-color: #fff;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	opacity:1;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+</style>
+
+<div class='content'>
+	<div class='content-container'>
+		<!-- <div class="flex justify-content-end"> 241202 버튼 위치 변경용 클래스 추가 -->
+        <div class="flex justify-content-end ai_learning_head_wrap">
+			<div class="ai_learning_head gap-40" style="grid-template-columns: 3fr 3fr">
+				<div id="footer-dropbox" class="drop-box full-width">
+					<div class="flex full-width">
+						<input type='hidden' name="math_grade_cd_input" id="math_grade_cd_input" value="m24">
+						<div name="math_grade_cd_value" id="math_grade_cd_value">수학Ⅱ (2015)</div>
+						<div><img class='selectCategory' src='https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png' alt='' /></div>
+					</div>
+					<div id="footer-dropbox-content" class="drop-box-content" style="">
+													<button onclick="$('#math_grade_cd_input').val('m05');$('#math_grade_cd_value').html('초5');return false;">초5</button>
+													<button onclick="$('#math_grade_cd_input').val('m06');$('#math_grade_cd_value').html('초6');return false;">초6</button>
+													<button onclick="$('#math_grade_cd_input').val('m24');$('#math_grade_cd_value').html('수학Ⅱ');return false;">수학Ⅱ</button>
+											</div>
+				</div>
+				<button class="green-btn" onclick="change_grade();">확인</button>
+			</div>
+		</div>
+		<div class='white-container ai_learning_container'>
+			<div class="top">
+				<div class="content-box">
+					<div><a href='/ai_studies/index'><span class="selected"> AI 성취도 분석 결과</span></a></div>
+					<div><a href='/ai_studies/post_studies'><span>AI 학습 추천</span></a></div>
+					<div><a href='/ai_studies/weakness'><span>전체 수학 교육 결손점</span></a></div>
+				</div>
+			</div>
+			<div class="ai_learning_content_container">
+			<div class="title"> 유형별 성취도 </div>
+			<div class="middle">
+				<div class="mindmap-container">
+					<!-- div class="mindmap">마인드맵</div-->
+					<div class="mindmap" id="total_network" style="width:100%;height:450px; border: 1px solid #bbb;"></div>
+					<center>
+					<div id="loadingBar">
+						<center>
+						<div id="text" style="font-size: 40px;font-weight:bold;color:#333;padding-top:190px;">0%</div>
+						</center>
+					</div>
+					</center>
+				</div>
+	
+				<div class="question-container">
+					<div class="question-box">
+						<div class="title">
+							학습문항 수
+						</div>
+						<div class="detail-container">
+							<div class="left">
+								<div class="highlight">23</div>
+								<div>문항</div>
+							</div>
+							<div class="right">
+								시험지수: 4							</div>
+						</div>
+					</div>
+					<div class="question-box">
+						<div class="title">
+								문항 평균 난이도
+						</div>
+						<div class="detail-container">
+							<div class="left">
+								<div class="highlight">2.74</div>
+								<div>점</div>
+							</div>
+							<div class="right">
+								최하(1점) ~ 최상(5점)
+							</div>
+						</div>
+					</div>
+					<div class="set">
+						<div class="question-box">
+							<div class="title">
+								전체 오답 수
+							</div>
+							<div class="detail-container">
+								<div class="left">
+									<div class="highlight">0</div>
+									<div>문항</div>
+								</div>
+								<div class="right">
+																			정답률 <span class="highlight">100%</span>
+																	</div>
+							</div>
+						</div>
+						<div class="question-box">
+							<div class="title">
+								스마트 오답
+							</div>
+							<div class="detail-container">
+								<div class="left">
+									<div class="highlight">0</div>
+									<div>문항</div>
+								</div>
+								<div class="right">
+																			정답률 <span class="highlight">100%</span>
+																	</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<div class="area-container">
+					<div class="area-area">
+						<div class="title">내용영역</div>
+						<table class="area-box">
+							<thead>
+								<tr>
+									<th>영역</th>
+									<th>성취도</th>
+								</tr>
+							</thead>
+							<tbody>
+															<tr>
+									<td>함수</td>
+									<td><div class='dot' style="background-color:#8BC34A"></div></td>
+								</tr>
+														</tbody>
+						</table>
+	
+					</div>
+	
+					<div class="area-area">
+						<div class="title">행동영역</div>
+						<table class="area-box">
+							<thead>
+								<tr>
+									<th>영역</th>
+									<th>성취도</th>
+								</tr>
+							</thead>
+							<tbody>
+															<tr>
+									<td>문제해결력</td>
+									<td><div class='dot' style="background-color:#8BC34A"></div></td>
+								</tr>
+															<tr>
+									<td>이해력</td>
+									<td><div class='dot' style="background-color:#FFC600"></div></td>
+								</tr>
+															<tr>
+									<td>계산력</td>
+									<td><div class='dot' style="background-color:#FFC600"></div></td>
+								</tr>
+														</tbody>
+						</table>
+					</div>
+					<div class="graph-area">
+						<div class="title">난이도 구성</div>
+						<div class="graph-box" id="pie1" style="height: 320px;"></div>
+					</div>
+	
+				</div>
+	
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+
+$(document).ready(function() {
+	$("#grade-selector").on( 'change', function() { 
+		location.href = '/reports_v2/details?student_id=526&mg=' + this.value;
+	});
+
+	draw_graph();
+	achieve_map_draw();
+
+});
+
+function change_grade()
+{
+	if( $('#math_grade_cd_input').val() == '' ) return;
+
+	location.href="/ai_studies/index?math_grade_cd=" + $('#math_grade_cd_input').val() ;
+}
+
+
+function draw_graph()
+{
+ 	$("span.pie").peity("pie", {
+		fill: ['#1ab394', '#d7d7d7', '#ffffff']
+	});
+
+
+	c3.generate({
+		bindto: '#pie1',
+		data:{
+			columns: [
+				['최하', 1 ],
+				['하', 5 ],
+				['중', 16 ],
+				['상', 1 ],
+				['최상', 0 ]
+			],
+			colors:{
+				최하: 'rgb(227, 247, 242)',
+				하:   'rgb(185, 232, 222)',
+				중:   'rgb(128, 213, 196)',
+				상:   'rgb(58, 180, 155)',
+				최상: 'rgb(47, 142, 123)'
+			},
+			type : 'pie'
+		}
+	});
+}
+
+function achieve_map_draw() {
+	var nodes = [ {id: 465700, "label": "함수의 수렴과 발산", "group": "level3"},{id: 465800, "label": "함수의 극한; 좌극한과 우극한", "group": "level3"},{id: 465900, "label": "함수의 극한값의 존재", "group": "leveln"},{id: 466000, "label": "함수의 극한값 구하기", "group": "level4"},{id: 466100, "label": "가우스 기호를 포함한 함수의 극한", "group": "leveln"},{id: 466200, "label": "합성함수의 극한", "group": "leveln"},{id: 466300, "label": "함수의 극한에 대한 성질", "group": "level4"},{id: 466400, "label": "함수의 극한에 대한 성질과 관련된 거짓 명제", "group": "leveln"},{id: 466500, "label": "0/0 꼴의 극한; 유리식", "group": "level4"},{id: 466600, "label": "0/0 꼴의 극한; 무리식", "group": "level4"},{id: 466700, "label": "함수의 극한; ∞/∞", "group": "level4"},{id: 466800, "label": "함수의 극한; ∞-∞", "group": "leveln"},{id: 466900, "label": "함수의 극한; ∞×0", "group": "leveln"},{id: 467000, "label": "함수의 극한의 대소 관계", "group": "level4"},{id: 467100, "label": "함수의 극한; (분모)→0", "group": "level4"},{id: 467300, "label": "미정계수의 결정", "group": "level3"},{id: 467400, "label": "다항식의 결정", "group": "level4"},{id: 467500, "label": "함수의 극한의 활용", "group": "level4"},{id: 467600, "label": "함수의 연속", "group": "leveln"},{id: 467650, "label": "구간의 표현", "group": "leveln"},{id: 467700, "label": "함수의 그래프와 연속", "group": "leveln"},{id: 467800, "label": "합성함수의 연속", "group": "leveln"},{id: 467900, "label": "함수가 연속일 조건", "group": "leveln"},{id: 467920, "label": "함수가 연속일 조건; 상수함수와 다항함수로 구성된 구간함수", "group": "leveln"},{id: 468200, "label": "가우스 기호를 포함한 함수의 연속", "group": "leveln"},{id: 468400, "label": "(x-a)f(x) 함수의 연속", "group": "leveln"},{id: 468500, "label": "f(x)=f(x+k) 꼴의 함수의 연속", "group": "leveln"},{id: 468700, "label": "연속함수", "group": "leveln"},{id: 468800, "label": "연속함수의 성질", "group": "leveln"},{id: 468900, "label": "최대, 최소 정리", "group": "leveln"},{id: 469000, "label": "사이값 정리", "group": "leveln"},{id: 469080, "label": "사잇값의 정리의 활용", "group": "leveln"},{id: 469100, "label": "사이값 정리의 실생활에의 활용", "group": "leveln"},{id: 469200, "label": "평균변화율", "group": "leveln"},{id: 469300, "label": "평균변화율과 미분계수", "group": "leveln"},{id: 469400, "label": "미분계수 구하기", "group": "leveln"},{id: 469500, "label": "미분계수의 기하학적 의미", "group": "leveln"},{id: 469700, "label": "미분계수를 이용한 극한값의 계산", "group": "leveln"},{id: 469750, "label": "미분계수를 이용한 극한값의 계산; lim x->a 꼴", "group": "leveln"},{id: 469800, "label": "관계식이 주어진 함수의 미분계수", "group": "leveln"},{id: 470000, "label": "미분가능성과 연속성", "group": "leveln"},{id: 470020, "label": "미분가능성과 연속성-그래프", "group": "leveln"},{id: 470100, "label": "도함수의 정의를 이용하여 도함수 구하기", "group": "leveln"},{id: 470200, "label": "관계식 이용하여 도함수 구하기", "group": "leveln"},{id: 470300, "label": "미분법", "group": "leveln"},{id: 470600, "label": "미분계수를 이용한 극한값의 계산", "group": "leveln"},{id: 470700, "label": "미분법과 미정계수의 결정", "group": "leveln"},{id: 470750, "label": "치환을 이용한 극한값의 계산", "group": "leveln"},{id: 470800, "label": "접선의 기울기를 이용한 미정계수의 결정", "group": "leveln"},{id: 471000, "label": "미분의 항등식에의 활용", "group": "leveln"},{id: 471100, "label": "함수의 미분가능성", "group": "leveln"},{id: 471200, "label": "함수의 곱의 미분법", "group": "leveln"},{id: 471500, "label": "함수 y={f(x)}ⁿ의 미분법", "group": "leveln"},{id: 471600, "label": "미분과 다항식의 나눗셈", "group": "leveln"},{id: 471700, "label": "접선의 기울기", "group": "leveln"},{id: 471800, "label": "접선의 방정식", "group": "leveln"},{id: 471900, "label": "접선의 방정식; 곡선 위의 점의 좌표가 주어질 때", "group": "leveln"},{id: 472000, "label": "접선과 수직인 직선의 방정식", "group": "leveln"},{id: 472100, "label": "곡선 위의 점에서의 접선과 좌표축으로 둘러싸인 도형의 넓이", "group": "leveln"},{id: 472200, "label": "곡선과 접선의 교점", "group": "leveln"},{id: 472300, "label": "기울기가 주어질 때 접선의 방정식 구하기", "group": "leveln"},{id: 472500, "label": "곡선과 직선이 접할 때 미정계수 구하기", "group": "leveln"},{id: 472600, "label": "기울기가 주어진 접선의 방정식의 활용", "group": "leveln"},{id: 472700, "label": "접선의 기울기의 최댓값 또는 최솟값", "group": "leveln"},{id: 472800, "label": "곡선 위의 점과 직선 사이의 거리의 최솟값", "group": "leveln"},{id: 472900, "label": "곡선 밖의 한 점의 좌표가 주어질 때 접선의 방정식 구하기", "group": "leveln"},{id: 473000, "label": "곡선 밖의 한 점에서 그은 접선의 개수", "group": "leveln"},{id: 473100, "label": "곡선 밖의 점에서 곡선에 그은 접선의 방정식의 활용", "group": "leveln"},{id: 473200, "label": "두 곡선에 공통인 접선", "group": "leveln"},{id: 473300, "label": "두 곡선의 교점에서의 접선", "group": "leveln"},{id: 473400, "label": "곡선과 원의 접선", "group": "leveln"},{id: 473500, "label": "롤의 정리", "group": "leveln"},{id: 473600, "label": "평균값 정리", "group": "leveln"},{id: 473800, "label": "평균값 정리의 변형", "group": "leveln"},{id: 473900, "label": "함수의 증가와 감소", "group": "leveln"},{id: 474000, "label": "함수가 증가 또는 감소하기 위한 조건", "group": "leveln"},{id: 474100, "label": "주어진 구간에서의 함수의 증가, 감소", "group": "leveln"},{id: 474200, "label": "함수의 그래프와 증가, 감소", "group": "leveln"},{id: 474300, "label": "함수의 극대와 극소", "group": "leveln"},{id: 474400, "label": "극대, 극소의 활용", "group": "leveln"},{id: 474600, "label": "함수의 극값과 미정계수의 결정", "group": "leveln"},{id: 474800, "label": "도함수의 그래프와 함수의 극값", "group": "leveln"},{id: 474900, "label": "극대, 극소의 활용; 삼차함수의 계수의 부호 결정", "group": "leveln"},{id: 475000, "label": "f'(x)의 그래프를 이용한 f(x)의 해석", "group": "leveln"},{id: 475100, "label": "f'(x)의 그래프에서 f(x)의 그래프의 개형 유추", "group": "leveln"},{id: 475200, "label": "삼차함수가 극값을 가질 조건", "group": "leveln"},{id: 475260, "label": "주어진 구간에서 삼차함수가 극값을 가진 조건", "group": "leveln"},{id: 475300, "label": "사차함수가 극값을 가질 조건", "group": "leveln"},{id: 475400, "label": "함수의 최대와 최소", "group": "leveln"},{id: 475450, "label": "치환을 이용한 함수의 최대, 최소", "group": "leveln"},{id: 475500, "label": "최대, 최소가 주어진 함수의 미정계수의 결정", "group": "leveln"},{id: 475600, "label": "최대, 최소의 활용; 길이", "group": "leveln"},{id: 475700, "label": "최대, 최소의 활용; 넓이", "group": "leveln"},{id: 475800, "label": "최대, 최소의 활용; 부피", "group": "leveln"},{id: 475820, "label": "최대, 최소의 활용; 실생활", "group": "leveln"},{id: 475900, "label": "방정식의 f(x)=k의 실근의 개수", "group": "leveln"},{id: 476000, "label": "삼차방정식의 근의 판별; 서로 다른 세 실근", "group": "leveln"},{id: 476300, "label": "두 그래프의 교점의 개수", "group": "leveln"},{id: 476500, "label": "삼차방정식의 실근의 부호", "group": "leveln"},{id: 476600, "label": "주어진 구간에서 부등식이 항상 성립할 조건; 증가, 감소의 활용", "group": "leveln"},{id: 476700, "label": "주어진 구간에서 부등식이 항상 성립할 조건; 최대, 최소의 활용", "group": "leveln"},{id: 476800, "label": "모든 구간에서 부등식이 항상 성립할 조건", "group": "leveln"},{id: 477100, "label": "속도와 가속도", "group": "leveln"},{id: 477200, "label": "속도, 속력의 최댓값", "group": "leveln"},{id: 477300, "label": "속도와 가속도의 운동방향", "group": "leveln"},{id: 477400, "label": "속도의 그래프가 주어진 경우", "group": "leveln"},{id: 477500, "label": "정지하는 물체의 속도와 움직인 거리", "group": "leveln"},{id: 477600, "label": "위로 던진 물체의 속도", "group": "leveln"},{id: 477700, "label": "위치의 그래프가 주어진 경우", "group": "leveln"},{id: 477900, "label": "시각에 대한 변화율; 길이", "group": "leveln"},{id: 478000, "label": "시각에 대한 변화율; 넓이", "group": "leveln"},{id: 478100, "label": "시각에 대한 변화율; 부피", "group": "leveln"},{id: 478200, "label": "부정적분의 뜻", "group": "leveln"},{id: 478300, "label": "부정적분과 미분의 관계; d/dx가 적분기호 바깥에 있는 경우", "group": "leveln"},{id: 478310, "label": "부정적분과 미분의 관계; d/dx가 적분기호 안에 있는 경우", "group": "leveln"},{id: 478320, "label": "부정적분과 미분의 관계 이용하여 함수 구하기", "group": "leveln"},{id: 478360, "label": "부정적분의 계산", "group": "leveln"},{id: 478380, "label": "도함수가 주어질 때 함수 구하기", "group": "leveln"},{id: 478900, "label": "부정적분과 함수의 연속성", "group": "leveln"},{id: 479000, "label": "부정적분과 접선의 기울기", "group": "leveln"},{id: 479100, "label": "부정적분의 미분계수", "group": "leveln"},{id: 479200, "label": "도함수의 정의를 이용한 부정적분", "group": "leveln"},{id: 479300, "label": "부정적분과 극대, 극소", "group": "leveln"},{id: 479450, "label": "함수와 그 부정적분의 관계식", "group": "leveln"},{id: 479800, "label": "정적분의 정의", "group": "leveln"},{id: 479850, "label": "정적분의 정의의 활용", "group": "leveln"},{id: 480100, "label": "정적분의 계산; 적분구간이 같은 경우", "group": "leveln"},{id: 480200, "label": "정적분의 계산; 피적분함수가 같은 경우", "group": "leveln"},{id: 480300, "label": "절댓값 기호를 포함한 함수의 정적분", "group": "leveln"},{id: 480400, "label": "구간에 따라 다르게 정의된 함수의 정적분", "group": "leveln"},{id: 480500, "label": "우함수와 기함수의 정적분; 피적분함수가 주어진 경우", "group": "leveln"},{id: 480550, "label": "우함수와 기함수의 정적분; 피적분함수가 주어지지 않은 경우", "group": "leveln"},{id: 480600, "label": "주기함수의 정적분", "group": "leveln"},{id: 481000, "label": "적분 구간이 상수인 정적분을 포함한 등식", "group": "leveln"},{id: 481100, "label": "적분 구간에 변수가 있는 정적분을 포함한 등식; 위끝 아래끝 둘다 변수", "group": "leveln"},{id: 481120, "label": "적분 구간에 변수가 있는 정적분을 포함한 등식; 위끝 변수 아래끝 상수", "group": "leveln"},{id: 481200, "label": "적분 구간과 피적분함수에 변수가 있는 정적분을 포함한 등식", "group": "leveln"},{id: 481300, "label": "정적분으로 정의된 함수의 극대, 극소", "group": "leveln"},{id: 481400, "label": "정적분으로 정의된 함수의 최대, 최소", "group": "leveln"},{id: 481500, "label": "정적분으로 나타내어진 함수의 그래프", "group": "leveln"},{id: 481600, "label": "정적분으로 정의된 함수의 극한", "group": "leveln"},{id: 481900, "label": "곡선과 x축 사이의 넓이; f(x)≥0 또는 f(x)≤0인 경우", "group": "leveln"},{id: 482000, "label": "곡선과 x축 사이의 넓이의 활용", "group": "leveln"},{id: 482300, "label": "곡선과 직선 사이의 넓이", "group": "leveln"},{id: 482400, "label": "두 곡선 사이의 넓이", "group": "leveln"},{id: 482500, "label": "두 도형의 넓이가 같을 조건", "group": "leveln"},{id: 482600, "label": "넓이의 활용; 넓이를 이등분 할 때", "group": "leveln"},{id: 482620, "label": "넓이의 활용; 넓이가 최소일 때", "group": "leveln"},{id: 482700, "label": "곡선과 접선으로 둘러싸인 도형의 넓이", "group": "leveln"},{id: 482800, "label": "역함수의 정적분", "group": "leveln"},{id: 482900, "label": "역함수의 그래프와 좌표축 사이의 넓이", "group": "leveln"},{id: 483000, "label": "움직인 거리", "group": "leveln"},{id: 483100, "label": "위치와 위치의 변화량", "group": "leveln"},{id: 483200, "label": "속도의 그래프와 움직인 거리", "group": "leveln"} ]; 
+	var edges = [ {"from": 465700, "to": 465800},{"from": 465800, "to": 465900},{"from": 465900, "to": 467600},{"from": 465900, "to": 467650},{"from": 466000, "to": 466100},{"from": 466000, "to": 466200},{"from": 466000, "to": 466500},{"from": 466000, "to": 466600},{"from": 466000, "to": 466700},{"from": 466000, "to": 466800},{"from": 466000, "to": 466900},{"from": 466000, "to": 467000},{"from": 466000, "to": 467500},{"from": 466300, "to": 466400},{"from": 466500, "to": 467100},{"from": 466600, "to": 467100},{"from": 466700, "to": 467300},{"from": 466700, "to": 467400},{"from": 467100, "to": 467300},{"from": 467100, "to": 467400},{"from": 467600, "to": 467700},{"from": 467600, "to": 467800},{"from": 467600, "to": 467900},{"from": 467600, "to": 467920},{"from": 467600, "to": 468200},{"from": 467600, "to": 468400},{"from": 467600, "to": 468500},{"from": 467600, "to": 468700},{"from": 467600, "to": 470000},{"from": 467600, "to": 470020},{"from": 468700, "to": 468800},{"from": 468700, "to": 468900},{"from": 468700, "to": 469000},{"from": 469000, "to": 469080},{"from": 469000, "to": 469100},{"from": 469200, "to": 469300},{"from": 469300, "to": 469400},{"from": 469300, "to": 470100},{"from": 469400, "to": 469500},{"from": 469400, "to": 469700},{"from": 469400, "to": 469750},{"from": 469400, "to": 469800},{"from": 469400, "to": 470000},{"from": 469400, "to": 470020},{"from": 470000, "to": 470100},{"from": 470000, "to": 471100},{"from": 470100, "to": 470200},{"from": 470100, "to": 470300},{"from": 470300, "to": 470600},{"from": 470300, "to": 470700},{"from": 470300, "to": 470750},{"from": 470300, "to": 470800},{"from": 470300, "to": 471000},{"from": 470300, "to": 471100},{"from": 470300, "to": 471200},{"from": 470300, "to": 471500},{"from": 470300, "to": 471600},{"from": 471700, "to": 471800},{"from": 471700, "to": 472700},{"from": 471800, "to": 471900},{"from": 471800, "to": 472300},{"from": 471800, "to": 472900},{"from": 471800, "to": 482700},{"from": 471900, "to": 472000},{"from": 471900, "to": 472100},{"from": 471900, "to": 472200},{"from": 471900, "to": 473200},{"from": 471900, "to": 473300},{"from": 471900, "to": 473400},{"from": 472000, "to": 473300},{"from": 472000, "to": 473400},{"from": 472300, "to": 472500},{"from": 472300, "to": 472600},{"from": 472600, "to": 472800},{"from": 472900, "to": 473000},{"from": 472900, "to": 473100},{"from": 473500, "to": 473600},{"from": 473600, "to": 473800},{"from": 473900, "to": 474000},{"from": 473900, "to": 474300},{"from": 474000, "to": 474100},{"from": 474100, "to": 474200},{"from": 474200, "to": 475000},{"from": 474300, "to": 474400},{"from": 474300, "to": 474900},{"from": 474300, "to": 475200},{"from": 474300, "to": 475300},{"from": 474300, "to": 475400},{"from": 474300, "to": 476600},{"from": 474400, "to": 475900},{"from": 474800, "to": 475000},{"from": 475000, "to": 475100},{"from": 475200, "to": 475260},{"from": 475200, "to": 476000},{"from": 475400, "to": 475450},{"from": 475400, "to": 475500},{"from": 475400, "to": 475600},{"from": 475400, "to": 475700},{"from": 475400, "to": 475800},{"from": 475400, "to": 475820},{"from": 475400, "to": 476700},{"from": 475900, "to": 476000},{"from": 475900, "to": 476300},{"from": 475900, "to": 476500},{"from": 476700, "to": 476800},{"from": 477100, "to": 477200},{"from": 477100, "to": 477300},{"from": 477100, "to": 477400},{"from": 477100, "to": 477500},{"from": 477100, "to": 477600},{"from": 477100, "to": 477700},{"from": 478200, "to": 478300},{"from": 478200, "to": 478310},{"from": 478200, "to": 478360},{"from": 478300, "to": 478320},{"from": 478320, "to": 478380},{"from": 479800, "to": 479850},{"from": 479800, "to": 481900},{"from": 479800, "to": 482800},{"from": 481900, "to": 482000},{"from": 481900, "to": 482300},{"from": 482300, "to": 482400},{"from": 482300, "to": 482700},{"from": 482400, "to": 482500},{"from": 482400, "to": 482600},{"from": 482400, "to": 482620},{"from": 482800, "to": 482900},{"from": 483000, "to": 483100},{"from": 483000, "to": 483200} ];
+
+
+	var container = document.getElementById('total_network');
+
+	var data = {
+		nodes: nodes,
+		edges: edges
+	};
+
+	var options = {
+		groups: {
+                            leveln: {color:{background:'#D1D1D1'}, borderWidth:0},
+                            level5: {color:{background:'#28A745'}, borderWidth:0},
+                            level4: {color:{background:'#8BC34A'}, borderWidth:0},
+                            level3: {color:{background:'#FFC600'}, borderWidth:0},
+                            level2: {color:{background:'#FFEB3B'}, borderWidth:0},
+                            level1: {color:{background:'#F89992'}, borderWidth:0},
+                            level0: {color:{background:'#D32F2F'}, borderWidth:0},
+              		},
+		nodes: {
+			shape: 'dot',
+			size: 16
+		}, 
+		edges: {
+			arrows: {to : true },
+			color: {
+				color:'#ddd',
+				highlight:'#ddd'
+			}
+		},
+		physics: {
+			forceAtlas2Based: {
+				gravitationalConstant: -26,
+				centralGravity: 0.005,
+				springLength: 230,
+				springConstant: 0.18
+			},
+			maxVelocity: 146,
+			solver: 'forceAtlas2Based',
+			timestep: 0.35,
+			stabilization: {iterations: 150}
+		}
+	};
+
+	var network = new vis.Network(container, data, options);
+
+
+
+	network.on("stabilizationProgress", function(params) {
+				var widthFactor = params.iterations/params.total;
+				document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+ 	});
+
+	network.once("stabilizationIterationsDone", function() {
+				document.getElementById('text').innerHTML = '100%';
+				document.getElementById('loadingBar').style.opacity = 0;
+				// really clean the dom element
+				setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+	});
+}
+</script>
+
+
+	
+<div class='footer'>
+	<div class="top">
+		<div class="left">
+			<div class='footer-content'>
+				<span class="footer_logo"><img src="https://img.howhyclass.com/hclass/images/footer_logo.svg" alt="하와이클래쓰" /></span>
+				<div onclick="window.open('https://student.howhyclass.com/users/agreement??user_type=s', '_blank');">서비스 이용약관</div>
+				<div onclick="window.open('https://student.howhyclass.com/users/privacy_policy?user_type=s', '_blank');">개인정보처리방침</div>
+			</div>
+		</div>
+		<div class='right'>
+			<div class='footer-content'>
+				<div id="footer-dropbox" class="drop-box full-width">
+					<div class="flex full-width">
+						<div>Family site</div>
+						<div><img class='selectCategory' src='https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png' alt='' /></div>
+	
+					</div>
+					<div id="footer-dropbox-content" class="drop-box-content">
+						<button onclick="window.open('https://www.howhymath.com', '_blank');">하와이매쓰</button>
+						<button onclick="window.open('https://www.fren.co.kr', '_blank');">프렌매쓰</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='left'>
+		<div class='footer-content'>
+			<div><b>하와이컴퍼니(주)</b></div>
+			<div class='vertical-line'></div>
+			<div><b>HOWHY COMPANY</b></div>
+			<div class='vertical-line'></div>
+			<div><b>대표이사 : 박종화</b></div>
+		</div>
+
+		<div class='footer-content'>
+			<div><b>사업자등록번호</b> 760-87-02737</div>
+			<div class='vertical-line'></div>
+			<div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+			<div class='vertical-line'></div>
+			<div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+		</div>
+		<div class='footer-content'>
+			<div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+		</div>
+		<div class='footer-content'>
+			2024  Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+		</div>
+	</div>
+</div>
+<!-- 241120 푸터 수정 끝 -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropBox = document.getElementById('footer-dropbox');
+    const dropBoxContent = document.getElementById('footer-dropbox-content');
+  
+    // drop-box를 클릭했을 때의 이벤트 핸들러
+    dropBox.addEventListener('click', function() {
+        // .drop-box-content의 표시 상태를 토글합니다.
+        dropBoxContent.style.display = dropBoxContent.style.display === 'block' ? 'none' : 'block';
+    });
+  
+  });
+</script>
+
+
+<script>
+</script>
+
+</body>
+</html>
