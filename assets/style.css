@@ -69,9 +69,6 @@ header h1{
 }
 
 .container{
-    padding: 2rem;
-    border-radius: 1.8rem;
-    background: #fff;
 }
 
 .container h2{
@@ -80,6 +77,13 @@ header h1{
     gap: .8rem;
     padding-top: 2.4rem;
 }
+.container section{
+    margin-top: 3rem;
+    padding: 2.4rem 2rem;
+    border-radius: 1.8rem;
+    background: #fff;
+}
+.container section:first-of-type{margin-top: 0;}
 .container section:first-of-type h2{padding-top: 0;}
 .container h2+div{padding-top: .8rem;}
 .container span{
@@ -89,10 +93,12 @@ header h1{
     border-radius: 1.2rem;
 }
 .container dl{
-    padding: 2rem 0;
-    border-bottom: 1px solid #c4c4c4;
+    /* padding: 2rem 0;
+    border-bottom: 1px solid #c4c4c4; */
+    padding: 1.4rem 0;
 }
 .container dl:first-of-type{padding-top: 0;}
+.container dl:last-of-type{border-bottom-width: 0;}
 .container dl dt{
     font-size: 2rem;
     font-weight: 600;
@@ -107,7 +113,19 @@ header h1{
     background: #f7f7f7;
     border-bottom: 1px solid #e6e6e6;
 }
-.container dl dd:last-of-type{border-bottom-width: 0;}
+.container dl dd:first-of-type{
+    border-radius: 1.8rem 1.8rem 0 0;
+    padding: 1.8rem 1rem 1rem 1rem;
+}
+.container dl dd:last-of-type{
+    border-radius: 0 0 1.8rem 1.8rem;
+    padding: 1rem 1rem 1.8rem 1rem;
+    border-bottom-width: 0;
+}
+.container dl dd:first-of-type:last-of-type{
+    border-radius: 1.8rem;
+    padding: 1.8rem 1rem;
+}
 .container dl dd p,
 .container dl dd a{font-size: 1.6rem;}
 .container dl dd a{
