@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 38 42">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c53518;
+        opacity: .34;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill-rule: evenodd;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: #bd2b04;
+        opacity: .3;
+      }
+
+      .cls-3 {
+        fill: #833737;
+      }
+
+      .cls-5 {
+        clip-rule: evenodd;
+        fill: none;
+      }
+
+      .cls-4 {
+        fill: #43110e;
+        opacity: .35;
+      }
+
+      .cls-6 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <path class="cls-5" d="M21.59,41.33c-1.57.9-3.5.9-5.07,0l-13.96-8.03C1,32.4.04,30.75.04,28.97L0,12.97c0-1.8.96-3.46,2.53-4.36L16.41.67c1.57-.9,3.5-.9,5.07,0l13.96,8.03c1.56.89,2.52,2.54,2.52,4.33l.04,16c0,1.8-.96,3.46-2.53,4.35l-13.88,7.94Z"/>
+    </clipPath>
+  </defs>
+  <g id="_레이어_1-2" data-name="레이어_1">
+    <g class="cls-6">
+      <path class="cls-3" d="M21.59,41.33c-1.57.9-3.5.9-5.07,0l-13.96-8.03C1,32.4.04,30.75.04,28.97L0,12.97c0-1.8.96-3.46,2.53-4.36L16.41.67c1.57-.9,3.5-.9,5.07,0l13.96,8.03c1.56.89,2.52,2.54,2.52,4.33l.04,16c0,1.8-.96,3.46-2.53,4.35l-13.88,7.94Z"/>
+      <path class="cls-2" d="M31.41-17.31l13.63,23.4L-13.01,39.3l-13.63-23.4L31.41-17.31Z"/>
+      <path class="cls-4" d="M19.62,50.2l-.3-55.18L-10.02,7.76l.28,29.53,29.37,12.91Z"/>
+      <path class="cls-1" d="M41.02,32.24L-2.65,8.35l-2.87,34.57,24.17,9.23,22.38-19.92Z"/>
+    </g>
+  </g>
+</svg>
