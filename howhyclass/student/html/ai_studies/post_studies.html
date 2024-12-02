@@ -1,0 +1,1209 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이클래쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="shortcut icon" href="https://img.howhyclass.com/hmath/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<!-- <link href="https://img.howhyclass.com/hclass/css/custom.css" rel="stylesheet"> -->
+	<link href="../../css/custom.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/modal.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/add.css" rel="stylesheet">
+
+	
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            tex2jax: { displayMath: [ ["$$","$$"] ] },
+            "HTML-CSS": { fonts: ["Latin-Modern"] }
+        });
+    </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1731985359"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1731985359"></script>
+</head>
+
+<body>
+	
+
+<div class='header'>
+	<div>
+		<a href="/home/main"><img class='logo' src='../../images/logo.svg' alt='하와이클래쓰' /></a><!--241120 로고 이미지 확장자 변경-->
+	</div>
+	<ul class='link'>
+		<li>
+			<ul><a href='/books/index'><span>교재학습</span></a></ul>
+		</li>
+		<li>
+			<ul><a href='/ai_studies/index'><span  class="selected">AI 학습</span></a></ul>
+		</li>
+		<li>
+			<ul><a href='/daily_studies/index'><span >일일학습</span></a></ul>
+		</li>
+		<li>
+			<ul><a href='/homeworks/index'><span >숙제</span></a></ul>
+		</li>
+	</ul>
+	<div class='menu'>
+		<!-- 241120 아이콘 변경 및 태그 추가 시작 -->
+		<button class='subscribe' onclick="location.href='/teachers/index';"><span class="icon_add_tutor"></span>선생님등록</button>
+		<button class='subscribe' onclick="location.href='/payments/index';"><span class="icon_subscribe"></span>구독하기</button>
+		<button class='alarm-icon' onclick="location.href='/notices/index';" title="알림">
+			<!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+				<path d="M5.3335 25.3333V22.6667H8.00016V13.3333C8.00016 11.4889 8.55572 9.84999 9.66683 8.41666C10.7779 6.98332 12.2224 6.04443 14.0002 5.59999V4.66666C14.0002 4.1111 14.1946 3.63888 14.5835 3.24999C14.9724 2.8611 15.4446 2.66666 16.0002 2.66666C16.5557 2.66666 17.0279 2.8611 17.4168 3.24999C17.8057 3.63888 18.0002 4.1111 18.0002 4.66666V5.59999C19.7779 6.04443 21.2224 6.98332 22.3335 8.41666C23.4446 9.84999 24.0002 11.4889 24.0002 13.3333V22.6667H26.6668V25.3333H5.3335ZM16.0002 29.3333C15.2668 29.3333 14.6391 29.0722 14.1168 28.55C13.5946 28.0278 13.3335 27.4 13.3335 26.6667H18.6668C18.6668 27.4 18.4057 28.0278 17.8835 28.55C17.3613 29.0722 16.7335 29.3333 16.0002 29.3333ZM10.6668 22.6667H21.3335V13.3333C21.3335 11.8667 20.8113 10.6111 19.7668 9.56666C18.7224 8.52221 17.4668 7.99999 16.0002 7.99999C14.5335 7.99999 13.2779 8.52221 12.2335 9.56666C11.1891 10.6111 10.6668 11.8667 10.6668 13.3333V22.6667Z" fill="#1A1A1A" />
+				</svg> -->
+			<span class="icon_alarm"></span>
+		</button>
+		<div id="info-dropbox" class='info-icon drop-box'>
+			<!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+			<path d="M10 10C8.625 10 7.44792 9.51042 6.46875 8.53125C5.48958 7.55208 5 6.375 5 5C5 3.625 5.48958 2.44792 6.46875 1.46875C7.44792 0.489583 8.625 0 10 0C11.375 0 12.5521 0.489583 13.5312 1.46875C14.5104 2.44792 15 3.625 15 5C15 6.375 14.5104 7.55208 13.5312 8.53125C12.5521 9.51042 11.375 10 10 10ZM0 20V16.5C0 15.7917 0.182292 15.1406 0.546875 14.5469C0.911458 13.9531 1.39583 13.5 2 13.1875C3.29167 12.5417 4.60417 12.0573 5.9375 11.7344C7.27083 11.4115 8.625 11.25 10 11.25C11.375 11.25 12.7292 11.4115 14.0625 11.7344C15.3958 12.0573 16.7083 12.5417 18 13.1875C18.6042 13.5 19.0885 13.9531 19.4531 14.5469C19.8177 15.1406 20 15.7917 20 16.5V20H0ZM2.5 17.5H17.5V16.5C17.5 16.2708 17.4427 16.0625 17.3281 15.875C17.2135 15.6875 17.0625 15.5417 16.875 15.4375C15.75 14.875 14.6146 14.4531 13.4688 14.1719C12.3229 13.8906 11.1667 13.75 10 13.75C8.83333 13.75 7.67708 13.8906 6.53125 14.1719C5.38542 14.4531 4.25 14.875 3.125 15.4375C2.9375 15.5417 2.78646 15.6875 2.67188 15.875C2.55729 16.0625 2.5 16.2708 2.5 16.5V17.5ZM10 7.5C10.6875 7.5 11.276 7.25521 11.7656 6.76562C12.2552 6.27604 12.5 5.6875 12.5 5C12.5 4.3125 12.2552 3.72396 11.7656 3.23438C11.276 2.74479 10.6875 2.5 10 2.5C9.3125 2.5 8.72396 2.74479 8.23438 3.23438C7.74479 3.72396 7.5 4.3125 7.5 5C7.5 5.6875 7.74479 6.27604 8.23438 6.76562C8.72396 7.25521 9.3125 7.5 10 7.5Z" fill="#1A1A1A" />
+			</svg> -->
+			<span class="icon_user"></span>
+			<div id="info-dropbox-content" class="drop-box-content">
+				<div class="dropdown-button-box">
+				<button onclick="location.href='/mypage/index';">나의 정보</button>
+				<button onclick="location.href='/mypage/setting';">설정 &amp; FAQ</button>
+				<button class="logout" onclick="location.href='/users/logout_student';">
+					<img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/>
+					<div>로그아웃</div>
+				</button>
+				</div>
+			</div>
+		</div>
+		<!-- 241120 아이콘 변경 및 태그 추가 끝 -->
+	</div>
+</div>
+
+<script>
+const infoBox = document.getElementById('info-dropbox');
+const infoContent = document.getElementById('info-dropbox-content');
+  
+infoBox.addEventListener('click', function() {
+    infoContent.style.display = infoContent.style.display === 'block' ? 'none' : 'block';
+});
+</script>
+
+	<style>
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.sdot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.box-t { display:none; }
+.box-c { display:none; }
+
+
+</style>
+<div class='content'>
+	<div class='content-container'>
+		<div class="flex justify-content-end">
+			<div class="ai_learning_head gap-40" style="grid-template-columns: 3fr 3fr">
+				<div id="footer-dropbox" class="drop-box full-width">
+					<div class="flex full-width">
+						<input type='hidden' name="math_grade_cd_input" id="math_grade_cd_input" value="m05">
+						<div name="math_grade_cd_value" id="math_grade_cd_value">초5 (2015)</div>
+						<div><img class='selectCategory' src='https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png' alt='' /></div>
+					</div>
+					<div id="footer-dropbox-content" class="drop-box-content" style="">
+													<button onclick="$('#math_grade_cd_input').val('m05');$('#math_grade_cd_value').html('초5');return false;">초5</button>
+											</div>
+				</div>
+				<button class="green-btn" onclick="change_grade();">확인</button>
+			</div>
+	
+		</div>
+	
+		<div class='white-container ai_learning_container'>
+			<div class="top">
+				<div class="content-box">
+					<div><a href='/ai_studies/index'><span> AI 성취도 분석 결과</span></a></div>
+					<div><a href='/ai_studies/post_studies'><span class="selected">AI 학습 추천</span></a></div>
+					<div><a href='/ai_studies/weakness'><span>전체 수학 교육 결손점</span></a></div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<!-- 2411202 문구 추가 및 태그 삭제 시작 -->
+				<!-- <div class='col-md-3'> </div>
+				<div class='col-md-3'> </div>
+				<div class='col-md-3'> </div> -->
+				<div class='col-md-3 learning_recommend'>
+					<dl class="learning_txt" id="learningP" style="display: block;">
+                        <dt>후행학습</dt>
+                        <dd>
+                            <ul>
+                                <li>나의 부족한 부분의 과거 어디에서부터 결손이 어디서부터 시작되었는지 보여드립니다.</li>
+                                <li>나의 결손부분을 체크하시고 보완하시기 바랍니다.</li>
+                                <li>결손 부분의 개념영상을 보시고 학습하기를 실행하셔서 학습을 완료하시기 바랍니다.</li>
+                                <!-- 문구 변경될 수 있습니다. -->
+                            </ul>
+                        </dd>
+                    </dl>
+					<dl class="learning_txt" id="learningC">
+                        <dt>우선학습</dt>
+                        <dd>
+                            <ul>
+                                <li>나의 학습을 분석하여 알맞은 수업을 추천해 드립니다.</li>
+                                <li>나의 결손부분을 체크하시고 보완하시기 바랍니다.</li>
+                                <li>결손 부분의 개념영상을 보시고 학습하기를 실행하셔서 학습을 완료하시기 바랍니다.</li>
+                                <!-- 문구 변경될 수 있습니다. -->
+                            </ul>
+                        </dd>
+                    </dl>
+					<dl class="learning_txt" id="learningT">
+                        <dt>전체학습</dt>
+                        <dd>
+                            <ul>
+                                <li>나의 결손부분을 체크하시고 보완하시기 바랍니다.</li>
+                                <li>결손 부분의 개념영상을 보시고 학습하기를 실행하셔서 학습을 완료하시기 바랍니다.</li>
+                                <!-- 문구 변경될 수 있습니다. -->
+                            </ul>
+                        </dd>
+                    </dl>
+				</div>
+				<!-- 2411202 문구 추가 및 태그 삭제 끝 -->
+				<div class='col-md-3'>
+					<div class="row">
+						<div class='col-sm-4'>
+							<input type="radio" name="aaa" onclick="toggle_level('p');" checked> 후행학습
+						</div>
+						<div class='col-sm-4' style="text-align:center;">
+							<input type="radio" name="aaa" onclick="toggle_level('c');"> 우선학습
+						</div>
+						<div class='col-sm-4' style="text-align:center;">
+							<input type="radio" name="aaa" onclick="toggle_level('t' );">  전체학습
+						</div>
+						<!-- 241202 input태그 관련 수정 시작
+						<div class='col-sm-4'>
+							<input type="radio" id="levelChkP" name="aaa" onclick="toggle_level('p');" checked>
+							<label for="levelChkP">후행학습</label>
+						</div>
+						<div class='col-sm-4' style="text-align:center;">
+							<input type="radio" id="levelChkC" name="aaa" onclick="toggle_level('c');">
+							<label for="levelChkC">우선학습</label>
+						</div>
+						<div class='col-sm-4' style="text-align:center;">
+							<input type="radio" id="levelChkT" name="aaa" onclick="toggle_level('t' );">
+							<label for="levelChkT">전체학습</label>
+						</div> -->
+						<!-- 241202 input태그 관련 수정 끝 -->
+					</div>
+				</div>
+			</div>
+
+			<!-- 241202 chapter-container 감싸는 div 추가 시작 -->
+			<div class="chapter_wrap">
+				<div class="chapter-container box-t">
+					<div class="chapter-title">
+						<!--div class='dot' style="background-color:#8BC34A"></div-->
+						<div class="highlight">초5-2 1학기</div>
+						<div>01. 자연수의 혼합 계산 &gt; 01. 덧셈, 뺄셈이 섞여 있는 식 계산하기 </div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt=""/>
+								<!-- <div>[초5 (2015)] Ⅰ. 자연수의 혼합 계산 &gt; 1. 덧셈과 뺄셈이 섞여 있는 식</div> 학년구분 i태그로 분리(대괄호 삭제 가능하면 해주세요) 241202 -->
+								<div><i>초5 (2015)</i> Ⅰ. 자연수의 혼합 계산 &gt; 1. 덧셈과 뺄셈이 섞여 있는 식</div>
+							</div>
+		
+							<div class="right">
+								<!-- 241202 버튼 클래스 수정
+									실력향상, 후행학습, 학습하기 : bright-green-btn -> (수정없음)
+									영상보기, 개념영상 : bright-green-btn -> green-line-btn
+									맞춤영상 : bright-green-btn -> blue-btn
+								-->
+								<!-- <button class="bright-green-btn padding-10-30" onclick="view_movie(823);">영상보기</button> 241202 텍스트(영상보기->개념영상) 클래스 수정 -->
+								<button class="green-line-btn padding-10-30" onclick="view_movie(823);">개념영상</button>
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div>
+									<span style="color:#28A745">[실력향상]</span>  한 단계 성장을 위한 Level Up 학습 추천 
+								</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0101', 'level4', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-p">
+					<div class="chapter-title">
+						<div class="highlight">초5-2 1학기</div>
+						<div>01. 자연수의 혼합 계산 &gt; 01. 덧셈, 뺄셈이 섞여 있는 식 계산하기</div>
+					</div>
+
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<!-- <div>초4-2 1학기 &gt; 03. 곱셈과 나눗셈</div> 241202 학년구분 i태그로 분리, '>' 삭제.. -->
+								<div><i>초4-2 1학기</i> 03. 곱셈과 나눗셈</div>
+							</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div style="padding-left: 50px;">02. (세 자리 수)×(두 자리 수) 계산하기</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="green-line-btn padding-10-30" onclick="view_post_movie('tJfxzag3aZA', '02. (세 자리 수)×(두 자리 수) 계산하기' );">개념영상</button>
+											<button class="bright-green-btn padding-10-30" onclick="add_post_study_card( 'MA1504A03020102', 'level4', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-t">
+					<div class="chapter-title">
+						<!--div class='dot' style="background-color:#FFC600"></div-->
+						<div class="highlight">초5-2 1학기</div>
+						<div>01. 자연수의 혼합 계산 &gt; 02. 곱셈, 나눗셈이 섞여 있는 식 계산하기 </div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt=""/>
+								<div><i>초5 (2015)</i> Ⅰ. 자연수의 혼합 계산 &gt; 2. 곱셈과 나눗셈이 섞여 있는 식</div>
+							</div>
+		
+							<div class="right">
+								<!-- <button classright-line-green-btn padding-10-30" onclick="view_movie(824);">개념영상</button> -->
+								<button class="green-line-btn padding-10-30" onclick="view_movie(824);">개념영상</button>
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div><span style="color:#8BC34A">[실력향상]</span>  한 단계 성장을 위한 Level Up 학습 추천 </div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0102', 'level3', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="chapter-container box-p">
+							
+					<div class="chapter-title">
+						<div class="highlight">초5-2 1학기</div>
+						<div>03. 규칙과 대응 &gt; 01. 두 양 사이의 관계 알아보기</div>
+					</div>
+
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div><i>초4-2 1학기</i> 06. 규칙 찾기</div>
+							</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div style="padding-left: 50px;">01. 덧셈식에서 규칙 찾아 문제 해결하기</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="green-line-btn padding-10-30" onclick="view_post_movie('oyqWhPnPc0U', '01. 덧셈식에서 규칙 찾아 문제 해결하기' );">개념영상</button>
+											<button class="bright-green-btn padding-10-30" onclick="add_post_study_card( 'MA1504A06040101,MA1504A06050101', 'level3', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-p">
+							
+					<div class="chapter-title">
+						<div class="highlight">초5-2 1학기</div>
+						<div>03. 규칙과 대응 &gt; 02. 대응 관계를 식으로 나타내는 방법 알아보기</div>
+					</div>
+
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div><i>초4-2 1학기</i> 06. 규칙 찾기</div>
+							</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div style="padding-left: 50px;">01. 덧셈식에서 규칙 찾아 문제 해결하기</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="green-line-btn padding-10-30" onclick="view_post_movie('oyqWhPnPc0U', '01. 덧셈식에서 규칙 찾아 문제 해결하기' );">개념영상</button>
+											<button class="bright-green-btn padding-10-30" onclick="add_post_study_card( 'MA1504A06040101,MA1504A06050101', 'level3', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+							</div>
+				<div class="chapter-container box-t">
+					<div class="chapter-title">
+						<!--div class='dot' style="background-color:#D32F2F"></div-->
+						<div class="highlight">초5-2 1학기</div>
+						<div>03. 규칙과 대응 &gt; 03. 생활 속의 대응 관계를 식으로 나타내기 </div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt=""/>
+								<div><i>초5 (2015)</i> Ⅲ. 규칙과 대응 &gt; 3. 생활 속에서 대응 관계를 찾아 식으로 나타내기</div>
+							</div>
+		
+							<div class="right">
+								<button class="green-line-btn padding-10-30" onclick="view_movie(836);">개념영상</button>
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div>
+									<span style="color:#D32F2F">[후행학습]</span> 현재 진도를 이해하기위한 이전 학습 추천 
+								</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0303', 'level0', 'bsc' );">후행학습</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="chapter-container box-t">
+					<div class="chapter-title">
+						<!--div class='dot' style="background-color:#FFC600"></div-->
+						<div class="highlight">초5-2 1학기</div>
+						<div>04. 약분과 통분 &gt; 03. 분수를 간단하게 나타내기 </div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt=""/>
+								<div><i>초5 (2015)</i> Ⅳ. 약분과 통분 &gt; 3. 분수를 간단하게 나타내기</div>
+							</div>
+		
+							<div class="right">
+								<button class="green-line-btn padding-10-30" onclick="view_movie(839);">개념영상</button>
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div>
+									<span style="color:#8BC34A">[실력향상]</span>  한 단계 성장을 위한 Level Up 학습 추천 
+								</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0403', 'level3', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="chapter-container box-p">
+							
+					<div class="chapter-title">
+						<div class="highlight">초5-2 1학기</div>
+						<div>05. 분수의 덧셈과 뺄셈 &gt; 02. 분수의 덧셈하기(2)</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div><i>초4-2 2학기</i>01. 분수의 덧셈과 뺄셈</div>
+							</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div style="padding-left: 50px;">02. 덧셈하기-분모가 같은 대분수와 진분수(또는 가분수)의 덧셈</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="green-line-btn padding-10-30" onclick="view_post_movie('ezgpCADs_S8', '02. 덧셈하기-분모가 같은 대분수와 진분수(또는 가분수)의 덧셈' );">개념영상</button>
+											<button class="bright-green-btn padding-10-30" onclick="add_post_study_card( 'MA1504B01030302', 'level3', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="chapter-container box-t">
+					<div class="chapter-title">
+						<!--div class='dot' style="background-color:#8BC34A"></div-->
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 03. 1㎠ 알아보기 </div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt=""/>
+								<div><i>초5 (2015)</i> Ⅵ. 다각형의 둘레와 넓이 &gt; 2. 1㎠ 알아보기 / 직사각형의 넓이</div>
+							</div>
+		
+							<div class="right">
+								<button class="green-line-btn padding-10-30" onclick="view_movie(850);">개념영상</button>
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div>
+									<span style="color:#28A745">[실력향상]</span>  한 단계 성장을 위한 Level Up 학습 추천 
+								</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0603', 'level4', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="chapter-container box-t">
+					<div class="chapter-title">
+						<!--div class='dot' style="background-color:#8BC34A"></div-->
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 04. 직사각형의 넓이 구하기 </div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt=""/>
+								<div><i>초5 (2015)</i> Ⅵ. 다각형의 둘레와 넓이 &gt; 2. 1㎠ 알아보기 / 직사각형의 넓이</div>
+							</div>
+		
+							<div class="right">
+								<button class="green-line-btn padding-10-30" onclick="view_movie(850);">개념영상</button>
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div>
+									<span style="color:#28A745">[실력향상]</span>  한 단계 성장을 위한 Level Up 학습 추천 
+								</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0604', 'level4', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-p">
+							
+					<div class="chapter-title">
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 04. 직사각형의 넓이 구하기</div>
+					</div>
+
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div><i>초4-2 2학기</i> 04. 사각형</div>
+							</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div style="padding-left: 50px;">01. 직사각형과 정사각형의 성질 알아보기</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="green-line-btn padding-10-30" onclick="view_post_movie('RqHoy8uKHnM', '01. 직사각형과 정사각형의 성질 알아보기' );">개념영상</button>
+											<button class="bright-green-btn padding-10-30" onclick="add_post_study_card( 'MA1504B04070101', 'level4', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-t">
+					<div class="chapter-title">
+						<!--div class='dot' style="background-color:#FFC600"></div-->
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 05. 1㎠보다 더 큰 넓이의 단위 알아보기 </div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt=""/>
+								<div><i>초5 (2015)</i> Ⅵ. 다각형의 둘레와 넓이 &gt; 3.  1㎠ 보다 더 큰 넓이의 단위 알아보기</div>
+							</div>
+		
+							<div class="right">
+								<button class="green-line-btn padding-10-30" onclick="view_movie(851);">개념영상</button>
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div>
+									<span style="color:#8BC34A">[실력향상]</span>  한 단계 성장을 위한 Level Up 학습 추천 
+								</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0605', 'level3', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-p">
+							
+					<div class="chapter-title">
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 05. 1㎠보다 더 큰 넓이의 단위 알아보기</div>
+					</div>
+
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div><i>초5-2 1학기</i> 06. 다각형의 둘레와 넓이</div>
+							</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div style="padding-left: 50px;">01. 1㎠ 알아보고 도형의 넓이 구하기</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="green-line-btn padding-10-30" onclick="view_post_movie('yD6Bpq3N71g', '01. 1㎠ 알아보고 도형의 넓이 구하기' );">개념영상</button>
+											<button class="bright-green-btn padding-10-30" onclick="add_post_study_card( 'MA1505A06030201', 'level3', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-t">
+					<div class="chapter-title">
+						<!--div class='dot' style="background-color:#FFC600"></div-->
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 06. 평행사변형의 넓이 구하기 </div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt=""/>
+								<div><i>초5 (2015)</i> Ⅵ. 다각형의 둘레와 넓이 &gt; 4. 평행사변형의 넓이</div>
+							</div>
+		
+							<div class="right">
+								<button class="green-line-btn padding-10-30" onclick="view_movie(852);">개념영상</button>
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div>
+									<span style="color:#8BC34A">[실력향상]</span>  한 단계 성장을 위한 Level Up 학습 추천 
+								</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0606', 'level3', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-p">
+							
+					<div class="chapter-title">
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 06. 평행사변형의 넓이 구하기</div>
+					</div>
+
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div><i>초4-2 2학기</i> 04. 사각형</div>
+							</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div style="padding-left: 50px;">01. 평행사변형의 성질을 이용하여 길이 구하기</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="green-line-btn padding-10-30" onclick="view_post_movie('PT3jdoUlTBw', '01. 평행사변형의 성질을 이용하여 길이 구하기' );">개념영상</button>
+											<button class="bright-green-btn padding-10-30" onclick="add_post_study_card( 'MA1504B04050201', 'level3', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-t">
+					<div class="chapter-title">
+						<!--div class='dot' style="background-color:#8BC34A"></div-->
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 07. 삼각형의 넓이 구하기 </div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt=""/>
+								<div><i>초5 (2015)</i> Ⅵ. 다각형의 둘레와 넓이 &gt; 5. 삼각형의 넓이</div>
+							</div>
+		
+							<div class="right">
+								<button class="green-line-btn padding-10-30" onclick="view_movie(853);">개념영상</button>
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div>
+									<span style="color:#28A745">[실력향상]</span>  한 단계 성장을 위한 Level Up 학습 추천 
+								</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0607', 'level4', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-p">
+							
+					<div class="chapter-title">
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 07. 삼각형의 넓이 구하기</div>
+					</div>
+
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div><i>초4-2 2학기</i> 02. 삼각형</div>
+							</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div style="padding-left: 50px;">01. 정삼각형의 변의 길이와 각 구하기</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="green-line-btn padding-10-30" onclick="view_post_movie('EMPZLPQbNjk', '01. 정삼각형의 변의 길이와 각 구하기' );">개념영상</button>
+											<button class="bright-green-btn padding-10-30" onclick="add_post_study_card( 'MA1504B02030201', 'level4', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-c box-t">
+					<div class="chapter-title">
+						<!--div class='dot' style="background-color:#8BC34A"></div-->
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 08. 마름모의 넓이 구하기 </div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt=""/>
+								<div><i>초5 (2015)</i> Ⅵ. 다각형의 둘레와 넓이 &gt; 6. 마름모의 넓이</div>
+							</div>
+		
+							<div class="right">
+								<button class="green-line-btn padding-10-30" onclick="view_movie(854);">개념영상</button>
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div>
+									<span style="color:#28A745">[실력향상]</span>  한 단계 성장을 위한 Level Up 학습 추천 
+								</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0608', 'level4', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-p">
+							
+					<div class="chapter-title">
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 08. 마름모의 넓이 구하기</div>
+					</div>
+
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div><i>초4-2 2학기 </i>04. 사각형</div>
+							</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div style="padding-left: 50px;">01. 평행사변형의 성질을 이용하여 길이 구하기</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="green-line-btn padding-10-30" onclick="view_post_movie('PT3jdoUlTBw', '01. 평행사변형의 성질을 이용하여 길이 구하기' );">개념영상</button>
+											<button class="bright-green-btn padding-10-30" onclick="add_post_study_card( 'MA1504B04050201', 'level4', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+						<div class="chapter-container box-c box-t">
+					<div class="chapter-title">
+						<!--div class='dot' style="background-color:#8BC34A"></div-->
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 09. 사다리꼴의 넓이 구하기 </div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt=""/>
+								<div><i>초5 (2015)</i> Ⅵ. 다각형의 둘레와 넓이 &gt; 7. 사다리꼴의 넓이</div>
+							</div>
+		
+							<div class="right">
+								<button class="green-line-btn padding-10-30" onclick="view_movie(855);">개념영상</button>
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div>
+									<span style="color:#28A745">[실력향상]</span>  한 단계 성장을 위한 Level Up 학습 추천 
+								</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0609', 'level4', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-p">
+							
+					<div class="chapter-title">
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 09. 사다리꼴의 넓이 구하기</div>
+					</div>
+
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div><i>초4-2 2학기</i> 04. 사각형</div>
+							</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div style="padding-left: 50px;">01. 평행사변형의 성질을 이용하여 길이 구하기</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="green-line-btn padding-10-30" onclick="view_post_movie('PT3jdoUlTBw', '01. 평행사변형의 성질을 이용하여 길이 구하기' );">개념영상</button>
+											<button class="bright-green-btn padding-10-30" onclick="add_post_study_card( 'MA1504B04050201', 'level4', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-c box-t">
+					<div class="chapter-title">
+						<!--div class='dot' style="background-color:#FFEB3B"></div-->
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 01. 정다각형의 둘레 구하기 </div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<img src="https://img.howhyclass.com/hclass/images/img_check_circle_green.png" alt=""/>
+								<div><i>초5 (2015)</i> Ⅵ. 다각형의 둘레와 넓이 &gt; 1. 정다각형의 둘레/사각형의 둘레</div>
+							</div>
+		
+							<div class="right">
+								<button class="green-line-btn padding-10-30" onclick="view_movie(849);">개념영상</button>
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div>
+									<span style="color:#FFEB3B">[맞춤학습]</span> 현 단계 기초를 튼튼 학습 추천
+									<br>
+									<span style="color:#FFC600">[실력향상]</span>  한 단계 성장을 위한 Level Up 학습 추천 
+								</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<!-- <button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0601', 'level2', 'bsc' );">맞춤학습</button> 241202 맞춤학습 버튼 클래스 수정 -->
+											<button class="blue-btn padding-10-30" onclick="add_study_card( 'MA1505A0601', 'level2', 'bsc' );">맞춤학습</button>
+											<button class="bright-green-btn padding-10-30" onclick="add_study_card( 'MA1505A0601', 'level2', 'dep' );">실력향상</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="chapter-container box-p">
+							
+					<div class="chapter-title">
+						<div class="highlight">초5-2 1학기</div>
+						<div>06. 다각형의 둘레와 넓이 &gt; 01. 정다각형의 둘레 구하기</div>
+					</div>
+
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div><i>초4-2 2학기</i> 04. 사각형</div>
+							</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					<div class="chapter">
+						<div class="chapter-content">
+							<div class="left">
+								<div style="padding-left: 50px;">01. 평행사변형의 성질을 이용하여 길이 구하기</div>
+							</div>
+							<div class="right">
+								<div class="progress-box">
+									<div class="right">
+										<div class="left">
+											<button class="green-line-btn padding-10-30" onclick="view_post_movie('PT3jdoUlTBw', '01. 평행사변형의 성질을 이용하여 길이 구하기' );">개념영상</button>
+											<button class="bright-green-btn padding-10-30" onclick="add_post_study_card( 'MA1504B04050201', 'level2', 'dep' );">학습하기</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- //chapter_wrap -->
+			<!-- 241202 chapter-container 감싸는 div 추가 끝 -->
+			
+		</div>
+	</div>
+</div>
+
+
+<script>
+function view_movie( movie_id )
+{
+	fx_layer_popup_v2( 'view_movie',  "/daily_studies/view_movie?movie_id=" + movie_id, 'modal-lg modal-dialog-centered' );
+}
+
+function view_post_movie( movie_code, title )
+{
+	fx_layer_popup_v2( 'view_movie',  "/daily_studies/view_movie?movie_code=" + movie_code +'&title=' + encodeURI(title), 'modal-lg modal-dialog-centered' );
+}
+
+function add_study_card( chapter_code, level, recommend_type_cd  )
+{
+	var url = "/ai_studies/study_cards?chapter_code=" + chapter_code + "&level=" + level  + "&recommend_type_cd=" + recommend_type_cd ;
+	fx_submit_link( url );
+}
+
+
+function add_post_study_card( chapter_code, math_level_cd )
+{
+    var url = "/ai_studies/study_cards?chapter_code=" + chapter_code + "&math_level_cd=" + math_level_cd ;
+    fx_submit_link( url );
+}
+
+function load_studying( argvs )
+{
+	var w = window.screen.width;
+	var h = window.screen.height;
+	var left = 0;
+	var top = 0;
+
+	window.open(  "https://bonsa.howhyclass.com/su/ss?" + argvs, 'load_studying', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no,  width=' + w + ', height=' + h + ', top=' + top +  ', left=' + left);
+}
+
+function change_grade()
+{
+	if( $('#math_grade_cd_input').val() == '' ) return;
+
+	location.href="/ai_studies/post_studies?math_grade_cd=" + $('#math_grade_cd_input').val() ;
+}
+
+function toggle_level( level )
+{
+	if( level == 't' )
+	{
+		$('.box-c').hide();
+		$('.box-p').hide();
+
+		$('.box-t').show();
+
+		//241202 추가
+		$('.learning_txt').hide();
+		$('#learningT').show();
+	}
+	else if( level == 'c' )
+	{
+		$('.box-p').hide();
+
+		$('.box-t').hide();
+		$('.box-c').show();
+
+		//241202 추가
+		$('.learning_txt').hide();
+		$('#learningC').show();
+	}
+	else
+	{
+		$('.box-t').hide();
+		$('.box-c').hide();
+
+		$('.box-p').show();
+
+		//241202 추가
+		$('.learning_txt').hide();
+		$('#learningP').show();
+	}
+}
+
+
+</script>
+
+	
+<div class='footer'>
+	<div class="top">
+		<div class="left">
+			<div class='footer-content'>
+				<span class="footer_logo"><img src="../../images/footer_logo.svg" alt="하와이클래쓰" /></span>
+				<div onclick="window.open('https://student.howhyclass.com/users/agreement??user_type=s', '_blank');">서비스 이용약관</div>
+				<div onclick="window.open('https://student.howhyclass.com/users/privacy_policy?user_type=s', '_blank');">개인정보처리방침</div>
+			</div>
+		</div>
+		<div class='right'>
+			<div class='footer-content'>
+				<div id="footer-dropbox" class="drop-box full-width">
+					<div class="flex full-width">
+						<div>Family site</div>
+						<div><img class='selectCategory' src='https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png' alt='' /></div>
+	
+					</div>
+					<div id="footer-dropbox-content" class="drop-box-content">
+						<button onclick="window.open('https://www.howhymath.com', '_blank');">하와이매쓰</button>
+						<button onclick="window.open('https://www.fren.co.kr', '_blank');">프렌매쓰</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='left'>
+		<div class='footer-content'>
+			<div><b>하와이컴퍼니(주)</b></div>
+			<div class='vertical-line'></div>
+			<div><b>HOWHY COMPANY</b></div>
+			<div class='vertical-line'></div>
+			<div><b>대표이사 : 박종화</b></div>
+		</div>
+
+		<div class='footer-content'>
+			<div><b>사업자등록번호</b> 760-87-02737</div>
+			<div class='vertical-line'></div>
+			<div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+			<div class='vertical-line'></div>
+			<div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+		</div>
+		<div class='footer-content'>
+			<div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+		</div>
+		<div class='footer-content'>
+			2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+		</div>
+	</div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropBox = document.getElementById('footer-dropbox');
+    const dropBoxContent = document.getElementById('footer-dropbox-content');
+  
+    // drop-box를 클릭했을 때의 이벤트 핸들러
+    dropBox.addEventListener('click', function() {
+        // .drop-box-content의 표시 상태를 토글합니다.
+        dropBoxContent.style.display = dropBoxContent.style.display === 'block' ? 'none' : 'block';
+    });
+  
+  });
+</script>
+
+
+<script>
+</script>
+
+</body>
+</html>

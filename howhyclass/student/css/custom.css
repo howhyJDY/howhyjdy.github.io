@@ -4219,6 +4219,7 @@ line-height: 160%; /* 25.6px */
 .ai_learning_head {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
+  gap: 10px;
 
   .drop-box-content {
     bottom: 0% !important;
@@ -4229,9 +4230,11 @@ line-height: 160%; /* 25.6px */
 /* ai학습 공통 */
 .flex.justify-content-end:has(.ai_learning_head){
   position: absolute;
-  top: 0;
+  top: 280px;
   left: 0;
   width: 100%;
+  padding: 0 25px;
+  z-index: 1;
 }
 
 .ai_learning_container {
@@ -4285,7 +4288,8 @@ line-height: 160%; /* 25.6px */
       }
     }
 
-    &+.row{
+    &~.row{
+      margin-bottom: 100px;
       /* .info-txt 와 동일하게 */
       dl{
         margin: 0;
@@ -4324,6 +4328,12 @@ line-height: 160%; /* 25.6px */
         }
       }
 
+      /* AI학습 추천 241202 추가 */
+      .learning_recommend{
+        min-height: 100px;
+        .learning_txt{display: none;}
+      }
+
       /* 체크박스 영역 */
       &>div{
         width: fit-content;
@@ -4339,6 +4349,27 @@ line-height: 160%; /* 25.6px */
             width: 100px;
             display: flex;
             flex-direction: column;
+
+            /* ai학습추천 선택영역 */
+            &.col-sm-4{
+              text-align: center;
+              font-size: 14px;
+              line-height: 1;
+              color: #333;
+              &::before{
+                content: '';
+                display: block;
+                width: 39px;
+                height: 50px;
+                background: no-repeat center / contain;
+                margin: 8px auto;
+              }
+              &:nth-child(1)::before{background-image: url(../images/img_learning_p.png);}
+              &:nth-child(2)::before{background-image: url(../images/img_learning_c.png);}
+              &:nth-child(3)::before{background-image: url(../images/img_learning_t.png);}
+              input{order: -1;}
+              label{cursor: pointer;}
+            }
           }
           input{
             /* position: absolute;
@@ -4360,7 +4391,7 @@ line-height: 160%; /* 25.6px */
             height: auto;
             width: auto;
             border-radius: 0;
-            cursor: pointer;
+            /* cursor: pointer; */
             background: transparent !important;
             margin-top: -10px;
             p{
@@ -4437,6 +4468,18 @@ line-height: 160%; /* 25.6px */
     /* 25.6px */
     margin-left: 25px;
   }
+
+  /* 241202 추가 시작 */
+  .chapter_wrap{
+    border: 2px solid #7e7e7e;
+    border-radius: 19px;
+    overflow: hidden;
+    .chapter-container{
+      margin: 0;
+      .chapter-title{border-radius: 0;}
+    }
+  }
+  /* 241202 추가 끝 */
 
   .chapter-container {
     margin: 40px 0px;
@@ -4713,7 +4756,7 @@ line-height: 160%; /* 25.6px */
   overflow-x: auto;
   border: 2px solid #7e7e7e;
   border-radius: 19px;
-  margin-top: 60px;
+  margin-top: -40px;
   &::-webkit-scrollbar-thumb{border-radius: 6px;}
   &::-webkit-scrollbar-track{background: transparent !important;}
   table {
@@ -4794,7 +4837,6 @@ line-height: 160%; /* 25.6px */
           background-color: transparent !important;
           background: no-repeat center / cover;
           position: relative;
-          z-index: 2;
           &::before{
             content: '';
             display: block;
@@ -4805,7 +4847,6 @@ line-height: 160%; /* 25.6px */
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: -2;
           }
           &.box-level0{
             background-image: url(../images/icon_level0.svg);
