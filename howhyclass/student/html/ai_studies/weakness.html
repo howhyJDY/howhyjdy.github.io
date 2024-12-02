@@ -130,37 +130,57 @@ infoBox.addEventListener('click', function() {
                 
                 <div class='col-md-4'>
                     <div class="row">
-                        <!-- 241202 input태그 관련 수정 시작 -->
                         <div class='col-sm-2' style="text-align:right;">
-                            <input type="checkbox" id="level0" onclick="toggle_level( this, 'level0' );" checked><!-- id 추가 -->
-                            <!-- &nbsp;&nbsp;<span class='sdot' style="background-color:#D32F2F;"></span> 공백 삭제 및 태그 변경 -->
+                            <input type="checkbox" onclick="toggle_level( this, 'level0' );" checked>
+                            &nbsp;&nbsp;<span class='sdot' style="background-color:#D32F2F;"></span>
+                        </div>
+                        <div class='col-sm-2' style="text-align:right;">
+                            <input type="checkbox" onclick="toggle_level( this, 'level1' );" checked>
+                            &nbsp;&nbsp;<span class='sdot' style="background-color:#F89992;"></span>
+                        </div>
+                        <div class='col-sm-2' style="text-align:right;">
+                            <input type="checkbox" onclick="toggle_level( this, 'level2' );" checked>
+                            &nbsp;&nbsp;<span class='sdot' style="background-color:#FFEB3B;"></span>
+                        </div>
+                        <div class='col-sm-2' style="text-align:right;">
+                            <input type="checkbox" onclick="toggle_level( this, 'level3' );" checked>
+                            &nbsp;&nbsp;<span class='sdot' style="background-color:#FFC600;"></span>
+                        </div>
+                        <div class='col-sm-2' style="text-align:right;">
+                            <input type="checkbox" onclick="toggle_level( this, 'level4' );" checked>
+                            &nbsp;&nbsp;<span class='sdot' style="background-color:#8BC34A;"></span>
+                        </div>
+                        <div class='col-sm-2' style="text-align:right;">
+                            <input type="checkbox" onclick="toggle_level( this, 'level5' );" checked>
+                            &nbsp;&nbsp;<span class='sdot' style="background-color:#28A745;"></span>
+                        </div>
+
+                        <!-- 241202 input태그 관련 수정 시작
+                        <div class='col-sm-2' style="text-align:right;">
+                            <input type="checkbox" id="level0" onclick="toggle_level( this, 'level0' );" checked>id 추가
+                            &nbsp;&nbsp;<span class='sdot' style="background-color:#D32F2F;"></span> 공백 삭제 및 태그 변경
                             <label for="level0" class='sdot' style="background-color:#D32F2F;"><p><b>기초학력</b>보강필요</p></label>
                         </div>
                         <div class='col-sm-2' style="text-align:right;">
                             <input type="checkbox" id="level1" onclick="toggle_level( this, 'level1' );" checked>
-                            <!-- &nbsp;&nbsp;<span class='sdot' style="background-color:#F89992;"></span> -->
                             <label for="level1" class='sdot' style="background-color:#F89992;"><p><b>개념문제</b>이해가능</p></label>
                         </div>
                         <div class='col-sm-2' style="text-align:right;">
                             <input id="level2" type="checkbox" onclick="toggle_level( this, 'level2' );" checked>
-                            <!-- &nbsp;&nbsp;<span class='sdot' style="background-color:#FFEB3B;"></span> -->
                             <label for="level2" class='sdot' style="background-color:#FFEB3B;"><p><b>쉬운문제</b>해결가능</p></label>
                         </div>
                         <div class='col-sm-2' style="text-align:right;">
                             <input id="level3" type="checkbox" onclick="toggle_level( this, 'level3' );" checked>
-                            <!-- &nbsp;&nbsp;<span class='sdot' style="background-color:#FFC600;"></span> -->
                             <label for="level3" class='sdot' style="background-color:#FFC600;"><p><b>쉬운응용</b>해결가능</p></label>
                         </div>
                         <div class='col-sm-2' style="text-align:right;">
                             <input id="level4" type="checkbox" onclick="toggle_level( this, 'level4' );" checked>
-                            <!-- &nbsp;&nbsp;<span class='sdot' style="background-color:#8BC34A;"></span> -->
                             <label for="level4" class='sdot' style="background-color:#8BC34A;"><p><b>응용문제</b>해결가능</p></label>
                         </div>
                         <div class='col-sm-2' style="text-align:right;">
                             <input id="level5" type="checkbox" onclick="toggle_level( this, 'level5' );" checked>
-                            <!-- &nbsp;&nbsp;<span class='sdot' style="background-color:#28A745;"></span> -->
                             <label for="level5" class='sdot' style="background-color:#28A745;"><p><b>심화문제</b>해결가능</p></label>
-                        </div>
+                        </div> -->
                         <!-- 241202 input태그 관련 수정 끝 -->
                     </div>
                 </div>
