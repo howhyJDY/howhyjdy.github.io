@@ -4468,13 +4468,13 @@ line-height: 160%; /* 25.6px */
   }
 
   .title {
-    color: var(--color-text-primary, #1A1A1A);
-    font-size: 16px;
+    /* margin-left: 25px; */
+    color: #333;
+    font-family: 'SUIT';
+    font-size: 24px;
     font-style: normal;
-    font-weight: 500;
-    line-height: 160%;
-    /* 25.6px */
-    margin-left: 25px;
+    font-weight: 700;
+    line-height: normal;
   }
 
   /* 241202 추가 시작 */
