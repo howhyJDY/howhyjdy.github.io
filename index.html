@@ -428,17 +428,28 @@
             </section>
             <!-- //하와이매쓰 -->
         </main>
+
+        <button type="button" class="btn_top" onclick="moveTop()">top</button>
     </div>
 
     <script>
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                let sect = document.querySelector(this.getAttribute('href'));
+                sect.scrollIntoView({
+                    top: 0,
                     behavior: 'smooth'
                 });
             });
         });
+
+        function moveTop(){
+            window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+        }
     </script>
 </body>
 </html>
