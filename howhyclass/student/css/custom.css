@@ -4373,19 +4373,36 @@ line-height: 160%; /* 25.6px */
               font-size: 14px;
               line-height: 1;
               color: #333;
-              &::before{
-                content: '';
-                display: block;
-                width: 39px;
-                height: 50px;
-                background: no-repeat center / contain;
-                margin: 8px auto;
-              }
-              &:nth-child(1)::before{background-image: url(../images/img_learning_p.png);}
-              &:nth-child(2)::before{background-image: url(../images/img_learning_c.png);}
-              &:nth-child(3)::before{background-image: url(../images/img_learning_t.png);}
+              position: relative;
               input{order: -1;}
-              label{cursor: pointer;}
+              label{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                cursor: pointer;
+                &::before{
+                  content: '';
+                  display: block;
+                  width: 22px;
+                  height: 22px;
+                  background: no-repeat center / cover;
+                  order: -2;
+                }
+                &::after{
+                  content: '';
+                  display: block;
+                  width: 39px;
+                  height: 50px;
+                  background: no-repeat center / contain;
+                  margin: 8px auto;
+                  order: -1;
+                }
+              }
+              input+label::before{background-image: url(../images/icon_radio_inactive.svg);}
+              input:checked+label::before{background-image: url(../images/icon_radio_active.svg);}
+              &:nth-child(1) input+label::after{background-image: url(../images/img_learning_p.png);}
+              &:nth-child(2) input+label::after{background-image: url(../images/img_learning_c.png);}
+              &:nth-child(3) input+label::after{background-image: url(../images/img_learning_t.png);}
             }
           }
           input{
