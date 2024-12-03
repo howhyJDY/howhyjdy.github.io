@@ -2110,7 +2110,7 @@ line-height: 160%; /* 25.6px */
         /* gap: 10px; */
         gap: 16px;
         input[type=checkbox]{
-          /* position: absolute;
+          position: absolute;
           margin: -1px;
           width: 1px;
           height: 1px;
@@ -2119,7 +2119,7 @@ line-height: 160%; /* 25.6px */
           white-space: nowrap;
           overflow: hidden;
           clip: rect(0, 0, 0, 0);
-          clip-path: inset(50%); */
+          clip-path: inset(50%);
           cursor: pointer;
           &+label, &+div{
             display: flex;
@@ -2131,7 +2131,7 @@ line-height: 160%; /* 25.6px */
             color: #333;
             cursor: pointer;
             &::before{
-              /* content: ''; */
+              content: '';
               display: block;
               width: 19px;
               height: 19px;
@@ -4389,7 +4389,7 @@ line-height: 160%; /* 25.6px */
             }
           }
           input{
-            /* position: absolute;
+            position: absolute;
             margin: -1px;
             width: 1px;
             height: 1px;
@@ -4398,7 +4398,7 @@ line-height: 160%; /* 25.6px */
             white-space: nowrap;
             overflow: hidden;
             clip: rect(0, 0, 0, 0);
-            clip-path: inset(50%); */
+            clip-path: inset(50%);
             margin: 0 auto;
             cursor: pointer;
           }
@@ -4408,7 +4408,7 @@ line-height: 160%; /* 25.6px */
             height: auto;
             width: auto;
             border-radius: 0;
-            /* cursor: pointer; */
+            cursor: pointer;
             background: transparent !important;
             margin-top: -10px;
             p{
@@ -4433,7 +4433,7 @@ line-height: 160%; /* 25.6px */
             }
           }
           input+.sdot::before{
-            /* content: ''; */
+            content: '';
             display: block;
             width: 19px;
             height: 19px;
@@ -4785,6 +4785,16 @@ line-height: 160%; /* 25.6px */
     /* border: 1px solid #E5E5E5; */
     /* margin-top: 30px; */
 
+    tr:first-of-type th:first-of-type{
+      background: #ebede6;
+      &::after{background: #d9d9d9;}
+    }
+    tr:has(td) th{
+      background: #fbfdf5;
+      border-bottom-color: #e8e8e8;
+      &::after{background: #e8e8e8;}
+    }
+
     th {
       color: #555353;
       /* font-family: Pretendard; */
@@ -4823,6 +4833,12 @@ line-height: 160%; /* 25.6px */
         top: 0; right: 0;
       }
       &:last-child::after{content: none;}
+      
+      &.level, &.grade {
+        background: #fbfdf5;
+        border-bottom: 1px solid #e8e8e8;
+        &::after{background: #e8e8e8;}
+      }
     }
 
     .level,
@@ -5374,6 +5390,10 @@ line-height: 160%; /* 25.6px */
     margin: 0 auto;
     padding: 0;
     border: 2px solid #7e7e7e;
+    .top{
+      position: static;
+      transform: none;
+    }
   }
   /* 241121 추가 끝 */
 
@@ -7801,7 +7821,6 @@ line-height: 160%; /* 25.6px */
 
 
 /* 데이터, 관리 카테고리의 전체적인 구조 */
-
 .menubar-container {
   display: flex;
   gap: 15px;
@@ -8465,6 +8484,7 @@ margin-left: 20px;
           line-height: 20px;
           color: white;
           padding-right: 5px;
+          background-color: #18dce3 !important;
         }
 
         .page-status {
@@ -9140,7 +9160,6 @@ right:20px;
   
       .grade {
         height: 96px;
-  
       }
   
       .dot-container {
