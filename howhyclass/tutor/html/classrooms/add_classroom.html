@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이클래쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="shortcut icon" href="https://img.howhyclass.com/hmath/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<!-- <link href="https://img.howhyclass.com/hclass/css/custom.css?20241121" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/modal.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/add.css" rel="stylesheet"> -->
+	<link href="../../../student/css/custom.css" rel="stylesheet">
+	<link href="../../../student/css/modal.css" rel="stylesheet">
+	<link href="../../../student/css/add.css" rel="stylesheet">
+
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            tex2jax: { displayMath: [ ["$$","$$"] ] },
+            "HTML-CSS": { fonts: ["Latin-Modern"] }
+        });
+    </script>
+	<link href="https://img.dtsoft.co.kr/fx/fx.v2.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1733278559"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1733278559"></script>
+</head>
+
+<body>
+	<div class='header'>
+
+    <div class="teacher-header" onclick="location.href='/home/index';">
+        <img class="logo" src="https://img.howhyclass.com/hclass/images/logo.svg" alt="">
+        <div class="teacher-mark">교사용</div>
+    </div>
+
+	<ul class='link'>
+			<li>
+				<ul><a href='/studyings/index'><span >학습관리</span></a></ul>
+			</li>
+			<li>
+				<ul><a href='/classrooms/index'><span class="selected">클래쓰관리</span></a></ul>
+			</li>			<li>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</li>
+	</ul>
+	<div class='menu'>
+		<button class='alarm-icon' onclick="location.href='/notices/index';">
+			<!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+				<path d="M5.3335 25.3333V22.6667H8.00016V13.3333C8.00016 11.4889 8.55572 9.84999 9.66683 8.41666C10.7779 6.98332 12.2224 6.04443 14.0002 5.59999V4.66666C14.0002 4.1111 14.1946 3.63888 14.5835 3.24999C14.9724 2.8611 15.4446 2.66666 16.0002 2.66666C16.5557 2.66666 17.0279 2.8611 17.4168 3.24999C17.8057 3.63888 18.0002 4.1111 18.0002 4.66666V5.59999C19.7779 6.04443 21.2224 6.98332 22.3335 8.41666C23.4446 9.84999 24.0002 11.4889 24.0002 13.3333V22.6667H26.6668V25.3333H5.3335ZM16.0002 29.3333C15.2668 29.3333 14.6391 29.0722 14.1168 28.55C13.5946 28.0278 13.3335 27.4 13.3335 26.6667H18.6668C18.6668 27.4 18.4057 28.0278 17.8835 28.55C17.3613 29.0722 16.7335 29.3333 16.0002 29.3333ZM10.6668 22.6667H21.3335V13.3333C21.3335 11.8667 20.8113 10.6111 19.7668 9.56666C18.7224 8.52221 17.4668 7.99999 16.0002 7.99999C14.5335 7.99999 13.2779 8.52221 12.2335 9.56666C11.1891 10.6111 10.6668 11.8667 10.6668 13.3333V22.6667Z" fill="#1A1A1A" />
+            </svg> -->
+            <span class="icon_alarm"></span>
+		</button>
+		<div id="info-dropbox" class='info-icon drop-box'>
+			<!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+			<path d="M10 10C8.625 10 7.44792 9.51042 6.46875 8.53125C5.48958 7.55208 5 6.375 5 5C5 3.625 5.48958 2.44792 6.46875 1.46875C7.44792 0.489583 8.625 0 10 0C11.375 0 12.5521 0.489583 13.5312 1.46875C14.5104 2.44792 15 3.625 15 5C15 6.375 14.5104 7.55208 13.5312 8.53125C12.5521 9.51042 11.375 10 10 10ZM0 20V16.5C0 15.7917 0.182292 15.1406 0.546875 14.5469C0.911458 13.9531 1.39583 13.5 2 13.1875C3.29167 12.5417 4.60417 12.0573 5.9375 11.7344C7.27083 11.4115 8.625 11.25 10 11.25C11.375 11.25 12.7292 11.4115 14.0625 11.7344C15.3958 12.0573 16.7083 12.5417 18 13.1875C18.6042 13.5 19.0885 13.9531 19.4531 14.5469C19.8177 15.1406 20 15.7917 20 16.5V20H0ZM2.5 17.5H17.5V16.5C17.5 16.2708 17.4427 16.0625 17.3281 15.875C17.2135 15.6875 17.0625 15.5417 16.875 15.4375C15.75 14.875 14.6146 14.4531 13.4688 14.1719C12.3229 13.8906 11.1667 13.75 10 13.75C8.83333 13.75 7.67708 13.8906 6.53125 14.1719C5.38542 14.4531 4.25 14.875 3.125 15.4375C2.9375 15.5417 2.78646 15.6875 2.67188 15.875C2.55729 16.0625 2.5 16.2708 2.5 16.5V17.5ZM10 7.5C10.6875 7.5 11.276 7.25521 11.7656 6.76562C12.2552 6.27604 12.5 5.6875 12.5 5C12.5 4.3125 12.2552 3.72396 11.7656 3.23438C11.276 2.74479 10.6875 2.5 10 2.5C9.3125 2.5 8.72396 2.74479 8.23438 3.23438C7.74479 3.72396 7.5 4.3125 7.5 5C7.5 5.6875 7.74479 6.27604 8.23438 6.76562C8.72396 7.25521 9.3125 7.5 10 7.5Z" fill="#1A1A1A" />
+			</svg> -->
+            <span class="icon_user"></span>
+			<div id="info-dropbox-content" class="drop-box-content">
+				<div class="dropdown-button-box">
+				<button onclick="location.href='/mypage/index';">나의 정보</button>
+				<button class="logout" onclick="location.href='https://student.howhyclass.com/users/logout_teacher';">
+					<img src="https://img.howhyclass.com/hclass/images/icon_logout.png" alt=""/>
+					<div>로그아웃</div>
+				</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+  const infoBox = document.getElementById('info-dropbox');
+  const infoContent = document.getElementById('info-dropbox-content');
+  
+  
+  infoBox.addEventListener('click', function() {
+    infoContent.style.display = infoContent.style.display === 'block' ? 'none' : 'block';
+});
+</script>
+
+<div class='content'>
+	<div class='content-container'>
+		<div class='white-container teacher-container book-management-container'>
+			<div class="step1-container">
+                <div class="signup-content" style="margin-top: 0px;margin-bottom: 0px;">
+                    <div class="content-2">클래쓰 등록</div>
+					<div class="content-3">
+                        <div>
+                            <div class="input-box" style="margin-bottom: 0px;">
+                                <input name="name" value="" type="text" placeholder="클래쓰명" id="fx-form-name">
+                            </div>
+                        </div>
+                        <div>
+							<select title="" name="grade_cd" id="fx-form-grade_cd" class="form-control form-select form-input">
+                                <option value="">-- 학년 --</option>
+                                <option value="e1" selected>초1</option>
+                                <option value="e2">초2</option>
+                                <option value="e3">초3</option>
+                                <option value="e4">초4</option>
+                                <option value="e5">초5</option>
+                                <option value="e6">초6</option>
+                                <option value="j1">중1</option>
+                                <option value="j2">중2</option>
+                                <option value="j3">중3</option>
+                                <option value="s1">고1</option>
+                                <option value="s2">고2</option>
+                                <option value="s3">고3</option>
+                            </select>
+                        </div>
+                        <div class="sub-title">
+							교재를 등록하면 해당 클래쓰 소속 학생에게 자동으로 부여됩니다.
+                        </div>
+                        <div style="border: 2px solid #bbb;min-height:20px;border-radius: 12px;text-align:center;padding: 10px;">
+							<div id="book_lisk_box">
+                                <p>
+                                    (교과서) 교과서 익힘 [미래엔]
+                                    <span onclick="remove_book( '1855' );">[x]</span>
+                                </p>
+                                <p>
+                                    우등생 해법 수학 10종교과평가자료집
+                                    <span onclick="remove_book( '1855' );">[x]</span>
+                                </p>
+                            </div>
+							<br>
+							<button id="movePrevent" class="gray-btn" onclick="load_add_book();">+교재등록</button>
+                        </div>
+						<div class="flex-box">
+							<button class="gray-btn" onclick="location.href='/classrooms/index';">취소</button>
+                            <button class="green-btn" onclick="add_classroom();">클래쓰추가</button>
+                        </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="teacher-content-container">
+				<div class="flex" style="justify-content: space-between;">
+					<div class="title" style="margin-left: 20px;"> 이전 사용 교재 목록 </div>
+				</div>
+				<div class="middle">
+					<div class="book-container" id="book-container">
+                        <div class="book-box">
+                            <div class="left">
+                                <img src="https://img.howhyclass.com/q/0a/4e/s.2638/in.png" alt="" style="height:130px;">
+                            </div>
+                            <div class="right">
+                                <div class="top">
+                                    <div class="book-name">교과서 익힘 (금성출판사)</div>
+                                    <!-- <div class="author">출판사 | 금성출판사</div> 241204 저자 삭제, 학년 추가 -->
+                                    <div>
+                                        <span>초5-2</span>
+                                        <div class="author">교과서</div>
+                                    </div>
+                                    <img class="menubar" src="https://img.howhyclass.com/hclass/images/icon_menubar.png" alt="">
+                                </div>
+                                <div class="bottom">클래쓰1</div>
+                            </div>
+                            <!-- 드랍다운 메뉴 -->
+                            <div class="dropdown-menu" style="display: none;">
+                                <ul>
+                                    <li onclick="add_book( '2638' );">추가</li>
+                                    <li onclick="remove_teacher_book( 61 );">삭제</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-box">
+                            <div class="left">
+                                <img src="https://img.howhyclass.com/q/0a/47/s.2631/in.png" alt="" style="height:130px;">
+                            </div>
+                            <div class="right">
+                                <div class="top">
+                                    <div class="book-name">교과서 익힘 (아이스크림)</div>
+                                    <!-- <div class="author">출판사 | 아이스크림</div> -->
+                                    <div>
+                                        <span>초5-2</span>
+                                        <div class="author">교과서</div>
+                                    </div>
+                                    <img class="menubar" src="https://img.howhyclass.com/hclass/images/icon_menubar.png" alt="">
+                                </div>
+                                <div class="bottom">
+                                    클래쓰1
+                                </div>
+                            </div>
+                            <!-- 드랍다운 메뉴 -->
+                            <div class="dropdown-menu" style="display: none;">
+                                <ul>
+                                    <li onclick="add_book( '2631' );">추가</li>
+                                    <li onclick="remove_teacher_book( 62 );">삭제</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-box">
+                            <div class="left">
+                                <img src="https://img.howhyclass.com/q/09/2b/s.2347/in.png" alt="" style="height:130px;">
+                            </div>
+                            <div class="right">
+                                <div class="top">
+                                    <div class="book-name">교과서 익힘 (미래엔)</div>
+                                    <!-- <div class="author">출판사 | 미래엔</div> -->
+                                    <div>
+                                        <span>중3-1</span>
+                                        <div class="author">참고서</div>
+                                    </div>
+                                    <img class="menubar" src="https://img.howhyclass.com/hclass/images/icon_menubar.png" alt="">
+                                </div>
+                                <div class="bottom">클래쓰1</div>
+                            </div>
+                            <!-- 드랍다운 메뉴 -->
+                            <div class="dropdown-menu" style="display: none;">
+                                <ul>
+                                    <li onclick="add_book( '2347' );">추가</li>
+                                    <li onclick="remove_teacher_book( 63 );">삭제</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-box">
+                            <div class="left">
+                                <img src="https://img.howhyclass.com/q/07/f6/s.2038/in.png" alt="" style="height:130px;">
+                            </div>
+                            <div class="right">
+                                <div class="top">
+                                    <div class="book-name">교과서 익힘 (미래엔)</div>
+                                    <!-- <div class="author">출판사 | 미래엔</div> -->
+                                    <div>
+                                        <span>중3-1</span>
+                                        <div class="author">참고서</div>
+                                    </div>
+                                    <img class="menubar" src="https://img.howhyclass.com/hclass/images/icon_menubar.png" alt="">
+                                </div>
+                                <div class="bottom">클래쓰1</div>
+                            </div>
+                            <!-- 드랍다운 메뉴 -->
+                            <div class="dropdown-menu" style="display: none;">
+                                <ul>
+                                    <li onclick="add_book( '2038' );">추가</li>
+                                    <li onclick="remove_teacher_book( 64 );">삭제</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-box">
+                            <div class="left">
+                                <img src="https://img.howhyclass.com/q/07/f6/s.2038/in.png" alt="" style="height:130px;">
+                            </div>
+                            <div class="right">
+                                <div class="top">
+                                    <div class="book-name">교과서 익힘 (미래엔)</div>
+                                    <!-- <div class="author">출판사 | 미래엔</div> -->
+                                    <div>
+                                        <span>중3-1</span>
+                                        <div class="author">참고서</div>
+                                    </div>
+                                    <img class="menubar" src="https://img.howhyclass.com/hclass/images/icon_menubar.png" alt="">
+                                </div>
+                                <div class="bottom">클래쓰1</div>
+                            </div>
+                            <!-- 드랍다운 메뉴 -->
+                            <div class="dropdown-menu" style="display: none;">
+                                <ul>
+                                    <li onclick="add_book( '2038' );">추가</li>
+                                    <li onclick="remove_teacher_book( 64 );">삭제</li>
+                                </ul>
+                            </div>
+                        </div>
+                    
+                        <script>
+                            $( document ).ready(function() {
+                                const bookBoxes = document.querySelectorAll('.book-box');
+                                const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+                            
+                                // 각 book-box에 대해 이벤트 리스너 추가
+                                bookBoxes.forEach((bookBox, index) => {
+                                    const menubar = bookBox.querySelector('.menubar');
+                                    const dropdownMenu = dropdownMenus[index]; // 각 book-box에 해당하는 드랍다운 메뉴
+                            
+                                    // 메뉴바 클릭 이벤트
+                                    menubar.addEventListener('click', function (event) {
+                                        // 현재 드랍다운 메뉴의 표시 상태 토글
+                                        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                                        event.stopPropagation(); // 이벤트 버블링 중지
+                                    });
+                            
+                                    // 영역 외 클릭 시 드랍다운 메뉴 숨기기
+                                    document.addEventListener('click', function (event) {
+                                        if (!event.target.closest('.book-box')) {
+                                            dropdownMenu.style.display = 'none';
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
+                    </div>
+                    <!-- //book-container -->
+				</div>
+                <!-- //middle -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+
+var map = new Map();
+
+$( document ).ready(function() {
+	
+	load_teacher_books();
+});
+
+function add_book( service_ids )
+{
+	var arr = service_ids.split(',');
+	for( var i=0 ; i<arr.length ; i++ )
+		map.set( arr[i], 1);
+
+	var service_ids = Array.from( map.keys() ).join(',');	
+
+	fx_load_widget( 'book_lisk_box', '/classrooms/book_list?service_ids='+service_ids );
+}
+
+function remove_book( service_id )
+{
+	map.delete(service_id);
+	var service_ids = Array.from( map.keys() ).join(',');	
+
+	fx_load_widget( 'book_lisk_box', '/classrooms/book_list?service_ids='+service_ids );
+}
+
+function load_teacher_books()
+{
+	fx_load_widget( 'book-container', '/classrooms/teacher_books' );
+}
+
+function add_classroom()
+{
+	var grade_cd = $('#fx-form-grade_cd').val();
+	var name = $('#fx-form-name').val();
+	var service_ids = Array.from( map.keys() ).join(',');	
+
+	if( fx_empty(name) )
+	{
+		alert( '클래쓰명을 입력해주세요.' );
+		return;
+	}
+
+	if( fx_empty(grade_cd) )
+	{
+		alert( '학년을 선택해주세요.' );
+		return;
+	}
+
+	var url = '/classrooms/update_classroom?classroom_id=&name=' + encodeURI(name) + "&grade_cd=" + grade_cd + "&service_ids=" + service_ids;
+
+	fx_submit_link( url );
+}
+
+function load_add_book()
+{
+    var w = window.screen.width;
+    var h = window.screen.height;
+    var left = 0;
+    var top = 0;
+
+    window.open(  "/classrooms/add_book", 'load_add_book', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no,      width=' +   w + ', height=' + h + ', top=' + top +  ', left=' + left);
+}
+
+
+function remove_teacher_book( answer_book_teacher_id )
+{
+	fx_remove_link( '/classrooms/remove_teacher_books?answer_book_teacher_id=' + answer_book_teacher_id );
+	load_teacher_books();
+}
+
+
+</script>
+
+<div class='footer'>
+	<div class="top">
+		<div class="left">
+			<div class='footer-content'>
+				<span class="footer_logo"><img src="https://img.howhyclass.com/hclass/images/footer_logo.svg" alt="하와이클래쓰" /></span>
+				<div onclick="window.open('https://student.howhyclass.com/users/agreement??user_type=t', '_blank');">서비스 이용약관</div><!--교사용링크 체크-->
+                <div onclick="window.open('https://student.howhyclass.com/users/privacy_policy?user_type=t', '_blank');">개인정보처리방침</div><!--교사용링크 체크-->
+			</div>
+		</div>
+		<div class='right'>
+			<div class='footer-content'>
+				<div id="footer-dropbox" class="drop-box full-width">
+					<div class="flex full-width">
+						<div>Family site</div>
+						<div><img class='selectCategory' src='https://img.howhyclass.com/hclass/images/icon_arrow_down_gray.png' alt='' /></div>
+	
+					</div>
+					<div id="footer-dropbox-content" class="drop-box-content">
+						<button onclick="window.open('https://www.howhymath.com', '_blank');">하와이매쓰</button>
+						<button onclick="window.open('https://www.fren.co.kr', '_blank');">프렌매쓰</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='left'>
+		<div class='footer-content'>
+			<div><b>하와이컴퍼니(주)</b></div>
+			<div class='vertical-line'></div>
+			<div><b>HOWHY COMPANY</b></div>
+			<div class='vertical-line'></div>
+			<div><b>대표이사 : 박종화</b></div>
+		</div>
+
+		<div class='footer-content'>
+			<div><b>사업자등록번호</b> 760-87-02737</div>
+			<div class='vertical-line'></div>
+			<div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+			<div class='vertical-line'></div>
+			<div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+		</div>
+		<div class='footer-content'>
+			<div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+		</div>
+		<div class='footer-content'>
+			2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+		</div>
+	</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropBox = document.getElementById('footer-dropbox');
+    const dropBoxContent = document.getElementById('footer-dropbox-content');
+  
+    // drop-box를 클릭했을 때의 이벤트 핸들러
+    dropBox.addEventListener('click', function() {
+        // .drop-box-content의 표시 상태를 토글합니다.
+        dropBoxContent.style.display = dropBoxContent.style.display === 'block' ? 'none' : 'block';
+    });
+  
+  });
+</script>
+
+
+
+<script>
+</script>
+
+</body>
+</html>

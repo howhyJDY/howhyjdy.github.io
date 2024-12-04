@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이클래쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="shortcut icon" href="https://img.howhyclass.com/hmath/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<!-- <link href="https://img.howhyclass.com/hclass/css/custom.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/modal.css" rel="stylesheet">
+	<link href="https://img.howhyclass.com/hclass/css/add.css" rel="stylesheet"> -->
+	<link href="../../../student/css/custom.css" rel="stylesheet">
+	<link href="../../../student/css/modal.css" rel="stylesheet">
+	<link href="../../../student/css/add.css" rel="stylesheet">
+
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            tex2jax: { displayMath: [ ["$$","$$"] ] },
+            "HTML-CSS": { fonts: ["Latin-Modern"] }
+        });
+    </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1733278738"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1733278738"></script>
+</head>
+
+<body>
+<style>
+.content-box { width: 11% !important; }
+</style>
+
+<div class='content'>
+	<!-- <div class='content-container regist-book'> 241204 tutor-regist-book 클래스 추가 (학생용 add_book.html X) -->
+	<div class='content-container regist-book tutor-regist-book'>
+        <div class='title' style="display: block;">
+            교재 추가하기
+			<button class="regist-btn" style="float:right;padding: 13px 45px; margin-top: unset;" onclick="window.close();"> 닫기 </button>
+		</div>
+        <div class='sub-title'> 사용 중인 교재를 등록하세요. 학생들에게 자동으로 배정됩니다.</div>
+		<div class='white-container'>
+			<div class='flex flex-column gap20'>
+				<div class='flex gap16 align-items-center'>
+					<div class='head'>초등</div>
+					<!--
+					<div class='content-box cursor sv_check ' data-grade='m01'>1학년</div>
+					<div class='content-box cursor sv_check ' data-grade='m02'>2학년</div>
+					-->
+					<div class='content-box cursor sv_check ' data-grade='m03'>3학년</div>
+					<div class='content-box cursor sv_check ' data-grade='m04'>4학년</div>
+					<div class='content-box cursor sv_check ' data-grade='m05'>5학년</div>
+					<div class='content-box cursor sv_check ' data-grade='m06'>6학년</div>
+				</div>
+				<div class='flex gap16 align-items-center'>
+					<div class='head'>중등</div>
+					<div class='content-box cursor sv_check ' data-grade='m17'>1학년</div>
+					<div class='content-box cursor sv_check ' data-grade='m18'>2학년</div>
+					<div class='content-box cursor sv_check selected' data-grade='m19'>3학년</div>
+				</div>
+				<div class='flex gap16 align-items-center'>
+					<div class='head'>고등</div>
+					<div class='content-box cursor sv_check ' data-grade='m21'>수학(상)</div>
+					<div class='content-box cursor sv_check ' data-grade='m22'>수학(하)</div>
+					<div class='content-box cursor sv_check ' data-grade='m23'>수학I</div>
+					<div class='content-box cursor sv_check ' data-grade='m24'>수학II</div>
+					<div class='content-box cursor sv_check ' data-grade='m25'>미적분</div>
+					<div class='content-box cursor sv_check ' data-grade='m26'>확률과 통계</div>
+					<div class='content-box cursor sv_check selected' data-grade='m27'>기하</div>
+					<div class='content-box cursor sv_check ' data-grade='m31'>공통수학1</div>
+					<div class='content-box cursor sv_check ' data-grade='m32'>공통수학2</div>							
+				</div>
+				<!-- <div class='flex gap16 align-items-center'>
+					<div class='head'>&nbsp;</div>
+					<div class='content-box cursor sv_check ' data-grade='m31'>공통수학1</div>
+					<div class='content-box cursor sv_check ' data-grade='m32'>공통수학2</div>
+				</div> 241204 고등영역으로 합치기 -->
+
+				<div class='flex gap16 align-items-center'>
+					<div class='head'>종류</div>
+					<div class='content-box cursor sv_check selected' data-type='ggs'>교과서</div>
+					<div class='content-box cursor sv_check ' data-type='cgs'>참고서</div>
+					<div class='content-box cursor sv_check ' data-type='c22'>22개정 참고서</div>
+				</div>
+			</div>
+		</div>
+		<div class='white-container '>
+			<div class='head'>
+				<div class='left'>교재 선택</div>
+				<div class='right' style="display: flex; align-items: center; gap: 30px;">
+				<div class='search-box'>
+						<input name="sv_keyword" value="" id=sv_keyword placeholder='교재/출판사명을 입력하세요.'/>
+						<!-- <img class="cursor" src='https://img.howhyclass.com/hclass/images/icon_search.png' alt='' onclick="search()"/> 241204 이미지 변경하기 -->
+                        <img class="cursor" src='../../../student/images/icon_search_gray.svg' alt='검색하기' onclick="search()"/>
+					</div>
+					<button class='regist-btn' style="padding: 13px 45px; margin-top: unset;" onclick="create_teacher_books()">
+						교재 등록
+					</button>
+				</div>
+			</div>
+			
+			<div class='check-table'>
+				<div class='header'>
+					<div>
+						<!-- <input type="checkbox" name="toggle_all" onclick="fx_all_checkbox( 'toggle_all', 'ids');" /> 241204 input태그 label로 감싸주세요 -->
+						<label><input type="checkbox" name="toggle_all" onclick="fx_all_checkbox( 'toggle_all', 'ids');" /></label>
+					</div>
+					<div class='text-center'>학년/과목</div>
+					<div class='text-center'>교재명</div>
+					<div class='text-center'>출판사</div>
+					<div class='text-center'>발행년도</div>
+				</div>
+
+				<div class='table-content'>
+					<!-- <input type="checkbox" name="ids" value="1855"/> 241204 input태그 label로 감싸주세요 -->
+					<label><input type="checkbox" name="ids" value="1855"/></label>
+					<div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>미래엔</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+					<!-- <input type="checkbox" name="ids" value="1963"/> -->
+					<label><input type="checkbox" name="ids" value="1963"/></label>
+					<div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>대교</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+					<label><input type="checkbox" name="ids" value="2407"/></label>
+					<div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>금성출판사</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+					<label><input type="checkbox" name="ids" value="2431"/></label>
+					<div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>와이비엠</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+					<label><input type="checkbox" name="ids" value="2456"/></label>
+					<div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘</div>
+					<div class='text-center'>아이스크림</div>
+					<div class='text-center'>2024</div>
+				</div>
+							
+				<div class='table-content'>
+					<label><input type="checkbox" name="ids" value="2108"/></label>
+					<div class='text-center'>초3 (2015)</div>
+					<div class='text-center'>[ 초3 1학기 ] 교과서 익힘 (박교식)</div>
+					<div class='text-center'>동아출판</div>
+					<div class='text-center'>2024</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<script>
+
+$(document).ready(function() {
+    $('.sv_check').on('click', function(){
+		if( $(this).hasClass('selected') )
+			 $(this).removeClass('selected')
+		else
+			 $(this).addClass('selected')
+        search();
+    });
+});
+
+function search()
+{
+    var sv_keyword = $("#sv_keyword").val();
+
+	var sv_types = [];
+	var sv_grades = [];
+
+	$('.sv_check').each( function( index, item ){
+		if( $(this).hasClass('selected') )
+		{
+			if( !fx_empty($(this).data('grade') ) )
+				sv_grades.push( $(this).data('grade') );
+
+			if( !fx_empty($(this).data('type') ) )
+				sv_types.push( $(this).data('type') );
+			
+		}
+	});
+
+    var search_url = '/classrooms/add_book?sv_keyword=' + encodeURI(sv_keyword)
+                                    + '&sv_grades=' + sv_grades.join(',')
+                                    + '&sv_types=' + sv_types.join(',');
+    location.href = search_url;
+}
+
+function create_teacher_books()
+{
+    var ids = fx_get_checkboxes('ids');
+    if( ids == "" )
+    {
+        alert("교재를 선택해주세요.");
+        return false;
+    }
+
+	window.opener.add_book( ids );
+	window.close();
+}
+</script>
+
+
+
+<script>
+</script>
+
+</body>
+</html>
