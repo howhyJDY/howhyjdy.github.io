@@ -7204,6 +7204,7 @@ line-height: 160%; /* 25.6px */
           .form-select{
             padding: 7px 10px;
             border-radius: 4px;
+            cursor: pointer;
           }
         }
         .right{
@@ -7692,6 +7693,7 @@ line-height: 160%; /* 25.6px */
         color: #808080;
         border-radius: 4px;
         border: 1px solid #c5c5c5;
+        cursor: pointer;
       }
 
       .flex-box{
