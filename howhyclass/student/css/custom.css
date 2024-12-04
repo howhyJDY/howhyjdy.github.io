@@ -7590,7 +7590,7 @@ line-height: 160%; /* 25.6px */
           font-weight: 600;
           color: #333;
           position: absolute;
-          top: -33px; left: 28px;
+          top: -33px; left: 26px;
         }
 
         &:nth-child(1) {
@@ -7611,7 +7611,7 @@ line-height: 160%; /* 25.6px */
         &:nth-child(3) {
           grid-column: 2;
           grid-row: 1;
-          padding-left: 90px;
+          padding: 0 0 0 87px;
           &::before{
             content: '2';
             top: 0;
