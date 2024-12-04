@@ -11030,7 +11030,7 @@ line-height: 160%; /* 22.4px */
     }
   }
   .teacher-container .step1-container .content-3{
-    gap: 0 20px;
+    gap: 0 15px;
     grid-template-columns: 1fr 2fr 1fr;
   }
 
