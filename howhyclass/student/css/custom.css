@@ -2545,7 +2545,7 @@ line-height: 160%; /* 25.6px */
           font-size: 14px;
           font-style: normal;
           font-weight: 400;
-          line-height: 160%;
+          line-height: 20px;
           background-color: #ebfdff;
           border: 1px solid #cdeaed;
           padding: 0 8px;
@@ -2558,7 +2558,7 @@ line-height: 160%; /* 25.6px */
           font-size: 14px;
           font-style: normal;
           font-weight: 400;
-          line-height: 160%;
+          line-height: 20px;
           background-color: #f1ffd1;
           border: 1px solid #dfebc4;
           padding: 0 8px;
@@ -7088,6 +7088,7 @@ line-height: 160%; /* 25.6px */
           position: absolute;
           top: 0; left: 0;
         }
+        &:first-of-type&::before{content: none;}
       }
 
       .class-box2{
@@ -7801,12 +7802,18 @@ line-height: 160%; /* 25.6px */
       align-items: center;
       gap: 5px;
       min-width: auto !important;
-      a{display: block;}
+      a{
+        display: block;
+        background: #fff;
+        border-radius: 4px;
+      }
       img{
         display: block;
         width: 20px;
         height: 20px;
         object-fit: contain;
+        background: #fff;
+        border-radius: 4px;
       }
     }
 
@@ -8279,7 +8286,7 @@ line-height: 160%; /* 25.6px */
             font-size: 14px;
             font-style: normal;
             font-weight: 400;
-            line-height: 160%;
+            line-height: 20px;
             text-align: center;
             color: #365665;
             background-color: #ebfdff;
@@ -8292,7 +8299,7 @@ line-height: 160%; /* 25.6px */
             font-size: 14px;
             font-style: normal;
             font-weight: 400;
-            line-height: 160%;
+            line-height: 20px;
             text-align: center;
             color: #566536;
             background-color: #f1ffd1;
