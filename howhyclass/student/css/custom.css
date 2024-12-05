@@ -687,7 +687,7 @@ body > .header{
   .logo {
     /*241120 수정 시작*/
     /* margin: 10px 0px 0px 20px; */
-    width: 202px !important;
+    width: 203px !important;
     height: 100%;
     object-fit: contain;
     /* margin-left: 20px; */
@@ -923,7 +923,7 @@ body > .header{
   /* display: flex;
   justify-content: space-between; */
 
-  .footer_logo{width: 166px;}
+  .footer_logo{width: 165px;}
 
   .top{
     display: flex;
@@ -2542,6 +2542,19 @@ line-height: 160%; /* 25.6px */
         }
 
         .author {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%;
+          background-color: #ebfdff;
+          border: 1px solid #cdeaed;
+          padding: 0 8px;
+          border-radius: 3px;
+          text-align: center;
+          color: #365665;
+          box-sizing: border-box;
+        }
+        .author2 {
           font-size: 14px;
           font-style: normal;
           font-weight: 400;
@@ -7084,7 +7097,7 @@ line-height: 160%; /* 25.6px */
         font-weight: 400;
         line-height: 1;
         border-radius: var(--border-radius-4, 4px);
-        background: #f9fcf1;
+        background: #f2fbb2;
         padding: 4px 10px;
       }
 
@@ -7538,6 +7551,8 @@ line-height: 160%; /* 25.6px */
     width: 100%;
     padding: 50px 125px;
 
+    .signup-content{gap: 45px;}
+
     .content-2 {
       display: flex;
       align-items: center;
@@ -7589,6 +7604,7 @@ line-height: 160%; /* 25.6px */
           display: block;
           font-size: 16px;
           font-weight: 600;
+          line-height: 22px;
           color: #333;
           position: absolute;
           top: -33px; left: 28px;
@@ -7703,7 +7719,10 @@ line-height: 160%; /* 25.6px */
           padding: 10px 15px !important;
           border-radius: 22px;
           font-size: 18px;
-          &:last-of-type{order: -1;}
+          &:last-of-type{
+            order: -1;
+            &::before{content: '+';}
+          }
         }
       }
     }
@@ -8257,6 +8276,19 @@ line-height: 160%; /* 25.6px */
 
           .author {
             /* color: var(--color-text-primary, #1A1A1A); */
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%;
+            text-align: center;
+            color: #365665;
+            background-color: #ebfdff;
+            border: 1px solid #cdeaed;
+            padding: 0 8px;
+            border-radius: 3px;
+            box-sizing: border-box;
+          }
+          .author2 {
             font-size: 14px;
             font-style: normal;
             font-weight: 400;

@@ -209,7 +209,11 @@ infoBox.addEventListener('click', function() {
 									<div class='title'> 교과서 익힘 (와이비엠) </div>
 
 									<!-- <div class='author'>저자 | 교과서 </div> 241129 저자 삭제, 학년 추가 -->
-									<div><span>초5-1</span><div class='author'>교과서</div></div>
+									<div>
+										<span>초5-1</span>
+										<div class='author'>교과서</div>
+										<!-- <div class='author2'>참고서</div> 참고서인 경우 클래스 변경 -->
+									</div>
 									
 									<div class='progress' style="height:unset;">
 										<div class='ing'>진행</div>
@@ -226,7 +230,11 @@ infoBox.addEventListener('click', function() {
 								<div class='right'>
 									<div class='title'> 교과서 익힘 (금성출판사) </div>
 									<!-- <div class='author'>저자 | 교과서 </div> -->
-									<div><span>초5-1</span><div class='author'>교과서 </div></div>
+									<div>
+										<span>초5-1</span>
+										<!-- <div class='author'>교과서</div> -->
+										<div class='author2'>참고서</div>
+									</div>
 									<div class='progress' style="height:unset;">
 										<div class='ing'>진행</div>
 										<div onclick="change_book_student_state( 1643, 'don' );">완료</div>
