@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이매쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+
+	<!-- base css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" />
+
+	<!-- site css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1733895174"/>
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1733895174" />
+	<!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1733895174" /-->
+	<!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1733895174" /> -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/work.css?v=1733895174" />
+
+	<!-- base javascript -->
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+
+	<!-- site javascript -->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			showMathMenu: false,
+			tex2jax: { displayMath: [ ["$$","$$"] ] },
+			"HTML-CSS": { fonts: ["Latin-Modern"] }
+		});
+	</script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1733895174"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1733895174"></script>
+</head>
+
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+
+<body data-layout="horizontal" class="modal-open">
+<div style="display:none">$$\require{cancel}$$</div>
+    <div class="topbar">
+        <div class="content-box">
+            <div class="brand">
+                <a href="/home/main" class="logo" style="padding-left:10px;">
+                    <!-- <span><img src="https://img.howhymath.com/hmath/logo.png" style="width:140px;height:31px;" class="logo-sm"></span> 241210 이미지 변경 및 스타일 삭제 -->
+                    <span><img src="../assets/images/logo.svg" class="logo-sm" alt="하와이매쓰"></span>
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-end mb-0" style="display: flex; align-items: center;">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <span class="ms-1 nav-user-name hidden-sm" style=" color: var(--Gray-01, #1A1A1A); font-weight: 700; font-size: 16px;">정다영<span style="font-weight: 400;"><span style="font-weight: 400;">선생님</span></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!--a class="dropdown-item" href="javascript:edit_teacher();"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i>정보수정</a-->
+                            <a class="dropdown-item" href="javascript:edit_password();"><i data-feather="lock" class="align-self-center icon-xs icon-dual me-1"></i>암호수정</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="https://tutor.howhymath.com/users/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual me-1"></i>로그아웃</a>
+                        </div>
+                    </li>
+                    <button class="signout-btn" onclick="location.href='https://tutor.howhymath.com/users/logout';">로그아웃</button>
+                </ul> 
+                <div class="navbar-custom-menu">
+                    <div id="navigation">
+                        <ul class="navigation-menu">
+                            <li class='has-submenu'>
+                                <a href='/home/main'><span> </i>캘린더</span></a>
+                            </li>
+                            <li class='has-submenu active'>
+                                <a href='/books/index'><span> 학습자료</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/books/index'>교재</a></li>
+                                    <li class='active'><a href='/exam_pdfs/index'>보충교재</a></li>
+                                    <li><a href='/jindan_exams/index'>평가</a></li>
+                                    <li><a href='/wizards/index'>출제마법사</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/study_books/index'><span> 개별학습</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/study_books/index'>교재학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=exm'>출제마법사</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=wrg'>오답학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=rec'>맞춤학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=hom'>숙제관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/reports_v2/index'><span> 분석표</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/academies/index'><span> 관리</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/academies/index'>정보수정</a></li>
+                                    <li><a href='/teachers/index'>교사/반 관리</a></li>
+                                    <li><a href='/students/index'>학생관리</a></li>
+                                    <li><a href='/schools/index'>학교관리</a></li>
+                                    <li><a href='/print_pdfs/index'>인쇄파일관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/payments/index'><span> 결제</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/notices/index'><span> 고객센터</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/notices/index'>공지사항</a></li>
+                                    <li><a href='/inquiries/index'>1:1문의 & FAQ</a></li>
+                                    <li><a href='/question_error_reports/index'>문항오류신고</a></li>
+                                    <li><a href='/boards/index?boarda_type_cd=gj'>자료실-교재자료</a></li>
+                                    <li><a href='/boards/index?boarda_type_cd=mv'>자료실-영상자료</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    </div>
+
+	<div class="page-wrapper">
+		<div class="page-content page-inquiries"><!--241211 1:1문의 & faq 전용 클래스 추가-->
+			<div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="row">
+                                <div class="col-sm-12 head-left">
+                                    <div class='gray'><a href='/notices/index'>고객센터</a></div>
+                                    <img src="/app/img/icon_right_arrow.png" alt=""/>
+                                    <div class='black'><a href='/inquiries/index'>1:1문의 & FAQ</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notice-container">
+                    <div class="notice-box">
+                        <div class="head">
+                            <!-- 241211 태그추가 시작 -->
+                            <!-- 1:1 문의<button type="button" class="mbtn item-create" style="float:right;"><i class="fas fa-plus"></i>문의하기</button> -->
+                            <i class="icon_requiries"></i>1:1 문의
+                            <button type="button" class="mbtn item-create" style="float:right;"><i class="fas fa-plus"></i>문의하기</button>
+                            <!-- 241211 태그추가 끝 -->
+                        </div>
+                        <hr>
+                        <div class="row" style="padding: 10px;">
+                            <div class="col-md-12 search-head">0개중 0-0</div>
+                        </div>
+
+                        <div class="table-responsive" style="padding:20px;">
+                            <table class="table table-striped mb-0 table-border-none">
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col><!--col 1개 추가-->
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>문의유형</th>
+                                        <th>문의항목</th>
+                                        <th>제목</th>
+                                        <th>문의일시</th>
+                                        <th>답변여부</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 241211 노데이터 colspan 변경 시작 -->
+                                    <!-- <tr>
+                                        <td colspan="6">등록된 문의가 없습니다.</td>
+                                    </tr> -->
+                                    <!-- //241211 노데이터 colspan 변경 끝 -->
+
+                                    <tr class="drop_down">
+                                        <td>1</td>
+                                        <td>사용 문의</td>
+                                        <td>서비스이용</td>
+                                        <td><a href="#" class="drop-btn" data-id="7">테스트용 문의</a></td>
+                                        <td>2024-12-11</td>
+                                        <td>답변대기</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6" style="display:none;" class="drop_7">
+                                            <div style="text-align:left;">
+                                                <p>문의내용:</p> 사람들의 내 내 봅니다. 까닭이요, 벌레는 나는 듯합니다. 아무 우는 사람들의 잠, 다 별이 이름을 까닭입니다. 소녀들의 새겨지는 않은 하늘에는 버리었습니다.
+                                                <br>
+                                                <center>
+                                                    <img src="https://img.howhymath.com/f.hm//00/07/inquiry.7.png" style="max-width:80%;">
+                                                </center>
+                                                <br>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="drop_down">
+                                        <td>2</td>
+                                        <td>사용 문의</td>
+                                        <td>시험지인쇄</td>
+                                        <td><a href="#" class="drop-btn" data-id="8">까닭이요, 벌레는 나는 듯합니다. 아무 우는 사람들의 잠, </a></td>
+                                        <td>2024-12-11</td>
+                                        <td>답변대기</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6" style="display:none;" class="drop_8">
+                                            <div style="text-align:left;">
+                                                <p>문의내용:</p> 더 많은 정보 및 문의 사항이 있으시면 언제든지 저희에게 연락해주세요.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table> 
+                        </div>
+                        <div class="fx-ac" style="float:center;">
+                            <nav>
+                                <ul class='pagination justify-content-center'>
+                                    <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_double_left_arrow.png" alt=""/></a></li>
+                                    &nbsp;
+                                    <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_left_arrow.png" alt=""/></a></li>
+                                    &nbsp;
+                                    &nbsp;
+                                    <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_right_arrow.png" alt=""/></a></li>
+                                    &nbsp;
+                                    <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_double_right_arrow.png" alt=""/></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div> 
+
+                    <div class="notice-box">
+                        <div class="head">
+                            <!-- 241211 태그추가 시작 -->
+                            <i class="icon_faq"></i>FAQ
+                            <!-- 241211 태그추가 끝 -->
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-12" style="padding:20px;" >
+                                <div class="accordion " id="accordion_main">
+                                    <div class="accordion-item">
+                                        <h5 class="accordion-header m-0" id="heading0">
+                                            <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse0" aria-expanded="false" aria-controls="collapse0">서비스이용</button>
+                                        </h5>
+                                        <div id="collapse0" class="accordion-collapse collapse" aria-labelledby="heading0" data-bs-parent="#accordion_main" style="">
+                                            <div class="accordion-body">
+                                                <h5 style="text-decoration: underline;"><strong>숙제를 제공했는데 학생들이 어떻게 확인하나요?</strong></h5>
+                                                하와이매쓰에서 제공하는 숙제는 학생용 사이트인 '하와이클래스'로 전송 됩니다.<br />
+                                                학생은 '하와이클래스' www.howhyclass.com 에 개인 가입한 뒤, 선생님 코드를 입력하면 간단하게 매칭 됩니다.									
+                                                <div style="text-align:right;"></div>
+                                                <br>
+                                                <hr>
+                                                <h5 style="text-decoration: underline;"><strong>POD 교재 제작은 어떻게 하나요?</strong></h5>
+                                                하와이매쓰에서 제공되는 모든 교재는 POD 제작이 가능합니다. 수량과 종수에 따라 가격이 다르니 1:1 개별 문의 또는 howhy.cs@gmail.com으로 메일 보내주세요.									
+                                                <div style="text-align:right;"></div>
+                                                <br>
+                                                <hr>
+                                                <h5 style="text-decoration: underline;"><strong>무료체험 후 자동으로 결제 되나요?</strong></h5>
+                                                어떠한 경우에도 동의 없는 자동 결제는 되지 않습니다. 편안하게 사용해 보시고 필요할 때 결제 하시면 됩니다.									
+                                                <div style="text-align:right;"></div>
+                                                <br>
+                                                <hr>
+                                                <h5 style="text-decoration: underline;"><strong>교사가 많은데, 과금이 어떻게 되나요?</strong></h5>
+                                                하와이매쓰에서 자유롭게 교사를 추가하고, 교사별 반 구성과 학생 구성을 할 수 있습니다. 교사가 아무리 많아도, 학생이 아무리 많아도 하와이매쓰는 학원 1개 아이디당 월 정액 과금만 하시면 됩니다.									
+                                                <div style="text-align:right;"></div>
+                                                <br>
+                                                <hr>
+                                                <h5 style="text-decoration: underline;"><strong>하와이매쓰 메뉴별 제공 학년은 어떻게 되나요?</strong></h5>
+                                                [하와이매쓰]메뉴별 제공 학년 안내 드립니다.<br />
+                                                1. 학습자료 > 교재 - 초등 4학년~고등 3학년<br />
+                                                2. 학습자료 > 보충 교재 - 중등 1학년~고등 3학년<br />
+                                                3. 학습자료 > 평가 - 초등 3학년~고등 3학년<br />
+                                                4. 학습자료 > 출제마법사 - 초등 1학년~고등 3학년<br />
+                                                <br />
+                                                더 많은 정보 및 문의 사항이 있으시면 언제든지 저희에게 연락해주세요. 학습에 보다 효율적이고 즐거운 경험을 제공하기 위해 최선을 다하겠습니다.<br />
+                                                감사합니다.									
+                                                <div style="text-align:right;"></div>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h5 class="accordion-header m-0" id="heading1">
+                                            <button class="accordion-button fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">기타</button>
+                                        </h5>
+                                        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordion_main" style="">
+                                            <div class="accordion-body"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+
+                $(document).ready(function() 
+                {
+                    $(".drop-btn").on("click", function ()
+                    {
+                        id = $(this).data("id");
+                        if($(".drop_"+id ).css("display") == "none")
+                            $(".drop_"+id ).show();
+                        else
+                            $(".drop_"+id ).hide();
+                    });
+                });
+
+
+                $( ".item-create" ).on('click', function() {
+                    fx_layer_popup_v2( 'newone', '/inquiries/newone', '' );
+                });
+
+                </script>
+
+			</div>
+		</div>
+	</div>
+	<footer class='footer'>
+        <div class="top">
+            <div class="left">
+                <div class='footer-content'>
+                    <span class="footer_logo"><img src="../assets/images/footer_logo.svg" alt="하와이매쓰" /></span>
+                    <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                    <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+                </div>
+            </div>
+            <div class='right'>
+                <div class='footer-content'>
+                    <div id="footer-dropbox">
+                        <select id="footer-dropbox-content" class="form-control form-select">
+                            <option value="">Family Site</option>
+                            <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                            <option value="https://www.fren.co.kr">프렌매쓰</option>
+                        </select>
+                        <script>
+                            document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                                let link = e.target.value;
+                                if(link)
+                                    window.open(link, '_blank');
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='left'>
+            <div class='footer-content'>
+                <div><b>하와이컴퍼니(주)</b></div>
+                <div class='vertical-line'></div>
+                <div><b>HOWHY COMPANY</b></div>
+                <div class='vertical-line'></div>
+                <div><b>대표이사 : 박종화</b></div>
+            </div>
+    
+            <div class='footer-content'>
+                <div><b>사업자등록번호</b> 760-87-02737</div>
+                <div class='vertical-line'></div>
+                <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+                <div class='vertical-line'></div>
+                <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+            </div>
+            <div class='footer-content'>
+                <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+            </div>
+            <div class='footer-content'>
+                2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+<script src="https://img.howhymath.com/custom/custom.js?v=1733895174"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	cdml_mathjax_init();
+});
+
+function edit_teacher()
+{
+    fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+}
+
+function edit_password()
+{
+    fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+}
+
+function menu_disable_delete( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    var words = node.key.split('-');
+    if( words[1] != '0' ) return true;
+    return false;
+}
+
+function menu_disable_add( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    if( node.getLevel() == 2 ) return true;
+    return false;
+}
+
+function menu_disable_edit( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    return false;
+}
+
+
+</script>
+
+<!-- 1:1 문의 등록 팝업 시작 -->
+<div class="modal fade show" id="newone" tabindex="-1" role="dialog" aria-modal="true" style="display: block;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" id="newone-content">
+            <div class="modal-header">
+                <div class="left">1:1문의 등록</div>
+                <img src="https://tutor.howhymath.com/app/img/icon_button_close.png" data-bs-dismiss="modal" aria-label="Close">
+            </div>
+            <form id="form_create" method="post" action="/inquiries/create">
+                <input type="hidden" name="up_oriname" value="" id="up_oriname">
+                <input type="hidden" name="up_ext" value="" id="up_ext">
+                <input type="hidden" name="up_filename" value="" id="up_filename">
+                <input type="hidden" name="dn" value="20241211-165500.177">
+                <div class="modal-body">
+                    <div class="row">
+                        <table class="modal-table">
+                            <colgroup>
+                                <col width="25%">
+                                <col width="75%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>문의유형</th>
+                                    <td>
+                                        <div><select title="" name="inquiry_attr_cd" id="fx-form-inquiry_attr_cd" class="form-control"><option value="">-- 문의유형 --</option><option value="inq">사용 문의</option><option value="pro">서비스 제안</option><option value="tos">사용 후기</option></select></div>
+                                        <div class="note note-error" id="fx-error-inquiry_attr_cd" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
+                                        <p style="font-size:12px;padding: 3px;color:blue;">※ 사용후기는 수학인 홈페이지에 노출됩니다.<br>선생님의 응원이 많은 힘이 됩니다.^^</p>
+                                    </td>
+                                </tr>
+                                <tr id="inquiry_type_cd_tr">
+                                    <th>문의항목</th>
+                                    <td>
+                                        <div><select title="" name="inquiry_type_cd" id="fx-form-inquiry_type_cd" class="form-control"><option value="" selected="">-- 문의항목 --</option><option value="str">서비스이용</option><option value="seq">출제마법사</option><option value="prt">시험지인쇄</option><option value="app">제휴</option><option value="pay">기타</option></select></div>
+                                        <div class="note note-error" id="fx-error-inquiry_type_cd" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>제목</th>
+                                    <td>
+                                        <div><input type="text" title="" name="title" value="" id="fx-form-title" maxlength="255" class="form-control"></div>
+                                        <div class="note note-error" id="fx-error-title" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>문의내용</th>
+                                    <td class="fx-al">
+                                        <div><textarea title="" name="contents" id="fx-form-contents" rows="6" class="form-control"></textarea></div>
+                                        <div class="note note-error" id="fx-error-contents" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>연락처</th>
+                                    <td class="fx-al">
+                                        <div><input type="text" title="" name="phone" value="" id="fx-form-phone" maxlength="255" class="form-control"></div>
+                                        <div class="note note-error" id="fx-error-phone" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        첨부이미지
+                                        <button onclick="upload_file_form();return false;" class="btn btn-sm btn-soft-primary">이미지 등록</button>
+                                    </th>
+                                    <td class="fx-al">
+                                        <div>
+                                            <img src="https://img.howhymath.com/custom/none.png" style="max-width:300px;" id="upload_image">
+                                            <input type="hidden" name="image" value="" id="fx-form-image">
+                                            <br>
+                                            <button onclick="remove_image_file();return false;" class="btn btn-soft-info btn-xs" id="remove-btn" style="display:none;">이미지 삭제</button>
+                                        </div>
+                                        <div class="note note-error" id="fx-error-image" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <div class="modal-bottom-btn-box">
+                                <button type="submit" class="save-btn">저장하기</button>
+                                <button type="button" class="cancle-btn" data-bs-dismiss="modal">취소하기</button>
+                        </div>
+
+                        <form id="form_file" name="form_file" enctype="multipart/form-data" action="https://bonsa.howhymath.com/dists/upload" method="post" style="display:none;">
+                            <input type="hidden" name="a" value="bmV3OmlucXVpcnk6MjAyNDEyMTEtMTY1NTAwLjE3NzppbjpqcGVnfGpwZ3xqcGVnfGdpZnxwbmc=">
+                            <input type="hidden" name="s" value="3dc5812fc2aeb1f67f1caf36752710a0">
+                            <input type="hidden" name="rt" value="1733903700">
+                            <input type="file" name="file" id="file_input">
+                        </form>
+
+                        <script type="text/javascript">
+                            $(document).ready(function(){
+
+                                $("#fx-form-inquiry_attr_cd").bind("change", function() {
+                                    if( $(this).val() == 'tos' ) $('#inquiry_type_cd_tr').hide();
+                                    else								 $('#inquiry_type_cd_tr').show();
+                                });
+
+                                $("#file_input").change(function (ev) {
+                                    fx_show_loading();
+                                    fx_file_submit($("#form_file"));
+                                });
+                            });
+
+                            function remove_image_file(){
+                                $('#upload_image').attr('src', 'https://img.howhymath.com/custom/none.png' );
+
+                                $('#up_oriname').val( '' );
+                                $('#up_filename').val( '' );
+                                $('#up_ext').val( '' );
+
+                                
+                                $("#remove-btn").hide();
+                            }
+
+                            function upload_file_form(){
+                                $("#file_input").trigger("click");
+                            }
+
+                            function callback_dists( ori_filename, filename, ext ){
+                                $('#upload_image').attr('src', 'https://bonsa.howhymath.com/temp/20241211-165500.177/' + filename + "." + ext );
+
+                                $('#up_oriname').val( ori_filename );
+                                $('#up_filename').val( filename );
+                                $('#up_ext').val( ext );
+                                
+                                $("#remove-btn").show();
+                            }
+
+                            function submit_form(){
+                                $('#fx-form-description').val( $('.summernote').code() );
+
+                                fx_submit($("#form_create"));
+                            }
+                        </script>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show"></div>
+<!-- //1:1 문의 등록 팝업 끝 -->
+
+</body>
+</html>
