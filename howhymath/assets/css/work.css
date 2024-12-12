@@ -12,6 +12,7 @@
   --main-color-blue-dark: #33acb4;
   --main-color-blue2: #14a5db;
 
+  --table-main-color: #00cc97;
   --table-drop-down-bg: #f7f7f7;
   --table-drop-down-active: #e5efef;
   --table-drop-down-color: #478a8b;
@@ -156,7 +157,7 @@ a{
     display: block;
     width: 20px;
     height: 20px;
-    background: url(../images/icon_user.svg) no-repeat center;
+    background: url(../img/icon_user.svg) no-repeat center;
     margin-right: 2px;
   }
 }
@@ -197,8 +198,8 @@ a{
     height: 20px;
     background: no-repeat center / cover;
   }
-  &:nth-of-type(1)::before{background-image: url(../images/icon_logout.svg);}
-  &:nth-of-type(2)::before{background-image: url(../images/icon_logout.svg);}
+  &:nth-of-type(1)::before{background-image: url(../img/icon_logout.svg);}
+  &:nth-of-type(2)::before{background-image: url(../img/icon_logout.svg);}
 }
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:focus{
@@ -222,7 +223,7 @@ a{
     display: block;
     width: 20px;
     height: 20px;
-    background: url(../images/icon_logout.svg) no-repeat center;
+    background: url(../img/icon_logout.svg) no-repeat center;
     margin-right: 2px;
   }
 }
@@ -317,7 +318,18 @@ line-height: normal;
   padding: 20px 0;
   margin: 0 auto;
 }
-.container-fluid{padding: 0;}
+.container-fluid{
+  padding: 0;
+  &>.row:has(.col-sm-12){
+    padding: 20px 35px !important;
+    &:has(.white){
+      background: #fff;
+      border-radius: 10px;
+      .row:has(.col-sm-12){padding: 0 !important;}
+    }
+    &:has(.page-title-box){padding: 0 !important;}
+  }
+}
 
 .modal-content{
   border-radius: 20px;
@@ -389,7 +401,10 @@ line-height: normal;
 /* 모달 헤더 공통 끝 */
 
 /* 모달 콘텐츠 공통 시작 */
-.modal-body{padding: 0;}
+.modal-body{
+  padding: 0;
+  /* .row:has(.col-sm-12){padding: 0 !important;} */
+}
 
 .modal-bottom-btn-box{
   display: flex;
@@ -451,6 +466,7 @@ line-height: normal;
   padding: 0;
   flex: auto 1 1;
 }
+
 
 .space-between{
   width: 100%;
@@ -938,7 +954,7 @@ line-height: normal;
 .table{
   overflow: hidden;
   thead{
-    background: var(--main-color-green) !important;
+    background: var(--table-main-color) !important;
     tr{border-bottom-width: 0 !important;}
   }
 }
@@ -973,6 +989,25 @@ line-height: normal;
   padding: 13px 0px;
   font-feature-settings: "tnum";
   background: transparent;
+
+  /* 테이블 내부 버튼 스타일 */
+  button{
+    border-radius: 14px;
+    height: auto;
+    font-family: 'SUIT';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 7px 20px;
+    &.show_question{
+      background: var(--main-color-green-dark);
+      color: #fff;
+    }/* 문항오류신고>문항보기버튼 */
+    &.check-btn{
+      background: #999;
+      color: #fff;
+    }/* 자료실>보기버튼 */
+  }
 }
 
 .table>:not(caption)>*>*{
@@ -1040,6 +1075,7 @@ line-height: normal;
     position: absolute;
     top: 0; right: 100%;
   }
+  img{margin: 10px 0;}
 }
 
 .bg-soft-success {color: var(--main-color-green) !important;}/* 필독 배지 */
@@ -1140,7 +1176,7 @@ line-height: normal;
       display: block;
       width: 100%;
       height: 1px;
-      background: url(../images/line_dotted2.png) repeat-x;
+      background: url(../img/line_dotted2.png) repeat-x;
       position: absolute;
       top: 0; left: 0;
     }
@@ -1174,28 +1210,28 @@ line-height: normal;
   &:nth-of-type(1){
     .page-link{
       font-size: 0;
-      background: #efefef url(../images/icon_undo_end.svg) no-repeat center / 14px auto;
+      background: #efefef url(../img/icon_undo_end.svg) no-repeat center / 14px auto;
       border-radius: 50%;
     }
   }
   &:nth-of-type(2){
     .page-link{
       font-size: 0;
-      background: #efefef url(../images/icon_undo.svg) no-repeat center / 14px auto;
+      background: #efefef url(../img/icon_undo.svg) no-repeat center / 14px auto;
       border-radius: 50%;
     }
   }
   &:nth-last-of-type(2){
     .page-link{
       font-size: 0;
-      background: #efefef url(../images/icon_redo.svg) no-repeat center / 14px auto;
+      background: #efefef url(../img/icon_redo.svg) no-repeat center / 14px auto;
       border-radius: 50%;
     }
   }
   &:nth-last-of-type(1){
     .page-link{
       font-size: 0;
-      background: #efefef url(../images/icon_redo_end.svg) no-repeat center / 14px auto;
+      background: #efefef url(../img/icon_redo_end.svg) no-repeat center / 14px auto;
       border-radius: 50%;
     }
   }
@@ -1623,7 +1659,10 @@ span.fancytree-active span.fancytree-title {
 } */
 
 /*** 페이지 타이틀 ***/
-.page-title-box{padding: 10px 0 20px 0;}
+.page-title-box{
+  padding: 10px 0 20px 0;
+  .row{padding: 0 !important;}
+}
 
 .head-left {
   display: flex;
@@ -2847,7 +2886,7 @@ td > .calendar-box{
   line-height: normal;
 }
 
-.notice-box .table thead{background: var(--table-main-color);}
+/* .notice-box .table thead{background: var(--table-main-color);} */
 .page-notices .table td center{margin-left: -12%;}
 
 
@@ -2971,10 +3010,34 @@ td > .calendar-box{
 
 /* 문항오류신고 START */
 .error-container{
-  display: grid;
-  grid-template-columns: 7fr 3fr; /* 왼쪽이 7, 오른쪽이 3의 비율로 설정 */
-  grid-gap: 10px; /* 각 열 사이의 간격 조절 (옵션) */
-  
+  /* display: grid;
+  grid-template-columns: 7fr 3fr;
+  grid-gap: 20px; */
+  display: flex;
+  gap: 20px;
+
+  .notice-box:last-of-type{
+    flex: 400px 0 0;
+    padding: 20px 5px 5px;
+    background: #555;
+    height: unset !important;
+    & > .head{color: #fff;}
+  }
+
+  .question_div{
+    background: #fff;
+    border-radius: 6px;
+    height: calc(100% - 55px);/* 55 === head height */
+    box-sizing: border-box;
+  }
+
+  .table colgroup{
+    col:nth-child(1){width: 100px;}
+    col:nth-child(2){width: 80px;}
+    col:nth-child(4){width: 100px;}
+    col:nth-child(5){width: 70px;}
+    col:nth-child(6){width: 100px;}
+  }
 }
 
 /* 241211 공지사항과 겹침이슈 삭제 시작 */
@@ -3013,6 +3076,18 @@ td > .calendar-box{
 }*/
 /* 241211 공지사항과 겹침이슈 삭제 끝 */
 /* 문항오류신고 END */
+
+/* 교재/영상 자료실 START */
+.board-container{
+  display: flex;
+  gap: 20px;
+  .table colgroup{
+    col:nth-child(2){width: 80px !important;}
+    col:nth-child(4){width: 100px !important;}
+    col:nth-child(6){width: 80px !important;}
+  }
+}
+/* 교재/영상 자료실 END */
 
 /* 학습리포트 START */
 .study-report-container{
@@ -3569,11 +3644,18 @@ td > .calendar-box{
 
 .select2-container--default .select2-selection--single{
   border-color: #ccc !important;
+  height: auto !important;
+  font-size: 14px !important;
+  padding: 3px !important;
 }
 .select2-container--default .select2-selection--single .select2-selection__placeholder {
   font-size: 13px;
   margin-right: 10px;
   color: #626262 !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
 .specify-btn{
@@ -4807,7 +4889,7 @@ span.plus {
     display: block;
     width: 23px;
     height: 23px;
-    background: url(../images/pdf-reader.png) no-repeat center / cover;
+    background: url(../img/pdf-reader.png) no-repeat center / cover;
   }
   img{display: none;}
   b{font-weight: 600;}
@@ -4885,8 +4967,42 @@ input[type="month"]:valid::before { display: none  !important;}
     border-radius: 50%;
     background: #333;
   }
+  &:has(.row){
+    &::before{content: none;}
+  }
   &+div{
+    padding-bottom: 10px;
     .row{gap: 0;}
+    form .input-group{
+      .form-control{
+        background: #ebebeb;
+        border-radius: 6px;
+        border-width: 0;
+        padding: 9px 14px;
+        font-family: 'SUIT';
+        font-size: 14px;
+        line-height: 1;
+      }
+      button{
+        display: block;
+        background: #ebebeb;
+        width: 36px;
+        height: auto;
+        padding: 0;
+        .fas{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .fa-search:before{
+          content: '';
+          display: block;
+          width: 20px;
+          height: 20px;
+          background: url(../img/icon_search_gray.svg) no-repeat center / cover;
+        }
+      }
+    }
   }
 }
 
@@ -5173,6 +5289,11 @@ hr {
   .page-notices, .page-inquiries{
     .notice-container{flex-direction: column;}
   }
+  /* 문항오류신고 */
+  .error-container{flex-direction: column;}
+
+  /* 교재/영상 자료실 START */
+  .board-container{flex-direction: column;}
 }
 
 @media (max-width: 1024px) {

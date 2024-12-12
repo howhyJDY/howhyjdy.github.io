@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이매쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+
+	<!-- base css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" />
+
+	<!-- site css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1733964210"/>
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1733964210" />
+	<!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1733964210" /-->
+	<!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1733964210" /> -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/work.css" />
+
+	<!-- base javascript -->
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+
+	<!-- site javascript -->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			showMathMenu: false,
+			tex2jax: { displayMath: [ ["$$","$$"] ] },
+			"HTML-CSS": { fonts: ["Latin-Modern"] }
+		});
+	</script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1733964210"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1733964210"></script>
+</head>
+
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+    <div class="topbar">
+        <div class="content-box">
+            <div class="brand">
+                <a href="/home/main" class="logo" style="padding-left:10px;">
+                    <!-- <span><img src="https://img.howhymath.com/hmath/logo.png" style="width:140px;height:31px;" class="logo-sm"></span> 241210 이미지 변경 및 스타일 삭제 -->
+                    <span><img src="../assets/images/logo.svg" class="logo-sm" alt="하와이매쓰"></span>
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-end mb-0" style="display: flex; align-items: center;">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <span class="ms-1 nav-user-name hidden-sm" style=" color: var(--Gray-01, #1A1A1A); font-weight: 700; font-size: 16px;">정다영<span style="font-weight: 400;"><span style="font-weight: 400;">선생님</span></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!--a class="dropdown-item" href="javascript:edit_teacher();"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i>정보수정</a-->
+                            <a class="dropdown-item" href="javascript:edit_password();"><i data-feather="lock" class="align-self-center icon-xs icon-dual me-1"></i>암호수정</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="https://tutor.howhymath.com/users/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual me-1"></i>로그아웃</a>
+                        </div>
+                    </li>
+                    <button class="signout-btn" onclick="location.href='https://tutor.howhymath.com/users/logout';">로그아웃</button>
+                </ul> 
+                <div class="navbar-custom-menu">
+                    <div id="navigation">
+                        <ul class="navigation-menu">
+                            <li class='has-submenu'>
+                                <a href='/home/main'><span> </i>캘린더</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/books/index'><span> 학습자료</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/books/index'>교재</a></li>
+                                    <li><a href='/exam_pdfs/index'>보충교재</a></li>
+                                    <li><a href='/jindan_exams/index'>평가</a></li>
+                                    <li><a href='/wizards/index'>출제마법사</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/study_books/index'><span> 개별학습</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/study_books/index'>교재학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=exm'>출제마법사</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=wrg'>오답학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=rec'>맞춤학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=hom'>숙제관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/reports_v2/index'><span> 분석표</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/academies/index'><span> 관리</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/academies/index'>정보수정</a></li>
+                                    <li><a href='/teachers/index'>교사/반 관리</a></li>
+                                    <li><a href='/students/index'>학생관리</a></li>
+                                    <li><a href='/schools/index'>학교관리</a></li>
+                                    <li><a href='/print_pdfs/index'>인쇄파일관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/payments/index'><span> 결제</span></a>
+                            </li>
+                            <li class='has-submenu active'>
+                                <a href='/notices/index'><span> 고객센터</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/notices/index'>공지사항</a></li>
+                                    <li><a href='/inquiries/index'>1:1문의 & FAQ</a></li>
+                                    <li class='active'><a href='/question_error_reports/index'>문항오류신고</a></li>
+                                    <!-- <li><a href='/boards/index?boarda_type_cd=gj'>자료실-교재자료</a></li>
+                                    <li><a href='/boards/index?boarda_type_cd=mv'>자료실-영상자료</a></li> -->
+                                    <li><a href='/boards/index'>교재/영상 자료실</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    </div>
+
+	<div class="page-wrapper">
+		<div class="page-content">
+			<div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="row">
+                                <div class="col-sm-12 head-left">
+                                    <div class='gray'><a href='/notices/index'>고객센터</a></div><img src="/app/img/icon_right_arrow.png" alt=""/><div class='black'><a href='/question_error_reports/index'>문항오류신고</a></div>                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error-container">
+                    <div class="notice-box" style="height:auto;">
+                        <div class="head">오류 신고 내역</div>
+                        <hr>
+                        <div class="row" style="padding: 10px;">
+                            <div class="col-md-12 search-head">
+                                0개중 0-0			</div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-striped mb-0 table-border-none">		
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>	
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>문항ID</th>
+                                        <th>오류유형</th>
+                                        <th>제목</th>
+                                        <th>신고날짜</th>
+                                        <th>처리상태</th>
+                                        <th>문항보기</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 241212 문제 tr 클래스 drop_down 추가(공지사항 테이블과 동일) -->
+                                    <tr class="drop_down">
+                                        <td>405743</td>
+                                        <td>문제오류</td>
+                                        <td style="text-align:left;"><a class="drop-btn" data-id="108">테스트용</a></td>
+                                        <td>2024-12-12 09:56:06</td>
+                                        <td>확인중</td>
+                                        <td>
+                                            <button type="button" class="gbtn show_question" data-qid="405743">보기</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6" style="text-align: left;" class="drop_108">
+                                            테스트용 신고 내용입니다
+                                            <br>
+                                            <center>
+                                                <img src="https://img.howhymath.com/f.hm//00/6c/question_error.108.png" style="max-width:100%;">
+                                            </center>
+                                            <br>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="drop_down">
+                                        <td>405742</td>
+                                        <td>문제오류</td>
+                                        <td style="text-align:left;"><a class="drop-btn" data-id="109">대통령은 취임에 즈음하여 다음의 선서를 한다. 모든 국민은 직업선택의 자유를 가진다.</a></td>
+                                        <td>2024-12-12 09:56:06</td>
+                                        <td>확인중</td>
+                                        <td>
+                                            <button type="button" class="gbtn show_question" data-qid="405742">보기</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6" style="text-align: left;" class="drop_109">
+                                            국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.
+                                            <br>
+                                            <br>
+                                            국가의 세입·세출의 결산, 국가 및 법률이 정한 단체의 회계검사와 행정기관 및 공무원의 직무에 관한 감찰을 하기 위하여 대통령 소속하에 감사원을 둔다.
+                                            <br>
+                                            법률은 특별한 규정이 없는 한 공포한 날로부터 20일을 경과함으로써 효력을 발생한다. 탄핵결정은 공직으로부터 파면함에 그친다. 그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다.
+                                        </td>
+                                    </tr>
+
+                                    <!-- <tr>
+                                        <td colspan="6">등록된 내역이 없습니다.</td>
+                                    </tr> 노데이터 -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="fx-ac">
+                            <nav>
+                                <ul class='pagination justify-content-center'>
+                                    <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_double_left_arrow.png" alt=""/></a></li>
+                                    &nbsp;
+                                    <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_left_arrow.png" alt=""/></a></li>
+                                    &nbsp;
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    &nbsp;
+                                    <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_right_arrow.png" alt=""/></a></li>
+                                    &nbsp;
+                                    <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_double_right_arrow.png" alt=""/></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="notice-box" style="height:auto;">
+                        <div class="head">문항보기</div>
+                        <hr>
+                        <div class="ibox-content question_div" style="padding: 20px;">
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+
+                $(".show_question").on("click", function()
+                {
+                    var question_id = $(this).data("qid");
+                    var cdmlApi = new CdmlApi();
+                    cdmlApi.init( question_id+"" );
+                    var questions = cdmlApi.i(1);
+                    var html = "";
+                    if( questions.body_html != "" )
+                    {
+                        html += questions.sentence_html.replace("[#SCOPE#]",'' ) + "<br>";
+                            + questions.body_html.replace("[#NO#]",'') + questions.list_html;
+                        html += '<p class="preview-title">[문제]</p>'
+                            + questions.body_html.replace("[#NO#]",'') + questions.list_html;
+                    }
+                    if( questions.answer_html != "")
+                    {
+                        html += '<p class="preview-title">[정답]</p>'
+                            + questions.answer_html;
+                    }
+                    if( questions.explanation_html != "" )
+                    {
+                        html += '<p class="preview-title">[해설]</p>'
+                            + questions.explanation_html;
+                    }
+                    
+                    $(".question_div").html( html );
+                    cdml_mathjax_init();
+                    cdml_mathjax_rerender();
+                });
+
+                $(".drop-btn").on("click", function ()
+                {
+                    id = $(this).data("id");
+                    if($(".drop_"+id ).css("display") == "none")
+                        $(".drop_"+id ).show();
+                    else
+                        $(".drop_"+id ).hide();
+                });
+                </script>
+
+			</div>
+		</div>
+	</div>
+    <footer class='footer'>
+        <div class="top">
+            <div class="left">
+                <div class='footer-content'>
+                    <span class="footer_logo"><img src="../assets/images/footer_logo.svg" alt="하와이매쓰" /></span>
+                    <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                    <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+                </div>
+            </div>
+            <div class='right'>
+                <div class='footer-content'>
+                    <div id="footer-dropbox">
+                        <select id="footer-dropbox-content" class="form-control form-select">
+                            <option value="">Family Site</option>
+                            <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                            <option value="https://www.fren.co.kr">프렌매쓰</option>
+                        </select>
+                        <script>
+                            document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                                let link = e.target.value;
+                                if(link)
+                                    window.open(link, '_blank');
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='left'>
+            <div class='footer-content'>
+                <div><b>하와이컴퍼니(주)</b></div>
+                <div class='vertical-line'></div>
+                <div><b>HOWHY COMPANY</b></div>
+                <div class='vertical-line'></div>
+                <div><b>대표이사 : 박종화</b></div>
+            </div>
+    
+            <div class='footer-content'>
+                <div><b>사업자등록번호</b> 760-87-02737</div>
+                <div class='vertical-line'></div>
+                <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+                <div class='vertical-line'></div>
+                <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+            </div>
+            <div class='footer-content'>
+                <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+            </div>
+            <div class='footer-content'>
+                2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+<script src="https://img.howhymath.com/custom/custom.js?v=1733964210"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	cdml_mathjax_init();
+});
+
+function edit_teacher()
+{
+    fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+}
+
+function edit_password()
+{
+    fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+}
+
+function menu_disable_delete( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    var words = node.key.split('-');
+    if( words[1] != '0' ) return true;
+    return false;
+}
+
+function menu_disable_add( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    if( node.getLevel() == 2 ) return true;
+    return false;
+}
+
+function menu_disable_edit( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    return false;
+}
+
+
+</script>
+</body>
+</html>
