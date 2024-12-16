@@ -8774,13 +8774,13 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {font-family: "Noto Sans KR", 'SUIT', 
     
     .section-heading:first-of-type{
         font-family: var(--font-gmarket);
-        font-size: 28px !important;
+        font-size: 32px !important;
         line-height: 1;
         color: #082c4b;
         margin: 0 0 5px !important;
     }
     .section-intro{
-        font-size: 22px;
+        font-size: 26px;
         line-height: 1;
         letter-spacing: -1px;
     }
