@@ -8945,6 +8945,7 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {font-family: "Noto Sans KR", 'SUIT', 
     flex: 1;
     padding: 34px 20px;
     background: #e7e7e7;
+    letter-spacing: -1px;
     .footer_logo{width: 165px;}
     .top{
         display: flex;
@@ -8979,7 +8980,7 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {font-family: "Noto Sans KR", 'SUIT', 
 
         .footer-content {
             display: flex;
-            font-family: var(--font-suit);
+            font-family: 'sute';
             gap: 5px;
             color: var(--Gray-06, #666);
             font-size: 12px;
