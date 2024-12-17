@@ -2584,6 +2584,63 @@ span.fancytree-active span.fancytree-title {
   font-weight: 500;
   line-height: 160%; /* 28.8px */
 }
+
+/* 교재학습 > 학습완료 */
+.study-management-header+.card-body{
+  border-top: 2px solid #fff;
+  margin-top: -1px;
+  .table td .gbtn-sm{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 9px !important;
+    width: auto !important;
+    border-width: 0;
+    font-family: 'SUIT';
+    color: #0e495a;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 600;
+    background: #d7f1f0;
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 3px 0px 3px 5.196px;
+      border-color: transparent transparent transparent var(--main-color-blue);
+    }
+  }
+}
+
+.progress{
+  height: 15px;
+  background-color: #ececec;
+  border-radius: .25rem;
+  width: calc(100% - 100px);
+  margin-left: auto !important;
+  border-radius: 20px;
+  span{
+    display: block;
+    width: 45px;
+    position: absolute;
+    top: 50%; left: 0;
+    transform: translateY(-50%);
+    text-align: right;
+    color: #222;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  &>span{
+    left: 40px;
+  }
+}
+.progress-bar{
+  background-color: #18dce3;
+  border-radius: 20px;
+}
+.progress-bar:last-of-type{background: transparent;}
 /* 학습관리 > 교재학습 END */
 
 /* 학습관리 > 교재학습  > 채점modal START */
