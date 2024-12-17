@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 	<meta charset="utf-8" />
 	<title>하와이매쓰</title>
@@ -19,11 +17,11 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" />
 
 	<!-- site css -->
-	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734070436"/>
-	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734070436" />
-	<!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734070436" /-->
-	<!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734070436" /> -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/work.css?v=1734070436" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734395903"/>
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734395903" />
+	<!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734395903" /-->
+	<!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734395903" /> -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/work.css?v=1734395903" />
 
 	<!-- base javascript -->
 	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
@@ -43,8 +41,8 @@
 		});
 	</script>
 	<script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
-	<script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1734070436"></script>
-	<script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1734070436"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1734395903"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1734395903"></script>
 </head>
 
 <script>
@@ -53,7 +51,7 @@ cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
 var lms_domain = "https://tutor.howhymath.com";
 </script>
 
-<body data-layout="horizontal">
+<body data-layout="horizontal" class="modal-open" data-bs-padding-right="" style="overflow: hidden; padding-right: 17px;">
     <div style="display:none">$$\require{cancel}$$</div>
 	<div class="topbar">
         <div class="content-box">
@@ -1108,132 +1106,89 @@ function popup_book_student( student_id )
     </footer>
 
 
-<script src="https://img.howhymath.com/custom/custom.js?v=1734070436"></script>
+    <script src="https://img.howhymath.com/custom/custom.js?v=1734395903"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        cdml_mathjax_init();
+    });
 
-<script type="text/javascript">
-$(document).ready(function() {
-	cdml_mathjax_init();
-});
+    function edit_teacher()
+    {
+        fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+    }
 
-function edit_teacher()
-{
-    fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
-}
+    function edit_password()
+    {
+        fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+    }
 
-function edit_password()
-{
-    fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
-}
+    function menu_disable_delete( key, opt )
+    {
+        var node = $.ui.fancytree.getNode(opt.$trigger);
+        if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+        var words = node.key.split('-');
+        if( words[1] != '0' ) return true;
+        return false;
+    }
 
-function menu_disable_delete( key, opt )
-{
-    var node = $.ui.fancytree.getNode(opt.$trigger);
-    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
-    var words = node.key.split('-');
-    if( words[1] != '0' ) return true;
-    return false;
-}
+    function menu_disable_add( key, opt )
+    {
+        var node = $.ui.fancytree.getNode(opt.$trigger);
+        if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+        if( node.getLevel() == 2 ) return true;
+        return false;
+    }
 
-function menu_disable_add( key, opt )
-{
-    var node = $.ui.fancytree.getNode(opt.$trigger);
-    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
-    if( node.getLevel() == 2 ) return true;
-    return false;
-}
+    function menu_disable_edit( key, opt )
+    {
+        var node = $.ui.fancytree.getNode(opt.$trigger);
+        if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+        return false;
+    }
+    </script>
 
-function menu_disable_edit( key, opt )
-{
-    var node = $.ui.fancytree.getNode(opt.$trigger);
-    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
-    return false;
-}
-</script>
-
-<!-- 선택 교재 학습 완료 팝업 시작 -->
-<div class="modal" id="done_book_student_popup" tabindex="-1" role="dialog" aria-modal="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content" id="done_book_student_popup-content">
-            <div class="modal-header">
-                <div class="left">선택 교재 학습 완료</div>
-                <img src="https://tutor.howhymath.com/app/img/icon_button_close.png" data-bs-dismiss="modal" aria-label="Close">
-            </div>
-            <form id="form_delete_book" method="post" action="/study_books/done_book_student">
-                <input type="hidden" name="book_id" value="63">
-                <input type="hidden" name="student_id" value="325">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="https://img.howhymath.com/f.hm/00/3f/bk.63/book.png" style="width: 100%; max-width: 120px;object-fit:contain;">
-                        </div>
-                        <div class="col-md-9">
-                        <div class="warning-comment">
-                            정다영(학생)학생에게 지정한  초등수학 5-1 개념서을 학습 완료하시겠습니까? 
-                            <br>
-                            <br>
-                            총 57 시험지 중 0개의 시험지를 학습하셨습니다.
-                        </div>
-                        </div>
-                    </div>
-                    <div class="modal-bottom-btn-box">
-                        <button type="button" class="cancle-btn" data-bs-dismiss="modal">취소하기</button>
-                        <button type="button" class="save-btn" onclick="submit_form();">학습완료</button>
-                    </div>
+    <!-- 선택 교재 지정 해제 팝업 시작 -->
+    <div class="modal fade show" id="delete_book_student_popup" tabindex="-1" role="dialog" aria-modal="true" style="display: block;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" id="delete_book_student_popup-content">
+                <div class="modal-header">
+                    <div class="left">선택 교재 지정 해제</div>
+                    <img src="https://tutor.howhymath.com//app/img/icon_button_close.png" data-bs-dismiss="modal" aria-label="Close">
                 </div>
-            </form>
-
-            <script>
-            $(document).ready( function (){} );
-            function submit_form(){
-                $("#form_delete_book").submit();
-            }
-            </script>
-        </div>
-    </div>
-</div>
-<!-- 선택 교재 학습 완료 팝업 끝 -->
-
-<!-- 선택 교재 지정 해제 팝업 시작 -->
-<div class="modal" id="delete_book_student_popup" tabindex="-1" role="dialog" aria-modal="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content" id="delete_book_student_popup-content">
-            <div class="modal-header">
-                <div class="left">선택 교재 지정 해제</div>
-                <img src="https://tutor.howhymath.com//app/img/icon_button_close.png" data-bs-dismiss="modal" aria-label="Close">
-            </div>
-            <form id="form_delete_book" method="post" action="/study_books/delete_book_student">
-                <input type="hidden" name="book_id" value="63">
-                <input type="hidden" name="student_id" value="325">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="https://img.howhymath.com/f.hm/00/3f/bk.63/book.png" style="width: 100%; max-width: 120px;object-fit:contain;">
-                        </div>
-                        <div class="col-md-9">
-                            <div class="warning-comment">
-                                정다영(학생)학생에게 지정한  초등수학 5-1 개념서을  지정 해제 하시겠습니까?
-                                <br>
-                                <br>
-                                해당 교재와 관련된 학습 정보가 모두 삭제 됩니다.
+                <form id="form_delete_book" method="post" action="/study_books/delete_book_student">
+                    <input type="hidden" name="book_id" value="63">
+                    <input type="hidden" name="student_id" value="325">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="https://img.howhymath.com/f.hm/00/3f/bk.63/book.png" style="width: 100%; max-width: 120px;object-fit:contain;">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="warning-comment">
+                                    정다영(학생)학생에게 지정한  초등수학 5-1 개념서을  지정 해제 하시겠습니까?
+                                    <br>
+                                    <br>
+                                    해당 교재와 관련된 학습 정보가 모두 삭제 됩니다.
+                                </div>
                             </div>
                         </div>
+                        <div class="modal-bottom-btn-box">
+                            <button type="button" class="cancle-btn" data-bs-dismiss="modal">취소하기</button>
+                            <button type="button" class="save-btn" onclick="submit_form();">지정해제</button>
+                        </div>
                     </div>
-                    <div class="modal-bottom-btn-box">
-                        <button type="button" class="cancle-btn" data-bs-dismiss="modal">취소하기</button>
-                        <button type="button" class="save-btn" onclick="submit_form();">지정해제</button>
-                    </div>
-                </div>
-            </form>
-            <script>
-            $(document).ready( function () {} );
-            function submit_form(){
-                $("#form_delete_book").submit();
-            }
-            </script>
+                </form>
+                <script>
+                $(document).ready( function () {} );
+                function submit_form(){
+                    $("#form_delete_book").submit();
+                }
+                </script>
+            </div>
         </div>
     </div>
-</div>
-<!-- 선택 교재 지정 해제 팝업 끝 -->
+    <div class="modal-backdrop fade show"></div>
+    <!-- 선택 교재 지정 해제 팝업 끝 -->
 
 </body>
 </html>

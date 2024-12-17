@@ -422,12 +422,19 @@ line-height: normal;
   .modal-bottom-btn-box{
     justify-content: center;
     margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #d3d3d3;
+    &>button{
+      border-radius: 20px;
+      font-size: 13px;
+      padding: 8px 25px;
+    }
   }
-  .modal-bottom-btn-box > .cancle-btn{
+  /* .modal-bottom-btn-box > .cancle-btn{
     border-radius: 20px;
     font-size: 13px;
     padding: 8px 25px;
-  }
+  } */
 }
 
 .modal-content{
@@ -3852,12 +3859,14 @@ td > .calendar-box{
 
 /* minimodal 5개 START */
 .warning-comment{
-  color: #000;
+  color: #222;
   font-size: 14px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
-  margin-top: 20px;
+  margin-top: 30px;
+  padding-left: 20px;
+  word-break: keep-all;
 }
 /* minimodal 5개 END */
 
