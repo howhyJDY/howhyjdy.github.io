@@ -5867,8 +5867,7 @@ html:has(.page-memo){
   }
 }
 #questions_frame{
-  transform: none;
-  height: calc(100vh - 100px);
+  /* transform: none; */
 }
 
 /*** 반응형 ***/
