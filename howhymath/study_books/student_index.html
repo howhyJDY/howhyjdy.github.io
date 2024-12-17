@@ -1,0 +1,1155 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이매쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+
+	<!-- base css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" />
+
+	<!-- site css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734070436"/>
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734070436" />
+	<!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734070436" /-->
+	<!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734070436" /> -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/work.css?v=1734070436" />
+
+	<!-- base javascript -->
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+
+	<!-- site javascript -->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			showMathMenu: false,
+			tex2jax: { displayMath: [ ["$$","$$"] ] },
+			"HTML-CSS": { fonts: ["Latin-Modern"] }
+		});
+	</script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1734070436"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1734070436"></script>
+</head>
+
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+	<div class="topbar">
+        <div class="content-box">
+            <div class="brand">
+                <a href="/home/main" class="logo" style="padding-left:10px;">
+                    <!-- <span><img src="https://img.howhymath.com/hmath/logo.png" style="width:140px;height:31px;" class="logo-sm"></span> 241210 이미지 변경 및 스타일 삭제 -->
+                    <span><img src="../assets/images/logo.svg" class="logo-sm" alt="하와이매쓰"></span>
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-end mb-0" style="display: flex; align-items: center;">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <span class="ms-1 nav-user-name hidden-sm" style=" color: var(--Gray-01, #1A1A1A); font-weight: 700; font-size: 16px;">이하와<span style="font-weight: 400;"><span style="font-weight: 400;">선생님</span></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!--a class="dropdown-item" href="javascript:edit_teacher();"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i>정보수정</a-->
+                            <a class="dropdown-item" href="javascript:edit_password();"><i data-feather="lock" class="align-self-center icon-xs icon-dual me-1"></i>암호수정</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="https://tutor.howhymath.com/users/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual me-1"></i>로그아웃</a>
+                        </div>
+                    </li>
+                    <button class="signout-btn" onclick="location.href='https://tutor.howhymath.com/users/logout';">로그아웃</button>
+                </ul> 
+                <div class="navbar-custom-menu">
+                    <div id="navigation">
+                        <ul class="navigation-menu">
+                            <li class='has-submenu'>
+                                <a href='/home/main'><span> </i>캘린더</span></a>
+                            </li>
+                            <li class='has-submenu'>
+                                <a href='/books/index'><span> 학습자료</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/books/index'>교재</a></li>
+                                    <li><a href='/exam_pdfs/index'>보충교재</a></li>
+                                    <li><a href='/jindan_exams/index'>평가</a></li>
+                                    <li><a href='/wizards/index'>출제마법사</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu active'>
+                                <a href='/study_books/index'><span> 개별학습</span></a>
+                                <ul class='submenu'>
+                                    <li class='active'><a href='/study_books/index'>교재학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=exm'>출제마법사</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=wrg'>오답학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=rec'>맞춤학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=hom'>숙제관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/reports_v2/index'><span> 분석표</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/academies/index'><span> 관리</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/academies/index'>정보수정</a></li>
+                                    <li><a href='/teachers/index'>교사/반 관리</a></li>
+                                    <li><a href='/students/index'>학생관리</a></li>
+                                    <li><a href='/schools/index'>학교관리</a></li>
+                                    <li><a href='/print_pdfs/index'>인쇄파일관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/payments/index'><span> 결제</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/notices/index'><span> 고객센터</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/notices/index'>공지사항</a></li>
+                                    <li><a href='/inquiries/index'>1:1문의 & FAQ</a></li>
+                                    <li><a href='/question_error_reports/index'>문항오류신고</a></li>
+                                    <!-- <li><a href='/boards/index?boarda_type_cd=gj'>자료실-교재자료</a></li>
+                                    <li><a href='/boards/index?boarda_type_cd=mv'>자료실-영상자료</a></li> 241210 자료실 통합 -->
+                                    <li><a href='/boards/index'>교재/영상 자료실</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    </div>
+
+	<div class="page-wrapper">
+		<div class="page-content page-study-books"><!--241213 개별학습>교재학습 전용 클래스 추가-->
+			<div class="container-fluid">
+			    <link rel='stylesheet' type='text/css' href='https://img.dtsoft.co.kr/assets.howhy/plugins/jquery-ui/jquery-ui.css'>
+                <link rel='stylesheet' type='text/css' href='https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.css' />
+                <script type='text/javascript' charset='utf-8' src='https://img.dtsoft.co.kr/assets.howhy/plugins/jquery-ui/jquery-ui.js'></script>
+                <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/cookie/js.cookie.min.js'></script>
+
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.js'></script>
+                <link rel='stylesheet' href='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/skin-vista/ui.fancytree.css' />
+                <link href='/app/css/fancytree.css?t=1734070436' rel='stylesheet' type='text/css' />
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/jquery.fancytree-all.min.js'></script>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/modules/jquery.fancytree.persist.js'></script>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/ext/jquery.fancytree.contextMenu.js'></script><link rel="stylesheet" type="text/css" href="/app/slick_slides.css">
+                <script type="text/javascript" src="https://img.howhymath.com/custom/lms_print.js?20241110"></script>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="row">
+                                <div class="col-sm-12 head-left">
+                                    <div class='gray'><a href='/study_books/index'>개별학습</a></div>
+                                    <img src="https://tutor.howhymath.com/app/img/icon_right_arrow.png" alt=""/>
+                                    <div class='black'><a href='/study_books/index'>교재학습</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    학생선택
+                                </div>
+                            </div>
+                            <div class="card-body student_tree_html" style="overflow-x:auto;">
+                                <style>
+                                    .form-switch.form-switch-success .form-check-input:checked {
+                                        background-color: #7adfda;
+                                        border-color: #7adfda;
+                                    }
+                                </style>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+                
+                                <ul class="nav nav-tabs justify-content-end" style="margin-bottom: 5px;" id="student_tree_tab">
+                                    <li class="nav-item">
+                                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#grade_tree" type="button" role="tab" aria-controls="grade_tree" aria-selected="true" style="font-size:14px !important;">학년별보기</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link " data-bs-toggle="pill" data-bs-target="#classroom_tree" type="button" role="tab" aria-controls="classroom_tree" aria-selected="false" style="font-size:14px !important;">반별보기</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="grade_tree" role="tabpanel" aria-labelledby="grade_tree-tab">
+                                        <div class="student_grade_tree">
+                                            <ul class="ui-fancytree-source fancytree-helper-hidden">
+                                                <li id="grade-e5" class="folder">
+                                                    초5 (1)
+                                                    <ul>
+                                                        <li id="grade-student-325">이하와(학생)</li>
+                                                    </ul>
+                                                </li>
+                                                <li id="grade-e5" class="folder">
+                                                    중1 (2)
+                                                    <ul>
+                                                        <li id="grade-student-325">이하와(학생)</li>
+                                                        <li id="grade-student-326">박하와(학생)</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <ul id="ft-id-1" class="ui-fancytree fancytree-container fancytree-plain" tabindex="0" role="tree" aria-multiselectable="true">
+                                                <li role="treeitem" aria-expanded="true" aria-selected="false" class="fancytree-lastsib">
+                                                    <span class="fancytree-node fancytree-expanded fancytree-folder fancytree-has-children fancytree-lastsib fancytree-exp-el fancytree-ico-ef">
+                                                        <span role="button" class="fancytree-expander"></span>
+                                                        <span role="presentation" class="fancytree-icon"></span>
+                                                        <span class="fancytree-title">초5 (1)</span>
+                                                    </span>
+                                                    <ul role="group" style="">
+                                                        <li role="treeitem" aria-selected="false" class="fancytree-lastsib">
+                                                            <span class="fancytree-node fancytree-active fancytree-lastsib fancytree-exp-nl fancytree-ico-c">
+                                                                <span class="fancytree-expander"></span>
+                                                                <span role="presentation" class="fancytree-icon"></span>
+                                                                <span class="fancytree-title">이하와(학생)</span>
+                                                                <button type="button" style="border:0;float:right;margin:2px;" class="green-box" onclick="popup_book_student(325);"><i class="fas fa-plus"></i>교재</button>
+                                                                <button type="button" style="padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="popup_student_memo('325');">메모</button>
+                                                                <button type="button" style="padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="popup_attendances('325');">출결</button>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li role="treeitem" aria-expanded="true" aria-selected="false" class="fancytree-lastsib">
+                                                    <span class="fancytree-node fancytree-expanded fancytree-folder fancytree-has-children fancytree-lastsib fancytree-exp-el fancytree-ico-ef">
+                                                        <span role="button" class="fancytree-expander"></span>
+                                                        <span role="presentation" class="fancytree-icon"></span>
+                                                        <span class="fancytree-title">중1 (2)</span>
+                                                    </span>
+                                                    <ul role="group" style="">
+                                                        <li role="treeitem" aria-selected="false" class="fancytree-lastsib">
+                                                            <span class="fancytree-node fancytree-active fancytree-lastsib fancytree-exp-nl fancytree-ico-c">
+                                                                <span class="fancytree-expander"></span>
+                                                                <span role="presentation" class="fancytree-icon"></span>
+                                                                <span class="fancytree-title">박하와(학생)</span>
+                                                                <button type="button" style="border:0;float:right;margin:2px;" class="green-box" onclick="popup_book_student(326);"><i class="fas fa-plus"></i>교재</button>
+                                                                <button type="button" style="padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="popup_student_memo('326');">메모</button>
+                                                                <button type="button" style="padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="popup_attendances('326');">출결</button>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade " id="classroom_tree" role="tabpanel" aria-labelledby="classroom_tree-tab">
+                                        <div class="student_classroom_tree">
+                                            <ul class="ui-fancytree-source fancytree-helper-hidden">
+                                                <li id="classroom-219" class="folder">
+                                                    하와이 (1)
+                                                    <ul>
+                                                        <li id="classroom-student-325">이하와(학생)</li>
+                                                        <li id="classroom-student-326">박하와(학생)</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <ul id="ft-id-2" class="ui-fancytree fancytree-container fancytree-plain" tabindex="0" role="tree" aria-multiselectable="true">
+                                                <li role="treeitem" aria-expanded="false" aria-selected="false" class="fancytree-lastsib">
+                                                    <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lastsib fancytree-exp-cl fancytree-ico-cf">
+                                                        <span role="button" class="fancytree-expander"></span>
+                                                        <span role="presentation" class="fancytree-icon"></span>
+                                                        <span class="fancytree-title">하와이 (1)</span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row" style="margin:0;padding: 20px 0;">
+                                    <div class="col-md-12" style="text-align:right;">
+                                        <div class="form-check form-switch form-switch-success" style="width: 140px;float:right;">
+                                            <input class="form-check-input" name="attendance_check" type="checkbox" id="attendance_check">
+                                            <label class="form-check-label" for="attendance_check">출석 학생만 보기</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <script>
+var attendances = {};
+$( document ).ready(function() {
+    // $('input[type=checkbox][name=attendance_check]').change(function() {
+    //     if ($(this).is(':checked')) { show_attendance('y'); }
+    //     else { show_attendance('n'); }
+    // });
+
+	$( "#student_tree_tab .nav-link" ).on('click', function() {
+        var $this = $(this);
+		$.removeCookie('menu_tab_index');
+		if( $this.data( "bs-target" ) == '#classroom_tree' )
+			$.cookie( 'menu_tab_index', 'classroom', {path: "/", domain: '.howhymath.com'} );
+		else
+			$.cookie( 'menu_tab_index', 'grade', {path: "/", domain: '.howhymath.com'} );
+	});
+
+	$('.student_grade_tree').fancytree({
+		extensions: ["persist"],
+			persist: { cookiePrefix: 'grade-tree-' },
+		init: function(event, data) {
+			data.tree.selectAll(false);
+		},
+		renderNode: function (event, data) {
+			var node = data.node;
+			if( node.key.indexOf('grade-student-') == -1 ) return;
+
+			var student_id = node.key.replace( "grade-student-", "" )
+			var $nodeSpan = $(node.span);
+			if( $nodeSpan.html().indexOf( '메모' ) != -1 ) return;
+
+			$nodeSpan.append( '<button type="button" style="border:0;float:right;margin:2px;" class="green-box" onclick="popup_book_student('+student_id+');"><i class="fas fa-plus"></i>교재</button>' );
+			$nodeSpan.append( '<button type="button" style="padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="popup_student_memo(\''+student_id+'\');">메모</button>' );
+			if(  attendances.hasOwnProperty( student_id ) )
+			{
+				if( attendances[student_id] == 'a' )
+					$nodeSpan.append( '<button type="button" style="border: 1px solid rgba(23,97,253,0.5);color: #1761fd;padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="popup_attendances(\''+student_id+'\');">입실</button>' );
+				else
+					$nodeSpan.append( '<button type="button" style="border:1px solid  #FB3232;color: #FB3232;padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="popup_attendances(\''+student_id+'\');">퇴실</button>' );
+			}
+			else
+				$nodeSpan.append( '<button type="button" style="padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="popup_attendances(\''+student_id+'\');">출결</button>' );
+		},
+		click: function(event, data) {
+			if( data.targetType == "expander" ) return;
+			if( data.targetType != 'title' ) return;
+
+			var node = data.node;
+			if( node.key.indexOf( 'grade-student-'  ) == -1 ) return;
+
+			var student_id = node.key.replace( "grade-student-", "" );
+			location.href= "/study_books/student_index?student_id="+student_id;
+		},
+	});
+
+	$('.student_classroom_tree').fancytree({
+		extensions: ["persist"],
+		persist: { cookiePrefix: 'classroom-tree-' },
+			init: function(event, data) {
+			data.tree.selectAll(false);
+		},
+		renderNode: function (event, data) {
+			var node = data.node;
+			if( node.key.indexOf( 'classroom-student-'  ) == -1 ) return;
+
+			var student_id = node.key.replace( "classroom-student-", "" );
+
+			var $nodeSpan = $(node.span);
+			if( $nodeSpan.html().indexOf( '메모' ) != -1 ) return;
+
+			$nodeSpan.append( '<button type="button" style="border:0;float:right;margin:2px;" class="green-box" onclick="popup_book_student('+student_id+');"><i class="fas fa-plus"></i>교재</button>' );
+			$nodeSpan.append( '<button type="button" style="padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="popup_student_memo(\''+student_id+'\');">메모</button>' );
+			if(  attendances.hasOwnProperty( student_id ) )
+			{
+				if( attendances[student_id] == 'a' )
+					$nodeSpan.append( '<button type="button" style="border: 1px solid rgba(23,97,253,0.5);color: #1761fd;padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="popup_attendances(\''+student_id+'\');">입실</button>' );
+				else
+					$nodeSpan.append( '<button type="button" style="border:1px solid  #FB3232;color: #FB3232;padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="popup_attendances(\''+student_id+'\');">퇴실</button>' );
+			}
+			else
+					$nodeSpan.append( '<button type="button" style="padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="popup_attendances(\''+student_id+'\');">출결</button>' );
+		},
+		click: function(event, data) {
+			if( data.targetType == "expander" ) return;
+			if( data.targetType != 'title' ) return;
+
+			var node = data.node;
+			if( node.key.indexOf( 'classroom-student-'  ) == -1 ) return;
+
+			var student_id = node.key.replace( "classroom-student-", "" );
+			location.href= "/study_books/student_index?student_id="+student_id;
+		},
+	});
+});
+
+function student_tree_all_select( checked ){
+	var current_target = $('ul#student_tree_tab li button.active').data('bs-target');
+
+	if( current_target == '#classroom_tree' )
+		$.ui.fancytree.getTree(".student_classroom_tree").selectAll( checked );
+
+	if( current_target == '#grade_tree' )
+		$.ui.fancytree.getTree(".student_grade_tree").selectAll( checked );
+}
+
+function student_tree_get_student_ids(){
+	var tree_css = ".student_classroom_tree";
+	var prefix = "classroom-student-";
+
+
+	var current_target = $('ul#student_tree_tab li button.active').data('bs-target');
+	if( current_target == '#grade_tree' )
+	{
+		tree_css = ".student_grade_tree";
+		prefix = "grade-student-";
+	}
+
+	var ids = '';
+	var selNodes = $.ui.fancytree.getTree(tree_css).getSelectedNodes();
+	for( var i=0 ; i<selNodes.length ; i++ )
+	{
+		var node = selNodes[i];
+		if( node.key.indexOf(prefix) == -1 ) continue;
+
+		if( ids != '' ) ids += ',';
+		ids += node.key.replace(prefix, '');
+	}
+
+	return ids;
+}
+
+function popup_student_memo( student_id ){
+	fx_popup_window( '/teacher_notes/index?student_id='+student_id, { name: 'popup_student_memo', width: window.screen.width/3, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
+}
+
+function popup_attendances( student_id ){
+	fx_layer_popup_v2( 'popup_attendances', '/students/popup_attendances?student_id='+student_id, 'modal-lg modal-dialog-centered' );
+}
+
+function show_attendance( yn ){
+	$.cookie( 'menu_attendance_yn', yn, {path: "/", domain: '.howhymath.com'});
+	$(".student_tree_html").html( '' );
+	get_student_tree_html();
+}
+                                </script>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9 white padding-zero">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="tabs">
+                                    <ul class="nav nav-pills nav-justified" role="tablist" style="width:70%;">
+                                        <li class="nav-item waves-effect waves-light">
+                                            <a class="nav-link active" href="/study_books/index" >교재학습</a>
+                                        </li>
+                                        <li class="nav-item waves-effect waves-light">
+                                            <a class="nav-link" href="/scoring_prints/index?sv_study_card_type_cd=exm" >출제마법사</a>
+                                        </li>
+                                        <li class="nav-item waves-effect waves-light">
+                                            <a class="nav-link" href="/scoring_prints/index?sv_study_card_type_cd=wrg" >오답학습</a>
+                                        </li>
+                                        <li class="nav-item waves-effect waves-light">
+                                            <a class="nav-link" href="/scoring_prints/index?sv_study_card_type_cd=rec" >맞춤학습</a>
+                                        </li>
+                                        <li class="nav-item waves-effect waves-light">
+                                            <a class="nav-link" href="/scoring_prints/index?sv_study_card_type_cd=hom" >숙제관리</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="study-management-header">
+                            <div class="left">
+                                <div><i data-feather="user"></i></div>
+                                <div>이하와(학생) 학생 학습교재</div>
+                                <select title="" name="book_student_id" id="fx-form-book_student_id" style="width: 220px; padding: 6px 14px;" class="form-control form-select"><option value="">-- 교재 선택 --</option><option value="297">초등수학 5-1 개념서</option><option value="298">초등수학 5-2 유형서</option><option value="299">초등수학 5-2 개념서</option><option value="300">초등수학 6-1 유형서</option><option value="306">하와이매쓰 중등 1-1 개념서</option><option value="307" selected>하와이매쓰 중등 2-2 유형서</option></select>			</div>
+                                <div class="right">
+                                    <button type="button" class="wbtn-line" style="border: 1px solid var(--Gray-08, #CCC);background:#FFF;width:140px;" onclick="location.href='/study_books/student_done?student_id=325';">완료 교재 보기</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="study-management-content" id="book_details_box" style="grid-template-columns: 1.8fr 8.2fr;">
+                                    <style>
+                                    .depth1 { text-align:left !important;padding-left:10px !important; }
+                                    .depth2 { text-align:left !important;padding-left:15px !important; }
+                                    .depth3 { text-align:left !important;padding-left:20px !important; }
+                                    .depth4 { text-align:left !important;padding-left:25px !important; }
+                                    
+                                    .depth1 > p { font-size:16px; margin:0 !important; }
+                                    .depth2 > p { font-size:16px; margin:0 !important; }
+                                    .depth3 > p { font-size:16px; margin:0 !important; }
+                                    .depth4 > p { margin:0 !important; }
+                                    
+                                    .setexam { font-weight:bold; color:black;font-size:16px; }
+                                    
+                                    </style>
+                                    
+                                    <div class="left" style="padding-top: 50px;">
+                                        <div class="img-container">
+                                            <img src="https://img.howhymath.com/f.hm/01/60/bk.352/book.png" alt="">
+                                        </div>
+                                        <div style="text-align:center;padding-top: 10px;">
+                                            진도 및 성취도
+                                        </div>
+                                        <div class="progress mb-3" style="margin-top: 10px;">
+                                            <div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: 3%" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <br>
+                                        </div>
+                                        <div class="level">
+                                            <div><img src="https://tutor.howhymath.com/app/img/circle_8CC33E.png" alt="">상</div>
+                                            <div><img src="https://tutor.howhymath.com/app/img/circle_EFB82D.png" alt="">중</div>
+                                            <div><img src="https://tutor.howhymath.com/app/img/circle_E04D2D.png" alt="">하</div>
+                                        </div>
+                                        <button class="gbtn-line" onclick="done_book_student_popup( 325, 352 ); return false;"> 학습완료 </button>
+                                        <button class="wbtn-line" onclick="delete_book_student_popup( 325, 352 ); return false;"> 교재지정해제 </button> 
+                                    </div>
+                                    <div class="right">
+                                        <div class="row" style="padding-bottom: 5px;">
+                                            <div class="col-md-12" style="text-align:right;">
+                                                <button type="button" class="mbtn" style="width:100px;" onclick="bulk_wrongnote_study_cards();">일괄오답</button> &nbsp;
+                                                <button type="button" class="mbtn" style="width:100px;" onclick="bulk_homework_study_cards();">일괄숙제</button> &nbsp;
+                                                <!-- button type="button" class="mbtn" style="width:100px;" onclick="bulk_move_study_cards();">일괄이동</button> &nbsp; -->
+                                                <button type="button" class="mbtn" style="width:100px;" onclick="bulk_scoring_study_cards();">일괄채점</button> &nbsp;
+                                                <button type="button" class="mbtn" style="width:100px;" onclick="bulk_print_study_cards();">일괄인쇄</button> &nbsp;
+                                                <button type="button" class="mbtn" style="width:100px;" onclick="bulk_print_study_cards_v2();">편집인쇄</button> &nbsp;
+                                            </div>
+                                        </div>
+                                        <table class="table table-striped mb-0 table-border-none">
+                                            <colgroup>
+                                                <col width="50">
+                                                <col>
+                                                <col width="120">
+                                                <col width="80">
+                                                <col width="110">
+                                                <col width="110">
+                                                <col width="110">
+                                            </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="">
+                                                    <!-- 241216 input 태그 label로 감싸기 시작 -->
+                                                    <!-- <input type="checkbox" name="toggle_all" onclick="fx_all_checkbox( 'toggle_all', 'ids');"> -->
+                                                    <label><input type="checkbox" name="toggle_all" onclick="fx_all_checkbox( 'toggle_all', 'ids');"></label>
+                                                    <!-- 241216 input 태그 label로 감싸기 끝-->
+                                                </th>
+                                                <th>단원별</th>
+                                                <th>인쇄/미리보기/공유</th>
+                                                <th>강의수업</th>
+                                                <th>채점</th>
+                                                <th>오답노트<br>만들기</th>
+                                                <th>숙제<br>넘기기</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td class="depth1">
+                                                    <p>Ⅰ. 도형의 성질</p>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td class="depth2">
+                                                    <p>01. 삼각형의 성질</p>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <!-- <td><input type="checkbox" name="ids" value="6753"></td> -->
+                                                <td>
+                                                    <label><input type="checkbox" name="ids" value="6753"></label>
+                                                </td>
+                                                <td class="depth3 setexam"><b>01. 이등변삼각형의 성질</b> - (49 문항)</td>
+                                                <td>
+                                                    <div class="btn-group btn-icon fx-fr">
+                                                        <button class="icon-box" onclick="print_study_cards( '6753' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                                        </button>
+                                                        <button class="icon-box" onclick="show_paper_html( '01. 이등변삼각형의 성질', '405743,405744,405745,405746,405747,405748,405749,405750,405751,405752,405753,405754,405755,405756,405757,405758,405759,405760,405761,405762,405763,405764,405765,405766,405767,405768,405769,405770,405771,405772,405773,405774,405775,405776,405777,405778,405779,405780,405781,405782,405783,405784,405785,405786,405787,405788,405789,405790,405791', '' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                                        </button>
+                                                        <button class="icon-box" onclick="clipboard_study_cards( '6753' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <button class="icon-box" onclick="show_tablet_preview( '01. 이등변삼각형의 성질', '이하와(학생)', '405743,405744,405745,405746,405747,405748,405749,405750,405751,405752,405753,405754,405755,405756,405757,405758,405759,405760,405761,405762,405763,405764,405765,405766,405767,405768,405769,405770,405771,405772,405773,405774,405775,405776,405777,405778,405779,405780,405781,405782,405783,405784,405785,405786,405787,405788,405789,405790,405791','' );">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="scoring_study_cards( '6753' );">채점</button>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <button class="check-btn " type="button" style="width: 100px;padding: 10px;font-size: 12px;" onclick="homework_study_cards( 6753 );">2024-11-26</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="ids" value="6754"></label>
+                                                    </td>
+                                                    <td class="depth3 setexam"><b>02. 이등변삼각형이 될 조건</b> - (11 문항)</td>
+                                                    <td>
+                                                        <div class="btn-group btn-icon fx-fr">
+                                                            <button class="icon-box" onclick="print_study_cards( '6754' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="show_paper_html( '02. 이등변삼각형이 될 조건', '405792,405793,405794,405795,405796,405797,405798,405799,405800,405801,405802', '' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="clipboard_study_cards( '6754' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="icon-box" onclick="show_tablet_preview( '02. 이등변삼각형이 될 조건', '이하와(학생)', '405792,405793,405794,405795,405796,405797,405798,405799,405800,405801,405802','' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="scoring_study_cards( '6754' );">채점</button>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class="check-btn " type="button" style="width: 100px;padding: 10px;font-size: 12px;" onclick="homework_study_cards( 6754 );">2024-11-26</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="ids" value="6753"></label></td>
+                                                    <td class="depth3 setexam"><b>01. 이등변삼각형의 성질</b> - (49 문항)</td>
+                                                    <td>
+                                                        <div class="btn-group btn-icon fx-fr">
+                                                                <button class="icon-box" onclick="print_study_cards( '6753' );">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                                                </button>
+                                                                <button class="icon-box" onclick="show_paper_html( '01. 이등변삼각형의 성질', '405743,405744,405745,405746,405747,405748,405749,405750,405751,405752,405753,405754,405755,405756,405757,405758,405759,405760,405761,405762,405763,405764,405765,405766,405767,405768,405769,405770,405771,405772,405773,405774,405775,405776,405777,405778,405779,405780,405781,405782,405783,405784,405785,405786,405787,405788,405789,405790,405791', 'o,o,o,x,o,o,x,o,o,o,o,o,o,x,o,o,o,o,o,o,o,x,o,o,o,o,o,x,o,o,o,o,o,o,o,o,o,o,o,o,o,o,x,o,o,o,o,o,o' );">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                                                </button>
+                                                                <button class="icon-box" onclick="clipboard_study_cards( '6753' );">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                                                </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="icon-box" onclick="show_tablet_preview( '01. 이등변삼각형의 성질', '이하와(학생)', '405743,405744,405745,405746,405747,405748,405749,405750,405751,405752,405753,405754,405755,405756,405757,405758,405759,405760,405761,405762,405763,405764,405765,405766,405767,405768,405769,405770,405771,405772,405773,405774,405775,405776,405777,405778,405779,405780,405781,405782,405783,405784,405785,405786,405787,405788,405789,405790,405791','o,o,o,x,o,o,x,o,o,o,o,o,o,x,o,o,o,o,o,o,o,x,o,o,o,o,o,x,o,o,o,o,o,o,o,o,o,o,o,o,o,o,x,o,o,o,o,o,o' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="scoring_study_cards( '6753' );">
+                                                            &nbsp;88점&nbsp;
+                                                        </button>
+                                                        <br>2024-12-16</td>
+                                                    <td>
+                                                        <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="wrongnote_study_cards( '6753' );">오답</button>
+                                                    </td>
+                                                    <td>2024-11-26</td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="depth2">
+                                                        <p>02. 삼각형의 외심과 내심</p>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="ids" value="6757"></label>
+                                                    </td>
+                                                    <td class="depth3 setexam"><b>01. 삼각형의 외심</b> - (19 문항)</td>
+                                                    <td>
+                                                        <div class="btn-group btn-icon fx-fr">
+                                                            <button class="icon-box" onclick="print_study_cards( '6757' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="show_paper_html( '01. 삼각형의 외심', '405819,405820,405821,405822,405823,405824,405825,405826,405827,405828,405829,405830,405831,405832,405833,405834,405835,405836,405837', '' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="clipboard_study_cards( '6757' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="icon-box" onclick="show_tablet_preview( '01. 삼각형의 외심', '이하와(학생)', '405819,405820,405821,405822,405823,405824,405825,405826,405827,405828,405829,405830,405831,405832,405833,405834,405835,405836,405837','' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="scoring_study_cards( '6757' );">채점</button>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class="check-btn " type="button" style="width: 100px;padding: 10px;font-size: 12px;" onclick="homework_study_cards( 6757 );">숙제</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="ids" value="6758"></label>
+                                                    </td>
+                                                    <td class="depth3 setexam"><b>02. 삼각형의 내심</b> - (27 문항)</td>
+                                                    <td>
+                                                        <div class="btn-group btn-icon fx-fr">
+                                                            <button class="icon-box" onclick="print_study_cards( '6758' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="show_paper_html( '02. 삼각형의 내심', '405838,405839,405840,405841,405842,405843,405844,405845,405846,405847,405848,405849,405850,405851,405852,405853,405854,405855,405856,405857,405858,405859,405860,405861,405862,405863,405864', '' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="clipboard_study_cards( '6758' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="icon-box" onclick="show_tablet_preview( '02. 삼각형의 내심', '이하와(학생)', '405838,405839,405840,405841,405842,405843,405844,405845,405846,405847,405848,405849,405850,405851,405852,405853,405854,405855,405856,405857,405858,405859,405860,405861,405862,405863,405864','' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="scoring_study_cards( '6758' );">채점</button>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class="check-btn " type="button" style="width: 100px;padding: 10px;font-size: 12px;" onclick="homework_study_cards( 6758 );">숙제</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="depth2">
+                                                        <p>03. 평행사변형의 성질</p>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="ids" value="6760"></label>
+                                                    </td>
+                                                    <td class="depth3 setexam"><b>01. 평행사변형의 성질</b> - (25 문항)</td>
+                                                    <td>
+                                                        <div class="btn-group btn-icon fx-fr">
+                                                            <button class="icon-box" onclick="print_study_cards( '6760' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="show_paper_html( '01. 평행사변형의 성질', '405865,405866,405867,405868,405869,405870,405871,405872,405873,405874,405875,405876,405877,405878,405879,405880,405881,405882,405883,405884,405885,405886,405887,405888,405889', '' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="clipboard_study_cards( '6760' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="icon-box" onclick="show_tablet_preview( '01. 평행사변형의 성질', '이하와(학생)', '405865,405866,405867,405868,405869,405870,405871,405872,405873,405874,405875,405876,405877,405878,405879,405880,405881,405882,405883,405884,405885,405886,405887,405888,405889','' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="scoring_study_cards( '6760' );">채점</button>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class="check-btn " type="button" style="width: 100px;padding: 10px;font-size: 12px;" onclick="homework_study_cards( 6760 );">숙제</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="ids" value="6761"></label>
+                                                    </td>
+                                                    <td class="depth3 setexam"><b>02. 평행사변형이 되는 조건</b> - (11 문항)</td>
+                                                    <td>
+                                                        <div class="btn-group btn-icon fx-fr">
+                                                            <button class="icon-box" onclick="print_study_cards( '6761' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="show_paper_html( '02. 평행사변형이 되는 조건', '405890,405891,405892,405893,405894,405895,405896,405897,405898,405899,405900', '' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="clipboard_study_cards( '6761' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="icon-box" onclick="show_tablet_preview( '02. 평행사변형이 되는 조건', '이하와(학생)', '405890,405891,405892,405893,405894,405895,405896,405897,405898,405899,405900','' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="scoring_study_cards( '6761' );">채점</button>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class="check-btn " type="button" style="width: 100px;padding: 10px;font-size: 12px;" onclick="homework_study_cards( 6761 );">숙제</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="ids" value="6762"></label>
+                                                    </td>
+                                                    <td class="depth3 setexam"><b>03. 평행사변형과 넓이</b> - (7 문항)</td>
+                                                    <td>
+                                                        <div class="btn-group btn-icon fx-fr">
+                                                            <button class="icon-box" onclick="print_study_cards( '6762' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="show_paper_html( '03. 평행사변형과 넓이', '405901,405902,405903,405904,405905,405906,405907', '' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="clipboard_study_cards( '6762' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="icon-box" onclick="show_tablet_preview( '03. 평행사변형과 넓이', '이하와(학생)', '405901,405902,405903,405904,405905,405906,405907','' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="scoring_study_cards( '6762' );">채점</button>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class="check-btn " type="button" style="width: 100px;padding: 10px;font-size: 12px;" onclick="homework_study_cards( 6762 );">숙제</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="depth2">
+                                                        <p>04. 여러 가지 사각형</p>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="ids" value="6764"></label>
+                                                    </td>
+                                                    <td class="depth3 setexam"><b>01. 여러 가지 사각형</b> - (35 문항)</td>
+                                                    <td>
+                                                        <div class="btn-group btn-icon fx-fr">
+                                                            <button class="icon-box" onclick="print_study_cards( '6764' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="show_paper_html( '01. 여러 가지 사각형', '405908,405909,405910,405911,405912,405913,405914,405915,405916,405917,405918,405919,405920,405921,405922,405923,405924,405925,405926,405927,405928,405929,405930,405931,405932,405933,405934,405935,405936,405937,405938,405939,405940,405941,405942', '' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="clipboard_study_cards( '6764' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="icon-box" onclick="show_tablet_preview( '01. 여러 가지 사각형', '이하와(학생)', '405908,405909,405910,405911,405912,405913,405914,405915,405916,405917,405918,405919,405920,405921,405922,405923,405924,405925,405926,405927,405928,405929,405930,405931,405932,405933,405934,405935,405936,405937,405938,405939,405940,405941,405942','' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="scoring_study_cards( '6764' );">채점</button>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class="check-btn " type="button" style="width: 100px;padding: 10px;font-size: 12px;" onclick="homework_study_cards( 6764 );">숙제</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="ids" value="6765"></label>
+                                                    </td>
+                                                    <td class="depth3 setexam"><b>02. 사각형 사이의 관계</b> - (10 문항)</td>
+                                                    <td>
+                                                        <div class="btn-group btn-icon fx-fr">
+                                                            <button class="icon-box" onclick="print_study_cards( '6765' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="show_paper_html( '02. 사각형 사이의 관계', '405943,405944,405945,405946,405947,405948,405949,405950,405951,405952', '' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="clipboard_study_cards( '6765' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="icon-box" onclick="show_tablet_preview( '02. 사각형 사이의 관계', '이하와(학생)', '405943,405944,405945,405946,405947,405948,405949,405950,405951,405952','' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="scoring_study_cards( '6765' );">채점</button>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class="check-btn " type="button" style="width: 100px;padding: 10px;font-size: 12px;" onclick="homework_study_cards( 6765 );">숙제</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="ids" value="6766"></label>
+                                                    </td>
+                                                    <td class="depth3 setexam"><b>03. 평행선과 넓이</b> - (9 문항)</td>
+                                                    <td>
+                                                        <div class="btn-group btn-icon fx-fr">
+                                                            <button class="icon-box" onclick="print_study_cards( '6766' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="show_paper_html( '03. 평행선과 넓이', '405953,405954,405955,405956,405957,405958,405959,405960,405961', '' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="clipboard_study_cards( '6766' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="icon-box" onclick="show_tablet_preview( '03. 평행선과 넓이', '이하와(학생)', '405953,405954,405955,405956,405957,405958,405959,405960,405961','' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="scoring_study_cards( '6766' );">채점</button>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class="check-btn " type="button" style="width: 100px;padding: 10px;font-size: 12px;" onclick="homework_study_cards( 6766 );">숙제</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="depth1">
+                                                        <p>Ⅱ. 도형의 닮음과 피타고라스 정리</p>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="depth2">
+                                                        <p>05. 도형의 닮음</p>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="ids" value="6769"></label>
+                                                    </td>
+                                                    <td class="depth3 setexam"><b>01. 도형의 닮음</b> - (33 문항)</td>
+                                                    <td>
+                                                        <div class="btn-group btn-icon fx-fr">
+                                                            <button class="icon-box" onclick="print_study_cards( '6769' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="show_paper_html( '01. 도형의 닮음', '405962,405963,405964,405965,405966,405967,405968,405969,405970,405971,405972,405973,405974,405975,405976,405977,405978,405979,405980,405981,405982,405983,405984,405985,405986,405987,405988,405989,405990,405991,405992,405993,405994', '' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                                            </button>
+                                                            <button class="icon-box" onclick="clipboard_study_cards( '6769' );">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="icon-box" onclick="show_tablet_preview( '01. 도형의 닮음', '이하와(학생)', '405962,405963,405964,405965,405966,405967,405968,405969,405970,405971,405972,405973,405974,405975,405976,405977,405978,405979,405980,405981,405982,405983,405984,405985,405986,405987,405988,405989,405990,405991,405992,405993,405994','' );">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="check-btn" style="width: 100px;padding: 10px;font-size: 12px;" onclick="scoring_study_cards( '6769' );">채점</button>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class="check-btn " type="button" style="width: 100px;padding: 10px;font-size: 12px;" onclick="homework_study_cards( 6769 );">숙제</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<script>
+
+$( document ).ready(function() {
+	// get_student_tree_html();
+	load_book_details_box( 307 );
+
+    $('#fx-form-book_student_id').on('change', function() {
+		if( $(this).val() == '' ) return;
+
+		location.href='/study_books/student_index?student_id=325&book_student_id=' + $(this).val();
+		// load_book_details_box( $(this).val() );
+    });
+});
+
+function get_student_tree_html()
+{
+	$(".student_tree_html").html( '' );
+	$.ajax({
+		type: "GET",
+		url: "/students/student_tree_html",
+		data: "mode=study.book",
+		async : false,
+		success: function (response) {
+			$(".student_tree_html").html( response );
+		}
+	});
+}
+
+function load_book_details_box( book_student_id )
+{
+	fx_load_widget( "book_details_box", '/study_books/book_details?book_student_id='+book_student_id );
+}
+
+function delete_book_student_popup( student_id, book_id )
+{
+	fx_layer_popup_v2( 'delete_book_student_popup', '/study_books/delete_book_student_popup?student_id='+student_id + '&book_id=' + book_id, "" );
+}
+
+function done_book_student_popup( student_id, book_id )
+{
+	fx_layer_popup_v2( 'done_book_student_popup', '/study_books/done_book_student_popup?student_id='+student_id + '&book_id=' + book_id, "" );
+}
+
+function popup_book_student( student_id )
+{
+    fx_layer_popup_v2( 'popup_book_student', '/study_books/popup_book_student?student_id='+student_id, 'modal-lg modal-dialog-centered' );
+}
+
+</script>
+
+			</div>
+		</div>
+	</div>
+    <footer class='footer'>
+        <div class="top">
+            <div class="left">
+                <div class='footer-content'>
+                    <span class="footer_logo"><img src="../assets/images/footer_logo.svg" alt="하와이매쓰" /></span>
+                    <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                    <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+                </div>
+            </div>
+            <div class='right'>
+                <div class='footer-content'>
+                    <div id="footer-dropbox">
+                        <select id="footer-dropbox-content" class="form-control form-select">
+                            <option value="">Family Site</option>
+                            <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                            <option value="https://www.fren.co.kr">프렌매쓰</option>
+                        </select>
+                        <script>
+                            document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                                let link = e.target.value;
+                                if(link)
+                                    window.open(link, '_blank');
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='left'>
+            <div class='footer-content'>
+                <div><b>하와이컴퍼니(주)</b></div>
+                <div class='vertical-line'></div>
+                <div><b>HOWHY COMPANY</b></div>
+                <div class='vertical-line'></div>
+                <div><b>대표이사 : 박종화</b></div>
+            </div>
+    
+            <div class='footer-content'>
+                <div><b>사업자등록번호</b> 760-87-02737</div>
+                <div class='vertical-line'></div>
+                <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+                <div class='vertical-line'></div>
+                <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+            </div>
+            <div class='footer-content'>
+                <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+            </div>
+            <div class='footer-content'>
+                2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+<script src="https://img.howhymath.com/custom/custom.js?v=1734070436"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	cdml_mathjax_init();
+});
+
+function edit_teacher()
+{
+    fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+}
+
+function edit_password()
+{
+    fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+}
+
+function menu_disable_delete( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    var words = node.key.split('-');
+    if( words[1] != '0' ) return true;
+    return false;
+}
+
+function menu_disable_add( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    if( node.getLevel() == 2 ) return true;
+    return false;
+}
+
+function menu_disable_edit( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    return false;
+}
+
+
+</script>
+</body>
+</html>
