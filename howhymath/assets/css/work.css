@@ -33,6 +33,7 @@ body{
   font-family: "Noto Sans KR", "SUIT", "Pretendard", sans-serif;
   overflow-x: auto !important;
   background: #F4F4F4;
+  letter-spacing: -1px;
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
   color: inherit;
@@ -1441,8 +1442,8 @@ line-height: normal;
   margin: 30px 0 0;
 }
 
-.pagination>li.page-item{
-  .page-link{
+.pagination>li{
+  .page-link, a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1451,28 +1452,28 @@ line-height: normal;
     padding: 0;
   }
   &:nth-of-type(1){
-    .page-link{
+    .page-link, a{
       font-size: 0;
       background: #efefef url(../img/icon_undo_end.svg) no-repeat center / 14px auto;
       border-radius: 50%;
     }
   }
   &:nth-of-type(2){
-    .page-link{
+    .page-link, a{
       font-size: 0;
       background: #efefef url(../img/icon_undo.svg) no-repeat center / 14px auto;
       border-radius: 50%;
     }
   }
   &:nth-last-of-type(2){
-    .page-link{
+    .page-link, a{
       font-size: 0;
       background: #efefef url(../img/icon_redo.svg) no-repeat center / 14px auto;
       border-radius: 50%;
     }
   }
   &:nth-last-of-type(1){
-    .page-link{
+    .page-link, a{
       font-size: 0;
       background: #efefef url(../img/icon_redo_end.svg) no-repeat center / 14px auto;
       border-radius: 50%;
@@ -1496,7 +1497,7 @@ line-height: normal;
 .pagination>li>a:focus,
 .pagination>li>span:focus {
   color: #222;
-  background-color: #fff;
+  /* background-color: #fff; */
   box-shadow: none;
 }
 
@@ -5637,6 +5638,60 @@ hr {
 
 .ccctex {
 	font-family: "Nanum Gothic" !important;
+}
+
+/****** 메모 팝업 ******/
+html:has(.page-memo){
+  min-width: auto;
+}
+.page-memo{
+  .study-management-header{
+    width: 100%;
+    padding-top: 20px;
+    word-break: keep-all;
+    .input-group{
+      .form-control{
+        background: #fff;
+        border: 1px solid #c5c5c5;
+        border-right-width: 0;
+      }
+      button{
+        background-color: #fff;
+        border: 1px solid #c5c5c5;
+        border-left-width: 0;
+        .fas{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .fa-search:before{
+          content: '';
+          display: block;
+          width: 20px;
+          height: 20px;
+          background: url(../img/icon_search_gray.svg) no-repeat center / cover;
+        }
+      }
+    }
+    & + hr{display: none;}
+  }
+  table{
+    margin-top: 20px;
+  }
+  textarea{
+    height: 160px;
+    padding: 15px;
+  }
+  .mbtn {
+    border-radius: 5px;
+    background: var(--main-color-blue);
+    height: 40px;
+    font-family: 'SUIT';
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+    padding: 10px;
+  }
 }
 
 /*** 반응형 ***/

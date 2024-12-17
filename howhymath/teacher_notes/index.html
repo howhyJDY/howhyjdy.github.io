@@ -1,0 +1,181 @@
+<!-- card > 메모 윈도우 팝업 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+	<title>하와이매쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+
+	<!-- base css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" />
+
+	<!-- site css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734396088"/>
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734396088" />
+    <!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734396088" /-->
+    <!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734396088" /> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/work.css" />
+
+
+	<!-- base javascript -->
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+
+	<!-- site javascript -->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			showMathMenu: false,
+			tex2jax: { displayMath: [ ["$$","$$"] ] },
+			"HTML-CSS": { fonts: ["Latin-Modern"] }
+		});
+	</script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1734396088"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1734396088"></script>
+</head>
+
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+<body data-layout="horizontal">
+<div style="display:none">$$\require{cancel}$$</div>
+	<div class="page-wrapper" style="padding:0;width:100% !important;">
+        <!--241213 클래스 page-memo 추가 시작-->
+		<div class="page-content page-memo">
+        <!--241213 클래스 page-memo 추가 끝-->
+			<div class="container-fluid">
+			<div class="row">
+                <div class="col-sm-12 white">
+                    <div class="study-management-header">
+                        <div class="left">이하와(학생) 학생 메모장</div>
+                        <div class="right">
+                            <form id="form_search" name="form_no_fx" action="/teacher_notes/index?student_id=325" >
+                            <input type="hidden" name="student_id" value="325">
+                                <div class="input-group">
+                                    <input type="text" title="" name="sv_keyword" value="" id="fx-form-sv_keyword" placeholder="검색어" class="form-control" />						<button class="mbtn" type="submit"><i class="fas fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <hr> 
+                    <form id="form_create" method="post" action="/teacher_notes/create?student_id=325">
+                        <input type="hidden" name="student_id" value="325">
+                        <table style="border:0;width:100%;">
+                            <colgroup>
+                                <col width="80%">
+                                <col width="20%">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td style='text-align:left;'>
+                                    <div><textarea title="" name="contents" id="fx-form-contents" rows="2" class="form-control summernote"></textarea></div>
+                                    <div class="note note-error" id="fx-error-contents" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>				</td>
+                                <td style="padding:10px;">
+                                    <button type="submit" class="mbtn w-100">저장</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped mb-0 table-border-none">
+                                    <colgroup>
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        </tbody>
+                                    </table>
+                                </div> 
+                                <div class="fx-ac">
+                                    <ul class='pagination'>
+                                        <li><a href="#">&lt;&lt;</a></li>
+                                        &nbsp;
+                                        <li><a href="#">&lt;</a></li>
+                                        &nbsp;
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        &nbsp;
+                                        <li><a href="#">&gt;</a></li>
+                                        &nbsp;
+                                        <li><a href="#">&gt;&gt;</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--div class="modal-bottom-btn-box">
+                                <button type="button" class="cancle-btn" onclick="window.close();">닫기</button>
+                            </div-->
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+            $( document ).ready(function() {
+            });
+
+            $( ".item-update" ).on('click', function() { 
+                var $this = $(this);
+
+                fx_layer_popup_v2( 'item_update_popup', $this.data('url'), '' );
+            });
+
+            $( ".item-remove" ).on('click', function() { 
+                var $this = $(this);
+
+                fx_remove_link($this.data('url'));
+            });
+
+            </script>
+
+        </div>
+    </div>
+</div>
+	<!--
+	<footer class="footer text-center text-sm-start" style="z-index: 999;">
+	<div class="boxed-footer">
+		하와이컴퍼니(주)ㅣHOWHY COMPANY ㅣ대표이사 : 박종화 l 사업자등록번호 760-87-02737 <br>
+		본사 : 서울시 강남구 선릉로 551 새롬빌딩 5F ㅣ 하와이수학연구소 : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호
+		<br>
+		e-mail.<a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a> l 02-6953-0757 l 통신판매신고 : 제 2024-서울강남-03953호
+		<span class="text-muted d-none d-sm-inline-block float-end">
+			<a href="/users/agreement" target=_blank>서비스 이용약관</a>
+			<a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+		</span>
+		<div style="padding-top:7px;">
+		2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+		<div>
+	</div>
+</footer>
+
+	-->
+
+<script src="https://img.howhymath.com/custom/custom.js?v=20231031"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	cdml_mathjax_init();
+});
+</script>
+</body>
+</html>
