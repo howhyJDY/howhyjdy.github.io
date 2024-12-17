@@ -5859,14 +5859,19 @@ html:has(.page-memo){
 /****** 개별학습 > 교재학습 > 학습중 > 모바일/태블릿 미리보기 팝업 ******/
 .page-show-tablet-container{
   #wrapper>.row p{
-    padding: 60px 30px 40px !important;
+    padding: 60px 60px 40px !important;
     margin-bottom: 0;
+    b{
+      padding: 0 3px 0 50px;
+      &:first-child{padding-left: 0;}
+    }
     & ~ .row>div{
       padding-top: 0 !important;
     }
   }
 }
 #questions_frame{
+  /* 아이프레임 내부스타일로 2배 적용되어있음 */
   /* transform: none; */
 }
 
