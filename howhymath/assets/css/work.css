@@ -5856,6 +5856,21 @@ html:has(.page-memo){
   }
 }
 
+/****** 개별학습 > 교재학습 > 학습중 > 모바일/태블릿 미리보기 팝업 ******/
+.page-show-tablet-container{
+  #wrapper>.row p{
+    padding: 60px 30px 40px !important;
+    margin-bottom: 0;
+    & ~ .row>div{
+      padding-top: 0 !important;
+    }
+  }
+}
+#questions_frame{
+  transform: none;
+  height: calc(100vh - 100px);
+}
+
 /*** 반응형 ***/
 /* @media (min-width: 992px) {
   .topbar .navigation-menu>li>a{min-height: 52px;}
