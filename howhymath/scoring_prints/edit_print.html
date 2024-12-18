@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이매쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+
+	<!-- base css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" />
+
+	<!-- site css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734486606"/>
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734486606" />
+    <!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734486606" /-->
+    <!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734486606" /> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/work.css" />
+
+
+	<!-- base javascript -->
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+
+	<!-- site javascript -->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			showMathMenu: false,
+			tex2jax: { displayMath: [ ["$$","$$"] ] },
+			"HTML-CSS": { fonts: ["Latin-Modern"] }
+		});
+	</script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1734486606"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1734486606"></script>
+</head>
+
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+<body data-layout="horizontal">
+<div style="display:none">$$\require{cancel}$$</div>
+	<div class="page-wrapper" style="padding:0;width:100% !important;">
+		<!-- 241213 page-edit-print 클래스 추가 -->
+        <div class="page-content page-edit-print">
+			<div class="container-fluid">
+			<style>
+.depth1 { text-align:left !important;padding-left:10px !important; }
+.depth2 { text-align:left !important;padding-left:15px !important; }
+.depth3 { text-align:left !important;padding-left:20px !important; }
+.depth4 { text-align:left !important;padding-left:25px !important; }
+
+.depth1 > p { font-size:16px; margin:0 !important; }
+.depth2 > p { font-size:16px; margin:0 !important; }
+.depth3 > p { font-size:16px; margin:0 !important; }
+.depth4 > p { margin:0 !important; }
+
+.setexam { font-weight:bold; color:black;font-size:16px; }
+.check-btn { width: 100px; padding: 10px; font-size: 12px; }
+
+</style>
+
+<div class="row">
+	<div class="col-md-8 white" style="padding:10px;">
+		<div class='row' style="padding-bottom: 5px;">
+			<div class='col-md-12' style="text-align:right;">
+				<button type="button" class="mbtn" style="width:100px;" onclick="bulk_print_study_cards();">일괄인쇄</button> &nbsp;
+			</div>
+		</div>
+		<table class="table table-striped mb-0 table-border-none">
+			<colgroup>
+				<col width="20%">
+				<col width="30">
+				<col>
+				<col width="50">
+				<col width="20%">
+			</colgroup>
+		<thead>
+			<tr>
+				<th>앞 PDF</th>
+				<th class="">
+                    <!-- 241213 인풋 label 태그로 감싸기 시작 -->
+                    <!-- <input type="checkbox" id="" name="toggle_all" onclick="fx_all_checkbox( 'toggle_all', 'ids');" /> -->
+                    <label><input type="checkbox" id="" name="toggle_all" onclick="fx_all_checkbox( 'toggle_all', 'ids');" /></label>
+                    <!-- 241213 인풋 label 태그로 감싸기 끝 -->
+                </th>
+				<th>시험지명</th>
+				<th>학생</th>
+				<th>뒤 PDF</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td>표지</td>
+				<td><button type="button" class="check-btn" id="pdf_start" onclick="set_pdf( '', 'b1' );">PDF등록</button></td>
+				<td></td>
+				<td></td>
+			</tr>
+						<tr>
+				<td><button type="button" class="check-btn"  id="pdf_before_5708" onclick="set_pdf( '5708', 'b1' );">PDF등록</button></td>
+				<td>
+                    <!-- 241213 인풋 label 태그로 감싸기 시작 -->
+                    <!-- <input type="checkbox" name="ids" value="5708" checked /> -->
+                    <label><input type="checkbox" name="ids" value="5708" checked /></label>
+                    <!-- 241213 인풋 label 태그로 감싸기 끝 -->
+                </td>
+				<td style="text-align:left;">테스트 시험지 2회차(20 문항)</td>
+				<td>정다영(학생)</td>
+				<td><button type="button" class="check-btn" id="pdf_after_5708" onclick="set_pdf( '5708', 'a1' );">PDF등록</button></td>
+			<tr>
+						<tr>
+				<td></td>
+				<td>마감지 </td>
+				<td><button type="button" class="check-btn" id="pdf_end" onclick="set_pdf( '', 'a1' );">PDF등록</button></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="col-md-4 white" style="width:31%;padding:10px;margin-left:10px;text-align:center;">
+		<div class="row">
+			<div class="col-md-6 fx_bp2">
+				<select title="" name="sv_category1" id="fx-form-sv_category1" class="form-control form-select"><option value="">--분류--</option></select>			</div>
+			<div class="col-sm-6 fx_bp2">
+				<div class="input-group">
+					<input type="text" title="" name="sv_keyword" value="" id="fx-form-sv_keyword" placeholder="검색어" class="form-control" />					<button class="mbtn" type="button" onclick="search_print_pdfs();"><i class="fas fa-search"></i></button>
+				</div>
+			</div>
+		</div>
+		<div class="table-responsive" style="" id="print_pdf_box">
+		</div>
+	</div>
+</div>
+
+<form id="form_print" method="post" action="/scoring_prints/bundle_print_v2">
+<input type='hidden' name="ids" id="ids_input"  value="">
+<input type='hidden' name="pdf_start" id="pdf_start_input"  value="">
+<input type='hidden' name="pdf_end" id="pdf_end_input"  value="">
+<input type='hidden' name="pdf_before_5708" id="pdf_before_5708_input"  value="">
+<input type='hidden' name="pdf_after_5708" id="pdf_after_5708_input"  value="">
+</form>
+
+		
+<script>
+$( document ).ready(function() {
+	search_print_pdfs();
+});
+
+function bulk_print_study_cards()
+{
+	var ids = fx_get_checkboxes('ids');
+	if( ids == "" )
+	{
+		alert("시험지를 선택해주세요.");
+		return false;
+	}
+
+	$("#ids_input").val( ids );
+
+	fx_file_submit($("#form_print"));
+}
+
+function search_print_pdfs()
+{
+	var sv_keyword = $('#fx-form-sv_keyword').val();
+	var sv_category1  = encodeURI( $('#fx-form-sv_category1 :selected').val() );
+
+	fx_load_widget( "print_pdf_box", '/print_pdfs/widget?sv_keyword='+sv_keyword + "&sv_category1=" + sv_category1 );
+}
+
+function set_pdf( category_id, seq )
+{
+	var btn_id = '';
+	var input_id = '';
+	if( category_id == '' )
+	{
+		if( seq == 'a1' ) { btn_id = '#pdf_end';   input_id = '#pdf_end_input'; }
+		if( seq == 'b1' ) { btn_id = '#pdf_start'; input_id = '#pdf_start_input'; }
+	}
+	else
+	{
+		if( seq == 'a1' ) { btn_id = '#pdf_after_' + category_id;  input_id = '#pdf_after_'+category_id+'_input'; }
+		if( seq == 'b1' ) { btn_id = '#pdf_before_' + category_id; input_id = '#pdf_before_'+category_id+'_input'; }
+	}
+
+
+	if( btn_id == '' )
+		return;
+
+	if( $(btn_id).html() == 'PDF등록' )
+	{
+		var print_pdf_id = $('input[name="print_pdf_id"]:checked').val();
+		var print_pdf_name = $('input[name="print_pdf_id"]:checked').data('name');
+
+		if( fx_empty( print_pdf_id ) )
+		{
+			alert( '목록에서 PDF을 선택해주세요.');
+			return;
+		}
+
+		$(btn_id).html( print_pdf_name );
+		$(btn_id).css( 'backgroundColor', '#d7e569' );
+		$(input_id).val( print_pdf_id );
+	}
+	else
+	{
+		$(btn_id).html( 'PDF등록' );
+		$(btn_id).css( 'backgroundColor', '#9FDCBC' );
+		$(input_id).val( '' );
+	}
+
+}
+
+function init_pdf( btn_id, input_id, print_pdf_name, print_pdf_id )
+{
+		$(btn_id).html( print_pdf_name );
+		$(btn_id).css( 'backgroundColor', '#d7e569' );
+		$(input_id).val( print_pdf_id );
+}
+
+</script>
+
+			</div>
+		</div>
+	</div>
+	<!--
+	<footer class="footer text-center text-sm-start" style="z-index: 999;">
+	<div class="boxed-footer">
+		하와이컴퍼니(주)ㅣHOWHY COMPANY ㅣ대표이사 : 박종화 l 사업자등록번호 760-87-02737 <br>
+		본사 : 서울시 강남구 선릉로 551 새롬빌딩 5F ㅣ 하와이수학연구소 : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호
+		<br>
+		e-mail.<a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a> l 02-6953-0757 l 통신판매신고 : 제 2024-서울강남-03953호
+		<span class="text-muted d-none d-sm-inline-block float-end">
+			<a href="/users/agreement" target=_blank>서비스 이용약관</a>
+			<a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+		</span>
+		<div style="padding-top:7px;">
+		2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+		<div>
+	</div>
+</footer>
+
+	-->
+
+<script src="https://img.howhymath.com/custom/custom.js?v=20231031"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	cdml_mathjax_init();
+});
+</script>
+</body>
+</html>
