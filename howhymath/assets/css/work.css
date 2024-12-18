@@ -2106,13 +2106,13 @@ span.fancytree-active span.fancytree-title {
   background: var(--Gray-10, #F1F1F1);
 } */
 
-/* 개별학습>교재학습과 동일한 레이아웃(탭영역) */
+/* 개별학습>교재학습, 숙제관리와 동일한 레이아웃(탭영역) */
 .col-sm-9:has(.tabs){
   padding-bottom: 60px !important;
   &>.row>.col-sm-12{background: #f4f4f4;}
   &>.row>.col-sm-12:has(.table-responsive){background: #fff;}
   &>.row:has(.search-head){
-    padding: 70px 30px 0 !important;
+    padding: 30px 30px 0 !important;
     .search-head + div form .input-group{
       .form-control{
         background: #fff;
@@ -2128,7 +2128,10 @@ span.fancytree-active span.fancytree-title {
   }
   .card-body{padding: 0;}
   .table-responsive{
-    padding: 0 30px !important;
+    /* padding: 0 30px !important; */
+    width: calc(100% - 60px);
+    margin: 0 auto;
+    &>table{min-width: 970px;}
 
     /* 컬러 재정의 */
     --table-main-color: #e6e6e6;
@@ -2173,6 +2176,7 @@ span.fancytree-active span.fancytree-title {
         border-color: transparent transparent transparent var(--main-color-blue);
       }
     }
+    .btn-group{gap: 5px;}
     button{
       border-radius: 5px;
       border: 2px solid var(--main-color-blue);
@@ -2180,6 +2184,38 @@ span.fancytree-active span.fancytree-title {
       svg{
         width: 20px;
         height: 20px;
+      }
+      &.check-btn{
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 10px 9px !important;
+        width: auto !important;
+        border-width: 0;
+        font-family: 'SUIT';
+        color: #0e495a;
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 600;
+        background: #d7f1f0;
+        &::after{
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 3px 0px 3px 5.196px;
+          border-color: transparent transparent transparent var(--main-color-blue);
+        }
+      }
+      &.wbtn-line{
+        border-width: 0;
+        padding: 10px 9px !important;
+        color: #fff;
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 600;
+        background: #555;
       }
     }
   }
@@ -2330,7 +2366,7 @@ span.fancytree-active span.fancytree-title {
     }
     .row{gap: 20px;}
   }
-} 클래스 미사용 */
+} page-study-books 클래스 미사용 */
 .container-fluid:has(.card) {
   & > .row:has(.col-sm-12) {
       padding: 0 !important;
@@ -2351,6 +2387,7 @@ span.fancytree-active span.fancytree-title {
   width: calc(100% - 60px);
   margin: 0 auto;
   border-bottom: 1px solid var(--main-color-blue);
+  &~hr{display: none;}
 }
 
 .study-management-header > .left {
@@ -2366,18 +2403,25 @@ span.fancytree-active span.fancytree-title {
   .form-select{margin-left: 5px;}
 }
 
-.study-management-header >  div > button {
+.study-management-header > div > button {
   border: none !important;
   border-radius: 6px;
-  background: var(--main-color-blue2) !important;
+  width: 110px !important;
   color: #fff;
   font-family: 'SUIT';
-  width: 127px !important;
-  height: 35px;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 1;
+  padding: 5px 10px;
+  &.wbtn-line{
+    height: 35px;
+    background: var(--main-color-blue2) !important;
+  }
+  &.mbtn{
+    background: var(--main-color-blue) !important;
+    height: 40px;
+  }
 }
 
 .study-management-sub-header{
@@ -2523,6 +2567,7 @@ span.fancytree-active span.fancytree-title {
   .mbtn {
     border-radius: 5px;
     background: var(--main-color-blue);
+    width: 110px !important;
     height: 40px;
     font-family: 'SUIT';
     font-weight: 600;
@@ -2569,7 +2614,7 @@ span.fancytree-active span.fancytree-title {
       font-size: 12px;
       line-height: 2;
       text-align: center;
-      .check-btn{
+      /* .check-btn{
         display: inline-flex;
         align-items: center;
         gap: 5px;
@@ -2591,7 +2636,7 @@ span.fancytree-active span.fancytree-title {
           border-width: 3px 0px 3px 5.196px;
           border-color: transparent transparent transparent var(--main-color-blue);
         }
-      }
+      }중복으로 인한 삭제 */
       .btn-group{gap: 5px;}
       &.depth3{
         font-size: 14px;
@@ -5666,6 +5711,26 @@ span.plus {
 }
 
 /* <!-- input type date placeholder */
+input[type='date']{
+    position: relative;
+    background: url(../img/icon_calendar.png) no-repeat center right 10px / 19px auto;
+    padding-right: 10px;
+    border-radius: 6px;
+}
+input[type='date']::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+}
+input[type="date"]::-webkit-clear-button,
+input[type="date"]::-webkit-inner-spin-button { 
+  display: none;
+} 
+
 input[type="date"]::before {
     content: attr(data-placeholder) !important;
     width: 100% !important;
