@@ -431,6 +431,8 @@ line-height: normal;
   .modal-header > .left{
     font-size: 16px;
     color: #333;
+    max-width: calc(100% - 40px);
+    word-break: keep-all;
   }
   /* .modal-body:has(>.row>.col-sm-12){
     padding: 25px;
@@ -507,6 +509,12 @@ line-height: normal;
     padding: 0 !important;
     background: #f2f2f2;
     border-radius: 0 0 4px 4px;
+  }
+
+  #copy_btn{
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 }
 
@@ -4335,9 +4343,13 @@ td > .calendar-box{
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   padding-left: 20px;
   word-break: keep-all;
+  .m-t-xs{
+    margin-top: 5px;
+    &:first-of-type{margin-top: 10px;}
+  }
 }
 /* minimodal 5개 END */
 
@@ -6175,9 +6187,8 @@ input[type="month"]:valid::before { display: none  !important;}
     line-height: normal;
 } 중복 삭제 */
 
-.modal-lg {
-    min-width: 900px;
-}
+/* 팝업 반응형 삭제 */
+.modal-lg{min-width: 900px;}
 
 hr {
     margin: 5px 0;
@@ -6315,12 +6326,58 @@ html:has(.page-memo){
   &>.row>.col-md-6{padding: 5px 15px;}
 }
 
+/******* 개별학습 > 교재학습 > 학습중 > 채점하기 & 공유하기 팝업 *******/
+#scoring_study_cards{
+  .modal-dialog {max-width: 580px;}
+  .modal-grid .left .left-header{gap: 5px;}
+  .modal-grid .left .left-bottom .result-container .content{gap: 5px;}
+  .modal-grid .left .left-bottom .btn-box{margin: 0 auto;}
+  .modal-bottom-btn-box{width: 100%;}
+
+  .alert {
+    width: calc(100% + 218px);
+    margin: 10px 0 !important;
+    padding: 0;
+    .desc-box{padding: 20px;}
+    .mbtn {
+      border-radius: 4px;
+      background: var(--main-color-green);
+      color: #fff;
+      height: 45px;
+      font-weight: 600;
+      line-height: 1;
+    }
+  }
+}
+#popup_score_table_box{
+  height: 100%;
+  .table-scoll{
+    max-height: 520px !important;
+    border: 1px solid var(--Gray-09, #E5E5E5);
+  }
+  .table th {
+    &:first-child{border-radius: 0;}
+  }
+}
+
+/******* 개별학습 > 교재학습 > 학습중 > 오답시험지 출제 팝업 *******/
+#wrongnote_study_cards{
+  label:has(input[type=checkbox]){
+    width: auto;
+    background-size: 15px auto;
+    padding-left: 20px;
+    background-position: center left;
+    line-height: 1;
+  }
+  .table-scoll{margin-bottom: 0;}
+}
+
 #questions_frame{
   /* 아이프레임 내부스타일로 2배 적용되어있음 */
   /* transform: none; */
 }
 
-/****** 학습자료 > 교재 > 학생지정정 팝업 ******/
+/****** 학습자료 > 교재 > 학생지정 팝업 ******/
 #add_myclass{
   .col-md-7{position: relative;}
   .modal-body-head{
@@ -6385,9 +6442,7 @@ html:has(.page-memo){
 }
 
 /******* 학습자료 > 출제마법사 > 폴더관리 영역 *******/
-#wizard_tree{
-  
-}
+#wizard_tree{}
 
 
 /*** 반응형 ***/

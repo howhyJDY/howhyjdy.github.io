@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -1149,6 +1148,116 @@ function menu_disable_edit( key, opt )
     return false;
 }
 </script>
+
+<!-- 오답 시험지 출제 팝업 시작 -->
+<div class="modal fade show" id="wrongnote_study_cards" tabindex="-1" role="dialog" aria-modal="true" style="display: block;">
+	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		<div class="modal-content" id="wrongnote_study_cards-content">
+			<div class="modal-header">
+				<div class="left">이하와 학생 오답시험지 출제</div>
+				<img src="https://tutor.howhymath.com/app/img/icon_button_close.png" data-bs-dismiss="modal" aria-label="Close">
+			</div>
+			<div class="table-scoll" id="exam_lists" style="padding: 0 20px;">
+				<table class="table table-striped mb-0 table-border-none wrong-modal-table">
+				<colgroup>
+				<col>
+				<col>
+				<col>
+				<col>
+				<col>
+				<col>
+				</colgroup>
+				<thead>
+				<tr>
+					<th class="fx-tablesorter-header" id="name-sort">시험지명</th>
+					<th>타입</th>
+					<th>문항수</th>
+					<th>오답수</th>
+					<th>필터적용</th>
+					<th>정답률</th>
+				</tr>
+				</thead>
+				<tbody>
+				<input type="hidden" name="study_card-5217-nids" value="405743,405746,405749,405756,405764,405770,405785">
+				<input type="hidden" name="study_card-5217-aids" value="405743,405746,405749,405756,405764,405770,405785">
+				<input type="hidden" name="study_card-5217-chapter" value="">
+				<tr>
+					<td style="text-align:left;">Ⅰ. 도형의 성질 &gt; 01. 삼각형의 성질 &gt; 01. 이등변삼각형의 성질</td>
+					<td>교재</td>
+					<td>49</td>
+					<td>7</td>
+					<td>7</td>
+					<td>86%</td>
+				</tr>
+				</tbody>
+				</table>
+			</div>
+			<div class="modal-body">
+				<form id="smart_exam_form" method="post" action="/study_books/make_wrongnote">
+					<input type="hidden" name="student_id" value="325">
+					<input type="hidden" name="study_card_ids" value="5217">
+					<table class="modal-table">
+					<tbody>
+					<tr>
+						<th>스마트 필터</th>
+						<td>
+							<label><input type="checkbox" name="smart_filter_yn" value="y"> 적용 </label>
+						</td>
+					</tr>
+					<tr>
+						<th>학습일</th>
+						<td>
+							<input type="date" title="" name="study_on" value="2024-12-19" id="fx-form-study_on" class="form-control">
+						</td>
+					</tr>
+					<tr>
+						<th>시험지 출제</th>
+						<td>
+							<div class="modal-radio-box" style="width:100%;">
+								<div>
+									<input type="radio" name="print_type" id="radio1" value="q0">
+									<label for="radio1">오답문항만</label>
+								</div>
+								<div>
+									<input type="radio" name="print_type" id="radio2" value="x1">
+									<label for="radio2">유사1문항</label>
+								</div>
+								<div>
+									<input type="radio" name="print_type" id="radio3" value="q1" checked="">
+									<label for="radio3">오답문항 + 유사1문항</label>
+								</div>
+								<div>
+									<input type="radio" name="print_type" id="radio4" value="x2">
+									<label for="radio4">유사2문항</label>
+								</div>
+								<div>
+									<input type="radio" name="print_type" id="radio5" value="q2">
+									<label for="radio5">오답문항 + 유사2문항</label>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							시험지명
+						</th>
+						<td>
+							<input type="text" title="" name="paper_name" value="Ⅰ. 도형의 성질> 01. 삼각형의 성질 > 01. 이등변삼각형의 성질 오답노트" id="fx-form-paper_name" maxlength="100" placeholder="20자이내로 써 주세요." class="form-control paper_name">
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</form>
+				<div class="modal-bottom-btn-box">
+					<button type="button" class="save-btn" onclick="submit_form();">생성하기</button>
+					<button type="button" class="cancle-btn" data-bs-dismiss="modal">취소하기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-backdrop fade show"></div>
+<!-- 오답 시험지 출제 팝업 끝 -->
 
 </body>
 </html>
