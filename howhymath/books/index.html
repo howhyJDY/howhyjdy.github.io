@@ -1,0 +1,1031 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이매쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+
+	<!-- base css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" />
+
+	<!-- site css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1733985054"/>
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1733985054" />
+	<!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1733985054" /-->
+	<!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1733985054" /> -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/work.css" />
+
+	<!-- base javascript -->
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+
+	<!-- site javascript -->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			showMathMenu: false,
+			tex2jax: { displayMath: [ ["$$","$$"] ] },
+			"HTML-CSS": { fonts: ["Latin-Modern"] }
+		});
+	</script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1733985054"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1733985054"></script>
+</head>
+
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+    <div class="topbar">
+        <div class="content-box">
+            <div class="brand">
+                <a href="/home/main" class="logo" style="padding-left:10px;">
+                    <!-- <span><img src="https://img.howhymath.com/hmath/logo.png" style="width:140px;height:31px;" class="logo-sm"></span> 241210 이미지 변경 및 스타일 삭제 -->
+                    <span><img src="../assets/images/logo.svg" class="logo-sm" alt="하와이매쓰"></span>
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-end mb-0" style="display: flex; align-items: center;">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <span class="ms-1 nav-user-name hidden-sm" style=" color: var(--Gray-01, #1A1A1A); font-weight: 700; font-size: 16px;">김하와<span style="font-weight: 400;"><span style="font-weight: 400;">선생님</span></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!--a class="dropdown-item" href="javascript:edit_teacher();"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i>정보수정</a-->
+                            <a class="dropdown-item" href="javascript:edit_password();"><i data-feather="lock" class="align-self-center icon-xs icon-dual me-1"></i>암호수정</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="https://tutor.howhymath.com/users/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual me-1"></i>로그아웃</a>
+                        </div>
+                    </li>
+                    <button class="signout-btn" onclick="location.href='https://tutor.howhymath.com/users/logout';">로그아웃</button>
+                </ul> 
+                <div class="navbar-custom-menu">
+                    <div id="navigation">
+                        <ul class="navigation-menu">
+                            <li class='has-submenu'>
+                                <a href='/home/main'><span> </i>캘린더</span></a>
+                            </li>
+                            <li class='has-submenu active'>
+                                <a href='/books/index'><span> 학습자료</span></a>
+                                <ul class='submenu'>
+                                    <li class='active'><a href='/books/index'>교재</a></li>
+                                    <li><a href='/exam_pdfs/index'>보충교재</a></li>
+                                    <li><a href='/jindan_exams/index'>평가</a></li>
+                                    <li><a href='/wizards/index'>출제마법사</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/study_books/index'><span> 개별학습</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/study_books/index'>교재학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=exm'>출제마법사</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=wrg'>오답학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=rec'>맞춤학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=hom'>숙제관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/reports_v2/index'><span> 분석표</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/academies/index'><span> 관리</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/academies/index'>정보수정</a></li>
+                                    <li><a href='/teachers/index'>교사/반 관리</a></li>
+                                    <li><a href='/students/index'>학생관리</a></li>
+                                    <li><a href='/schools/index'>학교관리</a></li>
+                                    <li><a href='/print_pdfs/index'>인쇄파일관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/payments/index'><span> 결제</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/notices/index'><span> 고객센터</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/notices/index'>공지사항</a></li>
+                                    <li><a href='/inquiries/index'>1:1문의 & FAQ</a></li>
+                                    <li><a href='/question_error_reports/index'>문항오류신고</a></li>
+                                    <!-- <li><a href='/boards/index?boarda_type_cd=gj'>자료실-교재자료</a></li>
+                                    <li><a href='/boards/index?boarda_type_cd=mv'>자료실-영상자료</a></li> 241210 자료실 통합 -->
+                                    <li><a href='/boards/index'>교재/영상 자료실</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    </div>
+
+	<div class="page-wrapper">
+		<div class="page-content">
+			<div class="container-fluid">
+			<link rel='stylesheet' type='text/css' href='https://img.dtsoft.co.kr/assets.howhy/plugins/jquery-ui/jquery-ui.css'>
+            <link rel='stylesheet' type='text/css' href='https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.css' />
+            <script type='text/javascript' charset='utf-8' src='https://img.dtsoft.co.kr/assets.howhy/plugins/jquery-ui/jquery-ui.js'></script>
+            <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/cookie/js.cookie.min.js'></script>
+
+            <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.js'></script>
+            <link rel='stylesheet' href='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/skin-vista/ui.fancytree.css' />
+            <link href='/app/css/fancytree.css?t=1733985054' rel='stylesheet' type='text/css' />
+            <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/jquery.fancytree-all.min.js'></script>
+            <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/modules/jquery.fancytree.persist.js'></script>
+        <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/ext/jquery.fancytree.contextMenu.js'></script>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="row">
+                        <div class="col-sm-12 head-left">
+                            <div class='gray'><a href='/books/index'>학습자료</a></div>
+                            <img src="/app/img/icon_right_arrow.png" alt=""/>
+                            <div class='black'><a href='/books/index'>교재</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<div class="row">
+	<div class="col-sm-3">
+		<div class="card">
+			<div class="card-header">
+				<div class="card-title"> 교재분류 </div>
+			</div>
+			<div class="card-body product-left">
+				<br>
+				<br>
+                <div class="row" style="padding: 0 20px;">
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm04" value="m04">
+                        <label class="btn btn-outline-success" for="btn1checkm04">초4 (2015)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm05" value="m05" checked>
+                        <label class="btn btn-outline-success" for="btn1checkm05">초5 (2015)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm06" value="m06">
+                        <label class="btn btn-outline-success" for="btn1checkm06">초6 (2015)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm17" value="m17">
+                        <label class="btn btn-outline-success" for="btn1checkm17">중1 (2015)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm18" value="m18">
+                        <label class="btn btn-outline-success" for="btn1checkm18">중2 (2015)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm19" value="m19">
+                        <label class="btn btn-outline-success" for="btn1checkm19">중3 (2015)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm21" value="m21">
+                        <label class="btn btn-outline-success" for="btn1checkm21">수학(상) (2015)</label>
+                    </div>
+                        <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm22" value="m22">
+                        <label class="btn btn-outline-success" for="btn1checkm22">수학(하) (2015)</label>
+                    </div>
+                        <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm23" value="m23">
+                        <label class="btn btn-outline-success" for="btn1checkm23">수학Ⅰ (2015)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm24" value="m24">
+                        <label class="btn btn-outline-success" for="btn1checkm24">수학Ⅱ (2015)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm25" value="m25">
+                        <label class="btn btn-outline-success" for="btn1checkm25">확통 (2015)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm26" value="m26">
+                        <label class="btn btn-outline-success" for="btn1checkm26">미적 (2015)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkm27" value="m27">
+                        <label class="btn btn-outline-success" for="btn1checkm27">기하 (2015)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkn01" value="n01">
+                        <label class="btn btn-outline-success" for="btn1checkn01">초1 (2022)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkn02" value="n02">
+                        <label class="btn btn-outline-success" for="btn1checkn02">초2 (2022)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkn03" value="n03">
+                        <label class="btn btn-outline-success" for="btn1checkn03">초3 (2022)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkn04" value="n04">
+                        <label class="btn btn-outline-success" for="btn1checkn04">초4 (2022)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkn17" value="n17">
+                        <label class="btn btn-outline-success" for="btn1checkn17">중1 (2022)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkn21" value="n21">
+                        <label class="btn btn-outline-success" for="btn1checkn21">공통수학Ⅰ (2022)</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="math_grades" class="btn-check" id="btn1checkn22" value="n22">
+                        <label class="btn btn-outline-success" for="btn1checkn22">공통수학Ⅱ (2022)</label>
+                    </div>
+                </div>  
+                <br>
+                <hr>
+                <br>
+                <div class="row" style="padding: 0 20px;">
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="terms" class="btn-check" id="btn2checkt1" value="t1">
+                        <label class="btn btn-outline-success" for="btn2checkt1">1학기</label>
+                    </div>
+                    <div class="col-sm-4 btn-group mb-2 mb-lg-0" style="text-align:center;padding-bottom: 5px;">
+                        <input type="checkbox" name="terms" class="btn-check" id="btn2checkt2" value="t2">
+                        <label class="btn btn-outline-success" for="btn2checkt2">2학기</label>
+                    </div>
+                </div>
+                <br>
+                
+			</div>
+		</div> 
+	</div>
+	<div class="col-sm-9 white padding-zero">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="tabs">
+					<ul class="nav nav-pills nav-justified" role="tablist" style="width:60%;">
+						<li class="nav-item waves-effect waves-light">
+							<a class="nav-link active" href="/books/index" >교재</a>
+						</li>
+						<li class="nav-item waves-effect waves-light">
+							<a class="nav-link" href="/exam_pdfs/index" >보충교재</a>
+						</li>
+						<li class="nav-item waves-effect waves-light">
+							<a class="nav-link" href="/jindan_exams/index" >평가</a>
+						</li>
+						<li class="nav-item waves-effect waves-light">
+							<a class="nav-link" href="/wizards/index" >출제마법사</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" style="padding:20px;">
+			<div class="col-md-3 search-head">69개중 1-30 </div>
+			<div class="col-md-9">
+					<div class="row">
+						<div class="col-sm-3 fx_bp2">
+						</div>
+						<div class="col-md-3 fx_bp2">
+						</div>
+						<div class="col-md-3 fx_bp2">
+							<div><select title="" name="sv_study_yn" id="fx-form-sv_study_yn" class="form-control form-select"><option value="">-- 수업중인 교재 --</option><option value="y">예</option><option value="n">아니오</option></select></div>
+						</div>
+						<div class="col-sm-3 fx_bp2">
+							<div class="input-group">
+							<input type="text" title="" name="sv_keyword" value="" id="fx-form-sv_keyword" placeholder="교재명/저자명" class="form-control" />							<button class="mbtn" type="button" onclick="search_books();"><i class="fas fa-search"></i></button>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div> 
+		<hr>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="book-container">
+                    <div class="book-box" id="book65">
+                        <div class="book-img-box">
+                            <img class="book-img" src="https://img.howhymath.com/f.hm/00/41/bk.65/book.png?1733985054"  onmouseover="handleHover(this)" onmouseout="handleHover(this)" alt="" />
+                            <div class="book-details" onmouseout="moustOut(this)">
+                                <a href="/books/details?id=65" class="details-button">상세보기</a>
+                            </div>
+                        </div>
+                        <div class="book-title" style="text-align:center;">초등수학 4-1 개념서</div>
+                        <!-- div class="book-author">출판사: howhymath</div-->
+                        <div style="text-align:center;width:100%;margin-top:10px;">
+                            <button type="button" class="check-btn" onclick="add_myclass(65);"><i class="far fa-edit"></i>학생지정</button>
+                        </div>
+                    </div>
+                    <div class="book-box" id="book66">
+                        <div class="book-img-box">
+                            <img class="book-img" src="https://img.howhymath.com/f.hm/00/42/bk.66/book.png?1733985054"  onmouseover="handleHover(this)" onmouseout="handleHover(this)" alt="" />
+                            <div class="book-details" onmouseout="moustOut(this)">
+                                <a href="/books/details?id=66" class="details-button">상세보기</a>
+                            </div>
+                        </div>
+                        <div class="book-title" style="text-align:center;">초등수학 4-1 유형서</div>
+							<!-- div class="book-author">출판사: howhymath</div-->
+							<div style="text-align:center;width:100%;margin-top:10px;">
+                                <button type="button" class="check-btn" onclick="add_myclass(66);"><i class="far fa-edit"></i>학생지정</button>
+                            </div>
+						</div>
+                        <div class="book-box" id="book127">
+							<div class="book-img-box">
+								<img class="book-img" src="https://img.howhymath.com/f.hm/00/7f/bk.127/book.png?1733985054"  onmouseover="handleHover(this)" onmouseout="handleHover(this)" alt="" />
+								<div class="book-details" onmouseout="moustOut(this)">
+									<a href="/books/details?id=127" class="details-button">상세보기</a>
+								</div>
+							</div>
+							<div class="book-title" style="text-align:center;">초등수학 4-2 개념서</div>
+							<!-- div class="book-author">출판사: howhymath</div-->
+							<div style="text-align:center;width:100%;margin-top:10px;">
+                                <button type="button" class="check-btn" onclick="add_myclass(127);"><i class="far fa-edit"></i>학생지정</button>
+                            </div>
+						</div>
+                        <div class="book-box" id="book128">
+							<div class="book-img-box">
+								<img class="book-img" src="https://img.howhymath.com/f.hm/00/80/bk.128/book.png?1733985054"  onmouseover="handleHover(this)" onmouseout="handleHover(this)" alt="" />
+								<div class="book-details" onmouseout="moustOut(this)">
+									<a href="/books/details?id=128" class="details-button">상세보기</a>
+								</div>
+							</div>
+							<div class="book-title" style="text-align:center;">초등수학 4-2 유형서</div>
+							<!-- div class="book-author">출판사: howhymath</div-->
+							<div style="text-align:center;width:100%;margin-top:10px;">
+                                <button type="button" class="check-btn" onclick="add_myclass(128);"><i class="far fa-edit"></i>학생지정</button>
+                            </div>
+						</div>
+                        <div class="book-box" id="book63">
+							<div class="book-img-box">
+								<img class="book-img" src="https://img.howhymath.com/f.hm/00/3f/bk.63/book.png?1733985054"  onmouseover="handleHover(this)" onmouseout="handleHover(this)" alt="" />
+								<div class="book-details" onmouseout="moustOut(this)">
+									<a href="/books/details?id=63" class="details-button">상세보기</a>
+								</div>
+							</div>
+							<div class="book-title" style="text-align:center;">초등수학 5-1 개념서</div>
+							<!-- div class="book-author">출판사: howhymath</div-->
+							<div style="text-align:center;width:100%;margin-top:10px;">
+                                <button type="button" class="check-btn" onclick="add_myclass(63);"><i class="far fa-edit"></i>1명</button>
+                            </div>
+						</div>
+                        <div class="book-box" id="book64">
+                            <div class="book-img-box">
+								<img class="book-img" src="https://img.howhymath.com/f.hm/00/40/bk.64/book.png?1733985054"  onmouseover="handleHover(this)" onmouseout="handleHover(this)" alt="" />
+								<div class="book-details" onmouseout="moustOut(this)">
+									<a href="/books/details?id=64" class="details-button">상세보기</a>
+								</div>
+							</div>
+							<div class="book-title" style="text-align:center;">초등수학 5-1 유형서</div>
+							<!-- div class="book-author">출판사: howhymath</div-->
+							<div style="text-align:center;width:100%;margin-top:10px;">
+                                <button type="button" class="check-btn" onclick="add_myclass(64);"><i class="far fa-edit"></i>학생지정</button>
+                            </div>
+						</div>
+                        <div class="book-box" id="book129">
+							<div class="book-img-box">
+								<img class="book-img" src="https://img.howhymath.com/f.hm/00/81/bk.129/book.png?1733985054"  onmouseover="handleHover(this)" onmouseout="handleHover(this)" alt="" />
+								<div class="book-details" onmouseout="moustOut(this)">
+									<a href="/books/details?id=129" class="details-button">상세보기</a>
+								</div>
+							</div>
+							<div class="book-title" style="text-align:center;">초등수학 5-2 개념서</div>
+							<!-- div class="book-author">출판사: howhymath</div-->
+							<div style="text-align:center;width:100%;margin-top:10px;">
+                                <button type="button" class="check-btn" onclick="add_myclass(129);"><i class="far fa-edit"></i>1명</button>
+                            </div>
+						</div>
+										
+                        <div class="book-box" id="book352">
+							<div class="book-img-box">
+								<img class="book-img" src="https://img.howhymath.com/f.hm/01/60/bk.352/book.png?1733985054"  onmouseover="handleHover(this)" onmouseout="handleHover(this)" alt="" />
+								<div class="book-details" onmouseout="moustOut(this)">
+									<a href="/books/details?id=352" class="details-button">상세보기</a>
+								</div>
+							</div>
+							<div class="book-title" style="text-align:center;">하와이매쓰 중등 2-2 유형서</div>
+							<!-- div class="book-author">출판사: howhymath</div-->
+							<div style="text-align:center;width:100%;margin-top:10px;">
+                                <button type="button" class="check-btn" onclick="add_myclass(352);"><i class="far fa-edit"></i>1명</button>
+                            </div>
+						</div>
+                        <div class="book-box" id="book386">
+							<div class="book-img-box">
+								<img class="book-img" src="https://img.howhymath.com/f.hm/01/82/bk.386/book.png?1733985054"  onmouseover="handleHover(this)" onmouseout="handleHover(this)" alt="" />
+								<div class="book-details" onmouseout="moustOut(this)">
+									<a href="/books/details?id=386" class="details-button">상세보기</a>
+								</div>
+							</div>
+							<div class="book-title" style="text-align:center;">하와이매쓰 중등 2-2 중간고사 대비</div>
+							<!-- div class="book-author">출판사: howhymath</div-->
+							<div style="text-align:center;width:100%;margin-top:10px;">
+                                <button type="button" class="check-btn" onclick="add_myclass(386);"><i class="far fa-edit"></i>학생지정</button>
+                            </div>
+						</div>
+                        <div class="book-box" id="book389">
+							<div class="book-img-box">
+								<img class="book-img" src="https://img.howhymath.com/f.hm/01/85/bk.389/book.png?1733985054"  onmouseover="handleHover(this)" onmouseout="handleHover(this)" alt="" />
+								<div class="book-details" onmouseout="moustOut(this)">
+									<a href="/books/details?id=389" class="details-button">상세보기</a>
+								</div>
+							</div>
+							<div class="book-title" style="text-align:center;">하와이매쓰 중등 2-2 기말고사 대비</div>
+							<!-- div class="book-author">출판사: howhymath</div-->
+							<div style="text-align:center;width:100%;margin-top:10px;">
+                                <button type="button" class="check-btn" onclick="add_myclass(389);"><i class="far fa-edit"></i>학생지정</button>
+                            </div>
+						</div>
+                        <div class="book-box" id="book134">
+							<div class="book-img-box">
+								<img class="book-img" src="https://img.howhymath.com/f.hm/00/86/bk.134/book.png?1733985054"  onmouseover="handleHover(this)" onmouseout="handleHover(this)" alt="" />
+								<div class="book-details" onmouseout="moustOut(this)">
+									<a href="/books/details?id=134" class="details-button">상세보기</a>
+								</div>
+							</div>
+							<div class="book-title" style="text-align:center;">하와이매쓰 중등 2-2 개념서</div>
+							<!-- div class="book-author">출판사: howhymath</div-->
+							<div style="text-align:center;width:100%;margin-top:10px;">
+                                <button type="button" class="check-btn" onclick="add_myclass(134);"><i class="far fa-edit"></i>학생지정</button>
+                            </div>
+						</div>
+                    </div>
+				<div class="fx-ac">
+					<nav>
+                        <ul class='pagination justify-content-center'>
+                            <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_double_left_arrow.png" alt=""/></a></li>
+                            &nbsp;
+                            <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_left_arrow.png" alt=""/></a></li>
+                            &nbsp;
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="/books/index?p=2">2</a></li>
+                            <li class="page-item"><a class="page-link" href="/books/index?p=3">3</a></li>
+                            &nbsp;
+                            <li class="page-item"><a class="page-link" href="/books/index?p=2"><img src="/app/img/icon_right_arrow.png" alt=""/></a></li>
+                            &nbsp;
+                            <li class="page-item"><a class="page-link" href="/books/index?p=3"><img src="/app/img/icon_double_right_arrow.png" alt=""/></a></li>
+                        </ul>
+                    </nav>
+				</div> 
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+$( document ).ready(function() {
+	fx_ready_sorting( "books.grade_cd", "asc" );
+
+	$('input[type=checkbox][name=math_grades]').change(function() {
+        search_books();
+    });
+
+    $('input[type=checkbox][name=terms]').change(function() {
+        search_books();
+    });
+
+});
+
+function favorite_create( book_id )
+{
+	fx_submit_link( '/books/favorite_create?book_id=' + book_id );
+}
+
+function favorite_remove( book_id )
+{
+	fx_submit_link( '/books/favorite_remove?book_id=' + book_id );
+}
+
+function add_myclass( book_id )
+{
+	var url = "/books/popup_add_myclass?_t=1733985054&book_id=" + book_id;
+	fx_layer_popup_v2( 'add_myclass', url, 'modal-lg modal-dialog-centered' );
+}
+
+
+var bookStates = { };
+
+//색상변경 
+function toggleImage(element) {
+	var parentDiv = element.closest('.book-box');
+	var book_id = parentDiv.id; 
+
+	console.log(book_id)
+	var starImgElement = parentDiv.querySelector('.book-img-box').querySelector('.star-img'); 
+
+	// 토글링 로직
+	bookStates[book_id] = !bookStates[book_id]; 
+
+	if (bookStates[book_id]) {
+		favorite_create( book_id.replace( 'book', '' )  );
+		starImgElement.src = "/app/img/icon_star_color.png";
+	} else {
+		favorite_remove( book_id.replace( 'book', '' )  )
+		starImgElement.src = "/app/img/icon_star_uncolor.png";
+	}
+}
+
+function handleHover(element) {
+	var parentDiv = element.closest('.book-box');
+	details = parentDiv.querySelector('.book-img-box').querySelector('.book-details');
+	star_img = parentDiv.querySelector('.book-img-box').querySelector('.star-img');
+	book_img = parentDiv.querySelector('.book-img-box').querySelector('.book-img');
+	details.style.zIndex = details.style.zIndex === '1' ? '-99' : '99'; // z-index 토글
+	star_img.style.filter = details.style.zIndex === '99' ? 'blur(3px)' : 'blur(0px)';
+	book_img.style.filter = details.style.zIndex === '99' ? 'blur(3px)' : 'blur(0px)';
+}
+
+function moustOut(element){
+	var parentDiv = element.closest('.book-box');
+	details = parentDiv.querySelector('.book-img-box').querySelector('.book-details');
+	star_img = parentDiv.querySelector('.book-img-box').querySelector('.star-img');
+	book_img = parentDiv.querySelector('.book-img-box').querySelector('.book-img');
+	details.style.zIndex = details.style.zIndex === '1' ? '99' : '-99'; // z-index 토글
+	star_img.style.filter = details.style.zIndex === '-99' ? 'blur(0px)' : 'blur(3px)';
+	book_img.style.filter = details.style.zIndex === '-99' ? 'blur(0px)' : 'blur(3px)';
+}
+
+let arrow = document.querySelectorAll(".arrow");
+for (var i = 0; i < arrow.length; i++) {
+	arrow[i].addEventListener("click", (e) => { 
+		let arrowParent = e.target.parentElement.parentElement.parentElement;
+		arrowParent.classList.toggle("showMenu");
+	});
+}
+
+function search_books()
+{
+    var sv_keyword = $("#fx-form-sv_keyword").val();
+    var sv_study_yn = $("#fx-form-sv_study_yn").val();
+
+    var sv_math_grades = local_get_checkboxes( 'math_grades' );
+    var sv_terms = local_get_checkboxes( 'terms' );
+
+    var search_url = '/books/index?sv_keyword=' + encodeURI(sv_keyword)
+                                    + '&sv_study_yn=' + encodeURI(sv_study_yn)
+                                    + '&sv_math_grades=' + encodeURI(sv_math_grades)
+                                    + '&sv_terms=' + encodeURI(sv_terms);
+    location.href = search_url;
+}
+
+function local_get_checkboxes( name )
+{
+    var seleced_list = new Array();
+    $("input[type=checkbox][name='"+ name +"']:checked").each(function() {
+        seleced_list.push($(this).val());
+    });
+    return seleced_list.join();
+}
+
+
+</script>
+
+			</div>
+		</div>
+	</div>
+    <footer class='footer'>
+        <div class="top">
+            <div class="left">
+                <div class='footer-content'>
+                    <span class="footer_logo"><img src="../assets/images/footer_logo.svg" alt="하와이매쓰" /></span>
+                    <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                    <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+                </div>
+            </div>
+            <div class='right'>
+                <div class='footer-content'>
+                    <div id="footer-dropbox">
+                        <select id="footer-dropbox-content" class="form-control form-select">
+                            <option value="">Family Site</option>
+                            <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                            <option value="https://www.fren.co.kr">프렌매쓰</option>
+                        </select>
+                        <script>
+                            document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                                let link = e.target.value;
+                                if(link)
+                                    window.open(link, '_blank');
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='left'>
+            <div class='footer-content'>
+                <div><b>하와이컴퍼니(주)</b></div>
+                <div class='vertical-line'></div>
+                <div><b>HOWHY COMPANY</b></div>
+                <div class='vertical-line'></div>
+                <div><b>대표이사 : 박종화</b></div>
+            </div>
+    
+            <div class='footer-content'>
+                <div><b>사업자등록번호</b> 760-87-02737</div>
+                <div class='vertical-line'></div>
+                <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+                <div class='vertical-line'></div>
+                <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+            </div>
+            <div class='footer-content'>
+                <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+            </div>
+            <div class='footer-content'>
+                2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+<script src="https://img.howhymath.com/custom/custom.js?v=1733985054"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	cdml_mathjax_init();
+});
+
+function edit_teacher()
+{
+    fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+}
+
+function edit_password()
+{
+    fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+}
+
+function menu_disable_delete( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    var words = node.key.split('-');
+    if( words[1] != '0' ) return true;
+    return false;
+}
+
+function menu_disable_add( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    if( node.getLevel() == 2 ) return true;
+    return false;
+}
+
+function menu_disable_edit( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    return false;
+}
+
+
+</script>
+
+<!-- 학생지정 팝업 시작 -->
+<div class="modal fade" id="add_myclass" tabindex="-1" role="dialog" aria-modal="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content" id="add_myclass-content">
+            <div class="modal-header">
+                <div class="left">학생 지정</div>
+                <img src="https://tutor.howhymath.com/app/img/icon_button_close.png" data-bs-dismiss="modal" aria-label="Close">
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        <form class="book_form" name="book_form" method="GET" action="/books/create_book_student">
+                            <input type="hidden" name="book_id" class="book_id" value="63">
+                            <input type="hidden" name="student_ids" class="student_ids" value="">
+                    
+                            <div style="text-align:right;padding-bottom:10px;">
+                                <button type="button" class="wbtn-line" onclick="student_tree_all_select( true );">전체 선택</button>
+                                <button type="button" class="wbtn-line" onclick="student_tree_all_select( false );">전체 해제</button>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="student_tree_html">
+                                        <ul class="nav nav-tabs justify-content-end" style="margin-bottom: 5px;" id="student_tree_tab">
+                                            <li class="nav-item">
+                                                <!-- <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#grade_tree" type="button" role="tab" aria-controls="grade_tree" aria-selected="true" style="font-size:14px !important;">학년별보기</button> 241213 스타일 삭제 -->
+                                                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#grade_tree" type="button" role="tab" aria-controls="grade_tree" aria-selected="true">학년별보기</button>
+                                            </li>
+                                            <li class="nav-item">
+                                                <!-- <button class="nav-link" data-bs-toggle="pill" data-bs-target="#classroom_tree" type="button" role="tab" aria-controls="classroom_tree" aria-selected="false" style="font-size:14px !important;">반별보기</button> 241218 스타일 삭제 -->
+                                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#classroom_tree" type="button" role="tab" aria-controls="classroom_tree" aria-selected="false">반별보기</button>
+                                            </li>
+                                        </ul> 
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade active show" id="grade_tree" role="tabpanel" aria-labelledby="grade_tree-tab">
+                                                <div class="student_grade_tree">
+                                                    <ul class="ui-fancytree-source fancytree-helper-hidden">
+                                                        <li id="grade-e5" class="folder">초5
+                                                            <ul>
+                                                                <li id="grade-student-325">이하와</li>
+                                                                <li id="grade-student-326">장하와</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li id="grade-e5" class="folder">중1
+                                                            <ul>
+                                                                <li id="grade-student-327">박하와이</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                    <ul id="ft-id-1" class="ui-fancytree fancytree-container fancytree-plain" tabindex="0" role="tree" aria-multiselectable="true">
+                                                        <li role="treeitem" aria-expanded="false" aria-selected="true" class="fancytree-lastsib">
+                                                            <span class="fancytree-node fancytree-active fancytree-folder fancytree-has-children fancytree-lastsib fancytree-partsel fancytree-selected fancytree-exp-cl fancytree-ico-cf">
+                                                                <span role="button" class="fancytree-expander"></span>
+                                                                <span role="checkbox" class="fancytree-checkbox"></span>
+                                                                <span role="presentation" class="fancytree-icon"></span>
+                                                                <span class="fancytree-title">초5</span>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="classroom_tree" role="tabpanel" aria-labelledby="classroom_tree-tab">
+                                                <div class="student_classroom_tree">
+                                                    <ul class="ui-fancytree-source fancytree-helper-hidden">
+                                                        <li id="classroom-219" class="folder">
+                                                            김하와선생님반
+                                                            <ul>
+                                                                <li id="classroom-student-325">이하와</li>
+                                                                <li id="classroom-student-326">장하와</li>
+                                                                <li id="classroom-student-327">박하와이</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                    <ul id="ft-id-2" class="ui-fancytree fancytree-container fancytree-plain" tabindex="0" role="tree" aria-multiselectable="true">
+                                                        <li role="treeitem" aria-expanded="false" aria-selected="true" class="fancytree-lastsib">
+                                                            <span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lastsib fancytree-partsel fancytree-selected fancytree-exp-cl fancytree-ico-cf">
+                                                                <span role="button" class="fancytree-expander"></span>
+                                                                <span role="checkbox" class="fancytree-checkbox"></span>
+                                                                <span role="presentation" class="fancytree-icon"></span>
+                                                                <span class="fancytree-title">`</span>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <script>
+                                            var student_ids = [ 325 ];
+                                            $( document ).ready(function() {
+                                                $('.student_grade_tree').fancytree({
+                                                    extensions: ["persist"],
+                                                    persist: { cookiePrefix: 'student_grade_tree-' },
+                                                    checkbox: true,
+                                                    selectMode: 3,
+                                                    init: function(event, data) {
+                                                        data.tree.selectAll(false);
+                                                        var all = data.tree.findAll('');
+                                                        for( var i=0 ; i<all.length ; i++ ) {
+                                                            var node = all[i];
+                                                            if( node.key.indexOf( 'grade-student-'  ) == -1 ) continue;
+
+                                                            var student_id = node.key.replace( "grade-student-", "" )
+                                                            if( student_ids.includes(student_id*1) )
+                                                            {
+                                                                node.setSelected(true);
+                                                                node.unselectable = true;
+                                                                node.unselectableIgnore = true;
+                                                                node.unselectableStatus = true;
+                                                                var $nodeSpan = $(node.span);
+                                                                            }
+                                                        } 
+                                                        data.tree.render();
+                                                    },
+                                                });
+
+                                                $('.student_classroom_tree').fancytree({
+                                                    extensions: ["persist"],
+                                                    persist: { cookiePrefix: 'student_classroom_tree-' },
+                                                    checkbox: true,
+                                                    selectMode: 3,
+                                                    init: function(event, data) {
+                                                        data.tree.selectAll(false);
+
+                                                        var all = data.tree.findAll('');
+                                                        for( var i=0 ; i<all.length ; i++ ) {
+                                                            var node = all[i];
+                                                            if( node.key.indexOf( 'classroom-student-'  ) == -1 ) continue;
+
+                                                            var student_id = node.key.replace( "classroom-student-", "" )
+
+                                                            if( student_ids.includes(student_id*1) )
+                                                            {
+                                                                node.setSelected(true);
+                                                                node.unselectable = true;
+                                                                node.unselectableIgnore = true;
+                                                                node.unselectableStatus = true;
+
+                                                                var $nodeSpan = $(node.span);
+                                                                $nodeSpan.append( '<button type="button" style="float:right;" class="btn btn-sm btn-soft-danger btn-circle" onclick="remove_study_card(\''+student_id+'\');"><i class="dripicons-trash"></i></button>' );
+                                                            }
+                                                        }
+                                                        data.tree.render();
+                                                    },
+                                                });
+                                            });
+                                            function student_tree_all_select( checked )
+                                            {
+                                                var current_target = $('ul#student_tree_tab li button.active').data('bs-target');
+
+                                                if( current_target == '#classroom_tree' )
+                                                    $.ui.fancytree.getTree(".student_classroom_tree").selectAll( checked );
+
+                                                if( current_target == '#grade_tree' )
+                                                    $.ui.fancytree.getTree(".student_grade_tree").selectAll( checked );
+                                            }
+                                            function student_tree_get_student_ids()
+                                            {
+                                                var tree_css = ".student_classroom_tree";
+                                                var prefix = "classroom-student-";
+                                                var current_target = $('ul#student_tree_tab li button.active').data('bs-target');
+                                                if( current_target == '#grade_tree' )
+                                                {
+                                                    tree_css = ".student_grade_tree";
+                                                    prefix = "grade-student-";
+                                                }
+                                                var ids = '';
+                                                var selNodes = $.ui.fancytree.getTree(tree_css).getSelectedNodes();
+                                                for( var i=0 ; i<selNodes.length ; i++ )
+                                                {
+                                                    var node = selNodes[i];
+                                                    if( node.key.indexOf(prefix) == -1 ) continue;
+
+                                                    if( ids != '' ) ids += ',';
+                                                    ids += node.key.replace(prefix, '');
+                                                }
+                                                return ids;
+                                            }
+                                        </script>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row" style="padding-bottom: 10px;">
+                                <div class="col-sm-4" style="padding-top: 15px;text-align:right;font-size: 14px;">학습시작일</div>
+                                <div class="col-sm-8">
+                                    <input type="date" title="" name="start_on" value="2024-12-18" id="fx-form-start_on" data-placeholder="평가일" class="form-control">				</div>
+                            </div>
+                            <div class="row" style="padding-bottom: 10px;">
+                                <div class="col-sm-4" style="padding-top: 15px;text-align:right;font-size: 14px;">학습종료일</div>
+                                <div class="col-sm-8">
+                                    <div class="day-control"><input type="date" title="" name="end_on" value="2025-01-17" id="fx-form-end_on" class="form-control"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button type="button" class="mbtn submit_btn w-100">학생 지정하기</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="modal-body-head">
+                            <div class="left">초등수학 5-1 개념서</div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body" style="padding: 5px 0 5px 5px;height:450px; overflow-y:auto;overflow-x: hidden;">
+
+                                <div class="row" style="margin:0 !important;padding:0px;">
+                                    <div class="col-md-5" style="padding: 10px;">
+                                        <img src="https://img.howhymath.com/f.hm/00/3d/bk.61/book.png?1734499491" style="width: 100%;max-height: 100%; object-fit: contain;">
+                                    </div>
+                                    <div class="col-md-7" style="padding: 10px;">
+                                        <div class="small m-t-xs">
+                                            저자: 하와이수학연구소<br>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin:0 !important;padding:0px;">
+                                    
+                                    <p></p>
+                                    <div id="hwpEditorBoardContent" class="hwp_editor_board_content" data-hjsonver="1.0" data-jsonlen="6604"></div>
+                                    <p></p>
+                                    <p class="0">
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:11.0pt;">01. </span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;font-size:11.0pt;">분수의 나눗셈</span>
+                                    </p>
+                                    <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">1. (</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">자연수</span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">)÷(</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">자연수</span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">)</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">의 몫을 분수로 나타내기 </span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">(1)</span>
+                                    </p>
+                                    <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">2. (</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">자연수</span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">)÷(</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">자연수</span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">)</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">의 몫을 분수로 나타내기 </span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">(2)</span>
+                                    </p>
+                                    <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">3. (</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">분수</span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">)÷(</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">자연수</span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">) </span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">알아보기</span>
+                                    </p>
+                                    <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">4. (</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">분수</span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">)÷(</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">자연수</span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">)</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">를 분수의 곱셈으로 나타내기</span>
+                                    </p>
+                                    <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">5. (</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">대분수</span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">)÷(</span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">자연수</span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">) </span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">알아보기</span>
+                                    </p>
+                                    <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+                                    <!--[if !supportEmptyParas]-->&nbsp;<!--[endif]-->  <o:p></o:p></p><p class="0">
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;font-size:11.0pt;">02 </span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;font-size:11.0pt;">각기둥과 각뿔</span>
+                                    </p>
+                                    <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">1. </span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">각기둥</span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">(1)</span>
+                                    </p>
+                                    <p class="0" style="margin-left:15.0pt;mso-pagination:none;text-autospace:none;mso-padding-alt:0pt 0pt 0pt 0pt;">
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">2. </span>
+                                        <span style="font-family:맑은 고딕;mso-fareast-font-family:맑은 고딕;">각기둥</span>
+                                        <span lang="EN-US" style="mso-fareast-font-family:맑은 고딕;font-family:맑은 고딕;mso-ascii-font-family:맑은 고딕;mso-font-width:100%;letter-spacing:0pt;mso-text-raise:0pt;">(2)</span>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                $(document).ready( function () {
+                    get_student_tree_html( '325');
+
+                    $(".submit_btn").on("click", function ()
+                    {
+                        var student_ids = student_tree_get_student_ids();
+                        if( student_ids == '' )
+                        {
+                            alert("학생을 선택해주세요");
+                            return false;
+                        }
+
+                        $(".student_ids").val( student_ids );
+                        $(".book_form").submit();
+                    });
+                });
+
+                function get_student_tree_html( student_ids )
+                {
+                    // $(".student_tree_html").html( '' );
+                    $.ajax({
+                        type: "GET",
+                        url: "/students/student_tree_html",
+                        data: "t=1734497227&student_ids_str=" + student_ids + "&mode=sel",
+                        async : false,
+                        success: function (response) {
+                            $(".student_tree_html").html( response );
+                        }
+                    });
+                }
+            </script>
+        </div>
+    </div>
+</div>
+<!-- 학생지정 팝업 끝 -->
+
+</body>
+</html>

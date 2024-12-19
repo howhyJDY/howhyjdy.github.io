@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+	<title>하와이매쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+
+	<!-- base css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" />
+
+	<!-- site css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734506790"/>
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734506790" />
+	<!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734506790" /-->
+	<!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734506790" /> -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/work.css?v=1734506790" />
+
+	<!-- base javascript -->
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+
+	<!-- site javascript -->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			showMathMenu: false,
+			tex2jax: { displayMath: [ ["$$","$$"] ] },
+			"HTML-CSS": { fonts: ["Latin-Modern"] }
+		});
+	</script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1734506790"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1734506790"></script>
+</head>
+
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+	<div class="topbar">
+        <div class="content-box">
+            <div class="brand">
+                <a href="/home/main" class="logo" style="padding-left:10px;">
+                    <!-- <span><img src="https://img.howhymath.com/hmath/logo.png" style="width:140px;height:31px;" class="logo-sm"></span> 241210 이미지 변경 및 스타일 삭제 -->
+                    <span><img src="../assets/images/logo.svg" class="logo-sm" alt="하와이매쓰"></span>
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-end mb-0" style="display: flex; align-items: center;">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <span class="ms-1 nav-user-name hidden-sm" style=" color: var(--Gray-01, #1A1A1A); font-weight: 700; font-size: 16px;">정다영<span style="font-weight: 400;"><span style="font-weight: 400;">선생님</span></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!--a class="dropdown-item" href="javascript:edit_teacher();"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i>정보수정</a-->
+                            <a class="dropdown-item" href="javascript:edit_password();"><i data-feather="lock" class="align-self-center icon-xs icon-dual me-1"></i>암호수정</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="https://tutor.howhymath.com/users/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual me-1"></i>로그아웃</a>
+                        </div>
+                    </li>
+                    <button class="signout-btn" onclick="location.href='https://tutor.howhymath.com/users/logout';">로그아웃</button>
+                </ul> 
+                <div class="navbar-custom-menu">
+                    <div id="navigation">
+                        <ul class="navigation-menu">
+                            <li class='has-submenu'>
+                                <a href='/home/main'><span> </i>캘린더</span></a>
+                            </li>
+                            <li class='has-submenu active'>
+                                <a href='/books/index'><span> 학습자료</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/books/index'>교재</a></li>
+                                    <li><a href='/exam_pdfs/index'>보충교재</a></li>
+                                    <li><a href='/jindan_exams/index'>평가</a></li>
+                                    <li class='active'><a href='/wizards/index'>출제마법사</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/study_books/index'><span> 개별학습</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/study_books/index'>교재학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=exm'>출제마법사</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=wrg'>오답학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=rec'>맞춤학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=hom'>숙제관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/reports_v2/index'><span> 분석표</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/academies/index'><span> 관리</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/academies/index'>정보수정</a></li>
+                                    <li><a href='/teachers/index'>교사/반 관리</a></li>
+                                    <li><a href='/students/index'>학생관리</a></li>
+                                    <li><a href='/schools/index'>학교관리</a></li>
+                                    <li><a href='/print_pdfs/index'>인쇄파일관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/payments/index'><span> 결제</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/notices/index'><span> 고객센터</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/notices/index'>공지사항</a></li>
+                                    <li><a href='/inquiries/index'>1:1문의 & FAQ</a></li>
+                                    <li><a href='/question_error_reports/index'>문항오류신고</a></li>
+                                    <!-- <li><a href='/boards/index?boarda_type_cd=gj'>자료실-교재자료</a></li>
+                                    <li><a href='/boards/index?boarda_type_cd=mv'>자료실-영상자료</a></li> 241210 자료실 통합 -->
+                                    <li><a href='/boards/index'>교재/영상 자료실</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    </div>
+
+	<div class="page-wrapper">
+		<div class="page-content">
+                <div class="container-fluid">
+                <link href='https://img.dtsoft.co.kr/assets.howhy/plugins/select2/select2.min.css' rel='stylesheet' type='text/css' />
+                <link href='/app/css/select2.css' rel='stylesheet' type='text/css' />
+                <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/select2/select2.min.js'></script>
+                <script src='https://img.howhymath.com/custom/select2.js'></script><link rel='stylesheet' type='text/css' href='https://img.dtsoft.co.kr/assets.howhy/plugins/jquery-ui/jquery-ui.css'>
+                <link rel='stylesheet' type='text/css' href='https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.css' />
+                <script type='text/javascript' charset='utf-8' src='https://img.dtsoft.co.kr/assets.howhy/plugins/jquery-ui/jquery-ui.js'></script>
+                <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/cookie/js.cookie.min.js'></script>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.js'></script>
+                <link rel='stylesheet' href='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/skin-vista/ui.fancytree.css' />
+                <link href='/app/css/fancytree.css?t=1734506790' rel='stylesheet' type='text/css' />
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/jquery.fancytree-all.min.js'></script>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/modules/jquery.fancytree.persist.js'></script>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/ext/jquery.fancytree.contextMenu.js'></script>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="row">
+                                <div class="col-sm-4 head-left">
+                                    <div class='gray'><a href='/books/index'>학습자료</a></div>
+                                    <img src="/app/img/icon_right_arrow.png" alt=""/>
+                                    <div class='black'><a href='/wizards/index'>출제마법사</a></div>
+                                </div>
+                                <div class="col-sm-8"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>폴더 관리</h5>
+                            </div>
+                            <div class="card-body" style="overflow-x:auto;">
+                                <div style="padding:10px;text-align:right;">
+                                    <button type="button" class='sbtn-sm add-plan-folder' onclick="add_folder();" >폴더추가</button>
+                                </div>
+                                <div id="wizard_tree">
+                                    <ul>
+                                        <li id="folder-0-0" class="folder">전체 (1)</li>
+                                        <li id="folder-1-221" class='folder'>기본폴더 (1)</li>
+                                    </ul>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9 white padding-zero">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="tabs">
+                                    <ul class="nav nav-pills nav-justified" role="tablist" style="width:60%;">
+                                        <li class="nav-item waves-effect waves-light">
+                                            <a class="nav-link" href="/books/index" >교재</a>
+                                        </li>
+                                        <li class="nav-item waves-effect waves-light">
+                                            <a class="nav-link" href="/exam_pdfs/index" >보충교재</a>
+                                        </li>
+                                        <li class="nav-item waves-effect waves-light">
+                                            <a class="nav-link" href="/jindan_exams/index" >평가</a>
+                                        </li>
+                                        <li class="nav-item waves-effect waves-light">
+                                            <a class="nav-link active" href="/wizards/index" >출제마법사</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="padding: 20px;">
+                            <div class="col-md-2 search-head">1개중 1-1</div>
+                            <div class="col-md-8">
+                                <form id="form_search" name="form_no_fx" action="/wizards/index" style="">
+                                    <input type="hidden" name="folder_id" value="" id="input_folder_id">
+                                    <div class="row">
+                                        <div class="col-md-4 fx_bp2">
+                                            <select title="" name="sv_student_id" id="fx-form-sv_student_id" class="form-control student_select2"><option value="">-- 학생 선택 --</option><option value="325">정다영(학생) (초5)</option></select>					</div>
+                                        <div class="col-md-4 fx_bp2">
+                                            <select title="" name="sv_grade_cd" id="fx-form-sv_grade_cd" class="form-control"><option value="">-- 학년 --</option><option value="e1">초1</option><option value="e2">초2</option><option value="e3">초3</option><option value="e4">초4</option><option value="e5">초5</option><option value="e6">초6</option><option value="j1">중1</option><option value="j2">중2</option><option value="j3">중3</option><option value="s1">고1</option><option value="s2">고2</option><option value="s3">고3</option></select>					</div>
+                                        <div class="col-sm-4 fx_bp2">
+                                            <div class="input-group">
+                                                <input type="text" title="" name="sv_group_name" value="" id="fx-form-sv_group_name" maxlength="100" placeholder="시험지명" class="form-control" /><button class="mbtn" type="submit"><i class="fas fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> 
+                            <div class="col-md-2">
+                                <button type="button" class="mbtn w-100" onclick="javascript:window.location.href='set_exam';">출제마법사</button>
+                            </div> 
+                        </div> 
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped mb-0 table-border-none">
+                                    <colgroup>
+                                        <col width="60" />
+                                        <col />
+                                        <col width="100" />
+                                        <col width="100" />
+                                        <col width="80" />
+                                        <col width="100" />
+                                        <col width="200" />
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th class="fx-tablesorter-header" id="grade_cd-sort">학년</th>
+                                        <th class="fx-tablesorter-header" id="wizard_groups.name-sort">시험지명 &nbsp;&nbsp;(폴더/시험지수)</th>
+                                        <th class="fx-tablesorter-header" id="created_at-sort">출제일</th>
+                                        <th>인쇄/미리보기</th>	
+                                        <th>강의수업</th>	
+                                        <th>원생지정</th>	
+                                        <th>관리</th>	
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>초5</td>
+                                            <td style="text-align:left;">&nbsp;&nbsp;테스트 시험지<span style="font-size:12px;float:right;">( 기본폴더  / 2 )</span></td>
+                                            <td>2024-12-17</td>
+                                            <td>
+                                                <div class="btn-group btn-icon">
+                                                    <button class="icon-box" onclick="print_preview( 921 );"><i data-feather="printer"></i> </button>
+                                                    <button class="icon-box" onclick="show_wizard_exams(921);" title="Web 형식으로 보기"><i  data-feather="monitor"></i></button>
+                                                </div>
+                                            </td>
+                                            <td><button class="icon-box" onclick="show_wizard_tablet(921);" title="Tablet으로 보기"><i data-feather="smartphone"></i></button></td>
+                                            <td><button type="button" class="sbtn-sm add_myclass" data-id="921" type="button">1명</button></td>
+                                            <td>
+                                                <div class="btn-group btn-icon">
+                                                    <button class="gbtn-line" type="button" style="padding:5px;" onclick="javascript:edit_name(921);">수정</button>
+                                                    &nbsp;
+                                                    <button class="gbtn-line" type="button" style="padding:5px;" onclick="javascript:delete_wizard(921);">삭제</button>
+                                                    &nbsp;
+                                                    <button class="gbtn-line" type="button" style="padding:5px;" onclick="move_folder(921);">폴더이동</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="fx-ac">
+                                <nav>
+                                    <ul class='pagination justify-content-center'>
+                                        <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_double_left_arrow.png" alt=""/></a></li>
+                                        &nbsp;
+                                        <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_left_arrow.png" alt=""/></a></li>
+                                        &nbsp;
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        &nbsp;
+                                        <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_right_arrow.png" alt=""/></a></li>
+                                        &nbsp;
+                                        <li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_double_right_arrow.png" alt=""/></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+
+            function add_folder( )
+            {
+            fx_layer_popup_v2( 'add_folder', "/folders/popup_add_folder?model_name=WizardFolder", "" );
+            }
+
+            $( document ).ready(function() {
+                fx_ready_sorting( "wizard_folder_contents.wizard_group_id", "desc" );
+
+                $('.student_select2').select2({
+                    allowClear: true,
+                    placeholder: '원생별 지정 보기',
+                    language: "ko"
+                });
+
+
+                var treeKeyPrefix = "wizard_tree-";
+                // localStorage에서 모든 항목을 순회하며 선택 상태를 지우기
+                for (var i = 0; i < localStorage.length; i++) {
+                    var key = localStorage.key(i);
+                    if (key.startsWith(treeKeyPrefix) && key.endsWith("-focus")) localStorage.removeItem(key);
+                    if (key.startsWith(treeKeyPrefix) && key.endsWith("-active")) localStorage.removeItem(key);
+                }
+
+                localStorage.setItem( "wizard_tree-active", "folder-0-0");
+
+                var tree = $('#wizard_tree').fancytree({
+                    extensions: ["persist"],
+                    persist: { cookiePrefix: 'wizard_tree-' },
+                    click: function(event, data){
+                        if( data.targetType != 'title' ) return;
+                        if( data.targetType == "expander" ) return;
+                        var words = data.node.key.split('-');
+                        var folder_id = words[2];
+                        if( folder_id == 0 ) location.href= "/wizards/index";
+                        else				 location.href= "/wizards/index?sv_student_id="
+                                                        + "&folder_id=" + folder_id 
+                                                        + "&sv_group_name=" + encodeURI( "" )
+                                                        + "&sv_grade_cd=";
+                    },
+                    renderNode: function (event, data) {
+                        var node = data.node;
+                        if( node.key == 'folder-0-0') return;
+
+                        var words = node.key.split('-');
+
+                        var folder_id = words[2];
+                        var $nodeSpan = $(node.span);
+                        if( $nodeSpan.html().indexOf( '수정' ) != -1 ) return;
+
+                        $nodeSpan.append( '<button type="button" style="border:0;float:right;margin:2px;" class="green-box" onclick="edit_folder(\''+folder_id+'\');">수정</button>' );
+                        if( node.title.indexOf('(0)') != -1 )
+                            $nodeSpan.append( '<button type="button" style="padding: 5px 8px;font-size:12px;float:right;margin:2px;" class="wbtn-line" onclick="remove_folder(\''+folder_id+'\');">삭제</button>' );
+
+                    }
+                });
+
+                $(".add_myclass").on('click', function()
+                {
+                    var url = "/wizards/popup_add_myclass?wizard_group_id=" + $(this).data('id');
+                    fx_layer_popup_v2('add_myclass', url, "modal-lg modal-dialog-centered" );
+                });
+            });
+
+            function init_search()
+            {
+                $('.student_select2').val('');
+                $('.student_select2').trigger('change');
+
+                $("#fx-form-sv_group_name").val('');
+                $("#input_folder_id").val('');
+                $("#fx-form-sv_grade_cd").val('');
+            }
+
+            function show_wizard_exams(wizard_group_id)
+            {
+                fx_layer_popup_v2( 'show_wizard_exams', "/wizards/show_paper_html?wizard_group_id="+wizard_group_id,  "modal-lg modal-dialog-centered" );
+            }
+
+            function show_wizard_tablet(wizard_group_id)
+            {
+                fx_layer_popup_v2( 'show_wizard_tablet', "/wizards/tablet_select_paper?wizard_group_id="+wizard_group_id, "" );
+            }
+
+
+            function edit_name(wizard_id)
+            {
+                fx_layer_popup_v2( 'edit_name', "/wizards/popup_edit_wizard_name?wizard_id="+wizard_id, "" );
+            }
+
+            function delete_wizard(wizard_group_id)
+            {
+                var wizard_group_ids = wizard_group_id;
+                if( wizard_group_id == "" )
+                {
+                    alert("시험지를 선택해주세요.");
+                    return false;
+                }
+                //0518 CYH edit
+                var msg = "삭제하면 출제마법사 시험지를 사용할 수 없습니다.</br>"
+                            +"삭제하시겠습니까?";
+
+                if( !confirm(msg) )
+                    return false;
+
+                $.ajax({
+                    type: "GET",
+                    url: "/wizards/delete_wizard",
+                    data: "wizard_group_ids="+wizard_group_ids,
+                    success: function (response) {
+                        console.log( response );
+                        if( response.trim() == "ok" )
+                        {
+                            alert("삭제되었습니다.");
+                            location.reload();
+                        }
+                        else
+                            alert("삭제에 실패하였습니다.");
+                    }
+                });
+            }
+
+
+
+            function move_folder(wizard_id)
+            {
+                /*var wizard_ids = fx_get_checkboxes('ids');
+                if( wizard_ids == "" )
+                {
+                    alert("시험지그룹을 선택해주세요.");
+                    return false;
+                }
+                */
+                fx_layer_popup_v2( 'move_folder', "/wizards/popup_move_wizard_folder?wizard_ids="+wizard_id, "" );
+            }
+
+            function remove_folder( folder_id )
+            {
+                var url = "/folders/remove_folder?model_name=WizardFolder&folder_id=" + folder_id;
+                fx_remove_link( url );
+            }
+
+            function edit_folder( folder_id )
+            {
+                fx_layer_popup_v2( 'edit_folder', "/folders/popup_edit_folder?model_name=WizardFolder&folder_id="+folder_id, "" );
+            }
+
+            function folder_delete( folder_id )
+            {
+                $.ajax({
+                    url: "/folders/remove_folder",
+                    type: 'POST',
+                    data: "folder_id="+folder_id+"&model_name=WizardFolder",
+                    beforeSend: function () { fx_show_loading(); },
+                    complete: function () { fx_hide_loading(); },
+                    success: function (response) { eval(response); },
+                    error: function () { alert("서버와의 연결에 문제가 있습니다. 잠시 후 다시 시도해 주세요."); }
+                });
+            }
+
+            function get_today_study_card( study_card_ids )
+            {
+                $("div.ui-dialog-content").dialog("close");
+                fx_layer_popup( encodeURI("/plans/add_today_plans?exam_type=출제마법사&ids="+study_card_ids), "원생지정 완료", 450);
+                
+                $(".ui-dialog-titlebar-close").attr("onclick", "location.reload();");
+            }
+
+
+            function print_preview( id )
+            {
+                var url = "/wizards/exam_print?id="+id;
+                window.open( url ,"_blank");
+            }
+
+
+            </script>
+
+        </div>
+    </div>
+</div>
+<footer class='footer'>
+    <div class="top">
+        <div class="left">
+            <div class='footer-content'>
+                <span class="footer_logo"><img src="../assets/images/footer_logo.svg" alt="하와이매쓰" /></span>
+                <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+            </div>
+        </div>
+        <div class='right'>
+            <div class='footer-content'>
+                <div id="footer-dropbox">
+                    <select id="footer-dropbox-content" class="form-control form-select">
+                        <option value="">Family Site</option>
+                        <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                        <option value="https://www.fren.co.kr">프렌매쓰</option>
+                    </select>
+                    <script>
+                        document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                            let link = e.target.value;
+                            if(link)
+                                window.open(link, '_blank');
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='left'>
+        <div class='footer-content'>
+            <div><b>하와이컴퍼니(주)</b></div>
+            <div class='vertical-line'></div>
+            <div><b>HOWHY COMPANY</b></div>
+            <div class='vertical-line'></div>
+            <div><b>대표이사 : 박종화</b></div>
+        </div>
+
+        <div class='footer-content'>
+            <div><b>사업자등록번호</b> 760-87-02737</div>
+            <div class='vertical-line'></div>
+            <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+            <div class='vertical-line'></div>
+            <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+        </div>
+        <div class='footer-content'>
+            <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+        </div>
+        <div class='footer-content'>
+            2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://img.howhymath.com/custom/custom.js?v=1734506790"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	cdml_mathjax_init();
+});
+
+function edit_teacher()
+{
+    fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+}
+
+function edit_password()
+{
+    fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+}
+
+function menu_disable_delete( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    var words = node.key.split('-');
+    if( words[1] != '0' ) return true;
+    return false;
+}
+
+function menu_disable_add( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    if( node.getLevel() == 2 ) return true;
+    return false;
+}
+
+function menu_disable_edit( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    return false;
+}
+
+
+</script>
+</body>
+</html>
