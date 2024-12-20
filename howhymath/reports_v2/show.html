@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>하와이매쓰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+    <!-- base css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css"/>
+    <!-- site css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734673801"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734673801"/>
+    <!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734673801" /-->
+    <!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734673801"/> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/work.css"/>
+    <!-- base javascript -->
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                showMathMenu: false,
+                tex2jax: { displayMath: [ ["$$","$$"] ] },
+                "HTML-CSS": { fonts: ["Latin-Modern"] }
+            });
+        </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1734673801"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1734673801"></script>
+    </head>
+    <script>
+    cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+    cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+    var lms_domain = "https://tutor.howhymath.com";
+    </script>
+
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+    <div class="page-wrapper" style="padding:0;width:100% !important;">
+        <div class="page-content">
+            <div class="container-fluid">
+                <!--link rel="stylesheet" type="text/css" href="https://img.howhymath.com/soo/css2/print.css?v=20230527"/-->
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+                <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/justgage/raphael-2.1.4.min.js"></script>
+                <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/justgage/justgage.js"></script>
+                <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/d3/d3.min.js"></script>
+                <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/c3/c3.min.js"></script>
+                <div class="row no-print" style="padding: 30px 10px 10px;background:#fff;">
+                    <div class="col-md-12" style="text-align:center;">
+                        <button type="button" class="mbtn" disabled onclick="load_report_box( );">◀</button>
+                        &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:17px;"><b>이하와</b></span>
+                        &nbsp; &nbsp; &nbsp; &nbsp; <button type="button" class="mbtn" disabled onclick="load_report_box( );">▶</button>
+                        <br>
+                        <p style="padding-top: 12px;font-size:16px;">총평을 적어주세요.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- 리포트 내용 -->
+                        <div id="report_box">
+                            <div class="study-report-container">
+                                <div class="content" style="justify-content: space-between;">
+                                    <div class="left" style="display: flex; gap: 10px; align-items: center;">
+                                        <div style="color: #000;font-size: 34px;font-weight: 700;">학습리포트</div>
+                                        <div style="font-size: 30px; color: #E5E5E5;"> | </div>
+                                        <div style="color: #000;font-size: 18px;font-weight: 700;">(초5) 정다영(학생) 학생</div>
+                                    </div>
+                                    <div class="right">
+                                        <div style="text-align: end; color: #000;font-size: 14px;font-style: normal;font-weight: 700;line-height: normal; margin-bottom: 10px;">
+                                            하와이컴퍼니 담당교사: 정다영
+                                        </div>
+                                        <div style="color: var(--Gray01, #959595);font-weight: 700;">
+                                            학습기간 <span style="color: #000;margin-left: 20px;">2024-11-01 ~ 2024-11-30</span>
+                                        </div>
+                                        <div style="color: var(--Gray01, #959595);font-weight: 700;">
+                                            출석일 <span style="color: #000;margin-left: 20px;">
+                                            0일 (00시간 00분)</span>
+                                        </div>
+                                        <div style="color: var(--Gray01, #959595);font-weight: 700;">
+                                            학습변화량 <span style="color: blue;margin-left: 20px;"> △ 00시간 00분 </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="study-report-container" style="display:none;">
+                                <div class="title">학습결과요약</div>
+                                <div class="content" style="display: grid; grid-template-columns: 49% 2% 49%">
+                                    <div class="left">
+                                        <div style="margin-top: 10px; color: #000;font-size: 14px;font-weight: 400;">평균정답률:<span style="font-weight: 700;">80%</span></div>
+                                        <!-- img src="/app/img/report_progress_bar.png" style="width: 100%;" alt=""-->
+                                    </div>
+                                    <div>
+                                    </div>
+                                    <div class="right">
+                                        <div style="margin-top: 10px; color: #000;font-size: 14px;font-weight: 400;">평균성취도:<span style="font-weight: 700;">중</span></div>
+                                        <!-- img src="/app/img/report_progress_bar.png" style="width: 100%;" alt=""-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="study-report-container">
+                                <div class="title">학습결과요약</div>
+                                <div class="content" style="display: grid; gap: 20px; grid-template-columns: repeat(4, 1fr); ">
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">교재학습</div>
+                                        <div class="progress-box">
+                                            <div id="tbk_gauge_199" class="gauge">
+                                                <svg height="100%" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; top: -0.09375px;" viewbox="0 0 200 150" preserveaspectratio="xMidYMid meet"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.4</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><filter id="inner-shadow-tbk_gauge_199"><feoffset dx="0" dy="3"></feoffset><fegaussianblur result="offset-blur" stddeviation="5"></fegaussianblur><fecomposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"></fecomposite><feflood flood-color="black" flood-opacity="0.2" result="color"></feflood><fecomposite operator="in" in="color" in2="inverse" result="shadow"></fecomposite><fecomposite operator="over" in="shadow" in2="SourceGraphic"></fecomposite></filter></defs><path fill="#edebeb" stroke="none" d="M53.17857142857143,76.92307692307692L46.42857142857143,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,153.57142857142856,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,46.42857142857143,76.92307692307692L53.17857142857143,76.92307692307692A46.82142857142857,46.82142857142857,0,0,0,146.82142857142856,76.92307692307692A46.82142857142857,46.82142857142857,0,0,0,53.17857142857143,76.92307692307692Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#e3c97c" stroke="none" d="M53.17857142857143,76.92307692307692L46.42857142857143,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,153.57142857142856,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,100,130.4945054945055L100,123.74450549450549A46.82142857142857,46.82142857142857,0,0,0,146.82142857142856,76.92307692307692A46.82142857142857,46.82142857142857,0,0,0,53.17857142857143,76.92307692307692Z" transform="matrix(0,1,-1,0,176.9231,-23.0769)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="100" y="13.636363636363637" text-anchor="middle" font-family="sans-serif" font-size="15px" stroke="none" fill="#999999" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 15px; font-weight: bold; fill-opacity: 1;" font-weight="bold" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><text x="100" y="88.23529411764706" text-anchor="middle" font-family="Arial" font-size="27px" stroke="none" fill="#010101" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 27px; font-weight: bold; fill-opacity: 1;" font-weight="bold" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">75</tspan></text><text x="100" y="98.23529411764706" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 1;" font-weight="normal" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><text x="43.375" y="98.23529411764706" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 0;" font-weight="normal" fill-opacity="0"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><text x="156.625" y="98.23529411764706" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 0;" font-weight="normal" fill-opacity="0"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">100</tspan></text></svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">출제마법사</div>
+                                        <div class="progress-box">
+                                            <div id="wiz_gauge_199" class="gauge">
+                                                <svg height="100%" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; left: -0.75px; top: -0.09375px;" viewbox="0 0 200 150" preserveaspectratio="xMidYMid meet"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.4</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><filter id="inner-shadow-wiz_gauge_199"><feoffset dx="0" dy="3"></feoffset><fegaussianblur result="offset-blur" stddeviation="5"></fegaussianblur><fecomposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"></fecomposite><feflood flood-color="black" flood-opacity="0.2" result="color"></feflood><fecomposite operator="in" in="color" in2="inverse" result="shadow"></fecomposite><fecomposite operator="over" in="shadow" in2="SourceGraphic"></fecomposite></filter></defs><path fill="#edebeb" stroke="none" d="M53.17857142857143,76.92307692307692L46.42857142857143,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,153.57142857142856,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,46.42857142857143,76.92307692307692L53.17857142857143,76.92307692307692A46.82142857142857,46.82142857142857,0,0,0,146.82142857142856,76.92307692307692A46.82142857142857,46.82142857142857,0,0,0,53.17857142857143,76.92307692307692Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#c96855" stroke="none" d="M53.17857142857143,76.92307692307692L46.42857142857143,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,46.42857142857143,76.92307692307692L53.17857142857143,76.92307692307692A46.82142857142857,46.82142857142857,0,0,0,53.17857142857143,76.92307692307692Z" transform="matrix(0,1,-1,0,176.9231,-23.0769)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="100" y="13.636363636363637" text-anchor="middle" font-family="sans-serif" font-size="15px" stroke="none" fill="#999999" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 15px; font-weight: bold; fill-opacity: 1;" font-weight="bold" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><text x="100" y="88.23529411764706" text-anchor="middle" font-family="Arial" font-size="27px" stroke="none" fill="#010101" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 27px; font-weight: bold; fill-opacity: 1;" font-weight="bold" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><text x="100" y="98.23529411764706" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 1;" font-weight="normal" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><text x="43.375" y="98.23529411764706" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 0;" font-weight="normal" fill-opacity="0"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><text x="156.625" y="98.23529411764706" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 0;" font-weight="normal" fill-opacity="0"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">100</tspan></text></svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">오답학습</div>
+                                        <div class="progress-box">
+                                            <div id="wrg_gauge_199" class="gauge">
+                                                <svg height="100%" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; left: -0.5px; top: -0.09375px;" viewbox="0 0 200 150" preserveaspectratio="xMidYMid meet"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.4</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><filter id="inner-shadow-wrg_gauge_199"><feoffset dx="0" dy="3"></feoffset><fegaussianblur result="offset-blur" stddeviation="5"></fegaussianblur><fecomposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"></fecomposite><feflood flood-color="black" flood-opacity="0.2" result="color"></feflood><fecomposite operator="in" in="color" in2="inverse" result="shadow"></fecomposite><fecomposite operator="over" in="shadow" in2="SourceGraphic"></fecomposite></filter></defs><path fill="#edebeb" stroke="none" d="M53.17857142857143,76.92307692307692L46.42857142857143,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,153.57142857142856,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,46.42857142857143,76.92307692307692L53.17857142857143,76.92307692307692A46.82142857142857,46.82142857142857,0,0,0,146.82142857142856,76.92307692307692A46.82142857142857,46.82142857142857,0,0,0,53.17857142857143,76.92307692307692Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#c96855" stroke="none" d="M53.17857142857143,76.92307692307692L46.42857142857143,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,46.42857142857143,76.92307692307692L53.17857142857143,76.92307692307692A46.82142857142857,46.82142857142857,0,0,0,53.17857142857143,76.92307692307692Z" transform="matrix(0,1,-1,0,176.9231,-23.0769)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="100" y="13.636363636363637" text-anchor="middle" font-family="sans-serif" font-size="15px" stroke="none" fill="#999999" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 15px; font-weight: bold; fill-opacity: 1;" font-weight="bold" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><text x="100" y="88.23529411764706" text-anchor="middle" font-family="Arial" font-size="27px" stroke="none" fill="#010101" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 27px; font-weight: bold; fill-opacity: 1;" font-weight="bold" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><text x="100" y="98.23529411764706" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 1;" font-weight="normal" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><text x="43.375" y="98.23529411764706" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 0;" font-weight="normal" fill-opacity="0"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><text x="156.625" y="98.23529411764706" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 0;" font-weight="normal" fill-opacity="0"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">100</tspan></text></svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">맞춤학습</div>
+                                        <div class="progress-box">
+                                            <div id="rec_gauge_199" class="gauge">
+                                                <svg height="100%" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; left: -0.25px; top: -0.09375px;" viewbox="0 0 200 150" preserveaspectratio="xMidYMid meet"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.4</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><filter id="inner-shadow-rec_gauge_199"><feoffset dx="0" dy="3"></feoffset><fegaussianblur result="offset-blur" stddeviation="5"></fegaussianblur><fecomposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"></fecomposite><feflood flood-color="black" flood-opacity="0.2" result="color"></feflood><fecomposite operator="in" in="color" in2="inverse" result="shadow"></fecomposite><fecomposite operator="over" in="shadow" in2="SourceGraphic"></fecomposite></filter></defs><path fill="#edebeb" stroke="none" d="M53.17857142857143,76.92307692307692L46.42857142857143,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,153.57142857142856,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,46.42857142857143,76.92307692307692L53.17857142857143,76.92307692307692A46.82142857142857,46.82142857142857,0,0,0,146.82142857142856,76.92307692307692A46.82142857142857,46.82142857142857,0,0,0,53.17857142857143,76.92307692307692Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="#c96855" stroke="none" d="M53.17857142857143,76.92307692307692L46.42857142857143,76.92307692307692A53.57142857142857,53.57142857142857,0,0,1,46.42857142857143,76.92307692307692L53.17857142857143,76.92307692307692A46.82142857142857,46.82142857142857,0,0,0,53.17857142857143,76.92307692307692Z" transform="matrix(0,1,-1,0,176.9231,-23.0769)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="100" y="13.636363636363637" text-anchor="middle" font-family="sans-serif" font-size="15px" stroke="none" fill="#999999" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 15px; font-weight: bold; fill-opacity: 1;" font-weight="bold" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><text x="100" y="88.23529411764706" text-anchor="middle" font-family="Arial" font-size="27px" stroke="none" fill="#010101" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 27px; font-weight: bold; fill-opacity: 1;" font-weight="bold" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><text x="100" y="98.23529411764706" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 1;" font-weight="normal" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><text x="43.375" y="98.23529411764706" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 0;" font-weight="normal" fill-opacity="0"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><text x="156.625" y="98.23529411764706" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 0;" font-weight="normal" fill-opacity="0"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">100</tspan></text></svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="study-report-container">
+                                <div class="title">시험지 분석</div>
+                                <div class="content" style="display: grid; gap: 20px; grid-template-columns: repeat(4, 1fr); ">
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">학습문항수</div>
+                                        <div class="font-box">4 문항</div>
+                                    </div>
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">문항평균 난이도</div>
+                                        <div class="font-box">
+                                            1.25
+                                            <div style="display: block; color: var(--Gray-06, #999); font-size: 16px; font-weight: 700;">(최하1~최상5)</div>
+                                        </div>
+                                    </div>
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">전체오답</div>
+                                        <div class="font-box">
+                                            1문항
+                                            <div style="display: block; color: var(--Gray-06, #999); font-size: 16px; font-weight: 700;">(정답률 75%)</div>
+                                        </div>
+                                    </div>
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">스마트오답</div>
+                                        <div class="font-box">
+                                            1문항
+                                            <div style="display: block; color: var(--Gray-06, #999); font-size: 16px; font-weight: 700;">(정답률 75%)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="study-report-container">
+                                    <div class="header" style="justify-content: left !important;">
+                                        <div class="left">학습구성</div>
+                                        <!--div class="right" style="padding-left:30px;">
+                                        <div class="circle_4A5569"> </div> <div>초등</div>
+                                        <div class="circle_D47C3A"> </div> <div>중등</div>
+                                        <div class="circle_E798C9"> </div> <div>고등</div>
+                                        <div class="circle_424242"> </div> <div>고등</div>
+                                    </div-->
+                                    </div>
+                                    <div style="height: 250px; max-height: 250px; position: relative;" id="pie1" class="c3">
+                                        <svg width="405.5" height="250" style="overflow: hidden;"><defs><clippath id="c3-1734673788512-clip"><rect width="405.5" height="225"></rect></clippath><clippath id="c3-1734673788512-clip-xaxis"><rect x="-31" y="-20" width="467.5" height="41"></rect></clippath><clippath id="c3-1734673788512-clip-yaxis"><rect x="-29" y="-4" width="20" height="249"></rect></clippath><clippath id="c3-1734673788512-clip-grid"><rect width="405.5" height="225"></rect></clippath><clippath id="c3-1734673788512-clip-subchart"><rect width="405.5"></rect></clippath></defs><g transform="translate(0.5,4.5)"><text class="c3-text c3-empty" text-anchor="middle" dominant-baseline="middle" x="202.75" y="112.5" style="opacity: 0;"></text><rect class="c3-zoom-rect" width="405.5" height="225" style="opacity: 0;"></rect><g clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788512-clip)" class="c3-regions" style="visibility: hidden;"></g><g clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788512-clip-grid)" class="c3-grid" style="visibility: hidden;"><g class="c3-xgrid-focus"><line class="c3-xgrid-focus" x1="-10" x2="-10" y1="0" y2="225" style="visibility: hidden;"></line></g></g><g clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788512-clip)" class="c3-chart"><g class="c3-event-rects c3-event-rects-single" style="fill-opacity: 0;"><rect class=" c3-event-rect c3-event-rect-0" x="0.25" y="0" width="405.5" height="225"></rect></g><g class="c3-chart-bars"><g class="c3-chart-bar c3-target c3-target-교재" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-교재 c3-bars c3-bars-교재" style="cursor: pointer;"></g></g><g class="c3-chart-bar c3-target c3-target-출제" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-출제 c3-bars c3-bars-출제" style="cursor: pointer;"></g></g><g class="c3-chart-bar c3-target c3-target-오답" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-오답 c3-bars c3-bars-오답" style="cursor: pointer;"></g></g><g class="c3-chart-bar c3-target c3-target-맞춤" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-맞춤 c3-bars c3-bars-맞춤" style="cursor: pointer;"></g></g></g><g class="c3-chart-lines"><g class="c3-chart-line c3-target c3-target-교재" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-교재 c3-lines c3-lines-교재"></g><g class=" c3-shapes c3-shapes-교재 c3-areas c3-areas-교재"></g><g class=" c3-selected-circles c3-selected-circles-교재"></g><g class=" c3-shapes c3-shapes-교재 c3-circles c3-circles-교재" style="cursor: pointer;"></g></g><g class="c3-chart-line c3-target c3-target-출제" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-출제 c3-lines c3-lines-출제"></g><g class=" c3-shapes c3-shapes-출제 c3-areas c3-areas-출제"></g><g class=" c3-selected-circles c3-selected-circles-출제"></g><g class=" c3-shapes c3-shapes-출제 c3-circles c3-circles-출제" style="cursor: pointer;"></g></g><g class="c3-chart-line c3-target c3-target-오답" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-오답 c3-lines c3-lines-오답"></g><g class=" c3-shapes c3-shapes-오답 c3-areas c3-areas-오답"></g><g class=" c3-selected-circles c3-selected-circles-오답"></g><g class=" c3-shapes c3-shapes-오답 c3-circles c3-circles-오답" style="cursor: pointer;"></g></g><g class="c3-chart-line c3-target c3-target-맞춤" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-맞춤 c3-lines c3-lines-맞춤"></g><g class=" c3-shapes c3-shapes-맞춤 c3-areas c3-areas-맞춤"></g><g class=" c3-selected-circles c3-selected-circles-맞춤"></g><g class=" c3-shapes c3-shapes-맞춤 c3-circles c3-circles-맞춤" style="cursor: pointer;"></g></g></g><g class="c3-chart-arcs" transform="translate(202.75,107.5)"><text class="c3-chart-arcs-title" style="text-anchor: middle; opacity: 0;"></text><g class="c3-chart-arc c3-target c3-target-교재"><g class=" c3-shapes c3-shapes-교재 c3-arcs c3-arcs-교재"><path class=" c3-shape c3-shape c3-arc c3-arc-교재" transform="scale(1,1)" style="fill: rgb(74, 85, 105); cursor: pointer; opacity: 1;" d="M6.253352718146172e-15,-102.125A102.125,102.125 0 1,1 -44.31037685738062,92.01144563453455L0,0Z"></path></g><text dy=".35em" class="" transform="translate(79.651610425255,18.179960304230885)" style="opacity: 1; text-anchor: middle; pointer-events: none;">57.1%</text></g><g class="c3-chart-arc c3-target c3-target-출제"><g class=" c3-shapes c3-shapes-출제 c3-arcs c3-arcs-출제"><path class=" c3-shape c3-shape c3-arc c3-arc-출제" transform="scale(1,1)" style="fill: rgb(31, 119, 180); cursor: pointer; opacity: 1;" d="M-44.31037685738062,92.01144563453455A102.125,102.125 0 0,1 -99.56451303156874,22.724950380288618L0,0Z"></path></g><text dy=".35em" class="" transform="translate(-63.875632117638034,50.93911681185854)" style="opacity: 1; text-anchor: middle; pointer-events: none;">14.3%</text></g><g class="c3-chart-arc c3-target c3-target-오답"><g class=" c3-shapes c3-shapes-오답 c3-arcs c3-arcs-오답"><path class=" c3-shape c3-shape c3-arc c3-arc-오답" transform="scale(1,1)" style="fill: rgb(231, 152, 201); cursor: pointer; opacity: 1;" d="M-99.56451303156874,22.724950380288618A102.125,102.125 0 0,1 -79.84454014704755,-63.67389601482314L0,0Z"></path></g><text dy=".35em" class="" transform="translate(-79.651610425255,-18.179960304230878)" style="opacity: 1; text-anchor: middle; pointer-events: none;">14.3%</text></g><g class="c3-chart-arc c3-target c3-target-맞춤"><g class=" c3-shapes c3-shapes-맞춤 c3-arcs c3-arcs-맞춤"><path class=" c3-shape c3-shape c3-arc c3-arc-맞춤" transform="scale(1,1)" style="fill: rgb(112, 112, 112); cursor: pointer; opacity: 1;" d="M-79.84454014704755,-63.67389601482314A102.125,102.125 0 0,1 -1.8760058154438514e-14,-102.125L0,0Z"></path></g><text dy=".35em" class="" transform="translate(-35.448301485904516,-73.60915650762765)" style="opacity: 1; text-anchor: middle; pointer-events: none;">14.3%</text></g></g><g class="c3-chart-texts"><g class="c3-chart-text c3-target c3-target-교재" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-교재"></g></g><g class="c3-chart-text c3-target c3-target-출제" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-출제"></g></g><g class="c3-chart-text c3-target c3-target-오답" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-오답"></g></g><g class="c3-chart-text c3-target c3-target-맞춤" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-맞춤"></g></g></g></g><g clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788512-clip-grid)" class="c3-grid c3-grid-lines"><g class="c3-xgrid-lines"></g><g class="c3-ygrid-lines"></g></g><g class="c3-axis c3-axis-x" clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788512-clip-xaxis)" transform="translate(0,225)" style="visibility: visible; opacity: 0;"><text class="c3-axis-x-label" transform="" style="text-anchor: end;" x="405.5" dx="-0.5em" dy="-0.5em"></text><g class="tick" transform="translate(203, 0)" style="opacity: 1;"><line y2="6" x1="0" x2="0"></line><text y="9" x="0" transform="" style="text-anchor: middle; display: block;"><tspan x="0" dy=".71em" dx="0">0</tspan></text></g><path class="domain" d="M0,6V0H405.5V6"></path></g><g class="c3-axis c3-axis-y" clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788512-clip-yaxis)" transform="translate(0,0)" style="visibility: visible; opacity: 0;"><text class="c3-axis-y-label" transform="rotate(-90)" style="text-anchor: end;" x="0" dx="-0.5em" dy="1.2em"></text><g class="tick" transform="translate(0,207)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">1</tspan></text></g><g class="tick" transform="translate(0,176)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">1.5</tspan></text></g><g class="tick" transform="translate(0,145)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">2</tspan></text></g><g class="tick" transform="translate(0,113)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">2.5</tspan></text></g><g class="tick" transform="translate(0,82)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">3</tspan></text></g><g class="tick" transform="translate(0,51)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">3.5</tspan></text></g><g class="tick" transform="translate(0,20)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">4</tspan></text></g><path class="domain" d="M-6,1H0V225H-6"></path></g><g class="c3-axis c3-axis-y2" transform="translate(405.5,0)" style="visibility: hidden; opacity: 0;"><text class="c3-axis-y2-label" transform="rotate(-90)" style="text-anchor: end;" x="0" dx="-0.5em" dy="-0.5em"></text><g class="tick" transform="translate(0,225)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0</tspan></text></g><g class="tick" transform="translate(0,203)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.1</tspan></text></g><g class="tick" transform="translate(0,181)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.2</tspan></text></g><g class="tick" transform="translate(0,158)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.3</tspan></text></g><g class="tick" transform="translate(0,136)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.4</tspan></text></g><g class="tick" transform="translate(0,113)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.5</tspan></text></g><g class="tick" transform="translate(0,91)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.6</tspan></text></g><g class="tick" transform="translate(0,69)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.7</tspan></text></g><g class="tick" transform="translate(0,46)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.8</tspan></text></g><g class="tick" transform="translate(0,24)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.9</tspan></text></g><g class="tick" transform="translate(0,1)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">1</tspan></text></g><path class="domain" d="M6,1H0V225H6"></path></g></g><g transform="translate(0.5,250.5)" style="visibility: hidden;"><g clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788512-clip-subchart)" class="c3-chart"><g class="c3-chart-bars"></g><g class="c3-chart-lines"></g></g><g clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788512-clip)" class="c3-brush" style="pointer-events: all; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect class="background" x="0" width="405.5" style="visibility: hidden; cursor: crosshair;"></rect><rect class="extent" x="0" width="0" style="cursor: move;"></rect><g class="resize e" transform="translate(0,0)" style="cursor: ew-resize; display: none;"><rect x="-3" width="6" height="6" style="visibility: hidden;"></rect></g><g class="resize w" transform="translate(0,0)" style="cursor: ew-resize; display: none;"><rect x="-3" width="6" height="6" style="visibility: hidden;"></rect></g></g><g class="c3-axis-x" transform="translate(0,0)" clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788512-clip-xaxis)" style="visibility: hidden; opacity: 0;"><g class="tick" transform="translate(203, 0)" style="opacity: 1;"><line y2="6" x1="0" x2="0"></line><text y="9" x="0" transform="" style="text-anchor: middle; display: block;"><tspan x="0" dy=".71em" dx="0">0</tspan></text></g><path class="domain" d="M0,6V0H405.5V6"></path></g></g><g transform="translate(0,229)"><g class="c3-legend-item c3-legend-item-교재" style="visibility: visible; cursor: pointer;"><text x="119.34375" y="9" style="pointer-events: none;">교재</text><rect class="c3-legend-item-event" x="105.34375" y="-5" width="51.203125" height="21" style="fill-opacity: 0;"></rect><line class="c3-legend-item-tile" x1="103.34375" y1="4" x2="113.34375" y2="4" stroke-width="10" style="stroke: rgb(74, 85, 105); pointer-events: none;"></line></g><g class="c3-legend-item c3-legend-item-출제" style="visibility: visible; cursor: pointer;"><text x="170.546875" y="9" style="pointer-events: none;">출제</text><rect class="c3-legend-item-event" x="156.546875" y="-5" width="51.203125" height="21" style="fill-opacity: 0;"></rect><line class="c3-legend-item-tile" x1="154.546875" y1="4" x2="164.546875" y2="4" stroke-width="10" style="stroke: rgb(31, 119, 180); pointer-events: none;"></line></g><g class="c3-legend-item c3-legend-item-오답" style="visibility: visible; cursor: pointer;"><text x="221.75" y="9" style="pointer-events: none;">오답</text><rect class="c3-legend-item-event" x="207.75" y="-5" width="51.203125" height="21" style="fill-opacity: 0;"></rect><line class="c3-legend-item-tile" x1="205.75" y1="4" x2="215.75" y2="4" stroke-width="10" style="stroke: rgb(231, 152, 201); pointer-events: none;"></line></g><g class="c3-legend-item c3-legend-item-맞춤" style="visibility: visible; cursor: pointer;"><text x="272.953125" y="9" style="pointer-events: none;">맞춤</text><rect class="c3-legend-item-event" x="258.953125" y="-5" width="41.203125" height="21" style="fill-opacity: 0;"></rect><line class="c3-legend-item-tile" x1="256.953125" y1="4" x2="266.953125" y2="4" stroke-width="10" style="stroke: rgb(112, 112, 112); pointer-events: none;"></line></g></g><text class="c3-title" x="202.75" y="0"></text></svg>
+                                        <div class="c3-tooltip-container" style="position: absolute; pointer-events: none; display: none;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="study-report-container">
+                                    <div class="header" style="justify-content: left !important;">
+                                        <div class="left">난이도 구성</div>
+                                        <!--div class="right" style="padding-left:30px;">
+                                        <div class="circle_E5EFD9"> </div> <div>하</div>
+                                        <div class="circle_CCDFB5"> </div> <div>증하</div>
+                                        <div class="circle_B4D090"> </div> <div>중</div>
+                                        <div class="circle_64813D"> </div> <div>중상</div>
+                                        <div class="circle_44582B"> </div> <div>상</div>
+                                    </div-->
+                                    </div>
+                                    <div style="height: 250px; max-height: 250px; position: relative;" id="pie2" class="c3">
+                                        <svg width="405.5" height="250" style="overflow: hidden;"><defs><clippath id="c3-1734673788471-clip"><rect width="405.5" height="225"></rect></clippath><clippath id="c3-1734673788471-clip-xaxis"><rect x="-31" y="-20" width="467.5" height="41"></rect></clippath><clippath id="c3-1734673788471-clip-yaxis"><rect x="-29" y="-4" width="20" height="249"></rect></clippath><clippath id="c3-1734673788471-clip-grid"><rect width="405.5" height="225"></rect></clippath><clippath id="c3-1734673788471-clip-subchart"><rect width="405.5"></rect></clippath></defs><g transform="translate(0.5,4.5)"><text class="c3-text c3-empty" text-anchor="middle" dominant-baseline="middle" x="202.75" y="112.5" style="opacity: 0;"></text><rect class="c3-zoom-rect" width="405.5" height="225" style="opacity: 0;"></rect><g clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788471-clip)" class="c3-regions" style="visibility: hidden;"></g><g clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788471-clip-grid)" class="c3-grid" style="visibility: hidden;"><g class="c3-xgrid-focus"><line class="c3-xgrid-focus" x1="-10" x2="-10" y1="0" y2="225" style="visibility: hidden;"></line></g></g><g clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788471-clip)" class="c3-chart"><g class="c3-event-rects c3-event-rects-single" style="fill-opacity: 0;"><rect class=" c3-event-rect c3-event-rect-0" x="0.25" y="0" width="405.5" height="225"></rect></g><g class="c3-chart-bars"><g class="c3-chart-bar c3-target c3-target-최하" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-최하 c3-bars c3-bars-최하" style="cursor: pointer;"></g></g><g class="c3-chart-bar c3-target c3-target-하" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-하 c3-bars c3-bars-하" style="cursor: pointer;"></g></g><g class="c3-chart-bar c3-target c3-target-중" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-중 c3-bars c3-bars-중" style="cursor: pointer;"></g></g><g class="c3-chart-bar c3-target c3-target-상" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-상 c3-bars c3-bars-상" style="cursor: pointer;"></g></g><g class="c3-chart-bar c3-target c3-target-최상" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-최상 c3-bars c3-bars-최상" style="cursor: pointer;"></g></g></g><g class="c3-chart-lines"><g class="c3-chart-line c3-target c3-target-최하" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-최하 c3-lines c3-lines-최하"></g><g class=" c3-shapes c3-shapes-최하 c3-areas c3-areas-최하"></g><g class=" c3-selected-circles c3-selected-circles-최하"></g><g class=" c3-shapes c3-shapes-최하 c3-circles c3-circles-최하" style="cursor: pointer;"></g></g><g class="c3-chart-line c3-target c3-target-하" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-하 c3-lines c3-lines-하"></g><g class=" c3-shapes c3-shapes-하 c3-areas c3-areas-하"></g><g class=" c3-selected-circles c3-selected-circles-하"></g><g class=" c3-shapes c3-shapes-하 c3-circles c3-circles-하" style="cursor: pointer;"></g></g><g class="c3-chart-line c3-target c3-target-중" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-중 c3-lines c3-lines-중"></g><g class=" c3-shapes c3-shapes-중 c3-areas c3-areas-중"></g><g class=" c3-selected-circles c3-selected-circles-중"></g><g class=" c3-shapes c3-shapes-중 c3-circles c3-circles-중" style="cursor: pointer;"></g></g><g class="c3-chart-line c3-target c3-target-상" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-상 c3-lines c3-lines-상"></g><g class=" c3-shapes c3-shapes-상 c3-areas c3-areas-상"></g><g class=" c3-selected-circles c3-selected-circles-상"></g><g class=" c3-shapes c3-shapes-상 c3-circles c3-circles-상" style="cursor: pointer;"></g></g><g class="c3-chart-line c3-target c3-target-최상" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-최상 c3-lines c3-lines-최상"></g><g class=" c3-shapes c3-shapes-최상 c3-areas c3-areas-최상"></g><g class=" c3-selected-circles c3-selected-circles-최상"></g><g class=" c3-shapes c3-shapes-최상 c3-circles c3-circles-최상" style="cursor: pointer;"></g></g></g><g class="c3-chart-arcs" transform="translate(202.75,107.5)"><text class="c3-chart-arcs-title" style="text-anchor: middle; opacity: 0;"></text><g class="c3-chart-arc c3-target c3-target-최하"><g class=" c3-shapes c3-shapes-최하 c3-arcs c3-arcs-최하"><path class=" c3-shape c3-shape c3-arc c3-arc-최하" transform="scale(1,1)" style="fill: rgb(230, 239, 218); cursor: pointer; opacity: 1;" d="M6.253352718146172e-15,-102.125A102.125,102.125 0 1,1 -102.125,1.2506705436292344e-14L0,0Z"></path></g><text dy=".35em" class="" transform="translate(57.770624022940936,57.770624022940936)" style="opacity: 1; text-anchor: middle; pointer-events: none;">75.0%</text></g><g class="c3-chart-arc c3-target c3-target-하"><g class=" c3-shapes c3-shapes-하 c3-arcs c3-arcs-하"><path class=" c3-shape c3-shape c3-arc c3-arc-하" transform="scale(1,1)" style="fill: rgb(204, 223, 181); cursor: pointer; opacity: 1;" d="M-102.125,1.2506705436292344e-14A102.125,102.125 0 0,1 -1.8760058154438514e-14,-102.125L0,0Z"></path></g><text dy=".35em" class="" transform="translate(-57.77062402294094,-57.77062402294093)" style="opacity: 1; text-anchor: middle; pointer-events: none;">25.0%</text></g><g class="c3-chart-arc c3-target c3-target-중"><g class=" c3-shapes c3-shapes-중 c3-arcs c3-arcs-중"><path class=" c3-shape c3-shape c3-arc c3-arc-중" transform="scale(1,1)" style="fill: rgb(180, 208, 144); cursor: pointer; opacity: 1;" d="M-1.8760058154438514e-14,-102.125A102.125,102.125 0 0,1 -1.8760058154438514e-14,-102.125L0,0Z"></path></g><text dy=".35em" class="" transform="translate(-1.5008046523550813e-14,-81.7)" style="opacity: 1; text-anchor: middle; pointer-events: none;"></text></g><g class="c3-chart-arc c3-target c3-target-상"><g class=" c3-shapes c3-shapes-상 c3-arcs c3-arcs-상"><path class=" c3-shape c3-shape c3-arc c3-arc-상" transform="scale(1,1)" style="fill: rgb(100, 129, 61); cursor: pointer; opacity: 1;" d="M-1.8760058154438514e-14,-102.125A102.125,102.125 0 0,1 -1.8760058154438514e-14,-102.125L0,0Z"></path></g><text dy=".35em" class="" transform="translate(-1.5008046523550813e-14,-81.7)" style="opacity: 1; text-anchor: middle; pointer-events: none;"></text></g><g class="c3-chart-arc c3-target c3-target-최상"><g class=" c3-shapes c3-shapes-최상 c3-arcs c3-arcs-최상"><path class=" c3-shape c3-shape c3-arc c3-arc-최상" transform="scale(1,1)" style="fill: rgb(68, 88, 43); cursor: pointer; opacity: 1;" d="M-1.8760058154438514e-14,-102.125A102.125,102.125 0 0,1 -1.8760058154438514e-14,-102.125L0,0Z"></path></g><text dy=".35em" class="" transform="translate(-1.5008046523550813e-14,-81.7)" style="opacity: 1; text-anchor: middle; pointer-events: none;"></text></g></g><g class="c3-chart-texts"><g class="c3-chart-text c3-target c3-target-최하" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-최하"></g></g><g class="c3-chart-text c3-target c3-target-하" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-하"></g></g><g class="c3-chart-text c3-target c3-target-중" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-중"></g></g><g class="c3-chart-text c3-target c3-target-상" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-상"></g></g><g class="c3-chart-text c3-target c3-target-최상" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-최상"></g></g></g></g><g clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788471-clip-grid)" class="c3-grid c3-grid-lines"><g class="c3-xgrid-lines"></g><g class="c3-ygrid-lines"></g></g><g class="c3-axis c3-axis-x" clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788471-clip-xaxis)" transform="translate(0,225)" style="visibility: visible; opacity: 0;"><text class="c3-axis-x-label" transform="" style="text-anchor: end;" x="405.5" dx="-0.5em" dy="-0.5em"></text><g class="tick" transform="translate(203, 0)" style="opacity: 1;"><line y2="6" x1="0" x2="0"></line><text y="9" x="0" transform="" style="text-anchor: middle; display: block;"><tspan x="0" dy=".71em" dx="0">0</tspan></text></g><path class="domain" d="M0,6V0H405.5V6"></path></g><g class="c3-axis c3-axis-y" clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788471-clip-yaxis)" transform="translate(0,0)" style="visibility: visible; opacity: 0;"><text class="c3-axis-y-label" transform="rotate(-90)" style="text-anchor: end;" x="0" dx="-0.5em" dy="1.2em"></text><g class="tick" transform="translate(0,207)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">0</tspan></text></g><g class="tick" transform="translate(0,176)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">0.5</tspan></text></g><g class="tick" transform="translate(0,145)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">1</tspan></text></g><g class="tick" transform="translate(0,113)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">1.5</tspan></text></g><g class="tick" transform="translate(0,82)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">2</tspan></text></g><g class="tick" transform="translate(0,51)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">2.5</tspan></text></g><g class="tick" transform="translate(0,20)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">3</tspan></text></g><path class="domain" d="M-6,1H0V225H-6"></path></g><g class="c3-axis c3-axis-y2" transform="translate(405.5,0)" style="visibility: hidden; opacity: 0;"><text class="c3-axis-y2-label" transform="rotate(-90)" style="text-anchor: end;" x="0" dx="-0.5em" dy="-0.5em"></text><g class="tick" transform="translate(0,225)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0</tspan></text></g><g class="tick" transform="translate(0,203)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.1</tspan></text></g><g class="tick" transform="translate(0,181)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.2</tspan></text></g><g class="tick" transform="translate(0,158)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.3</tspan></text></g><g class="tick" transform="translate(0,136)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.4</tspan></text></g><g class="tick" transform="translate(0,113)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.5</tspan></text></g><g class="tick" transform="translate(0,91)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.6</tspan></text></g><g class="tick" transform="translate(0,69)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.7</tspan></text></g><g class="tick" transform="translate(0,46)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.8</tspan></text></g><g class="tick" transform="translate(0,24)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.9</tspan></text></g><g class="tick" transform="translate(0,1)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">1</tspan></text></g><path class="domain" d="M6,1H0V225H6"></path></g></g><g transform="translate(0.5,250.5)" style="visibility: hidden;"><g clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788471-clip-subchart)" class="c3-chart"><g class="c3-chart-bars"></g><g class="c3-chart-lines"></g></g><g clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788471-clip)" class="c3-brush" style="pointer-events: all; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect class="background" x="0" width="405.5" style="visibility: hidden; cursor: crosshair;"></rect><rect class="extent" x="0" width="0" style="cursor: move;"></rect><g class="resize e" transform="translate(0,0)" style="cursor: ew-resize; display: none;"><rect x="-3" width="6" height="6" style="visibility: hidden;"></rect></g><g class="resize w" transform="translate(0,0)" style="cursor: ew-resize; display: none;"><rect x="-3" width="6" height="6" style="visibility: hidden;"></rect></g></g><g class="c3-axis-x" transform="translate(0,0)" clip-path="url(https://tutor.howhymath.com/reports_v2/show?ids=199#c3-1734673788471-clip-xaxis)" style="visibility: hidden; opacity: 0;"><g class="tick" transform="translate(203, 0)" style="opacity: 1;"><line y2="6" x1="0" x2="0"></line><text y="9" x="0" transform="" style="text-anchor: middle; display: block;"><tspan x="0" dy=".71em" dx="0">0</tspan></text></g><path class="domain" d="M0,6V0H405.5V6"></path></g></g><g transform="translate(0,229)"><g class="c3-legend-item c3-legend-item-최하" style="visibility: visible; cursor: pointer;"><text x="113.3828125" y="9" style="pointer-events: none;">최하</text><rect class="c3-legend-item-event" x="99.3828125" y="-5" width="51.203125" height="21" style="fill-opacity: 0;"></rect><line class="c3-legend-item-tile" x1="97.3828125" y1="4" x2="107.3828125" y2="4" stroke-width="10" style="stroke: rgb(230, 239, 218); pointer-events: none;"></line></g><g class="c3-legend-item c3-legend-item-하" style="visibility: visible; cursor: pointer;"><text x="164.5859375" y="9" style="pointer-events: none;">하</text><rect class="c3-legend-item-event" x="150.5859375" y="-5" width="38.109375" height="21" style="fill-opacity: 0;"></rect><line class="c3-legend-item-tile" x1="148.5859375" y1="4" x2="158.5859375" y2="4" stroke-width="10" style="stroke: rgb(204, 223, 181); pointer-events: none;"></line></g><g class="c3-legend-item c3-legend-item-중" style="visibility: visible; cursor: pointer;"><text x="202.6953125" y="9" style="pointer-events: none;">중</text><rect class="c3-legend-item-event" x="188.6953125" y="-5" width="38.109375" height="21" style="fill-opacity: 0;"></rect><line class="c3-legend-item-tile" x1="186.6953125" y1="4" x2="196.6953125" y2="4" stroke-width="10" style="stroke: rgb(180, 208, 144); pointer-events: none;"></line></g><g class="c3-legend-item c3-legend-item-상" style="visibility: visible; cursor: pointer;"><text x="240.8046875" y="9" style="pointer-events: none;">상</text><rect class="c3-legend-item-event" x="226.8046875" y="-5" width="38.109375" height="21" style="fill-opacity: 0;"></rect><line class="c3-legend-item-tile" x1="224.8046875" y1="4" x2="234.8046875" y2="4" stroke-width="10" style="stroke: rgb(100, 129, 61); pointer-events: none;"></line></g><g class="c3-legend-item c3-legend-item-최상" style="visibility: visible; cursor: pointer;"><text x="278.9140625" y="9" style="pointer-events: none;">최상</text><rect class="c3-legend-item-event" x="264.9140625" y="-5" width="41.203125" height="21" style="fill-opacity: 0;"></rect><line class="c3-legend-item-tile" x1="262.9140625" y1="4" x2="272.9140625" y2="4" stroke-width="10" style="stroke: rgb(68, 88, 43); pointer-events: none;"></line></g></g><text class="c3-title" x="202.75" y="0"></text></svg>
+                                        <div class="c3-tooltip-container" style="position: absolute; pointer-events: none; display: none;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="study-report-container">
+                                <div class="title">단원별 분석</div>
+                                <p style="padding: 5px">
+                                    <strong class="txt-title">* 단원별 AI 분석</strong>
+                                    <small>실수로 틀린문제와 최근 학습결과를 분석하여 예전에는 틀렸으나 현재는 틀리지 않을 문항을 판단합니다.</small>
+                                </p>
+                                <table class="table table-striped mb-0 table-border-none" style="margin-top: 10px;">
+                                    <thead>
+                                        <tr style="background: rgba(0, 0, 0, 0.05); ">
+                                            <th style="width: 10%;">학년</th>
+                                            <th style="width: 20%;">대단원</th>
+                                            <th style="width: 20%;">중단원</th>
+                                            <th style="width: 10%;">학습문항수</th>
+                                            <th style="width: 10%;">정답수</th>
+                                            <th style="width: 10%;">AI정답수</th>
+                                            <th style="width: 10%;">성취도</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">초6-2</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);text-align:left;">01. 분수의 나눗셈</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);text-align:left;">01. (자연수)÷(자연수)의 몫을 분수로 나타내기(1)</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">4</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">3</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">3</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);"><span style="font-size:17px;color:#c96855">75</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">초6-2</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);text-align:left;">01. 분수의 나눗셈</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);text-align:left;">01. (자연수)÷(자연수)의 몫을 분수로 나타내기(2)</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">4</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">3</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">3</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);"><span style="font-size:17px;color:#c96855">75</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="study-report-container">
+                                <div class="title">총평</div>
+                                <textarea title="" name="comments" id="fx-form-comments" rows="7" placeholder="학생에 대한 총평을 직접 입력해 주세요." style="font-size:14px;width: 100%;border: 1px solid #707070;"></textarea>
+                            </div>
+                            <div class="modal-bottom-btn-box">
+                                <button type="button" class="mbtn" onclick="save_comment();">평가 저장</button>
+                                <button type="button" class="mbtn" onclick="print_reports( 199 );">인쇄</button>
+                                <button type="button" class="gbtn" onclick="window.close();">닫기</button>
+                            </div>
+                            <br>
+                            <div class="weak-box" style="display:none;">
+                                <div class="row" style="margin:0px !important;">
+                                    <div class="col-sm-6" style="padding: 5px 40px !important;">
+                                        <h5>단원별 성취도</h5>
+                                        <canvas id="bar_chart1_199" style="width: 0px; min-height: 150px; display: block; box-sizing: border-box; height: 0px;" height="0" width="0"></canvas>
+                                    </div>
+                                    <div class="col-sm-6" style="padding: 5px 40px !important;">
+                                        <h5>난이도별 성취도</h5>
+                                        <canvas id="bar_chart2_199" style="width: 0px; min-height: 150px; display: block; box-sizing: border-box; height: 0px;" height="0" width="0"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                function print_reports( id )
+                                {
+                                    var url = "/reports_v2/prints?ids=" + id;
+                                    fx_popup_window( url , { name: 'popup_report_print', width: '960', height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
+                                }
+                                $( document ).ready(function() {
+                                    var tbk_gauge_199 = new JustGage({
+                                        id: "tbk_gauge_199",
+                                        value:75,
+                                        min: 0,
+                                        max: 100,
+                                        donut: true,
+                                        gaugeWidthScale: 0.3,
+                                        counter: true,
+                                        hideInnerShadow: true,
+                                        relativeGaugeSize: true,
+                                        customSectors : [{"lo":80,"hi":100,"color":"#96ba7d"},{"lo":60,"hi":80,"color":"#e3c97c"},{"lo":-1,"hi":60,"color":"#c96855"}]
+                                    });
+                                    var wiz_gauge_199 = new JustGage({
+                                        id: "wiz_gauge_199",
+                                        value: 0,
+                                        min: 0,
+                                        max: 100,
+                                        donut: true,
+                                        gaugeWidthScale: 0.3,
+                                        counter: true,
+                                        hideInnerShadow: true,
+                                        relativeGaugeSize: true,
+                                        customSectors : [{"lo":80,"hi":100,"color":"#96ba7d"},{"lo":60,"hi":80,"color":"#e3c97c"},{"lo":-1,"hi":60,"color":"#c96855"}]
+                                    });
+                                    var wiz_gauge_199 = new JustGage({
+                                        id: "rec_gauge_199",
+                                        value: 0,
+                                        min: 0,
+                                        max: 100,
+                                        donut: true,
+                                        gaugeWidthScale: 0.3,
+                                        counter: true,
+                                        hideInnerShadow: true,
+                                        relativeGaugeSize: true,
+                                        customSectors : [{"lo":80,"hi":100,"color":"#96ba7d"},{"lo":60,"hi":80,"color":"#e3c97c"},{"lo":-1,"hi":60,"color":"#c96855"}]
+                                    });
+                                    var wrg_gauge_199 = new JustGage({
+                                        id: "wrg_gauge_199",
+                                        value: 0,
+                                        min: 0,
+                                        max: 100,
+                                        donut: true,
+                                        gaugeWidthScale: 0.3,
+                                        counter: true,
+                                        hideInnerShadow: true,
+                                        relativeGaugeSize: true,
+                                        customSectors : [{"lo":80,"hi":100,"color":"#96ba7d"},{"lo":60,"hi":80,"color":"#e3c97c"},{"lo":-1,"hi":60,"color":"#c96855"}]
+                                    });
+                                    var data1199 = {
+                                        labels: [ '초6-2 01. 분수의 나눗셈' ],
+                                        datasets: [{
+                                            data: [ '75' ],
+                                            backgroundColor: [ '#e3c97c' ],
+                                        borderWidth: 0,
+                                        fill: false
+                                        }]
+                                    };
+                                    var data2199 = {
+                                        labels: [ '최하','하','중','상','최상' ],
+                                        datasets: [{
+                                            data: [ '67','100','0','0','0' ],
+                                            backgroundColor: [ '#e3c97c','#96ba7d','#c96855','#c96855','#c96855' ],
+                                            borderWidth: 0,
+                                            fill: false
+                                        }]
+                                    };
+                                    var options = {};
+                                    var options_first = Object.assign({}, options);
+                                    options_first['indexAxis'] = 'y';
+                                    var barChartCanvas1 = $("#bar_chart1_199").get(0).getContext("2d");
+                                    var barChart1 = new Chart(barChartCanvas1, { type: 'bar', data: data1199, options: options_first });
+                                    var barChartCanvas2 = $("#bar_chart2_199").get(0).getContext("2d");
+                                    var barChart2 = new Chart(barChartCanvas2, { type: 'bar', data: data2199, options: options });
+                                    draw_graph();
+                                });
+                                function save_comment()
+                                {
+                                    var comment = $('#fx-form-comments').val();
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "/reports_v2/save_comment",
+                                        data: "id=199&review=" + encodeURI(comment),
+                                        async:false,
+                                        cache:false,
+                                        success: function (response) {
+                                            if( response == 'ok' )
+                                                alert( '저장되었습니다.');
+                                        }
+                                    });
+                                }
+                                function draw_graph()
+                                {
+                                    c3.generate({
+                                        bindto: '#pie2',
+                                        data:{
+                                            columns: [
+                                                ['최하', 3 ],
+                                                ['하', 1 ],
+                                                ['중', 0 ],
+                                                ['상', 0 ],
+                                                ['최상', 0 ]
+                                            ],
+                                            colors:{
+                                                최하: '#e6efda',
+                                                하:   '#ccdfb5',
+                                                중:   '#b4d090',
+                                                상:   '#64813d',
+                                                최상: '#44582b'
+                                            },
+                                            type : 'pie'
+                                        }
+                                    });
+                                    c3.generate({
+                                        bindto: '#pie1',
+                                        data:{
+                                            columns: [
+                                                ['교재', 4 ],
+                                                ['출제', 1 ],
+                                                ['오답', 1 ],
+                                                ['맞춤', 1 ]
+                                            ],
+                                            colors:{
+                                                교재: '#4a5569',
+                                                온라인: '#d47c3a',
+                                                오답: '#e798c9',
+                                                맞춤: '#707070'
+                                            },
+                                            type : 'pie'
+                                        }
+                                    });
+                                }
+                            </script>
+                        </div>
+                        <!-- //리포트 내용 -->
+                    </div>
+                </div>
+                <div class="row no-print" style="padding: 30px 10px 10px;background:#fff;">
+                    <div class="col-md-12" style="text-align:center;">
+                        <button type="button" class="mbtn" disabled onclick="load_report_box( );">◀</button>
+                        &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:17px;"><b>이하와</b></span>
+                        &nbsp; &nbsp; &nbsp; &nbsp; <button type="button" class="mbtn" disabled onclick="load_report_box( );">▶</button>
+                        <br>
+                        <p style="padding-top: 12px;">총평을 적어주세요.</p>
+                    </div>
+                </div>
+                <!-- <script type="text/javascript">
+                    $(document).ready(function() {
+                        get_report( 199 );
+                    });
+                    function get_report( study_report_id )
+                    {
+                        $.ajax({
+                            type: "GET",
+                            url: "/reports_v2/report?mode=edit&id=" + study_report_id,
+                            async : false,
+                            success: function (response) {
+                                $("#report_box").html( response );
+                            }
+                        });
+                    }
+                    function load_report_box( idx )
+                    {
+                        location.href="/reports_v2/show?ids=199&idx=" + idx;
+                    }
+                </script> -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://img.howhymath.com/custom/custom.js?v=20231031"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        cdml_mathjax_init();
+    });
+    </script>
+</body>
+</html>
