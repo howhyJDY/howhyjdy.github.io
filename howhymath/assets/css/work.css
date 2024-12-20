@@ -175,11 +175,12 @@ hr{display: none;}
 }
 
 /* 인풋 체크박스 공통(텍스트x) 241217 */
-label:has(:only-child){
+label:has(input[type=checkbox]:only-child){
   position: relative;
-  width: 15px;
+  /* width: 15px; */
+  min-width: 15px;
   height: 15px;
-  background: url(../img/icon_chk_off.svg) no-repeat center / cover;
+  background: url(../img/icon_chk_off.svg) no-repeat center left / 15px auto;
   cursor: pointer;
   input[type=checkbox]{
     position: absolute;
@@ -1138,6 +1139,7 @@ line-height: normal;
 
 /* 학습자료 > 교재 > 교재분류 */
 .card-body.product-left{
+  br{display: none;}
   .row{
     gap: 5px !important;
     &>div{
@@ -2777,6 +2779,7 @@ span.fancytree-active span.fancytree-title {
   color: var(--main-color-blue);
   svg{display: block;}
   .form-select{margin-left: 5px;}
+  &:has(div:only-child){color: #222;}
 }
 
 .study-management-header > div > button {
@@ -2797,6 +2800,14 @@ span.fancytree-active span.fancytree-title {
   &.mbtn{
     background: var(--main-color-blue) !important;
     height: 40px;
+  }
+  &.gbtn{
+    height: 35px;
+    background: var(--main-color-blue) !important;
+  }
+  &.gbtns{
+    height: 35px;
+    background: var(--main-color-blue2) !important;
   }
 }
 
@@ -3471,7 +3482,7 @@ span.fancytree-active span.fancytree-title {
       &::before{
         content: '';
         display: block;
-        width: 100px;
+        width: 95px;
         height: 100%;
         border-radius: 4px 4px 0 0;
         border: 2px solid #222;
@@ -3564,12 +3575,21 @@ span.fancytree-active span.fancytree-title {
         background: #222;
         margin-right: 6px;
       }
+      &:has(img){
+        margin-top: 0;
+        &::before{content: none;}
+        img{margin: 0 auto;}
+        &+div p{
+          display: inline !important;
+        }
+      }
     }
   }
   .selected{
     background-color: #7ADFDA; 
   }
 }
+.grid-div:has(img){align-items: center;}
 
 .grid-div .modal-input{padding: 4px 12px;}
 /* 학습관리 > 교재학습 > 인쇄미리보기modal END */
@@ -3993,6 +4013,7 @@ td > .calendar-box{
   &:last-of-type{
     --table-main-color: var(--main-color-blue);
   }
+  .row:has(.search-head){padding: 30px 0 0 !important;}
 }
 
 .notice-box > .head{
@@ -6277,13 +6298,13 @@ span.plus {
 }
 
 /* <!-- input type date placeholder */
-input[type='date']{
+input[type="date"], input[type="month"]{
     position: relative;
     background: url(../img/icon_calendar.png) no-repeat center right 10px / 19px auto;
     padding-right: 10px;
     border-radius: 6px;
 }
-input[type='date']::-webkit-calendar-picker-indicator {
+input[type="date"], input[type="month"]::-webkit-calendar-picker-indicator {
   position: absolute;
   top: 0; left: 0;
   width: 100%;
@@ -6292,18 +6313,18 @@ input[type='date']::-webkit-calendar-picker-indicator {
   color: transparent;
   cursor: pointer;
 }
-input[type="date"]::-webkit-clear-button,
-input[type="date"]::-webkit-inner-spin-button { 
+input[type="date"], input[type="month"]::-webkit-clear-button,
+input[type="date"], input[type="month"]::-webkit-inner-spin-button { 
   display: none;
 } 
 
-input[type="date"]::before {
+input[type="date"], input[type="month"]::before {
     content: attr(data-placeholder) !important;
     width: 100% !important;
 }
 
-input[type="date"]:focus::before,
-input[type="date"]:valid::before { display: none  !important; }
+input[type="date"], input[type="month"]:focus::before,
+input[type="date"], input[type="month"]:valid::before { display: none  !important; }
 
 input[type="month"]::before {
     content: attr(data-placeholder) !important;
@@ -6739,6 +6760,15 @@ html:has(.page-memo){
   
 }
 
+/****** 개별학습 > 교재학습 > 교재 지정 팝업 ******/
+#popup_book_student{
+  .modal-body > div > .row > .col-md-3{
+    text-align: left !important;
+    color: #333;
+    font-weight: 600;
+    padding-bottom: 5px;
+  }
+}
 
 /*** 반응형 ***/
 @media (min-width: 992px) {
