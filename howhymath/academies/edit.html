@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>하와이매쓰</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<!-- favicon -->
+<link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+<!-- base css -->
+<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css"/>
+<!-- site css -->
+<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734677422"/>
+<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734677422"/>
+<!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734677422" /-->
+<!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734677422"/> -->
+<link rel="stylesheet" type="text/css" href="../assets/css/work.css"/>
+<!-- base javascript -->
+<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+<script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+<script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+<script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+<script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+<!-- site javascript -->
+<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			showMathMenu: false,
+			tex2jax: { displayMath: [ ["$$","$$"] ] },
+			"HTML-CSS": { fonts: ["Latin-Modern"] }
+		});
+	</script>
+<script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1734677422"></script>
+<script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1734677422"></script>
+</head>
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+    <div class="topbar">
+        <div class="content-box">
+            <div class="brand">
+                <a href="/home/main" class="logo" style="padding-left:10px;">
+                    <!-- <span><img src="https://img.howhymath.com/hmath/logo.png" style="width:140px;height:31px;" class="logo-sm"></span> 241210 이미지 변경 및 스타일 삭제 -->
+                    <span><img src="../assets/images/logo.svg" class="logo-sm" alt="하와이매쓰"></span>
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-end mb-0" style="display: flex; align-items: center;">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <span class="ms-1 nav-user-name hidden-sm" style=" color: var(--Gray-01, #1A1A1A); font-weight: 700; font-size: 16px;">이하와<span style="font-weight: 400;"><span style="font-weight: 400;">선생님</span></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!--a class="dropdown-item" href="javascript:edit_teacher();"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i>정보수정</a-->
+                            <a class="dropdown-item" href="javascript:edit_password();"><i data-feather="lock" class="align-self-center icon-xs icon-dual me-1"></i>암호수정</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="https://tutor.howhymath.com/users/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual me-1"></i>로그아웃</a>
+                        </div>
+                    </li>
+                    <button class="signout-btn" onclick="location.href='https://tutor.howhymath.com/users/logout';">로그아웃</button>
+                </ul> 
+                <div class="navbar-custom-menu">
+                    <div id="navigation">
+                        <ul class="navigation-menu">
+                            <li class='has-submenu'>
+                                <a href='/home/main'><span> </i>캘린더</span></a>
+                            </li>
+                            <li class='has-submenu'>
+                                <a href='/books/index'><span> 학습자료</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/books/index'>교재</a></li>
+                                    <li><a href='/exam_pdfs/index'>보충교재</a></li>
+                                    <li><a href='/jindan_exams/index'>평가</a></li>
+                                    <li><a href='/wizards/index'>출제마법사</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/study_books/index'><span> 개별학습</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/study_books/index'>교재학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=exm'>출제마법사</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=wrg'>오답학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=rec'>맞춤학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=hom'>숙제관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/reports_v2/index'><span> 분석표</span></a>
+                            </li>
+                            <li class='has-submenu active'>
+                                <a href='/academies/index'><span> 관리</span></a>
+                                <ul class='submenu'>
+                                    <li class='active'><a href='/academies/index'>정보수정</a></li>
+                                    <li><a href='/teachers/index'>교사/반 관리</a></li>
+                                    <li><a href='/students/index'>학생관리</a></li>
+                                    <li><a href='/schools/index'>학교관리</a></li>
+                                    <li><a href='/print_pdfs/index'>인쇄파일관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/payments/index'><span> 결제</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/notices/index'><span> 고객센터</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/notices/index'>공지사항</a></li>
+                                    <li><a href='/inquiries/index'>1:1문의 & FAQ</a></li>
+                                    <li><a href='/question_error_reports/index'>문항오류신고</a></li>
+                                    <!-- <li><a href='/boards/index?boarda_type_cd=gj'>자료실-교재자료</a></li>
+                                    <li><a href='/boards/index?boarda_type_cd=mv'>자료실-영상자료</a></li> 241210 자료실 통합 -->
+                                    <li><a href='/boards/index'>교재/영상 자료실</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    </div>
+    <div class="page-wrapper">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="modal-header">
+                        <div class="left">가맹점 수정</div>
+                        <img src="https://tutor.howhymath.com/app/img/icon_button_close.png" data-bs-dismiss="modal" aria-label="Close">
+                    </div>
+                    <form id="form_update" method="post" action="/academies/update?id=158">
+                        <input type=hidden name='up_oriname_biz_file' value="" id="up_oriname_biz_file">
+                        <input type=hidden name="up_ext_biz_file" value="" id="up_ext_biz_file">
+                        <input type=hidden name="up_filename_biz_file" value="" id="up_filename_biz_file">
+                        <input type=hidden name='up_oriname_logo_file' value="" id="up_oriname_logo_file">
+                        <input type=hidden name="up_ext_logo_file" value="" id="up_ext_logo_file">
+                        <input type=hidden name="up_filename_logo_file" value="" id="up_filename_logo_file">
+                        <input type=hidden name="dn" value="20241220-155022.177">
+                        <div class="modal-content" style="width:100% !important;">
+                            <div class="modal-body">
+                                <div class="modal-body-head">
+                                    <div class="left">기본 정보 &nbsp;&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <table class="modal-table">
+                                        <colgroup>
+                                            <col width="8%">
+                                            <col width="17%">
+                                            <col width="8%">
+                                            <col width="17%">
+                                            <col width="8%">
+                                            <col width="17%">
+                                            <col width="8%">
+                                            <col width="17%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th><span class="form_star">*</span>가맹점명</th>
+                                                <td>
+                                                    <div>
+                                                        <input type="text" title="" name="name" value="하와이컴퍼니" id="fx-form-name" maxlength="32" class="form-control"/>
+                                                    </div>
+                                                    <div class="note note-error" id="fx-error-name" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                                    </div>
+                                                </td>
+                                                <th><span class="form_star">*</span>기관전화</th>
+                                                <td>
+                                                    <div>
+                                                        <input type="text" title="" name="phone" value="" id="fx-form-phone" maxlength="16" class="form-control"/>
+                                                    </div>
+                                                    <div class="note note-error" id="fx-error-phone" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                                    </div>
+                                                </td>
+                                                <th><span class="form_star">*</span>기관타입</th>
+                                                <td>
+                                                    <div>
+                                                        <select title="" name="academy_type_cd" id="fx-form-academy_type_cd" class="form-control form-select">
+                                                            <option value="">-- 기관타입 --</option>
+                                                            <option value="sco">학교</option>
+                                                            <option value="aca" selected>학원</option>
+                                                            <option value="gss">교습소</option>
+                                                            <option value="ggb">공부방</option>
+                                                            <option value="pri">과외</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="note note-error" id="fx-error-academy_type_cd" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                                    </div>
+                                                </td>
+                                                <th>로고</th>
+                                                <td>
+                                                    <button type="button" id="btn_file_logo_file" class="edit-btn">업로드</button>
+                                                    <span id="sp_file_logo_file"><img src="https://img.howhymath.com/custom/none.png?1734677422" style="max-width:90%" id="academy_logo_file"></span>
+                                                    <button type="button" id="btn_file_remove_logo_file" class="btn btn-sm btn-soft-danger" style="display:none;">X</button>
+                                                    <div class="note note-error" id="fx-error-logo_file" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th><span class="form_star">*</span>주소</th>
+                                                <th>
+                                                    <button type="button" class="edit-btn" onclick="getAddress();" style="height: 34px; margin-bottom: 4px; display:inline;">우편번호찾기</button>
+                                                </th>
+                                                <td>
+                                                    <div>
+                                                        <input type="text" title="" name="post_code" value="12136" id="fx-form-post_code" maxlength="7" placeholder="우편번호" readonly="true" class="form-control"/>
+                                                    </div>
+                                                    <div class="note note-error" id="fx-error-post_code" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
+                                                </td>
+                                                <td colspan=2>
+                                                    <div>
+                                                        <input type="text" title="" name="address" value="서울시 강남구 선릉로 551 새롬빌딩 5F" id="fx-form-address" maxlength="64" placeholder="주소" readonly="true" class="form-control"/>
+                                                    </div>
+                                                    <div class="note note-error" id="fx-error-address" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        <input type="text" title="" name="address_add" value="새롬빌딩" id="fx-form-address_add" maxlength="64" placeholder="상세주소" class="form-control"/>
+                                                    </div>
+                                                    <div class="note note-error" id="fx-error-address_add" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
+                                                </td>
+                                                <th><span class="form_star">*</span>계약상태</th>
+                                                <td><b>운영</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="modal-content" style="width:100% !important;">
+                            <div class="modal-body">
+                                <div class="modal-body-head">
+                                    <div class="left">사업자 정보</div>
+                                </div>
+                                <table class="modal-table">
+                                    <colgroup>
+                                        <col width="8%">
+                                        <col width="17%">
+                                        <col width="8%">
+                                        <col width="17%">
+                                        <col width="8%">
+                                        <col width="17%">
+                                        <col width="8%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>사업자명</th>
+                                            <td>
+                                                <div>
+                                                    <input type="text" title="" name="biz_name" value="" id="fx-form-biz_name" maxlength="32" class="form-control"/>
+                                                </div>
+                                                <div class="note note-error" id="fx-error-biz_name" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                                </div>
+                                            </td>
+                                            <th>사업자번호</th>
+                                            <td>
+                                                <div>
+                                                    <input type="text" title="" name="biz_no" value="" id="fx-form-biz_no" maxlength="32" class="form-control"/>
+                                                </div>
+                                                <div class="note note-error" id="fx-error-biz_no" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                                </div>
+                                            </td>
+                                            <th>대표</th>
+                                            <td>
+                                                <div>
+                                                    <input type="text" title="" name="biz_ceo" value="" id="fx-form-biz_ceo" maxlength="16" class="form-control"/>
+                                                </div>
+                                                <div class="note note-error" id="fx-error-biz_ceo" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                                </div>
+                                            </td>
+                                            <th>이메일</th>
+                                            <td>
+                                                <div>
+                                                    <input type="text" title="" name="biz_email" value="" id="fx-form-biz_email" maxlength="32" class="form-control"/>
+                                                </div>
+                                                <div class="note note-error" id="fx-error-biz_email" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>업태</th>
+                                            <td>
+                                                <div>
+                                                    <input type="text" title="" name="biz_uptae" value="" id="fx-form-biz_uptae" maxlength="32" class="form-control"/>
+                                                </div>
+                                                <div class="note note-error" id="fx-error-biz_uptae" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                                </div>
+                                            </td>
+                                            <th>종목</th>
+                                            <td>
+                                                <div>
+                                                    <input type="text" title="" name="biz_jongmok" value="" id="fx-form-biz_jongmok" maxlength="32" class="form-control"/>
+                                                </div>
+                                                <div class="note note-error" id="fx-error-biz_jongmok" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                                </div>
+                                            </td>
+                                            <th>사업장주소</th>
+                                            <td>
+                                                <div>
+                                                    <input type="text" title="" name="biz_address" value="" id="fx-form-biz_address" maxlength="64" class="form-control"/>
+                                                </div>
+                                                <div class="note note-error" id="fx-error-biz_address" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                                </div>
+                                            </td>
+                                            <th>사업자등록증</th>
+                                            <td>
+                                                <button type="button" id="btn_file_biz_file" class="edit-btn">업로드</button>
+                                                <span id="sp_file_biz_file"></span>
+                                                <button type="button" id="btn_file_remove_biz_file" class="btn btn-sm btn-soft-danger" style="display:none;">X</button>
+                                                <div class="note note-error" id="fx-error-biz_file" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="modal-content" style="width:100% !important;">
+                            <div class="modal-body">
+                                <div class="modal-bottom-btn-box">
+                                    <button type="button" class="cancle-btn" onclick="location.href='/academies/index';">목록</button>
+                                    <button type="submit" class="save-btn">저장하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class='footer'>
+            <div class="top">
+                <div class="left">
+                    <div class='footer-content'>
+                        <span class="footer_logo"><img src="../assets/images/footer_logo.svg" alt="하와이매쓰" /></span>
+                        <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                        <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+                    </div>
+                </div>
+                <div class='right'>
+                    <div class='footer-content'>
+                        <div id="footer-dropbox">
+                            <select id="footer-dropbox-content" class="form-control form-select">
+                                <option value="">Family Site</option>
+                                <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                                <option value="https://www.fren.co.kr">프렌매쓰</option>
+                            </select>
+                            <script>
+                                document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                                    let link = e.target.value;
+                                    if(link)
+                                        window.open(link, '_blank');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='left'>
+                <div class='footer-content'>
+                    <div><b>하와이컴퍼니(주)</b></div>
+                    <div class='vertical-line'></div>
+                    <div><b>HOWHY COMPANY</b></div>
+                    <div class='vertical-line'></div>
+                    <div><b>대표이사 : 박종화</b></div>
+                </div>
+
+                <div class='footer-content'>
+                    <div><b>사업자등록번호</b> 760-87-02737</div>
+                    <div class='vertical-line'></div>
+                    <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+                    <div class='vertical-line'></div>
+                    <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+                </div>
+                <div class='footer-content'>
+                    <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+                </div>
+                <div class='footer-content'>
+                    2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+		<script src="https://img.howhymath.com/custom/custom.js?v=1734677422"></script>
+		<script type="text/javascript">
+            $(document).ready(function() {
+                cdml_mathjax_init();
+            });
+            function edit_teacher()
+            {
+                fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+            }
+            function edit_password()
+            {
+                fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+            }
+            function menu_disable_delete( key, opt )
+            {
+                var node = $.ui.fancytree.getNode(opt.$trigger);
+                if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+                var words = node.key.split('-');
+                if( words[1] != '0' ) return true;
+                return false;
+            }
+            function menu_disable_add( key, opt )
+            {
+                var node = $.ui.fancytree.getNode(opt.$trigger);
+                if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+                if( node.getLevel() == 2 ) return true;
+                return false;
+            }
+            function menu_disable_edit( key, opt )
+            {
+                var node = $.ui.fancytree.getNode(opt.$trigger);
+                if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+                return false;
+            }
+		</script>
+    </body>
+</html>
