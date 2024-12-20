@@ -1,0 +1,847 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이매쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+
+	<!-- base css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" />
+
+	<!-- site css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734660870"/>
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734660870" />
+	<!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734660870" /-->
+	<!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734660870" /> -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/work.css" />
+
+	<!-- base javascript -->
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+
+	<!-- site javascript -->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			showMathMenu: false,
+			tex2jax: { displayMath: [ ["$$","$$"] ] },
+			"HTML-CSS": { fonts: ["Latin-Modern"] }
+		});
+	</script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1734660870"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1734660870"></script>
+</head>
+
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+	<div class="topbar">
+        <div class="content-box">
+            <div class="brand">
+                <a href="/home/main" class="logo" style="padding-left:10px;">
+                    <!-- <span><img src="https://img.howhymath.com/hmath/logo.png" style="width:140px;height:31px;" class="logo-sm"></span> 241210 이미지 변경 및 스타일 삭제 -->
+                    <span><img src="../assets/images/logo.svg" class="logo-sm" alt="하와이매쓰"></span>
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-end mb-0" style="display: flex; align-items: center;">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <span class="ms-1 nav-user-name hidden-sm" style=" color: var(--Gray-01, #1A1A1A); font-weight: 700; font-size: 16px;">이하와<span style="font-weight: 400;"><span style="font-weight: 400;">선생님</span></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!--a class="dropdown-item" href="javascript:edit_teacher();"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i>정보수정</a-->
+                            <a class="dropdown-item" href="javascript:edit_password();"><i data-feather="lock" class="align-self-center icon-xs icon-dual me-1"></i>암호수정</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="https://tutor.howhymath.com/users/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual me-1"></i>로그아웃</a>
+                        </div>
+                    </li>
+                    <button class="signout-btn" onclick="location.href='https://tutor.howhymath.com/users/logout';">로그아웃</button>
+                </ul> 
+                <div class="navbar-custom-menu">
+                    <div id="navigation">
+                        <ul class="navigation-menu">
+                            <li class='has-submenu'>
+                                <a href='/home/main'><span> </i>캘린더</span></a>
+                            </li>
+                            <li class='has-submenu active'>
+                                <a href='/books/index'><span> 학습자료</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/books/index'>교재</a></li>
+                                    <li><a href='/exam_pdfs/index'>보충교재</a></li>
+                                    <li class='active'><a href='/jindan_exams/index'>평가</a></li>
+                                    <li><a href='/wizards/index'>출제마법사</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/study_books/index'><span> 개별학습</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/study_books/index'>교재학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=exm'>출제마법사</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=wrg'>오답학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=rec'>맞춤학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=hom'>숙제관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/reports_v2/index'><span> 분석표</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/academies/index'><span> 관리</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/academies/index'>정보수정</a></li>
+                                    <li><a href='/teachers/index'>교사/반 관리</a></li>
+                                    <li><a href='/students/index'>학생관리</a></li>
+                                    <li><a href='/schools/index'>학교관리</a></li>
+                                    <li><a href='/print_pdfs/index'>인쇄파일관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/payments/index'><span> 결제</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/notices/index'><span> 고객센터</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/notices/index'>공지사항</a></li>
+                                    <li><a href='/inquiries/index'>1:1문의 & FAQ</a></li>
+                                    <li><a href='/question_error_reports/index'>문항오류신고</a></li>
+                                    <!-- <li><a href='/boards/index?boarda_type_cd=gj'>자료실-교재자료</a></li>
+                                    <li><a href='/boards/index?boarda_type_cd=mv'>자료실-영상자료</a></li> 241210 자료실 통합 -->
+                                    <li><a href='/boards/index'>교재/영상 자료실</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    </div>
+
+	<div class="page-wrapper">
+        <div class="page-content">
+            <div class="container-fluid">
+                <script type="text/javascript" charset="utf-8" src="https://img.dtsoft.co.kr/assets.howhy/plugins/chart-js/Chart.min.js"></script>
+                <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/plugins/vis4/vis.css">
+                <script type="text/javascript" charset="utf-8" src="https://img.dtsoft.co.kr/assets.howhy/plugins/vis4/vis.js"></script>
+                <script type="text/javascript" charset="utf-8" src="https://img.dtsoft.co.kr/assets.howhy/plugins/circles/circles.js"></script>
+                <script type="text/javascript" charset="utf-8" src="https://img.dtsoft.co.kr/assets.howhy/plugins/progressbar.js/progressbar.min.js"></script>
+                <style>
+                    .main-grade {
+                    font-size : 36px !important;
+                    font-color : #6D6161 !important;
+                    }
+                    .progress {
+                        margin:0px;
+                    }
+                    .progress-bar {
+                        color:black;
+                    }
+                    @media print {
+                        .pagebreak {
+                            clear: both;
+                            page-break-after: always;
+                        }
+                        th {
+                            -webkit-print-color-adjust: exact !important;
+                            color-adjust: exact !important;
+                            print-color-adjust: exact !important;
+                            background-color: #F8F8F8 !important;
+                            /*
+                            background: #F8F8F8 !important;
+                            */
+                        }
+                        .progress {
+                            position: relative;
+                        }
+                        .progress:before {
+                            display: block;
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                            z-index: 0;
+                            border-bottom: 2rem solid #eeeeee;
+                        }
+                        .progress-bar {
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            z-index: 1;
+                            border-bottom: 2rem solid #337ab7;
+                        }
+                        .progress-bar-success {
+                            border-bottom-color: #1c84c6;
+                        }
+                    .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+                            float: left;
+                    }
+                    .col-sm-12 {
+                            width: 100%;
+                    }
+                    .col-sm-11 {
+                            width: 91.66666667%;
+                    }
+                    .col-sm-10 {
+                            width: 83.33333333%;
+                    }
+                    .col-sm-9 {
+                            width: 75%;
+                    }
+                    .col-sm-8 {
+                            width: 66.66666667%;
+                    }
+                    .col-sm-7 {
+                            width: 58.33333333%;
+                    }
+                    .col-sm-6 {
+                            width: 50%;
+                    }
+                    .col-sm-5 {
+                            width: 41.66666667%;
+                    }
+                    .col-sm-4 {
+                            width: 33.33333333%;
+                    }
+                    .col-sm-3 {
+                            width: 25%;
+                    }
+                    .col-sm-2 {
+                            width: 16.66666667%;
+                    }
+                    .col-sm-1 {
+                            width: 8.33333333%;
+                    }
+                    }
+                </style>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="row">
+                                <div class="col-md-3 head-left">
+                                    <div class='gray'>
+                                        <a href='/books/index'>학습자료</a>
+                                    </div>
+                                    <img src="https://tutor.howhymath.com/app/img/icon_right_arrow.png" alt=""/>
+                                    <div class='black'>
+                                        <a href='/jindan_exams/index'>평가</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-9"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="study-report-container">
+                    <div class="content" style="justify-content: space-between;">
+                        <div class="left" style="display: flex; gap: 10px; align-items: center;">
+                            <div style="color: #000;font-size: 34px;font-weight: 700;">진단평가보고서</div>
+                            <div style="font-size: 30px; color: #E5E5E5;"> | </div>
+                            <div style="color: #000;font-size: 18px;font-weight: 700;">(초5) 이하와</div>
+                        </div>
+                        <div class="right">
+                            <h3>하와이컴퍼니</h3>
+                        </div>
+                    </div>
+                    <div class="content" style="justify-content: space-between; margin: 10px 0px;">
+                        <div class="left" style="display: flex; gap: 10px; align-items: center;">
+                            <div style="color: #000;font-size: 14px;font-weight: 500; ">초 3-1 진단평가_03. 나눗셈</div>
+                        </div>
+                        <div class="right">
+                            <div style="color: #000;font-size: 14px;font-weight: 500;">
+                                <!-- ?= fx_date($jindan_report->created_at) ?-->
+                                2024-12-20
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="study-report-container">
+                    <div class="content" style="display: grid; grid-template-columns: 20% 10% 70%">
+                        <div class="left" style="display: flex; justify-content: center;">
+                            <!-- img src="https://tutor.howhymath.com/app/img/student_report_graph.png"  alt=""-->
+                            <span class="circle" id="circles-point"></span>
+                        </div>
+                        <div></div>
+                        <div class="right">
+                            <div style="margin-top: 10px; color: var(--Gray02, #767676);font-size: 20px;font-weight: 400;">
+                                이하와 학생의 점수는 <span style="color: #000; font-weight: 700;">85점</span>이고 수학적 역량은 <span style="color: #4BC588; font-weight: 700;">[보통]</span>입니다.
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment">시험지 총 20 문항 [정답 17 / 오답 3]</div>
+                                <div class="comment">
+                                    <span style="color:#FBBC05;">[현재]</span><span>03. 나눗셈, 02. 나눗셈</span>이(가) 현재 학년의 취약단원입니다. 오답노트를 작성하고 유사 및 심화 문제를 풀어보세요.
+                                </div>
+                                <div class="comment">
+                                    <span style="color:#FBBC05;">[미래]</span> 현재 단계에서 앞서 말씀드린 기초를 튼튼히 하지 못하실 경우 향후 <span>[초3] 02. 나눗셈, [초3] 06. 분수와 소수</span>이(가) 단원을 못 따라가실 수 있으니 기초잡기 놓치지 마세요.
+                                </div>
+                                <div class="comment">
+                                    <span style="color:#FBBC05;">[과거]</span> 단 기초가 조금 부족한 경우라면 <span>[초3] 03. 나눗셈, [초2] 02. 곱셈구구</span>이(가) 단원부터 공부해보세요. 수학은 기초없이 성적향상 없는 것, 잊지 마세요.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="study-report-container" style="">
+                    <div class="title">단원별 측정된 수학적 역량</div>
+                    <div class="" style="height: 400px;">
+                        <canvas id="chapter_chart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="study-report-container">
+                <div class="title">
+                    단원별 정오답분표와 수학적 역량 상세 <span style="color:rgba(0, 0, 0, 0.20); margin: 0px 10px"> | </span>
+                    <!-- 초5단원-->
+                </div>
+                <table class="report-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">대단원</th>
+                            <th style="width: 25%;" class="middle">중단원</th>
+                            <th style="width: 5%;" class="middle">문항수</th>
+                            <th style="width: 45%;" class="middle">정오답분포</th>
+                            <th style="width: 10%;">수학적 역량</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="start">03. 나눗셈</td>
+                            <td>02. 똑같이 나누기(2)</td>
+                            <td class="center">5</td>
+                            <td>
+                                <div class="graph">
+                                    <div class="graph-green" style="width: 40%; border-radius: 4px 0px 0px 4px ;">4</div>
+                                    <div class="graph-red" style="width: 2%; border-radius: 0px 4px 4px 0px ;">1</div>
+                                </div>
+                            </td>
+                            <td class="end ">
+                                <div class="effort">노력</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="start">03. 나눗셈</td>
+                            <td>03. 곱셈과 나눗셈의 관계 알아보기</td>
+                            <td class="center">1</td>
+                            <td>
+                                <div class="graph">
+                                    <div class="graph-red" style="width: 10%; border-radius: 0px 4px 4px 0px ;">1</div>
+                                </div>
+                            </td>
+                            <td class="end ">
+                                <div class="effort">노력</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="start">03. 나눗셈</td>
+                            <td>04. 곱셈식으로 나눗셈의 몫 구하기</td>
+                            <td class="center">3</td>
+                            <td>
+                                <div class="graph">
+                                    <div class="graph-green" style="width: 30%; border-radius: 4px 0px 0px 4px ;">3</div>
+                                </div>
+                            </td>
+                            <td class="end ">
+                                <div class="effort">노력</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="start">03. 나눗셈</td>
+                            <td>05. 곱셈구구로 나눗셈의 몫 구하기</td>
+                            <td class="center">11</td>
+                            <td>
+                                <div class="graph">
+                                    <div class="graph-green" style="width: 100.1%; border-radius: 4px 0px 0px 4px ;">10</div>
+                                    <div class="graph-red" style="width: 0.9%; border-radius: 0px 4px 4px 0px ;">1</div>
+                                </div>
+                            </td>
+                            <td class="end ">
+                                <div class="average">보통</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="study-report-container" style="">
+                <div class="title">문항분석</div>
+                <table class="report-table">
+                    <colgroup>
+                        <col width="8%">
+                        <col width="35%">
+                        <col width="25%">
+                        <col width="8%">
+                        <col width="8%">
+                        <col width="8%">
+                        <col width="8%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>문항번호</th>
+                            <th>단원</th>
+                            <th>유형</th>
+                            <th>난이도</th>
+                            <th>내용영역</th>
+                            <th>행동영역</th>
+                            <th>채점결과</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align:center;">1</td>
+                            <td>03. 나눗셈 &gt; 02. 똑같이 나누기(2)</td>
+                            <td>01. 같은 양이 몇 번 들어 있는 나눗셈 이해하기</td>
+                            <td style="text-align:center;">하</td>
+                            <td style="text-align:center;">수와연산</td>
+                            <td style="text-align:center;">이해력</td>
+                            <td style="text-align:center;"><span style="font-size: 20px;color:#3c9925;"><b>o</b></span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">2</td>
+                            <td>03. 나눗셈 &gt; 02. 똑같이 나누기(2)</td>
+                            <td>02. 그림을 보고 몇 씩 묶었을 때 몇 묶음인지 알아보기</td>
+                            <td style="text-align:center;">최하</td>
+                            <td style="text-align:center;">수와연산</td>
+                            <td style="text-align:center;">이해력</td>
+                            <td style="text-align:center;"><span style="font-size: 20px;color:#3c9925;"><b>o</b></span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">3</td>
+                            <td>03. 나눗셈 &gt; 03. 곱셈과 나눗셈의 관계 알아보기</td>
+                            <td>02. 곱셈식을 나눗셈식으로 나타내기</td>
+                            <td style="text-align:center;">최하</td>
+                            <td style="text-align:center;">수와연산</td>
+                            <td style="text-align:center;">이해력</td>
+                            <td style="text-align:center;"><span style="font-size: 20px;color:#e02c11;"><b>x</b></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="study-report-container">
+                <div class="title">영역별 취약단원 분석</div>
+                <table class="report-table">
+                    <table class="table table-stripped">
+                        <colgroup>
+                            <col width="10%">
+                            <col width="20%">
+                            <col width="40%">
+                            <col width="15%">
+                            <col width="15%">
+                        </colgroup>
+                        <tbody>
+                            <tr style="background-color:#ffe699">
+                                <th>학년</th>
+                                <th>대단원명</th>
+                                <th>약한 개념</th>
+                                <th>수학적 역량</th>
+                                <th>영역</th>
+                            </tr>
+                            <tr style="border-color:#f8cbad;padding: 5px;">
+                                <td>초3</td>
+                                <td><span style="font-size: 18px;color:#6D6161;font-weight: bold;">03. 나눗셈</span></td>
+                                <td style="text-align:left;">
+                                    <p style="font-size: 14px;color:#6D6161;">1순위 : 02. 나누는 수가 □일 때 □ 구하기</p>
+                                    <p style="font-size: 14px;color:#6D6161;">2순위 : 02. 그림을 보고 몇 씩 묶었을 때 몇 묶음인지 알아보기</p>
+                                    <p style="font-size: 14px;color:#6D6161;">3순위 : 02. 곱셈식을 나눗셈식으로 나타내기</p>
+                                </td>
+                                <td><span class="circle" id="circles-MA1503A03"></span></td>
+                                <td>01.수와연산</td>
+                            </tr>
+                            <tr style="border-color:#f8cbad;padding: 5px;">
+                                <td>초2</td>
+                                <td><span style="font-size: 18px;color:#6D6161;font-weight: bold;">06. 곱셈</span></td>
+                                <td style="text-align:left;"><p style="font-size: 14px;color:#6D6161;">1순위 : 01. 묶음을 배로 나타내기</p></td>
+                                <td><span class="circle" id="circles-MA1502A06"></span></td>
+                                <td>01.수와연산</td>
+                            </tr>
+                            <tr style="border-color:#f8cbad;padding: 5px;">
+                                <td>초2</td>
+                                <td><span style="font-size: 18px;color:#6D6161;font-weight: bold;">02. 곱셈구구</span></td>
+                                <td style="text-align:left;">
+                                    <p style="font-size: 14px;color:#6D6161;">1순위 : 01. 곱셈표의 빈칸 채우기</p>
+                                    <p style="font-size: 14px;color:#6D6161;">2순위 : 02. 2~9의 단 곱셈구구를 외워서 빈칸에 알맞은 수 구하기</p>
+                                </td>
+                                <td><span class="circle" id="circles-MA1502B02"></span></td>
+                                <td>01.수와연산</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                </table>
+            </div>
+            <div class="study-report-container">
+                <div class="title">출제 분석</div>
+                <div class="content" style="display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); ">
+                    <div class="research-box">
+                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">난이도 기준</div>
+                        <div class="font-box"><img src="https://tutor.howhymath.com/app/img/img_report_circle_graph_1.png" alt=""/></div>
+                    </div>
+                    <div class="research-box">
+                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">문항평균 난이도</div>
+                        <div class="font-box"><img src="https://tutor.howhymath.com/app/img/img_report_circle_graph_2.png" alt=""/></div>
+                    </div>
+                    <div class="research-box">
+                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">전체오답</div>
+                        <div class="font-box"><img src="https://tutor.howhymath.com/app/img/img_report_circle_graph_3.png" alt=""/></div>
+                    </div>
+                </div>
+            </div>
+            <div class="study-report-container">
+                <div class="title">취약 개념 분석</div>
+                <div class="content" style="border: 1px solid #D8D8D8; margin-top: 20px; border-radius: 8px;">
+                    <!--img style="margin: 0 auto;" src="https://tutor.howhymath.com/app/img/img_report_arrow_graph.png" alt=""/-->
+                    <div id="xtree_graph" style="border: 1px solid #dddddd;width:100%;height: 400px;">
+                    </div>
+                </div>
+            </div>
+            <div class="study-report-container">
+                <div class="title">미래취약 단원</div>
+                <div class="content" style="display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr);">
+                    <div class="research-box">
+                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">초4</div>
+                        <div class="font-box" style="padding: 10px 25px;">
+                            <div class="content-box" style="width:100%;">
+                                <!-- div class="left" style="text-decoration: underline; font-weight: 700;">문자와 식</div-->
+                                <div class="left">06. 규칙 찾기</div>
+                                <div class="right"><img src="https://tutor.howhymath.com/app/img/img_report_bomb.png" alt=""/></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="research-box">
+                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">초5</div>
+                        <div class="font-box" style="padding: 10px 25px;">
+                        </div>
+                    </div>
+                    <div class="research-box">
+                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">초6</div>
+                        <div class="font-box" style="padding: 10px 25px;">
+                            <div class="content-box" style="width:100%;">
+                                <!-- div class="left" style="text-decoration: underline; font-weight: 700;">문자와 식</div-->
+                                <div class="left">01. 분수의 나눗셈</div>
+                                <div class="right"><img src="https://tutor.howhymath.com/app/img/img_report_bomb.png" alt=""/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="study-report-container">
+                <div class="title">
+                    교사 Comment
+                </div>
+                <textarea title="" name="comments" id="fx-form-comments" rows="7" placeholder="학생에 대한 총평을 직접 입력해 주세요." style="font-size: 14px;width: 100%;border: 1px solid #707070;" class=""></textarea>
+            </div>
+            <div class="modal-bottom-btn-box">
+                <button type="button" class="save-btn" onclick="save_comment();">평가 저장</button>
+                <button type="button" class="save-btn" onclick="popup_report_print();">인쇄</button>
+                <button type="button" class="cancle-btn" onclick="location.href='/jindan_exams/reports';">목록</button>
+            </div>
+            <script>
+                $( document ).ready(function() {
+                    draw_main_point();
+                    draw_chapter_chart();
+                    draw_network_graphp();
+                    draw_logy_graphs();
+                });
+                function draw_main_point()
+                {
+                    Circles.create({
+                    id: 'circles-point',
+                    radius: 90,
+                    value: 85,
+                    maxValue: 100,
+                    width: 20,
+                    text: function(value) {return "85" + "점";},
+                    colors: ['#e4e4e4', '#ffb857'],
+                    duration: 200,
+                    wrpClass: 'circles-wrp',
+                    textClass: 'main-grade',
+                    valueStrokeClass: 'circles-valueStroke',
+                    maxValueStrokeClass: 'circles-maxValueStroke',
+                    styleWrapper: true,
+                    styleText: true
+                    });
+                }
+                function draw_chapter_chart()
+                {
+                    window.chartColors = {
+                    red: '#fc9c9c',
+                    blue: '#7cc5ef',
+                    bar: 'rgba( 108, 143, 208, 0.5 )'
+                    };
+                    var barChartData = {
+                        labels: ['02. 똑같이 나누기(2)','03. 곱셈과 나눗셈의 관계 알아보기','04. 곱셈식으로 나눗셈의 몫 구하기','05. 곱셈구구로 나눗셈의 몫 구하기',],
+                        datasets: [
+                            {
+                                borderWidth: 1,
+                                backgroundColor: window.chartColors.bar,
+                                data: [40,0,60,80,]
+                            }, 
+                        ]
+                    };
+                    var bar_chart = document.getElementById('chapter_chart').getContext('2d');
+                    window.myBar = new Chart(bar_chart, {
+                        type: 'bar',
+                        data: barChartData,
+                        options: {
+                            legend: {display: false},
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        suggestedMin: 0,
+                                        suggestedMax: 100,
+                                        stepSize: 20
+                                    }
+                                }]
+                            }	  			
+                        }
+                    });
+                }
+                function draw_network_graphp()
+                {
+                    var xtree_nodes = [{id: 89900, value:60, font: { multi: 'html', size: 13 ,color:'black' }, label: ' 같은 양이 몇 번 들어\n있는\n나눗셈 이해하기\n',color: '#ff8f6d', title: '같은 양이 몇 번 들어 있는\n나눗셈 이해하기'  },
+                {id: 90000, value:200, font: { multi: 'html', size: 13 ,color:'black' }, label: ' 그림을 보고 같은\n개수씩 묶었을 때\n몇\n묶음인지 알아보기',color: '#ff8f6d', title: '그림을 보고 같은 개수씩 묶었을 때 몇\n묶음인지 알아보기'  },
+                {id: 90200, value:200, font: { multi: 'html', size: 13 ,color:'black' }, label: ' 곱셈식을 보고\n2개의\n나눗셈식으로\n만들기',color: '#ff8f6d', title: '곱셈식을 보고 2개의\n나눗셈식으로 만들기'  },
+                {id: 89700, value:53, font: { multi: 'html', size: 13 ,color:'black' }, label: ' 나눗셈식을 쓰고 읽기\n\n',color: '#abf1d9', title: '나눗셈식을 쓰고 읽기'  },
+                {id: 91100, value:75, font: { multi: 'html', size: 13 ,color:'black' }, label: ' 곱셈구구로\n나눗셈의\n몫 알아보기\n',color: '#ff8f6d', title: '곱셈구구로\n나눗셈의 몫 알아보기'  },
+                {id: 91600, value:200, font: { multi: 'html', size: 13 ,color:'black' }, label: ' 세로셈에서 나누는\n수가\n□일 때 □ 구하기\n',color: '#ff8f6d', title: '세로셈에서 나누는 수가\n□일 때 □ 구하기'  }];
+                    var xtree_edges = [{from: 89600, to: 89900, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 51900, to: 89600, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 51800, to: 51900, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 89900, to: 90000, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 89700, to: 90200, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 89600, to: 89700, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 89900, to: 90100, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 90600, to: 90700, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 90500, to: 90600, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 90400, to: 90500, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 58700, to: 90700, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 58600, to: 58700, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 58500, to: 58600, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 90600, to: 90800, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 90600, to: 91100, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 62100, to: 91100, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 61100, to: 62100, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 61000, to: 61100, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 91100, to: 91500, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 91100, to: 91600, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 91100, to: 91700, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 91100, to: 91800, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 91700, to: 92000, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 91500, to: 92300, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 91600, to: 92300, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 91700, to: 92400, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }},
+                {from: 91700, to: 92500, arrows:'to', color: {color:'#d5d5d5', highlight:'#d5d5d5' }}];
+                    var xtree_container = document.getElementById("xtree_graph");
+                    var xtree_data = {
+                        nodes: xtree_nodes,
+                        edges: xtree_edges
+                    };
+                    var xtree_options = {
+                        nodes: { shape: 'dot' },
+                        edges: {
+                        },
+                        layout: {
+                            hierarchical:{
+                                sortMethod: "directed",
+                                direction: 'DU'
+                            }
+                        }
+                    };
+                    var xtree_network = new vis.Network(xtree_container, xtree_data, xtree_options);
+                }
+                function draw_logy_graphs()
+                {
+                    Circles.create({
+                    id: 'circles-MA1503A03',
+                    radius: 30,
+                    value: 86,
+                    maxValue: 100,
+                    width: 30,
+                    text: function(value){return value;},
+                    colors: ['#e4e4e4', '#ffb857'],
+                    duration: 0,
+                    wrpClass: 'circles-wrp',
+                    textClass: 'grade-point',
+                    valueStrokeClass: 'circles-valueStroke',
+                    maxValueStrokeClass: 'circles-maxValueStroke',
+                    styleWrapper: true,
+                    styleText: true
+                    });
+                    Circles.create({
+                    id: 'circles-MA1502A06',
+                    radius: 30,
+                    value: 90,
+                    maxValue: 100,
+                    width: 30,
+                    text: function(value){return value;},
+                    colors: ['#e4e4e4', '#ffb857'],
+                    duration: 0,
+                    wrpClass: 'circles-wrp',
+                    textClass: 'grade-point',
+                    valueStrokeClass: 'circles-valueStroke',
+                    maxValueStrokeClass: 'circles-maxValueStroke',
+                    styleWrapper: true,
+                    styleText: true
+                    });
+                    Circles.create({
+                    id: 'circles-MA1502B02',
+                    radius: 30,
+                    value: 86,
+                    maxValue: 100,
+                    width: 30,
+                    text: function(value){return value;},
+                    colors: ['#e4e4e4', '#ffb857'],
+                    duration: 0,
+                    wrpClass: 'circles-wrp',
+                    textClass: 'grade-point',
+                    valueStrokeClass: 'circles-valueStroke',
+                    maxValueStrokeClass: 'circles-maxValueStroke',
+                    styleWrapper: true,
+                    styleText: true
+                    });
+                }
+                function popup_report_print()
+                {
+                    fx_popup_window( "/jindan_exams/report_detail?mode=print&jindan_report_id=197", { name: 'popup_report_print', width: window.screen.width/2, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
+                }
+                function save_comment()
+                {
+                    var comment = $('#fx-form-comments').val();
+                    $.ajax({
+                        type: "GET",
+                        url: "/jindan_exams/save_comment",
+                        data: "jindan_report_id=197&jindan_comment=" + encodeURI(comment),
+                        async:false,
+                        cache:false,
+                        success: function (response) {
+                            if( response == 'ok' )
+                                alert( '저장되었습니다.');
+                        }
+                    });
+                }
+                </script>
+            </div>
+        </div>
+	</div>
+	<footer class='footer'>
+        <div class="top">
+            <div class="left">
+                <div class='footer-content'>
+                    <span class="footer_logo"><img src="../assets/images/footer_logo.svg" alt="하와이매쓰" /></span>
+                    <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                    <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+                </div>
+            </div>
+            <div class='right'>
+                <div class='footer-content'>
+                    <div id="footer-dropbox">
+                        <select id="footer-dropbox-content" class="form-control form-select">
+                            <option value="">Family Site</option>
+                            <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                            <option value="https://www.fren.co.kr">프렌매쓰</option>
+                        </select>
+                        <script>
+                            document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                                let link = e.target.value;
+                                if(link)
+                                    window.open(link, '_blank');
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='left'>
+            <div class='footer-content'>
+                <div><b>하와이컴퍼니(주)</b></div>
+                <div class='vertical-line'></div>
+                <div><b>HOWHY COMPANY</b></div>
+                <div class='vertical-line'></div>
+                <div><b>대표이사 : 박종화</b></div>
+            </div>
+    
+            <div class='footer-content'>
+                <div><b>사업자등록번호</b> 760-87-02737</div>
+                <div class='vertical-line'></div>
+                <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+                <div class='vertical-line'></div>
+                <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+            </div>
+            <div class='footer-content'>
+                <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+            </div>
+            <div class='footer-content'>
+                2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+<script src="https://img.howhymath.com/custom/custom.js?v=1734660870"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	cdml_mathjax_init();
+});
+
+function edit_teacher()
+{
+    fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+}
+
+function edit_password()
+{
+    fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+}
+
+function menu_disable_delete( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    var words = node.key.split('-');
+    if( words[1] != '0' ) return true;
+    return false;
+}
+
+function menu_disable_add( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    if( node.getLevel() == 2 ) return true;
+    return false;
+}
+
+function menu_disable_edit( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    return false;
+}
+
+
+</script>
+</body>
+</html>
