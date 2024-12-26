@@ -123,8 +123,8 @@ line-height: 160%;
     font-style: normal;
     font-weight: 700;
     letter-spacing: -1px; */
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 14px !important;
+    font-weight: 600 !important;
     color: #555;
     float: none !important;
     padding: 0 0 10px 0 !important;
@@ -203,16 +203,16 @@ line-height: 160%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--unit-7, 7px);
-    border: 1px solid #e0e0e0;
+    border-radius: var(--unit-7, 7px) !important;
+    border: 1px solid #e0e0e0 !important;
     background: #FFF;
     height: 34px !important;
     width: auto !important;
-    font-family: 'SUIT';
-    color: #333;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1;
+    font-family: 'SUIT' !important;
+    color: #333 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
     padding: 0 11px;
     &.correct {
         border: 2px solid rgb(44, 225, 163) !important;
@@ -283,6 +283,10 @@ line-height: 160%;
 }
 #sketch.paint-box{top: 0; left: 0;}
 
+/* 문제영역 시작 */
+#question-box{position: static !important;}
+/* 문제영역 끝 */
+
 /* 정답영역 시작 */
 #answer-box{
     padding: 20px 0 40px !important;
@@ -327,5 +331,3 @@ line-height: 160%;
 
 
 /* 문제관련 cmdl 스타일쪽은 나중에 매쓰 진행할때 회의 후 수정하기로 함. */
-/* ss.css 는 수정해도 ok */
-/* 241126 학습하기 > 오류신고 버튼 쪽 진행 */
