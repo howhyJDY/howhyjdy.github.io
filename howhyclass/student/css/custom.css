@@ -4849,6 +4849,8 @@ line-height: 160%; /* 25.6px */
     /* border: 1px solid #E5E5E5; */
     /* margin-top: 30px; */
 
+    /* colgroup col:nth-child(n+3){min-width: 300px;} 241226 */
+
     tr:first-of-type th:first-of-type{
       background: #ebede6;
       &::after{background: #d9d9d9;}
@@ -4871,7 +4873,8 @@ line-height: 160%; /* 25.6px */
       font-weight: 600;
       line-height: 1;
       background-color: #efefef;
-      padding: 30px 10px;
+      /* padding: 30px 10px; 241226 */
+      padding: 17px 10px;
       position: relative;
       border-bottom: 1px solid #d4d4d4;
       &::after{
@@ -4928,6 +4931,9 @@ line-height: 160%; /* 25.6px */
         grid-template-columns: repeat(6, 1fr);
         /* gap: 10px; */
         gap: 5px;
+        /* display: flex;
+        flex-wrap: wrap;
+        min-width: 160px; 241226 */
 
         .dot {
           position: relative;
