@@ -4976,8 +4976,26 @@ line-height: 160%; /* 25.6px */
             /* &::before{background-color: #28A745;} */
           }
 
-          &[title]:hover::after{
+          /* &[title]:hover::after{
             content:attr(title);
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width:330px;
+            height:fit-content;
+            font-size:14px;
+            line-height:1.2; 
+            color:#333;
+            padding: 4px 20px;
+            background:#fffde9;
+            border:2px solid #0ad08d;
+            border-radius: 14px;
+            z-index:100;
+          } 241226 title -> data-title 변경경 */
+
+          &[data-title]:hover::after{
+            content:attr(data-title);
             display: block;
             position: absolute;
             top: 100%;
