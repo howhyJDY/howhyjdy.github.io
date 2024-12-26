@@ -512,7 +512,10 @@ line-height: normal;
     max-height: 300px;
     overflow-y: auto;
   }
-  .card-body:has(.student_grade_tree){padding: 0;}
+  .card-body:has(.student_grade_tree){
+    padding: 0;
+    border-width: 0 !important;
+  }
   .card-body:has(.hwp_editor_board_content){
     padding: 0 !important;
     background: #f2f2f2;
@@ -975,8 +978,15 @@ line-height: normal;
     margin-bottom: 20px;
     background-color: #fff;
     /* border: 1px solid #bfbfbf; */
+    border-width: 0;
     border-radius: 10px;
     overflow: hidden;
+
+    .card-body{
+      &+br{display: none;}
+      border: 1px solid #bfbfbf;
+      border-radius: 0 0 10px 10px;
+    }
 }
 
 .card .card-header {
@@ -1029,6 +1039,7 @@ line-height: normal;
 /* 개별학습 > 학생선택 / 분석표 > 학생선택 */
 .card-body:has(.student_grade_tree) {
   padding: 10px;
+  border-width: 0 !important;
   .row{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1197,7 +1208,7 @@ line-height: normal;
 
 .card-body{
   /* br{display: none;} 학습자료>평가에서 깨짐 */
-  border: 1px solid #bfbfbf;
+  /* border: 1px solid #bfbfbf; */
   border-top-width: 0;
   border-radius: 0 0 8px 8px;
   hr ~ .row{
@@ -3323,6 +3334,9 @@ span.fancytree-active span.fancytree-title {
 .modal-grid .left .left-bottom{
   display: flex;
   justify-content: end;
+  &:has(#question-btn){
+    width: calc(100% + 270px);
+  }
 }
 
 .modal-grid .left .left-bottom .btn-box {gap: 14px;}
@@ -3355,6 +3369,7 @@ span.fancytree-active span.fancytree-title {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  border-bottom: 1px solid #d3d3d3;
 }
 
 .modal-grid .left .left-bottom .result-container .content{
@@ -3397,7 +3412,7 @@ span.fancytree-active span.fancytree-title {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .modal-grid .table thead .left-btn{
@@ -6686,12 +6701,35 @@ html:has(.page-memo){
 #popup_score_table_box{
   height: 100%;
   .table-scoll{
-    max-height: 520px !important;
-    border: 1px solid var(--Gray-09, #E5E5E5);
+    max-height: 506px !important;
+    /* border: 1px solid var(--Gray-09, #E5E5E5); */
+    border: 2px solid #333;
     border-radius: 8px;
+    position: relative;
   }
   .table th {
     &:first-child{border-radius: 0;}
+  }
+}
+/* 문제/해설보기 버튼 */
+#question-btn{
+  background: var(--main-color-blue);
+  color: #fff;
+  border-radius: 20px;
+}
+#question-box{border-color: var(--main-color-blue);}
+/* 오류신고 버튼 */
+#error-btn{
+  background: #348187;
+  color: #fff;
+  border-radius: 20px;
+}
+#error-box{
+  border-color: #348187;
+  .modal-table td{
+    border-width: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -6817,7 +6855,10 @@ html:has(.page-memo){
       }
     }
     .card{background: transparent;}
-    .card-body{padding: 0 !important;}
+    .card-body{
+      padding: 0 !important;
+      border-width: 0 !important;
+    }
     .question_table{
       padding: 30px 20px;
       border-width: 0 !important;

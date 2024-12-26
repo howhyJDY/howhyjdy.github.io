@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>하와이매쓰</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+
+	<!-- base css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" />
+
+	<!-- site css -->
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734916621"/>
+	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734916621" />
+	<!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734916621" /-->
+	<!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734916621" /> -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/work.css?v=1734916621" />
+
+	<!-- base javascript -->
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+	<script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+
+	<!-- site javascript -->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			showMathMenu: false,
+			tex2jax: { displayMath: [ ["$$","$$"] ] },
+			"HTML-CSS": { fonts: ["Latin-Modern"] }
+		});
+	</script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1734916621"></script>
+	<script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1734916621"></script>
+</head>
+
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+	<div class="topbar">
+        <div class="content-box">
+            <div class="brand">
+                <a href="/home/main" class="logo" style="padding-left:10px;">
+                    <!-- <span><img src="https://img.howhymath.com/hmath/logo.png" style="width:140px;height:31px;" class="logo-sm"></span> 241210 이미지 변경 및 스타일 삭제 -->
+                    <span><img src="../assets/hmath/logo.svg" class="logo-sm" alt="하와이매쓰"></span>
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-end mb-0" style="display: flex; align-items: center;">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <span class="ms-1 nav-user-name hidden-sm" style=" color: var(--Gray-01, #1A1A1A); font-weight: 700; font-size: 16px;">이하와<span style="font-weight: 400;"><span style="font-weight: 400;">선생님</span></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!--a class="dropdown-item" href="javascript:edit_teacher();"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i>정보수정</a-->
+                            <a class="dropdown-item" href="javascript:edit_password();"><i data-feather="lock" class="align-self-center icon-xs icon-dual me-1"></i>암호수정</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="https://tutor.howhymath.com/users/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual me-1"></i>로그아웃</a>
+                        </div>
+                    </li>
+                    <button class="signout-btn" onclick="location.href='https://tutor.howhymath.com/users/logout';">로그아웃</button>
+                </ul> 
+                <div class="navbar-custom-menu">
+                    <div id="navigation">
+                        <ul class="navigation-menu">
+                            <li class='has-submenu'>
+                                <a href='/home/main'><span> </i>캘린더</span></a>
+                            </li>
+                            <li class='has-submenu'>
+                                <a href='/books/index'><span> 학습자료</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/books/index'>교재</a></li>
+                                    <li><a href='/exam_pdfs/index'>보충교재</a></li>
+                                    <li><a href='/jindan_exams/index'>평가</a></li>
+                                    <li><a href='/wizards/index'>출제마법사</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/study_books/index'><span> 개별학습</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/study_books/index'>교재학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=exm'>출제마법사</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=wrg'>오답학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=rec'>맞춤학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=hom'>숙제관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/reports_v2/index'><span> 분석표</span></a>
+                            </li>
+                            <li class='has-submenu active'>
+                                <a href='/academies/index'><span> 관리</span></a>
+                                <ul class='submenu'>
+                                    <li class='active'><a href='/academies/index'>정보수정</a></li>
+                                    <li><a href='/teachers/index'>교사/반 관리</a></li>
+                                    <li><a href='/students/index'>학생관리</a></li>
+                                    <li><a href='/schools/index'>학교관리</a></li>
+                                    <li><a href='/print_pdfs/index'>인쇄파일관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/payments/index'><span> 결제</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/notices/index'><span> 고객센터</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/notices/index'>공지사항</a></li>
+                                    <li><a href='/inquiries/index'>1:1문의 & FAQ</a></li>
+                                    <li><a href='/question_error_reports/index'>문항오류신고</a></li>
+                                    <!-- <li><a href='/boards/index?boarda_type_cd=gj'>자료실-교재자료</a></li>
+                                    <li><a href='/boards/index?boarda_type_cd=mv'>자료실-영상자료</a></li> 241210 자료실 통합 -->
+                                    <li><a href='/boards/index'>교재/영상 자료실</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    </div>
+
+	<div class="page-wrapper">
+		<div class="page-content">
+			<div class="container-fluid">
+			<link href="https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/core/main.css" rel="stylesheet" />
+            <link href="https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/daygrid/main.css" rel="stylesheet" />
+            <link href="https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/bootstrap/main.css" rel="stylesheet" />
+            <link href="https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/timegrid/main.css" rel="stylesheet" />
+            <link href="https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/list/main.css" rel="stylesheet" />
+            <link href="https://img.dtsoft.co.kr/assets.howhy/plugins/lightpick/lightpick.css" rel="stylesheet" />
+            <link href="https://img.dtsoft.co.kr/assets.howhy/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+            <style>
+            .lightpick {
+                z-index: 100;
+            }
+            </style>
+
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="page-title-box">
+			<div class="row">
+				<div class="col-sm-12 head-left">
+					<div class='gray'><a href='/academies/index'>관리</a></div><img src="/app/img/icon_right_arrow.png" alt=""/><div class='black'><a href='/students/index'>학생관리</a></div>				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12 table-container">
+
+	<div class="row" style="padding: 20px;">
+		<div class="col-md-4 search-head">
+			 1개중 1-1		</div>
+		<div class="col-sm-8">
+			<form id="form_search" name="form_no_fx" action="/students/index" >
+				<div class="row">
+					<div class="col-sm-2 fx_bp2">
+					</div>
+					<div class="col-md-2 fx_bp2">
+					<select title="" name="sv_student_state_cd" class="form-control form-select"><option value="">-- 학생 상태 --</option><option value="res">예비생</option><option value="stu">재원생</option><option value="liv">휴원생</option></select>					</div>
+					<div class="col-md-2 fx_bp2">
+						<select title="" name="sv_classroom_id" class="form-control form-select"><option value="">-- 반선택 --</option><option value="219">정다영선생님반</option></select>					</div>
+					<div class="col-md-2 fx_bp2">
+						<select title="" name="sv_grade_cd" class="form-control form-select"><option value="">-- 학년 --</option><option value="e1">초1</option><option value="e2">초2</option><option value="e3">초3</option><option value="e4">초4</option><option value="e5">초5</option><option value="e6">초6</option><option value="j1">중1</option><option value="j2">중2</option><option value="j3">중3</option><option value="s1">고1</option><option value="s2">고2</option><option value="s3">고3</option></select>					</div>
+					<div class="col-sm-4 fx_bp2">
+						<div class="input-group">
+						<input type="text" title="" name="sv_keyword" value="" id="fx-form-sv_keyword" placeholder="학생명/학생코드" class="form-control" />						<button class="mbtn" type="submit"><i class="fas fa-search"></i></button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="row table-header">
+		<div class="col-sm-4 button-container">
+			<button type="button" class="btn  btn-soft-primary btn-sm" onclick="student_excel_upload();"><i class="fas fa-plus"></i> 엑셀등록 </button>
+			<button type+"button" class="btn  btn-soft-primary btn-sm" onclick="location.href='/students/upload_excel_download';">
+				<i class="far fa-file-excel"></i>
+			</button>
+		</div>
+		<div class="col-sm-8 button-container" style="display: flex; align-items: center; justify-content: end; gap: 10px;">
+			<button type="button" class="btn  btn-soft-primary btn-sm" id="item-create" data-url="/students/newone"><i class="fas fa-plus"></i> 등록 </button>
+			<div class="vertical-line"></div>
+			<button type="button" class="btn  btn-soft-primary btn-sm" onclick="grade_down();"> <i class="fas fa-arrow-down"></i> 학년되돌리기 </button>
+			<button type="button" class="btn  btn-soft-primary btn-sm" onclick="grade_up();"> <i class="fas fa-arrow-up"></i> 학년승급 </button>
+			<div class="vertical-line"></div>
+			<button type="button" class="btn  btn-soft-primary btn-sm" onclick="update_school();"> <i class="fas fa-school"></i> 학교지정 </button>
+			<button type="button" class="btn  btn-soft-primary btn-sm" onclick="classroom_add();"> <i class="fas fa-chalkboard-teacher"></i> 반지정 </button>
+		</div>
+	</div>
+	<div class="table-responsive">
+		<form id='form_save_schools' action="/students/save_schools" >
+		<input type=hidden name="save_schools_ids" id='save_schools_ids' value="">
+		<table class="table table-striped mb-0 table-border-none wrong-modal-table" style="min-width:600px;">
+		<colgroup>
+			<col width="50">
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
+			<col width="80">
+			<col width="100">
+			<col width="50">
+			<col width="90">
+		</colgroup>
+		<thead style="background-color: #fff; border-bottom: 2px solid #F1F1F1;">
+			<tr>
+				<th class=""><input type="checkbox" name="toggle_all" onclick="fx_all_checkbox( 'toggle_all', 'ids');" /></th>
+				<th class="fx-tablesorter-header" id="student_state_cd-sort">학생 상태</th>
+				<th class="fx-tablesorter-header" id="grade_cd-sort">학년</th>
+				<th class="fx-tablesorter-header" id="name-sort">이름</th>
+				<th class="fx-tablesorter-header" id="student_code-sort">학생코드</th>
+				<th class="fx-tablesorter-header" id="parent_phone-sort">학부모연락처</th>
+				<th class="fx-tablesorter-header" id="school_id-sort">학교</th>
+				<th>소속반</th>
+				<th>출결현황</th>
+				<th>등록일</th>
+				<th>수정</th>
+				<th>상태변경</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+			<tr>
+				<td><input type="checkbox" name="ids" value="325"/></td>
+				<td>재원생</td>
+				<td>초5</td>
+				<td><!--a href="javascript:popup_student_detail( '325' );"-->정다영(학생)</td>
+				<td>7511 <i class="fas fa-copy" onclick="copy_clipboard( 'hmCL00qZ', '7511' );"></i></td>
+				<td>01094962811</td>
+				<td><select title="" name="school-325" class="form-control form-select"><option value="">-- 소속학교 --</option><option value="2137" selected>진건초등학교</option></select></td>
+				<td style='text-align:left;'>
+					<ul style="margin:0;">
+											<li style="padding-bottom: 15px;">
+							정다영선생님반 &nbsp;&nbsp;
+							<button type="button" class="delete-btn" style="float:right;margin:1px;" onclick="classroom_remove( 389 );">삭제</button>
+						</li>
+										</ul>
+				</td>
+				<td>
+					<a href="javascript:popup_student_attendances( '325' );">
+					0					/ 31					</a>
+				</td>
+				<td>2024-11-18</td>
+				<td>
+					<button class="icon-box item-update" data-url="/students/edit?id=325" onclick="return false;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+					</button>
+				</td>
+				<td>
+											<button type="button" class="gbtn" onclick="change_liv( 325);">
+							휴원
+						 </button>
+									</td>
+			</tr>
+					</tbody>
+		</table>
+		</form>
+	</div>
+
+	<div class="fx-ac">
+		<nav><ul class='pagination justify-content-center'>
+<li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_double_left_arrow.png" alt=""/></a></li>&nbsp;<li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_left_arrow.png" alt=""/></a></li>&nbsp;<li class="page-item active"><a class="page-link" href="#">1</a></li>&nbsp;<li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_right_arrow.png" alt=""/></a></li>&nbsp;<li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_double_right_arrow.png" alt=""/></a></li></ul></nav>
+	</div>
+	</div>
+</div>
+
+<script src="https://img.dtsoft.co.kr/assets.howhy/js/moment.js"></script>
+<script src="https://img.dtsoft.co.kr/assets.howhy/plugins/daterangepicker/daterangepicker.js"></script>
+
+<script src='https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/core/main.js'></script>
+<script src='https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/daygrid/main.js'></script>
+<script src='https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/timegrid/main.js'></script>
+<script src='https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/interaction/main.js'></script>
+<script src='https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/list/main.js'></script>
+
+<script src="https://img.dtsoft.co.kr/assets.howhy/plugins/lightpick/lightpick.js"></script>
+<!--script src="https://img.dtsoft.co.kr/assets.howhy/pages/jquery.calendar.js"></script-->
+
+<script type="text/javascript">
+$( document ).ready(function() {
+	fx_ready_sorting( "students.id", "desc" );
+});
+
+$( "#item-create" ).on('click', function() { 
+	var $this = $(this);
+
+	// fx_layer_popup_v2( 'item_create_popup', $this.data('url'), 'modal-lg modal-dialog-centered' );
+	fx_layer_popup_v2( 'item_create_popup', $this.data('url'), 'modal-lg' );
+});
+
+$( ".item-update" ).on('click', function() { 
+	var $this = $(this);
+
+	fx_layer_popup_v2( 'item_update_popup', $this.data('url'), 'modal-lg' );
+});
+
+$( ".item-remove" ).on('click', function() { 
+	var $this = $(this);
+
+	fx_remove_link($this.data('url'));
+});
+
+function popup_student_detail( student_id )
+{
+	fx_layer_popup_v2( 'popup_student_detail', '/students/show?id='+student_id, 'modal-lg modal-dialog-centered' );
+}
+
+function popup_student_attendances( student_id )
+{
+	fx_layer_popup_v2( 'popup_student_attendances', '/students/popup_attendances?student_id='+student_id, 'modal-lg modal-dialog-centered' );
+}
+
+function grade_down()
+{
+	var ids = fx_get_checkboxes('ids');
+	if( ids == "" ) { alert("학생을 선택해 주세요."); return; }
+
+	fx_submit_link( '/students/grade_down?ids='+ids );
+}
+
+function grade_up()
+{
+	var ids = fx_get_checkboxes('ids');
+	if( ids == "" ) { alert("학생을 선택해 주세요."); return; }
+
+	fx_submit_link( '/students/grade_up?ids='+ids );
+}
+
+function update_school()
+{
+	var ids = fx_get_checkboxes('ids');
+	if( ids == "" ) { alert("학생을 선택해 주세요."); return; }
+
+	$('#save_schools_ids').val(ids);
+
+	fx_submit($('#form_save_schools'));
+}
+
+function classroom_add()
+{
+	var ids = fx_get_checkboxes('ids');
+	if( ids == "" ) { alert("학생을 선택해 주세요."); return; }
+
+	fx_layer_popup_v2( 'classroom_add', '/students/popup_classroom_add?ids=' + ids, '' );
+}
+
+function classroom_remove( classroom_student_id )
+{
+	fx_remove_link( '/students/classroom_student_remove?classroom_student_id='+classroom_student_id );
+}
+
+function change_stu( student_id, student_state_cd )
+{
+	var confirm_yn = confirm("상태를 변경합니다.");
+ 	if(confirm_yn == true)
+		fx_submit_link( '/students/change_stu?student_id=' + student_id );
+}
+
+function change_liv( student_id )
+{
+	var confirm_yn = confirm("반정보와 교재학습 데이터가 삭제 됩니다. 그래도 진행하시겠습니까?");
+ 	if(confirm_yn == true)
+		fx_submit_link( '/students/change_liv?student_id=' + student_id );
+}
+
+function load_school_options( student_id )
+{
+    fx_load_widget_class( 'school_options', "/students/school_options?student_id=" + student_id );
+}
+
+function load_classroom_options( student_id )
+{
+    fx_load_widget_class( 'classroom_options', "/students/classroom_options?student_id=" + student_id );
+}
+
+function popup_school( student_id )
+{
+    fx_popup_window( "/schools/index?mode=popup&student_id="+student_id,
+			{ name: 'popup_school', width: window.screen.width*2/3+100, height: window.screen.height*2/3,scrollbars:'yes', resizable: 'yes' });
+}
+
+function popup_classroom( student_id )
+{
+    fx_popup_window( "/teachers/classroom_index?student_id="+student_id,
+			{ name: 'popup_school', width: window.screen.width*2/3, height: window.screen.height*2/3,scrollbars:'yes', resizable: 'yes' });
+}
+
+function copy_clipboard( teacher_code, student_code )
+{
+  	var TempText = document.createElement("textarea");
+
+	var text = "[하와이클래쓰 가입방법]\r\n\r\n"
+				+ "하와이클래쓰는 학생의 숙제 해결을 위해 필요한 학습 홈페이지 입니다.\r\n\r\n"
+				+ "https://student.howhyclass.com/users/index\r\n\r\n"
+				+ "학생 회원으로 가입 후, 아래 코드를 통해 선생님을 등록해주세요.학원에서 제공한 숙제를 집에서 편리하게 해결 할 수 있고 하와이클래쓰의 모든 학습을 무료로 사용 할 수 있습니다.\r\n\r\n"
+ 				+ "선생님코드: " + teacher_code + "\r\n"
+ 				+ "학생코드: " + student_code + "\r\n";
+
+	TempText.value = text;
+
+	document.body.appendChild(TempText);
+	TempText.select(); 
+	document.execCommand("copy");
+	document.body.removeChild(TempText);
+  
+	alert( '복사되었습니다.');
+}
+
+function student_excel_upload()
+{
+	fx_layer_popup_v2( 'student_excel_upload', '/students/student_excel_upload', '');
+}
+
+
+</script>
+
+			</div>
+		</div>
+	</div>
+	<footer class='footer'>
+        <div class="top">
+            <div class="left">
+                <div class='footer-content'>
+                    <span class="footer_logo"><img src="../assets/hmath/footer_logo.svg" alt="하와이매쓰" /></span>
+                    <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                    <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+                </div>
+            </div>
+            <div class='right'>
+                <div class='footer-content'>
+                    <div id="footer-dropbox">
+                        <select id="footer-dropbox-content" class="form-control form-select">
+                            <option value="">Family Site</option>
+                            <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                            <option value="https://www.fren.co.kr">프렌매쓰</option>
+                        </select>
+                        <script>
+                            document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                                let link = e.target.value;
+                                if(link)
+                                    window.open(link, '_blank');
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='left'>
+            <div class='footer-content'>
+                <div><b>하와이컴퍼니(주)</b></div>
+                <div class='vertical-line'></div>
+                <div><b>HOWHY COMPANY</b></div>
+                <div class='vertical-line'></div>
+                <div><b>대표이사 : 박종화</b></div>
+            </div>
+
+            <div class='footer-content'>
+                <div><b>사업자등록번호</b> 760-87-02737</div>
+                <div class='vertical-line'></div>
+                <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+                <div class='vertical-line'></div>
+                <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+            </div>
+            <div class='footer-content'>
+                <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+            </div>
+            <div class='footer-content'>
+                2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+<script src="https://img.howhymath.com/custom/custom.js?v=1734916621"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	cdml_mathjax_init();
+});
+
+function edit_teacher()
+{
+    fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+}
+
+function edit_password()
+{
+    fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+}
+
+function menu_disable_delete( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    var words = node.key.split('-');
+    if( words[1] != '0' ) return true;
+    return false;
+}
+
+function menu_disable_add( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    if( node.getLevel() == 2 ) return true;
+    return false;
+}
+
+function menu_disable_edit( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    return false;
+}
+
+
+</script>
+</body>
+</html>

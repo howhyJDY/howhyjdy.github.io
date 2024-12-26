@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>하와이매쓰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+    <!-- base css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css"/>
+    <!-- site css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1735179469"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1735179469"/>
+    <!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1735179469" /-->
+    <!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1735179469"/> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/work.css"/>
+    <!-- base javascript -->
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                showMathMenu: false,
+                tex2jax: { displayMath: [ ["$$","$$"] ] },
+                "HTML-CSS": { fonts: ["Latin-Modern"] }
+            });
+        </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1735179469"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1735179469"></script>
+</head>
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+    <div class="topbar">
+        <div class="content-box">
+            <div class="brand">
+                <a href="/home/main" class="logo" style="padding-left:10px;">
+                    <!-- <span><img src="https://img.howhymath.com/hmath/logo.png" style="width:140px;height:31px;" class="logo-sm"></span> 241210 이미지 변경 및 스타일 삭제 -->
+                    <span><img src="../assets/hmath/logo.svg" class="logo-sm" alt="하와이매쓰"></span>
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-end mb-0" style="display: flex; align-items: center;">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <span class="ms-1 nav-user-name hidden-sm" style=" color: var(--Gray-01, #1A1A1A); font-weight: 700; font-size: 16px;">이하와<span style="font-weight: 400;"><span style="font-weight: 400;">선생님</span></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!--a class="dropdown-item" href="javascript:edit_teacher();"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i>정보수정</a-->
+                            <a class="dropdown-item" href="javascript:edit_password();"><i data-feather="lock" class="align-self-center icon-xs icon-dual me-1"></i>암호수정</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="https://tutor.howhymath.com/users/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual me-1"></i>로그아웃</a>
+                        </div>
+                    </li>
+                    <button class="signout-btn" onclick="location.href='https://tutor.howhymath.com/users/logout';">로그아웃</button>
+                </ul> 
+                <div class="navbar-custom-menu">
+                    <div id="navigation">
+                        <ul class="navigation-menu">
+                            <li class='has-submenu'>
+                                <a href='/home/main'><span> </i>캘린더</span></a>
+                            </li>
+                            <li class='has-submenu'>
+                                <a href='/books/index'><span> 학습자료</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/books/index'>교재</a></li>
+                                    <li><a href='/exam_pdfs/index'>보충교재</a></li>
+                                    <li><a href='/jindan_exams/index'>평가</a></li>
+                                    <li><a href='/wizards/index'>출제마법사</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/study_books/index'><span> 개별학습</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/study_books/index'>교재학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=exm'>출제마법사</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=wrg'>오답학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=rec'>맞춤학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=hom'>숙제관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/reports_v2/index'><span> 분석표</span></a>
+                            </li>
+                            <li class='has-submenu active'>
+                                <a href='/academies/index'><span> 관리</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/academies/index'>정보수정</a></li>
+                                    <li><a href='/teachers/index'>교사/반 관리</a></li>
+                                    <li><a href='/students/index'>학생관리</a></li>
+                                    <li class='active'><a href='/schools/index'>학교관리</a></li>
+                                    <li><a href='/print_pdfs/index'>인쇄파일관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/payments/index'><span> 결제</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/notices/index'><span> 고객센터</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/notices/index'>공지사항</a></li>
+                                    <li><a href='/inquiries/index'>1:1문의 & FAQ</a></li>
+                                    <li><a href='/question_error_reports/index'>문항오류신고</a></li>
+                                    <!-- <li><a href='/boards/index?boarda_type_cd=gj'>자료실-교재자료</a></li>
+                                    <li><a href='/boards/index?boarda_type_cd=mv'>자료실-영상자료</a></li> 241210 자료실 통합 -->
+                                    <li><a href='/boards/index'>교재/영상 자료실</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="row">
+                                <div class="col-sm-4 head-left">
+                                    <div class='gray'>
+                                        <a href='/academies/index'>관리</a>
+                                    </div>
+                                    <img src="https://tutor.howhymath.com/app/img/icon_right_arrow.png" alt=""/>
+                                    <div class='black'>
+                                        <a href='/schools/index'>학교관리</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 table-container">
+                        <div class="row" style="padding: 20px;">
+                            <div class="col-md-3 search-head">
+                                11980개중 1-30
+                            </div>
+                            <div class="col-sm-8">
+                                <form id="form_search" name="form_no_fx" action="/schools/index">
+                                    <input type="hidden" name="mode" value="">
+                                    <div class="row">
+                                        <div class="col-sm-3 fx_bp2">
+                                        </div>
+                                        <div class="col-md-2 fx_bp2">
+                                            <select title="" name="sv_bookmark_yn" class="form-control form-select">
+                                                <option value="">--북마크--</option>
+                                                <option value="y">예</option>
+                                                <option value="n">아니오</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 fx_bp2">
+                                            <select title="" name="sv_sido_cd" class="form-control form-select">
+                                                <option value="">-- 지역 --</option>
+                                                <option value="su">서울</option>
+                                                <option value="bs">부산</option>
+                                                <option value="dg">대구</option>
+                                                <option value="ic">인천</option>
+                                                <option value="kj">광주</option>
+                                                <option value="dj">대전</option>
+                                                <option value="us">울산</option>
+                                                <option value="sj">세종</option>
+                                                <option value="kw">강원</option>
+                                                <option value="gg">경기</option>
+                                                <option value="gn">경남</option>
+                                                <option value="gb">경북</option>
+                                                <option value="jn">전남</option>
+                                                <option value="jb">전북</option>
+                                                <option value="jj">제주</option>
+                                                <option value="cn">충남</option>
+                                                <option value="cb">충북</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 fx_bp2">
+                                            <select title="" name="sv_emh_cd" class="form-control form-select">
+                                                <option value="">-- 초중고 --</option>
+                                                <option value="e0">초등</option>
+                                                <option value="m0">중등</option>
+                                                <option value="h0">고등</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3 fx_bp2">
+                                            <div class="input-group">
+                                                <input type="text" title="" name="sv_keyword" value="" id="fx-form-sv_keyword" placeholder="주소/학교" class="form-control"/><button class="mbtn" type="submit"><i class="fas fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="mbtn" id="item-create" data-url="/schools/newone"><i class="fas fa-plus"></i> 등록 </button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped mb-0 table-border-none wrong-modal-table" style="min-width:600px;">
+                            <colgroup>
+                            <col width="50">
+                            <col width="100">
+                            <col width="100">
+                            <col>
+                            <col>
+                            <col width="100">
+                            <col width="60">
+                            <col width="50">
+                            <col width="50">
+                            </colgroup>
+                            <thead style="background-color: #fff; border-bottom: 2px solid #F1F1F1;">
+                            <tr>
+                                <th>
+                                </th>
+                                <th class="fx-tablesorter-header" id="schools.sido_cd-sort">
+                                    지역
+                                </th>
+                                <th class="fx-tablesorter-header" id="schools.emh_cd-sort">
+                                    초중고
+                                </th>
+                                <th class="fx-tablesorter-header" id="schools.name-sort">
+                                    학교명
+                                </th>
+                                <th class="fx-tablesorter-header" id="schools.address-sort">
+                                    주소
+                                </th>
+                                <th>
+                                    등록선생님
+                                </th>
+                                <th>
+                                    북마크
+                                </th>
+                                <th>
+                                    수정
+                                </th>
+                                <th>
+                                    삭제
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <i class="far fa-bookmark" style="color:#1761fd;"></i>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    제주외국어고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 애월읍 고성리
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-danger btn-circle" onclick="favorite_remove(11980);"><i class="fas fa-minus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="far fa-bookmark" style="color:#1761fd;"></i>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    성산고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 서귀포시 성산읍 오조리
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-danger btn-circle" onclick="favorite_remove(11979);"><i class="fas fa-minus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="far fa-bookmark" style="color:#1761fd;"></i>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    서귀포산업과학고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 서귀포시 상효동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-danger btn-circle" onclick="favorite_remove(11978);"><i class="fas fa-minus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    제주고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 노형동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11977);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    제주과학고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 오라이동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11976);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    제주중앙고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 월평동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11975);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    영주고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 월평동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11974);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    한국뷰티고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 한경면 고산리
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11973);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    함덕고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 조천읍 신흥리
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11972);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    한림공업고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 한림읍 한림리
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11971);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    표선고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 서귀포시 표선면 표선리
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11970);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    중문고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 서귀포시 대포동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11969);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    제주여자상업고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 건입동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11968);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    애월고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 애월읍 고내리
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11967);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    제주여자고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 아라일동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11966);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    오현고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 화북일동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11965);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    신성여자고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 영평동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11964);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    삼성여자고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 서귀포시 토평동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11963);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    대기고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 봉개동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11962);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    남주고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 서귀포시 동홍동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11961);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    남녕고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 연동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11960);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    한림고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 한림읍 옹포리
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11959);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    제주중앙여자고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 이도이동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11958);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    제주제일고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 노형동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11957);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    세화고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 구좌읍 세화리
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11956);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    서귀포여자고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 서귀포시 호근동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11955);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    서귀포고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 서귀포시 동홍동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11954);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    대정여자고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 서귀포시 대정읍 하모리
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11953);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    대정고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 서귀포시 대정읍 상모리
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11952);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    제주
+                                </td>
+                                <td>
+                                    고등
+                                </td>
+                                <td style="text-align:left;">
+                                    제주대학교사범대학부설고등학교
+                                </td>
+                                <td style="text-align:left;">
+                                    제주특별자치도 제주시 용담삼동
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-soft-success btn-circle" onclick="favorite_create(11951);"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        <div style="text-align: center;">
+                            <nav>
+                            <ul class='pagination justify-content-center'>
+                                <li class="page-item disabled"><a class="page-link" href="#"><img src="https://tutor.howhymath.com/app/img/icon_double_left_arrow.png" alt=""/></a></li>
+                                &nbsp;
+                                <li class="page-item disabled"><a class="page-link" href="#"><img src="https://tutor.howhymath.com/app/img/icon_left_arrow.png" alt=""/></a></li>
+                                &nbsp;
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="/schools/index?p=2">2</a></li>
+                                <li class="page-item"><a class="page-link" href="/schools/index?p=3">3</a></li>
+                                <li class="page-item"><a class="page-link" href="/schools/index?p=4">4</a></li>
+                                <li class="page-item"><a class="page-link" href="/schools/index?p=5">5</a></li>
+                                <li class="page-item"><a class="page-link" href="/schools/index?p=6">6</a></li>
+                                <li class="page-item"><a class="page-link" href="/schools/index?p=7">7</a></li>
+                                <li class="page-item"><a class="page-link" href="/schools/index?p=8">8</a></li>
+                                <li class="page-item"><a class="page-link" href="/schools/index?p=9">9</a></li>
+                                <li class="page-item"><a class="page-link" href="/schools/index?p=10">10</a></li>
+                                &nbsp;
+                                <li class="page-item"><a class="page-link" href="/schools/index?p=2"><img src="https://tutor.howhymath.com/app/img/icon_right_arrow.png" alt=""/></a></li>
+                                &nbsp;
+                                <li class="page-item"><a class="page-link" href="/schools/index?p=400"><img src="https://tutor.howhymath.com/app/img/icon_double_right_arrow.png" alt=""/></a></li>
+                            </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $( document ).ready(function() {
+                        fx_ready_sorting( "schools.id", "desc" );
+                    });
+                    $( "#item-create" ).on('click', function() { 
+                        var $this = $(this);
+                        fx_layer_popup_v2( 'item_create_popup', $this.data('url'), '' );
+                    });
+                    $( ".item-update" ).on('click', function() { 
+                        var $this = $(this);
+                        fx_layer_popup_v2( 'item_update_popup', $this.data('url'), '' );
+                    });
+                    $( ".item-remove" ).on('click', function() { 
+                        var $this = $(this);
+                        fx_remove_link($this.data('url'));
+                    });
+                    function favorite_create( id )
+                    {
+                        fx_submit_link( '/schools/favorite_create?id=' + id );
+                    }
+                    function favorite_remove( id )
+                    {
+                        fx_submit_link( '/schools/favorite_remove?id=' + id );
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <footer class='footer'>
+        <div class="top">
+            <div class="left">
+                <div class='footer-content'>
+                    <span class="footer_logo"><img src="../assets/hmath/footer_logo.svg" alt="하와이매쓰" /></span>
+                    <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                    <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+                </div>
+            </div>
+            <div class='right'>
+                <div class='footer-content'>
+                    <div id="footer-dropbox">
+                        <select id="footer-dropbox-content" class="form-control form-select">
+                            <option value="">Family Site</option>
+                            <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                            <option value="https://www.fren.co.kr">프렌매쓰</option>
+                        </select>
+                        <script>
+                            document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                                let link = e.target.value;
+                                if(link)
+                                    window.open(link, '_blank');
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='left'>
+            <div class='footer-content'>
+                <div><b>하와이컴퍼니(주)</b></div>
+                <div class='vertical-line'></div>
+                <div><b>HOWHY COMPANY</b></div>
+                <div class='vertical-line'></div>
+                <div><b>대표이사 : 박종화</b></div>
+            </div>
+
+            <div class='footer-content'>
+                <div><b>사업자등록번호</b> 760-87-02737</div>
+                <div class='vertical-line'></div>
+                <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+                <div class='vertical-line'></div>
+                <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+            </div>
+            <div class='footer-content'>
+                <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+            </div>
+            <div class='footer-content'>2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.</div>
+        </div>
+    </footer>
+    <script src="https://img.howhymath.com/custom/custom.js?v=1735179469"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            cdml_mathjax_init();
+        });
+        function edit_teacher()
+        {
+            fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+        }
+        function edit_password()
+        {
+            fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+        }
+        function menu_disable_delete( key, opt )
+        {
+            var node = $.ui.fancytree.getNode(opt.$trigger);
+            if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+            var words = node.key.split('-');
+            if( words[1] != '0' ) return true;
+            return false;
+        }
+        function menu_disable_add( key, opt )
+        {
+            var node = $.ui.fancytree.getNode(opt.$trigger);
+            if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+            if( node.getLevel() == 2 ) return true;
+            return false;
+        }
+        function menu_disable_edit( key, opt )
+        {
+            var node = $.ui.fancytree.getNode(opt.$trigger);
+            if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+            return false;
+        }
+    </script>
+</body>
+</html>
