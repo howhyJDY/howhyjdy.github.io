@@ -175,7 +175,10 @@ line-height: 160%;
             right: 30px;
             z-index: 1; */
         }
-        .paint-box-bar{margin-bottom: 10px;}
+        .paint-box-bar{
+            margin-bottom: 10px;
+            .paint-box{width: calc(100% - 140px);}
+        }
     }
 }
 .left{
@@ -284,7 +287,8 @@ line-height: 160%;
 #sketch.paint-box{top: 0; left: 0;}
 
 /* 문제영역 시작 */
-#question-box{position: static !important;}
+#question-box{position: relative !important;}
+#sketch{position: absolute !important;}
 /* 문제영역 끝 */
 
 /* 정답영역 시작 */
