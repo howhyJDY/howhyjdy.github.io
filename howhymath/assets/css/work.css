@@ -6704,15 +6704,26 @@ html:has(.page-memo){
   height: 100%;
   .table-scoll{
     max-height: 506px !important;
+    /* max-height: none !important; */
+    /* height: 506px; */
     /* border: 1px solid var(--Gray-09, #E5E5E5); */
     border: 2px solid #666;
-    border-radius: 8px;
+    border-radius: 5px;
     position: relative;
   }
   .table th {
     &:first-child{border-radius: 0;}
   }
+  .table tr:last-of-type{border-bottom-width: 0;}
 }
+
+/* 채점영역 최소 높이 241227 */
+.left:has( #popup_score_question_box ){
+  &:not(:has(.result-container)) +.right #popup_score_table_box .table-scoll{
+    max-height: 294px !important;
+  }
+}
+
 /* 문제/해설보기 버튼 */
 #question-btn{
   background: var(--main-color-blue);
