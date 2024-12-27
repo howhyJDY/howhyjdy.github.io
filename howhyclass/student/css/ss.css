@@ -133,6 +133,7 @@ line-height: 160%;
         width: fit-content;
         padding: 0 !important;
         .row{gap: 10px;}
+        &.col-sm-12{width: calc(100% - 75px);}/*241227 문항번호호*/
     }
 }
 
