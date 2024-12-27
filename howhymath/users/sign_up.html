@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>하와이매쓰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+    <!-- App css -->
+    <link href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css" rel="stylesheet" type="text/css"/>
+    <!--link href="https://img.howhymath.com/custom/custom.css?v=20230928-1" rel="stylesheet" type="text/css" /-->
+    <!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1735260926"/> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/work.css"/>
+    <!-- jQuery  -->
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1735260926"></script>
+</head>
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+    <div class="topbar">
+        <div class="brand">
+            <a href="/home/main" class="logo" style="padding-left:10px;">
+            <span u>
+            <img src="https://img.howhymath.com/hmath/logo.png" style="width:120px;" class="logo-sm">
+            </span>
+            </a>
+        </div>
+        <nav class="navbar-custom">
+        <ul class="list-unstyled topbar-nav float-end mb-0 tab-bar">
+            <div class="right">
+                <a href="/home/index">로그인</a>
+            </div>
+            <div class="right">
+                <a href="/users/sign_up">회원가입</a>
+            </div>
+        </ul>
+        </nav>
+    </div>
+    <form action="/users/signup_teacher" id="sign-form" method="post">
+        <div class="page-wrapper">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="signup-container" style="width:600px;height:auto;">
+                        <pre>회원가입</pre>
+                        <div class="email-box">
+                            <div style="margin-bottom: 10px;">
+                                이메일 <span class="sub-title-right">암호찾기에 사용됩니다. 정확히 입력해주세요.</span>
+                            </div>
+                            <div class='row'>
+                                <div class='col-sm-8'>
+                                    <div>
+                                        <input class="form-control" name="teacher_email" type="text" id="sign-email" value="" placeholder="이메일을 입력해주세요."/>
+                                    </div>
+                                    <div class="note note-error" id="fx-error-teacher_email" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </div>
+                                <div class='col-sm-4'>
+                                    <button class="check-btn w-100" onclick="email_check();return false;">중복확인</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="password-box">
+                            <div style="margin-bottom: 10px;">
+                                이름<span class="sub-title-right">두 글자 이상 입력해주세요.</span>
+                            </div>
+                            <div>
+                                <input name="teacher_name" class="form-control" type="text" value="" placeholder="실명을 입력해 주세요.">
+                            </div>
+                            <div class="note note-error" id="fx-error-teacher_name" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                            </div>
+                        </div>
+                        <div class="password-box">
+                            <div style="margin-bottom: 10px;">
+                                기관명<span class="sub-title-right">두 글자 이상 입력해주세요.(시험지 인쇄시 사용됩니다.)</span>
+                            </div>
+                            <div class='row'>
+                                <div class='col-sm-4'>
+                                    <div>
+                                        <select title="" name="academy_type_cd" id="fx-form-academy_type_cd" class="form-control form-select">
+                                            <option value="">-- 기관타입 --</option>
+                                            <option value="sco">학교</option>
+                                            <option value="aca">학원</option>
+                                            <option value="gss">교습소</option>
+                                            <option value="ggb">공부방</option>
+                                            <option value="pri">과외</option>
+                                        </select>
+                                    </div>
+                                    <div class="note note-error" id="fx-error-academy_type_cd" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </div>
+                                <div class='col-sm-8'>
+                                    <div>
+                                        <input name="name" class="form-control" type="text" value="" placeholder="기관명을 입력해주세요.">
+                                    </div>
+                                    <div class="note note-error" id="fx-error-name" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="password-box">
+                            <div style="margin-bottom: 10px;">
+                                비밀번호<span class="sub-title-right">영문,숫자,특수문자($@!%*#?&)를 사용해 8~15자 이내로 입력해주세요.</span>
+                            </div>
+                            <div class='row'>
+                                <div class='col-sm-6'>
+                                    <div>
+                                        <input type="password" name="password" class="form-control" placeholder="비밀번호">
+                                    </div>
+                                    <div class="note note-error" id="fx-error-password" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </div>
+                                <div class='col-sm-6'>
+                                    <div>
+                                        <input type="password" name="password_check" class="form-control" placeholder="비밀번호 확인">
+                                    </div>
+                                    <div class="note note-error" id="fx-error-password_check" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="password-box">
+                            <div style="margin-bottom: 10px;">
+                                휴대폰<span class="sub-title-right">보안문자를 먼저 입력해 주세요.</span>
+                            </div>
+                            <div class="row" style="padding-top:5px;">
+                                <div class="col-sm-4">
+                                    <img id="img_chk" src='' style="padding: 2px;width:80%">
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" name="img_num_check" class="form-control" id="" placeholder="보안문자">
+                                </div>
+                                <div class="col-sm-4">
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:5px;">
+                                <div class="col-sm-8">
+                                    <input type="hidden" name="teacher_phone" class="form-control" id="teacher_phone_real">
+                                    <div>
+                                        <input type="text" name="teacher_phone_check" class="form-control" id="" placeholder="휴대폰 번호('-' 없이 숫자만)" style="margin-top:5px;">
+                                    </div>
+                                    <div class="note note-error" id="fx-error-teacher_phone" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="sbtn w-100" onclick="send_sms();return false;" style="">인증번호 발송</button>
+                                </div>
+                            </div>
+                            <div class="row sig_form sms_cert" style="padding-top:5px;display:none;">
+                                <div class="col-sm-8">
+                                    <input type="text" name="phone_check" class="form-control" id="" placeholder="인증번호" style="">
+                                    <label id="timer"></label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="sbtn w-100" onclick="check_cert_number();return false;" style="">인증확인</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="password-box">
+                            <div style="margin-bottom: 10px;">
+                                기관주소
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <div>
+                                    <input type="text" id="input_postcode" name="post_code" class="form-control" id="" placeholder="우편번호" readonly>
+                                </div>
+                                <div class="note note-error" id="fx-error-post_code" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                </div>
+                                <button type="button" class="sbtn-sm" onclick="getAddress();return false;" style="">우편번호찾기</button>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <input type="text" id="input_address" name="address" class="form-control" id="" placeholder="주소" style="margin-top:5px;" readonly>
+                                </div>
+                                <div class="note note-error" id="fx-error-address" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <input type="text" id="input_address_add" name="address_add" class="form-control" id="" placeholder="상세주소" style="margin-top:5px;">
+                                </div>
+                                <div class="note note-error" id="fx-error-address_add" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="password-box">
+                            <div style="margin-bottom: 10px;">
+                                약관동의
+                            </div>
+                            <div class="agree-container">
+                                <div style="display: flex; justify-content: space-between; margin: 20px 0px;">
+                                    <div class="checkbox">
+                                        <input id="checkbox2" type="checkbox" name="agreement_check">
+                                        <label for="checkbox2" class="label-style">
+                                        이용약관에 동의 </label>
+                                        <button type="button" class="sbtn-sm" onclick="show_agreement();return false;" style="">보기</button>
+                                    </div>
+                                    <div>
+                                        <i data-feather="chevron-right"></i>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; ">
+                                    <div class="checkbox">
+                                        <input id="checkbox3" type="checkbox" name="privacy_policy_check">
+                                        <label for="checkbox3" class="label-style">
+                                        개인정보처리방침에 동의 </label>
+                                        <button type="button" class="sbtn-sm" onclick="show_privacy_policy();return false;" style="">보기</button>
+                                    </div>
+                                    <div>
+                                        <i data-feather="chevron-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="login-btn" onclick="sign_up_check();return false;">회원가입하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class='footer'>
+            <div class="top">
+                <div class="left">
+                    <div class='footer-content'>
+                        <span class="footer_logo"><img src="../assets/hmath/footer_logo.svg" alt="하와이매쓰" /></span>
+                        <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                        <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+                    </div>
+                </div>
+                <div class='right'>
+                    <div class='footer-content'>
+                        <div id="footer-dropbox">
+                            <select id="footer-dropbox-content" class="form-control form-select">
+                                <option value="">Family Site</option>
+                                <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                                <option value="https://www.fren.co.kr">프렌매쓰</option>
+                            </select>
+                            <script>
+                                document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                                    let link = e.target.value;
+                                    if(link)
+                                        window.open(link, '_blank');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='left'>
+                <div class='footer-content'>
+                    <div><b>하와이컴퍼니(주)</b></div>
+                    <div class='vertical-line'></div>
+                    <div><b>HOWHY COMPANY</b></div>
+                    <div class='vertical-line'></div>
+                    <div><b>대표이사 : 박종화</b></div>
+                </div>
+        
+                <div class='footer-content'>
+                    <div><b>사업자등록번호</b> 760-87-02737</div>
+                    <div class='vertical-line'></div>
+                    <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+                    <div class='vertical-line'></div>
+                    <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+                </div>
+                <div class='footer-content'>
+                    <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+                </div>
+                <div class='footer-content'>2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.</div>
+            </div>
+        </footer>
+        <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script>
+var cert_number = "";
+var sms_send_yn = "n";
+var cert_number_yn = "n";
+var img_check_number = "";
+var timer_handler = null;
+$( document ).ready(function() {
+	$.ajax({
+		type: "GET",
+		url: "/users/img_check",
+		data: "",
+		async : false,
+		success: function (data) {
+			var obj = JSON.parse(data);
+			var img_data = obj.i;
+			img_check_number =  obj.t;
+			document.getElementById('img_chk').src=img_data;
+		}
+	});
+});
+function sign_up_check()
+{
+	if($("input:checkbox[name=agreement_check]").is(":checked") == false)
+	{
+		alert("이용약관에 동의해 주세요.");
+		return false;
+	}
+	if($("input:checkbox[name=privacy_policy_check]").is(":checked") == false)
+	{
+		alert("개인정보처리방침에 동의해 주세요.");
+		return false;
+	}
+	$("#sign-form").submit();
+}
+function send_sms()
+{
+	var phone = $("[name=teacher_phone_check]").val();
+	var user_img_number  = $("[name=img_num_check]").val();
+	if( phone == "" )
+	{
+		alert("휴대폰 번호를 입력해주세요.");
+		return false;
+	}
+	if( user_img_number == "" )
+	{
+		alert("보안문자를 입력해 주세요.");
+		return;
+	}
+	if( user_img_number != ""  && img_check_number != user_img_number)
+	{
+		alert("보안문자가 일치하지 않습니다.");
+		return;
+	}
+    var r = "";
+	$.ajax({
+		type: "POST",
+		url: "/users/phone_number_check",
+		data:"phone_number="+phone,
+		async: false,
+		success: function (response) {
+			r = response.trim();
+		}
+	});
+	if( r == 'no' )
+	{
+		alert("이미 등록된 전화 번호입니다.");
+		return;
+	}
+	if( !fx_empty( r ) && img_check_number == user_img_number)
+	{
+		sms_send_yn = "y";
+		cert_number = r;
+		alert("인증번호가 발송되었습니다.");
+		timer();	
+		$(".sms_cert").show(); // css("display", "block");
+		$(".img_check").show(); // css("display", "block");		
+	}
+}
+function check_cert_number()
+{
+	var user_cert_number = $("[name=phone_check]").val();
+	if( sms_send_yn == "n" )
+	{
+		return false;
+	}
+	if( user_cert_number == cert_number )
+	{
+		alert("휴대폰 인증이 완료되었습니다.");
+		cert_number_yn = "y"; 
+		clearInterval(timer_handler);
+		$("[name=teacher_phone_check]").attr("readonly",true);
+		$('#teacher_phone_real').val( $("[name=teacher_phone_check]").val() );
+		$("#timer").hide();
+	}
+	else if( user_cert_number != cert_number )
+	{
+		alert("휴대폰 인증번호를 확인해주세요.");
+	}
+}
+function email_check()
+{
+	var email = $("#sign-email").val();
+	email = email.trim();
+ 	$("#sign-email").val( email );
+	if( email == "" )
+	{
+		alert("이메일을 입력해주세요.");
+		return false;
+	}
+	if( !isEmail(email) )
+	{
+		alert("이메일 형식에 맞게 입력해주세요.");
+		return false;
+	}
+	$.ajax({
+		type: "POST",
+		url: "/users/email_check",
+		data: "email="+email,
+		success: function (response) { 
+			eval(response); 
+		}
+	});
+}
+function isEmail(asValue) 
+{
+	var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+	return regExp.test(asValue); // 형식에 맞는 경우 true 리턴	
+}
+function timer()
+{
+	var time = 180;
+	var min = "";
+	var sec = "";
+	timer_handler = setInterval( function() {
+		min = parseInt(time/60);
+		sec = time % 60;
+		//console.log( min + "분" + sec + "초");
+		$("#timer").html( min + "분" + sec + "초" );
+		time --;
+		if( time <= 0 )
+		{
+			clearInterval(timer_handler);
+			cert_number = "";
+			alert('인증시간이 종료되었습니다. 다시 인증해주세요');
+		}
+	}, 1000);
+}
+function getAddress() {
+	new daum.Postcode({
+		oncomplete: function(data) {	
+			document.getElementById('input_postcode').value = data.zonecode;
+			document.getElementById("input_address").value = data.address;
+		}
+	}).open();
+}
+function show_agreement()
+{
+	fx_layer_popup_v2("show_agreement", "/users/agreement_popup", "" );
+}
+function show_privacy_policy()
+{
+	fx_layer_popup_v2("show_privacy_policy", "/users/privacy_policy_popup", "" );
+}
+    </script>
+    </body>
+</html>

@@ -852,6 +852,7 @@ line-height: normal;
   font-weight: 400;
   line-height: 150%; /* 45px */
   margin: 30px 0px;
+  overflow: hidden;
 }
 
 .login-container > pre > span{

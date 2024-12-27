@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>하와이매쓰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+    <!-- base css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css"/>
+    <!-- site css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1735181771"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1735181771"/>
+    <!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1735181771" /-->
+    <!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1735181771"/> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/work.css?v=1735181771"/>
+    <!-- base javascript -->
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                showMathMenu: false,
+                tex2jax: { displayMath: [ ["$$","$$"] ] },
+                "HTML-CSS": { fonts: ["Latin-Modern"] }
+            });
+        </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1735181771"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1735181771"></script>
+</head>
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+    <div class="topbar">
+        <div class="content-box">
+            <div class="brand">
+                <a href="/home/main" class="logo" style="padding-left:10px;">
+                    <!-- <span><img src="https://img.howhymath.com/hmath/logo.png" style="width:140px;height:31px;" class="logo-sm"></span> 241210 이미지 변경 및 스타일 삭제 -->
+                    <span><img src="../assets/hmath/logo.svg" class="logo-sm" alt="하와이매쓰"></span>
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-end mb-0" style="display: flex; align-items: center;">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <span class="ms-1 nav-user-name hidden-sm" style=" color: var(--Gray-01, #1A1A1A); font-weight: 700; font-size: 16px;">이하와<span style="font-weight: 400;"><span style="font-weight: 400;">선생님</span></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!--a class="dropdown-item" href="javascript:edit_teacher();"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i>정보수정</a-->
+                            <a class="dropdown-item" href="javascript:edit_password();"><i data-feather="lock" class="align-self-center icon-xs icon-dual me-1"></i>암호수정</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="https://tutor.howhymath.com/users/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual me-1"></i>로그아웃</a>
+                        </div>
+                    </li>
+                    <button class="signout-btn" onclick="location.href='https://tutor.howhymath.com/users/logout';">로그아웃</button>
+                </ul> 
+                <div class="navbar-custom-menu">
+                    <div id="navigation">
+                        <ul class="navigation-menu">
+                            <li class='has-submenu'>
+                                <a href='/home/main'><span> </i>캘린더</span></a>
+                            </li>
+                            <li class='has-submenu'>
+                                <a href='/books/index'><span> 학습자료</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/books/index'>교재</a></li>
+                                    <li><a href='/exam_pdfs/index'>보충교재</a></li>
+                                    <li><a href='/jindan_exams/index'>평가</a></li>
+                                    <li><a href='/wizards/index'>출제마법사</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/study_books/index'><span> 개별학습</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/study_books/index'>교재학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=exm'>출제마법사</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=wrg'>오답학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=rec'>맞춤학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=hom'>숙제관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/reports_v2/index'><span> 분석표</span></a>
+                            </li>
+                            <li class='has-submenu active'>
+                                <a href='/academies/index'><span> 관리</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/academies/index'>정보수정</a></li>
+                                    <li><a href='/teachers/index'>교사/반 관리</a></li>
+                                    <li><a href='/students/index'>학생관리</a></li>
+                                    <li class='active'><a href='/schools/index'>학교관리</a></li>
+                                    <li><a href='/print_pdfs/index'>인쇄파일관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/payments/index'><span> 결제</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/notices/index'><span> 고객센터</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/notices/index'>공지사항</a></li>
+                                    <li><a href='/inquiries/index'>1:1문의 & FAQ</a></li>
+                                    <li><a href='/question_error_reports/index'>문항오류신고</a></li>
+                                    <!-- <li><a href='/boards/index?boarda_type_cd=gj'>자료실-교재자료</a></li>
+                                    <li><a href='/boards/index?boarda_type_cd=mv'>자료실-영상자료</a></li> 241210 자료실 통합 -->
+                                    <li><a href='/boards/index'>교재/영상 자료실</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="page-content">
+            <div class="container-fluid">
+                <script type="text/javascript" src="https://img.howhymath.com/custom/lms_print.js?20241110"></script>
+                <link rel='stylesheet' type='text/css' href='https://img.dtsoft.co.kr/assets.howhy/plugins/jquery-ui/jquery-ui.css'>
+                <link rel='stylesheet' type='text/css' href='https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.css'/>
+                <script type='text/javascript' charset='utf-8' src='https://img.dtsoft.co.kr/assets.howhy/plugins/jquery-ui/jquery-ui.js'></script>
+                <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/cookie/js.cookie.min.js'></script>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.js'></script>
+                <link rel='stylesheet' href='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/skin-vista/ui.fancytree.css'/>
+                <link href='/app/css/fancytree.css?t=1735181771' rel='stylesheet' type='text/css'/>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/jquery.fancytree-all.min.js'></script>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/modules/jquery.fancytree.persist.js'></script>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/ext/jquery.fancytree.contextMenu.js'></script>
+                <link href='https://img.dtsoft.co.kr/assets.howhy/plugins/select2/select2.min.css' rel='stylesheet' type='text/css'/>
+                <link href='/app/css/select2.css' rel='stylesheet' type='text/css'/>
+                <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/select2/select2.min.js'></script>
+                <script src='https://img.howhymath.com/custom/select2.js'></script>
+                <link href="https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/core/main.css" rel="stylesheet"/>
+                <link href="https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/daygrid/main.css" rel="stylesheet"/>
+                <link href="https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/bootstrap/main.css" rel="stylesheet"/>
+                <link href="https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/timegrid/main.css" rel="stylesheet"/>
+                <link href="https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/list/main.css" rel="stylesheet"/>
+                <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/core/main.js'></script>
+                <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/core/locales-all.js'></script>
+                <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/daygrid/main.js'></script>
+                <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/timegrid/main.js'></script>
+                <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/interaction/main.js'></script>
+                <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/fullcalendar/packages/list/main.js'></script>
+                <script src='https://img.dtsoft.co.kr/assets.howhy/js/moment.js'></script>
+                <style>
+                    .notice>.header {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .notice>.scrollbar {
+                        border-radius: 20px;
+                        background: #FFF;
+                        padding: 20px;
+                        margin-top: 20px;
+                        max-height: 580px;
+                        overflow-y: scroll;
+                    }
+                    .fc-widget-header {
+                        background-color: #FAFAFA;
+                        color: #303e67;
+                    }
+                    .fc-unthemed th, .fc-unthemed td, .fc-unthemed thead, .fc-unthemed tbody, .fc-unthemed .fc-divider, .fc-unthemed .fc-row, .fc-unthemed .fc-content, .fc-unthemed .fc-popover, .fc-unthemed .fc-list-view, .fc-unthemed .fc-list-heading td {
+                        border-color: #EDEDED;
+                    }
+                    .fc-button-primary {
+                    color: #fff;
+                    background-color: #9FDCBC;
+                    border-color: #9FDCBC;
+                    }
+                </style>
+                <div class="row">
+                    <div class="col-md-9 white padding-zero" style="margin:0px;">
+                        <div class="study-management-header">
+
+                            <!-- 캘린더 영역 -->
+                            <div id='calendar'></div>
+                            <!-- //캘린더 영역 -->
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card white notice" style="margin-bottom:5px;padding: 15px;">
+                            <div class="header">
+                                <div class="left" style="font-size: 16px;font-style: normal; font-weight: 600; line-height: normal;">전체 공지사항</div>
+                                <div class="right">
+                                    <a href="/notices/index">&gt;</a>
+                                </div>
+                            </div>
+                            <div class="scrollbar">
+                                <div class="scrollbar-title">
+                                    <a href="/notices/index?notice_id=9">
+                                    <b>[필독]</b><b><font color=red> 하와이매쓰 사용 방법 (영상)</font></b><a>
+                                </div>
+                                <div class="scrollbar-date">2024-08-26</div>
+                                <hr>
+                                <div class="scrollbar-title">
+                                    <a href="/notices/index?notice_id=12">새로 등록된 교재 안내 </a>
+                                    <img src="https://tutor.howhymath.com/app/img/icon_new.png"/>
+                                </div>
+                                <div class="scrollbar-date">2024-11-25</div>
+                                <hr>
+                                <div class="scrollbar-title">
+                                    <a href="/notices/index?notice_id=11">새로 등록된 교재 안내 </a>
+                                </div>
+                                <div class="scrollbar-date">2024-09-25</div>
+                                <hr>
+                                <div class="scrollbar-title">
+                                    <a href="/notices/index?notice_id=10">하와이클래쓰가 오픈하였습니다 </a>
+                                </div>
+                                <div class="scrollbar-date">2024-08-29</div>
+                                <hr>
+                                <div class="scrollbar-title">
+                                    <a href="/notices/index?notice_id=8">새로 등록된 교재 안내 </a>
+                                    <img src="https://tutor.howhymath.com/app/img/icon_new.png"/>
+                                </div>
+                                <div class="scrollbar-date">2024-08-07</div>
+                                <hr>
+                                <div class="scrollbar-title">
+                                    <a href="/notices/index?notice_id=6">새로 등록된 교재 안내 </a>
+                                    <img src="https://tutor.howhymath.com/app/img/icon_new.png"/>
+                                </div>
+                                <div class="scrollbar-date">2024-08-06</div>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="card white notice" style="margin-bottom:5px;padding: 15px;">
+                            <div class="header">
+                                <div class="left" style="font-size: 16px;font-style: normal; font-weight: 600; line-height: normal;">지역 공지사항</div>
+                                <div class="right">
+                                    <a href="/notices/index">&gt;</a>
+                                </div>
+                            </div>
+                            <div class="scrollbar">
+                            </div>
+                        </div>
+                        <div class="card white notice" style="margin-bottom:5px;padding: 15px;">
+                            <div class="header">
+                                <div class="left" style="font-size: 16px;font-style: normal; font-weight: 600; line-height: normal;">학생 현황</div>
+                                <div class="right">
+                                    <a href="/notices/index">&gt;</a>
+                                </div>
+                            </div>
+                            <div class="home-top-content-content-1">
+                                <div class="box">
+                                    <div class="left">총</div>
+                                    <div class="right">1명</div>
+                                </div>
+                                <div class="box" style="justify-content: center;"> | </div>
+                                <div class="box" style="justify-content: end;">
+                                    <div class="left">재원생</div>
+                                    <div class="right">1</div>
+                                </div>
+                                <div class="box" style="justify-content: end;">
+                                    <div class="left">예비생</div>
+                                    <div class="right">0</div>
+                                </div>
+                                <div class="box" style="justify-content: end;">
+                                    <div class="left">휴원생</div>
+                                    <div class="right">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        init_calendar();
+                    });
+                    function init_calendar()
+                    {
+                        var calendarEl = document.getElementById('calendar');
+                        var calendar = new FullCalendar.Calendar(calendarEl, {
+                            locale: 'ko',
+                            plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
+                            customButtons: {
+                                attendanceButton: {
+                                    text: '출결패드',
+                                    click: function() {
+                                        window.open( "/home/attendance", "_blank", "");					
+                                    }
+                                },
+                                refreshButton: {
+                                    text: '새로고침',
+                                    click: function() {
+                                        location.reload();
+                                    }
+                                },
+                                newoneButton: {
+                                    text: '+일정',
+                                    click: function() {
+                                        create_event();
+                                    }
+                                }
+                            },
+                            header: {
+                                left: 'prev,next',
+                                center: 'title',
+                                right: 'attendanceButton refreshButton newoneButton'
+                            },
+                            eventOrder : 'displayOrder', 
+                            defaultDate: '2024-12-26',
+                            navLinks: true, // can click day/week names to navigate views
+                            selectable: true,
+                            selectMirror: true,
+                            // select: function(info) { alert( moment(info.start).format('YYYY-MM-DD') ); },
+                            editable: true,
+                            eventLimit: true, // allow "more" link when too many events
+                            events: function(info, successCallback, failureCallback) {
+                                $.ajax({
+                                    url: '/calendars/events', 
+                                    type: 'GET',
+                                    dataType: 'json',
+                                    data: {
+                                        start : moment(info.startStr).format('YYYY-MM-DD'),
+                                        end : moment(info.endStr).format('YYYY-MM-DD')
+                                    },
+                                    success: function(data) {
+                                        successCallback(data);
+                                    }
+                                });
+                            }, 
+                            eventDrop: function(info) {
+                                var id_str = info.event.id.toString();
+                                if( id_str.indexOf( 'event:' ) != -1 )
+                                    move_event( id_str.replace('event:', '' ), moment(info.event.start).format('YYYY-MM-DD') );
+                                else
+                                {
+                                    info.revert();
+                                    alert( '학습과 출석은 캘린더에서 이동할 수 없습니다.');
+                                }
+                            }, 
+                            eventClick: function(info) {
+                                var id_str = info.event.id.toString();
+                                if( id_str.indexOf( 'attendance:' ) != -1 )
+                                    load_attendance_list( id_str.replace( 'attendance:', '' ) );
+                                else if( id_str.indexOf( 'study:' ) != -1 )
+                                    load_study_list( id_str.replace( 'study:', '' ) );
+                                else
+                                    edit_event( id_str.replace('event:', '' ) ); 
+                            },
+                            eventRender: function(info) {
+                                var id_str = info.event.id.toString();
+                                if( id_str.indexOf( 'attendance:' ) != -1 )
+                                    $(info.el).html( info.event.title );
+                                else if( id_str.indexOf( 'study:' ) != -1 )
+                                    $(info.el).html( info.event.title );
+                            }
+                        });
+                        calendar.render();
+                    }
+                    function create_event()
+                    {
+                        fx_layer_popup_v2( 'item_create_popup', '/calendars/newone?event_on=2024-12-26', 'modal-lg modal-dialog-centered' );
+                    }
+                    function edit_event( id )
+                    {
+                        fx_layer_popup_v2( 'item_update_popup', '/calendars/edit?id='+id, 'modal-lg modal-dialog-centered' );
+                    }
+                    function delete_event( id )
+                    {
+                        fx_remove_link( '/calendars/remove?id=' + id );
+                    }
+                    function delete_all_events( id )
+                    {
+                        fx_remove_link( '/calendars/remove_all?id=' + id );
+                    }
+                    function move_event( id, move_on )
+                    {
+                        fx_submit_link( '/calendars/move_event?id=' + id  + "&move_on=" + move_on );
+                    }
+                    function load_attendance_list( study_on )
+                    {
+                        fx_layer_popup_v2( 'load_attendance_list', '/calendars/attendance_list?study_on='+study_on, 'modal-lg modal-dialog-centered' );
+                    }
+                    function load_study_list( study_on )
+                    {
+                        var w = window.screen.width;
+                        var h = window.screen.height;
+                        var left = 0;
+                        var top = 0;
+                    /* 중앙
+                        var w = window.screen.width / 2;
+                        var h = window.screen.height / 2;
+                        var left = (screen.width - w) / 2;
+                        var top = (screen.height - h) / 4;
+                    */
+                    /*
+                        window.open(  "/calendars/study_list?study_on=" + study_on, 
+                                'load_studies',
+                            'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+                    */
+                        window.open( "/calendars/study_list?study_on=" + study_on, '_blank');
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <footer class='footer'>
+        <div class="top">
+            <div class="left">
+                <div class='footer-content'>
+                    <span class="footer_logo"><img src="../assets/hmath/footer_logo.svg" alt="하와이매쓰" /></span>
+                    <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                    <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+                </div>
+            </div>
+            <div class='right'>
+                <div class='footer-content'>
+                    <div id="footer-dropbox">
+                        <select id="footer-dropbox-content" class="form-control form-select">
+                            <option value="">Family Site</option>
+                            <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                            <option value="https://www.fren.co.kr">프렌매쓰</option>
+                        </select>
+                        <script>
+                            document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                                let link = e.target.value;
+                                if(link)
+                                    window.open(link, '_blank');
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='left'>
+            <div class='footer-content'>
+                <div><b>하와이컴퍼니(주)</b></div>
+                <div class='vertical-line'></div>
+                <div><b>HOWHY COMPANY</b></div>
+                <div class='vertical-line'></div>
+                <div><b>대표이사 : 박종화</b></div>
+            </div>
+
+            <div class='footer-content'>
+                <div><b>사업자등록번호</b> 760-87-02737</div>
+                <div class='vertical-line'></div>
+                <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+                <div class='vertical-line'></div>
+                <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+            </div>
+            <div class='footer-content'>
+                <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+            </div>
+            <div class='footer-content'>2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.</div>
+        </div>
+    </footer>
+    <script src="https://img.howhymath.com/custom/custom.js?v=1735181771"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            cdml_mathjax_init();
+        });
+        function edit_teacher()
+        {
+            fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+        }
+        function edit_password()
+        {
+            fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+        }
+        function menu_disable_delete( key, opt )
+        {
+            var node = $.ui.fancytree.getNode(opt.$trigger);
+            if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+            var words = node.key.split('-');
+            if( words[1] != '0' ) return true;
+            return false;
+        }
+        function menu_disable_add( key, opt )
+        {
+            var node = $.ui.fancytree.getNode(opt.$trigger);
+            if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+            if( node.getLevel() == 2 ) return true;
+            return false;
+        }
+        function menu_disable_edit( key, opt )
+        {
+            var node = $.ui.fancytree.getNode(opt.$trigger);
+            if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+            return false;
+        }
+    </script>
+    </body>
+</html>
