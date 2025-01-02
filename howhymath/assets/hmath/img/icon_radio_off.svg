@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.42 11.42">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+        stroke: #989898;
+      }
+    </style>
+  </defs>
+  <g id="_표준진도표_화살표" data-name="표준진도표_화살표">
+    <path class="cls-1" d="M5.71.5c2.88,0,5.21,2.33,5.21,5.21s-2.33,5.21-5.21,5.21S.5,8.59.5,5.71,2.83.5,5.71.5Z"/>
+  </g>
+</svg>
