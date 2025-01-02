@@ -4386,6 +4386,28 @@ td > .calendar-box{
   max-height: 170px; /* 스크롤뷰의 최대 높이 설정 */
   overflow-y: auto; /* 세로 스크롤 활성화 */
   margin: 20px 0px;
+  &#exam_lists{
+    width: calc(100% - 50px);
+    margin: 0 auto;
+  }
+  .table tr{
+    border-top-width: 0;
+    &:first-of-type td::before{content: none;}
+  }
+  .table td{
+    position: relative;
+    vertical-align: middle;
+    &::before{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: url(../hmath/img/line_dotted2.png) repeat-x;
+      position: absolute;
+      top: 0; left: 0;
+    }
+  }
+  .table-striped>tbody>tr:nth-of-type(even){background: transparent;}
 }
 /* 학습관리 > 오답 학습 Modal END*/
 
@@ -7921,6 +7943,40 @@ html:has(.page-memo){
   }
 }
 
+/* 분석표 > 학생선택 > 종합(단원별 학습분석) */
+.report-header + .card-body{
+  border-width: 0;
+  padding: 20px;
+  .card .report-header{padding: 10px 20px;}
+  .col-sm-4 .card .table-responsive > table {
+    min-width: auto;
+    margin-bottom: 0 !important;
+  }
+
+  .table *{border-width: 0;}
+  .table tr{
+    border-top-width: 0;
+    &:first-of-type td::before{content: none;}
+  }
+  .table td{
+    vertical-align: middle;
+    position: relative;
+    &::before{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: url(../hmath/img/line_dotted2.png) repeat-x;
+      position: absolute;
+      top: 0; left: 0;
+    }
+    button{margin-top: 0 !important;}
+  }
+  .table-striped>tbody>tr:nth-of-type(even){
+    background: transparent;
+  }
+}
+
 #item_show_popup{
   .modal-bottom-btn-box{
     padding-top: 0;
@@ -7928,6 +7984,13 @@ html:has(.page-memo){
   }
 }
 
+/*** 개별학습 > 오답학습 > 오답시험지 출제 팝업 / 학습일 이동 팝업 / 숙제지정 팝업 / 종합(단원별 학습분석) 상세 팝업 ***/
+#popup_wnote, #change_study_on, #make_homework, #show_concepts{
+  .modal-bottom-btn-box{
+    padding-top: 0;
+    border-top-width: 0;
+  }
+}
 
 /******* 팝업끝 *******/
 
