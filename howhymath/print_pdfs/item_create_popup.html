@@ -44,7 +44,7 @@ cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
 cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
 var lms_domain = "https://tutor.howhymath.com";
 </script>
-<body data-layout="horizontal">
+<body data-layout="horizontal" class="enlarge-menu enlarge-menu-all modal-open" style="overflow: hidden; padding-right: 0px;" data-bs-padding-right="">
     <div style="display:none">$$\require{cancel}$$</div>
     <div class="topbar">
         <div class="content-box">
@@ -392,5 +392,145 @@ var lms_domain = "https://tutor.howhymath.com";
             return false;
         }
     </script>
+
+    <!-- 인쇄파일 등록 팝업 시작 -->
+    <div class="modal fade show" id="item_create_popup" tabindex="-1" style="display: block;" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" id="item_create_popup-content">
+                <div class="modal-header">
+                    <div class="left">인쇄파일 등록</div>
+                    <img src="https://tutor.howhymath.com/app/img/icon_button_close.png" data-bs-dismiss="modal" aria-label="Close">
+                </div>
+                <form id="form_create" method="post" action="/print_pdfs/create">
+                    <input type="hidden" name="up_oriname_filename" value="" id="up_oriname_filename">
+                    <input type="hidden" name="up_ext_filename" value="" id="up_ext_filename">
+                    <input type="hidden" name="up_filename_filename" value="" id="up_filename_filename">
+                    <input type="hidden" name="dn" value="20241231-153930.177">
+                    <div class="modal-body">
+                        <div class="row">
+                            <table class="table table-bordered">
+                            <colgroup>
+                                <col width="25%">
+                                <col width="25%">
+                                <col width="25%">
+                                <col width="25%">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th>분류</th>
+                                <td>
+                                    <div>
+                                        <select title="" name="print_pdf_type_cd" id="fx-form-print_pdf_type_cd" class="form-control form-select">
+                                            <option value="">-- 분류 --</option>
+                                            <option value="cvr">표지</option>
+                                            <option value="cpt">개념설명</option>
+                                            <option value="que">추가문항</option>
+                                            <option value="etc">직접입력</option>
+                                        </select>
+                                    </div>
+                                    <div class="note note-error" id="fx-error-print_pdf_type_cd" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                                <td colspan="2">
+                                    <div id="category1-box" style="display:none;">
+                                        <input type="text" title="" name="category1" value="" id="fx-form-category1" maxlength="128" class="form-control">
+                                    </div>
+                                    <div class="note note-error" id="fx-error-category1" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>상세분류</th>
+                                <td colspan="3">
+                                    <div>
+                                        <input type="text" title="" name="category2" value="" id="fx-form-category2" maxlength="128" class="form-control">
+                                    </div>
+                                    <div class="note note-error" id="fx-error-category2" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>이름</th>
+                                <td colspan="3">
+                                    <div>
+                                        <input type="text" title="" name="name" value="" id="fx-form-name" maxlength="32" class="form-control">
+                                    </div>
+                                    <div class="note note-error" id="fx-error-name" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>첨부파일<br>( pdf )</th>
+
+                                <!-- 업로드 전
+                                <td colspan="3">
+                                    <button type="button" id="btn_file_filename" class="btn btn-md btn-soft-success">업로드</button>
+                                    <span id="sp_file_filename"></span>
+                                    <button type="button" id="btn_file_remove_filename" class="btn btn-sm btn-soft-danger" style="display:none;">X</button>
+                                </td> -->
+
+                                <!-- 업로드 후 -->
+                                <td colspan="3">
+                                    <button type="button" id="btn_file_filename" class="btn btn-md btn-soft-success" style="display: none;">업로드</button>
+                                    <span id="sp_file_filename">테스트.pdf</span>
+                                    <button type="button" id="btn_file_remove_filename" class="btn btn-sm btn-soft-danger" style="">X</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-bottom-btn-box">
+                            <button type="button" class="cancle-btn" data-bs-dismiss="modal">취소하기</button>
+                            <button type="submit" class="save-btn">저장하기</button>
+                        </div>
+                    </div>
+                </form>
+                <form id="form_file_filename" name="form_filefilename" enctype="multipart/form-data" action="https://bonsa.howhymath.com/dists/upload" method="post" style="display:none;">
+                    <input type="hidden" name="a" value="bmV3OnByaW50X3BkZi1maWxlbmFtZToyMDI0MTIzMC0xNTM5MzAuMTc3OmZpbGVuYW1lOnBkZg==">
+                    <input type="hidden" name="s" value="757f30e0d3da42a56df0ab10af704ed1">
+                    <input type="hidden" name="rt" value="1735540770">
+                    <input type="file" name="file" id="file_input_filename">
+                </form>
+                <script type="text/javascript">
+                    var file_index = '';
+                    $( document ).ready(function() {
+                        $('#fx-form-print_pdf_type_cd').on('change', function() {
+                            if( $(this).val() == 'etc' )
+                                $('#category1-box').show();
+                            else
+                                $('#category1-box').hide();
+                        });
+                        $("#btn_file_remove_filename").on("click", function(){
+                            $("#sp_file_filename").html("");
+                            $("#btn_file_remove_filename").hide();
+                            $("#btn_file_filename").show();
+                            $('#up_oriname_filename').val( '' );
+                            $('#up_filename_filename').val( '' );
+                            $('#up_ext_filename').val( '' );
+                        });
+                        $("#file_input_filename").change(function (ev){
+                            fx_show_loading();
+                            fx_file_submit($("#form_file_filename"));
+                        });
+                        $("#btn_file_filename").on("click", function(){
+                            file_index = 'filename';
+                            $("#file_input_filename").trigger("click");
+                        });
+                    });
+                    function callback_dists( ori_filename, filename, ext )
+                    {
+                        $('#up_oriname_' + file_index).val( ori_filename );
+                        $('#up_filename_' + file_index).val( filename );
+                        $('#up_ext_' + file_index).val( ext );
+                        $('#sp_file_' + file_index).html( ori_filename );
+                        $('#btn_file_' + file_index).hide();
+                        $('#btn_file_remove_' + file_index).show();
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show"></div>
+    <!-- 인쇄파일 등록 팝업 끝 -->
 	</body>
 </html>

@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>하와이매쓰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+    <!-- base css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css"/>
+    <!-- site css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1735621109"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1735621109"/>
+    <!-- <link rel="stylesheet" type="text/css" href="https://img.howhymath.com/hmath/work.css?v=20241231"/> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/work.css"/>
+    <!-- base javascript -->
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            tex2jax: { displayMath: [ ["$$","$$"] ] },
+            "HTML-CSS": { fonts: ["Latin-Modern"] }
+        });
+    </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1735621109"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1735621109"></script>
+</head>
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+<body data-layout="horizontal">
+<div style="display:none">
+	$$\require{cancel}$$
+</div>
+<div class="topbar">
+	<div class="content-box">
+		<div class="brand">
+			<a href="/home/main" class="logo" style="padding-left:10px;">
+			<span><img src="https://img.howhymath.com/hmath/logo.svg" class="logo-sm" alt="하와이매쓰"></span>
+			</a>
+		</div>
+		<nav class="navbar-custom">
+		<ul class="list-unstyled topbar-nav float-end mb-0" style="display: flex; align-items: center;">
+			<li class="dropdown">
+			<a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+			<span class="ms-1 nav-user-name hidden-sm" style=" color: var(--Gray-01, #1A1A1A); font-weight: 700; font-size: 16px;">정다영 <span style="font-weight: 400;"><span style="font-weight: 400;">선생님</span></span>
+			</a>
+			<div class="dropdown-menu dropdown-menu-end">
+				<!--a class="dropdown-item" href="javascript:edit_teacher();"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i>정보수정</a-->
+				<a class="dropdown-item" href="javascript:edit_password();"><i data-feather="lock" class="align-self-center icon-xs icon-dual me-1"></i>암호수정</a>
+				<div class="dropdown-divider mb-0">
+				</div>
+				<a class="dropdown-item" href="https://tutor.howhymath.com/users/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual me-1"></i>로그아웃</a>
+			</div>
+			</li>
+			<button class="signout-btn" onclick="location.href='https://tutor.howhymath.com/users/logout';">로그아웃</button>
+		</ul>
+		<div class="navbar-custom-menu">
+			<div id="navigation">
+				<ul class="navigation-menu">
+					<li class='has-submenu '>
+					<a href='/home/main'><span></i>캘린더</span></a>
+					</li>
+					<li class='has-submenu active'>
+					<a href='/books/index'><span> 학습자료</span></a>
+					<ul class='submenu'>
+						<li class=''><a href='/books/index'>교재</a></li>
+						<li class=''><a href='/exam_pdfs/index'>보충교재</a></li>
+						<li class=''><a href='/jindan_exams/index'>평가</a></li>
+						<li class='active'><a href='/wizards/index'>출제마법사</a></li>
+					</ul>
+					</li>
+					<li class='has-submenu '>
+					<a href='/study_books/index'><span> 개별학습</span></a>
+					<ul class='submenu'>
+						<li class=''><a href='/study_books/index'>교재학습</a></li>
+						<li class=''><a href='/scoring_prints/index?sv_study_card_type_cd=exm'>출제마법사</a></li>
+						<li class=''><a href='/scoring_prints/index?sv_study_card_type_cd=wrg'>오답학습</a></li>
+						<li class=''><a href='/scoring_prints/index?sv_study_card_type_cd=rec'>맞춤학습</a></li>
+						<li class=''><a href='/scoring_prints/index?sv_study_card_type_cd=hom'>숙제관리</a></li>
+					</ul>
+					</li>
+					<li class='has-submenu '>
+					<a href='/reports_v2/index'><span> 분석표</span></a>
+					</li>
+					<li class='has-submenu '>
+					<a href='/academies/index'><span> 관리</span></a>
+					<ul class='submenu'>
+						<li class=''><a href='/academies/index'>정보수정</a></li>
+						<li class=''><a href='/teachers/index'>교사/반 관리</a></li>
+						<li class=''><a href='/students/index'>학생관리</a></li>
+						<li class=''><a href='/schools/index'>학교관리</a></li>
+						<li class=''><a href='/print_pdfs/index'>인쇄파일관리</a></li>
+					</ul>
+					</li>
+					<li class='has-submenu '>
+					<a href='/payments/index'><span> 결제</span></a>
+					</li>
+					<li class='has-submenu '>
+					<a href='/notices/index'><span> 고객센터</span></a>
+					<ul class='submenu'>
+						<li class=''><a href='/notices/index'>공지사항</a></li>
+						<li class=''><a href='/inquiries/index'>1:1문의 & FAQ</a></li>
+						<li class=''><a href='/question_error_reports/index'>문항오류신고</a></li>
+						<li class=''><a href='/boards/index?boarda_type_cd=gj'>교재/영상 자료실</a></li>
+					</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</nav>
+		<!-- end navbar-->
+	</div>
+</div>
+<div class="page-wrapper">
+	<div class="page-content">
+		<div class="container-fluid">
+			<style>
+                .select-category-btn {display:none;}
+                .cc-tree-control { min-height: 100px; padding: 0; }
+                .cc-tree-control .white {display:block;box-sizing:border-box;border: none;border-radius: 0;text-decoration: none;color:#333;font-weight:500;background:#ffffff;padding: 10px 12px;font-size: 16px;}
+                .cc-tree-control .white a {display: inline-block;line-height: 22px;}
+                .cc-tree-control .grey { display:block; box-sizing:border-box; border:1px solid #ddd; /* height:24px;*/ border-radius:10px; font-size:12px; text-decoration: none; line-height:22px; padding:0 10px; color:#333; font-weight:600; background:#f9f9f9; }
+                .cc-tree-control .opener { width:11px; display:inline-block; font-size: 9px; }
+                .cc-tree-control .front10 { width:10%; display:inline-block; }
+                .cc-tree-control .front20 { width:20%; display:inline-block; }
+                .cc-tree-control .front50 { width:50%; display:inline-block; }
+                .cc-tree-control .front70 { width:70%; display:inline-block; }
+                .cc-tree-control .front80 { width:80%; display:inline-block; }
+                .cc-tree-control .tail  {
+                    float: right;
+                    margin-right: 2px;
+                }
+                /* 챙�◈셌�ぢ시�뮻㉲モ�씲� px챠�슿ㅓр�뷜궗 20200515 3px => 9px, 5px => 10px */
+                .cc-tree-control >ul {padding:5px 0;border: 1px solid #e5e5e5;border-radius: 8px;}
+                .cc-tree-control >ul>li {background:none}
+                .cc-tree-control >ul>li + li > .white {border-top: 1px solid #e5e5e5;}
+                .cc-tree-control >ul>li>ul {
+                    /* scahn padding: 0; */
+                    padding: 0 0 0 10px; 
+                }
+                .cc-tree-control >ul>li>ul>li {}
+                .cc-tree-control >ul>li>ul>li>ul { padding:0 0 0 9px; }
+                .cc-tree-control >ul>li>ul>li>ul>li { padding:5px 0 0 10px; }
+                .cc-tree-control >ul>li>ul>li>ul>li>ul { padding:0 0 0 9px; }
+                .cc-tree-control >ul>li>ul>li>ul>li>ul>li { padding:5px 0 0 10px; }
+                .cc-tree-control >ul>li>ul>li>ul>li>ul>li>ul { padding:0 0 0 9px; }
+                .cc-tree-control >ul>li>ul>li>ul>li>ul>li>ul>li { padding:5px 0 0 10px; }
+                .cc-tree-control .fakelink { cursor:pointer; color:#337ab7; }
+                .cc-tree-control .fakelink i {display:inline-block;}
+                .step-title { font-size: 16px; }
+                .middle-box { font-size: 14px !important; }
+                .sub_title {
+                    border-bottom: 1px solid var(--Gray-09, #E5E5E5);
+                    padding: 5px 10px 10px 10px;
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+			</style>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="page-title-box">
+						<div class="row">
+							<div class="col-sm-12 head-left">
+								<div class='gray'>
+									<a href='/books/index'>학습자료</a>
+								</div>
+								<img src="/app/img/icon_right_arrow.png" alt=""/>
+								<div class='black'>
+									<a href='/wizards/index'>출제마법사</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3 table-container" style="height: 1000px; padding:20px;">
+					<div class="row table-header" style="padding: 0px;">
+						<div class="col-sm-12">
+							<div class="step-title">STEP1 - 출제 조건</div>
+						</div>
+					</div>
+					<br>
+					<input type="hidden" name="ch-h" value="3">
+					<input type="hidden" name="ch-m" value="3">
+					<input type="hidden" name="ch-l" value="1">
+					<input type="hidden" name="sa-h" value="5">
+					<input type="hidden" name="sa-m" value="5">
+					<input type="hidden" name="sa-l" value="3">
+					<input type="hidden" name="grade_cd" value="">
+					<div class="row">
+						<div class="col-sm-12 sub_title">[시험지 난이도 &amp; 문항수]</div>
+					</div>
+					<div class="row" style="padding: 10px;">
+						<div class="col-sm-12">
+							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
+								<input type="radio" class="btn-check" name="difficulty" id="btnradio1-1" value="h" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio1-1">상</label>
+								<input type="radio" class="btn-check" name="difficulty" id="btnradio2-1" value="m" autocomplete="off" checked>
+								<label class="btn btn-outline-success" for="btnradio2-1">중</label>
+								<input type="radio" class="btn-check" name="difficulty" id="btnradio3-1" value="l" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio3-1">하</label>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 0 10px 10px 10px;">
+						<div class="col-sm-12">
+							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
+								<input type="radio" class="btn-check" name="question_count" id="btnradio1-2" value="10" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio1-2">10</label>
+								<input type="radio" class="btn-check" name="question_count" id="btnradio2-2" value="15" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2-2">15</label>
+								<input type="radio" class="btn-check" name="question_count" id="btnradio3-2" value="20" autocomplete="off" checked>
+								<label class="btn btn-outline-success" for="btnradio3-2">20</label>
+								<input type="radio" class="btn-check" name="question_count" id="btnradio4-2" value="25" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio4-2">25</label>
+								<input type="radio" class="btn-check" name="question_count" id="btnradio5-2" value="30" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio5-2">30</label>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm-12 sub_title">[회차]</div>
+					</div>
+					<div class="row" style="padding: 10px;">
+						<div class="col-sm-12">
+							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
+								<input type="radio" class="btn-check" name="round" value="1" id="btnradio1-3" autocomplete="off" checked>
+								<label class="btn btn-outline-success" for="btnradio1-3">1</label>
+								<input type="radio" class="btn-check" name="round" value="2" id="btnradio2-3" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2-3">2</label>
+								<input type="radio" class="btn-check" name="round" value="3" id="btnradio3-3" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio3-3">3</label>
+								<input type="radio" class="btn-check" name="round" value="4" id="btnradio4-3" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio4-3">4</label>
+								<input type="radio" class="btn-check" name="round" value="5" id="btnradio5-3" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio5-3">5</label>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm-12 sub_title">[문항출제기준]</div>
+					</div>
+					<div class="row" style="padding: 10px;">
+						<div class="col-sm-12">
+							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
+								<input type="radio" class="btn-check" name="gubun" value="l" id="btnradio1-4" autocomplete="off" checked>
+								<label class="btn btn-outline-success" for="btnradio1-4">단원순</label>
+								<input type="radio" class="btn-check" name="gubun" value="j" id="btnradio2-4" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2-4">객주순</label>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm-12 sub_title">[학년선택]</div>
+					</div>
+					<div class="row" style="padding: 10px;">
+						<div class="col-sm-12">
+							<초등>
+						</div>
+					</div>
+					<div class="row" style="padding: 0 10px 10px 10px;">
+						<div class="col-sm-12">
+							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
+								<input type="radio" class="btn-check" name="service_id" id="btnradio1-10" value="1" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio1-10">1-1</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio2-10" value="2" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2-10">1-2</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio3-10" value="3" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio3-10">2-1</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio4-10" value="4" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio4-10">2-2</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio5-10" value="5" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio5-10">3-1</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio6-10" value="6" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio6-10">3-2</label>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 0 10px 10px 10px;">
+						<div class="col-sm-12">
+							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
+								<input type="radio" class="btn-check" name="service_id" id="btnradio11-10" value="7" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio11-10">4-1</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio12-10" value="8" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio12-10">4-2</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio13-10" value="9" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio13-10">5-1</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio14-10" value="10" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio14-10">5-2</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio15-10" value="11" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio15-10">6-1</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio16-10" value="12" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio16-10">6-2</label>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 10px;">
+						<div class="col-sm-12">
+							<중등>
+						</div>
+					</div>
+					<div class="row" style="padding: 0 10px 10px 10px;">
+						<div class="col-sm-12">
+							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
+								<input type="radio" class="btn-check" name="service_id" id="btnradio21-10" value="13" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio21-10">중1</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio22-10" value="14" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio22-10">중2</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio23-10" value="23" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio23-10">중3</label>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 10px;">
+						<div class="col-sm-12">
+							<고등>
+						</div>
+					</div>
+					<div class="row" style="padding: 0 10px 10px 10px;">
+						<div class="col-sm-12">
+							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
+								<input type="radio" class="btn-check" name="service_id" id="btnradio31-10" value="15" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio31-10">고(상)</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio32-10" value="16" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio32-10">고(하)</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio33-10" value="17" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio33-10">수Ⅰ</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio34-10" value="18" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio34-10">수Ⅱ</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio35-10" value="19" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio35-10">확통</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio36-10" value="20" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio36-10">미적</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio37-10" value="21" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio37-10">기하</label>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 10px;">
+						<div class="col-sm-12">
+							<2022 개정>
+						</div>
+					</div>
+					<div class="row" style="padding: 0 10px 10px 10px;">
+						<div class="col-sm-12">
+							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
+								<input type="radio" class="btn-check" name="service_id" id="btnradio2668-10" value="2668" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2668-10">초1-1</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio2669-10" value="2669" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2669-10">초1-2</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio2670-10" value="2670" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2670-10">초2-1</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio2671-10" value="2671" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2671-10">초2-2</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio2672-10" value="2672" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2672-10">초3-1</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio2673-10" value="2673" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2673-10">초3-2</label>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding: 0 10px 10px 10px;">
+						<div class="col-sm-12">
+							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
+								<input type="radio" class="btn-check" name="service_id" id="btnradio2674-10" value="2674" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2674-10">초4-1</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio2675-10" value="2675" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2675-10">초4-2</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio2676-10" value="2676" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2676-10">중등1</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio2677-10" value="2677" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2677-10">공통수학Ⅰ</label>
+								<input type="radio" class="btn-check" name="service_id" id="btnradio2678-10" value="2678" autocomplete="off">
+								<label class="btn btn-outline-success" for="btnradio2678-10">공통수학Ⅱ</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 table-container" style="height: 1000px; padding:20px;">
+					<div class="row table-header" style="padding: 0px;">
+						<div class="col-sm-12">
+							<div class="step-title">STEP2 - 단원 선택</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="category_wrap">
+                            <div class="category-selector" style="padding-top: 20px;">
+                                <div class="cc-tree-control" data-grade_cd="e1">
+                                    <ul>
+                                        <li>
+                                            <span class="white">
+                                                <a href="#none" id="category-opener-1" class="opener"><i class="fas fa-plus"></i></a>
+                                                <!-- 241231 input 태그 label 태그로 감싸기 시작 -->
+                                                <!-- <input type="checkbox" class="category-10" name="category_id" value="MA1501A01"> -->
+                                                <label><input type="checkbox" class="category-10" name="category_id" value="MA1501A01"></label>
+                                                <!-- 241231 input 태그 label 태그로 감싸기 끝 -->
+                                                &nbsp; 01. 9까지의 수
+                                            </span>
+                                            <ul class="category-ul-1" style="display:none;">
+                                                <li>
+                                                    <span class="white">
+                                                        <a href="#none" id="category-opener-2" class="opener"><i class="fas fa-plus"></i></a>
+                                                        <!-- <input type="checkbox" class="category-10-10" name="category_id" value="MA1501A0101"> -->
+                                                        <label><input type="checkbox" class="category-10-10" name="category_id" value="MA1501A0101"></label>
+                                                        &nbsp; 01. 1~5의 수 알아보기
+                                                    </span>
+                                                    <ul class="category-ul-2" style="display:none;">
+                                                        <li>
+                                                            <span class="white">
+                                                                &nbsp;&nbsp;&nbsp;
+                                                                <!-- <input type="checkbox" class="category-10-10-10" name="category_id" value="MA1501A010101"> -->
+                                                                <label><input type="checkbox" class="category-10-10-10" name="category_id" value="MA1501A010101"></label>
+                                                                01. 개수 세기로 수 알아보기
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="white">
+                                                                &nbsp;&nbsp;&nbsp;
+                                                                <!-- <input type="checkbox" class="category-10-10-11" name="category_id" value="MA1501A010102"> -->
+                                                                <label><input type="checkbox" class="category-10-10-11" name="category_id" value="MA1501A010102"></label>
+                                                                02. 1~5의 수를 쓰고 읽기
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="white">
+                                                                &nbsp;&nbsp;&nbsp;
+                                                                <!-- <input type="checkbox" class="category-10-10-12" name="category_id" value="MA1501A010103"> -->
+                                                                <label><input type="checkbox" class="category-10-10-12" name="category_id" value="MA1501A010103"></label>
+                                                                03. 1~5의 개수에 해당하는 수 찾기
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="white">
+                                                                &nbsp;&nbsp;&nbsp;
+                                                                <!-- <input type="checkbox" class="category-10-10-13" name="category_id" value="MA1501A010104"> -->
+                                                                <label><input type="checkbox" class="category-10-10-13" name="category_id" value="MA1501A010104"></label>
+                                                                04. 1~5의 수만큼 행동하기
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <span class="white">
+                                                        <a href="#none" id="category-opener-2" class="opener"><i class="fas fa-plus"></i></a>
+                                                        <!-- <input type="checkbox" class="category-10-11" name="category_id" value="MA1501A0101"> -->
+                                                        <label><input type="checkbox" class="category-10-11" name="category_id" value="MA1501A0101"></label>
+                                                        &nbsp; 01. 1~5의 수 알아보기
+                                                    </span>
+                                                    <ul class="category-ul-2" style="display:none;">
+                                                        <li>
+                                                            <span class="white">
+                                                                &nbsp;&nbsp;&nbsp;
+                                                                <!-- <input type="checkbox" class="category-10-11-10" name="category_id" value="MA1501A010101"> -->
+                                                                <label><input type="checkbox" class="category-10-11-10" name="category_id" value="MA1501A010101"></label>
+                                                                01. 개수 세기로 수 알아보기
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="white">
+                                                                &nbsp;&nbsp;&nbsp;
+                                                                <!-- <input type="checkbox" class="category-10-11-11" name="category_id" value="MA1501A010102"> -->
+                                                                <label><input type="checkbox" class="category-10-11-11" name="category_id" value="MA1501A010102"></label>
+                                                                02. 1~5의 수를 쓰고 읽기
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="white">
+                                                                &nbsp;&nbsp;&nbsp;
+                                                                <!-- <input type="checkbox" class="category-10-11-12" name="category_id" value="MA1501A010103"> -->
+                                                                <label><input type="checkbox" class="category-10-11-12" name="category_id" value="MA1501A010103"></label>
+                                                                03. 1~5의 개수에 해당하는 수 찾기
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="white">
+                                                                &nbsp;&nbsp;&nbsp;
+                                                                <!-- <input type="checkbox" class="category-10-11-13" name="category_id" value="MA1501A010104"> -->
+                                                                <label><input type="checkbox" class="category-10-11-13" name="category_id" value="MA1501A010104"></label>
+                                                                04. 1~5의 수만큼 행동하기
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="white">
+                                                <a href="#none" id="category-opener-93" class="opener"><i class="fas fa-plus"></i></a>
+                                                <!-- <input type="checkbox" class="category-11" name="category_id" value="MA1501A02"> -->
+                                                <label><input type="checkbox" class="category-11" name="category_id" value="MA1501A02"></label>
+                                                &nbsp; 02. 여러 가지 모양
+                                            </span>
+                                            <ul class="category-ul-93" style="display:none;">
+                                                <li>
+                                                    <span class="white">
+                                                    <a href="#none" id="category-opener-94" class="opener"><i class="fas fa-plus"></i></a>
+                                                    <!-- <input type="checkbox" class="category-11-10" name="category_id" value="MA1501A0201"> -->
+                                                    <label><input type="checkbox" class="category-11-10" name="category_id" value="MA1501A0201"></label>
+                                                    &nbsp; 01. 여러 가지 입체 모양 찾아보기 </span>
+                                                    <ul class="category-ul-94" style="display:none;">
+                                                        <li>
+                                                            <span class="white">
+                                                            &nbsp;&nbsp;&nbsp;
+                                                            <!-- <input type="checkbox" class="category-11-10-10" name="category_id" value="MA1501A020101"> -->
+                                                            <label><input type="checkbox" class="category-11-10-10" name="category_id" value="MA1501A020101"></label>
+                                                            01. 같은 모양 찾기 </span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <span class="white">
+                                                    <a href="#none" id="category-opener-101" class="opener"><i class="fas fa-plus"></i></a>
+                                                    <!-- <input type="checkbox" class="category-11-11" name="category_id" value="MA1501A0202"> -->
+                                                    <label><input type="checkbox" class="category-11-11" name="category_id" value="MA1501A0202"></label>
+                                                    &nbsp; 02. 여러 가지 입체 모양 알아보기 </span>
+                                                    <ul class="category-ul-101" style="display:none;">
+                                                        <li>
+                                                            <span class="white">
+                                                                &nbsp;&nbsp;&nbsp;
+                                                                <!-- <input type="checkbox" class="category-11-11-10" name="category_id" value="MA1501A020201"> -->
+                                                                <label><input type="checkbox" class="category-11-11-10" name="category_id" value="MA1501A020201"></label>
+                                                                01. 모양의 일부분을 보고 모양 찾기
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="white">
+                                                                &nbsp;&nbsp;&nbsp;
+                                                                <!-- <input type="checkbox" class="category-11-11-11" name="category_id" value="MA1501A020202"> -->
+                                                                <label><input type="checkbox" class="category-11-11-11" name="category_id" value="MA1501A020202"></label>
+                                                                02. 모양의 특징으로 모양 찾기
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <script>
+                                $('.category-selector a').on('click', function() {
+                                        var id = $(this).attr('id');
+                                        var words = id.split('-');
+                                        console.log( words );
+                                        console.log( id );
+                                        if( words[1] == 'opener' )
+                                        {
+                                            var ul_class = words[0]+"-ul-"+words[2];
+                                            if( $("#"+id ).html().indexOf( "minus" ) != -1 )
+                                            {
+                                                $("."+ul_class).hide();
+                                                $("#"+id ).html( '<i class="fas fa-plus">' );
+                                            }
+                                            else
+                                            {
+                                                $("."+ul_class).show();
+                                                $("#"+id ).html( '<i class="fas fa-minus">' );
+                                            }
+                                        }
+                                });
+                                $(".select-category-btn").on('click', function() {
+                                    callback_select_category();
+                                });
+                                $("[class^='category-']").on('change', function()
+                                {
+                                    $this_checkbox = $(this)
+                                    var class_name = $this_checkbox.attr('class');
+                                    var checked = $('[class="'+class_name+'"]').is(":checked");
+                                    $("[class^='"+class_name+"']").prop('checked', checked );// 하위요소 전부 체크or해제
+                                    checkbox_checked(class_name, checked);
+                                });
+                                function checkbox_checked(class_name, checked )
+                                {
+                                    if( class_name.indexOf('-') == -1) return;
+                                    var parent_class_name = class_name.substr(0, class_name.lastIndexOf('-') );
+                                    var friend_class = class_name.substr(0, (class_name.lastIndexOf('-') + 1) );
+                                    if( checked )//체크일경우
+                                    {
+                                        var i=0;
+                                        // var node = $('input:checkbox:regex(class,'+ friend_class + '[0-9]$)');
+                                        var node = $('input:checkbox:regex(class,'+ friend_class + '\\d{2}$)');
+                                        if( node.length == node.filter(":checked").length )
+                                            $('.' + parent_class_name ).prop('checked', true );
+                                    }
+                                    else //해제일경우
+                                    {
+                                        $("[class^='"+class_name+"']").each( function(index, item)
+                                        {
+                                            var parent_class_name = class_name.substr(0, class_name.lastIndexOf('-') );//상위단원 class가져오기
+                                            child_checked = $(this).is(':checked');
+                                            if( !child_checked && parent_class_name != 'category')//하위단원을 체크 해제했을경우 상위단원 체크 해제 부분
+                                            {
+                                                $('.'+parent_class_name).prop('checked', child_checked );
+                                                return false;
+                                            }
+                                        });
+                                    }
+                                    checkbox_checked(parent_class_name, checked )
+                                }
+                                function get_checked_category()// 카테고리 체크박스 트리중에 하위단원 걸러내기.
+                                {
+                                    var reg = null
+                                    var category_ids = new Array();
+                                    var temp = new Array();
+                                    $("[class^='category-']:checked").each( function(index, item)
+                                    {
+                                        var my_class_name = $(this).attr('class');
+                                        if( index == 0 )
+                                        {
+                                            // reg = new RegExp(my_class_name+"-"+'[0-9]');
+                                            reg = new RegExp(my_class_name+"-"+'\\d{2}');
+                                            category_ids.push( $(this).val() );
+                                            temp[$(this).val()] = $(this).closest('li').html();
+                                            return true;
+                                        }
+                                        if( fx_empty( my_class_name.match(reg) ) )
+                                        {
+                                            // reg = new RegExp(my_class_name+"-"+'[0-9]');
+                                            reg = new RegExp(my_class_name+"-"+'\\d{2}');
+                                            category_ids.push( $(this).val() );
+                                            temp[$(this).val()] = $(this).closest('li').html();
+                                        }
+                                    });
+                                    //return category_ids;
+                                    return temp;
+                                }
+                            </script>
+                        </div>
+					</div>
+				</div>
+				<div class="col-sm-3 table-container" style="height: 1000px; padding:20px;">
+					<div class="row table-header" style="padding: 0px;">
+						<div class="col-sm-12">
+							<div class="step-title">STEP3 - 회차별 단원 배분</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="middle-container" id="round_buttons">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 table-container" style="height: 1000px; padding:20px;">
+					<div class="row table-header" style="padding: 0px;">
+						<div class="col-sm-12">
+							<div class="step-title">STEP4 - 문항출제</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm-12" style="text-align: right;">
+							<button type="button" class="btn step3-btn add_question"> 출제하기 </button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+
+
+							<div id="round_container">
+                                <div class="session-container">[1회차]</div>
+                                <div class="cc-tree-control category-collection lecture-0" data-lecture_index="0" style="min-height: 100px;">
+                                    <ul class="list-0">
+                                        <li data-category_id="1" data-lecture="0" data-chapter="MA1501A01"><span class="white"><a href="#none" id="collection-opener-1" class="opener collection-opener"><i class="fas fa-plus"></i></a> &nbsp;01. 9까지의 수<a href="#none" class="tail btn-remove-x"> &nbsp;<i class="far fa-window-close"></i></a></span>
+                                        <ul class="collection-ul-1" style="display:none;">
+                                            <li><span class="white"><a href="#none" id="collection-opener-2" class="opener collection-opener"><i class="fas fa-plus"></i></a><a class="opener" style=""></a>01. 1~5의 수 알아보기</span>
+                                            <ul class="collection-ul-2" style="display:none;">
+                                                <li><span class="white"><a href="#none" id="collection-opener-8" class="opener collection-opener"><i class="fas fa-plus"></i></a><a class="opener" style=""></a>01. 개수 세기로 수 알아보기</span>
+                                                <ul class="collection-ul-8" style="display:none;">
+                                                    <li><span class="white"><a class="opener" style=""></a>01. 개수만큼 표시하기</span></li>
+                                                    <li><span class="white"><a class="opener" style=""></a>02. 개수만큼 색칠하기</span></li>
+                                                </ul>
+                                                </li>
+                                                <li><span class="white"><a href="#none" id="collection-opener-10" class="opener collection-opener"><i class="fas fa-plus"></i></a><a class="opener" style=""></a>02. 1~5의 수를 쓰고 읽기</span>
+                                                <ul class="collection-ul-10" style="display:none;">
+                                                    <li><span class="white"><a class="opener" style=""></a>01. 1, 2, 3, 4, 5를 쓰고 읽기</span></li>
+                                                </ul>
+                                                </li>
+                                            </ul>
+                                            </li>
+                                            <li><span class="white"><a href="#none" id="collection-opener-12" class="opener collection-opener"><i class="fas fa-plus"></i></a><a class="opener" style=""></a>02. 6~9의 수 알아보기</span>
+                                            <ul class="collection-ul-12" style="display:none;">
+                                                <li><span class="white"><a href="#none" id="collection-opener-13" class="opener collection-opener"><i class="fas fa-plus"></i></a><a class="opener" style=""></a>01. 6~9의 수를 쓰고 읽기</span>
+                                                <ul class="collection-ul-13" style="display:none;">
+                                                    <li><span class="white"><a class="opener" style=""></a>01. 6, 7, 8, 9를 쓰고 읽기</span></li>
+                                                </ul>
+                                                </li>
+                                                <li><span class="white"><a href="#none" id="collection-opener-55" class="opener collection-opener"><i class="fas fa-plus"></i></a><a class="opener" style=""></a>02. 6~9의 개수에 해당하는 수 찾기</span>
+                                                <ul class="collection-ul-55" style="display:none;">
+                                                    <li><span class="white"><a class="opener" style=""></a>01. 개수에 해당하는 수 찾기(6~9)</span></li>
+                                                    <li><span class="white"><a class="opener" style=""></a>02. 그림을 세어 알맞은 수에 ○표 하기(6~9까지의 수)</span></li>
+                                                </ul>
+                                                </li>
+                                            </ul>
+                                            </li>
+                                        </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript" charset="utf-8" src="https://img.howhymath.com/custom/hmath_service_options.js"></script>
+			<script>
+                var div_map = {}
+                div_map['h-5'] = '1-0-0-3-1-0';
+                div_map['m-5'] = '1-1-0-1-1-1';
+                div_map['l-5'] = '0-0-2-0-0-3';
+                div_map['h-10'] = '3-1-0-5-1-0';
+                div_map['m-10'] = '1-1-1-3-3-1';
+                div_map['l-10'] = '0-0-3-0-0-7';
+                div_map['h-15'] = '4-1-0-8-2-0';
+                div_map['m-15'] = '2-2-1-4-4-2';
+                div_map['l-15'] = '0-2-3-0-4-6';
+                div_map['h-20'] = '5-1-0-11-3-0';
+                div_map['m-20'] = '3-3-1-5-5-3';
+                div_map['l-20'] = '0-3-4-0-5-8';
+                div_map['h-25'] = '7-2-0-13-3-0';
+                div_map['m-25'] = '3-3-2-7-7-3';
+                div_map['l-25'] = '0-3-5-0-7-10';
+                div_map['h-30'] = '8-2-0-16-4-0';
+                div_map['m-30'] = '4-4-2-8-8-4';
+                div_map['l-30'] = '0-4-6-0-8-12';
+                var category_data = new Array();
+                var category_html_arr = new Object();
+                $( document ).ready(function() {
+                    $('.add_question').on('click',function ()
+                    {
+                        var category_count = 0;
+                        var round = $("input[name='round']:checked").val();
+                        var question_count = $("input[name='question_count']:checked").val();
+                        var difficulty = $("input[name='difficulty']:checked").val();
+                        for( var i=0 ; i<round ; i++ )
+                        {
+                            if( fx_empty(category_data[i]) || JSON.stringify(category_data[i]) == '{}' )
+                            {
+                            }
+                            else
+                                category_count ++;
+                        }
+                        if( category_count.toString() != round )
+                        {
+                            alert( '모든 회차에 단원을 선택해주세요');
+                        }
+                        else if( question_count == 0 )
+                        {
+                            alert( '문항수를 지정해 주세요.');
+                        }
+                        else
+                        {
+                            var category_json_str = JSON.stringify(category_data);
+                            fx_show_loading();
+                            var hmls = [];
+                            hmls.push( $("input[name=ch-h]").val() == '' ? '_' : $("input[name=ch-h]").val() );
+                            hmls.push( $("input[name=ch-m]").val() == '' ? '_' : $("input[name=ch-m]").val() );
+                            hmls.push( $("input[name=ch-l]").val() == '' ? '_' : $("input[name=ch-l]").val() );
+                            hmls.push( $("input[name=sa-h]").val() == '' ? '_' : $("input[name=sa-h]").val() );
+                            hmls.push( $("input[name=sa-m]").val() == '' ? '_' : $("input[name=sa-m]").val() );
+                            hmls.push( $("input[name=sa-l]").val() == '' ? '_' : $("input[name=sa-l]").val() );
+                            var hml = hmls.join();
+                            var grade_cd = $("input[name=grade_cd]").val();
+                            var service_id = $('input[type=radio][name=service_id]:checked').val();
+                            var gubun = $("input[name='gubun']:checked").val();
+                            location.href = encodeURI('/wizards/wizard_questions_view?category_json='+category_json_str
+                                    + "&service_id=" + service_id
+                                    + "&grade_cd=" + grade_cd
+                                    + "&gubun=" + gubun
+                                    + "&difficulty=" + difficulty
+                                    + "&round="+round+"&question_count="+question_count+"&hml="+hml );
+                            return false;
+                        }
+                    });
+                    $('input[type=radio][name=difficulty]').change(function() {
+                        set_div();
+                    });
+                    $('input[type=radio][name=question_count]').change(function() {
+                        set_div();
+                    });
+                    $('input[type=radio][name=round]').change(function() {
+                        set_round_html();
+                    });
+                    $('input[type=radio][name=service_id]').change(function() {
+                        var sid = $('input[type=radio][name=service_id]:checked').val();
+                        if( sid == '1' || sid == '2' ) $("input[name=grade_cd]").val( 'e1' );
+                        if( sid == '3' || sid == '4' ) $("input[name=grade_cd]").val( 'e2' );
+                        if( sid == '5' || sid == '6' ) $("input[name=grade_cd]").val( 'e3' );
+                        if( sid == '7' || sid == '8' ) $("input[name=grade_cd]").val( 'e4' );
+                        if( sid == '9' || sid == '10' ) $("input[name=grade_cd]").val( 'e5' );
+                        if( sid == '11' || sid == '12' ) $("input[name=grade_cd]").val( 'e6' );
+                        if( sid == '13' ) $("input[name=grade_cd]").val( 'j1' );
+                        if( sid == '14' ) $("input[name=grade_cd]").val( 'j2' );
+                        if( sid == '23' ) $("input[name=grade_cd]").val( 'j3' );
+                        if( sid == '15' || sid == '16' ) $("input[name=grade_cd]").val( 's1' );
+                        if( sid == '17' || sid == '18' ) $("input[name=grade_cd]").val( 's2' );
+                        if( sid == '19' || sid == '20' || sid == '21' ) $("input[name=grade_cd]").val( 's3' );
+                        get_categories();
+                    });
+                    set_round_html();
+                });
+                function set_div()
+                {
+                    var question_count = $("input[name='question_count']:checked").val();
+                    var difficulty = $("input[name='difficulty']:checked").val();
+                    var sel = div_map[ difficulty + "-" + question_count];
+                    var words = sel.split('-');
+                    $("input[name=ch-h]").val( words[0] );
+                    $("input[name=ch-m]").val( words[1] );
+                    $("input[name=ch-l]").val( words[2] );
+                    $("input[name=sa-h]").val( words[3] );
+                    $("input[name=sa-m]").val( words[4] );
+                    $("input[name=sa-l]").val( words[5] );
+                }
+                function set_round_html()
+                {
+                    var round = $("input[name='round']:checked").val();
+                    var round_buttons = '<div class="middle-box" onclick="select_chapter_same();">선택 단원을 모든 회차에 동일 적용 <img src="/app/img/icon_right_weight_arrow.png" alt="" /></div>';
+                    var round_container = '';
+                    for( var i=0 ; i<round ; i++ )
+                    {
+                        var display = i + 1;
+                        round_buttons += '<div class="middle-box" onclick="select_chapter_dir('+i+');">선택 단원을 '+display+'회차에 적용 <img src="/app/img/icon_right_weight_arrow.png" alt="" /></div>';
+                        round_container += '<div class="session-container"> [' + display + '회차] </div>'
+                                        + "<div class='cc-tree-control category-collection lecture-" + i + "' data-lecture_index='"
+                                    + i + "' style='min-height: 100px;'><ul class='list-" + i + "'></ul></div>";
+                    }
+                    $("#round_buttons").html( round_buttons );
+                    //$("#round_container").html( round_container );
+                    category_data = new Array();
+                    category_html_arr = new Object();
+                }
+                function get_categories()
+                {
+                    var service_id = $("input[name='service_id']:checked").val();
+                    $.ajax({
+                        type: "GET",
+                        url: "/categories/get_categories",
+                        data: "service_id=" + service_id + "&topic_yn=y",
+                        success: function (response) {
+                            $('.category_wrap').html( response );
+                        }
+                    });
+                }
+                function callback_remove_category_collection( obj )
+                {
+                    $li = $(obj).closest('li');
+                    var id = $li.data('category_id');
+                    var index = $li.closest(".cc-tree-control").data('lecture_index');
+                    var chapter = $li.data('chapter');
+                    var obj = category_data[index];
+                    delete obj[chapter];
+                    category_data[index] = obj;
+                    console.log( category_data );
+                    $li.remove();
+                }
+                function add_lecture_category(category_ids, compositions)
+                {
+                    for( var key in category_ids )
+                    {
+                        for( var i in compositions)
+                        {
+                            if( !category_data.hasOwnProperty( compositions[i] ) )
+                            {
+                                category_data[ compositions[i] ] = { };
+                                category_data[ compositions[i] ][key] = 1 ;
+                                $('.list-' + compositions[i]).append( get_category_data(key, true, false, compositions[i] ) );
+                            }
+                            else if( !category_data[ compositions[i] ].hasOwnProperty( key ) )
+                            {
+                                category_data[compositions[i]][key] = 1;
+                                $('.list-' + compositions[i]).append( get_category_data(key, true, false, compositions[i]) );
+                            }
+                        }
+                    }
+                    $("input:checkbox[name=category_id]:checked").prop('checked', false); //선택된 단원체크박스 해제
+                }
+                function select_chapter_same()
+                {
+                    var compositions = new Array();
+                    var count = get_checked_category_count();
+                    if( count == 0 )
+                    {
+                        alert("단원을 선택해주세요");
+                        return;
+                    }
+                    var round = $("input[name='round']:checked").val();
+                    for( var i=0 ; i<round ; i ++ )
+                        compositions.push( i );
+                    var category_ids = get_checked_category();
+                    add_lecture_category( category_ids, compositions );
+                }
+                function select_chapter_dir( idx )
+                {
+                    var compositions = new Array();
+                    var count = get_checked_category_count();
+                    if( count == 0 )
+                    {
+                        alert("단원을 선택해주세요");
+                        return;
+                    }
+                    compositions.push( ""+idx+"" );
+                    var category_ids = get_checked_category();
+                    add_lecture_category( category_ids, compositions );
+                }
+                function get_checked_category_count()
+                {
+                    var count = 0;
+                    $("[class^='category-']:checked").each( function(index, item) {
+                        count ++;
+                    });
+                    return count;
+                }
+                function make_paper_reset()
+                {
+                    fx_confirm( "단원배분을 취소하고 목록으로 이동하시겠습니까?", function(r)
+                    {
+                        if( r == false ) return false;
+                        location.href="/wizards/index";
+                    });
+                }
+			</script>
+			<script src="https://img.howhymath.com/custom/hmath_category_collection.js"></script>
+		</div>
+	</div>
+</div>
+<footer class='footer'>
+    <div class="top">
+        <div class="left">
+            <div class='footer-content'>
+                <span class="footer_logo"><img src="../assets/hmath/footer_logo.svg" alt="하와이매쓰" /></span>
+                <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+            </div>
+        </div>
+        <div class='right'>
+            <div class='footer-content'>
+                <div id="footer-dropbox">
+                    <select id="footer-dropbox-content" class="form-control form-select">
+                        <option value="">Family Site</option>
+                        <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                        <option value="https://www.fren.co.kr">프렌매쓰</option>
+                    </select>
+                    <script>
+                        document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                            let link = e.target.value;
+                            if(link)
+                                window.open(link, '_blank');
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='left'>
+        <div class='footer-content'>
+            <div><b>하와이컴퍼니(주)</b></div>
+            <div class='vertical-line'></div>
+            <div><b>HOWHY COMPANY</b></div>
+            <div class='vertical-line'></div>
+            <div><b>대표이사 : 박종화</b></div>
+        </div>
+
+        <div class='footer-content'>
+            <div><b>사업자등록번호</b> 760-87-02737</div>
+            <div class='vertical-line'></div>
+            <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+            <div class='vertical-line'></div>
+            <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+        </div>
+        <div class='footer-content'>
+            <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+        </div>
+        <div class='footer-content'>
+            2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+<!-- //241213 푸터 전체 클래쓰와 동일하게 수정 끝 -->
+<script src="https://img.howhymath.com/custom/custom.js?v=20241231"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	cdml_mathjax_init();
+});
+function edit_teacher()
+{
+    fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+}
+function edit_password()
+{
+    fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+}
+function menu_disable_delete( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    var words = node.key.split('-');
+    if( words[1] != '0' ) return true;
+    return false;
+}
+function menu_disable_add( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    if( node.getLevel() == 2 ) return true;
+    return false;
+}
+function menu_disable_edit( key, opt )
+{
+    var node = $.ui.fancytree.getNode(opt.$trigger);
+    if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+    return false;
+}
+</script>
+</body>
+</html>

@@ -44,7 +44,7 @@ cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
 cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
 var lms_domain = "https://tutor.howhymath.com";
 </script>
-<body data-layout="horizontal">
+<body data-layout="horizontal" data-bs-padding-right="" class="modal-open" style="overflow: hidden; padding-right: 8px;">
     <div style="display:none">$$\require{cancel}$$</div>
     <div class="topbar">
         <div class="content-box">
@@ -716,7 +716,7 @@ var lms_domain = "https://tutor.howhymath.com";
     </script>
 
     <!-- 학교 등록 팝업 시작 -->
-    <div class="modal fade" id="item_create_popup" tabindex="-1" role="dialog" aria-modal="true" style="padding-right: 8px; display: none;">
+    <div class="modal fade show" id="item_create_popup" tabindex="-1" role="dialog" aria-modal="true" style="padding-right: 8px; display: block;">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content" id="item_create_popup-content">
                 <div class="modal-header">
@@ -812,6 +812,7 @@ var lms_domain = "https://tutor.howhymath.com";
             </div>
         </div>
     </div>
+    <div class="modal-backdrop fade show"></div>
     <!-- 학교 등록 팝업 끝 -->
 </body>
 </html>
