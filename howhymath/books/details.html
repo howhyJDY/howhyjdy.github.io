@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>하와이매쓰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+    <!-- base css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css"/>
+    <!-- site css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1735887355"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1735887355"/>
+    <!-- <link rel="stylesheet" type="text/css" href="https://img.howhymath.com/hmath/work.css?v=20250102"/> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/work.css"/>
+    <!-- base javascript -->
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                showMathMenu: false,
+                tex2jax: { displayMath: [ ["$$","$$"] ] },
+                "HTML-CSS": { fonts: ["Latin-Modern"] }
+            });
+        </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1735887355"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1735887355"></script>
+</head>
+<script>
+cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+var lms_domain = "https://tutor.howhymath.com";
+</script>
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+    <div class="topbar">
+        <div class="content-box">
+            <div class="brand">
+                <a href="/home/main" class="logo" style="padding-left:10px;">
+                    <!-- <span><img src="https://img.howhymath.com/hmath/logo.png" style="width:140px;height:31px;" class="logo-sm"></span> 241213 이미지 변경 및 스타일 삭제 -->
+                    <span><img src="../assets/hmath/logo.svg" class="logo-sm" alt="하와이매쓰"></span>
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-end mb-0" style="display: flex; align-items: center;">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <span class="ms-1 nav-user-name hidden-sm" style=" color: var(--Gray-01, #1A1A1A); font-weight: 700; font-size: 16px;">김하와<span style="font-weight: 400;"><span style="font-weight: 400;">선생님</span></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!--a class="dropdown-item" href="javascript:edit_teacher();"><i data-feather="user" class="align-self-center icon-xs icon-dual me-1"></i>정보수정</a-->
+                            <a class="dropdown-item" href="javascript:edit_password();"><i data-feather="lock" class="align-self-center icon-xs icon-dual me-1"></i>암호수정</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="https://tutor.howhymath.com/users/logout"><i data-feather="power" class="align-self-center icon-xs icon-dual me-1"></i>로그아웃</a>
+                        </div>
+                    </li>
+                    <button class="signout-btn" onclick="location.href='https://tutor.howhymath.com/users/logout';">로그아웃</button>
+                </ul> 
+                <div class="navbar-custom-menu">
+                    <div id="navigation">
+                        <ul class="navigation-menu">
+                            <li class='has-submenu'>
+                                <a href='/home/main'><span> </i>캘린더</span></a>
+                            </li>
+                            <li class='has-submenu active'>
+                                <a href='/books/index'><span> 학습자료</span></a>
+                                <ul class='submenu'>
+                                    <li class='active'><a href='/books/index'>교재</a></li>
+                                    <li><a href='/exam_pdfs/index'>보충교재</a></li>
+                                    <li><a href='/jindan_exams/index'>평가</a></li>
+                                    <li><a href='/wizards/index'>출제마법사</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/study_books/index'><span> 개별학습</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/study_books/index'>교재학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=exm'>출제마법사</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=wrg'>오답학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=rec'>맞춤학습</a></li>
+                                    <li><a href='/scoring_prints/index?sv_study_card_type_cd=hom'>숙제관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/reports_v2/index'><span> 분석표</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/academies/index'><span> 관리</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/academies/index'>정보수정</a></li>
+                                    <li><a href='/teachers/index'>교사/반 관리</a></li>
+                                    <li><a href='/students/index'>학생관리</a></li>
+                                    <li><a href='/schools/index'>학교관리</a></li>
+                                    <li><a href='/print_pdfs/index'>인쇄파일관리</a></li>
+                                </ul>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/payments/index'><span> 결제</span></a>
+                            </li>
+                            <li class='has-submenu '>
+                                <a href='/notices/index'><span> 고객센터</span></a>
+                                <ul class='submenu'>
+                                    <li><a href='/notices/index'>공지사항</a></li>
+                                    <li><a href='/inquiries/index'>1:1문의 & FAQ</a></li>
+                                    <li><a href='/question_error_reports/index'>문항오류신고</a></li>
+                                    <!-- <li><a href='/boards/index?boarda_type_cd=gj'>자료실-교재자료</a></li>
+                                    <li><a href='/boards/index?boarda_type_cd=mv'>자료실-영상자료</a></li> 241213 자료실 통합 -->
+                                    <li><a href='/boards/index'>교재/영상 자료실</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end navbar-->
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="page-content">
+            <div class="container-fluid">
+                <link rel='stylesheet' type='text/css' href='https://img.dtsoft.co.kr/assets.howhy/plugins/jquery-ui/jquery-ui.css'>
+                <link rel='stylesheet' type='text/css' href='https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.css'/>
+                <script type='text/javascript' charset='utf-8' src='https://img.dtsoft.co.kr/assets.howhy/plugins/jquery-ui/jquery-ui.js'></script>
+                <script src='https://img.dtsoft.co.kr/assets.howhy/plugins/cookie/js.cookie.min.js'></script>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.js'></script>
+                <link rel='stylesheet' href='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/skin-vista/ui.fancytree.css'/>
+                <link href='/app/css/fancytree.css?t=1735887355' rel='stylesheet' type='text/css'/>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/jquery.fancytree-all.min.js'></script>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/modules/jquery.fancytree.persist.js'></script>
+                <script type='text/javascript' src='https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/ext/jquery.fancytree.contextMenu.js'></script>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="row">
+                                <div class="col-sm-4 head-left">
+                                    <div class='gray'>
+                                        <a href='/books/index'>학습자료</a>
+                                    </div>
+                                    <img src="/app/img/icon_right_arrow.png" alt=""/>
+                                    <div class='black'>
+                                        <a href='/books/index'>교재</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <form id="form_search" name="form_no_fx" action="/books/index?id=65">
+                                        <div class="row">
+                                            <div class="col-sm-10 fx_bp2">
+                                            </div>
+                                            <div class="col-sm-2 fx_bp2">
+                                                <button class="gbtn" style="float:right;" onclick="location.href='/books/index';">목록이동</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="white-container">
+                    <div class="left">
+                        <div class="img-box">
+                            <img src="https://img.howhymath.com/f.hm/00/41/bk.65/book.png" alt=""/>
+                        </div>
+                        <div class="content-container">
+                            <div class="main-title">초등수학 4-1 개념서</div>
+                            <div class="content-box">
+                                <div class="grid target">
+                                    <div class="title">대상</div>
+                                    <div class="content">초4</div>
+                                </div>
+                                <div class="grid author">
+                                    <div class="title">출판사</div>
+                                    <div class="content">하와이컴퍼니</div>
+                                </div>
+                                <div class="grid page_number">
+                                    <div class="title">저자</div>
+                                    <div class="content">하와이수학연구소</div>
+                                </div>
+                                <div class="grid size">
+                                    <div class="title">출판년도</div>
+                                    <div class="content">2024</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <hr>
+                                <br>
+                                <br>
+                                <div class="col-sm-12">
+                                    <button type="button" class="check-btn" onclick="add_myclass(65);"><i class="far fa-edit"></i>학생지정</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="top">목차&amp;셋팅지</div>
+                        <div class="chapter">01 큰 수</div>
+                        <div class="section">교과서 개념</div>
+                        <div class="subsection-child" style="display: flex; justify-content: space-between;">
+                            <div>
+                                <span style="font-size: 15px;"><i class="far fa-file-alt"></i></span>&nbsp;&nbsp; 1. 1000이 10개인 수/ 다섯 자리 수
+                            </div>
+                            <div style="display: flex; gap: 20px;">
+                                <button class="icon-box" onclick="print_preview( '2054' );">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                </button>
+                                <button class="icon-box" onclick="show_paper_html( '1. 1000이 10개인 수/ 다섯 자리 수', '391718,391719,391720,391721', '' );" title="Web 형식으로 보기"><i data-feather="monitor"></i></button>
+                                <button class="icon-box" onclick="show_tablet_preview( '1. 1000이 10개인 수/ 다섯 자리 수', '', '391718,391719,391720,391721', '' );" title="Tablet으로 보기"><i data-feather="smartphone"></i></button>
+                            </div>
+                        </div>
+                        <div class="subsection-child" style="display: flex; justify-content: space-between;">
+                            <div>
+                                <span style="font-size: 15px;"><i class="far fa-file-alt"></i></span>&nbsp;&nbsp; 2. 십만, 백만, 천만
+                            </div>
+                            <div style="display: flex; gap: 20px;">
+                                <button class="icon-box" onclick="print_preview( '2055' );">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                </button>
+                                <button class="icon-box" onclick="show_paper_html( '2. 십만, 백만, 천만', '391722,391723,391724,391725,391726', '' );" title="Web 형식으로 보기"><i data-feather="monitor"></i></button>
+                                <button class="icon-box" onclick="show_tablet_preview( '2. 십만, 백만, 천만', '', '391722,391723,391724,391725,391726', '' );" title="Tablet으로 보기"><i data-feather="smartphone"></i></button>
+                            </div>
+                        </div>
+                        <div class="subsection-child" style="display: flex; justify-content: space-between;">
+                            <div>
+                                <span style="font-size: 15px;"><i class="far fa-file-alt"></i></span>&nbsp;&nbsp; 3. 억/조
+                            </div>
+                            <div style="display: flex; gap: 20px;">
+                                <button class="icon-box" onclick="print_preview( '2056' );">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                </button>
+                                <button class="icon-box" onclick="show_paper_html( '3. 억/조', '391754,391755,391756,391757', '' );" title="Web 형식으로 보기"><i data-feather="monitor"></i></button>
+                                <button class="icon-box" onclick="show_tablet_preview( '3. 억/조', '', '391754,391755,391756,391757', '' );" title="Tablet으로 보기"><i data-feather="smartphone"></i></button>
+                            </div>
+                        </div>
+                        <div class="subsection-child" style="display: flex; justify-content: space-between;">
+                            <div>
+                                <span style="font-size: 15px;"><i class="far fa-file-alt"></i></span>&nbsp;&nbsp; 유형쏙
+                            </div>
+                            <div style="display: flex; gap: 20px;">
+                                <button class="icon-box" onclick="print_preview( '2059' );">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                </button>
+                                <button class="icon-box" onclick="show_paper_html( '유형쏙', '391727,391728,391729,391730,391731,391732,391733,391734,391735,391736,391737,391738,391739,391740,391741,391742,391767,391768,391769,391770,391771,391772,391773,391774,391775,391776,391777,391778,391779,391780,391781,391782,391783,391784,391785,391786,391787,391788,391789,391790', '' );" title="Web 형식으로 보기"><i data-feather="monitor"></i></button>
+                                <button class="icon-box" onclick="show_tablet_preview( '유형쏙', '', '391727,391728,391729,391730,391731,391732,391733,391734,391735,391736,391737,391738,391739,391740,391741,391742,391767,391768,391769,391770,391771,391772,391773,391774,391775,391776,391777,391778,391779,391780,391781,391782,391783,391784,391785,391786,391787,391788,391789,391790', '' );" title="Tablet으로 보기"><i data-feather="smartphone"></i></button>
+                            </div>
+                        </div>
+                        <div class="subsection-child" style="display: flex; justify-content: space-between;">
+                            <div>
+                                <span style="font-size: 15px;"><i class="far fa-file-alt"></i></span>&nbsp;&nbsp; 실력쑥
+                            </div>
+                            <div style="display: flex; gap: 20px;">
+                                <button class="icon-box" onclick="print_preview( '2060' );">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                </button>
+                                <button class="icon-box" onclick="show_paper_html( '실력쑥', '391743,391744,391745,391746,391747,391748,391749,391750,391751,391752,391753,391791,391792,391793,391794,391795,391796,391797,391798,391799,391800,391801,391802,391803,391804', '' );" title="Web 형식으로 보기"><i data-feather="monitor"></i></button>
+                                <button class="icon-box" onclick="show_tablet_preview( '실력쑥', '', '391743,391744,391745,391746,391747,391748,391749,391750,391751,391752,391753,391791,391792,391793,391794,391795,391796,391797,391798,391799,391800,391801,391802,391803,391804', '' );" title="Tablet으로 보기"><i data-feather="smartphone"></i></button>
+                            </div>
+                        </div>
+                        <div class="subsection-child" style="display: flex; justify-content: space-between;">
+                            <div>
+                                <span style="font-size: 15px;"><i class="far fa-file-alt"></i></span>&nbsp;&nbsp; 문제해결up
+                            </div>
+                            <div style="display: flex; gap: 20px;">
+                                <button class="icon-box" onclick="print_preview( '2061' );">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                </button>
+                                <button class="icon-box" onclick="show_paper_html( '문제해결up', '391805,391806,391807,391808,391809,391810,391811,391812', '' );" title="Web 형식으로 보기"><i data-feather="monitor"></i></button>
+                                <button class="icon-box" onclick="show_tablet_preview( '문제해결up', '', '391805,391806,391807,391808,391809,391810,391811,391812', '' );" title="Tablet으로 보기"><i data-feather="smartphone"></i></button>
+                            </div>
+                        </div>
+                        <div class="subsection-child" style="display: flex; justify-content: space-between;">
+                            <div>
+                                <span style="font-size: 15px;"><i class="far fa-file-alt"></i></span>&nbsp;&nbsp; 단원평가
+                            </div>
+                            <div style="display: flex; gap: 20px;">
+                                <button class="icon-box" onclick="print_preview( '2062' );">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                </button>
+                                <button class="icon-box" onclick="show_paper_html( '단원평가', '391813,391814,391815,391816,391817,391818,391819,391820,391821,391822,391823,391824,391825,391826,391827,391828,391829,391830,391831,391832', '' );" title="Web 형식으로 보기"><i data-feather="monitor"></i></button>
+                                <button class="icon-box" onclick="show_tablet_preview( '단원평가', '', '391813,391814,391815,391816,391817,391818,391819,391820,391821,391822,391823,391824,391825,391826,391827,391828,391829,391830,391831,391832', '' );" title="Tablet으로 보기"><i data-feather="smartphone"></i></button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <script>
+                    $( document ).ready(function() {
+                    });
+                    function print_preview( id )
+                    {
+                        var url = "/books/exam_print?id="+id;
+                        window.open( url ,"_blank");
+                    }
+                    function show_paper_html( name, question_ids )
+                    {
+                        fx_layer_popup( "/lms_api/show_exam?ids=" + question_ids, "[" + name + "] 시험지 보기", 750);
+                    }
+                    function get_today_study_card( study_card_ids )
+                    {
+                        $("div.ui-dialog-content").dialog("close");
+                        fx_layer_popup( encodeURI("/plans/add_today_plans?exam_type=단원학습&ids="+study_card_ids), "학생지정 완료", 450);
+                        $(".ui-dialog-titlebar-close").attr("onclick", "location.reload();");
+                    }
+                    function favorite_create( book_id )
+                    {
+                        fx_submit_link( '/books/favorite_create?book_id=' + book_id );
+                    }
+                    function favorite_remove( book_id )
+                    {
+                        fx_submit_link( '/books/favorite_remove?book_id=' + book_id );
+                    }
+                    function add_myclass( book_id )
+                    {
+                        var url = "/books/popup_add_myclass?_t=1735887355&book_id=" + book_id;
+                        fx_layer_popup_v2( 'add_myclass', url, 'modal-lg modal-dialog-centered' );
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <footer class='footer'>
+        <div class="top">
+            <div class="left">
+                <div class='footer-content'>
+                    <span class="footer_logo"><img src="../assets/hmath/footer_logo.svg" alt="하와이매쓰" /></span>
+                    <a href="/users/agreement" target=_blank>서비스 이용약관</a>
+                    <a href="/users/privacy_policy" target=_blank>개인정보처리방침</a>
+                </div>
+            </div>
+            <div class='right'>
+                <div class='footer-content'>
+                    <div id="footer-dropbox">
+                        <select id="footer-dropbox-content" class="form-control form-select">
+                            <option value="">Family Site</option>
+                            <option value="https://student.howhyclass.com">하와이클래쓰</option>
+                            <option value="https://www.fren.co.kr">프렌매쓰</option>
+                        </select>
+                        <script>
+                            document.getElementById('footer-dropbox-content').addEventListener('change', (e)=>{
+                                let link = e.target.value;
+                                if(link)
+                                    window.open(link, '_blank');
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='left'>
+            <div class='footer-content'>
+                <div><b>하와이컴퍼니(주)</b></div>
+                <div class='vertical-line'></div>
+                <div><b>HOWHY COMPANY</b></div>
+                <div class='vertical-line'></div>
+                <div><b>대표이사 : 박종화</b></div>
+            </div>
+    
+            <div class='footer-content'>
+                <div><b>사업자등록번호</b> 760-87-02737</div>
+                <div class='vertical-line'></div>
+                <div><b>통신판매신고</b> : 제 2024-서울강남-03953호</div>
+                <div class='vertical-line'></div>
+                <div><b>고객센터</b> <a href="mailto:howhy.cs@gmail.com" target="_top">howhy.cs@gmail.com</a></div>
+            </div>
+            <div class='footer-content'>
+                <div><b>본사</b> : 서울시 강남구 선릉로 551 새롬빌딩 5F <br> <b>하와이수학연구소</b> : 서울특별시 강남구 선릉로93길 40, 나라키움 역삼A빌딩 407호</div>
+            </div>
+            <div class='footer-content'>
+                2024 Copyright <strong>&copy;</strong> Howhy Company Co,.Ltd. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- //241213 푸터 전체 클래쓰와 동일하게 수정 끝 -->
+    <script src="https://img.howhymath.com/custom/custom.js?v=20250102"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        cdml_mathjax_init();
+    });
+    function edit_teacher()
+    {
+        fx_layer_popup_v2( 'edit_teacher_popup', '/home/edit_teacher', '' );
+    }
+    function edit_password()
+    {
+        fx_layer_popup_v2( 'edit_password_popup', '/home/edit_password', '' );
+    }
+    function menu_disable_delete( key, opt )
+    {
+        var node = $.ui.fancytree.getNode(opt.$trigger);
+        if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+        var words = node.key.split('-');
+        if( words[1] != '0' ) return true;
+        return false;
+    }
+    function menu_disable_add( key, opt )
+    {
+        var node = $.ui.fancytree.getNode(opt.$trigger);
+        if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+        if( node.getLevel() == 2 ) return true;
+        return false;
+    }
+    function menu_disable_edit( key, opt )
+    {
+        var node = $.ui.fancytree.getNode(opt.$trigger);
+        if( node.key.indexOf( '-0-0' ) != -1 )  return true;
+        return false;
+    }
+    </script>
+</body>
+</html>

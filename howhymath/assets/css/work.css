@@ -420,7 +420,8 @@ line-height: normal;
 
 .icon-box{
   border-radius: 8px;
-  border: 1px solid var(--Gray-08, #CCC);
+  /* border: 1px solid var(--Gray-08, #CCC); */
+  border: 2px solid var(--main-color-blue);
   background: #FFF;
   padding: 10px;
 }
@@ -681,6 +682,7 @@ line-height: normal;
   font-weight: 600;
   line-height: 1;
   padding: 15px 30px;
+  margin-top: 0;
 }
 .modal-bottom-btn-box > .cancle-btn{
   border-radius: 5px;
@@ -2487,6 +2489,7 @@ span.fancytree-active span.fancytree-title {
 .page-title-box{
   padding: 10px 0 20px 0;
   .row{padding: 0 !important;}
+  #form_search .row{width: 100%;}
 }
 
 .head-left {
@@ -4576,7 +4579,10 @@ td > .calendar-box{
     border-top-width: 0;
   }
 
-  .table tr{border-top: 1px solid var(--table-line-color);}
+  .table tr{
+    border-top: 1px solid var(--table-line-color);
+    &:first-child{border-top-width: 0;}
+  }
   .table th {
     &.fx-tablesorter-header::after {background-image: url(../hmath/img/table_updown_white.svg);}
   }
@@ -6692,6 +6698,7 @@ span.plus {
   border: none;
   width: 230px;
   display: block;
+  max-width: none;
 }
 
 .white-container .left .content-container .content-box .grid{
@@ -6995,12 +7002,14 @@ span.plus {
 }
 
 /* <!-- input type date placeholder */
-div:has(>input[type="date"], >input[type="month"]){max-width: 160px;}
+div:has(>input[type="date"], >input[type="month"]){width: 130px;}
 input[type="date"], input[type="month"]{
+    width: 100%;
     position: relative;
     background: url(../hmath/img/icon_calendar.png) no-repeat center right 10px / 19px auto;
     padding-right: 10px;
     border-radius: 6px;
+    font-size: 13px;
 }
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="month"]::-webkit-calendar-picker-indicator {
@@ -8175,7 +8184,7 @@ html:has(.page-memo){
 
   /* 공지사항/1:1문의&FAQ */
   .page-notices, .page-inquiries{
-    .notice-container{flex-direction: column;}
+    &.notice-container{flex-direction: column;}
   }
   /* 문항오류신고 */
   .error-container{flex-direction: column;}
@@ -8221,8 +8230,6 @@ html:has(.page-memo){
   .modal-grid .left .left-header{
     grid-template-columns: 3fr 4fr 3fr;
   }
-
-
 
   .card {
     & ul.fancytree-container li > ul{
@@ -8276,6 +8283,11 @@ html:has(.page-memo){
 
   /* 모달 공통 / 팝업 공통 */
   .modal{
+    .modal-dialog {
+      max-width: 710px;
+      margin: 0 auto;
+    }
+
     .card {
       & ul.fancytree-container li > ul{display: block;}
       & ul.fancytree-container li > ul > li{margin-top: 10px;}
@@ -8289,6 +8301,14 @@ html:has(.page-memo){
     }
   }
 
+  /*** 편집인쇄쇄 팝업 ***/
+  .page-edit-print{
+    .col-md-4:has(.table-responsive) .row{
+      display: flex;
+      flex-direction: column;
+      .col-sm-6{width: 100%;}
+    }
+  }
 }
 
 @media (max-width: 991px) {
