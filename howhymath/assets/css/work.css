@@ -104,7 +104,7 @@ hr{display: none;}
     border-color: #CCC;
   }
   &::placeholder{color: #626262 !important;}
-  .form-select{padding: 8px 14px;}
+  /* .form-select{padding: 8px 14px;} */
 }
 .form-control:disabled,
 .form-control[readonly]{
@@ -112,6 +112,7 @@ hr{display: none;}
 }
 
 .form-select{
+  min-width: 110px;
   cursor: pointer;
   &:focus{border-color: #CCC;}
   &+p{
@@ -1216,6 +1217,7 @@ line-height: normal;
 .container-fluid:has(#wizard_tree) .mbtn{
   border-radius: 5px;
   background: var(--main-color-blue);
+  max-width: 110px;
   height: 40px;
   font-family: 'SUIT';
   font-weight: 600;
@@ -1760,11 +1762,13 @@ line-height: normal;
     font-weight: 600;
     line-height: 1;
     padding: 7px 20px !important;
+    margin-top: 0 !important;
     &.icon-box{
       border-radius: 5px !important;
       border: 2px solid var(--main-color-blue);
       padding: 4px !important;
       background: #FFF;
+      color: inherit;
       svg{width: 20px;}
 
       &.obox, &.xbox{
@@ -2947,11 +2951,25 @@ span.fancytree-active span.fancytree-title {
       flex: none;
       #item-create{width: 110px !important;}
     }
-    .row>div{flex: 1;}
+    &:has(>.mbtn){
+      width: fit-content;
+      flex: none;
+    }
+    .row{
+      width: 100%;
+      &>div{
+        flex: 1;
+        &:last-child:has(.input-group){
+          width: fit-content;
+          flex: none;
+        }
+      }
+    }
   }
 }
 
 .col-sm-9:has(.tabs){
+  width: calc(100% - 355px);
   padding-bottom: 60px !important;
   &>.row>.col-sm-12{background: #f4f4f4;}
   &>.row>.col-sm-12:has(.table-responsive){background: #fff;}
@@ -6152,6 +6170,7 @@ td > .calendar-box{
         background: currentColor;
       }
     }
+    .col-sm-8{width: fit-content;}
   }
 }
 /* 학생지정 modal END */
@@ -7078,8 +7097,18 @@ input[type="month"]:valid::before { display: none  !important; }
 
 /*** 폼 검색영역 ***/
 #form_search{
+  display: flex;
+  justify-content: flex-end;
   width: 100%;
-  .row{gap: 8px;}
+  .row{
+    flex: none;
+    width: fit-content;
+    gap: 8px;
+    &>div:last-child:has(.input-group){
+      width: fit-content;
+      flex: none;
+    }
+  }
 }
 
 /* .head-left > .black {
@@ -7235,8 +7264,18 @@ html:has(.page-memo){
 /******* 개별학습 > 교재학습 > 학습중 > 채점하기 & 공유하기 팝업 *******/
 #scoring_study_cards, #scoring_popup{
   /* .modal-dialog {max-width: 580px;} */
-  .modal-dialog {max-width: 710px;}
-  .modal-grid .left .left-header{gap: 5px;}
+  .modal-dialog {
+    max-width: 710px;
+    margin: 0 auto;
+  }
+  .modal-grid .left .left-header{
+    gap: 5px;
+    #current_study_card_option ~ div{
+      width: fit-content;
+      gap: 2px;
+      margin-left: auto;
+    }
+  }
   .modal-grid .left .left-bottom .result-container .content{gap: 5px;}
   .modal-grid .left .left-bottom .btn-box{margin: 0 auto;}
   .modal-bottom-btn-box{width: 100%;}
@@ -8152,6 +8191,39 @@ html:has(.page-memo){
     .table-container{padding: 10px !important;}
   }
 
+}
+
+@media (max-width: 1024px) {
+  .topbar .brand {
+      width: 170px !important;
+      position: static;
+  }
+}
+
+@media (max-width:992px){
+  .modal-grid .table thead .left-btn{
+    width: 18px;
+  }
+
+  .modal-grid .table thead .left-btn svg{
+    width: 10px;
+  }
+
+  .modal-grid .table thead .right-btn{
+    width: 18px;
+  }
+  .modal-grid .table thead .right-btn svg{
+    width: 10px;
+  }
+  .table .responsive-th{
+    font-size: 11px;
+  }
+  .modal-grid .left .left-header{
+    grid-template-columns: 3fr 4fr 3fr;
+  }
+
+
+
   .card {
     & ul.fancytree-container li > ul{
       display: grid;
@@ -8160,10 +8232,14 @@ html:has(.page-memo){
     }
     & ul.fancytree-container li > ul > li{margin-top: 0;}
     & ul.fancytree-container li > ul > li span.fancytree-node{flex-wrap: nowrap;}
+    & ul.fancytree-container li > ul > li > ul{display: block;}
   }
   .card-body:has(.student_grade_tree){
     padding: 10px 30px;
     .card-body{padding: 0;}
+  }
+  .card-body.product-left .row > div{
+    width: calc((100% / 3) - 12px);
   }
 
   /* 캘린더
@@ -8212,36 +8288,7 @@ html:has(.page-memo){
       /* margin: 0 0 0 20px; */
     }
   }
-}
 
-@media (max-width: 1024px) {
-  .topbar .brand {
-      width: 170px !important;
-      position: static;
-  }
-}
-
-@media (max-width:992px){
-  .modal-grid .table thead .left-btn{
-    width: 18px;
-  }
-
-  .modal-grid .table thead .left-btn svg{
-    width: 10px;
-  }
-
-  .modal-grid .table thead .right-btn{
-    width: 18px;
-  }
-  .modal-grid .table thead .right-btn svg{
-    width: 10px;
-  }
-  .table .responsive-th{
-    font-size: 11px;
-  }
-  .modal-grid .left .left-header{
-    grid-template-columns: 3fr 4fr 3fr;
-  }
 }
 
 @media (max-width: 991px) {
@@ -8268,7 +8315,7 @@ html:has(.page-memo){
   }
   /* 채점표 팝업 */
   #popup_score_table_box{
-    .table th:first-child{width: 50px !important;}
+    /* .table th:first-child{width: 50px !important;} */
     .table td{
       padding: 5px !important;
       justify-content: space-around !important;
@@ -8289,6 +8336,31 @@ html:has(.page-memo){
       margin-top: 20px;
     }
     .modal-body > div > .row > .col-md-3{padding: 0 !important;}
+  }
+
+  /****** 메모 팝업 ******/
+  .page-memo{
+    .study-management-header{
+      flex-direction: column;
+      gap: 5px;
+    }
+    table{
+      display: block;
+      colgroup{display: none;}
+      tbody{
+        display: block;
+        width: 100%;
+      }
+    }
+    table tr{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    table td{
+      padding: 0 !important;
+      width: 100%;
+    }
   }
 }
   
