@@ -725,15 +725,15 @@ var lms_domain = "https://tutor.howhymath.com";
                 }
                 function popup_report_print()
                 {
-                    fx_popup_window( "/jindan_exams/report_detail?mode=print&jindan_report_id=197", { name: 'popup_report_print', width: window.screen.width/2, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
+                    fx_popup_window( "https://tutor.howhymath.com/jindan_exams/report_detail?mode=print&jindan_report_id=197", { name: 'popup_report_print', width: window.screen.width/2, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
                 }
                 function save_comment()
                 {
                     var comment = $('#fx-form-comments').val();
                     $.ajax({
                         type: "GET",
-                        url: "/jindan_exams/save_comment",
-                        data: "jindan_report_id=197&jindan_comment=" + encodeURI(comment),
+                        url: "https://tutor.howhymath.com/jindan_exams/save_comment",
+                        data: "https://tutor.howhymath.com/jindan_report_id=197&jindan_comment=" + encodeURI(comment),
                         async:false,
                         cache:false,
                         success: function (response) {

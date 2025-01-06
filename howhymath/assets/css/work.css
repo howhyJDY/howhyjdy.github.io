@@ -682,7 +682,7 @@ line-height: normal;
   font-weight: 600;
   line-height: 1;
   padding: 15px 30px;
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 .modal-bottom-btn-box > .cancle-btn{
   border-radius: 5px;
@@ -5426,6 +5426,7 @@ td > .calendar-box{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin: 10px 0px;
   width: 100%;
 }
@@ -5433,6 +5434,7 @@ td > .calendar-box{
 .study-report-container > .content > .research-box > .font-box > .content-box > .left{
   font-weight: 500;
   font-size: 14px;
+  text-align: left;
 }
 
 .study-report-container > .content > .research-box > .font-box > .content-box > .right{
@@ -8406,5 +8408,27 @@ html:has(.page-memo){
   }
   .modal-grid .left .left-header{
     grid-template-columns: 3fr 4fr 6fr;
+  }
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .report-table > tbody > tr > td > .graph > .graph-green{
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-color: #8CC33E;
+  }
+  .report-table > tbody > tr > td > .graph > .graph-red{
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-color: #E04D2D;
+  }
+  .study-report-container textarea{
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    border: 1px solid #707070;
   }
 }
