@@ -1496,6 +1496,7 @@ line-height: normal;
               background: currentColor;
             }
           }
+          &.fancytree-active .fancytree-title{color: var(--main-color-green-dark);}
         }
       }
     }
@@ -3078,6 +3079,7 @@ span.fancytree-active span.fancytree-title {
   }
 }
 .tabs{
+  background-color: #F4F4F4;
   .nav{
     width: auto !important;
     gap: 0;
@@ -4543,6 +4545,30 @@ td > .calendar-box{
         margin-bottom: 0 !important;
     }
   }
+  & > .col-md-4{
+    gap: 8px 0;
+    padding: 35px !important;
+    h4{line-height: 30px;}
+    .mbtn{
+      position: relative;
+      top: -38px;
+    }
+    .row:nth-child(2){margin-top: 20px;}
+    .row:nth-child(3) .mbtn{
+      font-size: 0;
+      line-height: 0;
+      color: transparent;
+      &::before{
+        content: '월 결제';
+        font: inherit;
+        font-size: 14px;
+        line-height: normal;
+        color: #222;
+      }
+    }
+    .row:nth-child(4){order: -2;}
+    .row:nth-child(5){order: -1;}
+  }
 }
 
 /* 고객센터 > 공지사항 */
@@ -5429,6 +5455,7 @@ td > .calendar-box{
   flex-wrap: wrap;
   margin: 10px 0px;
   width: 100%;
+  max-width: none;
 }
 
 .study-report-container > .content > .research-box > .font-box > .content-box > .left{
@@ -8429,6 +8456,14 @@ html:has(.page-memo){
   .study-report-container textarea{
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    background-color: #fff;
     border: 1px solid #707070;
+  }
+  .study-report-container > .content > .research-box > .font-box > .content-box > .left{
+    display: block;
+    overflow: visible;
+    position: static;
+    width: auto;
+    height: auto;
   }
 }
