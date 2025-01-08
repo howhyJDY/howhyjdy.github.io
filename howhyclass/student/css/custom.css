@@ -4827,6 +4827,7 @@ line-height: 160%; /* 25.6px */
     }
   }
 
+  .deficit-container table tr:nth-last-of-type(-n+7) td:last-child::after{content: '';}
 
 }
 
@@ -4925,6 +4926,15 @@ line-height: 160%; /* 25.6px */
     .dot-container {
       padding: 13px 16px;
       vertical-align: top !important;
+
+      &:nth-last-of-type(-n+4){
+        .dot-box .dot{
+          &[data-title]:hover::after{
+            left: auto;
+            right: 0;
+          }
+        }
+      }
 
       .dot-box {
         display: grid;
