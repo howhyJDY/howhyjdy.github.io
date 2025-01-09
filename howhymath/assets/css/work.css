@@ -7885,8 +7885,8 @@ html:has(.page-memo){
     float: left;
   }/*파일명*/
   #btn_file_filename{
-    padding: 0;
-    width: 32px;
+    padding: 0 !important;
+    width: 32px !important;
     height: 32px;
     border-radius: 4px;
     vertical-align: middle;
@@ -7894,16 +7894,18 @@ html:has(.page-memo){
     border: 2px solid var(--main-color-blue);
     font-size: 0;
     box-sizing: border-box;
+    float: right;
   }/*등록버튼*/
   #btn_file_remove_filename{
-    padding: 0;
-    width: 30px;
+    padding: 0 !important;
+    width: 30px !important;
     height: 30px;
     border-radius: 4px;
     vertical-align: middle;
     background: transparent;
     border: 2px solid var(--etc-red, #FA5C5C);
     box-sizing: border-box;
+    float: right;
     &:hover {
       color: var(--etc-red, #FA5C5C);
     }
