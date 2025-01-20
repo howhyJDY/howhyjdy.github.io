@@ -97,6 +97,7 @@ hr{display: none;}
   border-radius: 4px;
   border: 1px solid var(--gray-08, #CCC);
   padding: 8px 14px;
+  font-size: 14px;
   color: #333;
   cursor: pointer;
   &:focus{
@@ -1806,7 +1807,7 @@ line-height: normal;
       background: transparent;
       color: #FA5C5C;
       font-size: 16px;
-    }/*관리>인쇄파일관리 삭제제버튼*/
+    }/*관리>인쇄파일관리 삭제버튼*/
   }
 }
 
@@ -2052,7 +2053,17 @@ line-height: normal;
   color: red;
   border-radius: 50%;
   padding: 0px 1px;
-  font-size: 8px !important;
+  font-size: 0 !important;
+  &::before{
+    content: '';
+    display: block;
+    background: currentColor;
+    width: 5px;
+    height: 4px;
+    border-radius: 50%;
+    margin-right: 2px;
+    margin-top: -2px;
+  }
 }
 
 /* <!-- input type date placeholder */
@@ -2442,15 +2453,16 @@ span.fancytree-active span.fancytree-title {
         display: flex;
         align-items: center;
         gap: 4px;
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 10px;
+        padding-left: 8px;
         &::before{
           content: '';
           display: block;
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background: currentColor;
+          width: 17px;
+          height: 22px;
+          background: url(../hmath/img/icon_academies.png) no-repeat center / cover;
+          border-radius: 0;
         }
     }
   }
@@ -2458,7 +2470,262 @@ span.fancytree-active span.fancytree-title {
     box-shadow:0 0 0 2px #7e7e7e;
     border-radius: 13px;
     overflow: hidden;
-    th{padding: 14px 5px;}
+    display: block;
+    colgroup{display: none;}
+    tbody{
+      display: block;
+      width: 100%;
+    }
+    tr{
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      &:first-of-type{
+        th, td{
+          &:first-of-type::before{content: none;}
+        }
+      }
+
+      button{
+        height: auto !important;
+        border-width: 0;
+        background: #d7f1f0 ;
+        color: #0e495a;
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 500;
+        padding: 11.5px 13px !important;
+        vertical-align: middle;
+        &::after{
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 15px;
+          height: 15px;
+          background: url(../hmath/img/icon_search_green.svg) no-repeat center / cover;
+          margin-left: 5px;
+        }
+        &#btn_file_remove_logo_file, &#btn_file_remove_biz_file{
+          font-size: 0;
+          background: transparent;
+          padding: 0 !important;
+          &::after{
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: url(../hmath/img/icon_trash.png) no-repeat center / cover;
+          }
+          &:focus{box-shadow: none;}
+        }
+      }
+
+      /* 수정페이지 전용 */
+      &:has(.form_star){
+        &:last-of-type th:first-of-type{
+          z-index: 1;
+          &::after{
+            content: '';
+            display: block;
+            width: calc(100% + 1px);
+            height: calc(100% * 3 + 1px);
+            position: absolute;
+            top: 0; left: 0;
+            background: #efefef;
+            z-index: -1;
+            border-right: 1px solid #E5E5E5;
+          }
+        }
+      }
+    }
+
+    /* th 공통 */
+    th{
+      padding: 14px 30px 14px 5px;
+      width: 100%;
+      max-width: 150px;
+      border-width: 0;
+      border-right: 1px solid #E5E5E5;
+      text-align: right;
+      line-height: 37px;
+      position: relative;
+      z-index: 1;
+      .form_star{
+        height: 19px;
+        top: 10px;
+      }
+      &::after{content: none;}
+      &::before{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: url(../hmath/img/line_dotted2.png) repeat-x;
+        position: absolute;
+        top: 0; left: 0;
+      }
+      /*** 수정 주소부분 ***/
+      /* th+th 우편번호찾기 버튼*/
+      &+th{
+        width: 100%;
+        max-width: calc(100% - 150px);
+        text-align: left;
+        padding: 14px 35px;
+        button{margin: 0 !important;}
+        /* th+th+td 우편번호 인풋 */
+        &+td{
+          display: flex;
+          width: 300px;
+          padding-right: 12px;
+          &::after{
+            content: '';
+            display: block;
+            width: 150px;
+            height: 100%;
+            order: -1;
+            flex-shrink: 0;
+          }
+          &+td{
+            width: calc(100% - 300px);
+            padding-left: 0;
+            &::after{content: none;}
+          }
+        }
+      }
+
+      /*th+td*/
+      &+td{
+        width: 100%;
+        max-width: calc(100% - 150px);
+      }
+    }
+
+    /* td 공통 */
+    td{
+      border-width: 0;
+      padding: 14px 35px;
+      position: relative;
+      line-height: 37px;
+      div:has(input){width: 100%;}
+      .form-control{padding: 6px 14px;}
+      b, div, p{
+        line-height: 1.4;
+        &:not(.note-error){line-height: inherit;}
+      }
+      /* td+td */
+      &+td{
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        &::after{
+          content: '';
+          display: block;
+          width: 150px;
+          height: 100%;
+          order: -1;
+          flex-shrink: 0;
+        }
+      }
+      &::before{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: url(../hmath/img/line_dotted2.png) repeat-x;
+        position: absolute;
+        top: 0; left: 0;
+      }
+      p{
+        padding: 0 !important;
+        text-align: left !important;
+        font-size: 14px !important;
+        margin: 0;
+      }
+    }
+  }
+
+  /* 로고 이미지 영역 */
+  #sp_file_logo_file{margin-right: 10px;}
+  #academy_logo_file{
+    max-width: 200px !important;
+    line-height: 1;
+  }
+
+  .container-fluid{
+    display: flex;
+    flex-wrap: wrap;
+    &>.row{width: 100%;}
+    &>.modal-content{
+      width: auto !important;
+      flex: 1;
+      &:nth-of-type(2){
+        border-radius: 20px 0 0 0;
+        padding: 50px 15px 50px 30px;
+      }
+      &:nth-of-type(3){
+        border-radius: 0 20px 0 0;
+        padding: 50px 30px 50px 15px;
+      }
+      &:last-of-type{
+        flex: none;
+        border-radius: 0 0 20px 20px;
+        padding: 0 30px 50px;
+      }
+    }
+    br{display: none;}
+    .modal-bottom-btn-box{
+      justify-content: center;
+      & > .save-btn{
+        border-radius: 20px;
+        padding: 10px 26px;
+        height: fit-content;
+      }
+      & > .cancle-btn{
+        border-radius: 20px;
+        padding: 10px 26px;
+        height: fit-content;
+      }
+      & > .btn-leave_member{
+        border-radius: 20px;
+        padding: 10px 26px;
+        border-width: 0;
+        background: #333;
+        color: #fff;
+        height: fit-content;
+      }
+    }
+
+    /* 수정전용 */
+    .modal-header{
+      width: 100%;
+      padding: 10px 0 20px 0 !important;
+      margin: 0;
+      .left{
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1;
+      }
+    }
+    form{
+      display: flex;
+      flex-wrap: wrap;
+      &>.modal-content{
+        width: auto !important;
+        flex: 1;
+        &:nth-of-type(1){
+          border-radius: 20px 0 0 0;
+          padding: 50px 15px 50px 30px;
+        }
+        &:nth-of-type(2){
+          border-radius: 0 20px 0 0;
+          padding: 50px 30px 50px 15px;
+        }
+        &:last-of-type{
+          flex: none;
+          border-radius: 0 0 20px 20px;
+          padding: 0 30px 50px;
+        }
+      }
+    }
   }
 }
 /* 관리 > 정보관리/정보수정 끝 */
@@ -8229,6 +8496,63 @@ html:has(.page-memo){
   /* 241231 출제마법사 시험지만들기 */
   .page-content:has(.step-title){
     .table-container{padding: 10px !important;}
+  }
+
+  /* 관리 > 정보관리/정보수정 */
+  .page-academies{
+    .container-fluid{
+      flex-direction: column;
+      form{flex-direction: column;}
+
+      &>.modal-content{
+        &:nth-of-type(2){
+          border-radius: 20px 20px 0 0;
+          padding: 50px 30px 15px;
+        }
+        &:nth-of-type(3){
+          border-radius: 0;
+          padding: 15px 30px 50px;
+        }
+        &:last-of-type{
+          border-radius: 0 0 20px 20px;
+          padding: 0 30px 50px;
+        }
+      }
+  
+      /* 수정전용 */
+      .modal-header{
+        width: 100%;
+        padding: 10px 0 20px 0 !important;
+        margin: 0;
+        .left{
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 1;
+        }
+      }
+      form{
+        display: flex;
+        flex-wrap: wrap;
+        &>.modal-content{
+          &:nth-of-type(1){
+            border-radius: 20px 20px 0 0;
+            padding: 50px 30px 15px;
+          }
+          &:nth-of-type(2){
+            border-radius: 0;
+            padding: 15px 30px 50px;
+          }
+          &:last-of-type{
+            border-radius: 0 0 20px 20px;
+            padding: 0 30px 50px;
+          }
+        }
+      }
+
+
+
+
+    }
   }
 
 }

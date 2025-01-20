@@ -144,7 +144,8 @@ var lms_domain = "https://tutor.howhymath.com";
                         <input type=hidden name="up_ext_logo_file" value="" id="up_ext_logo_file">
                         <input type=hidden name="up_filename_logo_file" value="" id="up_filename_logo_file">
                         <input type=hidden name="dn" value="20241220-155022.177">
-                        <div class="modal-content" style="width:100% !important;">
+                        <!-- <div class="modal-content" style="width:100% !important;"> 241231 스타일 삭제 -->
+                        <div class="modal-content">
                             <div class="modal-body">
                                 <div class="modal-body-head">
                                     <div class="left">기본 정보 &nbsp;&nbsp;</div>
@@ -195,12 +196,22 @@ var lms_domain = "https://tutor.howhymath.com";
                                                     </div>
                                                 </td>
                                                 <th>로고</th>
+
+                                                <!-- 업로드 전
                                                 <td>
                                                     <button type="button" id="btn_file_logo_file" class="edit-btn">업로드</button>
                                                     <span id="sp_file_logo_file"><img src="https://img.howhymath.com/custom/none.png?1734677422" style="max-width:90%" id="academy_logo_file"></span>
                                                     <button type="button" id="btn_file_remove_logo_file" class="btn btn-sm btn-soft-danger" style="display:none;">X</button>
                                                     <div class="note note-error" id="fx-error-logo_file" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
                                                     </div>
+                                                </td> -->
+
+                                                <!-- 업로드 후 -->
+                                                <td>
+                                                    <button type="button" id="btn_file_logo_file" class="edit-btn" style="display: none;">업로드</button>
+                                                    <span id="sp_file_logo_file"><img src="https://img.howhymath.com/hmath/logo.svg" style="max-width:90%" id="academy_logo_file"></span>
+                                                    <button type="button" id="btn_file_remove_logo_file" class="btn btn-sm btn-soft-danger" style="">X</button>
+                                                    <div class="note note-error" id="fx-error-logo_file" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -235,7 +246,8 @@ var lms_domain = "https://tutor.howhymath.com";
                             </div>
                         </div>
                         <br>
-                        <div class="modal-content" style="width:100% !important;">
+                        <!-- <div class="modal-content" style="width:100% !important;"> 241231 스타일 삭제 -->
+                        <div class="modal-content">
                             <div class="modal-body">
                                 <div class="modal-body-head">
                                     <div class="left">사업자 정보</div>
@@ -311,12 +323,22 @@ var lms_domain = "https://tutor.howhymath.com";
                                                 </div>
                                             </td>
                                             <th>사업자등록증</th>
+
+                                            <!-- 업로드 전
                                             <td>
                                                 <button type="button" id="btn_file_biz_file" class="edit-btn">업로드</button>
                                                 <span id="sp_file_biz_file"></span>
                                                 <button type="button" id="btn_file_remove_biz_file" class="btn btn-sm btn-soft-danger" style="display:none;">X</button>
                                                 <div class="note note-error" id="fx-error-biz_file" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
                                                 </div>
+                                            </td> -->
+
+                                            <!-- 업로드 후 -->
+                                            <td>
+                                                <button type="button" id="btn_file_biz_file" class="edit-btn" style="display: none;">업로드</button>
+                                                <span id="sp_file_biz_file">하와이컴퍼니_사업자등록증.pdf</span>
+                                                <button type="button" id="btn_file_remove_biz_file" class="btn btn-sm btn-soft-danger">X</button>
+                                                <div class="note note-error" id="fx-error-biz_file" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
                                             </td>
                                         </tr>
                                     </tbody>
