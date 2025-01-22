@@ -8405,6 +8405,59 @@ html:has(.page-memo){
   }
 }
 
+/* 메인 모달 START 250122 */
+#popup_main{
+  .modal-content{
+    overflow: hidden;
+    border-radius: 13px;
+    border-width: 0;
+  }
+  .modal-body{padding: 0;}
+  .modal-footer{
+    height: 37px;
+    border-width: 0;
+    padding: 0 15px;
+    justify-content: space-between;
+    input, label ,img{cursor: pointer;}
+    img{margin: 0;}
+    div{margin: 0;}
+    input[type=checkbox]{
+      position: absolute;
+      margin: -1px;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      border: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+      cursor: pointer;
+      &+label{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        font-size: 14px;
+        line-height: 1;
+        color: #333;
+        cursor: pointer;
+        &::before{
+          content: '';
+          display: block;
+          width: 19px;
+          height: 19px;
+          background: url(../hmath/img/icon_chk_off.svg) no-repeat center / contain;
+          margin-bottom: -2px;
+        }
+      }
+      &:checked{
+        &+label::before{background: url(../hmath/img/icon_chk_on.svg);}
+      }
+    }
+  }
+}
+/* 메인 모달 END 250122 */
 /******* 팝업끝 *******/
 
 /*** 반응형 ***/
