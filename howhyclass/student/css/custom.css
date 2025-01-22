@@ -11021,13 +11021,19 @@ line-height: 160%; /* 22.4px */
 
 /* 메인 모달 START 250122 */
 .modal-backdrop.show{opacity: 0.1;}
+.modal-backdrop{width: 100%;}
+body:has(#popup_main){padding-right: 0 !important;}
 #popup_main{
+  padding: 0 !important;
   .modal-content{
     overflow: hidden;
     border-radius: 13px;
     border-width: 0;
   }
-  .modal-body{padding: 0;}
+  .modal-body{
+    padding: 0;
+    img{width: 100%;}
+  }
   .modal-footer{
     height: 37px;
     border-width: 0;
