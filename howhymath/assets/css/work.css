@@ -191,6 +191,7 @@ label:has(input[type=checkbox]:only-child){
   height: 15px;
   background: url(../hmath/img/icon_chk_off.svg) no-repeat center left / 15px auto;
   cursor: pointer;
+  vertical-align: -4px;
   input[type=checkbox]{
     position: absolute;
     margin: -1px;
@@ -2541,11 +2542,21 @@ span.fancytree-active span.fancytree-title {
       &:last-child{display: none;}
     }
     b:first-of-type{
+      display: inline-block;
       background: #0385ff;
       color: #fff;
       font-weight: 500;
       border-radius: 4px;
-      padding: 1px 5px;
+      padding: 4px 7px;
+      font-size: 0;
+      line-height: 0;
+      &::before{
+        content: '필독';
+        font-size: 13px;
+        line-height: 1;
+        color: inherit;
+        font-weight: inherit;
+      }
     }
     b:last-of-type font{
       color: #0385ff;
@@ -2792,6 +2803,114 @@ span.fancytree-active span.fancytree-title {
   }
 }/*캘린더 공지사항*/
 
+/* 오늘의 일정 페이지 시작 */
+.page-studylist{
+  .study-management-header{
+    border-bottom-width: 0;
+    .mbtn{width: 140px !important;}
+  }
+  .container-fluid  > .row:has(.col-sm-12):has(.white) .row:has(.col-sm-12):last-child .white{padding-bottom: 40px !important;}
+  .col-sm-9 > .row{
+    margin-bottom: 0 !important;
+    /* 오늘의 일정 */
+    &:first-child{
+      .white{border-radius: 8px 8px 0 0;}
+      .table-responsive{
+        height: calc(100% - 2px);
+        box-shadow:0 0 0 2px #7e7e7e;
+        border-radius: 13px;
+        padding-bottom: 10px;
+        &>table{
+          margin-bottom: 0 !important;
+          tr:not(:first-child){
+            background: #fff;
+            td, th{font-weight: 400;}
+          }
+          tr:first-child{
+            th, td{border-top-width: 0;}
+          }
+          th{
+            &:first-child{border-radius: 0;}
+            &:last-child{border-radius: 0;}
+          }
+          th, td{
+            position: relative;
+            border-top: 1px solid #d4d4d4;
+            &:last-child::after{content: none;}
+            &::before{content: none;}
+            &::after{
+              content: '';
+              display: block;
+              width: 1px;
+              height: 100%;
+              background: url(../hmath/img/line_dotted.png) repeat-y;
+              position: absolute;
+              top: 0;right: 0;
+            }
+          }
+        }
+      }
+    }
+    &:last-child .white{border-radius: 0 0 8px 8px;}
+  }
+
+  .table-responsive .table{
+    .study-management-content > .left > button{
+      display: block;
+      width: 100% !important;
+      padding: 10px 20px !important;
+      margin-top: 10px !important;
+    }
+    .study-management-content > .right .table td{font-size: 14px;}
+    button{
+      flex-shrink: 0;
+      border-radius: 5px;
+      font-family: 'SUIT';
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 600;
+      &.btn-soft-success, &.btn-soft-danger{
+        border: 2px solid #5dcfe0;
+        border-radius: 5px;
+        padding: 4px !important;
+        font-size: 14px;
+      }
+      &.check-btn{
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 10px 9px !important;
+        color: var(--font-color-blue-dark);
+        background: #d7f1f0;
+        text-decoration: none;
+        &::after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 3px 0px 3px 5.196px;
+          border-color: transparent transparent transparent var(--main-color-blue);
+        }
+      }
+      &.wbtn-line{
+        padding: 10px 9px !important;
+        background: #555;
+        border-width: 0;
+        color: #fff;
+      }
+      &.line{
+        align-items: center;
+        gap: 5px;
+        padding: 10px 9px !important;
+        color: var(--font-color-blue-dark);
+        background: #d7f1f0;
+        text-decoration: none;
+      }
+    }
+  }
+}
+/* 오늘의 일정 페이지 끝 */
 /* 캘린더 페이지 끝 */
 
 /* 관리 > 정보관리/정보수정 시작 */
@@ -8820,6 +8939,20 @@ body:has(#popup_main){padding-right: 0 !important;}
     border-top-width: 0;
   }
 }
+
+/* 캘린더>일정등록 팝업 */
+#item_create_popup{
+  select{background: transparent;}
+  select option[value="secondary"]{background: #990099 !important;}
+  select option[value="success"]{background: #ff30ff !important;}
+  select option[value="warning"]{background: #6165ff !important;}
+  select option[value="info"]{background: #00d2d2 !important;}
+  select option[value="danger"]{background: #0099ff !important;}
+  select option[value="pink"]{background: #fd1f1f !important;}
+  select option[value="purple"]{background: #91d500 !important;}
+  select option[value="blue"]{background: #ffb400 !important;}
+  select option[value="dark"]{background: #ff6600 !important;}
+}
 /******* 팝업끝 *******/
 
 /*** 반응형 ***/
@@ -9038,10 +9171,6 @@ body:has(#popup_main){padding-right: 0 !important;}
     .col-md-9{width: 100%;}
     .col-md-3{
       width: 100%;
-      /* display: grid;
-      grid-gap: 15px;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: .7fr 1fr; */
       .card{
         padding: 45px 30px 0 !important;
         .home-top-content-content-1>.box>.left{font-size: 18px;}

@@ -44,7 +44,7 @@ cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
 cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
 var lms_domain = "https://tutor.howhymath.com";
 </script>
-<body data-layout="horizontal">
+<body data-layout="horizontal" data-bs-padding-right="" class="modal-open" style="overflow: hidden; padding-right: 8px;">
     <div style="display:none">$$\require{cancel}$$</div>
     <div class="topbar">
         <div class="content-box">
@@ -525,5 +525,473 @@ var lms_domain = "https://tutor.howhymath.com";
             return false;
         }
     </script>
+
+
+    <!-- 일정등록 팝업 시작 -->
+    <div class="modal fade show" id="item_create_popup" tabindex="-1" role="dialog" aria-modal="true" style="padding-right: 8px; display: block;">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content" id="item_create_popup-content">
+                <style>
+                    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+                        color: #333;
+                    }
+                    /*
+                    .select2-search--inline {
+                        display: contents;
+                    }
+                    */
+                    .select2-search__field:placeholder-shown {
+                        width: 100% !important;
+                    }
+                    .repeat-box {
+                        display:none;
+                    }
+                </style>
+                <div class="modal-header">
+                    <div class="left">일정 등록</div>
+                    <img src="https://tutor.howhymath.com/app/img/icon_button_close.png" data-bs-dismiss="modal" aria-label="Close">
+                </div>
+                <form id="form_create" method="post" action="/calendars/create?event_on=2025-02-03">
+                    <div class="modal-body">
+                        <div class="modal-body-head">
+                            <div class="left">기본 정보</div>
+                        </div>
+                        <div class="row">
+                            <table class="modal-table" style="margin-top:5px;">
+                            <colgroup>
+                            <col width="20%">
+                            <col width="30%">
+                            <col width="20%">
+                            <col width="30%">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th>제목<span class="form_star">*</span></th>
+                                <td colspan="3">
+                                    <div>
+                                        <input type="text" title="" name="title" value="" id="fx-form-title" maxlength="512" class="form-control">
+                                    </div>
+                                    <div class="note note-error" id="fx-error-title" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>내용</th>
+                                <td style="text-align:left;" colspan="3">
+                                    <div>
+                                        <textarea title="" name="contents" id="fx-form-contents" rows="2" class="form-control summernote"></textarea>
+                                    </div>
+                                    <div class="note note-error" id="fx-error-contents" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>시작일</th>
+                                <td>
+                                    <div class="day-control">
+                                        <input type="date" title="" name="start_on" value="2025-02-03" id="fx-form-start_on" class="form-control">
+                                    </div>
+                                    <div class="note note-error" id="fx-error-start_on" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                                <th>시작시간</th>
+                                <td>
+                                    <div class="time-control" style="display: none;">
+                                        <input type="time" title="" name="start_time" value="11:53" id="fx-form-start_time" class="form-control">
+                                    </div>
+                                    <div class="note note-error" id="fx-error-start_time" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>종료일</th>
+                                <td>
+                                    <div class="day-control">
+                                        <input type="date" title="" name="end_on" value="2025-02-03" id="fx-form-end_on" class="form-control">
+                                    </div>
+                                    <div class="note note-error" id="fx-error-end_on" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                                <th>종료시간</th>
+                                <td>
+                                    <div class="time-control" style="display: none;">
+                                        <input type="time" title="" name="end_time" value="12:53" id="fx-form-end_time" class="form-control">
+                                    </div>
+                                    <div class="note note-error" id="fx-error-end_time" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>색상</th>
+                                <td>
+                                    <div>
+                                        <select title="" name="event_color_cd" id="fx-form-event_color_cd" class="form-control form-select" style="background-color:#12a4ed;">
+                                            <option style="background-color:#9ba7ca" value="secondary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                            <option value="" style="font-size:1pt;background-color:#fff;" disabled="">&nbsp;</option>
+                                            <option style="background-color:#03d87f" value="success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                            <option value="" style="font-size:1pt;background-color:#fff;" disabled="">&nbsp;</option>
+                                            <option style="background-color:#ffb822" value="warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                            <option value="" style="font-size:1pt;background-color:#fff;" disabled="">&nbsp;</option>
+                                            <option style="background-color:#12a4ed" value="info" selected="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                            <option value="" style="font-size:1pt;background-color:#fff;" disabled="">&nbsp;</option>
+                                            <option style="background-color:#f5325c" value="danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                            <option value="" style="font-size:1pt;background-color:#fff;" disabled="">&nbsp;</option>
+                                            <option style="background-color:#fd3c97" value="pink">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                            <option value="" style="font-size:1pt;background-color:#fff;" disabled="">&nbsp;</option>
+                                            <option style="background-color:#6d81f5" value="purple">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                            <option value="" style="font-size:1pt;background-color:#fff;" disabled="">&nbsp;</option>
+                                            <option style="background-color:#1761fd" value="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                            <option value="" style="font-size:1pt;background-color:#fff;" disabled="">&nbsp;</option>
+                                            <option style="background-color:#1d2c48" value="dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                            <option value="" style="font-size:1pt;background-color:#fff;" disabled="">&nbsp;</option>
+                                        </select>
+                                    </div>
+                                    <!--div><select title="" name="event_color_cd" id="fx-form-event_color_cd" class="form-control form-select"><option value="">-- 색상 --</option><option value="secondary">#9ba7ca</option><option value="success">#03d87f</option><option value="warning">#ffb822</option><option value="info" selected>#12a4ed</option><option value="danger">#f5325c</option><option value="pink">#fd3c97</option><option value="purple">#6d81f5</option><option value="blue">#1761fd</option><option value="dark">#1d2c48</option></select></div-->
+                                    <div class="note note-error" id="fx-error-event_color_cd" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                                <th>종일</th>
+                                <td>
+                                    <div>
+                                        <select title="" name="all_day_yn" id="fx-form-all_day_yn" class="form-control form-select">
+                                            <option value="">-- 종일 --</option>
+                                            <option value="y" selected="">예</option>
+                                            <option value="n">아니오</option>
+                                        </select>
+                                    </div>
+                                    <div class="note note-error" id="fx-error-all_day_yn" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>반복</th>
+                                <td>
+                                    <div>
+                                        <select title="" name="repeat_type_cd" id="fx-form-repeat_type_cd" class="form-control form-select repeat_types">
+                                            <option value="">-- 반복 --</option>
+                                            <option value="none" selected="">사용안함</option>
+                                            <option value="d">매일</option>
+                                            <option value="w">매주</option>
+                                            <option value="mday">매월 지정요일</option>
+                                            <option value="mdate">매월 지정일</option>
+                                            <option value="yday">매년 지정요일</option>
+                                            <option value="ydate">매년 지정일</option>
+                                        </select>
+                                    </div>
+                                    <div class="note note-error" id="fx-error-repeat_type_cd" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                                <th>
+                                </th>
+                                <td>
+                                </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-body-head repeat-box" style="display: none;">
+                            <div class="left">반복 설정</div>
+                        </div>
+                        <input type="hidden" name="repeat_end_cd" value="dat">
+                        <input type="hidden" name="repeat_end_count" value="0">
+                        <div class="row repeat-box" style="display: none;">
+                            <table class="modal-table" style="margin-top:5px;">
+                            <colgroup>
+                            <col width="20%">
+                            <col width="30%">
+                            <col width="20%">
+                            <col width="30%">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td colspan="4">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div>
+                                                <input type="date" title="" name="repeat_start_on" value="2025-02-03" id="fx-form-repeat_start_on" class="form-control">
+                                            </div>
+                                            <div class="note note-error" id="fx-error-repeat_start_on" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1" style="text-align:left;padding-top:15px;">부터</div>
+                                        <div class="col-md-3">
+                                            <div>
+                                                <input type="date" title="" name="repeat_end_on" value="2025-02-03" id="fx-form-repeat_end_on" class="form-control">
+                                            </div>
+                                            <div class="note note-error" id="fx-error-repeat_end_on" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1" style="text-align:left;padding-top:15px;">까지</div>
+                                        <div class="col-md-1" style="text-align:right;padding-top:15px;">매</div>
+                                        <div class="col-sm-1">
+                                            <input type="text" title="" name="repeat_interval" value="1" id="fx-form-repeat_interval" maxlength="512" class="form-control">
+                                            <div class="note note-error" id="fx-error-repeat_interval" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 repeat_text" style="text-align:left;padding-top:15px;">일/주/달/년 마다</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="repeat-control repeat-control-days">
+                                <th>반복 요일 선택</th>
+                                <td colspan="3" style="text-align:center;">
+                                    <div class="btn-group mb-2 mb-lg-0" role="group" aria-label="Basic checkbox toggle button group">
+                                        <input type="checkbox" class="btn-check" name="repeat_mon_yn" id="mon_yn" value="y" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="mon_yn">월</label>
+                                        <input type="checkbox" class="btn-check" name="repeat_tue_yn" id="tue_yn" value="y" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="tue_yn">화</label>
+                                        <input type="checkbox" class="btn-check" name="repeat_wed_yn" id="wed_yn" value="y" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="wed_yn">수</label>
+                                        <input type="checkbox" class="btn-check" name="repeat_thu_yn" id="thu_yn" value="y" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="thu_yn">목</label>
+                                        <input type="checkbox" class="btn-check" name="repeat_fri_yn" id="fri_yn" value="y" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="fri_yn">금</label>
+                                        <input type="checkbox" class="btn-check" name="repeat_sat_yn" id="sat_yn" value="y" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="sat_yn">토</label>
+                                        <input type="checkbox" class="btn-check" name="repeat_sun_yn" id="sun_yn" value="y" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="sun_yn">일</label>
+                                    </div>
+                                    <div class="note note-error" id="fx-error-repeat_by_days" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="repeat-control repeat-control-month">
+                                <th>달선택</th>
+                                <td>
+                                    <div>
+                                        <select title="" name="repeat_by_month" id="fx-form-repeat_by_month" class="form-control form-select">
+                                            <option value="">--달선택--</option>
+                                            <option value="1">1월</option>
+                                            <option value="2">2월</option>
+                                            <option value="3">3월</option>
+                                            <option value="4">4월</option>
+                                            <option value="5">5월</option>
+                                            <option value="6">6월</option>
+                                            <option value="7">7월</option>
+                                            <option value="8">8월</option>
+                                            <option value="9">9월</option>
+                                            <option value="10">10월</option>
+                                            <option value="11">11월</option>
+                                            <option value="12">12월</option>
+                                        </select>
+                                    </div>
+                                    <div class="note note-error" id="fx-error-repeat_by_month" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr class="repeat-control repeat-control-dates">
+                                <th>반복 날자 선택</th>
+                                <td colspan="3" class="repeat_by_dates_parent">
+                                    <div>
+                                        <select class="repeat_by_dates select2-hidden-accessible" name="repeat_by_dates[]" style="width: 100%" multiple="" tabindex="-1" aria-hidden="true">
+                                            <option value="1">1일</option>
+                                            <option value="2">2일</option>
+                                            <option value="3">3일</option>
+                                            <option value="4">4일</option>
+                                            <option value="5">5일</option>
+                                            <option value="6">6일</option>
+                                            <option value="7">7일</option>
+                                            <option value="8">8일</option>
+                                            <option value="9">9일</option>
+                                            <option value="10">10일</option>
+                                            <option value="11">11일</option>
+                                            <option value="12">12일</option>
+                                            <option value="13">13일</option>
+                                            <option value="14">14일</option>
+                                            <option value="15">15일</option>
+                                            <option value="16">16일</option>
+                                            <option value="17">17일</option>
+                                            <option value="18">18일</option>
+                                            <option value="19">19일</option>
+                                            <option value="20">20일</option>
+                                            <option value="21">21일</option>
+                                            <option value="22">22일</option>
+                                            <option value="23">23일</option>
+                                            <option value="24">24일</option>
+                                            <option value="25">25일</option>
+                                            <option value="26">26일</option>
+                                            <option value="27">27일</option>
+                                            <option value="28">28일</option>
+                                            <option value="29">29일</option>
+                                            <option value="30">30일</option>
+                                            <option value="31">31일</option>
+                                        </select>
+                                        <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                        <ul class="select2-selection__rendered">
+                                            <li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="여러개 선택가능" style="width: 0px;"></li>
+                                        </ul>
+                                        </span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                    </div>
+                                    <div class="note note-error" id="fx-error-repeat_by_dates" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="repeat-control repeat-control-dayths">
+                                <th>반복 요일 선택</th>
+                                <td colspan="3" class="repeat_by_dayths_parent">
+                                    <div>
+                                        <select class="repeat_by_dayths select2-hidden-accessible" name="repeat_by_dayths[]" style="width: 100%" multiple="" tabindex="-1" aria-hidden="true">
+                                            <optgroup label="1주">
+                                            <option value="1SU">1주 일요일</option>
+                                            <option value="1MO">1주 월요일</option>
+                                            <option value="1TU">1주 화요일</option>
+                                            <option value="1WE">1주 수요일</option>
+                                            <option value="1TH">1주 목요일</option>
+                                            <option value="1FR">1주 금요일</option>
+                                            <option value="1SA">1주 토요일</option>
+                                            </optgroup>
+                                            <optgroup label="2주">
+                                            <option value="2SU">2주 일요일</option>
+                                            <option value="2MO">2주 월요일</option>
+                                            <option value="2TU">2주 화요일</option>
+                                            <option value="2WE">2주 수요일</option>
+                                            <option value="2TH">2주 목요일</option>
+                                            <option value="2FR">2주 금요일</option>
+                                            <option value="2SA">2주 토요일</option>
+                                            </optgroup>
+                                            <optgroup label="3주">
+                                            <option value="3SU">3주 일요일</option>
+                                            <option value="3MO">3주 월요일</option>
+                                            <option value="3TU">3주 화요일</option>
+                                            <option value="3WE">3주 수요일</option>
+                                            <option value="3TH">3주 목요일</option>
+                                            <option value="3FR">3주 금요일</option>
+                                            <option value="3SA">3주 토요일</option>
+                                            </optgroup>
+                                            <optgroup label="4주">
+                                            <option value="4SU">4주 일요일</option>
+                                            <option value="4MO">4주 월요일</option>
+                                            <option value="4TU">4주 화요일</option>
+                                            <option value="4WE">4주 수요일</option>
+                                            <option value="4TH">4주 목요일</option>
+                                            <option value="4FR">4주 금요일</option>
+                                            <option value="4SA">4주 토요일</option>
+                                            </optgroup>
+                                            <optgroup label="마지막주">
+                                            <option value="-1SU">마지막주 일요일</option>
+                                            <option value="-1MO">마지막주 월요일</option>
+                                            <option value="-1TU">마지막주 화요일</option>
+                                            <option value="-1WE">마지막주 수요일</option>
+                                            <option value="-1TH">마지막주 목요일</option>
+                                            <option value="-1FR">마지막주 금요일</option>
+                                            <option value="-1SA">마지막주 토요일</option>
+                                            </optgroup>
+                                        </select>
+                                        <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                        <ul class="select2-selection__rendered">
+                                            <li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="여러개 선택가능" style="width: 0px;"></li>
+                                        </ul>
+                                        </span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                    </div>
+                                    <div class="note note-error" id="fx-error-repeat_by_dayths" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;">
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-bottom-btn-box">
+                            <button type="button" class="cancle-btn" data-bs-dismiss="modal">취소하기</button>
+                            <button type="submit" class="save-btn">저장하기</button>
+                        </div>
+                    </div>
+                </form>
+                <script type="text/javascript">
+                    $( document ).ready(function() {
+                        select2_init();
+                        show_hide_box( 'none' );
+                        show_hide_time( 'y' );
+                        $(".repeat_by_dates").select2({
+                            dropdownParent: $(".repeat_by_dates_parent").closest('div'),
+                            allowClear: true,
+                            placeholder: '여러개 선택가능',
+                            language: "ko",
+                            width: '100%'
+                        });
+                        $(".repeat_by_dayths").select2({
+                            dropdownParent: $(".repeat_by_dayths_parent").closest('div'),
+                            allowClear: true,
+                            placeholder: '여러개 선택가능',
+                            language: "ko",
+                            width: '100%'
+                        });
+                        $('#fx-form-event_color_cd').on('change', function() {
+                            $(this).css("background-color", $('#fx-form-event_color_cd option:selected').css('background-color') );
+                        });
+                        $('#fx-form-all_day_yn').on('change', function() {
+                            show_hide_time( $(this).val() );
+                        });
+                        $('#fx-form-repeat_type_cd').on('change', function() {
+                            show_hide_box( $(this).val() );
+                        });
+                    });
+                    function show_hide_time( all_day_yn )
+                    {
+                        if( all_day_yn == 'y' ) $(".time-control").hide();
+                        else $(".time-control").show();
+                    }
+                    function show_hide_box( repeat_type_cd )
+                    {
+                        if( repeat_type_cd == 'd' )
+                        {
+                            $(".repeat-box").show();
+                            $(".repeat-control").hide();
+                            $(".repeat_text").html( "일 마다");
+                        }
+                        else if( repeat_type_cd == 'w' )
+                        {
+                            $(".repeat-box").show();
+                            $(".repeat-control").hide();
+                            $(".repeat-control-days").show();
+                            $(".repeat_text").html( "주 마다");
+                        }
+                        else if( repeat_type_cd == 'mday' )
+                        {
+                            $(".repeat-box").show();
+                            $(".repeat-control").hide();
+                            $(".repeat-control-dayths").show();
+                            $(".repeat_text").html( "달 마다");
+                        }
+                        else if( repeat_type_cd == 'mdate' )
+                        {
+                            $(".repeat-box").show();
+                            $(".repeat-control").hide();
+                            $(".repeat-control-dates").show();
+                            $(".repeat_text").html( "달 마다");
+                        }
+                        else if( repeat_type_cd == 'yday' )
+                        {
+                            $(".repeat-box").show();
+                            $(".repeat-control").hide();
+                            $(".repeat-control-month").show();
+                            $(".repeat-control-dayths").show();
+                            $(".repeat_text").html( "년 마다");
+                        }
+                        else if( repeat_type_cd == 'ydate' )
+                        {
+                            $(".repeat-box").show();
+                            $(".repeat-control").hide();
+                            $(".repeat-control-month").show();
+                            $(".repeat-control-dates").show();
+                            $(".repeat_text").html( "년 마다");
+                        }
+                        if( repeat_type_cd == 'none' )
+                        {
+                            $(".day-control").show();
+                            $(".repeat-box").hide();
+                        }
+                        else
+                            $(".day-control").hide();
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show"></div>
+    <!-- 일정등록 팝업 끝 -->
     </body>
 </html>
