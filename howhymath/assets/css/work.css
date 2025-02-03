@@ -2564,12 +2564,31 @@ span.fancytree-active span.fancytree-title {
     }
   }
 }
+
+.fas{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  &::before{
+    content: '';
+    width: 20px;
+    height: 16px;
+    font-size: 16px;
+    background: no-repeat center;
+  }
+  &.fa-user-friends::before{background-image: url(../hmath/img/icon_calendar_friends.png);}/*재원생?*/
+  &.fa-user-plus::before{background-image: url(../hmath/img/icon_calendar_plus.png);}/*출결인원?*/
+  &.fa-book::before{background-image: url(../hmath/img/icon_calendar_book.png);}/*교재*/
+  &.fa-stethoscope::before{background-image: url(../hmath/img/icon_calendar_stethoscope.png);}/*문제은행*/
+  &.fa-home::before{background-image: url(../hmath/img/icon_calendar_home.png);}/*숙제*/
+  &.fa-calendar::before{background-image: url(../hmath/img/icon_calendar_more.png);}/*일정*/
+}
+
 #calendar{
   .fc-button-primary{
     background-color: var(--main-color-blue);
     border-color: var(--main-color-blue);
   }
-
   /* 툴바 */
   .fc-toolbar.fc-header-toolbar{
     padding-top: 66px;
@@ -2646,16 +2665,6 @@ span.fancytree-active span.fancytree-title {
       font-size: 12px;
       font-weight: 400;
       border-radius: 20px;
-      .fas{
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        &::before{
-          width: 16px;
-          height: 16px;
-          font-size: 16px;
-        }
-      }
       .fc-time{padding-right: 4px;}
     }
     .bg-soft-study{border-width: 0 !important;}
@@ -2669,7 +2678,7 @@ span.fancytree-active span.fancytree-title {
         display: block;
         width: 16px;
         height: 16px;
-        background: pink;
+        background: url(../hmath/img/icon_calendar_more.png) no-repeat center;/* 캘린더 더보기 아이콘 */
       }
     }
   }
