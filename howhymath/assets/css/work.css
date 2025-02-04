@@ -6609,7 +6609,10 @@ td > .calendar-box{
   }
 
   /*step cols*/
-  .row > .table-container{padding: 0 !important;}
+  .row > .table-container{
+    padding: 0 !important;
+    height: auto !important;
+  }
   .table-header{
     border-color: var(--main-color-blue);
     border-bottom-width: 2px;
