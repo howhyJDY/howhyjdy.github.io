@@ -5288,7 +5288,7 @@ td > .calendar-box{
         margin-bottom: 0 !important;
     }
   }
-  & > .col-md-4{
+  /* & > .col-md-4{
     gap: 8px 0;
     padding: 35px !important;
     h4{line-height: 30px;}
@@ -5311,6 +5311,114 @@ td > .calendar-box{
     }
     .row:nth-child(4){order: -2;}
     .row:nth-child(5){order: -1;}
+  } */
+  & > .col-md-4{
+    padding: 45px 30px !important;
+    .row{
+      padding-bottom: 30px !important;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #c9c9c9;
+      &:last-child{
+        border-bottom-width: 0;
+        margin-bottom: 0;
+        padding-bottom: 0 !important;
+      }
+      .col-md-6:last-child{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .col-md-12 h4{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #6e72ff;
+      &::before{
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #6e72ff;
+      }
+      &~ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        padding-left: 105px;
+        min-height: 95px;
+        li{
+          display: flex;
+          gap: 3px;
+          font-size: 13px;
+          line-height: 24px;
+          font-weight: 500;
+          span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'SUTE';
+            font-size: 11px;
+            text-align: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            color: #fff;
+            background: #6e72ff;
+            margin-top: 4px;
+          }
+        }
+        &::before{
+          content: '';
+          display: block;
+          width: 95px;
+          height: 95px;
+          background: url(../hmath/img/img_payments01.png) no-repeat center;
+          position: absolute;
+          top: 50%; left: 0;
+          transform: translateY(-50%);
+        }
+        &+ul::before{
+          background-image: url(../hmath/img/img_payments02.png);
+        }
+      }
+    }
+    h4{
+      font-size: 18px;
+      line-height: 32px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      &+p{
+        font-size: 15px;
+        line-height: 18px;
+        font-weight: 400;
+        margin-bottom: 0;
+        word-break: keep-all;
+        b{font-weight: inherit;}
+      }
+    }
+    .mbtn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      background: var( --main-color-blue);
+      border-radius: 50px;
+      letter-spacing: -.5px;
+      padding: 0;
+      &::after{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: url(../hmath/img/icon_right_arrow_white.png) no-repeat center;
+      }
+    }
   }
 }
 
