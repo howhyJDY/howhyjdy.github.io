@@ -5381,9 +5381,7 @@ td > .calendar-box{
           top: 50%; left: 0;
           transform: translateY(-50%);
         }
-        &+ul::before{
-          background-image: url(../hmath/img/img_payments02.png);
-        }
+        &+ul::before{background-image: url(../hmath/img/img_payments02.png);}
       }
     }
     h4{
@@ -5411,6 +5409,9 @@ td > .calendar-box{
       border-radius: 50px;
       letter-spacing: -.5px;
       padding: 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
       &::after{
         content: '';
         display: block;
