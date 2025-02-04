@@ -204,11 +204,12 @@ var lms_domain = "https://tutor.howhymath.com";
 					<input type="hidden" name="sa-m" value="5">
 					<input type="hidden" name="sa-l" value="3">
 					<input type="hidden" name="grade_cd" value="">
+                    <!--250131 시험지난이도, 문항수 구분 수정 및 괄호삭제 시작-->
 					<div class="row">
-						<div class="col-sm-12 sub_title">[시험지 난이도 &amp; 문항수]</div>
+						<div class="col-sm-12 sub_title">시험지 난이도</div>
 					</div>
-					<div class="row" style="padding: 10px;">
-						<div class="col-sm-12">
+					<div class="row border-bottom" style="padding: 10px;"><!--250131 컨텐츠 구분용 border-bottom 클래스 추가-->
+                        <div class="col-sm-12">
 							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
 								<input type="radio" class="btn-check" name="difficulty" id="btnradio1-1" value="h" autocomplete="off">
 								<label class="btn btn-outline-success" for="btnradio1-1">상</label>
@@ -219,7 +220,11 @@ var lms_domain = "https://tutor.howhymath.com";
 							</div>
 						</div>
 					</div>
-					<div class="row" style="padding: 0 10px 10px 10px;">
+
+                    <div class="row">
+						<div class="col-sm-12 sub_title">문항수</div>
+					</div>
+					<div class="row border-bottom" style="padding: 0 10px 10px 10px;"><!--250131 컨텐츠 구분용 border-bottom 클래스 추가-->
 						<div class="col-sm-12">
 							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
 								<input type="radio" class="btn-check" name="question_count" id="btnradio1-2" value="10" autocomplete="off">
@@ -235,11 +240,13 @@ var lms_domain = "https://tutor.howhymath.com";
 							</div>
 						</div>
 					</div>
+                    <!--250131 시험지난이도, 문항수 구분 수정 끝-->
 					<br>
 					<div class="row">
-						<div class="col-sm-12 sub_title">[회차]</div>
+						<!-- <div class="col-sm-12 sub_title">[회차]</div> 250131 모든 sub_title 대괄호 삭제 -->
+						<div class="col-sm-12 sub_title">회차</div>
 					</div>
-					<div class="row" style="padding: 10px;">
+					<div class="row border-bottom" style="padding: 10px;"><!--250131 컨텐츠 구분용 border-bottom 클래스 추가-->
 						<div class="col-sm-12">
 							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
 								<input type="radio" class="btn-check" name="round" value="1" id="btnradio1-3" autocomplete="off" checked>
@@ -257,9 +264,10 @@ var lms_domain = "https://tutor.howhymath.com";
 					</div>
 					<br>
 					<div class="row">
-						<div class="col-sm-12 sub_title">[문항출제기준]</div>
+						<!-- <div class="col-sm-12 sub_title">[문항출제기준]</div> -->
+						<div class="col-sm-12 sub_title">문항출제기준</div>
 					</div>
-					<div class="row" style="padding: 10px;">
+					<div class="row border-bottom" style="padding: 10px;"><!--250131 컨텐츠 구분용 border-bottom 클래스 추가-->
 						<div class="col-sm-12">
 							<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width:100%">
 								<input type="radio" class="btn-check" name="gubun" value="l" id="btnradio1-4" autocomplete="off" checked>
@@ -271,11 +279,13 @@ var lms_domain = "https://tutor.howhymath.com";
 					</div>
 					<br>
 					<div class="row">
-						<div class="col-sm-12 sub_title">[학년선택]</div>
+						<!-- <div class="col-sm-12 sub_title">[학년선택]</div> -->
+						<div class="col-sm-12 sub_title">학년선택</div>
 					</div>
 					<div class="row" style="padding: 10px;">
 						<div class="col-sm-12">
-							<초등>
+							<!-- <초등> 250131 태그 추가-->
+							<div class="sub_title2">초등</div>
 						</div>
 					</div>
 					<div class="row" style="padding: 0 10px 10px 10px;">
@@ -316,7 +326,8 @@ var lms_domain = "https://tutor.howhymath.com";
 					</div>
 					<div class="row" style="padding: 10px;">
 						<div class="col-sm-12">
-							<중등>
+							<!-- <중등> 250131 태그 추가-->
+							<div class="sub_title2">중등</div>
 						</div>
 					</div>
 					<div class="row" style="padding: 0 10px 10px 10px;">
@@ -333,7 +344,8 @@ var lms_domain = "https://tutor.howhymath.com";
 					</div>
 					<div class="row" style="padding: 10px;">
 						<div class="col-sm-12">
-							<고등>
+							<!-- <고등> 250131 태그 추가-->
+							<div class="sub_title2">고등</div>
 						</div>
 					</div>
 					<div class="row" style="padding: 0 10px 10px 10px;">
@@ -358,7 +370,8 @@ var lms_domain = "https://tutor.howhymath.com";
 					</div>
 					<div class="row" style="padding: 10px;">
 						<div class="col-sm-12">
-							<2022 개정>
+							<!-- <2022 개정> 250131 태그 추가-->
+							<div class="sub_title2">2022 개정</div>
 						</div>
 					</div>
 					<div class="row" style="padding: 0 10px 10px 10px;">
@@ -680,7 +693,8 @@ var lms_domain = "https://tutor.howhymath.com";
 
 
 							<div id="round_container">
-                                <div class="session-container">[1회차]</div>
+                                <!-- <div class="session-container">[1회차]</div> 250131 괄호 삭제 -->
+                                <div class="session-container">1회차</div>
                                 <div class="cc-tree-control category-collection lecture-0" data-lecture_index="0" style="min-height: 100px;">
                                     <ul class="list-0">
                                         <li data-category_id="1" data-lecture="0" data-chapter="MA1501A01"><span class="white"><a href="#none" id="collection-opener-1" class="opener collection-opener"><i class="fas fa-plus"></i></a> &nbsp;01. 9까지의 수<a href="#none" class="tail btn-remove-x"> &nbsp;<i class="far fa-window-close"></i></a></span>
@@ -840,12 +854,14 @@ var lms_domain = "https://tutor.howhymath.com";
                 function set_round_html()
                 {
                     var round = $("input[name='round']:checked").val();
-                    var round_buttons = '<div class="middle-box" onclick="select_chapter_same();">선택 단원을 모든 회차에 동일 적용 <img src="/app/img/icon_right_weight_arrow.png" alt="" /></div>';
+                    //var round_buttons = '<div class="middle-box" onclick="select_chapter_same();">선택 단원을 모든 회차에 동일 적용 <img src="/app/img/icon_right_weight_arrow.png" alt="" /></div>'; 250131 이미지 변경
+                    var round_buttons = '<div class="middle-box" onclick="select_chapter_same();">선택 단원을 모든 회차에 동일 적용 <img src="../assets/hmath/img/icon_right_arrow.png" alt="" /></div>';
                     var round_container = '';
                     for( var i=0 ; i<round ; i++ )
                     {
                         var display = i + 1;
-                        round_buttons += '<div class="middle-box" onclick="select_chapter_dir('+i+');">선택 단원을 '+display+'회차에 적용 <img src="/app/img/icon_right_weight_arrow.png" alt="" /></div>';
+                        // round_buttons += '<div class="middle-box" onclick="select_chapter_dir('+i+');">선택 단원을 '+display+'회차에 적용 <img src="/app/img/icon_right_weight_arrow.png" alt="" /></div>'; 250131 이미지 변경
+                        round_buttons += '<div class="middle-box" onclick="select_chapter_dir('+i+');">선택 단원을 '+display+'회차에 적용 <img src="../assets/hmath/img/icon_right_arrow.png" alt="" /></div>';
                         round_container += '<div class="session-container"> [' + display + '회차] </div>'
                                         + "<div class='cc-tree-control category-collection lecture-" + i + "' data-lecture_index='"
                                     + i + "' style='min-height: 100px;'><ul class='list-" + i + "'></ul></div>";

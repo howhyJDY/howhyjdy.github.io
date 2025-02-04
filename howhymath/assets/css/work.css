@@ -2417,6 +2417,25 @@ span.fancytree-active span.fancytree-title {
 /* 캘린더 페이지 시작 */
 .row:has(#calendar){
   position: relative;
+  .fas{
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    &::before{
+      content: '';
+      width: 20px;
+      height: 16px;
+      font-size: 16px;
+      background: no-repeat center;
+    }
+    &.fa-user-friends::before{background-image: url(../hmath/img/icon_calendar_friends.png);}/*재원생?*/
+    &.fa-user-plus::before{background-image: url(../hmath/img/icon_calendar_plus.png);}/*출결인원?*/
+    &.fa-book::before{background-image: url(../hmath/img/icon_calendar_book.png);}/*교재*/
+    &.fa-stethoscope::before{background-image: url(../hmath/img/icon_calendar_stethoscope.png);}/*문제은행*/
+    &.fa-home::before{background-image: url(../hmath/img/icon_calendar_home.png);}/*숙제*/
+    &.fa-calendar::before{background-image: url(../hmath/img/icon_calendar_more.png);}/*일정*/
+  }
+
   .table_icons{
     position: absolute;
     top: 140px; left: 30px;
@@ -2563,25 +2582,6 @@ span.fancytree-active span.fancytree-title {
       font-weight: 700;
     }
   }
-}
-
-.fas{
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  &::before{
-    content: '';
-    width: 20px;
-    height: 16px;
-    font-size: 16px;
-    background: no-repeat center;
-  }
-  &.fa-user-friends::before{background-image: url(../hmath/img/icon_calendar_friends.png);}/*재원생?*/
-  &.fa-user-plus::before{background-image: url(../hmath/img/icon_calendar_plus.png);}/*출결인원?*/
-  &.fa-book::before{background-image: url(../hmath/img/icon_calendar_book.png);}/*교재*/
-  &.fa-stethoscope::before{background-image: url(../hmath/img/icon_calendar_stethoscope.png);}/*문제은행*/
-  &.fa-home::before{background-image: url(../hmath/img/icon_calendar_home.png);}/*숙제*/
-  &.fa-calendar::before{background-image: url(../hmath/img/icon_calendar_more.png);}/*일정*/
 }
 
 #calendar{
@@ -6593,73 +6593,162 @@ td > .calendar-box{
   transform: rotate(90deg);
 }
 
-/* 241231 출제마법사 시험지만들기 */
+/* 241231 250131 출제마법사 시험지만들기 */
 .page-content:has(.step-title){
-  .step-title{color: var(--main-color-green);}
-  .row{
-    margin-top: -1px;
-    &:has(.sub_title){
-      margin-top: 0;
-      background: transparent;
-      padding: 0 !important;
-    }
-    .col-sm-12:only-child{
-      padding: 4px 0 2px;
-      font-weight: 500;
-    }
+  .step-title{
+    color: var(--main-color-blue);
+    padding: 28px 20px 18px;
+    line-height: 1;
   }
-  .table-header{border-color: var(--main-color-green);}
+  .row{
+    margin-top: 0;
+    background: transparent !important;
+    padding: 0 !important;
+    .col-sm-12:only-child{font-weight: 500;}
+    &.border-bottom{border-color: #dfdfdf !important;}
+  }
+
+  /*step cols*/
+  .row > .table-container{padding: 0 !important;}
+  .table-header{
+    border-color: var(--main-color-blue);
+    border-bottom-width: 2px;
+  }
   .sub_title{
-    font-size: 16px;
-    padding: 0;
+    font-size: 15px;
+    padding: 20px 20px 0;
     margin-bottom: 10px;
     border-bottom-width: 0;
     font-weight: 600;
   }
+  .sub_title2{
+    padding: 0 20px;
+    color: #3a6f8b;
+    font-family: 'SUTE';
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
   .btn-group{
+    gap: 8px;
+    padding: 0 20px 20px;
     input[type="radio"] + label{
-      border-color: var(--main-color-green-dark);
+      border-color: #dfdfdf;
       font-family: 'SUIT';
       font-size: 14px;
-      color: #333;
+      color: #666;
       border-radius: 0;
       padding: 4px 0;
       font-feature-settings: "tnum";
+      border-radius: 5px;
       &:hover, &:active{
-        background-color: var(--main-color-green);
-        color: #fff;
+        background-color: #c9f5ff;
+        border-color: #98e2f3;
+        color: #0098ba;
+        font-weight: 700;
         box-shadow: none;
       }
     }
     input[type="radio"] + label::before{content: none;}
     input[type="radio"]:checked + label{
-      background-color: var(--main-color-green);
-      color: #fff;
+      background-color: #c9f5ff;
+      border-color: #98e2f3;
+      color: #0098ba;
+      font-weight: 700;
       box-shadow: none;
     }
   }
-  .middle-container{margin-top: 0;}
-  .middle-container > .middle-box{padding: 10px !important;}
+  .middle-container{
+    margin-top: 0;
+    padding: 0 20px;
+  }
+  .middle-container > .middle-box{
+    margin: 5px 0;
+    padding: 10px 0 !important;
+    border: 2px solid #36c5e5;
+    border-radius: 30px;
+    font-weight: 500;
+    &:hover{
+      background: #c9f5ff;
+      color: #0099bb;
+    }
+  }
   .add_question{
-    width: 100%;
+    display: block;
+    width: calc(100% - 40px);
     color: #fff;
+    margin: 0 auto;
+    background: var(--main-color-blue2);
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 500;
+    padding: 15px 20px;
+    border-radius: 50px;
+  }
+
+  .session-container{
+    display: inline-block;
+    border-bottom-width: 0;
+    color: #fff;
+    font-weight: 500;
+    background: #36c5e5;
+    margin-left: 20px;
+    padding: 2px 15px;
+    border-radius: 3px 12px 12px 3px;
+  }
+
+  .fas, .far{
+    &.fa-minus{transform: rotate(90deg);}
+    &::before{
+      content: '';
+      display: block;
+      width: 14px;
+      height: 14px;
+      background: no-repeat center;
+    }
+    &.fa-plus::before{background-image: url(../hmath/img/icon_right_arrow.png);}
+    &.fa-minus::before{background-image: url(../hmath/img/icon_right_arrow.png);}
+    &.fa-window-close::before{
+      width: 20px;
+      height: 20px;
+      background-image: url(../hmath/img/icon_close.png);
+    }
+  }
+
+  .category_wrap{
+    .category-selector{padding: 0 !important;}
   }
 }
 /* 트리영역 */
+.cc-tree-control:not(:last-child)>ul{
+  position: relative;
+  &::after{
+    content: '';
+    display: block;
+    width: calc(100% - 40px);
+    height: 1px;
+    position: absolute;
+    bottom: 0; left: 20px;
+    background: #d0d0d0;
+  }
+}
 .cc-tree-control .opener{
   width: 24px !important;
   height: 24px;
   font-size: 12px !important;
   vertical-align: middle;
+  &:empty{display: none !important;}
 }
 .cc-tree-control .white{
   display: flex !important;
-  padding: 8px 15px !important;
+  padding: 4px 15px !important;
   font-size: 14px !important;
   label{
     margin-top: 4px;
     margin-right: 6px;
   }
+  label:has(input[type="checkbox"]:only-child):has(input:checked){background-image: url(../hmath/img/icon_chk_on2.svg);}
 }
 .cc-tree-control .white a{
   display: inline-flex !important;
@@ -6667,9 +6756,11 @@ td > .calendar-box{
   justify-content: center;
   &.btn-remove-x{margin-left: 4px;}
 }
+.cc-tree-control >ul{border-width: 0 !important;}
 .cc-tree-control >ul>li>ul {padding: 0 0 5px 15px !important;}
 .cc-tree-control >ul>li>ul>li>ul {padding: 0 0 0 30px !important;}
 .cc-tree-control >ul>li>ul>li>ul>li {padding: 0 !important;}
+.cc-tree-control >ul>li + li > .white{border-top-width: 0 !important;}
 /* //241231 출제마법사 시험지만들기 */
 
 /* 임시 스크롤 영역 */
