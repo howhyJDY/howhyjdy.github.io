@@ -299,6 +299,7 @@ input[type=radio]{
   font-size: 12px !important;
   margin: 0 !important;
   color: #4b4b4b !important;
+  font-weight: 800 !important;
 }
 
 .dropdown-menu{
@@ -5360,7 +5361,7 @@ td > .calendar-box{
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'SUTE';
+            font-family: 'SUIT';
             font-size: 11px;
             text-align: center;
             width: 18px;
@@ -6736,7 +6737,7 @@ td > .calendar-box{
   .sub_title2{
     padding: 0 20px;
     color: #3a6f8b;
-    font-family: 'SUTE';
+    font-family: 'SUIT';
     font-size: 14px;
     line-height: 1.2;
     font-weight: 600;
@@ -7646,7 +7647,7 @@ span.plus {
   width: 95%;
   /* max-height: 250px; */
   overflow: hidden;
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }
 
 .white-container .left .img-box img {
@@ -7762,6 +7763,185 @@ span.plus {
   border-bottom: 1px solid #E5E5E5;
 }
 /* 주문결제관리 > 유가상품 > 상세보기 END */
+
+/* 학습자료 > 상세보기 시작 */
+.page-details{
+  .page-title-box{
+    position: relative;
+    .gbtn{
+      position: absolute;
+      top: 110px; right: 50px;
+      z-index: 1;
+      background: var(--main-color-blue);
+      color: #fff;
+      border-radius: 5px;
+      font-size: 14px;
+      line-height: 1;
+      height: auto;
+      padding: 10px 20px;
+    }
+  }
+  .white-container{
+    gap: 23px;
+    background: transparent;
+    .left, .right{
+      background: #fff;
+      border-radius: 10px;
+      position: relative;
+    }
+    .left{
+      padding: 150px 50px 0;
+      gap: 30px;
+      .img-box{
+        width: 100%;
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+      .content-container{
+        .content-box{
+          padding: 40px 0 60px;
+          width: auto;
+          .grid{
+            margin-bottom: 5px;
+            .title{
+              font-size: 14px;
+              font-weight: 600;
+            }
+            .content{font-size: 14px;}
+          } 
+        }
+        .row{
+          width: 100%;
+          hr{display: none;}
+          br{display: none;}
+          .check-btn{
+            width: 100%;
+            background: var(--main-color-green);
+            color: #fff;
+            border-radius: 4px;
+            font-family: 'SUIT';
+            font-size: 14px;
+            line-height: 1;
+            font-weight: 600;
+            .far{display: none;}
+          }
+        }
+      }
+    }
+    .right{
+      padding: 55px 50px;
+      div{
+        height: auto;
+        border-width: 0;
+        padding: 15px 25px;
+        &:not(:first-child){
+          border-left: 1px solid #dcdcdc;
+          border-right: 1px solid #dcdcdc;
+          position: relative;
+          &::before{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: url(../hmath/img/line_dotted2.png) repeat-x;
+            position: absolute;
+            top: 0; left: 0;
+          }
+        }
+        &:nth-child(2){
+          border-radius: 9px 9px 0 0;
+          border-top: 1px solid #dcdcdc;
+        }
+        &:last-child{
+          border-radius: 0 0 9px 9px;
+          border-bottom: 1px solid #dcdcdc;
+        }
+      }
+      .top{
+        padding: 0;
+        font-family: 'SUIT';
+        font-size: 20px;
+        line-height: 34px;
+        font-weight: 600;
+        gap: 5px;
+        margin-bottom: 10px;
+        &::before{
+          content: '';
+          display: block;
+          width: 31px;
+          height: 31px;
+          background: url(../hmath/img/icon_details_list.png) no-repeat center;
+        }
+      }
+      .chapter{
+        background: #f8f8f8;
+        font-size: 18px;
+        font-weight: 600;
+        border-top: 1px solid #dcdcdc;
+        border-bottom: 1px solid #dcdcdc;
+        &::before{content: none !important;}
+        &+.section::before{content: none;}
+      }
+      .section{
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--main-color-blue);
+      }
+      .subsection-child{
+        div{
+          padding: 0;
+          border-width: 0;
+          &::before{content: none;}
+          &:first-child{
+            padding-left: 25px;
+            padding-right: 5px;
+            font-size: 14px;
+            gap: 5px;
+            align-items: flex-start;
+            .far::before{
+              content: '';
+              display: inline-block;
+              width: 16px;
+              height: 20px;
+              font-size: 16px;
+              background: url(../hmath/img/icon_calendar_book.png) no-repeat center;
+              vertical-align: middle;
+            }
+          }
+          &:last-child{gap: 13px !important;}
+        }
+      }
+    }
+    .main-title{
+      position: absolute;
+      top: 50px; left: 50px;
+      width: calc(100% - 100px);
+      text-align: center;
+      padding: 15px !important;
+      background: #ebfbf6;
+      font-family: 'SUIT';
+      font-size: 22px !important;
+      line-height: 1.2 !important;
+      color: #187e5b !important;
+    }
+    .icon-box{
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      gap: 2px;
+      flex-shrink: 0;
+      .far{
+        font: "Noto Sans KR", "SUIT", "Pretendard", sans-serif;
+        font-size: 12px;
+        &.fa-file-pdf:before{content: 'PDF';}
+      }
+    }
+  }
+}
+/* 학습자료 > 상세 끝 */
+
 
 /* 프린트용 학생리포트 START */
 .page-wrapper-print{
@@ -9321,6 +9501,17 @@ body:has(#popup_main){padding-right: 0 !important;}
             padding: 0 30px 50px;
           }
         }
+      }
+    }
+  }
+
+  /* 학습자료 > 상세보기 */
+  .page-details{
+    & .white-container {
+      .left{
+        display: flex;
+        flex-direction: column;
+        .content-container .content-box{padding: 0 0 30px;}
       }
     }
   }
