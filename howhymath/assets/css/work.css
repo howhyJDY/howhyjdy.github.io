@@ -9284,6 +9284,7 @@ html:has(.page-memo){
 }
 
 /* 분석표 > 학생선택 > 종합(단원별 학습분석) */
+html:has(.report-header){min-width: auto;}
 .page-wrapper:has(.report-header){
   max-width: 100vw !important;
   margin: 0;
@@ -9821,9 +9822,6 @@ body:has(#popup_main){padding-right: 0 !important;}
       width: 170px !important;
       position: static;
   }
-
-  /* 분석표 > 학생선택 > 종합(단원별 학습분석) */
-  .page-wrapper:has(.report-header){max-width: none !important;}
 }
 
 @media (max-width:992px){
