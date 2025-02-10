@@ -2865,7 +2865,7 @@ span.fancytree-active span.fancytree-title {
 .page-studylist{
   .study-management-header{
     border-bottom-width: 0;
-    .mbtn{width: 140px !important;}
+    .mbtn{width: 120px !important;}
   }
   .container-fluid  > .row:has(.col-sm-12):has(.white) .row:has(.col-sm-12):last-child .white{padding-bottom: 40px !important;}
   .col-sm-9 > .row{
@@ -3342,6 +3342,7 @@ span.fancytree-active span.fancytree-title {
 
 /* 관리 > 교사/반관리 START*/
 .page-teachers{
+  #form_search .row{width: 100%;}
   .table colgroup col:nth-child(3){min-width: 130px;}
   .table colgroup col:nth-child(4),
   .table colgroup col:nth-child(5),
@@ -3404,7 +3405,16 @@ span.fancytree-active span.fancytree-title {
       flex: none;
     }
   }
-  #form_search .row *{flex: 1;}
+  #form_search .row *{
+    flex: 1;
+    width: fit-content;
+    &#fx-form-sv_keyword{width: 100%;}
+    .mbtn{
+      width: 30px;
+      flex: none;
+      
+    }
+  }
 
   /* 학교관리팝업 > 목록적용버튼 */
   .table-container > .row:not(:has(.search-head)) .mbtn{
@@ -3740,9 +3750,9 @@ span.fancytree-active span.fancytree-title {
       .fa-search:before{
         content: '';
         display: block;
-        width: 20px;
-        height: 20px;
-        background: url(../hmath/img/icon_search_gray.svg) no-repeat center / cover;
+        width: 22px;
+        height: 22px;
+        background: url(../hmath/img/icon_search_gray.svg) no-repeat center / 20px auto;
       }
     }
   }
@@ -4060,12 +4070,14 @@ span.fancytree-active span.fancytree-title {
 .study-management-header > .left {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 5px;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   color: var(--main-color-blue);
+  padding-right: 10px;
   svg{display: block;}
   .form-select{margin-left: 5px;}
   &:has(div:only-child){color: #222;}
@@ -9494,6 +9506,10 @@ html:has(.page-memo){
       border-width: 3px 0px 3px 5.196px;
       border-color: transparent transparent transparent var(--main-color-blue);
     }
+  }
+  .modal-bottom-btn-box {
+    padding-top: 0;
+    border-top-width: 0;
   }
 }
 
