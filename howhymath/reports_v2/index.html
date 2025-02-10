@@ -599,7 +599,8 @@ var lms_domain = "https://tutor.howhymath.com";
 						}
 						function show_report( id )
 						{
-							var url = "/reports_v2/show?ids=" + id;
+							// var url = "/reports_v2/show?ids=" + id;
+							var url = "./show.html";
 							fx_popup_window( url , { name: 'popup_report_show', width: 960, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
 						}
 						function report_detail_popup( student_id )
