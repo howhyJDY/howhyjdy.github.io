@@ -1853,7 +1853,7 @@ body:has(.login-container){
   background-color: transparent;
   word-break: keep-all;
 }
-.table .drop_down td:first-child{vertical-align: top;}
+.table .drop_down td:first-child{vertical-align: middle;}
 .table .drop_down .drop-btn{
   font-weight: 700;
   b{font-weight: inherit;}
@@ -3877,7 +3877,7 @@ span.fancytree-active span.fancytree-title {
   }
 }
 .tabs{
-  background-color: #F4F4F4;
+  /* background-color: #F4F4F4; */
   .nav{
     width: auto !important;
     gap: 0;
@@ -5575,14 +5575,17 @@ td > .calendar-box{
 }
 
 /* .notice-box .table thead{background: var(--table-main-color);} */
-.page-notices .table td{
-  button{
-    border-width: 0;
-    background: #258172;
-    color: #fff;
-    border-radius: 50px !important;
+.page-notices{
+  .table td{
+    button{
+      border-width: 0;
+      background: #258172;
+      color: #fff;
+      border-radius: 50px !important;
+    }
+    center{margin-left: -12%;}
   }
-  center{margin-left: -12%;}
+  .table .drop_down td:first-child {vertical-align: top;}
 }
 
 
@@ -6196,6 +6199,7 @@ html:has(#report_box){min-width: auto;}
       font-size: 14px !important;
     }
   }
+  #pie1>svg>g:first-of-type text{fill: #fff;}
 }
 /* 학습리포트 END */
 
@@ -7456,7 +7460,10 @@ html:has(#report_box){min-width: auto;}
         background: currentColor;
       }
     }
-    .col-sm-8{width: fit-content;}
+    .col-sm-8{
+      width: fit-content;
+      .day-control{width: 100%;}
+    }
   }
 }
 /* 학생지정 modal END */
@@ -9947,7 +9954,7 @@ body:has(#popup_main){padding-right: 0 !important;}
 
 /* 캘린더>일정등록 팝업 */
 #item_create_popup{
-  select{background: transparent;}
+  select{background-image: transparent;}
   select option[value="secondary"]{background: #990099 !important;}
   select option[value="success"]{background: #ff30ff !important;}
   select option[value="warning"]{background: #6165ff !important;}
