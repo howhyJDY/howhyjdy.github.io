@@ -854,14 +854,14 @@ var lms_domain = "https://tutor.howhymath.com";
                 function set_round_html()
                 {
                     var round = $("input[name='round']:checked").val();
-                    //var round_buttons = '<div class="middle-box" onclick="select_chapter_same();">선택 단원을 모든 회차에 동일 적용 <img src="/app/img/icon_right_weight_arrow.png" alt="" /></div>'; 250131 이미지 변경
-                    var round_buttons = '<div class="middle-box" onclick="select_chapter_same();">선택 단원을 모든 회차에 동일 적용 <img src="../assets/hmath/img/icon_right_arrow.png" alt="" /></div>';
+                    //var round_buttons = '<div class="middle-box" onclick="select_chapter_same();">선택 단원을 모든 회차에 동일 적용 <img src="/app/img/icon_right_weight_arrow.png" alt="" /></div>'; 250131 b 태그 추가
+                    var round_buttons = '<div class="middle-box" onclick="select_chapter_same();">선택 단원을 <b>모든 회차</b>에 동일 적용 <img src="../assets/hmath/img/icon_right_arrow.png" alt="" /></div>';
                     var round_container = '';
                     for( var i=0 ; i<round ; i++ )
                     {
                         var display = i + 1;
-                        // round_buttons += '<div class="middle-box" onclick="select_chapter_dir('+i+');">선택 단원을 '+display+'회차에 적용 <img src="/app/img/icon_right_weight_arrow.png" alt="" /></div>'; 250131 이미지 변경
-                        round_buttons += '<div class="middle-box" onclick="select_chapter_dir('+i+');">선택 단원을 '+display+'회차에 적용 <img src="../assets/hmath/img/icon_right_arrow.png" alt="" /></div>';
+                        // round_buttons += '<div class="middle-box" onclick="select_chapter_dir('+i+');">선택 단원을 '+display+'회차에 적용 <img src="/app/img/icon_right_weight_arrow.png" alt="" /></div>'; 250131 b 태그 추가
+                        round_buttons += '<div class="middle-box" onclick="select_chapter_dir('+i+');">선택 단원을 <b>'+display+'회차</b>에 적용 <img src="../assets/hmath/img/icon_right_arrow.png" alt="" /></div>';
                         round_container += '<div class="session-container"> [' + display + '회차] </div>'
                                         + "<div class='cc-tree-control category-collection lecture-" + i + "' data-lecture_index='"
                                     + i + "' style='min-height: 100px;'><ul class='list-" + i + "'></ul></div>";

@@ -268,7 +268,7 @@ input[type=radio]{
   padding:20px;
 }
 .tab-bar > .right{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-family: 'SUIT';
   font-size: 16px;
   font-style: normal;
@@ -343,7 +343,7 @@ input[type=radio]{
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:focus{
   background: #F1F1F1;
-  color: #1A1A1A;
+  color: #222;
 }
 .dropdown-item svg{display: none;}
 
@@ -422,7 +422,7 @@ line-height: normal;
   border-radius: 4px;
   border: 1px solid var(--Gray-08, #CCC);
   font-weight: 700;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 14px;
 }
 
@@ -520,7 +520,7 @@ line-height: normal;
     &>button{
       border-radius: 20px;
       font-size: 13px;
-      padding: 8px 25px;
+      padding: 8px 25px 7px;
     }
   }
 
@@ -644,7 +644,7 @@ line-height: normal;
   align-items: center;
   gap: 20px;
   font-family: 'SUIT';
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -697,7 +697,7 @@ line-height: normal;
 .modal-bottom-btn-box > .cancle-btn{
   border-radius: 5px;
   background: var(--Gray-09, #E5E5E5);
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-family: 'SUIT';
   font-size: 14px;
   font-weight: 600;
@@ -760,7 +760,7 @@ line-height: normal;
 }
 
 .flex-box > .left{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
 font-size: 16px;
 font-style: normal;
 font-weight: 700;
@@ -904,13 +904,24 @@ line-height: normal;
 /* footer end*/
 
 /* login START */
+body:has(.login-container){
+  background: #fff;
+  .page-wrapper{background: inherit;}
+}
 .login-container{
-  width: 490px;
-  height: 610px;
-  background-color: #fff;
+  width: 860px;
   margin: 0 auto;
   border-radius: 10px;
-  padding: 40px;
+  padding: 180px 530px 180px 0;
+  position: relative;
+  background: url(../hmath/img/img_login.png) no-repeat center right / 440px auto;
+  &::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: url(../hmath/logo.svg) no-repeat center / contain;
+  }
 }
 
 .login-container > pre{
@@ -922,6 +933,7 @@ line-height: normal;
   line-height: 150%; /* 45px */
   margin: 30px 0px;
   overflow: hidden;
+  display: none;
 }
 
 .login-container > pre > span{
@@ -933,38 +945,52 @@ line-height: normal;
   line-height: 150%;
 }
 
-.email-box {
+.email-box, .password-box {
   margin: 30px 0px;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-family: 'SUIT';
-  font-size: 14px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  div{margin-bottom: 7px !important;}
+  .modal-input{
+    background: #f7f7f7;
+    border-width: 0;
+  }
+  &:last-child{margin-bottom: 0;}
 }
 
-.password-box { 
-  margin: 30px 0px;
-  color: var(--Gray-01, #1A1A1A);
-  font-family: 'SUIT';
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.login-btn {
-  border-radius: 8px;
-  background: var(--Primary-Mint, #7ADFDA);
+.login-btn{
+  border-radius: 4px;
+  background: var(--main-color-blue);
   border: none;
   width: 100%;
   padding: 15px;
-  color: var(--Gray-01, #1A1A1A);
+  font-family: 'SUIT';
+  color: #fff;
   font-size: 20px;
   font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin: 8px 0px;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 15px;
+  &+.login-btn{
+    background-color: #4bd1ca;
+    margin-bottom: 20px;
+  }
+  &~div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px !important;
+    line-height: 1;
+    gap: 8px;
+    a{
+      font-family: 'SUIT';
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
 }
 
 .find-id-passwd{
@@ -976,10 +1002,10 @@ line-height: normal;
 
 .find-id-passwd > a{
   color: var(--Gray-05, #808080);
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 /* login END */
 
@@ -994,7 +1020,7 @@ line-height: normal;
 }
 
 .signup-container > pre{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
@@ -1019,7 +1045,7 @@ line-height: normal;
 }
 
 .label-style{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-family: 'SUIT';
   font-size: 14px;
   font-style: normal;
@@ -1299,7 +1325,7 @@ line-height: normal;
 
 .card-body-top {padding: 10px 20px;}
 .card-body-top > .body-content > .top-font{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -1307,7 +1333,7 @@ line-height: normal;
 }
 
 .card-body-top > .body-content > div > .space-between{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -1764,6 +1790,13 @@ line-height: normal;
     text-decoration: underline;
     font-weight: 500;
   }
+  
+  button{
+    border-width: 0;
+    background: #258172;
+    color: #fff;
+    border-radius: 50px !important;
+  }
 
   /* 테이블 내부 버튼 스타일 */
   .btn-group{gap: 5px;}
@@ -1827,6 +1860,7 @@ line-height: normal;
   background-color: transparent;
   word-break: keep-all;
 }
+.table .drop_down td:first-child{vertical-align: top;}
 .table .drop_down .drop-btn{
   font-weight: 700;
   b{font-weight: inherit;}
@@ -2406,7 +2440,7 @@ span.fancytree-active span.fancytree-title {
 }
 
 .home-bottom-container>.right>.home-bottom-container-right>.scrollbar>.scrollbar-title {
-  color: #1A1A1A;
+  color: #222;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -2424,10 +2458,12 @@ span.fancytree-active span.fancytree-title {
 /* 캘린더 페이지 시작 */
 .row:has(#calendar){
   position: relative;
+  .study-management-header{padding-top: 30px;}
   .fas{
     display: inline-flex;
     align-items: center;
-    /* gap: 4px; */
+    font-family: inherit !important;
+    font-weight: 500;
     gap: 0;
     &::before{
       content: '';
@@ -2479,12 +2515,13 @@ span.fancytree-active span.fancytree-title {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 22px;
-          height: 22px;
+          width: 20px;
+          height: 20px;
           border-radius: 50%;
-          background: #dceeff;
+          background: #dceeff url(../hmath/img/more.svg) no-repeat center / cover;
           color: #0385ff;
           font-weight: 900;
+          font-size: 0;
         }
       }
       &:nth-child(1){border-radius: 0;}
@@ -2541,12 +2578,12 @@ span.fancytree-active span.fancytree-title {
   .notice>.scrollbar{
     font-size: 0;
     min-height: 100px;
-    max-height: 240px;
-    padding-top: 0;
-    margin-top: 24px;
+    max-height: 252px;
+    padding-top: 10px;
+    margin-top: 15px;
     border-radius: 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid #aaa9a9;
+    border-top: 2px solid #aaa9a9;
     overflow-y: auto;
     .scrollbar-title{
       display: inline-block;
@@ -2674,7 +2711,14 @@ span.fancytree-active span.fancytree-title {
       font-weight: 400;
       border-radius: 20px;
       padding: 0 !important;
+      font-family: "Noto Sans KR", "SUIT", "Pretendard", sans-serif;
       .fc-time{padding-right: 4px;}
+    }
+    .fc-day-grid-event:has(.fa-user-friends, .fa-user-plus){
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .bg-soft-study{border-width: 0 !important;}
     a.fc-more {
@@ -2682,6 +2726,9 @@ span.fancytree-active span.fancytree-title {
       align-items: center;
       gap: 2px;
       padding: 0 5px;
+      font-family: "Noto Sans KR", "SUIT", "Pretendard", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
       &::before{
         content: '';
         display: block;
@@ -4546,7 +4593,7 @@ span.fancytree-active span.fancytree-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   padding:20px;
   font-family: 'SUIT';
   font-size: 14px;
@@ -4562,7 +4609,7 @@ span.fancytree-active span.fancytree-title {
   align-items: center;
   gap: 30px;
   padding:10px;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   text-align: center;
   font-family: 'SUIT';
   font-size: 16px;
@@ -4576,7 +4623,7 @@ span.fancytree-active span.fancytree-title {
   border: none;
   background: var(--Gray-09, #E5E5E5);
   padding:10px 20px;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-weight: 500;
 }
 
@@ -4811,7 +4858,7 @@ span.fancytree-active span.fancytree-title {
 
 .modal-header-bottom .selected{
   border-bottom: 2px solid #000;
-  color: #1A1A1A;
+  color: #222;
 }
 
 .print-modal-grid{
@@ -4987,7 +5034,7 @@ td > .checkbox input[type="checkbox"]:checked+label::after {
   border-radius: 8px;
   border: 1px solid var(--Gray-08, #CCC);
   background: #FFF;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -5089,7 +5136,7 @@ td > .calendar-box{
   border-radius: 8px;
   border: 1px solid var(--Gray-08, #CCC);
   background: #FFF;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -5210,7 +5257,7 @@ td > .calendar-box{
 }
 
 .radio-box > label{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -5508,14 +5555,14 @@ td > .calendar-box{
 }
 
 .notice-box > .head > span{
-  color: #666;
-  font-size: 14px;
+  color: #333;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 1;
   b{
     color: #333;
-    font-weight: 600;
+    font-weight: 800;
   }
 }
 
@@ -5539,7 +5586,7 @@ td > .calendar-box{
 }
 
 .notice-modal-header > .title {
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -5556,7 +5603,7 @@ td > .calendar-box{
 }
 
 .modal-body > .notice-content {
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -5585,7 +5632,7 @@ td > .calendar-box{
   display: flex;
   gap: 5px;
   margin: 20px 0px;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -5737,6 +5784,14 @@ td > .calendar-box{
 /* 교재/영상 자료실 END */
 
 /* 학습리포트 START */
+.page-reports{
+  .row:has(.card)>.col-sm-9 .card-body{padding: 0 30px 30px;}
+  .table td .item-remove{
+    background: #e5e5e5;
+    color: #222;
+  }
+}
+
 /* 평가 > 채점/리포트 > 리포트(진단평가보고서) */
 .container-fluid:has(.study-report-container) .row.no-print{background: transparent !important;}
 .study-report-container{
@@ -5886,8 +5941,9 @@ td > .calendar-box{
       line-height: 1.5;
       font-weight: 600;
       height: auto;
+      color: #222;
       &.mbtn{
-        background: #26c2ce;
+        background: var(--main-color-blue);
         color: #fff;
       }
       &.gbtn{background: #e0e0e0;}
@@ -6186,7 +6242,7 @@ html:has(#report_box){min-width: auto;}
 
 /* 출결관리 START */
 .attendance-left > .title {
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 3vw;
   font-style: normal;
   font-weight: 400;
@@ -6194,7 +6250,7 @@ html:has(#report_box){min-width: auto;}
 }
 
 .attendance-left > .sub-title {
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 2vw;
   font-style: normal;
   font-weight: 400;
@@ -6589,7 +6645,7 @@ html:has(#report_box){min-width: auto;}
 }
 
 .question_wizard_left > .content > .select{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-weight: 700;
 }
 
@@ -6717,7 +6773,7 @@ html:has(#report_box){min-width: auto;}
   border-radius: 8px;
   border: 1px solid var(--Gray-08, #CCC);
   padding: 10px 20px;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   margin: 20px 0px;
   font-size: 16px;
   font-weight: 700;
@@ -6732,7 +6788,7 @@ html:has(#report_box){min-width: auto;}
     padding-left: 30px; /* 여기서 30px는 체크박스의 왼쪽 여백입니다. 필요에 따라 조절하세요. */
     line-height: 1.5;
     cursor: pointer;
-    color: var(--Gray-01, #1A1A1A);
+    color: #222;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -6820,7 +6876,7 @@ html:has(#report_box){min-width: auto;}
 }
 
 .quiz-wizard-nav li .content-box .title{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-family: 'SUIT';
   font-size: 16px;
   font-style: normal;
@@ -6830,7 +6886,7 @@ html:has(#report_box){min-width: auto;}
 
 .quiz-wizard-nav li .content-box .quiz-wizard-title{
   font-size: 16px;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
@@ -6904,9 +6960,19 @@ html:has(#report_box){min-width: auto;}
 /* 241231 250131 출제마법사 시험지만들기 */
 .page-content:has(.step-title){
   .step-title{
+    display: flex;
+    align-items: center;
+    gap: 5px;
     color: var(--main-color-blue);
     padding: 28px 20px 18px;
     line-height: 1;
+    &::before{
+      display: block;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #04e3b7;
+    }
   }
   .row{
     margin-top: 0;
@@ -6914,11 +6980,30 @@ html:has(#report_box){min-width: auto;}
     padding: 0 !important;
     .col-sm-12:only-child{font-weight: 500;}
     &.border-bottom{border-color: #dfdfdf !important;}
+    .col-sm-3{
+      .step-title::before{
+        display: block;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #03e5b7;
+        color: #fff;
+        font-size: inherit;
+        line-height: 20px;
+        font-weight: inherit;
+        text-align: center;
+      }
+      &:nth-child(1) .step-title::before{content: '1';}
+      &:nth-child(2) .step-title::before{content: '2';}
+      &:nth-child(3) .step-title::before{content: '3';}
+      &:nth-child(4) .step-title::before{content: '4';}
+      &>.row:nth-of-type(2) .sub_title{padding-top: 0 !important;}
+    }
   }
 
   /*step cols*/
   .row > .table-container{
-    padding: 0 !important;
+    padding: 0 0 35px !important;
     height: auto !important;
   }
   .table-header{
@@ -6963,7 +7048,7 @@ html:has(#report_box){min-width: auto;}
     }
     input[type="radio"] + label::before{content: none;}
     input[type="radio"]:checked + label{
-      background-color: #c9f5ff;
+      background-color: #def9ff;
       border-color: #98e2f3;
       color: #0098ba;
       font-weight: 700;
@@ -6975,22 +7060,36 @@ html:has(#report_box){min-width: auto;}
     padding: 0 20px;
   }
   .middle-container > .middle-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 5px 0;
     padding: 10px 0 !important;
     border: 2px solid #36c5e5;
     border-radius: 30px;
-    font-weight: 500;
+    font-weight: 400;
+    cursor: pointer;
+    b{font-weight: 800;}
+    img{display: none;}
+    &::after{
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url(../hmath/img/icon_right_arrow.png) no-repeat center;
+    }
     &:hover{
-      background: #c9f5ff;
+      background: #def9ff;
       color: #0099bb;
     }
+    &:first-child{margin-top: 0;}
   }
   .add_question{
     display: block;
     width: calc(100% - 40px);
     color: #fff;
     margin: 0 auto;
-    background: var(--main-color-blue2);
+    background: #20a9ff;
     font-size: 18px;
     line-height: 1;
     font-weight: 500;
@@ -7084,7 +7183,7 @@ html:has(#report_box){min-width: auto;}
 
 /* 출제마법사 > 출제마법사 > 출제마법사로 시험지 만들기 > 문항출제 START */
 .question-set-title{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   margin: 10px 0px;
   font-size: 18px;
   font-style: normal;
@@ -7092,7 +7191,7 @@ html:has(#report_box){min-width: auto;}
 }
 
 .question-set-sub-title{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
 
   font-size: 14px;
   font-style: normal;
@@ -7114,7 +7213,7 @@ html:has(#report_box){min-width: auto;}
 }
 
 .question-set-box > .content > .title{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -7122,7 +7221,7 @@ html:has(#report_box){min-width: auto;}
 }
 
 .question-set-box > .content > .sub-title{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-family: 'SUIT';
   font-size: 16px;
   font-style: normal;
@@ -7139,7 +7238,7 @@ html:has(#report_box){min-width: auto;}
 }
 
 .question-set-head > .left{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-family: 'SUIT';
   font-size: 18px;
   font-style: normal;
@@ -7265,7 +7364,7 @@ html:has(#report_box){min-width: auto;}
   border-radius: 8px;
   border: 1px solid var(--Gray-08, #CCC);
   background: #FFF;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -7284,7 +7383,7 @@ html:has(#report_box){min-width: auto;}
 .test-paper-container .test-name{
   padding: 20px;
   background: var(--Gray-09, #E5E5E5);
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 14px;
   font-weight: 700;
   text-align: center;
@@ -7298,7 +7397,7 @@ html:has(#report_box){min-width: auto;}
 
 /* 학생지정 modal START */
 .choice-student-sub-title{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-weight: 700;
   margin-top: 20px;
@@ -7372,7 +7471,7 @@ html:has(#report_box){min-width: auto;}
 }
 
 .quiz-detail-container .box .content{ 
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-family: 'SUIT';
   font-size: 14px;
   font-style: normal;
@@ -7411,11 +7510,11 @@ html:has(#report_box){min-width: auto;}
   border-radius: 4px;
   border:none;
   background: var(--Gray-09, #E5E5E5);
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
 }
 
 .shipping-status-box .shipping-end{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
 }
 /* 주문결제관리 > 배송관리 END */
 
@@ -7431,7 +7530,7 @@ html:has(#report_box){min-width: auto;}
 .order-form-table2 th{
   text-align: center;
   background: var(--Gray-10, #F1F1F1);
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   padding: 20px 0px;
 }
 
@@ -7515,7 +7614,7 @@ tr td:nth-child(3) {
 .stu-order-bottom .order-btn{
   border-radius: 8px;
   background: var(--Primary-Mint, #7ADFDA);
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 14px;
   font-weight: 700;
   padding: 10px 30px;
@@ -7742,13 +7841,13 @@ span.plus {
 }
 
 .bookmark-container .right .content-box .content .book-name{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-weight: 400;
 }
 
 .bookmark-container .right .content-box .content .price{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-weight: 600;
   span{
@@ -7786,7 +7885,7 @@ span.plus {
 }
 
 .total-box .total-count-right{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-weight: 600;
 }
@@ -7803,7 +7902,7 @@ span.plus {
 }
 
 .total-box .total-price-right{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-weight: 600;
 }
@@ -7817,7 +7916,7 @@ span.plus {
   background: var(--Primary-Mint, #7ADFDA);
   border:none;
   width: 100%;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 14px;
   font-weight: 700;
   padding: 10px 0px;
@@ -7883,7 +7982,7 @@ span.plus {
   overflow: hidden; /* 넘치는 부분을 숨김 */
   text-overflow: ellipsis; /* 넘치는 텍스트를 ...으로 표시 */
   margin-bottom: 10px;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 13px;
   font-weight: 400;
 }
@@ -7907,7 +8006,7 @@ span.plus {
 }
 
 .white-container .right .top{
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 18px;
   font-weight: 700;
   padding: 20px;
@@ -7923,7 +8022,7 @@ span.plus {
 .white-container .right .chapter{
   padding: 20px;
   border-bottom: 1px solid #E5E5E5;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-weight: 400;
 }
@@ -7937,7 +8036,7 @@ span.plus {
 .white-container .right .section{
   padding: 20px 20px 20px 50px;
   border-bottom: 1px solid #E5E5E5;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-weight: 400; 
 }
@@ -7951,7 +8050,7 @@ span.plus {
 .white-container .right .subsection{
   padding: 20px 20px 20px 80px;
   border-bottom: 1px solid #E5E5E5;
-  color: var(--Gray-01, #1A1A1A);
+  color: #222;
   font-size: 16px;
   font-weight: 400;
 }
@@ -8001,6 +8100,7 @@ span.plus {
         .content-box{
           padding: 40px 0 60px;
           width: auto;
+          background: transparent;
           .grid{
             margin-bottom: 5px;
             .title{
@@ -8130,6 +8230,7 @@ span.plus {
       padding: 5px;
       gap: 2px;
       flex-shrink: 0;
+      color: #222;
       .far{
         font: "Noto Sans KR", "SUIT", "Pretendard", sans-serif;
         font-size: 12px;
@@ -8260,7 +8361,7 @@ span.plus {
 
 .cancel-btn {
     border-radius: 8px;
-    color: var(--Gray-01, #1A1A1A);
+    color: #222;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -8832,6 +8933,20 @@ html:has(.page-memo){
   }
 }
 
+/****** 결제>이용요금결제 팝업 ******/
+#popup_pay{
+  .modal-bottom-btn-box{
+    border-top-width: 0;
+    padding-top: 0;
+  }
+  .btn-warning{
+    order: -1;
+    background: var(--main-color-blue);
+    color: #fff;
+    border-width: 0;
+  }
+}
+
 #questions_frame{
   /* 아이프레임 내부스타일로 2배 적용되어있음 */
   /* transform: none; */
@@ -9122,8 +9237,8 @@ html:has(.page-memo){
       display: flex;
       align-items: center;
       gap: 5px;
-      color: #222;
-      font-size: 14px;
+      color: #555;
+      font-size: 15px;
       font-weight: 500;
       line-height: 1;
       position: relative;
@@ -9829,12 +9944,12 @@ body:has(#popup_main){padding-right: 0 !important;}
   select option[value="secondary"]{background: #990099 !important;}
   select option[value="success"]{background: #ff30ff !important;}
   select option[value="warning"]{background: #6165ff !important;}
-  select option[value="info"]{background: #00d2d2 !important;}
-  select option[value="danger"]{background: #0099ff !important;}
-  select option[value="pink"]{background: #fd1f1f !important;}
-  select option[value="purple"]{background: #91d500 !important;}
-  select option[value="blue"]{background: #ffb400 !important;}
-  select option[value="dark"]{background: #ff6600 !important;}
+  select option[value="info"]{background: #0099ff !important;}
+  select option[value="danger"]{background: #00d2d2 !important;}
+  select option[value="pink"]{background: #91d500 !important;}
+  select option[value="purple"]{background: #ffb400 !important;}
+  select option[value="blue"]{background: #ff6600 !important;}
+  select option[value="dark"]{background: #fd1f1f !important;}
 }
 /******* 팝업끝 *******/
 
