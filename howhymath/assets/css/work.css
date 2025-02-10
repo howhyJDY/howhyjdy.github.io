@@ -1790,13 +1790,6 @@ body:has(.login-container){
     text-decoration: underline;
     font-weight: 500;
   }
-  
-  button{
-    border-width: 0;
-    background: #258172;
-    color: #fff;
-    border-radius: 50px !important;
-  }
 
   /* 테이블 내부 버튼 스타일 */
   .btn-group{gap: 5px;}
@@ -2911,6 +2904,12 @@ span.fancytree-active span.fancytree-title {
               background: url(../hmath/img/line_dotted.png) repeat-y;
               position: absolute;
               top: 0;right: 0;
+            }
+            /* 250210 */
+            button{
+              background: transparent;
+              color: #222;
+              border-radius: 4px !important;
             }
           }
         }
@@ -5576,7 +5575,15 @@ td > .calendar-box{
 }
 
 /* .notice-box .table thead{background: var(--table-main-color);} */
-.page-notices .table td center{margin-left: -12%;}
+.page-notices .table td{
+  button{
+    border-width: 0;
+    background: #258172;
+    color: #fff;
+    border-radius: 50px !important;
+  }
+  center{margin-left: -12%;}
+}
 
 
 /* 공지사항 modal START */
