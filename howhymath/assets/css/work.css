@@ -616,7 +616,8 @@ line-height: normal;
 }
 
 .modal-lg .modal-content {
-  max-width: 712px;
+  /* max-width: 712px; */
+  max-width: 724px;
   border-radius: 15px;
   /* margin: 0 auto; */
 }
@@ -868,7 +869,7 @@ line-height: normal;
 
     .footer-content {
       display: flex;
-      font-family: 'SUIT';
+      font-family: 'Pretendard';
       gap: 5px;
       color: var(--Gray-06, #666);
       font-size: 12px;
@@ -1010,16 +1011,68 @@ body:has(.login-container){
 /* login END */
 
 /* signup START */
+body:has(.signup-container){
+  background: #fff;
+  .page-wrapper{
+    background: inherit;
+    .page-content{padding: 70px 0 60px;}
+  }
+}
 .signup-container{
   width: 490px;
-  height: 1051px;
-  background-color: #fff;
+  height: auto;
   margin: 0 auto;
-  border-radius: 10px;
-  padding:40px;
+  border-radius: 26px;
+  padding:30px;
+  margin-top: 50px;
+  position: relative;
+  border: 1px solid #e7e7e7;
+  &::before{
+    content: '회원가입';
+    position: absolute;
+    top: -50px; left: 0;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  .email-box, .password-box{
+    display: flex;
+    flex-direction: column;
+    gap: 5px 0;
+    margin: 20px 0 0;
+    div{margin-bottom: 0 !important;}
+    &:first-of-type{margin-top: 0;}
+    &:nth-child(6) img{width: 100% !important;}
+    &:nth-child(7)>div{display: block;}/* 기관주소 영역 */
+    .note{
+      font-weight: 400;
+      margin-bottom: 0 !important;
+    }
+    input{margin-top: 0 !important;}
+  }
+  .check-btn, .sbtn, .sbtn-sm{
+    background: #4bd1ca;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 500;
+    color: #fff;
+    padding: 12px 14px;
+    height: auto;
+    border-radius: 5px;
+  }
+  .checkbox input[type="checkbox"] + label{cursor: pointer;}
+  .checkbox input[type="checkbox"] + label::before{
+    border-width: 0;
+    width: 17px;
+    height: 17px;
+    background: url(../hmath/img/icon_chk_off.svg) no-repeat center / cover;
+  }
+  .checkbox input[type="checkbox"]:checked + label::after{content: none;}
+  .checkbox input[type="checkbox"]:checked + label::before{background-image: url(../hmath/img/icon_chk_on.svg);}
 }
 
 .signup-container > pre{
+  display: none;
   color: #222;
   font-size: 36px;
   font-style: normal;
@@ -1038,10 +1091,15 @@ body:has(.login-container){
 }
 
 .agree-container{
-  border-radius: 8px;
+  /* border-radius: 8px;
 	border: 1.5px solid rgba(0, 0, 0, 0.15);
 	padding: 15px 16px;
-	background: #FFF;
+	background: #FFF; */
+  div{margin-top: 5px !important;}
+  .sbtn-sm{
+    padding: 5px 7px;
+    margin-left: 10px;
+  }
 }
 
 .label-style{
@@ -5818,6 +5876,12 @@ td > .calendar-box{
 }
 
 /* 평가 > 채점/리포트 > 리포트(진단평가보고서) */
+.page-content:has(#circles-point){
+  .study-report-container > .title, .study-report-container > .header .left{
+    &::before{content: none;}
+  }
+}
+/*이하 학습리포트와 겹침*/
 .container-fluid:has(.study-report-container) .row.no-print{background: transparent !important;}
 .study-report-container{
   border-radius: 10px;
@@ -8159,6 +8223,7 @@ span.plus {
     }
     .right{
       padding: 55px 50px;
+      border-left-width: 0;
       div{
         height: auto;
         border-width: 0;
@@ -9443,6 +9508,7 @@ html:has(.page-memo){
 /****** 출결현황 팝업 ******/
 #popup_attendances,
 #popup_student_attendances{
+  .modal-lg .modal-content{max-width: 500px;}
   .modal-body-head {
     position: relative;
     justify-content: center;
@@ -9462,6 +9528,9 @@ html:has(.page-memo){
       svg{
         width: 24px;
         height: 24px;
+        border-radius: 50%;
+        border: 1px solid #CCC;
+        rect{stroke: none;}
       }
     }
   }
