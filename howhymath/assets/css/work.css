@@ -213,6 +213,28 @@ label:has(input[type=checkbox]:only-child){
 }
 
 /* 인풋 라디오버튼 공통 241230 */
+label:has(input[type=radio]:only-child){
+  position: relative;
+  /* width: 15px; */
+  min-width: 15px;
+  height: 15px;
+  background: url(../hmath/img/icon_radio_off.svg) no-repeat center left / 15px auto;
+  cursor: pointer;
+  vertical-align: -4px;
+  input[type=radio]{
+    position: absolute;
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+  }
+  &:has(input:checked){background-image: url(../hmath/img/icon_radio_on.svg);}
+}
 input[type=radio]{
   position: absolute;
   margin: -1px;
@@ -4914,6 +4936,10 @@ span.fancytree-active span.fancytree-title {
     justify-content: center;
     border-bottom-width: 0;
   }
+}
+/* 250217 추가 */
+.modal-content:has(.print-header){
+  .grid-div label:has(input[type=radio]){padding-left: 20px;}
 }
 
 /* 프린트 pdf영역 */
