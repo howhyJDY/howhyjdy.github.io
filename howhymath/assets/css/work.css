@@ -2802,12 +2802,12 @@ span.fancytree-active span.fancytree-title {
     .bg-soft-study{border-width: 0 !important;}
     a.fc-more {
       display: flex;
-      align-items: center;
+      /* align-items: center; */
       gap: 2px;
       padding: 0 5px;
-      font-family: "Noto Sans KR", "SUIT", "Pretendard", sans-serif;
+      /* font-family: "Noto Sans KR", "SUIT", "Pretendard", sans-serif;
       font-size: 12px;
-      font-weight: 500;
+      font-weight: 500; */
       &::before{
         content: '';
         display: block;
@@ -2816,6 +2816,7 @@ span.fancytree-active span.fancytree-title {
         background: url(../hmath/img/math_calender04.svg) no-repeat center;/* 캘린더 더보기 아이콘 */
       }
     }
+    .fc-row.fc-rigid .fc-content-skeleton td::after{content: none !important;}
   }
   th, td{
     border-width: 0;
@@ -2849,6 +2850,10 @@ span.fancytree-active span.fancytree-title {
     display: block;
     float: none;
     text-align: left;
+    
+    font-family: "Noto Sans KR", "SUIT", "Pretendard", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
   }
   .order-form-table2 tr td:nth-child(1), tr td:nth-child(3){text-align: left;}
   .fc-dayGrid-view .fc-week-number, .fc-dayGrid-view .fc-day-number{padding: 8px;}
@@ -9051,7 +9056,14 @@ html:has(.page-memo){
       .level1::before{background-image: url(../hmath/img/icon_level1.svg);}
     }
   }
-  #smart_chapter_form+p{margin-top: 5px;}
+  #smart_chapter_form{
+    label:has(input[type=radio]:only-child){
+      padding: 0 8px 0 14px;
+      line-height: 1;
+      vertical-align: initial;
+    }
+    &+p{margin-top: 5px;}
+  }
   .modal-bottom-btn-box{border-top-width: 0;}
 }
 
