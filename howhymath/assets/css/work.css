@@ -193,10 +193,15 @@ label:has(input[type=checkbox]:only-child){
   position: relative;
   /* width: 15px; */
   min-width: 15px;
-  height: 15px;
-  background: url(../hmath/img/icon_chk_off.svg) no-repeat center left / 15px auto;
+  min-height: 15px;
+  /* background: url(../hmath/img/icon_chk_off.svg) no-repeat center left / 15px auto; */
+  background-image: url(../hmath/img/icon_chk_off.svg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 15px auto;
   cursor: pointer;
-  vertical-align: -4px;
+  /* vertical-align: -4px; */
+  padding-left: 20px;/*250310*/
   input[type=checkbox]{
     position: absolute;
     margin: -1px;
@@ -217,10 +222,15 @@ label:has(input[type=radio]:only-child){
   position: relative;
   /* width: 15px; */
   min-width: 15px;
-  height: 15px;
-  background: url(../hmath/img/icon_radio_off.svg) no-repeat center left / 15px auto;
+  min-height: 15px;
+  /* background: url(../hmath/img/icon_radio_off.svg) no-repeat center left / 15px auto; */
+  background-image: url(../hmath/img/icon_radio_off.svg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 15px auto;
   cursor: pointer;
-  vertical-align: -4px;
+  /* vertical-align: -4px; */
+  padding-left: 20px;
   input[type=radio]{
     position: absolute;
     margin: -1px;
