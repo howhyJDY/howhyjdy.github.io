@@ -7844,6 +7844,7 @@ form:has(.question_table){
         .row{
           margin-bottom: 0 !important;
           .col-sm-4, .col-sm-8{
+            width: 100%;
             height: auto !important;
             padding: 0 !important;
           }
@@ -10816,6 +10817,16 @@ body:has(#popup_main){padding-right: 0 !important;}
         display: flex;
         flex-direction: column;
         .content-container .content-box{padding: 0 0 30px;}
+      }
+    }
+  }
+
+  /* 출제마법사 시험지 저장 */
+  .wizards_questions + .row {
+    .question-set-box > .content{width: calc(100% - 20px);}
+    & .tabs {
+      .nav-tabs .nav-link{
+        font-size: 14px !important;
       }
     }
   }
