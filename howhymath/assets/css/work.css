@@ -7622,6 +7622,7 @@ html:has(#report_box){min-width: auto;}
       width: 17px !important;
       height: 17px;
       align-self: center;
+      flex-shrink: 0;
     }
     &>ul{
       padding: 6px 0;
@@ -7629,12 +7630,15 @@ html:has(#report_box){min-width: auto;}
       border-radius: 0;
       margin-bottom: 0;
       padding-bottom: 15px;
+      &::after {
+        width: 100%;
+        left: 0;
+      }
     }
-    &>ul>li>ul{padding-left: 20px !important;}
     &>ul>li>ul>li .white{
       font-size: 14px !important;
       font-weight: 400;
-      padding: 1px 20px !important;
+      padding: 1px 0 !important;
       .fas{
         color: transparent;
         border-radius: 50%;
@@ -7654,9 +7658,9 @@ html:has(#report_box){min-width: auto;}
       }
     }
     &>ul>li + li > .white {border-top: 1px solid #d0d0d0;}
-    &>ul>li>ul>li>ul{padding-left: 40px !important;}
+    &>ul>li>ul>li>ul{padding-left: 20px !important;}
     &>ul>li>ul>li>ul>li>ul{padding-left: 20px !important;}
-    &>ul>li>ul>li>ul>li>ul>li{padding-left: 20px !important;}
+    &>ul>li>ul>li>ul>li>ul>li{padding-left: 0 !important;}
   }
 
   /* right 영역 */
@@ -7922,11 +7926,14 @@ form:has(.question_table){
     .opener{
       width: 17px !important;
       height: 17px;
+      align-items: center;
+      flex-shrink: 0;
     }
     .white{
       font-size: 15px !important;
       gap: 2px;
       padding-left: 0 !important;
+      align-items: center;
       .fas{
         color: transparent;
         border-radius: 50%;
@@ -7960,8 +7967,8 @@ form:has(.question_table){
       }
     }
     &>ul>li>ul{padding-left: 20px !important;}
-    &>ul>li>ul>li .white{padding-left: 20px !important;}
-    &>ul>li>ul>li>ul{padding-left: 40px !important;}
+    &>ul>li>ul>li .white{padding-left: 0 !important;}
+    &>ul>li>ul>li>ul{padding-left: 20px !important;}
     &>ul>li>ul>li>ul>li>ul{padding-left: 20px !important;}
     &>ul>li>ul>li>ul>li>ul>li{padding-left: 20px !important;}
   }
