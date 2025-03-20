@@ -7604,7 +7604,8 @@ html:has(#report_box){min-width: auto;}
     min-height: auto !important;
     .white{
       font-size: 15px !important;
-      gap: 6px;
+      /* gap: 6px; */
+      gap: 2px;
       padding-left: 0 !important;
       .fas{
         color: transparent;
@@ -7615,6 +7616,7 @@ html:has(#report_box){min-width: auto;}
         &.fa-plus{background: #d1d1d1 url(../hmath/img/icon_arr_bottom_gray.png) no-repeat center / 9px auto;}
         &.fas.fa-minus{background: #20a9ff url(../hmath/img/icon_arr_right_white.png) no-repeat center / 5px auto;}
       }
+      &:not(:has(.collection-opener)){padding-left: 20px !important;}
     }
     .opener{
       width: 17px !important;
@@ -7628,10 +7630,11 @@ html:has(#report_box){min-width: auto;}
       margin-bottom: 0;
       padding-bottom: 15px;
     }
+    &>ul>li>ul{padding-left: 20px !important;}
     &>ul>li>ul>li .white{
       font-size: 14px !important;
       font-weight: 400;
-      padding: 1px 15px !important;
+      padding: 1px 20px !important;
       .fas{
         color: transparent;
         border-radius: 50%;
@@ -7650,9 +7653,10 @@ html:has(#report_box){min-width: auto;}
         }
       }
     }
-    &>ul>li + li > .white {
-      border-top: 1px solid #d0d0d0;
-    }
+    &>ul>li + li > .white {border-top: 1px solid #d0d0d0;}
+    &>ul>li>ul>li>ul{padding-left: 40px !important;}
+    &>ul>li>ul>li>ul>li>ul{padding-left: 20px !important;}
+    &>ul>li>ul>li>ul>li>ul>li{padding-left: 20px !important;}
   }
 
   /* right 영역 */
@@ -7793,7 +7797,14 @@ html:has(#report_box){min-width: auto;}
           top: 0;right: 0;
         }
       }
-      small{font-size: 14px;}
+      small{
+        display: block;
+        font-size: 14px;
+        color: #20a9ff;
+        text-align: center;
+        font-weight: 600;
+        margin-top: 5px;
+      }
       .form-select, select.form-control{min-width: 80px;}
     }
   }
@@ -7914,7 +7925,7 @@ form:has(.question_table){
     }
     .white{
       font-size: 15px !important;
-      gap: 6px;
+      gap: 2px;
       padding-left: 0 !important;
       .fas{
         color: transparent;
@@ -7929,7 +7940,7 @@ form:has(.question_table){
     &>ul>li>ul>li .white{
       font-size: 14px !important;
       font-weight: 400;
-      padding: 1px 15px !important;
+      padding: 1px 17px !important;
       .fas{
         color: transparent;
         border-radius: 50%;
@@ -7948,6 +7959,11 @@ form:has(.question_table){
         }
       }
     }
+    &>ul>li>ul{padding-left: 20px !important;}
+    &>ul>li>ul>li .white{padding-left: 20px !important;}
+    &>ul>li>ul>li>ul{padding-left: 40px !important;}
+    &>ul>li>ul>li>ul>li>ul{padding-left: 20px !important;}
+    &>ul>li>ul>li>ul>li>ul>li{padding-left: 20px !important;}
   }
   .list{padding-top: 25px;}
   .pagination{min-height: auto !important;}
