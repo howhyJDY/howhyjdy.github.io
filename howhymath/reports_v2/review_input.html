@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>하와이매쓰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+    <!-- base css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css"/>
+    <!-- site css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734673801"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734673801"/>
+    <!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734673801" /-->
+    <!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734673801"/> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/work.css"/>
+    <!-- base javascript -->
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                showMathMenu: false,
+                tex2jax: { displayMath: [ ["$$","$$"] ] },
+                "HTML-CSS": { fonts: ["Latin-Modern"] }
+            });
+        </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1734673801"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1734673801"></script>
+    </head>
+    <script>
+    cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+    cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+    var lms_domain = "https://tutor.howhymath.com";
+    </script>
+
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+    <div class="page-wrapper" style="padding:0;width:100% !important;">
+        <div class="page-content">
+            <div class="container-fluid">               
+                <!-- 250331 리포트 전용 인쇄관련 css 추가 및 스와이프슬라이드 js, css 추가-->
+                <link rel="stylesheet" type="text/css" href="../assets/css/report_print.css"/>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+                <div class="review-input-container">
+                    <div class="review-top">
+                        <header class="review-top-header">
+                            <h1>총평입력</h1>
+                        </header>
+                        <div class="review-top-content">
+                            <strong class="title">학생명</strong>
+                            <div class="textarea-box"><textarea class="textarea" name="" id="">이하와 (2024-12), 이하와 (2024-11), 홍길동 (2024-12)</textarea></div>
+                        </div>
+                    </div>
+
+                    <!-- 입력 화면 시작 -->
+                    <div class="review-bottom" id="review-input-area">
+                        <strong class="title">입력 조건을 선택하세요.</strong>
+                        <div class="input-wrap">
+                            <dl>
+                                <dt>인사말</dt>
+                                <dd>
+                                    <div class="input-box">
+                                        <label>
+                                            <input type="radio" name="review1" value="격식있게" checked>
+                                            격식있게
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="review1" value="친근하게">
+                                            친근하게
+                                        </label>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <!-- //인사말 -->
+                            <dl>
+                                <dt>학습상황</dt>
+                                <dd>
+                                    <ol>
+                                        <li>
+                                            <b class="sub-title">성취도의 변화</b>
+                                            <div class="input-box">
+                                                <label>
+                                                    <input type="radio" name="review2" value="좋아지고 있음" checked>
+                                                    좋아지고 있음
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="review2" value="더 높은 난이도 도전">
+                                                    더 높은 난이도 도전
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="review2" value="일시적 하락 보완 필요">
+                                                    일시적 하락 보완 필요
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <b class="sub-title">수업을 따라오는 정도</b>
+                                            <div class="input-box">
+                                                <label>
+                                                    <input type="radio" name="review3" value="매우 잘 따라옴" checked>
+                                                    매우 잘 따라옴
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="review3" value="대체로 이해, 추가 보충 필요">
+                                                    대체로 이해, 추가 보충 필요
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="review3" value="어려움 있음, 개별 보완 필요">
+                                                    어려움 있음, 개별 보완 필요
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <b class="sub-title">수업중 학습에 대한 태도</b>
+                                            <div class="input-box">
+                                                <label>
+                                                    <input type="radio" name="review4" value="적극적이고 집중도가 높음" checked>
+                                                    적극적이고 집중도가 높음
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="review4" value="대체로 집중, 간혹 산만함">
+                                                    대체로 집중, 간혹 산만함
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <b class="sub-title">수업 중 참여도</b>
+                                            <div class="input-box">
+                                                <label>
+                                                    <input type="radio" name="review5" value="참여율이 높음" checked>
+                                                    참여율이 높음
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="review5" value="집중력은 좋지만 소극적">
+                                                    집중력은 좋지만 소극적
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <b class="sub-title">자기주도 학습태도</b>
+                                            <div class="input-box">
+                                                <label>
+                                                    <input type="radio" name="review6" value="습관이 잘 잡혀 있음" checked>
+                                                    습관이 잘 잡혀 있음
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="review6" value="꾸준히 노력 중이며 보완">
+                                                    꾸준히 노력 중이며 보완
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </dd>
+                            </dl>
+                            <!-- //학습상황 -->
+                            <dl>
+                                <dt>교사와의 소통</dt>
+                                <dd>
+                                    <ol>
+                                        <li>
+                                            <b class="sub-title">학생의 정서적인 상태</b>
+                                            <div class="input-box">
+                                                <label>
+                                                    <input type="radio" name="review7" value="밝고 긍정적 안정감" checked>
+                                                    밝고 긍정적 안정감
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="review7" value="감정적 약간의 변화 있음.">
+                                                    감정적 약간의 변화 있음.
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <b class="sub-title">교사와의 관계</b>
+                                            <div class="input-box">
+                                                <label>
+                                                    <input type="radio" name="review8" value="친밀하고 예의 있음" checked>
+                                                    친밀하고 예의 있음
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="review8" value="낮가림이 있지만 극복중">
+                                                    낮가림이 있지만 극복중
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <b class="sub-title">수업중 질문 활동</b>
+                                            <div class="input-box">
+                                                <label>
+                                                    <input type="radio" name="review9" value="적극적으로 질문함" checked>
+                                                    적극적으로 질문함
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="review9" value="소극적이지만 대답은 잘함">
+                                                    소극적이지만 대답은 잘함
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </dd>
+                            </dl>
+                            <!-- //교사와의 소통 -->
+                            <dl>
+                                <dt>맺음말<span>(최대 두 개까지 선택할 수 있습니다.)</span></dt>
+                                <dd>
+                                    <div class="input-box">
+                                        <label>
+                                            <input type="checkbox" name="review10" value="좋은 흐름 유지 (일반적 맺음)" checked>
+                                            좋은 흐름 유지 (일반적 맺음)
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="review10" value="조금 흔들리다 다시 회복되는 중">
+                                            조금 흔들리다 다시 회복되는 중
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="review10" value="반편성 등 시간 변화 예고">
+                                            반편성 등 시간 변화 예고
+                                        </label>
+                                    </div>
+                                    <div class="input-box">
+                                        <label>
+                                            <input type="checkbox" name="review10" value="평가 시험 예고">
+                                            평가 시험 예고
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="review10" value="학습 상담 예고">
+                                            학습 상담 예고
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="review10" value="보충학습 계획">
+                                            보충학습 계획
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="review10" value="">
+                                            기타 (공란)
+                                        </label>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <!-- //인사말 -->
+                        </div>
+
+                        <div class="btn-box">
+                            <button type="button" class="btn-show-preview" onclick="showPreview()">미리보기</button>
+                        </div>
+                    </div>
+                    <!-- 입력 화면 끝 -->
+                    <!-- 미리보기 화면 시작 -->
+                    <div class="review-bottom" id="review-preview-area" style="display: none;">
+                        
+                        <div class="preview-wrap">
+                            <strong class="title">선택한 학생의 리포트 총평 미리보기 입니다.</strong>
+                            <div class="preview-content">
+                                <section class="print-page report-page6">
+                                    <div class="row page-header">
+                                        <div class="col">
+                                            <strong>5</strong>
+                                            <h2>학습 종합 보고서</h2>
+                                            <p>학생의 수업 태도와 학습 과정에서의 변화를 세심히 살펴 알려드립니다. 본 원에서는 담당 교사가 학생의 학습 상황을 지속적으로 관찰하며, 보다 적극적으로 참여를 유도하고, 개인별 특성과 상황에 맞게 지도 하고 있습니다.</p>
+                                        </div>
+                                    </div>
+    
+                                    <div class="row page-content">
+                                        <div class="col">
+                                            <div class="grid">
+                                                <div class="grid-item item1">
+                                                    <span class="img-greetings"></span>
+                                                    <div class="txt">
+                                                        <textarea class="textarea maxLength" data-max="120" name="inp-review1" id="inp-review1"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item-wrap">
+                                                    <dl class="grid-item item2">
+                                                        <dt>성취도의 변화</dt>
+                                                        <dd class="txt">
+                                                            <textarea class="textarea maxLength noEnter" data-max="120" name="inp-review2" id="inp-review2"></textarea>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="grid-item item3">
+                                                        <dt>수업을 따라오는 정도</dt>
+                                                        <dd class="txt">
+                                                            <textarea class="textarea maxLength noEnter" data-max="120" name="inp-review3" id="inp-review3"></textarea>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="grid-item item4">
+                                                        <dt>수업 중 학습에 대한 태도</dt>
+                                                        <dd class="txt">
+                                                            <textarea class="textarea maxLength noEnter" data-max="120" name="inp-review4" id="inp-review4"></textarea>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="grid-item item5">
+                                                        <dt>수업 중 참여도</dt>
+                                                        <dd class="txt">
+                                                            <textarea class="textarea maxLength noEnter" data-max="120" name="inp-review5" id="inp-review5"></textarea>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="grid-item item6">
+                                                        <dt>자기주도 학습 태도</dt>
+                                                        <dd class="txt">
+                                                            <textarea class="textarea maxLength noEnter" data-max="120" name="inp-review6" id="inp-review6"></textarea>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="grid-item item7">
+                                                        <dt>학생의 정서적인 상태</dt>
+                                                        <dd class="txt">
+                                                            <textarea class="textarea maxLength noEnter" data-max="120" name="inp-review7" id="inp-review7"></textarea>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="grid-item item8">
+                                                        <dt>교사와의 관계</dt>
+                                                        <dd class="txt">
+                                                            <textarea class="textarea maxLength noEnter" data-max="120" name="inp-review8" id="inp-review8"></textarea>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="grid-item item9">
+                                                        <dt>질문에 대한 반응</dt>
+                                                        <dd class="txt">
+                                                            <textarea class="textarea maxLength noEnter" data-max="120" name="inp-review9" id="inp-review9"></textarea>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="grid-item item10">
+                                                    <div class="txt">
+                                                        <textarea class="textarea maxLength" data-max="250" name="inp-review10" id="inp-review10"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="grid-footer"><strong>담당교사 홍길동</strong> 드림</p>
+                                        </div>
+                                    </div>
+                                    <!-- //page-content -->
+    
+                                    <div class="page-footer">
+                                        <b>최고수학학원</b>
+                                        <span>TEL : 070-1234-5678</span>
+                                        <span><i></i>page</span>
+                                    </div>
+                                    <!-- //page-footer -->
+                                </section>
+                            </div>
+                        </div>
+
+                        <div class="btn-box">
+                            <button type="button" class="btn-modify" onclick="showInput()">수정</button>
+                            <button type="button" class="btn-save">저장</button>
+                        </div>
+                    </div>
+                    <!-- 미리보기 화면 끝 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script>
+        /* 맺음말 체크박스 최대 2개 제한 */
+        const checkboxes = document.querySelectorAll('input[name="review10"]');
+        const maxAllowed = 2;
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const checked = document.querySelectorAll('input[name="review10"]:checked');
+                if (checked.length === 0) {
+                    checkboxes[checkboxes.length-1].checked = true;
+                }
+                if (checked.length > maxAllowed) {
+                    checkbox.checked = false;
+                    alert(`최대 ${maxAllowed}개까지만 선택할 수 있습니다.`);
+                }
+            });
+        });
+
+        /* textarea 한글 120자 제한 */
+        const textarea = document.querySelectorAll('.maxLength');
+
+        textarea.forEach(item => {
+            const validate = () => {
+                const limit = parseInt(item.dataset.max, 10) || 120; // 기본값 120
+                let value = item.value;
+                const plainText = value.replace(/<[^>]*>/g, '');
+
+                if (plainText.length > limit) {
+                    value = plainText.substring(0, limit);
+                    item.value = value;
+                    item.classList.add('error');
+                    setTimeout(() => {
+                        item.classList.remove('error');
+                    }, 1000);
+                }
+                item.value = value;
+            };
+
+            item.addEventListener('input', (e) => {
+                if (!e.isTrusted) return; // 자동 입력 방지
+                validate();
+            });
+
+            if (item.classList.contains('noEnter')) {
+                item.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                    }
+                });
+            }
+
+            validate();
+        });
+
+        /* CSV 파일 문장 textarea에 랜덤 입력 */
+        let cachedCsvRows = null;
+        const csvUrl = "https://howhyjdy.github.io/howhymath/assets/hmath/reports_reviews_v2.csv";
+
+        document.querySelector('.btn-show-preview').addEventListener('click', function () {
+            const button = this;
+            button.disabled = true; // 중복 클릭 방지
+
+            const cateArr = [
+                '인사말', '성취도의 변화', '수업을 따라오는 정도',
+                '수업중 학습에 대한 태도', '수업 중 참여도', '자기주도 학습 태도',
+                '학생의 정서적인 상태', '교사와의 관계', '수업중 질문 활동', '맺음말'
+            ];
+
+            // textarea 초기화
+            for (let i = 0; i < cateArr.length; i++) {
+                const textarea = document.querySelector(`textarea[name="inp-review${i + 1}"]`);
+                if (textarea) textarea.value = '';
+            }
+
+            const applyCsvToTextareas = (parsedRows) => {
+                for (let i = 0; i < cateArr.length; i++) {
+                    const category = cateArr[i];
+                    let selectedValues = [];
+
+                    //맺음말 checkbox
+                    if (i === 9) {
+                        const checkedInputs = document.querySelectorAll(`input[name="review${i + 1}"]:checked`);
+                        selectedValues = Array.from(checkedInputs).map(inp => inp.value.trim());
+                        if (selectedValues.length === 0) continue;
+
+                        const matchedSentences = [];
+
+                        selectedValues.forEach(value => {
+                            const filtered = parsedRows.filter(row =>
+                                row["분류1"]?.trim() === category &&
+                                row["분류2"]?.trim() === value
+                            );
+                            if (filtered.length > 0) {
+                                const randomRow = filtered[Math.floor(Math.random() * filtered.length)];
+                                matchedSentences.push(randomRow["문구"]);
+                            }
+                        });
+
+                        const textarea = document.querySelector(`textarea[name="inp-review${i + 1}"]`);
+                        if (textarea && matchedSentences.length > 0) {
+                            textarea.value = matchedSentences.join("\n");
+                        }
+                        continue;
+                    }
+
+                    //그 외 나머지 radio
+                    const checkedInp = document.querySelector(`input[name="review${i + 1}"]:checked`);
+                    if (!checkedInp) continue;
+                    selectedValues = [checkedInp.value.trim()];
+
+                    const filteredRows = parsedRows.filter(row =>
+                        row["분류1"]?.trim() === category &&
+                        row["분류2"]?.trim() === selectedValues[0]
+                    );
+
+                    if (filteredRows.length > 0) {
+                        const randomRow = filteredRows[Math.floor(Math.random() * filteredRows.length)];
+                        const textarea = document.querySelector(`textarea[name="inp-review${i + 1}"]`);
+                        if (textarea && randomRow["문구"]) {
+                            textarea.value = randomRow["문구"];
+                        }
+                    }
+                }
+                button.disabled = false; // 작업 완료 후 버튼 다시 활성화
+            };
+
+            if (cachedCsvRows) {
+                applyCsvToTextareas(cachedCsvRows); // 캐시 사용
+            } else {
+                fetch(csvUrl)
+                .then(response => response.text())
+                .then(csvData => {
+                    const cleanCsv = csvData.replace(/^\uFEFF/, ''); // BOM 제거
+                    const parsed = Papa.parse(cleanCsv, {
+                        header: true,
+                        skipEmptyLines: true
+                    });
+                    cachedCsvRows = parsed.data;
+                    applyCsvToTextareas(cachedCsvRows);
+                })
+                .catch(error => {
+                    console.error("CSV 파일을 가져오는 중 오류 발생:", error);
+                    button.disabled = false;
+                });
+            }
+        });
+
+        function showPreview() {
+            //값 미리보기 화면 textarea에 넣고 보여주기
+            $('#review-input-area').hide();
+            $('#review-preview-area').show();
+        }
+
+        function showInput() {
+            const isModify = confirm('문구가 변경됩니다. 수정을 진행하시겠습니까?')
+            if(isModify){
+                $('#review-preview-area').hide();
+                $('#review-input-area').show();
+            }
+        }
+    </script>
+</body>
+</html>

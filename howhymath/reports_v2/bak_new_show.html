@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>하와이매쓰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+    <!-- base css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css"/>
+    <!-- site css -->
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734673801"/>
+    <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734673801"/>
+    <!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734673801" /-->
+    <!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734673801"/> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/work.css"/>
+    <!-- base javascript -->
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+    <script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+    <!-- site javascript -->
+    <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                showMathMenu: false,
+                tex2jax: { displayMath: [ ["$$","$$"] ] },
+                "HTML-CSS": { fonts: ["Latin-Modern"] }
+            });
+        </script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1734673801"></script>
+    <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1734673801"></script>
+    </head>
+    <script>
+    cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+    cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+    var lms_domain = "https://tutor.howhymath.com";
+    </script>
+
+<body data-layout="horizontal">
+    <div style="display:none">$$\require{cancel}$$</div>
+    <div class="page-wrapper" style="padding:0;width:100% !important;">
+        <div class="page-content">
+            <div class="container-fluid">
+                <!--link rel="stylesheet" type="text/css" href="https://img.howhymath.com/soo/css2/print.css?v=20230527"/-->
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+                <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/justgage/raphael-2.1.4.min.js"></script>
+                <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/justgage/justgage.js"></script>
+                <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/d3/d3.min.js"></script>
+                <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/c3/c3.min.js"></script>
+                <div class="row no-print" style="padding: 30px 10px 10px;background:#fff;">
+                    <div class="col-md-12" style="text-align:center;">
+                        <button type="button" class="mbtn" disabled onclick="load_report_box( );">◀</button>
+                        &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:17px;"><b>이하와</b></span>
+                        &nbsp; &nbsp; &nbsp; &nbsp; <button type="button" class="mbtn" disabled onclick="load_report_box( );">▶</button>
+                        <br>
+                        <p style="padding-top: 12px;font-size:16px;">총평을 적어주세요.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- 리포트 내용 -->
+                        <div id="report_box">
+                            <div class="study-report-container">
+                                <div class="content" style="justify-content: space-between;">
+                                    <div class="left" style="display: flex; gap: 10px; align-items: center;">
+                                        <div style="color: #000;font-size: 34px;font-weight: 700;">학습리포트</div>
+                                        <div style="font-size: 30px; color: #E5E5E5;"> | </div>
+                                        <div style="color: #000;font-size: 18px;font-weight: 700;">(초5) 이하와(학생) 학생</div>
+                                    </div>
+                                    <div class="right">
+                                        <div style="text-align: end; color: #000;font-size: 14px;font-style: normal;font-weight: 700;line-height: normal; margin-bottom: 10px;">
+                                            하와이컴퍼니 담당교사: 이하와
+                                        </div>
+                                        <div style="color: var(--Gray01, #959595);font-weight: 700;">
+                                            학습기간 <span style="color: #000;margin-left: 20px;">2024-11-01 ~ 2024-11-30</span>
+                                        </div>
+                                        <div style="color: var(--Gray01, #959595);font-weight: 700;">
+                                            출석일 <span style="color: #000;margin-left: 20px;">
+                                            0일 (00시간 00분)</span>
+                                        </div>
+                                        <div style="color: var(--Gray01, #959595);font-weight: 700;">
+                                            학습변화량 <span style="color: blue;margin-left: 20px;"> △ 01시간 00분 </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="study-report-container" style="display:none;">
+                                <div class="title">학습결과요약</div>
+                                <div class="content" style="display: grid; grid-template-columns: 49% 2% 49%">
+                                    <div class="left">
+                                        <div style="margin-top: 10px; color: #000;font-size: 14px;font-weight: 400;">평균정답률:<span style="font-weight: 700;">80%</span></div>
+                                        <!-- img src="/app/img/report_progress_bar.png" style="width: 100%;" alt=""-->
+                                    </div>
+                                    <div>
+                                    </div>
+                                    <div class="right">
+                                        <div style="margin-top: 10px; color: #000;font-size: 14px;font-weight: 400;">평균성취도:<span style="font-weight: 700;">중</span></div>
+                                        <!-- img src="/app/img/report_progress_bar.png" style="width: 100%;" alt=""-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="study-report-container">
+                                <div class="title">학습결과요약</div>
+                                <div class="content" style="display: grid; gap: 20px; grid-template-columns: repeat(4, 1fr); ">
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">교재학습</div>
+                                        <div class="progress-box">
+                                            <div id="tbk_gauge_199" class="gauge"></div>
+                                        </div>
+                                    </div>
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">출제마법사</div>
+                                        <div class="progress-box">
+                                            <div id="wiz_gauge_199" class="gauge"></div>
+                                        </div>
+                                    </div>
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">오답학습</div>
+                                        <div class="progress-box">
+                                            <div id="wrg_gauge_199" class="gauge"></div>
+                                        </div>
+                                    </div>
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">맞춤학습</div>
+                                        <div class="progress-box">
+                                            <div id="rec_gauge_199" class="gauge"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="study-report-container">
+                                <div class="title">시험지 분석</div>
+                                <div class="content" style="display: grid; gap: 20px; grid-template-columns: repeat(4, 1fr); ">
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">학습문항수</div>
+                                        <div class="font-box">4 문항</div>
+                                    </div>
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">문항평균 난이도</div>
+                                        <div class="font-box">
+                                            1.25
+                                            <div style="display: block; color: var(--Gray-06, #999); font-size: 16px; font-weight: 700;">(최하1~최상5)</div>
+                                        </div>
+                                    </div>
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">전체오답</div>
+                                        <div class="font-box">
+                                            1문항
+                                            <div style="display: block; color: var(--Gray-06, #999); font-size: 16px; font-weight: 700;">(정답률 75%)</div>
+                                        </div>
+                                    </div>
+                                    <div class="research-box">
+                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">스마트오답</div>
+                                        <div class="font-box">
+                                            1문항
+                                            <div style="display: block; color: var(--Gray-06, #999); font-size: 16px; font-weight: 700;">(정답률 75%)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="study-report-container">
+                                    <div class="header" style="justify-content: left !important;">
+                                        <div class="left">학습구성</div>
+                                        <!--div class="right" style="padding-left:30px;">
+                                        <div class="circle_4A5569"> </div> <div>초등</div>
+                                        <div class="circle_D47C3A"> </div> <div>중등</div>
+                                        <div class="circle_E798C9"> </div> <div>고등</div>
+                                        <div class="circle_424242"> </div> <div>고등</div>
+                                    </div-->
+                                    </div>
+                                    <div id="pie1" class="c3"></div>
+                                </div>
+                                <div class="study-report-container">
+                                    <div class="header" style="justify-content: left !important;">
+                                        <div class="left">난이도 구성</div>
+                                        <!--div class="right" style="padding-left:30px;">
+                                        <div class="circle_E5EFD9"> </div> <div>하</div>
+                                        <div class="circle_CCDFB5"> </div> <div>증하</div>
+                                        <div class="circle_B4D090"> </div> <div>중</div>
+                                        <div class="circle_64813D"> </div> <div>중상</div>
+                                        <div class="circle_44582B"> </div> <div>상</div>
+                                    </div-->
+                                    </div>
+                                    <div id="pie2" class="c3"></div>
+                                </div>
+                            </div>
+                            <div class="study-report-container">
+                                <div class="title">단원별 분석</div>
+                                <p style="padding: 5px">
+                                    <strong class="txt-title">* 단원별 AI 분석</strong>
+                                    <small>실수로 틀린문제와 최근 학습결과를 분석하여 예전에는 틀렸으나 현재는 틀리지 않을 문항을 판단합니다.</small>
+                                </p>
+                                <table class="table table-striped mb-0 table-border-none" style="margin-top: 10px;">
+                                    <thead>
+                                        <tr style="background: rgba(0, 0, 0, 0.05); ">
+                                            <th style="width: 10%;">학년</th>
+                                            <th style="width: 20%;">대단원</th>
+                                            <th style="width: 20%;">중단원</th>
+                                            <th style="width: 10%;">학습문항수</th>
+                                            <th style="width: 10%;">정답수</th>
+                                            <th style="width: 10%;">AI정답수</th>
+                                            <th style="width: 10%;">성취도</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">초6-2</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);text-align:left;">01. 분수의 나눗셈</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);text-align:left;">01. (자연수)÷(자연수)의 몫을 분수로 나타내기(1)</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">4</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">3</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">3</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);"><span style="font-size:17px;color:#c96855">75</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">초6-2</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);text-align:left;">01. 분수의 나눗셈</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);text-align:left;">01. (자연수)÷(자연수)의 몫을 분수로 나타내기(2)</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">4</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">3</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">3</td>
+                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);"><span style="font-size:17px;color:#c96855">75</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="study-report-container">
+                                <div class="title">총평
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#popup_review">총평 만들기</button>
+                                </div>
+                                <textarea title="" name="comments" id="fx-form-comments" rows="7" placeholder="학생에 대한 총평을 직접 입력해 주세요." style="font-size:14px;width: 100%;border: 1px solid #707070;"></textarea>
+                            </div>
+                            <div class="modal-bottom-btn-box">
+                                <button type="button" class="mbtn" onclick="save_comment();">평가 저장</button>
+                                <button type="button" class="mbtn" onclick="print_reports( 199 );">인쇄</button>
+                                <button type="button" class="gbtn" onclick="window.close();">닫기</button>
+                            </div>
+                            <br>
+                            <div class="weak-box" style="display:none;">
+                                <div class="row" style="margin:0px !important;">
+                                    <div class="col-sm-6" style="padding: 5px 40px !important;">
+                                        <h5>단원별 성취도</h5>
+                                        <canvas id="bar_chart1_199" style="width: 0px; min-height: 150px; display: block; box-sizing: border-box; height: 0px;" height="0" width="0"></canvas>
+                                    </div>
+                                    <div class="col-sm-6" style="padding: 5px 40px !important;">
+                                        <h5>난이도별 성취도</h5>
+                                        <canvas id="bar_chart2_199" style="width: 0px; min-height: 150px; display: block; box-sizing: border-box; height: 0px;" height="0" width="0"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                function print_reports( id )
+                                {
+                                    var url = "/reports_v2/prints?ids=" + id;
+                                    fx_popup_window( url , { name: 'popup_report_print', width: '960', height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
+                                }
+                                $( document ).ready(function() {
+                                    var tbk_gauge_199 = new JustGage({
+                                        id: "tbk_gauge_199",
+                                        value:75,
+                                        min: 0,
+                                        max: 100,
+                                        donut: true,
+                                        // gaugeWidthScale: 0.3, 250131 그래프 두께 수정
+                                        gaugeWidthScale: 0.5,
+                                        counter: true,
+                                        hideInnerShadow: true,
+                                        relativeGaugeSize: true,
+                                        // customSectors : [{"lo":80,"hi":100,"color":"#96ba7d"},{"lo":60,"hi":80,"color":"#e3c97c"},{"lo":-1,"hi":60,"color":"#c96855"}] 250131 컬러변경
+                                        customSectors : [
+                                            {"lo":80,"hi":100,"color":"#72be1e"},
+                                            {"lo":60,"hi":80,"color":"#72be1e"},
+                                            {"lo":-1,"hi":60,"color":"#72be1e"}
+                                        ]
+                                    });
+                                    var wiz_gauge_199 = new JustGage({
+                                        id: "wiz_gauge_199",
+                                        value: 15,
+                                        min: 0,
+                                        max: 100,
+                                        donut: true,
+                                        // gaugeWidthScale: 0.3,
+                                        gaugeWidthScale: 0.5,
+                                        counter: true,
+                                        hideInnerShadow: true,
+                                        relativeGaugeSize: true,
+                                        // customSectors : [{"lo":80,"hi":100,"color":"#96ba7d"},{"lo":60,"hi":80,"color":"#e3c97c"},{"lo":-1,"hi":60,"color":"#c96855"}] 250131 컬러변경
+                                        customSectors : [
+                                            {"lo":80,"hi":100,"color":"#2bbcd3"},
+                                            {"lo":60,"hi":80,"color":"#2bbcd3"},
+                                            {"lo":-1,"hi":60,"color":"#2bbcd3"}
+                                        ]
+                                    });
+                                    var wiz_gauge_199 = new JustGage({
+                                        id: "rec_gauge_199",
+                                        value: 35,
+                                        min: 0,
+                                        max: 100,
+                                        donut: true,
+                                        // gaugeWidthScale: 0.3,
+                                        gaugeWidthScale: 0.5,
+                                        counter: true,
+                                        hideInnerShadow: true,
+                                        relativeGaugeSize: true,
+                                        // customSectors : [{"lo":80,"hi":100,"color":"#96ba7d"},{"lo":60,"hi":80,"color":"#e3c97c"},{"lo":-1,"hi":60,"color":"#c96855"}] 250131 컬러변경
+                                        customSectors : [
+                                            {"lo":80,"hi":100,"color":"#4789df"},
+                                            {"lo":60,"hi":80,"color":"#4789df"},
+                                            {"lo":-1,"hi":60,"color":"#4789df"}
+                                        ]
+                                    });
+                                    var wrg_gauge_199 = new JustGage({
+                                        id: "wrg_gauge_199",
+                                        value: 55,
+                                        min: 0,
+                                        max: 100,
+                                        donut: true,
+                                        // gaugeWidthScale: 0.3,
+                                        gaugeWidthScale: 0.5,
+                                        counter: true,
+                                        hideInnerShadow: true,
+                                        relativeGaugeSize: true,
+                                        // customSectors : [{"lo":80,"hi":100,"color":"#96ba7d"},{"lo":60,"hi":80,"color":"#e3c97c"},{"lo":-1,"hi":60,"color":"#c96855"}] 250131 컬러변경
+                                        customSectors : [
+                                            {"lo":80,"hi":100,"color":"#fb9f3d"},
+                                            {"lo":60,"hi":80,"color":"#fb9f3d"},
+                                            {"lo":-1,"hi":60,"color":"#fb9f3d"}
+                                        ]
+                                    });
+                                    var data1199 = {
+                                        labels: [ '초6-2 01. 분수의 나눗셈' ],
+                                        datasets: [{
+                                            data: [ '75' ],
+                                            backgroundColor: [ '#e3c97c' ],
+                                            borderWidth: 0,
+                                            fill: false
+                                        }]
+                                    };
+                                    var data2199 = {
+                                        labels: [ '최하','하','중','상','최상' ],
+                                        datasets: [{
+                                            data: [ '67','100','0','0','0' ],
+                                            backgroundColor: [ '#e3c97c','#96ba7d','#c96855','#c96855','#c96855' ],
+                                            borderWidth: 0,
+                                            fill: false
+                                        }]
+                                    };
+                                    var options = {};
+                                    var options_first = Object.assign({}, options);
+                                    options_first['indexAxis'] = 'y';
+                                    var barChartCanvas1 = $("#bar_chart1_199").get(0).getContext("2d");
+                                    var barChart1 = new Chart(barChartCanvas1, { type: 'bar', data: data1199, options: options_first });
+                                    var barChartCanvas2 = $("#bar_chart2_199").get(0).getContext("2d");
+                                    var barChart2 = new Chart(barChartCanvas2, { type: 'bar', data: data2199, options: options });
+                                    draw_graph();
+                                });
+                                function save_comment()
+                                {
+                                    var comment = $('#fx-form-comments').val();
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "/reports_v2/save_comment",
+                                        data: "id=199&review=" + encodeURI(comment),
+                                        async:false,
+                                        cache:false,
+                                        success: function (response) {
+                                            if( response == 'ok' )
+                                                alert( '저장되었습니다.');
+                                        }
+                                    });
+                                }
+                                function draw_graph()
+                                {
+                                    c3.generate({
+                                        bindto: '#pie2',
+                                        data:{
+                                            columns: [
+                                                ['최하', 3 ],
+                                                ['하', 1 ],
+                                                ['중', 0 ],
+                                                ['상', 0 ],
+                                                ['최상', 0 ]
+                                            ],
+                                            colors:{
+                                                /*250131 차트 컬러 변경
+                                                최하: '#e6efda',
+                                                하:   '#ccdfb5',
+                                                중:   '#b4d090',
+                                                상:   '#64813d',
+                                                최상: '#44582b'*/
+                                                최하: 'rgb(201, 245, 255)',
+                                                하:   'rgb(134, 227, 247)',
+                                                중:   'rgb(29, 192, 239)',
+                                                상:   'rgb(6, 137, 220)',
+                                                최상: 'rgb(46, 78, 217)'
+                                            },
+                                            // type : 'pie' 250131 도넛으로 변경
+                                            type : 'donut'
+                                        },
+                                        legend: {
+                                            position: 'right'
+                                        }//250131 legend 포지션 추가
+                                    });
+                                    c3.generate({
+                                        bindto: '#pie1',
+                                        data:{
+                                            columns: [
+                                                ['교재', 4 ],
+                                                ['출제', 1 ],
+                                                ['오답', 1 ],
+                                                ['맞춤', 1 ]
+                                            ],
+                                            colors:{
+                                                /*250131 차트 컬러 변경
+                                                교재: '#4a5569',
+                                                온라인: '#d47c3a',
+                                                오답: '#e798c9',
+                                                맞춤: '#707070'*/
+                                                교재:   'rgb(123, 189, 50)',
+                                                출제:   'rgb(43, 188, 211)',
+                                                맞춤:   'rgb(71, 137, 223)',
+                                                오답: 'rgb(251, 159, 61)'
+                                            },
+                                            // type : 'pie' 250131 도넛으로 변경
+                                            type : 'donut'
+                                        },
+                                        legend: {
+                                            position: 'right'
+                                        }//250131 legend 포지션 추가
+                                    });
+                                }
+                            </script>
+                        </div>
+                        <!-- //리포트 내용 -->
+                    </div>
+                </div>
+                <div class="row no-print" style="padding: 30px 10px 10px;background:#fff;">
+                    <div class="col-md-12" style="text-align:center;">
+                        <button type="button" class="mbtn" disabled onclick="load_report_box( );">◀</button>
+                        &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:17px;"><b>이하와</b></span>
+                        &nbsp; &nbsp; &nbsp; &nbsp; <button type="button" class="mbtn" disabled onclick="load_report_box( );">▶</button>
+                        <br>
+                        <p style="padding-top: 12px;">총평을 적어주세요.</p>
+                    </div>
+                </div>
+                <!-- <script type="text/javascript">
+                    $(document).ready(function() {
+                        get_report( 199 );
+                    });
+                    function get_report( study_report_id )
+                    {
+                        $.ajax({
+                            type: "GET",
+                            url: "/reports_v2/report?mode=edit&id=" + study_report_id,
+                            async : false,
+                            success: function (response) {
+                                $("#report_box").html( response );
+                            }
+                        });
+                    }
+                    function load_report_box( idx )
+                    {
+                        location.href="/reports_v2/show?ids=199&idx=" + idx;
+                    }
+                </script> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 총평 만들기 팝업 -->
+    <div class="modal fade" id="popup_review" tabindex="-1" aria-labelledby="popup_reviewLabel">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" data-bs-dismiss="modal" aria-label="Close" />
+                </div>
+                <div class="modal-body">
+                    <h3>총평 만들기</h3>
+                    <div>
+                        <div id="totalReview">
+                            <dl class="row">
+                                <dt>날씨</dt>
+                                <dd>
+                                    <input type="radio" name="re_weather" id="re_weather_sunny" value="sunny" checked>
+                                    <label for="re_weather_sunny">맑음</label>
+                                    <input type="radio" name="re_weather" id="re_weather_cloudy" value="cloudy">
+                                    <label for="re_weather_cloudy">흐림</label>
+                                    <input type="radio" name="re_weather" id="re_weather_rain" value="rain">
+                                    <label for="re_weather_rain">비</label>
+                                </dd>
+                            </dl>
+                            <dl class="row">
+                                <dt>학습태도</dt>
+                                <dd>
+                                    <input type="radio" name="re_status" id="re_status_good" value="good" checked>
+                                    <label for="re_status_good">좋음</label>
+                                    <input type="radio" name="re_status" id="re_status_warning" value="warning">
+                                    <label for="re_status_warning">주의</label>
+                                    <input type="radio" name="re_status" id="re_status_bad" value="bad">
+                                    <label for="re_status_bad">나쁨</label>
+                                </dd>
+                            </dl>
+                            <button type="button" id="btn_totalReview">만들기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://img.howhymath.com/custom/custom.js?v=20231031"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        cdml_mathjax_init();
+    });
+
+    document.getElementById('btn_totalReview').addEventListener('click', function(){
+        const totalReview = document.getElementById('totalReview');
+        let form_comments = document.getElementById('fx-form-comments');
+        let re_weatherVal = document.querySelector('input[name="re_weather"]:checked').value;
+        let re_statusVal = document.querySelector('input[name="re_status"]:checked').value;
+        
+        // fetch("https://howhyjdy.github.io/assets/review_weather.csv") // CSV 파일 URL
+        // .then(response => response.text()) // 파일을 텍스트로 변환
+        
+        const csvUrls = [
+            "https://howhyjdy.github.io/assets/review_weather.csv",
+            "https://howhyjdy.github.io/assets/review_status.csv",
+        ];
+        Promise.all(csvUrls.map(url => fetch(url).then(response => response.text())))
+        .then(csvDataArray => {
+            form_comments.value = '';
+            csvDataArray.forEach((csvData, index) => {
+                const rows = csvData.trim().split("\n").map(row => {
+                    const [name, ...contentArr] = row.split(',');
+                    const content = contentArr.join(',').replace(/^"(.*)"$/, '$1'); // 문자열 양쪽의 큰따옴표 제거
+                    return [name, content];
+                }); // CSV 데이터를 배열로 변환
+                let content_rows;
+
+                if(index === 0) content_rows = rows.filter( row => row[0] === re_weatherVal);
+                if(index === 1) content_rows = rows.filter( row => row[0] === re_statusVal);
+
+                form_comments.value += content_rows[Math.floor(Math.random() * content_rows.length)][1];
+                $("#popup_review").modal('hide');
+            })
+        })
+        .catch(error => console.error("CSV 파일을 가져오는 중 오류 발생:", error));
+    })
+    </script>
+</body>
+</html>

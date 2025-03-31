@@ -57,507 +57,1141 @@
                 <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/justgage/justgage.js"></script>
                 <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/d3/d3.min.js"></script>
                 <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/c3/c3.min.js"></script>
-                <div class="row no-print" style="padding: 30px 10px 10px;background:#fff;">
-                    <div class="col-md-12" style="text-align:center;">
-                        <button type="button" class="mbtn" disabled onclick="load_report_box( );">◀</button>
-                        &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:17px;"><b>이하와</b></span>
-                        &nbsp; &nbsp; &nbsp; &nbsp; <button type="button" class="mbtn" disabled onclick="load_report_box( );">▶</button>
-                        <br>
-                        <p style="padding-top: 12px;font-size:16px;">총평을 적어주세요.</p>
-                    </div>
+
+                
+                <!-- aaaaa 리포트 전용 인쇄관련 css 추가 및 스와이프슬라이드 js, css 추가-->
+                <link rel="stylesheet" type="text/css" href="../assets/css/report_print.css"/>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+                <div class="report-header">
+                    <p><strong>홍길동</strong> 학습 리포트</p>
+                    <button onclick="printAllSlides()">출력하기</button>
+                    <div class="swiper-pagination"></div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <!-- 리포트 내용 -->
-                        <div id="report_box">
-                            <div class="study-report-container">
-                                <div class="content" style="justify-content: space-between;">
-                                    <div class="left" style="display: flex; gap: 10px; align-items: center;">
-                                        <div style="color: #000;font-size: 34px;font-weight: 700;">학습리포트</div>
-                                        <div style="font-size: 30px; color: #E5E5E5;"> | </div>
-                                        <div style="color: #000;font-size: 18px;font-weight: 700;">(초5) 이하와(학생) 학생</div>
-                                    </div>
-                                    <div class="right">
-                                        <div style="text-align: end; color: #000;font-size: 14px;font-style: normal;font-weight: 700;line-height: normal; margin-bottom: 10px;">
-                                            하와이컴퍼니 담당교사: 이하와
-                                        </div>
-                                        <div style="color: var(--Gray01, #959595);font-weight: 700;">
-                                            학습기간 <span style="color: #000;margin-left: 20px;">2024-11-01 ~ 2024-11-30</span>
-                                        </div>
-                                        <div style="color: var(--Gray01, #959595);font-weight: 700;">
-                                            출석일 <span style="color: #000;margin-left: 20px;">
-                                            0일 (00시간 00분)</span>
-                                        </div>
-                                        <div style="color: var(--Gray01, #959595);font-weight: 700;">
-                                            학습변화량 <span style="color: blue;margin-left: 20px;"> △ 01시간 00분 </span>
+
+                <div class="swiper reportSwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+                            <section class="print-page report-page1">
+                                <div class="row">
+                                    <div class="col">
+                                        <span>학습 리포트</span>
+                                        <h1>REPORT</h1>
+                                        <div>
+                                            <dl>
+                                                <dt>이름 : </dt>
+                                                <dd>이하와</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>학년 : </dt>
+                                                <dd>초5</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>학습기간 : </dt>
+                                                <dd>2024-11-01 ~ 2024-11-30</dd>
+                                            </dl>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="study-report-container" style="display:none;">
-                                <div class="title">학습결과요약</div>
-                                <div class="content" style="display: grid; grid-template-columns: 49% 2% 49%">
-                                    <div class="left">
-                                        <div style="margin-top: 10px; color: #000;font-size: 14px;font-weight: 400;">평균정답률:<span style="font-weight: 700;">80%</span></div>
-                                        <!-- img src="/app/img/report_progress_bar.png" style="width: 100%;" alt=""-->
-                                    </div>
-                                    <div>
-                                    </div>
-                                    <div class="right">
-                                        <div style="margin-top: 10px; color: #000;font-size: 14px;font-weight: 400;">평균성취도:<span style="font-weight: 700;">중</span></div>
-                                        <!-- img src="/app/img/report_progress_bar.png" style="width: 100%;" alt=""-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="study-report-container">
-                                <div class="title">학습결과요약</div>
-                                <div class="content" style="display: grid; gap: 20px; grid-template-columns: repeat(4, 1fr); ">
-                                    <div class="research-box">
-                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">교재학습</div>
-                                        <div class="progress-box">
-                                            <div id="tbk_gauge_199" class="gauge"></div>
-                                        </div>
-                                    </div>
-                                    <div class="research-box">
-                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">출제마법사</div>
-                                        <div class="progress-box">
-                                            <div id="wiz_gauge_199" class="gauge"></div>
-                                        </div>
-                                    </div>
-                                    <div class="research-box">
-                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">오답학습</div>
-                                        <div class="progress-box">
-                                            <div id="wrg_gauge_199" class="gauge"></div>
-                                        </div>
-                                    </div>
-                                    <div class="research-box">
-                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">맞춤학습</div>
-                                        <div class="progress-box">
-                                            <div id="rec_gauge_199" class="gauge"></div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h2>학부모님께</h2>
+                                        <div>
+                                            <p>
+                                                본 리포트는 학생 개개인의 학습 데이터를 정밀 분석하여 맞춤형 학습을 제공한 결과를 담고 있습니다. 단순한 문제 풀이가 아니라, 개념을 이해하고 적용하는 과정이 중요하기 때문에, 본원에서는 학생별 커리큘럼 및 문제 해결 난이도를 조정하여 최적의 학습 환경을 조성하고 있습니다. 이를 통해 사고력과 문제해결력을 체계적으로 향상시키는 학습을 진행 합니다.
+                                            </p>
+                                            <strong>학생에게 꼭 맞춘 맞춤형 학습 제공</strong>
+                                            <ul>
+                                                <li>학생의 학습 데이터를 분석하여 개별 수준에 맞는 문제를 제공합니다.</li>
+                                                <li>기초 개념을 탄탄히 다지면서도, 점진적으로 난이도를 높여 도전적인 문제 해결 능력을 키울 수 있도록 지도합니다.</li>
+                                            </ul>
+                                            <strong>오답은 성장의 기회입니다.</strong>
+                                            <ul>
+                                                <li>틀린 문제는 부족한 것이 아니라, 실력을 키울 수 있는 중요한 과정입니다.</li>
+                                                <li>오답을 분석하고 다시 학습하면서 사고력을 키워 학습의 완성도를 높여갑니다.</li>
+                                            </ul>
+                                            <strong>성취도는 단순한 정답률이 아닙니다.</strong>
+                                            <ul>
+                                                <li>쉬운 문제를 많이 맞히는 것이 아니라, 어려운 문제를 해결하는 능력이 성취도의 핵심입니다.</li>
+                                                <li>본원에서는 정답률뿐만 아니라 난이도, 도전 의식, 오답 극복 과정까지 종합적으로 평가하여 학생의 학습 성취도를 측정하고 맞춤 학습을 진행합니다.</li>
+                                            </ul>
+                                            <strong>체계적인 데이터 분석과 맞춤 학습 환경 제공</strong>
+                                            <ul>
+                                                <li>학습 성과 데이터를 기반으로 학생의 강점과 보완이 필요한 부분을 면밀히 분석합니다.</li>
+                                                <li>교사의 세심한 평가와 데이터를 종합하여, 학생이 최적의 환경에서 학습할 수 있도록 지도합니다.</li>
+                                            </ul>
+                                            <strong>궁금하신 점이 있으시면 언제든 본원으로 문의해 주세요.</strong>
+                                            <p>학생의 성장을 위해 항상 최선을 다하겠습니다. </p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="study-report-container">
-                                <div class="title">시험지 분석</div>
-                                <div class="content" style="display: grid; gap: 20px; grid-template-columns: repeat(4, 1fr); ">
-                                    <div class="research-box">
-                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">학습문항수</div>
-                                        <div class="font-box">4 문항</div>
-                                    </div>
-                                    <div class="research-box">
-                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">문항평균 난이도</div>
-                                        <div class="font-box">
-                                            1.25
-                                            <div style="display: block; color: var(--Gray-06, #999); font-size: 16px; font-weight: 700;">(최하1~최상5)</div>
-                                        </div>
-                                    </div>
-                                    <div class="research-box">
-                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">전체오답</div>
-                                        <div class="font-box">
-                                            1문항
-                                            <div style="display: block; color: var(--Gray-06, #999); font-size: 16px; font-weight: 700;">(정답률 75%)</div>
-                                        </div>
-                                    </div>
-                                    <div class="research-box">
-                                        <div class="title" style=" color: #000;font-size: 14px;font-weight: 700;">스마트오답</div>
-                                        <div class="font-box">
-                                            1문항
-                                            <div style="display: block; color: var(--Gray-06, #999); font-size: 16px; font-weight: 700;">(정답률 75%)</div>
-                                        </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <strong>최고수학 학원</strong>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="progress-container">
-                                <div class="study-report-container">
-                                    <div class="header" style="justify-content: left !important;">
-                                        <div class="left">학습구성</div>
-                                        <!--div class="right" style="padding-left:30px;">
-                                        <div class="circle_4A5569"> </div> <div>초등</div>
-                                        <div class="circle_D47C3A"> </div> <div>중등</div>
-                                        <div class="circle_E798C9"> </div> <div>고등</div>
-                                        <div class="circle_424242"> </div> <div>고등</div>
-                                    </div-->
-                                    </div>
-                                    <div id="pie1" class="c3"></div>
-                                </div>
-                                <div class="study-report-container">
-                                    <div class="header" style="justify-content: left !important;">
-                                        <div class="left">난이도 구성</div>
-                                        <!--div class="right" style="padding-left:30px;">
-                                        <div class="circle_E5EFD9"> </div> <div>하</div>
-                                        <div class="circle_CCDFB5"> </div> <div>증하</div>
-                                        <div class="circle_B4D090"> </div> <div>중</div>
-                                        <div class="circle_64813D"> </div> <div>중상</div>
-                                        <div class="circle_44582B"> </div> <div>상</div>
-                                    </div-->
-                                    </div>
-                                    <div id="pie2" class="c3"></div>
-                                </div>
-                            </div>
-                            <div class="study-report-container">
-                                <div class="title">단원별 분석</div>
-                                <p style="padding: 5px">
-                                    <strong class="txt-title">* 단원별 AI 분석</strong>
-                                    <small>실수로 틀린문제와 최근 학습결과를 분석하여 예전에는 틀렸으나 현재는 틀리지 않을 문항을 판단합니다.</small>
-                                </p>
-                                <table class="table table-striped mb-0 table-border-none" style="margin-top: 10px;">
-                                    <thead>
-                                        <tr style="background: rgba(0, 0, 0, 0.05); ">
-                                            <th style="width: 10%;">학년</th>
-                                            <th style="width: 20%;">대단원</th>
-                                            <th style="width: 20%;">중단원</th>
-                                            <th style="width: 10%;">학습문항수</th>
-                                            <th style="width: 10%;">정답수</th>
-                                            <th style="width: 10%;">AI정답수</th>
-                                            <th style="width: 10%;">성취도</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">초6-2</td>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);text-align:left;">01. 분수의 나눗셈</td>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);text-align:left;">01. (자연수)÷(자연수)의 몫을 분수로 나타내기(1)</td>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">4</td>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">3</td>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">3</td>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);"><span style="font-size:17px;color:#c96855">75</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">초6-2</td>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);text-align:left;">01. 분수의 나눗셈</td>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);text-align:left;">01. (자연수)÷(자연수)의 몫을 분수로 나타내기(2)</td>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">4</td>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">3</td>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);">3</td>
-                                            <td style="border : 1px solid var(--Gray-09, #E5E5E5);"><span style="font-size:17px;color:#c96855">75</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="study-report-container">
-                                <div class="title">총평
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#popup_review">총평 만들기</button>
-                                </div>
-                                <textarea title="" name="comments" id="fx-form-comments" rows="7" placeholder="학생에 대한 총평을 직접 입력해 주세요." style="font-size:14px;width: 100%;border: 1px solid #707070;"></textarea>
-                            </div>
-                            <div class="modal-bottom-btn-box">
-                                <button type="button" class="mbtn" onclick="save_comment();">평가 저장</button>
-                                <button type="button" class="mbtn" onclick="print_reports( 199 );">인쇄</button>
-                                <button type="button" class="gbtn" onclick="window.close();">닫기</button>
-                            </div>
-                            <br>
-                            <div class="weak-box" style="display:none;">
-                                <div class="row" style="margin:0px !important;">
-                                    <div class="col-sm-6" style="padding: 5px 40px !important;">
-                                        <h5>단원별 성취도</h5>
-                                        <canvas id="bar_chart1_199" style="width: 0px; min-height: 150px; display: block; box-sizing: border-box; height: 0px;" height="0" width="0"></canvas>
-                                    </div>
-                                    <div class="col-sm-6" style="padding: 5px 40px !important;">
-                                        <h5>난이도별 성취도</h5>
-                                        <canvas id="bar_chart2_199" style="width: 0px; min-height: 150px; display: block; box-sizing: border-box; height: 0px;" height="0" width="0"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                            <script>
-                                function print_reports( id )
-                                {
-                                    var url = "/reports_v2/prints?ids=" + id;
-                                    fx_popup_window( url , { name: 'popup_report_print', width: '960', height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
-                                }
-                                $( document ).ready(function() {
-                                    var tbk_gauge_199 = new JustGage({
-                                        id: "tbk_gauge_199",
-                                        value:75,
-                                        min: 0,
-                                        max: 100,
-                                        donut: true,
-                                        // gaugeWidthScale: 0.3, 250131 그래프 두께 수정
-                                        gaugeWidthScale: 0.5,
-                                        counter: true,
-                                        hideInnerShadow: true,
-                                        relativeGaugeSize: true,
-                                        // customSectors : [{"lo":80,"hi":100,"color":"#96ba7d"},{"lo":60,"hi":80,"color":"#e3c97c"},{"lo":-1,"hi":60,"color":"#c96855"}] 250131 컬러변경
-                                        customSectors : [
-                                            {"lo":80,"hi":100,"color":"#72be1e"},
-                                            {"lo":60,"hi":80,"color":"#72be1e"},
-                                            {"lo":-1,"hi":60,"color":"#72be1e"}
-                                        ]
-                                    });
-                                    var wiz_gauge_199 = new JustGage({
-                                        id: "wiz_gauge_199",
-                                        value: 15,
-                                        min: 0,
-                                        max: 100,
-                                        donut: true,
-                                        // gaugeWidthScale: 0.3,
-                                        gaugeWidthScale: 0.5,
-                                        counter: true,
-                                        hideInnerShadow: true,
-                                        relativeGaugeSize: true,
-                                        // customSectors : [{"lo":80,"hi":100,"color":"#96ba7d"},{"lo":60,"hi":80,"color":"#e3c97c"},{"lo":-1,"hi":60,"color":"#c96855"}] 250131 컬러변경
-                                        customSectors : [
-                                            {"lo":80,"hi":100,"color":"#2bbcd3"},
-                                            {"lo":60,"hi":80,"color":"#2bbcd3"},
-                                            {"lo":-1,"hi":60,"color":"#2bbcd3"}
-                                        ]
-                                    });
-                                    var wiz_gauge_199 = new JustGage({
-                                        id: "rec_gauge_199",
-                                        value: 35,
-                                        min: 0,
-                                        max: 100,
-                                        donut: true,
-                                        // gaugeWidthScale: 0.3,
-                                        gaugeWidthScale: 0.5,
-                                        counter: true,
-                                        hideInnerShadow: true,
-                                        relativeGaugeSize: true,
-                                        // customSectors : [{"lo":80,"hi":100,"color":"#96ba7d"},{"lo":60,"hi":80,"color":"#e3c97c"},{"lo":-1,"hi":60,"color":"#c96855"}] 250131 컬러변경
-                                        customSectors : [
-                                            {"lo":80,"hi":100,"color":"#4789df"},
-                                            {"lo":60,"hi":80,"color":"#4789df"},
-                                            {"lo":-1,"hi":60,"color":"#4789df"}
-                                        ]
-                                    });
-                                    var wrg_gauge_199 = new JustGage({
-                                        id: "wrg_gauge_199",
-                                        value: 55,
-                                        min: 0,
-                                        max: 100,
-                                        donut: true,
-                                        // gaugeWidthScale: 0.3,
-                                        gaugeWidthScale: 0.5,
-                                        counter: true,
-                                        hideInnerShadow: true,
-                                        relativeGaugeSize: true,
-                                        // customSectors : [{"lo":80,"hi":100,"color":"#96ba7d"},{"lo":60,"hi":80,"color":"#e3c97c"},{"lo":-1,"hi":60,"color":"#c96855"}] 250131 컬러변경
-                                        customSectors : [
-                                            {"lo":80,"hi":100,"color":"#fb9f3d"},
-                                            {"lo":60,"hi":80,"color":"#fb9f3d"},
-                                            {"lo":-1,"hi":60,"color":"#fb9f3d"}
-                                        ]
-                                    });
-                                    var data1199 = {
-                                        labels: [ '초6-2 01. 분수의 나눗셈' ],
-                                        datasets: [{
-                                            data: [ '75' ],
-                                            backgroundColor: [ '#e3c97c' ],
-                                            borderWidth: 0,
-                                            fill: false
-                                        }]
-                                    };
-                                    var data2199 = {
-                                        labels: [ '최하','하','중','상','최상' ],
-                                        datasets: [{
-                                            data: [ '67','100','0','0','0' ],
-                                            backgroundColor: [ '#e3c97c','#96ba7d','#c96855','#c96855','#c96855' ],
-                                            borderWidth: 0,
-                                            fill: false
-                                        }]
-                                    };
-                                    var options = {};
-                                    var options_first = Object.assign({}, options);
-                                    options_first['indexAxis'] = 'y';
-                                    var barChartCanvas1 = $("#bar_chart1_199").get(0).getContext("2d");
-                                    var barChart1 = new Chart(barChartCanvas1, { type: 'bar', data: data1199, options: options_first });
-                                    var barChartCanvas2 = $("#bar_chart2_199").get(0).getContext("2d");
-                                    var barChart2 = new Chart(barChartCanvas2, { type: 'bar', data: data2199, options: options });
-                                    draw_graph();
-                                });
-                                function save_comment()
-                                {
-                                    var comment = $('#fx-form-comments').val();
-                                    $.ajax({
-                                        type: "GET",
-                                        url: "/reports_v2/save_comment",
-                                        data: "id=199&review=" + encodeURI(comment),
-                                        async:false,
-                                        cache:false,
-                                        success: function (response) {
-                                            if( response == 'ok' )
-                                                alert( '저장되었습니다.');
-                                        }
-                                    });
-                                }
-                                function draw_graph()
-                                {
-                                    c3.generate({
-                                        bindto: '#pie2',
-                                        data:{
-                                            columns: [
-                                                ['최하', 3 ],
-                                                ['하', 1 ],
-                                                ['중', 0 ],
-                                                ['상', 0 ],
-                                                ['최상', 0 ]
-                                            ],
-                                            colors:{
-                                                /*250131 차트 컬러 변경
-                                                최하: '#e6efda',
-                                                하:   '#ccdfb5',
-                                                중:   '#b4d090',
-                                                상:   '#64813d',
-                                                최상: '#44582b'*/
-                                                최하: 'rgb(201, 245, 255)',
-                                                하:   'rgb(134, 227, 247)',
-                                                중:   'rgb(29, 192, 239)',
-                                                상:   'rgb(6, 137, 220)',
-                                                최상: 'rgb(46, 78, 217)'
-                                            },
-                                            // type : 'pie' 250131 도넛으로 변경
-                                            type : 'donut'
-                                        },
-                                        legend: {
-                                            position: 'right'
-                                        }//250131 legend 포지션 추가
-                                    });
-                                    c3.generate({
-                                        bindto: '#pie1',
-                                        data:{
-                                            columns: [
-                                                ['교재', 4 ],
-                                                ['출제', 1 ],
-                                                ['오답', 1 ],
-                                                ['맞춤', 1 ]
-                                            ],
-                                            colors:{
-                                                /*250131 차트 컬러 변경
-                                                교재: '#4a5569',
-                                                온라인: '#d47c3a',
-                                                오답: '#e798c9',
-                                                맞춤: '#707070'*/
-                                                교재:   'rgb(123, 189, 50)',
-                                                출제:   'rgb(43, 188, 211)',
-                                                맞춤:   'rgb(71, 137, 223)',
-                                                오답: 'rgb(251, 159, 61)'
-                                            },
-                                            // type : 'pie' 250131 도넛으로 변경
-                                            type : 'donut'
-                                        },
-                                        legend: {
-                                            position: 'right'
-                                        }//250131 legend 포지션 추가
-                                    });
-                                }
-                            </script>
+                            </section>
+                            <!-- //report-page1 끝 -->
                         </div>
-                        <!-- //리포트 내용 -->
+
+						<div class="swiper-slide">
+                            <section class="print-page report-page2">
+                                <div class="row page-header">
+                                    <div class="col">
+                                        <strong>1</strong>
+                                        <h2>학습 데이터 분석 요약</h2>
+                                    </div>
+                                </div>
+                                <!-- //page-header -->
+            
+                                <div class="row page-content">
+                                    <div class="col">
+            
+                                        <div class="row cont1">
+                                            <dl>
+                                                <dt>맞춤학습문항</dt>
+                                                <dd>450</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>평균난이도</dt>
+                                                <dd>중상</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>정답률</dt>
+                                                <dd>60%</dd>
+                                            </dl>
+                                        </div>
+                                        <!-- //cont1 -->
+            
+                                        <div class="cont2">
+                                            <strong>주요 학습 데이터</strong>
+                                            <div class="row">
+                                                <dl>
+                                                    <dt>문항 난이도 구성</dt>
+                                                    <dd><div id="page2_donut1"></div></dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>정·오답 비율</dt>
+                                                    <dd><div id="page2_donut2"></div></dd>
+                                                </dl>
+                                            </div>
+                                            <ul>
+                                                <li><b>학습문항 : </b>학생의 성취도에 따라 맞춤 제공된 문제 수를 의미함.</li>
+                                                <li><b>난이도 : </b>유형별 성취도에 맞춰 제시되며, 평균 난이도가 실력을 의미하지는 않음.</li>
+                                                <li><b>정답률 : </b>낮다고 부족한 것이 아니며, 잘하는 유형은 어려운 문제를 통해 활용 능력을 강화함.</li>
+                                            </ul>
+                                        </div>
+                                        <!-- //cont2 -->
+            
+                                        <div class="cont3">
+                                            <strong>학습한 단원</strong>
+                                            <div class="table-container">
+                                                <table class="table table-bordered">
+                                                    <colgroup>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>학년</th>
+                                                            <th>학기</th>
+                                                            <th>중단원명</th>
+                                                            <th>정답률</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <!-- 최대 10줄까지 -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- //cont3 -->
+            
+                                    </div>
+            
+                                </div>
+                                <!-- //page-content -->
+            
+                                <div class="page-footer">
+                                    <b>최고수학학원</b>
+                                    <span>TEL : 070-1234-5678</span>
+                                    <span><i></i>page</span>
+                                </div>
+                                <!-- //page-footer -->
+                            </section>
+                            <!-- //report-page2 끝 -->
+                        </div>
+
+						<div class="swiper-slide">
+                            <section class="print-page report-page3">
+                                <div class="row page-header">
+                                    <div class="col">
+                                        <strong>2</strong>
+                                        <h2>난이도별 학습분석</h2>
+                                        <p>학생의 수준에 맞춰 점진적으로 난이도를 높이며 학습을 진행하기 때문에, 정답률이 곧 수학 실력을 의미하는 것은 아닙니다. 어려운 문제에 도전할수록 정답률은 낮아질 수 있지만, 이는 사고력과 문제 해결력을 키우는 과정이며, 장기적으로 학습 성취도를 향상시키는 데 중요한 역할을 합니다.</p>
+                                    </div>
+                                </div>
+                                <!-- //page-header -->
+            
+                                <div class="row page-content">
+                                    <div class="col">
+                                        <div class="row">
+                                            <dl>
+                                                <dt>맞춤 난이도로 학습 진행</dt>
+                                                <dd>
+                                                    <div class="img-graph">
+                                                        <span class="y">어려운 문제</span>
+                                                        <div class="line">
+                                                            <div class="triangle">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                            <div class="text">
+                                                                <p>심화 문제 해결<br/>도전적 문제 해결 능력</p>
+                                                                <p>응용 문제 풀이<br/>논리적 사고력 강화</p>
+                                                                <p>기초 개념 정립<br/>기본 개념 이해 & 적용</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>학생의 난이도별 정답률</dt>
+                                                <dd><div id="page3_bar"></div></dd>
+                                            </dl>
+                                        </div>
+                                        <div class="cont1">
+                                            <strong>세부 학습 결과</strong>
+                                            <div class="table-container">
+                                                <table class="table table-bordered">
+                                                    <colgroup>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>구분</th>
+                                                            <th>기초</th>
+                                                            <th>기본</th>
+                                                            <th>응용</th>
+                                                            <th>심화</th>
+                                                            <th>최상위</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>학습문항수</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>정답수</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>오답수</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>정답률</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //page-content -->
+            
+                                <div class="page-footer">
+                                    <b>최고수학학원</b>
+                                    <span>TEL : 070-1234-5678</span>
+                                    <span><i></i>page</span>
+                                </div>
+                                <!-- //page-footer -->
+                            </section>
+                            <!-- //report-page3 끝 -->
+                        </div>
+
+						<div class="swiper-slide">
+                            <section class="print-page report-page4">
+                                <div class="row page-header">
+                                    <div class="col">
+                                        <strong>3</strong>
+                                        <h2>오답 유형 분석</h2>
+                                        <p>학생의 오답을 단순 반복 훈련이 아닌 철저한 유형 분석을 통해 원인을 파악하고 보완 학습을 진행합니다. <br />
+                                            특히 어려운 부분은 <b>1:1 개념 설명, 유사 문제 반복 훈련, 필요 시 이전 개념 복습</b>을 통해 학습 이해도를 높이며, 개념을 확실히 정립할 수 있도록 지도합니다.</p>
+                                    </div>
+                                </div>
+                                <!-- //page-header -->
+            
+                                <div class="row page-content">
+                                    <div class="col">
+                                        <div class="row">
+                                            <dl>
+                                                <dt>오답원인분석</dt>
+                                                <dd>개념 이해 부족<br />계산 실수<br />문제 풀이 전략 부족</dd>
+                                            </dl>
+                                            <span class="arr"></span>
+                                            <dl>
+                                                <dt>맞춤형 보완 학습</dt>
+                                                <dd>1:1 개념 설명<br />유사 문제 반복 훈련<br />연계 개념 복습</dd>
+                                            </dl>
+                                            <span class="arr"></span>
+                                            <dl>
+                                                <dt>성취도 향상</dt>
+                                                <dd>문제 해결력 상승<br />새로운 유형 적용<br />학습 자신감 향상</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="cont1">
+                                            <strong>특히 어려워했던 유형</strong>
+                                            <div class="table-container">
+                                                <div class="table">
+                                                    <div class="thead">
+                                                        <ul class="tr">
+                                                            <li class="th">단원 정답률</li>
+                                                            <li class="th">TOP3</li>
+                                                            <li class="th">유형명</li>
+                                                            <li class="th">정답율</li>
+                                                        </ul>
+                                                    </div>
+                                                    <ul class="tbody">
+                                                        <!-- tr 한 세트 시작 -->
+                                                        <li class="tr">
+                                                            <div class="cate td">초3 > 대단원 > 중단원</div>
+                                                            <div class="data">
+                                                                <strong class="td">67%</strong>
+                                                                <ul>
+                                                                    <li>
+                                                                        <p class="td">1</p>
+                                                                        <p class="td">03. 다항식의 덧셈에 대한 교환, 결합법칙 다항식의 덧셈에 대한 교환, 결합법칙 다항식의 덧셈에 대한 교환, 결합법칙</p>
+                                                                        <p class="td">30%</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="td">2</p>
+                                                                        <p class="td">02. 다항식의 곱셈공식</p>
+                                                                        <p class="td">40%</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="td">3</p>
+                                                                        <p class="td">01. 다항식의 덧셈</p>
+                                                                        <p class="td">20%</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <!-- tr 한 세트 끝 -->
+            
+                                                        <li class="tr">
+                                                            <div class="cate td">초3 > 대단원 > 중단원</div>
+                                                            <div class="data">
+                                                                <strong class="td">100%</strong>
+                                                                <ul>
+                                                                    <li>
+                                                                        <p class="td">1</p>
+                                                                        <p class="td">03. 다항식의 덧셈에 대한 교환, 결합법칙</p>
+                                                                        <p class="td">30%</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="td">2</p>
+                                                                        <p class="td">02. 다항식의 곱셈공식</p>
+                                                                        <p class="td">40%</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="td">3</p>
+                                                                        <p class="td">01. 다항식의 덧셈</p>
+                                                                        <p class="td">20%</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li class="tr">
+                                                            <div class="cate td">초3 > 대단원 > 중단원</div>
+                                                            <div class="data">
+                                                                <strong class="td">44%</strong>
+                                                                <ul>
+                                                                    <li>
+                                                                        <p class="td">1</p>
+                                                                        <p class="td">03. 다항식의 덧셈에 대한 교환, 결합법칙</p>
+                                                                        <p class="td">30%</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="td">2</p>
+                                                                        <p class="td">02. 다항식의 곱셈공식</p>
+                                                                        <p class="td">40%</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="td">3</p>
+                                                                        <p class="td">01. 다항식의 덧셈</p>
+                                                                        <p class="td">20%</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li class="tr">
+                                                            <div class="cate td">초3 > 대단원 > 중단원</div>
+                                                            <div class="data">
+                                                                <strong class="td">67%</strong>
+                                                                <ul>
+                                                                    <li>
+                                                                        <p class="td">1</p>
+                                                                        <p class="td">03. 다항식의 덧셈에 대한 교환, 결합법칙</p>
+                                                                        <p class="td">30%</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="td">2</p>
+                                                                        <p class="td">02. 다항식의 곱셈공식</p>
+                                                                        <p class="td">40%</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="td">3</p>
+                                                                        <p class="td">01. 다항식의 덧셈</p>
+                                                                        <p class="td">20%</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li class="tr">
+                                                            <div class="cate td">초3 > 대단원 > 중단원</div>
+                                                            <div class="data">
+                                                                <strong class="td">67%</strong>
+                                                                <ul>
+                                                                    <li>
+                                                                        <p class="td">1</p>
+                                                                        <p class="td">03. 다항식의 덧셈에 대한 교환, 결합법칙</p>
+                                                                        <p class="td">30%</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="td">2</p>
+                                                                        <p class="td">02. 다항식의 곱셈공식</p>
+                                                                        <p class="td">40%</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="td">3</p>
+                                                                        <p class="td">01. 다항식의 덧셈</p>
+                                                                        <p class="td">20%</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <!-- 최대 5세트 이후 다음페이지(report-page4)로 이어서 작성 -->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //page-content -->
+            
+                                <div class="page-footer">
+                                    <b>최고수학학원</b>
+                                    <span>TEL : 070-1234-5678</span>
+                                    <span><i></i>page</span>
+                                </div>
+                                <!-- //page-footer -->
+                            </section>
+                            <!-- //report-page4 끝 -->
+                        </div>
+
+                        <!-- report-page4 데이터 개수 초과 시 새 페이지 -->
+						<div class="swiper-slide">
+                            <section class="print-page report-page4">
+                                <div class="row page-header">
+                                    <div class="col">
+                                        <strong>3</strong>
+                                        <h2>오답 유형 분석</h2>
+                                        <!-- 추가 페이지는 설명글(p태그) 없습니다 -->
+                                    </div>
+                                </div>
+                                <!-- //page-header -->
+
+                                <div class="row page-content">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="cont1">
+                                                <strong>특히 여려워했던 유형</strong>
+                                                <div class="table-container">
+                                                    <div class="table">
+                                                        <div class="thead">
+                                                            <ul class="tr">
+                                                                <li class="th">단원 정답률</li>
+                                                                <li class="th">TOP3</li>
+                                                                <li class="th">유형명</li>
+                                                                <li class="th">정답율</li>
+                                                            </ul>
+                                                        </div>
+                                                        <ul class="tbody">
+                                                            <!-- tr 한 세트 시작 -->
+                                                            <li class="tr">
+                                                                <div class="cate td">초3 > 대단원 > 중단원</div>
+                                                                <div class="data">
+                                                                    <strong class="td">67%</strong>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <p class="td">1</p>
+                                                                            <p class="td">03. 다항식의 덧셈에 대한 교환, 결합법칙</p>
+                                                                            <p class="td">30%</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p class="td">2</p>
+                                                                            <p class="td">02. 다항식의 곱셈공식</p>
+                                                                            <p class="td">40%</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p class="td">3</p>
+                                                                            <p class="td">01. 다항식의 덧셈</p>
+                                                                            <p class="td">20%</p>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <!-- tr 한 세트 끝 -->
+                                                        </ul>
+                                                    </div>
+                                                    <!-- //table -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //page-content -->
+
+                                <div class="page-footer">
+                                    <b>최고수학학원</b>
+                                    <span>TEL : 070-1234-5678</span>
+                                    <span><i></i>page</span>
+                                </div>
+                                <!-- //page-footer -->
+                            </section>
+                            <!-- //report-page4(데이터 개수 초과 시 새 페이지) 끝 -->
+                        </div>
+
+                        <div class="swiper-slide">
+                            <section class="print-page report-page5">
+                                <div class="row page-header">
+                                    <div class="col">
+                                        <strong>4</strong>
+                                        <h2>학습 성취도 및 진도율</h2>
+                                        <p>본원은 <b>교육 과정에 따른 진도와 더불어, 학생의 성취도에 맞춰 최적의 개인별 커리큘럼을 구성하고 운영합니다.</b><br />학생의 성취도에 따라 선행·보완 학습하며, 시험 기간에는 반복 학습과 문제 해결 훈련을 강화해 <br />실전 적응력을 높입니다.</p>
+                                    </div>
+                                </div>
+                                <!-- //page-header -->
+            
+                                <div class="row page-content">
+                                    <div class="col">
+                                        <div class="row title">
+                                            <strong>초등 6-1</strong>
+                                            <p>학습 성취도 및 진도율</p>
+                                        </div>
+                                        <div class="row group elementary"><!--초등인 경우 클래스-->
+                                        <!-- <div class="row group middle"> 중등인 경우 클래스 -->
+                                        <!-- <div class="row group high"> 고등인 경우 클래스 -->
+                                            <dl>
+                                                <dt>학년</dt>
+                                                <dd>초6</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>학기</dt>
+                                                <dd>1학기</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>진도율</dt>
+                                                <dd>30%</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="table-container">
+                                            <table class="table table-bordered">
+                                                <colgroup>
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>단원명</th>
+                                                        <th>학습문항수</th>
+                                                        <th>정답수</th>
+                                                        <th>정답률</th>
+                                                        <th>성취도</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- 진도 활성화 클래스 on 추가 -->
+                                                    <tr class="on">
+                                                        <td>03. 다항식의 덧셈에 대한 교환, 결합법칙</td>
+                                                        <td>20</td>
+                                                        <td>17</td>
+                                                        <td>30%</td>
+                                                        <td>94</td>
+                                                    </tr>
+                                                    <tr class="on">
+                                                        <td>02. 다항식의 곱셈공식</td>
+                                                        <td>20</td>
+                                                        <td>17</td>
+                                                        <td>30%</td>
+                                                        <td>94</td>
+                                                    </tr>
+                                                    <tr class="on">
+                                                        <td>중단원3</td>
+                                                        <td>20</td>
+                                                        <td>17</td>
+                                                        <td>30%</td>
+                                                        <td>94</td>
+                                                    </tr>
+            
+                                                    <!-- 진도 비활성화(디폴트) 클래스 없음 -->
+                                                    <tr>
+                                                        <td>중단원4</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>중단원5</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>중단원6</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>중단원7</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>중단원8</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>중단원9</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>중단원10</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>중단원11</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>중단원12</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <!-- 모든 단원 표시(최대 12줄) -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //page-content -->
+            
+                                <div class="page-footer">
+                                    <b>최고수학학원</b>
+                                    <span>TEL : 070-1234-5678</span>
+                                    <span><i></i>page</span>
+                                </div>
+                                <!-- //page-footer -->
+                            </section>
+                            <!-- //report-page5 끝 -->
+                        </div>
+
+                        <div class="swiper-slide">
+                            <section class="print-page report-page5">
+                                <div class="row page-header">
+                                    <div class="col">
+                                        <strong>4</strong>
+                                        <h2>학습 성취도 및 진도율</h2>
+                                        <!-- 추가 페이지는 설명글(p태그) 없습니다 -->
+                                    </div>
+                                </div>
+                                <!-- //page-header -->
+            
+                                <div class="row page-content">
+                                    <div class="col">
+                                        <div class="row title">
+                                            <strong>중등 2-1</strong>
+                                            <p>학습 성취도 및 진도율</p>
+                                        </div>
+                                        <!-- <div class="row group elementary"> 초등인 경우 클래스 -->
+                                        <div class="row group middle"><!--중등인 경우 클래스-->
+                                        <!-- <div class="row group high"> 고등인 경우 클래스 -->
+                                            <dl>
+                                                <dt>학년</dt>
+                                                <dd>초6</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>학기</dt>
+                                                <dd>1학기</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>진도율</dt>
+                                                <dd>30%</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="table-container">
+                                            <table class="table table-bordered">
+                                                <colgroup>
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                    <col>
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>단원명</th>
+                                                        <th>학습문항수</th>
+                                                        <th>정답수</th>
+                                                        <th>정답률</th>
+                                                        <th>성취도</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- 진도 활성화 클래스 on 추가 -->
+                                                    <tr class="on">
+                                                        <td>중단원1</td>
+                                                        <td>20</td>
+                                                        <td>17</td>
+                                                        <td>30%</td>
+                                                        <td>94</td>
+                                                    </tr>
+                                                    <tr class="on">
+                                                        <td>중단원2</td>
+                                                        <td>20</td>
+                                                        <td>17</td>
+                                                        <td>30%</td>
+                                                        <td>94</td>
+                                                    </tr>
+                                                    <tr class="on">
+                                                        <td>중단원3</td>
+                                                        <td>20</td>
+                                                        <td>17</td>
+                                                        <td>30%</td>
+                                                        <td>94</td>
+                                                    </tr>
+            
+                                                    <!-- 진도 비활성화(디폴트) 클래스 없음 -->
+                                                    <tr>
+                                                        <td>중단원4</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <!-- 모든 단원 표시(최대 12줄) -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //page-content -->
+            
+                                <div class="page-footer">
+                                    <b>최고수학학원</b>
+                                    <span>TEL : 070-1234-5678</span>
+                                    <span><i></i>page</span>
+                                </div>
+                                <!-- //page-footer -->
+                            </section>
+                            <!-- //report-page5 끝 -->
+                        </div>
+
+                        <div class="swiper-slide">
+                            <section class="print-page report-page6">
+                                <div class="row page-header">
+                                    <div class="col">
+                                        <strong>5</strong>
+                                        <h2>학습 종합 보고서</h2>
+                                        <p>학생의 수업 태도와 학습 과정에서의 변화를 세심히 살펴 알려드립니다. 본 원에서는 담당 교사가 학생의 학습 상황을 지속적으로 관찰하며, 보다 적극적으로 참여를 유도하고, 개인별 특성과 상황에 맞게 지도 하고 있습니다.</p>
+                                    </div>
+                                </div>
+
+                                <div class="row page-content">
+                                    <div class="col">
+                                        <div class="grid">
+                                            <div class="grid-item item1">
+                                                <span class="img-greetings"></span>
+                                                <div class="txt">
+                                                    <p>오늘은 하늘이 맑고 햇살이 따뜻한 하루였습니다. <br />
+                                                        이렇게 좋은 날씨처럼 아이들의 학습에도 긍정적인 에너지가 가득하길 바랍니다. <br />
+                                                        우리 학생이 어떤 성장을 보였는지 함께 나누고자 합니다.</p>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item-wrap">
+                                                <dl class="grid-item item2">
+                                                    <dt>성취도의 변화</dt>
+                                                    <dd class="txt">
+                                                        <p>국민의 모든 자유와 권리는 국가안전보장·질서유지 또는 공공복리를 위하여 필요한 경우에 한하여 법률로써 제한할 수 있으며, 제한하는 경우에도 자유와 권리의 본질적인 내용을 침해할 수 없다.</p>
+                                                    </dd>
+                                                </dl>
+                                                <dl class="grid-item item3">
+                                                    <dt>수업을 따라오는 정도</dt>
+                                                    <dd class="txt">
+                                                        <p>수업 내용을 빠르게 이해하고 적용하는 능력이 뛰어납니다. 특히 새로운 개념을 접할 때도 큰 어려움 없이 소화하는 모습이 인상적입니다. 앞으로도 이 강점을 살려 더욱 발전할 수 있도록 돕겠습니다.</p>
+                                                    </dd>
+                                                </dl>
+                                                <dl class="grid-item item4">
+                                                    <dt>수업 중 학습에 대한 태도</dt>
+                                                    <dd class="txt">
+                                                        <p>수업 시간 동안 높은 집중력을 보이며 적극적으로 참여하고 있습니다. 특히 새로운 개념을 배울 때 스스로 탐구하려는 태도가 인상적입니다. 이런 자세를 계속 유지할 수 있도록 격려해 주세요!</p>
+                                                    </dd>
+                                                </dl>
+                                                <dl class="grid-item item5">
+                                                    <dt>수업 중 참여도</dt>
+                                                    <dd class="txt">
+                                                        <p>새로운 개념을 배우는 과정에서 궁금한 점을 적극적으로 질문하며 호기심을 보이고 있습니다. 탐구하려는 태도가 매우 긍정적이며, 이를 통해 깊이 있는 사고력을 키워 나가고 있습니다.</p>
+                                                    </dd>
+                                                </dl>
+                                                <dl class="grid-item item6">
+                                                    <dt>자기주도 학습 태도</dt>
+                                                    <dd class="txt">
+                                                        <p>자기주도 학습이 잘 이루어지고 있으며, 혼자서도 학습 계획을 세우고 실천하는 모습이 돋보입니다. 이런 긍정적인 습관이 지속될 수 있도록 지켜봐 주세요.</p>
+                                                    </dd>
+                                                </dl>
+                                                <dl class="grid-item item7">
+                                                    <dt>학생의 정서적인 상태</dt>
+                                                    <dd class="txt">
+                                                        <p>항상 밝고 긍정적인 태도로 학습에 임하고 있으며, 친구들과의 관계도 원만합니다. 학습뿐만 아니라 전반적인 학교생활에서도 긍정적인 영향을 주는 모습이 인상적입니다.</p>
+                                                    </dd>
+                                                </dl>
+                                                <dl class="grid-item item8">
+                                                    <dt>교사와의 관계</dt>
+                                                    <dd class="txt">
+                                                        <p>수업 중 적극적으로 의견을 표현하고, 질문도 스스럼없이 하는 모습이 인상적입니다. 교사와의 신뢰를 바탕으로 학습에 대한 열린 자세를 보이고 있어 앞으로의 성장이 더욱 기대됩니다.</p>
+                                                    </dd>
+                                                </dl>
+                                                <dl class="grid-item item9">
+                                                    <dt>질문에 대한 반응</dt>
+                                                    <dd class="txt">
+                                                        <p>이해가 안 되는 부분이 있을 때 질문을 하기는 하지만, 다소 소극적인 경향이 있습니다. 본인의 생각을 조금 더 편하게 표현할 수 있도록 지도하며, 작은 성공 경험을 쌓도록 도와주겠습니다.</p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="grid-item item10">
+                                                <div class="txt">
+                                                    <p>학습 과정에서 조금 더 신경 써야 할 부분이 있어 학부모님께서도 관심을 가져주시면 좋겠습니다. <br /> 가정에서도 함께 점검해 주신다면 더욱 효과적인 학습이 될 것으로 기대됩니다.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="grid-footer"><strong>담당교사 홍길동</strong> 드림</p>
+                                    </div>
+                                </div>
+                                <!-- //page-content -->
+
+                                <div class="page-footer">
+                                    <b>최고수학학원</b>
+                                    <span>TEL : 070-1234-5678</span>
+                                    <span><i></i>page</span>
+                                </div>
+                                <!-- //page-footer -->
+                            </section>
+                        </div>
                     </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
-                <div class="row no-print" style="padding: 30px 10px 10px;background:#fff;">
-                    <div class="col-md-12" style="text-align:center;">
-                        <button type="button" class="mbtn" disabled onclick="load_report_box( );">◀</button>
-                        &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:17px;"><b>이하와</b></span>
-                        &nbsp; &nbsp; &nbsp; &nbsp; <button type="button" class="mbtn" disabled onclick="load_report_box( );">▶</button>
-                        <br>
-                        <p style="padding-top: 12px;">총평을 적어주세요.</p>
-                    </div>
-                </div>
-                <!-- <script type="text/javascript">
-                    $(document).ready(function() {
-                        get_report( 199 );
-                    });
-                    function get_report( study_report_id )
-                    {
-                        $.ajax({
-                            type: "GET",
-                            url: "/reports_v2/report?mode=edit&id=" + study_report_id,
-                            async : false,
-                            success: function (response) {
-                                $("#report_box").html( response );
-                            }
-                        });
-                    }
-                    function load_report_box( idx )
-                    {
-                        location.href="/reports_v2/show?ids=199&idx=" + idx;
-                    }
-                </script> -->
+                <!-- //.reportSwiper -->
+
             </div>
         </div>
     </div>
 
-    <!-- 총평 만들기 팝업 -->
-    <div class="modal fade" id="popup_review" tabindex="-1" aria-labelledby="popup_reviewLabel">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <img src="https://img.howhyclass.com/hclass/images/icon_close_black.png" data-bs-dismiss="modal" aria-label="Close" />
-                </div>
-                <div class="modal-body">
-                    <h3>총평 만들기</h3>
-                    <div>
-                        <div id="totalReview">
-                            <dl class="row">
-                                <dt>날씨</dt>
-                                <dd>
-                                    <input type="radio" name="re_weather" id="re_weather_sunny" value="sunny" checked>
-                                    <label for="re_weather_sunny">맑음</label>
-                                    <input type="radio" name="re_weather" id="re_weather_cloudy" value="cloudy">
-                                    <label for="re_weather_cloudy">흐림</label>
-                                    <input type="radio" name="re_weather" id="re_weather_rain" value="rain">
-                                    <label for="re_weather_rain">비</label>
-                                </dd>
-                            </dl>
-                            <dl class="row">
-                                <dt>학습태도</dt>
-                                <dd>
-                                    <input type="radio" name="re_status" id="re_status_good" value="good" checked>
-                                    <label for="re_status_good">좋음</label>
-                                    <input type="radio" name="re_status" id="re_status_warning" value="warning">
-                                    <label for="re_status_warning">주의</label>
-                                    <input type="radio" name="re_status" id="re_status_bad" value="bad">
-                                    <label for="re_status_bad">나쁨</label>
-                                </dd>
-                            </dl>
-                            <button type="button" id="btn_totalReview">만들기</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+    <!-- 프린트용 컨테이너 -->
+    <div id="print-container" style="display:none;"></div>
+
     <script src="https://img.howhymath.com/custom/custom.js?v=20231031"></script>
     <script type="text/javascript">
-    $(document).ready(function() {
-        cdml_mathjax_init();
-    });
+        $(document).ready(function() {
+            cdml_mathjax_init();
+        });
+    </script>
+    <script>
+        // 스와이프 슬라이드
+        var swiper = new Swiper(".reportSwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + "</span>";
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
 
-    document.getElementById('btn_totalReview').addEventListener('click', function(){
-        const totalReview = document.getElementById('totalReview');
-        let form_comments = document.getElementById('fx-form-comments');
-        let re_weatherVal = document.querySelector('input[name="re_weather"]:checked').value;
-        let re_statusVal = document.querySelector('input[name="re_status"]:checked').value;
-        
-        // fetch("https://howhyjdy.github.io/assets/review_weather.csv") // CSV 파일 URL
-        // .then(response => response.text()) // 파일을 텍스트로 변환
-        
-        const csvUrls = [
-            "https://howhyjdy.github.io/assets/review_weather.csv",
-            "https://howhyjdy.github.io/assets/review_status.csv",
-        ];
-        Promise.all(csvUrls.map(url => fetch(url).then(response => response.text())))
-        .then(csvDataArray => {
-            form_comments.value = '';
-            csvDataArray.forEach((csvData, index) => {
-                const rows = csvData.trim().split("\n").map(row => {
-                    const [name, ...contentArr] = row.split(',');
-                    const content = contentArr.join(',').replace(/^"(.*)"$/, '$1'); // 문자열 양쪽의 큰따옴표 제거
-                    return [name, content];
-                }); // CSV 데이터를 배열로 변환
-                let content_rows;
+        // 페이지 1, 2 그래프
+        $( document ).ready(function() {
+            draw_graph();
+        });
 
-                if(index === 0) content_rows = rows.filter( row => row[0] === re_weatherVal);
-                if(index === 1) content_rows = rows.filter( row => row[0] === re_statusVal);
+        function draw_graph()
+        {
+            c3.generate({
+                bindto: '#page2_donut1',
+                size: {
+                    height: 150,
+                },
+                data:{
+                    columns: [
+                        ['최상', 1 ],
+                        ['상', 3 ],
+                        ['중', 2 ],
+                        ['하', 2 ],
+                        ['최하', 1 ],
+                    ],
+                    colors:{
+                        최하: 'rgb(201, 245, 255)',
+                        하: 'rgb(134, 227, 247)',
+                        중: 'rgb(29, 192, 239)',
+                        상: 'rgb(6, 137, 220)',
+                        최상: 'rgb(46, 78, 217)'
+                    },
+                    type : 'donut',
+                    order: null //그래프 순서
+                },
+                legend: {
+                    position: 'bottom'
+                },
+            });
+            c3.generate({
+                bindto: '#page2_donut2',
+                size: {
+                    height: 150,
+                },
+                data:{
+                    columns: [
+                        ['정답수', 1 ],
+                        ['오답수', 1 ]
+                    ],
+                    colors:{
+                        정답수: '#2e4ed9',
+                        오답수: '#dcdcdc'
+                    },
+                    type : 'donut',
+                    order: null //그래프 순서
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            });
 
-                form_comments.value += content_rows[Math.floor(Math.random() * content_rows.length)][1];
-                $("#popup_review").modal('hide');
-            })
-        })
-        .catch(error => console.error("CSV 파일을 가져오는 중 오류 발생:", error));
-    })
+            /* #page3_bar */
+            const correct = [20, 6, 40, 23, 25]; // 정답수
+            const incorrect = [20, 47, 20, 44, 25]; // 오답수
+
+            //정답률 계산
+            const accuracyRates = correct.map((c, i) => {
+            const total = c + incorrect[i];
+                return total === 0 ? 0 : ((c / total) * 100).toFixed(0); // 소수점 1자리까지 표시
+            });
+
+            c3.generate({
+                bindto: '#page3_bar',
+                size: {
+                    height: 200,
+                },
+                data: {
+                    type: 'bar',
+                    x: 'x',
+                    columns: [
+                        ['x', '기초', '기본', '응용', '심화', '최상위'],
+                        ['정답수', ...correct],
+                        ['오답수', ...incorrect],
+                    ],
+                    groups: [['정답수', '오답수']],
+                    colors: {
+                        '정답수': '#2e4ed9',
+                        '오답수': '#dcdcdc',
+                    },
+                    labels: {
+                        format: function (v, id, i, j) {
+                            if (id === '정답수') {
+                                // 정답수 위에 정답률 표시
+                                return accuracyRates[i] + '%';
+                            }
+                            // 오답수에는 라벨 표시하지 않음
+                            return null;
+                        },
+                    }
+                },
+                axis: {
+                    x: {
+                        type: 'category',
+                        label: {
+                            text: '난이도',
+                            position: 'outer-right'
+                        },
+                        tick: {
+                            outer: false
+                        }
+                    },
+                    y: {
+                        label: {
+                            text: '문항수',
+                            position: 'outer-right'
+                        },
+                        tick: {
+                            values: [""],
+                            outer: false
+                        }
+                    }
+                },
+                bar: {
+                    width: {
+                        ratio: 0.5
+                    }
+                }
+            });
+        }
+
+        // 모든 슬라이드를 프린트 컨테이너로 복사
+        document.addEventListener("keydown", function (e) {
+            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+            const isCtrlP = (!isMac && e.ctrlKey && e.key === 'p');
+            const isCmdP = (isMac && e.metaKey && e.key === 'p');
+
+            if (isCtrlP || isCmdP) {
+                e.preventDefault();
+                printAllSlides();
+            }
+        });
+        function printAllSlides() {
+            const slides = document.querySelectorAll('.swiper-slide');
+            const printContainer = document.getElementById('print-container');
+
+            // 초기화
+            printContainer.innerHTML = '';
+            
+            slides.forEach(slide => {
+                const clone = slide.querySelector('.print-page').cloneNode(true);
+                clone.classList.add('print-slide');
+                printContainer.appendChild(clone);
+            });
+
+            // 프린트 컨테이너 보이기
+            printContainer.style.display = 'block';
+
+            // 프린트 실행
+            window.print();
+
+            // 프린트 끝난 후 숨기기
+            printContainer.style.display = 'none';
+            printContainer.innerHTML = '';
+        }
     </script>
 </body>
 </html>
