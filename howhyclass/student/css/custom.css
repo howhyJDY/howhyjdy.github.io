@@ -543,6 +543,21 @@ line-height: 160%; /* 22.4px */
   width: 150px;
   right: 0%;
 
+  button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &::before{
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: no-repeat center;
+    }
+  }
+  button:nth-of-type(1)::before{background-image: url(../images/icon_myinfo.svg);}
+  button:nth-of-type(2)::before{background-image: url(../images/icon_faq.svg);}
+
   button:active {
     background: var(--color-bg-tertiary, #F1F1F1);
     color: var(--color-text-primary, #1A1A1A);
@@ -559,9 +574,9 @@ line-height: 160%; /* 22.4px */
   }
 
   .logout {
-    display: flex;
-    gap: 10px;
+    &::before{background-image: url(../images/icon_logout.svg) !important;}
     img{
+      display: none;
       width: 20px;
       height: 20px;
       object-fit: cover;
