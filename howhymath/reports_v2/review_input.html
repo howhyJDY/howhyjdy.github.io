@@ -408,7 +408,7 @@
             item.addEventListener('input', (e) => {
                 if (!e.isTrusted) return;
                 validate();
-                
+
                 //textarea 최대 줄 수 제한
                 if( e.target === document.getElementById('inp-review10') || e.target === document.getElementById('inp-review1')){
                     while (e.target.scrollHeight > e.target.clientHeight) {
@@ -430,7 +430,7 @@
 
         /* CSV 파일 문장 textarea에 랜덤 입력 */
         let cachedCsvRows = null;
-        const csvUrl = "https://howhyjdy.github.io/howhymath/assets/hmath/reports_reviews_v2.csv";
+        const csvUrl = "https://howhyjdy.github.io/howhymath/assets/hmath/reports_reviews_v3.csv";
 
         document.querySelector('.btn-show-preview').addEventListener('click', function () {
             const button = this;
