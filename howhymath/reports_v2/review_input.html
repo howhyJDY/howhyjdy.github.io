@@ -51,7 +51,7 @@
     <div class="page-wrapper" style="padding:0;width:100% !important;">
         <div class="page-content">
             <div class="container-fluid">               
-                <!-- 250331 리포트 전용 인쇄관련 css 추가 및 스와이프슬라이드 js, css 추가-->
+                <!-- 250401 리포트 전용 인쇄관련 css 추가 및 스와이프슬라이드 js, css 추가-->
                 <link rel="stylesheet" type="text/css" href="../assets/css/report_print.css"/>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
                 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -63,7 +63,7 @@
                         </header>
                         <div class="review-top-content">
                             <strong class="title">학생명</strong>
-                            <div class="textarea-box"><textarea class="textarea" name="" id="">이하와 (2024-12), 이하와 (2024-11), 홍길동 (2024-12)</textarea></div>
+                            <div class="textarea-box"><textarea class="textarea" name="" id="" readonly>이하와 (2024-12), 이하와 (2024-11), 홍길동 (2024-12)</textarea></div>
                         </div>
                     </div>
 
@@ -385,7 +385,7 @@
             });
         });
 
-        /* textarea 한글 120자 제한 */
+        /* textarea 한글 문자수 제한 */
         const textarea = document.querySelectorAll('.maxLength');
 
         textarea.forEach(item => {
@@ -406,8 +406,15 @@
             };
 
             item.addEventListener('input', (e) => {
-                if (!e.isTrusted) return; // 자동 입력 방지
+                if (!e.isTrusted) return;
                 validate();
+                
+                //textarea 최대 줄 수 제한
+                if( e.target === document.getElementById('inp-review10') || e.target === document.getElementById('inp-review1')){
+                    while (e.target.scrollHeight > e.target.clientHeight) {
+                        e.target.value = e.target.value.slice(0, -1);
+                    }
+                }
             });
 
             if (item.classList.contains('noEnter')) {

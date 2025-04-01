@@ -1015,10 +1015,14 @@
     <script type="text/javascript">
         $(document).ready(function() {
             cdml_mathjax_init();
+            
+            drawPage2Graphs();
+            drawPage3Graph();
         });
     </script>
     <script>
         // 스와이프 슬라이드
+        var renderedPages = new Set();
         var swiper = new Swiper(".reportSwiper", {
             pagination: {
                 el: ".swiper-pagination",
@@ -1033,19 +1037,22 @@
             },
         });
 
-        // 페이지 1, 2 그래프
-        $( document ).ready(function() {
-            draw_graph();
-        });
 
-        function draw_graph()
+        function drawPage2Graphs()
         {
-            c3.generate({
-                bindto: '#page2_donut1',
-                size: {
-                    height: 150,
+            const baseDonutOptions = {
+                size: { height: 200 },
+                data: {
+                    type: 'donut',
+                    order: null,
                 },
-                data:{
+                legend: {
+                    position: 'bottom'
+                }
+            };
+            c3.generate(Object.assign({}, baseDonutOptions, {
+                bindto: '#page2_donut1',
+                data: Object.assign({}, baseDonutOptions.data, {
                     columns: [
                         ['최상', 1 ],
                         ['상', 3 ],
@@ -1060,19 +1067,11 @@
                         상: 'rgb(6, 137, 220)',
                         최상: 'rgb(46, 78, 217)'
                     },
-                    type : 'donut',
-                    order: null //그래프 순서
-                },
-                legend: {
-                    position: 'bottom'
-                },
-            });
-            c3.generate({
+                }),
+            }));
+            c3.generate(Object.assign({}, baseDonutOptions, {
                 bindto: '#page2_donut2',
-                size: {
-                    height: 150,
-                },
-                data:{
+                data: Object.assign({}, baseDonutOptions.data, {
                     columns: [
                         ['정답수', 1 ],
                         ['오답수', 1 ]
@@ -1081,14 +1080,12 @@
                         정답수: '#2e4ed9',
                         오답수: '#dcdcdc'
                     },
-                    type : 'donut',
-                    order: null //그래프 순서
-                },
-                legend: {
-                    position: 'bottom'
-                }
-            });
+                }),
+            }));
+        }
 
+        function drawPage3Graph()
+        {
             /* #page3_bar */
             const correct = [20, 6, 40, 23, 25]; // 정답수
             const incorrect = [20, 47, 20, 44, 25]; // 오답수

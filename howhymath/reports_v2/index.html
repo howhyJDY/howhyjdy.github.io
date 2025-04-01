@@ -139,7 +139,7 @@ var lms_domain = "https://tutor.howhymath.com";
 	</div>
 
 	<div class="page-wrapper">
-		<div class="page-content page-reports"><!-- 250131 / 250331 분석표 전용 클래스 추가 -->
+		<div class="page-content page-reports"><!-- 250131 / 250401 분석표 전용 클래스 추가 -->
 			<div class="container-fluid">
 				<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/plugins/jquery-ui/jquery-ui.css">
 				<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.css">
@@ -414,9 +414,9 @@ var lms_domain = "https://tutor.howhymath.com";
 								</div>
 							</div>
 							<div class="right">
-								<!-- 250331 선택 리포트 총평 버튼 추가 시작 -->
+								<!-- 250401 선택 리포트 총평 버튼 추가 시작 -->
 								<button type="button" class="btn-input-reports" onclick="show_input_reports();" style="margin-right: 2px;">총평</button>
-								<!-- 250331 선택 리포트 총평 버튼 추가 끝 -->
+								<!-- 250401 선택 리포트 총평 버튼 추가 끝 -->
 								<button type="button" class="gbtn" onclick="print_reports();" style="margin-right: 2px;">인쇄</button>
 								<button type="button" class="gbtns" onclick="show_reports();">보기</button>
 							</div>
@@ -492,10 +492,10 @@ var lms_domain = "https://tutor.howhymath.com";
 													<td>2024-11-30</td>
 													<td>2024-11</td>
 													
-													<!-- 250331 총평 데이터 있/없는 경우 버튼 구분 시작 -->
+													<!-- 250401 총평 데이터 있/없는 경우 버튼 구분 시작 -->
 													<td><button type="button" class="btn-data-no" onclick="show_input_report(199);">없음</button></td>
 													<!-- <td><button type="button" class="btn-data" onclick="show_input_report(199)">있음</button></td> -->
-													<!-- 250331 총평 데이터 있/없는 경우 버튼 구분 끝 -->
+													<!-- 250401 총평 데이터 있/없는 경우 버튼 구분 끝 -->
 
 													<!--td><button type="button" class="btn sm" onclick='location.href="/reports_v2/show?id=199";'>MMS</button></td-->
 													<td><button type="button" class="mbtn" onclick="show_report(199);">보기</button></td>
@@ -514,10 +514,10 @@ var lms_domain = "https://tutor.howhymath.com";
 													<td>2024-12-31</td>
 													<td>2024-12</td>
 													
-													<!-- 250331 총평 데이터 있/없는 경우 버튼 구분 시작 -->
+													<!-- 250401 총평 데이터 있/없는 경우 버튼 구분 시작 -->
 													<!-- <td><button type="button" class="btn-data-no" onclick="show_input_report(198)">없음</button></td> -->
 													<td><button type="button" class="btn-data" onclick="show_input_report(198)">있음</button></td>
-													<!-- 250331 총평 데이터 있/없는 경우 버튼 구분 끝 -->
+													<!-- 250401 총평 데이터 있/없는 경우 버튼 구분 끝 -->
 
 													<td><button type="button" class="mbtn" onclick="show_report(198);">보기</button></td>
 													<td><button type="button" class="gbtn item-remove" data-url="/reports_v2/remove?id=199">삭제</button></td>
@@ -640,7 +640,7 @@ var lms_domain = "https://tutor.howhymath.com";
 							fx_popup_window( url , { name: 'report_detail_popup', width: 960, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
 						}
 
-						// 250331 선택 리포트 총평 등록/수정 팝업
+						// 250401 선택 리포트 총평 등록/수정 팝업
 						function show_input_reports() {
 							var name = 'ids';
 							var ids = fx_get_checkboxes(name);
@@ -652,7 +652,7 @@ var lms_domain = "https://tutor.howhymath.com";
 							var url = "./review_input.html?ids=" + ids;
 							fx_popup_window( url , { name: 'show_input_reports_popup', width: 1050, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
 						}
-						// 250331 개별 리포트 총평 등록/수정 팝업
+						// 250401 개별 리포트 총평 등록/수정 팝업
 						function show_input_report( id ) {
 							var url = "./review_input.html?id=" + id;
 							fx_popup_window( url , { name: 'show_input_reports_popup', width: 1050, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
