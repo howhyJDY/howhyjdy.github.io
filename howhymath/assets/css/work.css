@@ -10059,6 +10059,44 @@ html:has(.page-memo){
   }
 }
 
+/* 구독기간 종료 */
+.subscription-container{
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 150px 0;
+  .txt{
+    flex: 1;
+    text-align: center;
+    h1{
+      font-size: 40px;
+      font-family: 'GmarketSansMedium';
+      font-weight: 700;
+    }
+    p{
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 500;
+      margin-top: 8px;
+      padding-bottom: 34px;
+      border-bottom: 1px solid #d7d7d7;
+    }
+    .btn-box{
+      flex-direction: column;
+      gap: 0;
+      .login-btn:hover{color: #fff;}
+    }
+  }
+  .img{
+    width: 438px;
+    height: 355px;
+    flex-shrink: 0;
+    background: url(../hmath/img/img_subscription.png) no-repeat center;
+  }
+}
+
 /****** 학습자료 > 평가 > 학생지정 완료 팝업 ******/
 #today_study_card{
   padding-right: 0 !important;
