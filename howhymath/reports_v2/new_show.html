@@ -67,7 +67,11 @@
                 <div class="report-header">
                     <p><strong>홍길동</strong> 학습 리포트</p>
                     <button onclick="print_reports(199)">출력하기</button>
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-btns">
+                        <div class="swiper-button-prev arrow-prev-1"></div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next arrow-next-1"></div>
+                    </div>
                 </div>
                 
                 <div class="review-student-list">
@@ -1134,8 +1138,8 @@
                         </script>
 
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next arrow-next-2"></div>
+                    <div class="swiper-button-prev arrow-prev-2"></div>
                 </div>
                 <!-- //.reportSwiper -->
 
@@ -1178,10 +1182,16 @@
                 },
             },
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: ".arrow-next-1",
+                prevEl: ".arrow-prev-1",
             },
         });
+
+        document.querySelector('.arrow-next-1').addEventListener('click', () => swiper.slideNext());
+        document.querySelector('.arrow-prev-1').addEventListener('click', () => swiper.slidePrev());
+
+        document.querySelector('.arrow-next-2').addEventListener('click', () => swiper.slideNext());
+        document.querySelector('.arrow-prev-2').addEventListener('click', () => swiper.slidePrev());
 
         // 모든 슬라이드를 프린트 컨테이너로 복사
         document.addEventListener("keydown", function (e) {

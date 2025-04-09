@@ -10634,9 +10634,21 @@ html:has(.review-input-container) .page-content{padding: 0 !important;}
             }
           }
         }
+        input+label{
+          color: #222;
+          &::before{
+            width: 15px;
+            height: 15px;
+            background-size: 15px auto;
+          }
+        }
+        input:checked+label{
+          font-family: "Noto Sans KR";
+          font-weight: 600;
+        }
         label{
           font-size: 14px;
-          &:has(input:checked){font-weight: 500;}
+          &:has(input:checked){font-weight: 600;}
         }
         label:has(input[type="checkbox"]:only-child) {
           &:has(input:checked) {
@@ -10679,9 +10691,9 @@ html:has(.review-input-container) .page-content{padding: 0 !important;}
     border: 2px solid #7e7e7e;
     border-radius: var(--border-radius);
     overflow: hidden;
-    dl:first-child dt{border-radius: var(--border-radius) 0 0 0;}
-    dl:last-child dt{border-radius: 0 0 0 var(--border-radius);}
-    dl:only-child dt{border-radius: var(--border-radius) 0 0 var(--border-radius);}
+    dl:first-child dt{border-radius: calc(var(--border-radius) - 2px) 0 0 0;}
+    dl:last-child dt{border-radius: 0 0 0 calc(var(--border-radius) - 2px);}
+    dl:only-child dt{border-radius: calc(var(--border-radius) - 2px) 0 0 calc(var(--border-radius) - 2px);}
   }
   .review-content{
     --padding-dd: 14px 20px;
