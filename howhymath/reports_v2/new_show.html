@@ -59,15 +59,24 @@
                 <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/c3/c3.min.js"></script>
 
                 
-                <!-- aaaaa 리포트 전용 인쇄관련 css 추가 및 스와이프슬라이드 js, css 추가-->
+                <!-- 250409 리포트 전용 인쇄관련 css 추가 및 스와이프슬라이드 js, css 추가-->
                 <link rel="stylesheet" type="text/css" href="../assets/css/report_print.css"/>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
                 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
                 <div class="report-header">
                     <p><strong>홍길동</strong> 학습 리포트</p>
-                    <button onclick="printAllSlides()">출력하기</button>
+                    <button onclick="print_reports(199)">출력하기</button>
                     <div class="swiper-pagination"></div>
+                </div>
+                
+                <div class="review-student-list">
+                    <strong>학생선택</strong>
+                    <ul>
+                        <!-- 현재 학생 클래스 on -->
+                        <li data-idx="1"><button type="button" onclick="load_report_box(1);">초5/이하와(2025-03)</button></li>
+                        <li data-idx="2"><button type="button" onclick="load_report_box(2);">초5/홍길동(2025-03)</button></li>
+                    </ul>
                 </div>
 
                 <div class="swiper reportSwiper">
@@ -88,8 +97,8 @@
                                                 <dd>초5</dd>
                                             </dl>
                                             <dl>
-                                                <dt>학습기간 : </dt>
-                                                <dd>2024-11-01 ~ 2024-11-30</dd>
+                                                <dt>리포트년월 : </dt>
+                                                <dd>2025-03</dd>
                                             </dl>
                                         </div>
                                     </div>
@@ -303,19 +312,7 @@
                                                 <dt>맞춤 난이도로 학습 진행</dt>
                                                 <dd>
                                                     <div class="img-graph">
-                                                        <span class="y">어려운 문제</span>
-                                                        <div class="line">
-                                                            <div class="triangle">
-                                                                <span></span>
-                                                                <span></span>
-                                                                <span></span>
-                                                            </div>
-                                                            <div class="text">
-                                                                <p>심화 문제 해결<br/>도전적 문제 해결 능력</p>
-                                                                <p>응용 문제 풀이<br/>논리적 사고력 강화</p>
-                                                                <p>기초 개념 정립<br/>기본 개념 이해 & 적용</p>
-                                                            </div>
-                                                        </div>
+                                                        <img src="../assets/hmath/img/img_print_graph.png" alt="">
                                                     </div>
                                                 </dd>
                                             </dl>
@@ -998,6 +995,144 @@
                                 <!-- //page-footer -->
                             </section>
                         </div>
+
+                        <script>
+                            $( document ).ready(function() {
+                                drawPage2Graphs();
+                                drawPage3Graph();
+                            
+                                function drawPage2Graphs(){
+                                    const baseDonutOptions = {
+                                        size: { height: 200 },
+                                        data: {
+                                            type: 'donut',
+                                            order: null,
+                                        },
+                                        legend: {
+                                            position: 'bottom'
+                                        },
+                                        transition: {
+                                            duration: 0
+                                        }
+                                    };
+                                    c3.generate({
+                                        ...baseDonutOptions,
+                                        bindto: '#page2_donut1',
+                                        data: {
+                                            ...baseDonutOptions.data,
+                                            columns: [
+                                                ['최상', 1 ],
+                                                ['상', 3 ],
+                                                ['중', 2 ],
+                                                ['하', 2 ],
+                                                ['최하', 1 ],
+                                            ],
+                                            colors:{
+                                                최하: 'rgb(201, 245, 255)',
+                                                하: 'rgb(134, 227, 247)',
+                                                중: 'rgb(29, 192, 239)',
+                                                상: 'rgb(6, 137, 220)',
+                                                최상: 'rgb(46, 78, 217)'
+                                            },
+                                        },
+                                    })
+                                    c3.generate({
+                                        ...baseDonutOptions,
+                                        bindto: '#page2_donut2',
+                                        data: {
+                                            ...baseDonutOptions.data,
+                                            columns: [
+                                                ['정답수', 1 ],
+                                                ['오답수', 1 ]
+                                            ],
+                                            colors:{
+                                                정답수: '#2e4ed9',
+                                                오답수: '#dcdcdc'
+                                            },
+                                        }
+                                    });
+                                }
+
+                                function drawPage3Graph(){
+                                    /* #page3_bar */
+                                    const correct = [20, 6, 40, 23, 25]; // 정답수
+                                    const incorrect = [20, 47, 20, 44, 25]; // 오답수
+
+                                    //정답률 계산
+                                    const accuracyRates = correct.map((c, i) => {
+                                    const total = c + incorrect[i];
+                                        return total === 0 ? 0 : ((c / total) * 100).toFixed(0);
+                                    });
+
+                                    const baseDonutOptions = {
+                                        size: { height: 224 },
+                                        data: {
+                                            type: 'bar',
+                                            x: 'x',
+                                            columns: [
+                                                ['x', '기초', '기본', '응용', '심화', '최상위'],
+                                                ['정답수', ...correct],
+                                                ['오답수', ...incorrect],
+                                            ],
+                                            groups: [['정답수', '오답수']],
+                                            colors: {
+                                                '정답수': '#069da9',
+                                                '오답수': '#dcdcdc',
+                                            },
+                                            labels: {
+                                                format: function (v, id, i, j) {
+                                                    if (id === '정답수') {
+                                                        // 정답수 위에 정답률 표시
+                                                        return accuracyRates[i] + '%';
+                                                    }
+                                                    // 오답수에는 라벨 표시하지 않음
+                                                    return null;
+                                                },
+                                            }
+                                        },
+                                        axis: {
+                                            x: {
+                                                type: 'category',
+                                                label: {
+                                                    text: '난이도',
+                                                    position: 'outer-right'
+                                                },
+                                                tick: {
+                                                    outer: false
+                                                }
+                                            },
+                                            y: {
+                                                label: {
+                                                    text: '문항수',
+                                                    position: 'outer-right'
+                                                },
+                                                tick: {
+                                                    values: [""],
+                                                    outer: false
+                                                }
+                                            }
+                                        },
+                                        bar: {
+                                            width: {
+                                                ratio: 0.5
+                                            }
+                                        },
+                                        transition: {
+                                            duration: 0
+                                        }
+                                    };
+
+                                    c3.generate({
+                                        ...baseDonutOptions,
+                                        bindto: '#page3_bar',
+                                        data: {
+                                            ...baseDonutOptions.data,
+                                        }
+                                    });
+                                }
+                            });
+                        </script>
+
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -1008,19 +1143,30 @@
         </div>
     </div>
 
-    <!-- 프린트용 컨테이너 -->
-    <div id="print-container" style="display:none;"></div>
-
     <script src="https://img.howhymath.com/custom/custom.js?v=20231031"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            cdml_mathjax_init();
-            
-            drawPage2Graphs();
-            drawPage3Graph();
-        });
-    </script>
     <script>
+        //단체 인덱스 변경
+        function load_report_box( idx )
+        {
+            location.href=`./new_show.html?ids=198,199&idx=${idx}`;
+        }
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const idx = getQueryParam("idx");
+            document.querySelectorAll(`.review-student-list li`).forEach(li => {
+                li.classList.remove('on');
+            });
+            if (idx) {
+                const targetLi = document.querySelector(`li[data-idx="${idx}"]`);
+                if (targetLi) targetLi.classList.add("on");
+            }else{
+                document.querySelector(`.review-student-list li`).classList.add("on");
+            }
+        });
+        
         // 스와이프 슬라이드
         var renderedPages = new Set();
         var swiper = new Swiper(".reportSwiper", {
@@ -1037,124 +1183,6 @@
             },
         });
 
-
-        function drawPage2Graphs()
-        {
-            const baseDonutOptions = {
-                size: { height: 200 },
-                data: {
-                    type: 'donut',
-                    order: null,
-                },
-                legend: {
-                    position: 'bottom'
-                }
-            };
-            c3.generate(Object.assign({}, baseDonutOptions, {
-                bindto: '#page2_donut1',
-                data: Object.assign({}, baseDonutOptions.data, {
-                    columns: [
-                        ['최상', 1 ],
-                        ['상', 3 ],
-                        ['중', 2 ],
-                        ['하', 2 ],
-                        ['최하', 1 ],
-                    ],
-                    colors:{
-                        최하: 'rgb(201, 245, 255)',
-                        하: 'rgb(134, 227, 247)',
-                        중: 'rgb(29, 192, 239)',
-                        상: 'rgb(6, 137, 220)',
-                        최상: 'rgb(46, 78, 217)'
-                    },
-                }),
-            }));
-            c3.generate(Object.assign({}, baseDonutOptions, {
-                bindto: '#page2_donut2',
-                data: Object.assign({}, baseDonutOptions.data, {
-                    columns: [
-                        ['정답수', 1 ],
-                        ['오답수', 1 ]
-                    ],
-                    colors:{
-                        정답수: '#2e4ed9',
-                        오답수: '#dcdcdc'
-                    },
-                }),
-            }));
-        }
-
-        function drawPage3Graph()
-        {
-            /* #page3_bar */
-            const correct = [20, 6, 40, 23, 25]; // 정답수
-            const incorrect = [20, 47, 20, 44, 25]; // 오답수
-
-            //정답률 계산
-            const accuracyRates = correct.map((c, i) => {
-            const total = c + incorrect[i];
-                return total === 0 ? 0 : ((c / total) * 100).toFixed(0); // 소수점 1자리까지 표시
-            });
-
-            c3.generate({
-                bindto: '#page3_bar',
-                size: {
-                    height: 200,
-                },
-                data: {
-                    type: 'bar',
-                    x: 'x',
-                    columns: [
-                        ['x', '기초', '기본', '응용', '심화', '최상위'],
-                        ['정답수', ...correct],
-                        ['오답수', ...incorrect],
-                    ],
-                    groups: [['정답수', '오답수']],
-                    colors: {
-                        '정답수': '#2e4ed9',
-                        '오답수': '#dcdcdc',
-                    },
-                    labels: {
-                        format: function (v, id, i, j) {
-                            if (id === '정답수') {
-                                // 정답수 위에 정답률 표시
-                                return accuracyRates[i] + '%';
-                            }
-                            // 오답수에는 라벨 표시하지 않음
-                            return null;
-                        },
-                    }
-                },
-                axis: {
-                    x: {
-                        type: 'category',
-                        label: {
-                            text: '난이도',
-                            position: 'outer-right'
-                        },
-                        tick: {
-                            outer: false
-                        }
-                    },
-                    y: {
-                        label: {
-                            text: '문항수',
-                            position: 'outer-right'
-                        },
-                        tick: {
-                            values: [""],
-                            outer: false
-                        }
-                    }
-                },
-                bar: {
-                    width: {
-                        ratio: 0.5
-                    }
-                }
-            });
-        }
-
         // 모든 슬라이드를 프린트 컨테이너로 복사
         document.addEventListener("keydown", function (e) {
             const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
@@ -1163,31 +1191,13 @@
 
             if (isCtrlP || isCmdP) {
                 e.preventDefault();
-                printAllSlides();
+                print_reports( 199 );
             }
         });
-        function printAllSlides() {
-            const slides = document.querySelectorAll('.swiper-slide');
-            const printContainer = document.getElementById('print-container');
 
-            // 초기화
-            printContainer.innerHTML = '';
-            
-            slides.forEach(slide => {
-                const clone = slide.querySelector('.print-page').cloneNode(true);
-                clone.classList.add('print-slide');
-                printContainer.appendChild(clone);
-            });
-
-            // 프린트 컨테이너 보이기
-            printContainer.style.display = 'block';
-
-            // 프린트 실행
-            window.print();
-
-            // 프린트 끝난 후 숨기기
-            printContainer.style.display = 'none';
-            printContainer.innerHTML = '';
+        function print_reports( id ) {
+            var url = "./prints.html?ids=" + id;
+            fx_popup_window( url , { name: 'popup_report_print', width: '960', height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
         }
     </script>
 </body>

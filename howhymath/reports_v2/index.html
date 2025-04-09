@@ -22,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1734489191"/>
 	<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1734489191" />
 	<!-- link rel="stylesheet" type="text/css" href="https://img.howhymath.com/custom/custom.css?v=1734489191" /-->
-	<!-- <link rel="stylesheet" type="text/css" href="/app//css/work.css?v=1734489191" /> -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://tutor.howhymath.com/app//css/work.css?v=1734489191" /> -->
 	<link rel="stylesheet" type="text/css" href="../assets/css/work.css" />
 
 	<!-- base javascript -->
@@ -139,7 +139,7 @@ var lms_domain = "https://tutor.howhymath.com";
 	</div>
 
 	<div class="page-wrapper">
-		<div class="page-content page-reports"><!-- 250131 / 250401 분석표 전용 클래스 추가 -->
+		<div class="page-content page-reports"><!-- 250131 / 250409 분석표 전용 클래스 추가 -->
 			<div class="container-fluid">
 				<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/plugins/jquery-ui/jquery-ui.css">
 				<link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.css">
@@ -147,7 +147,7 @@ var lms_domain = "https://tutor.howhymath.com";
 				<script src="https://img.dtsoft.co.kr/assets.howhy/plugins/cookie/js.cookie.min.js"></script>
 				<script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/contextmenu/jquery.contextMenu.min.js"></script>
 				<link rel="stylesheet" href="https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/skin-vista/ui.fancytree.css">
-				<link href="/app/css/fancytree.css?t=1734664694" rel="stylesheet" type="text/css">
+				<link href="https://tutor.howhymath.com/app/css/fancytree.css?t=1734664694" rel="stylesheet" type="text/css">
 				<script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/jquery.fancytree-all.min.js"></script>
 				<script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/modules/jquery.fancytree.persist.js"></script>
 				<script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/fancytree/ext/jquery.fancytree.contextMenu.js"></script>
@@ -414,9 +414,9 @@ var lms_domain = "https://tutor.howhymath.com";
 								</div>
 							</div>
 							<div class="right">
-								<!-- 250401 선택 리포트 총평 버튼 추가 시작 -->
-								<button type="button" class="btn-input-reports" onclick="show_input_reports();" style="margin-right: 2px;">총평</button>
-								<!-- 250401 선택 리포트 총평 버튼 추가 끝 -->
+								<!-- 250409 선택 리포트 총평 버튼 추가 시작 -->
+								<button type="button" class="btn-input-reports" onclick="show_input_reports();" style="margin-right: 2px;">총평수정</button>
+								<!-- 250409 선택 리포트 총평 버튼 추가 끝 -->
 								<button type="button" class="gbtn" onclick="print_reports();" style="margin-right: 2px;">인쇄</button>
 								<button type="button" class="gbtns" onclick="show_reports();">보기</button>
 							</div>
@@ -492,10 +492,9 @@ var lms_domain = "https://tutor.howhymath.com";
 													<td>2024-11-30</td>
 													<td>2024-11</td>
 													
-													<!-- 250401 총평 데이터 있/없는 경우 버튼 구분 시작 -->
-													<td><button type="button" class="btn-data-no" onclick="show_input_report(199);">없음</button></td>
-													<!-- <td><button type="button" class="btn-data" onclick="show_input_report(199)">있음</button></td> -->
-													<!-- 250401 총평 데이터 있/없는 경우 버튼 구분 끝 -->
+													<!-- 250409 버튼으로 수정 시작 -->
+													<td><button type="button" class="btn-data" onclick="show_input_report(199)">수정</button></td>
+													<!-- 250409 버튼으로 수정 끝 -->
 
 													<!--td><button type="button" class="btn sm" onclick='location.href="/reports_v2/show?id=199";'>MMS</button></td-->
 													<td><button type="button" class="mbtn" onclick="show_report(199);">보기</button></td>
@@ -514,10 +513,7 @@ var lms_domain = "https://tutor.howhymath.com";
 													<td>2024-12-31</td>
 													<td>2024-12</td>
 													
-													<!-- 250401 총평 데이터 있/없는 경우 버튼 구분 시작 -->
-													<!-- <td><button type="button" class="btn-data-no" onclick="show_input_report(198)">없음</button></td> -->
-													<td><button type="button" class="btn-data" onclick="show_input_report(198)">있음</button></td>
-													<!-- 250401 총평 데이터 있/없는 경우 버튼 구분 끝 -->
+													<td><button type="button" class="btn-data" onclick="show_input_report(198)">수정</button></td>
 
 													<td><button type="button" class="mbtn" onclick="show_report(198);">보기</button></td>
 													<td><button type="button" class="gbtn item-remove" data-url="/reports_v2/remove?id=199">삭제</button></td>
@@ -528,15 +524,15 @@ var lms_domain = "https://tutor.howhymath.com";
 									<div class="fx-ac">
 										<nav>
 											<ul class="pagination justify-content-center">
-												<li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_double_left_arrow.png" alt=""></a></li>
+												<li class="page-item disabled"><a class="page-link" href="#"><img src="https://tutor.howhymath.com/app/img/icon_double_left_arrow.png" alt=""></a></li>
 												&nbsp;
-												<li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_left_arrow.png" alt=""></a></li>
+												<li class="page-item disabled"><a class="page-link" href="#"><img src="https://tutor.howhymath.com/app/img/icon_left_arrow.png" alt=""></a></li>
 												&nbsp;
 												<li class="page-item active"><a class="page-link" href="#">1</a></li>
 												&nbsp;
-												<li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_right_arrow.png" alt=""></a></li>
+												<li class="page-item disabled"><a class="page-link" href="#"><img src="https://tutor.howhymath.com/app/img/icon_right_arrow.png" alt=""></a></li>
 												&nbsp;
-												<li class="page-item disabled"><a class="page-link" href="#"><img src="/app/img/icon_double_right_arrow.png" alt=""></a></li>
+												<li class="page-item disabled"><a class="page-link" href="#"><img src="https://tutor.howhymath.com/app/img/icon_double_right_arrow.png" alt=""></a></li>
 											</ul>
 										</nav>
 									</div>
@@ -555,15 +551,15 @@ var lms_domain = "https://tutor.howhymath.com";
 						});
 						function get_student_tree_html()// student tree
 						{
-							$.ajax({
-								type: "GET",
-								url: "/students/student_tree_html",
-								data: "t=1734664694&mode=report",
-								async : false,
-								success: function (response) {
-									$(".student_tree").html( response );
-								}
-							});
+							// $.ajax({
+							// 	type: "GET",
+							// 	url: "/students/student_tree_html",
+							// 	data: "t=1734664694&mode=report",
+							// 	async : false,
+							// 	success: function (response) {
+							// 		$(".student_tree").html( response );
+							// 	}
+							// });
 							// selection_student(student_id_str);
 						}
 						function create_reports()
@@ -588,7 +584,8 @@ var lms_domain = "https://tutor.howhymath.com";
 								}
 							});
 							var student_id_str = student_id_arr.join(',');
-							fx_layer_popup_v2( 'create_reports', '/reports_v2/newone?student_id_str=' + student_id_str, '' );
+							// fx_layer_popup_v2( 'create_reports', '/reports_v2/newone?student_id_str=' + student_id_str, '' );
+							fx_layer_popup_v2( 'create_reports', './newone.html?student_id_str=' + student_id_str, '' );
 						}
 						function all_check()//student checkbox
 						{
@@ -611,7 +608,7 @@ var lms_domain = "https://tutor.howhymath.com";
 								alert("리포트를 선택해주세요.");
 								return false;
 							}
-							var url = "/reports_v2/prints?ids=" + ids;
+							var url = "./prints.html?ids=" + ids;
 							fx_popup_window( url , { name: 'popup_report_print', width: 960, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
 						}
 						function show_reports()
@@ -625,13 +622,13 @@ var lms_domain = "https://tutor.howhymath.com";
 							}
 							// var url = "/reports_v2/show?ids=" + ids;
 							var url = './new_show.html?ids=' + ids;
-							fx_popup_window( url , { name: 'popup_report_show', width: 960, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
+							fx_popup_window( url , { name: 'popup_report_show', width: 1120, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });//250409 width 수정
 						}
 						function show_report( id )
 						{
 							// var url = "/reports_v2/show?ids=" + id;
 							var url = "./new_show.html?ids=" + id;
-							fx_popup_window( url , { name: 'popup_report_show', width: 960, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
+							fx_popup_window( url , { name: 'popup_report_show', width: 1120, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });//250409 width 수정
 						}
 						function report_detail_popup( student_id )
 						{
@@ -640,7 +637,7 @@ var lms_domain = "https://tutor.howhymath.com";
 							fx_popup_window( url , { name: 'report_detail_popup', width: 960, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
 						}
 
-						// 250401 선택 리포트 총평 등록/수정 팝업
+						// 250409 선택 리포트 총평 등록/수정 팝업
 						function show_input_reports() {
 							var name = 'ids';
 							var ids = fx_get_checkboxes(name);
@@ -649,13 +646,15 @@ var lms_domain = "https://tutor.howhymath.com";
 								alert("시험지를 선택해주세요.");
 								return false;
 							}
-							var url = "./review_input.html?ids=" + ids;
-							fx_popup_window( url , { name: 'show_input_reports_popup', width: 1050, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
+							// var url = "./review_input.html?ids=" + ids;
+							var url = "./review_modify.html?ids=" + ids;
+							fx_popup_window( url , { name: 'show_input_reports_popup', width: 980, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });//250409 width 수정
 						}
-						// 250401 개별 리포트 총평 등록/수정 팝업
+						// 250409 개별 리포트 총평 등록/수정 팝업
 						function show_input_report( id ) {
-							var url = "./review_input.html?id=" + id;
-							fx_popup_window( url , { name: 'show_input_reports_popup', width: 1050, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });
+							// var url = "./review_input.html?id=" + id;
+							var url = "./review_modify.html?id=" + id;
+							fx_popup_window( url , { name: 'show_input_reports_popup', width: 980, height: window.screen.height,scrollbars:'yes', resizable: 'yes' });//250409 width 수정
 						}
 					</script>
 				</div>

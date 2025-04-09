@@ -1,0 +1,107 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>하와이매쓰</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+        <!-- favicon -->
+        <link rel="shortcut icon" href="https://img.howhymath.com/hmath/favicon.ico">
+    
+        <!-- base css -->
+        <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/icons.min.css">
+        <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/metisMenu.min.css">
+        <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/assets.howhy/css/app.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css">
+    
+        <!-- site css -->
+        <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/cdml/cdml.css?v=1743550512">
+        <link rel="stylesheet" type="text/css" href="https://img.dtsoft.co.kr/fx/fx.v2.css?v=1743550512">
+        <!-- <link rel="stylesheet" type="text/css" href="https://img.howhymath.com/hmath/work.css?v=20250320"> -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/work.css">
+    
+    
+        <!-- base javascript -->
+        <script src="https://img.dtsoft.co.kr/assets.howhy/js/jquery.min.js"></script>
+        <script src="https://img.dtsoft.co.kr/assets.howhy/js/bootstrap.bundle.min.js"></script>
+        <script src="https://img.dtsoft.co.kr/assets.howhy/js/metismenu.min.js"></script>
+        <script src="https://img.dtsoft.co.kr/assets.howhy/js/waves.js"></script>
+        <script src="https://img.dtsoft.co.kr/assets.howhy/js/feather.min.js"></script>
+        <script src="https://img.dtsoft.co.kr/assets.howhy/js/simplebar.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+    
+        <!-- site javascript -->
+        <script type="text/x-mathjax-config;executed=true">
+            MathJax.Hub.Config({
+                showMathMenu: false,
+                tex2jax: { displayMath: [ ["$$","$$"] ] },
+                "HTML-CSS": { fonts: ["Latin-Modern"] }
+            });
+        </script>
+        <script type="text/javascript" src="https://img.dtsoft.co.kr/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+        <script type="text/javascript" src="https://img.dtsoft.co.kr/fx/fx.v2.js?v=1743550512"></script>
+        <script type="text/javascript" src="https://img.dtsoft.co.kr/cdml/cdml.js?v=1743550512"></script>
+        <script>
+            cdml_img_url = "https://img.dtsoft.co.kr/cdml/img/";
+            cdml_api_url = "https://tutor.howhymath.com/lms_api/questions";
+            var lms_domain = "https://tutor.howhymath.com";
+        </script>
+    </head>
+    
+    <body data-layout="horizontal" class="enlarge-menu enlarge-menu-all">
+        <div class="page-wrapper">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+                    <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/justgage/raphael-2.1.4.min.js"></script>
+                    <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/justgage/justgage.js"></script> 미사용 삭제 250401 -->
+
+                    <!-- 250401 리포트 전용 인쇄관련 css 추가-->
+                    <link rel="stylesheet" type="text/css" href="../assets/css/report_print.css"/>
+
+                    <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/d3/d3.min.js"></script>
+                    <script type="text/javascript" src="https://img.dtsoft.co.kr/assets.howhy/plugins/c3/c3.min.js"></script>
+    
+                    <div id="printcontent">
+                        <div id="container-199"></div>
+                        <!-- 학생1 끝 -->
+                        
+                        <div id="container-198"></div>
+                        <!-- 학생2 끝 -->
+                    </div>
+                </div>
+    
+                <script type="text/javascript">
+                    $( document ).ready(function() {
+                        // fx_load_widget( 'container-203', '/reports_v2/report?id=203' );
+                        // fx_load_widget( 'container-202', '/reports_v2/report?id=202' );
+                        // fx_load_widget( 'container-199', '/reports_v2/report?id=199' );
+
+                        function fx_load_widget_modify(widget_id, url, selector) {
+                            $.ajax({
+                                type: "GET",
+                                url: url,
+                                async: false,
+                                success: function (response) {
+                                    var partial = $('<div>').html(response).find(selector).html();
+                                    $('#' + widget_id).html(partial);
+                                }
+                            });
+                        }
+
+                        fx_load_widget_modify('container-199', './new_show.html?id=199', '.swiper-wrapper');
+                        // fx_load_widget_modify('container-198', './new_show.html?id=198', '.swiper-wrapper');
+
+                        setTimeout(function () {
+                            window.print();
+                        }, 1000);
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://img.howhymath.com/custom/custom.js?v=20231031"></script>
+</body>
+</html>
