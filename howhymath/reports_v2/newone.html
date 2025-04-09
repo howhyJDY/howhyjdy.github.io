@@ -113,7 +113,7 @@
     <div class="row flex-column">
         <div class="review-title">
             <strong>입력조건을 선택하세요.</strong>
-            <p>조건을 선택하시면 자동으로 문구가 생성됩니다. 생성후 학생별로 총평 문구를 수정할 수 있습니다.</p>
+            <p>조건을 선택하시면 자동으로 문구가 생성됩니다. 생성 후 학생별로 총평 문구를 수정할 수 있습니다.</p>
         </div>
         <div class="review-content" id="review-input-area">
             <div class="input-wrap review-top">
@@ -336,7 +336,8 @@
                             <input type="radio" name="review10" id="review-etc">
                             <label for="review-etc">기타 (직접입력)</label>
                             <div class="textarea-box">
-                                <textarea name="review10" id="review-etc-txtarea" data-max="750" placeholder="750자 이내로 작성해주세요.\n상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다."></textarea>
+                                <textarea name="review10" id="review-etc-txtarea" data-max="750" placeholder="750자 이내로 작성해주세요.
+상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다."></textarea>
                             </div>
                         </div>
                     </dd>
@@ -365,15 +366,18 @@
         if (nonUseCount < 2) {
             max = 250;
             height = "120px";
-            placeholder = "250자 이내로 작성해주세요.\n상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다.";
+            placeholder = `250자 이내로 작성해주세요.
+상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다.`;
         } else if (nonUseCount < 4) {
             max = 500;
             height = "190px";
-            placeholder = "500자 이내로 작성해주세요.\n상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다.";
+            placeholder = `500자 이내로 작성해주세요.
+상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다.`;
         } else {
             max = 750;
             height = "310px";
-            placeholder = "750자 이내로 작성해주세요.\n상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다.";
+            placeholder = `750자 이내로 작성해주세요.
+상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다.`;
         }
         textarea.dataset.max = max;
         textarea.style.height = height;
@@ -428,6 +432,17 @@
                 document.querySelector(".list").classList.remove("error");
             }, 3000);
             e.preventDefault();
+        }
+    });
+
+    /* 리포트 년월 변경 시 리포트명 자동 생성 */
+    const monthInput = document.getElementById('fx-form-report_mn');
+    const formNameInput = document.getElementById('fx-form-name');
+    monthInput.addEventListener('change', () => {
+        const selectedValue = monthInput.value;
+        if (selectedValue) {
+            const [year, month] = selectedValue.split('-');
+            formNameInput.value=`${month}월 학습리포트`;
         }
     });
 

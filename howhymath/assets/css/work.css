@@ -10497,6 +10497,7 @@ html:has(.page-memo){
 html:has(.review-input-container) .page-content{padding: 0 !important;}
 .review-input-container{
   display: flex;
+  max-width: 995px;
   .print-page{border-width: 0;}
   .textarea-box{
     width: 100%;
