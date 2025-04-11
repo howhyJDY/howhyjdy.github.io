@@ -10800,11 +10800,11 @@ html:has(.review-input-container) .page-content{padding: 0 !important;}
     &>div{
       flex: 1;
       &:first-of-type{
-        --calender-color-main: #2e4ed9;
+        --calender-color-main: #526cde;
         --calender-color-bg: #e9ecf9;
       }
       &:last-of-type{
-        --calender-color-main: #824cda;
+        --calender-color-main: #9468dc;
         --calender-color-bg: #f4eefd;
       }
     }
