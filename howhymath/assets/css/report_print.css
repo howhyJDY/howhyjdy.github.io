@@ -820,6 +820,12 @@ html:has(.print-page) {
                 &.on td{color: var(--table-th-font-color);}
             }
         }
+        .etc-txt{
+            text-align: right;
+            font-size: 0.75rem;
+            margin-top: 4px;
+            color: #666;
+        }
     }
 
     &.report-page6{
