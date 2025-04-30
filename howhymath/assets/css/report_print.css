@@ -314,6 +314,7 @@ html:has(.print-page) {
         .table{
             width: 100%;
             margin: 0;
+            border-radius: 0 !important;
             tbody tr:first-child{border-top: 1px solid #a1a1a1;}
             th, .th{
                 font-size: var(--table-th-size);
@@ -330,6 +331,7 @@ html:has(.print-page) {
         .table th {
             padding: var(--table-padding);
             position: relative;
+            color: var(--table-th-font-color) !important;
             &:first-child {border-radius: 0;}
             &:last-child {border-radius: 0;}
             &::after{
@@ -737,6 +739,10 @@ html:has(.print-page) {
                                     white-space: nowrap;
                                     text-overflow: ellipsis;
                                     word-break: break-all;
+                                }
+                                &:only-child{
+                                    height: 100%;
+                                    p:nth-child(2){line-height: 34px;}
                                 }
                             }
                         }
