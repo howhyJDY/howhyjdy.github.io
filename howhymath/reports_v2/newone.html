@@ -7,489 +7,426 @@
 </div>
 
 <div class="modal-body">
-    <form id="form_create" method="post" action="/reports_v2/create?student_id_str=325">
-    <input type="hidden" title="" name="student_id_str" value="325" id="fx-form-student_id_str" class="form-control">
-    <!-- 250409 마크업 변경 시작 -->
-    <!-- <table class="modal-table">
-        <colgroup>
-            <col width="25%">
-            <col width="75%">
-        </colgroup>
-        <tbody>
-            <tr>
-                <th>학생</th>
-                <td>이하와</td>
-            </tr>
-            <tr>
-                <th>리포트명</th>
-                <td>
-                    <div><input type="text" title="" name="name" value="03월 학습리포트" id="fx-form-name" maxlength="10" class="form-control"></div>
-                    <div class="note note-error" id="fx-error-name" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
-                </td>
-            </tr>
-            <tr>
-                <th>시작일</th>
-                <td>
-                    <div><input type="date" title="" name="start_on" value="2025-03-01" id="fx-form-start_on" data-placeholder="종료일" class="form-control"></div>
-                    <div class="note note-error" id="fx-error-start_on" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
-                </td>
-            </tr>
-            <tr>
-                <th>종료일</th>
-                <td>
-                    <div><input type="date" title="" name="end_on" value="2025-03-31" id="fx-form-end_on" data-placeholder="종료일" class="form-control"></div>
-                    <div class="note note-error" id="fx-error-end_on" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
-                </td>
-            </tr>
-            <tr>
-                <th>리포트 년월</th>
-                <td>
-                    <div><input type="month" title="" name="report_mn" value="2025-03" id="fx-form-report_mn" data-placeholder="리포트 년월" class="form-control"></div>
-                    <div class="note note-error" id="fx-error-report_mn" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
-                </td>
-            </tr>
-        </tbody>
-    </table> -->
-    <div class="row">
-        <div class="input-wrap">
-            <dl>
-                <dt>학생명</dt>
-                <dd>이하와, 홍길동</dd>
-            </dl>
-            <dl>
-                <dt>리포트년월</dt>
-                <dd>
-                    <div class="row">
-                        <div class="inp-box">
-                            <div>
-                                <input type="month" title="" name="report_mn" value="2025-03" id="fx-form-report_mn" data-placeholder="리포트 년월" class="form-control">
-                            </div>
-                            <div class="note note-error" id="fx-error-report_mn"></div>
-                        </div>
-                        <div class="inp-wrap">
+    <form id="form_create" method="post" action="/reports_v2/create?student_id_str=325" data-gtm-form-interact-id="0">
+        <input type="hidden" title="" name="student_id_str" value="325" id="fx-form-student_id_str" class="form-control">    <div class="row">
+            <div class="input-wrap">
+                <dl>
+                    <dt>학생명</dt>
+                    <dd>
+                                            이하와                    				</dd>
+                </dl>
+                <dl>
+                    <dt>리포트년월</dt>
+                    <dd>
+                        <div class="row">
                             <div class="inp-box">
-                                <div>
-                                    <!-- <input type="date" title="" name="start_on" value="2025-03-01" id="fx-form-start_on" data-placeholder="시작일" class="form-control"> -->
-                                    <input type="date" title="" name="start_on" value="2025-03-01" id="fx-form-start_on" class="form-control start-date" readonly>
-                                </div>
-                                <div class="note note-error" id="fx-error-start_on"></div>
-                            </div>
-                            <span class="etc">~</span>
-                            <div class="inp-box">
-                                <div>
-                                    <!-- <input type="date" title="" name="end_on" value="2025-03-31" id="fx-form-end_on" data-placeholder="종료일" class="form-control"> -->
-                                    <input type="date" title="" name="end_on" value="2025-03-31" id="fx-form-end_on" class="form-control end-date" readonly>
-                                </div>
-                                <div class="note note-error" id="fx-error-end_on"></div>
-                            </div>
-                            <button type="button" id="openCalendar">날짜 선택</button>
-
-                            <!-- 캘린터 팝업 -->
-                            <div id="calendarPopup">
-                                <div>
-                                    <label for="fx-form-start_on">시작일<span class="start-date"></span></label>
-                                    <div id="startCalendar"></div>
+                                <div><input type="month" title="" name="report_mn" value="2025-04" id="fx-form-report_mn" data-placeholder="리포트 년월" class="form-control" data-gtm-form-interact-field-id="0"></div>
+                                <div class="note note-error" id="fx-error-report_mn" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>                        </div>
+                            <div class="inp-wrap">
+                                <div class="inp-box">
+                                    <div>
+                                        <!--?= Form::date( 'date', 'start_on', date("Y-m-d", mktime(0, 0, 0, date("m")-1, 1)), array( 'data-placeholder' => '종료일') ); ?-->
+                                        <input type="date" title="" name="start_on" value="2025-04-01" id="fx-form-start_on" data-placeholder="종료일" class="form-control">								</div>
+                                    <div class="note note-error" id="fx-error-start_on" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>
                                 </div>
                                 <span class="etc">~</span>
-                                <div>
-                                    <label for="fx-form-end_on">종료일<span class="end-date"></span></label>
-                                    <div id="endCalendar"></div>
+                                <div class="inp-box">
+                                    <div>
+                                        <!--?= Form::date( 'date', 'end_on', date('Y-m-d', strtotime('last day of previous month')), array( 'data-placeholder' => '종료일') ); ?-->
+                                        <input type="date" title="" name="end_on" value="2025-04-30" id="fx-form-end_on" data-placeholder="종료일" class="form-control">								</div>
+                                    <div class="note note-error" id="fx-error-end_on" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>                            </div>
+                                <button type="button" id="openCalendar">날짜 선택</button>
+                                <!-- 캘린터 팝업 -->
+                                <div id="calendarPopup" style="display: none;">
+                                    <div>
+                                        <label for="fx-form-start_on">시작일<span class="start-date">2025-02-01</span></label>
+                                        <div id="startCalendar" class="hasDatepicker"><div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="이전 달"><span class="ui-icon ui-icon-circle-triangle-w">이전 달</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="다음 달"><span class="ui-icon ui-icon-circle-triangle-e">다음 달</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-year">2025</span>년&nbsp;<span class="ui-datepicker-month">2월</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="일">일</span></th><th scope="col"><span title="월">월</span></th><th scope="col"><span title="화">화</span></th><th scope="col"><span title="수">수</span></th><th scope="col"><span title="목">목</span></th><th scope="col"><span title="금">금</span></th><th scope="col" class="ui-datepicker-week-end"><span title="토">토</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end  ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default ui-state-active" href="#">1</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">2</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">4</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">5</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">6</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">7</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">8</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">11</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">12</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">13</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">14</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">15</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">19</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">21</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">22</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">23</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">27</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">28</a></td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></div>
+                                    </div>
+                                    <span class="etc">~</span>
+                                    <div>
+                                        <label for="fx-form-end_on">종료일<span class="end-date">2025-02-28</span></label>
+                                        <div id="endCalendar" class="hasDatepicker"><div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="이전 달"><span class="ui-icon ui-icon-circle-triangle-w">이전 달</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="다음 달"><span class="ui-icon ui-icon-circle-triangle-e">다음 달</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-year">2025</span>년&nbsp;<span class="ui-datepicker-month">2월</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="일">일</span></th><th scope="col"><span title="월">월</span></th><th scope="col"><span title="화">화</span></th><th scope="col"><span title="수">수</span></th><th scope="col"><span title="목">목</span></th><th scope="col"><span title="금">금</span></th><th scope="col" class="ui-datepicker-week-end"><span title="토">토</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">1</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">2</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">4</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">5</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">6</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">7</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">8</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">11</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">12</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">13</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">14</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">15</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">19</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">21</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">22</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">23</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default" href="#">27</a></td><td class="  ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="1" data-year="2025"><a class="ui-state-default ui-state-active" href="#">28</a></td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></div>
+                                    </div>
+                                    <button type="button" id="calendarPopupClose">닫기</button>
                                 </div>
-                                <button type="button" id="calendarPopupClose">닫기</button>
                             </div>
                         </div>
-                    </div>
-                </dd>
-            </dl>
-            <dl>
-                <dt>리포트명</dt>
-                <dd>
-                    <div><input type="text" title="" name="name" value="03월 학습리포트" id="fx-form-name" maxlength="10" class="form-control"></div>
-                    <div class="note note-error" id="fx-error-name"></div>
-                </dd>
-            </dl>
-        </div>
-    </div>
-    <div class="row flex-column">
-        <div class="review-title">
-            <strong>입력조건을 선택하세요.</strong>
-            <p>조건을 선택하시면 자동으로 문구가 생성됩니다. 생성 후 학생별로 총평 문구를 수정할 수 있습니다.</p>
-        </div>
-        <div class="review-content" id="review-input-area">
-            <div class="input-wrap review-top">
+                    </dd>
+                </dl>
                 <dl>
-                    <dt>인사말</dt>
+                    <dt>리포트명</dt>
                     <dd>
-                        <div class="inp-box">
-                            <label>
-                                <input type="radio" name="review1" value="격식있게" checked>
-                                격식있게
-                            </label>
-                            <label>
+                        <div><input type="text" title="" name="name" value="04월 학습리포트" id="fx-form-name" maxlength="10" class="form-control"></div>
+                        <div class="note note-error" id="fx-error-name" style="text-align:left;font-size:12px;color:red;padding: 5px 0 0 0;"></div>                </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="row flex-column">
+            <div class="review-title">
+                <strong>입력조건을 선택하세요.</strong>
+                <p>조건을 선택하시면 자동으로 문구가 생성됩니다. 생성 후 학생별로 총평 문구를 수정할 수 있습니다.</p>
+            </div>
+            <div class="review-content" id="review-input-area">
+                <div class="input-wrap review-top">
+                    <dl>
+                        <dt>인사말</dt>
+                        <dd>
+                            <div class="inp-box">
+                                                        <label>
+                                <input type="radio" name="review1" value="격식있게" checked="">
+                                    격식있게                            </label>
+                                                        <label>
                                 <input type="radio" name="review1" value="친근하게">
-                                친근하게
-                            </label>
-                        </div>
-                    </dd>
-                </dl>
-                <!-- //인사말 -->
-            </div>
-
-            <div class="input-wrap review-middle">
-                <p><b>항목별 조건 선택하기</b>(최소 4개 이상 사용해야 합니다.)</p>
-                <div class="list">
-                    <dl>
-                        <dt>성취도의 변화</dt>
-                        <dd>
-                            <div class="inp-box">
-                                <label>
-                                    <input type="radio" name="review2" value="사용하지 않음">
-                                    사용하지 않음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review2" value="좋아지고 있음" checked>
-                                    좋아지고 있음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review2" value="더 높은 난이도 도전">
-                                    더 높은 난이도 도전
-                                </label>
-                                <label>
-                                    <input type="radio" name="review2" value="일시적 하락 보완 필요">
-                                    일시적 하락 보완 필요
-                                </label>
-                            </div>
+                                    친근하게                            </label>
+                                                    </div>
                         </dd>
                     </dl>
-                    <dl>
-                        <dt>수업을 따라오는 정도</dt>
-                        <dd>
-                            <div class="inp-box">
-                                <label>
-                                    <input type="radio" name="review3" value="사용하지 않음">
-                                    사용하지 않음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review3" value="매우 잘 따라옴" checked>
-                                    매우 잘 따라옴
-                                </label>
-                                <label>
-                                    <input type="radio" name="review3" value="대체로 이해, 추가 보충 필요">
-                                    대체로 이해, 추가 보충 필요
-                                </label>
-                                <label>
-                                    <input type="radio" name="review3" value="어려움 있음, 개별 보완 필요">
-                                    어려움 있음, 개별 보완 필요
-                                </label>
-                            </div>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt>수업 중 학습에 대한 태도</dt>
-                        <dd>
-                            <div class="inp-box">
-                                <label>
-                                    <input type="radio" name="review4" value="사용하지 않음">
-                                    사용하지 않음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review4" value="적극적이고 집중도가 높음" checked>
-                                    적극적이고 집중도가 높음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review4" value="대체로 집중, 간혹 산만함">
-                                    대체로 집중, 간혹 산만함
-                                </label>
-                            </div>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt>수업 중 참여도</dt>
-                        <dd>
-                            <div class="inp-box">
-                                <label>
-                                    <input type="radio" name="review5" value="사용하지 않음">
-                                    사용하지 않음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review5" value="참여율이 높음" checked>
-                                    참여율이 높음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review5" value="집중력은 좋지만 소극적">
-                                    집중력은 좋지만 소극적
-                                </label>
-                            </div>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt>자기주도 학습 태도</dt>
-                        <dd>
-                            <div class="inp-box">
-                                <label>
-                                    <input type="radio" name="review6" value="사용하지 않음" checked>
-                                    사용하지 않음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review6" value="습관이 잘 잡혀 있음">
-                                    습관이 잘 잡혀 있음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review6" value="꾸준히 노력 중이며 보완 필요">
-                                    꾸준히 노력 중이며 보완 필요
-                                </label>
-                            </div>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt>학생의 정서적인 상태</dt>
-                        <dd>
-                            <div class="inp-box">
-                                <label>
-                                    <input type="radio" name="review7" value="사용하지 않음" checked>
-                                    사용하지 않음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review7" value="밝고 긍정적이며 안정감 있음">
-                                    밝고 긍정적이며 안정감 있음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review7" value="약간의 감정적 변화 있음">
-                                    약간의 감정적 변화 있음
-                                </label>
-                            </div>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt>교사와의 관계</dt>
-                        <dd>
-                            <div class="inp-box">
-                                <label>
-                                    <input type="radio" name="review8" value="사용하지 않음" checked>
-                                    사용하지 않음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review8" value="친밀하고 예의 있음">
-                                    친밀하고 예의 있음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review8" value="낯가림이 있지만 극복 중">
-                                    낯가림이 있지만 극복 중
-                                </label>
-                            </div>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt>수업 중 질문 활동</dt>
-                        <dd>
-                            <div class="inp-box">
-                                <label>
-                                    <input type="radio" name="review9" value="사용하지 않음" checked>
-                                    사용하지 않음
-                                </label>
-                                <label>
-                                    <input type="radio" name="review9" value="적극적으로 질문함">
-                                    적극적으로 질문함
-                                </label>
-                                <label>
-                                    <input type="radio" name="review9" value="소극적이지만 대답은 잘함">
-                                    소극적이지만 대답은 잘함
-                                </label>
-                            </div>
-                        </dd>
-                    </dl>
+                    <!-- //인사말 -->
                 </div>
-                <!-- //조건 8개 -->
-            </div>
+    
+                <div class="input-wrap review-middle">
+                    <p><b>항목별 조건 선택하기</b>(최소 4개 이상 사용해야 합니다.)</p>
+                    <div class="list">
+                                                                <dl>
+                            <dt>성취도의 변화</dt>
+                            <dd>
+                                <div class="inp-box">
+                                                                    <label>
+                                        <input type="radio" name="review2" value="좋아지고 있음" checked="">
+                                        좋아지고 있음                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review2" value="더 높은 난이도 도전">
+                                        더 높은 난이도 도전                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review2" value="일시적 하락, 보완 필요">
+                                        일시적 하락, 보완 필요                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review2" value="일시적 하락 보완 필요">
+                                        일시적 하락 보완 필요                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review2" value="">
+                                        사용하지 않음
+                                    </label>
+                                </div>
+                            </dd>
+                        </dl>
+                                            <dl>
+                            <dt>수업을 따라오는 정도</dt>
+                            <dd>
+                                <div class="inp-box">
+                                                                    <label>
+                                        <input type="radio" name="review3" value="매우 잘 따라옴" checked="">
+                                        매우 잘 따라옴                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review3" value="대체로 이해, 추가 보충 필요">
+                                        대체로 이해, 추가 보충 필요                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review3" value="어려움 있음, 개별 보완 필요">
+                                        어려움 있음, 개별 보완 필요                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review3" value="">
+                                        사용하지 않음
+                                    </label>
+                                </div>
+                            </dd>
+                        </dl>
+                                            <dl>
+                            <dt>수업 중 학습에 대한 태도</dt>
+                            <dd>
+                                <div class="inp-box">
+                                                                    <label>
+                                        <input type="radio" name="review4" value="적극적이고 집중도가 높음" checked="">
+                                        적극적이고 집중도가 높음                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review4" value="대체로 집중, 간혹 산만함">
+                                        대체로 집중, 간혹 산만함                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review4" value="" data-gtm-form-interact-field-id="6">
+                                        사용하지 않음
+                                    </label>
+                                </div>
+                            </dd>
+                        </dl>
+                                            <dl>
+                            <dt>수업 중 참여도</dt>
+                            <dd>
+                                <div class="inp-box">
+                                                                    <label>
+                                        <input type="radio" name="review5" value="참여율이 높음" checked="">
+                                        참여율이 높음                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review5" value="집중력은 좋지만 소극적">
+                                        집중력은 좋지만 소극적                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review5" value="" data-gtm-form-interact-field-id="5">
+                                        사용하지 않음
+                                    </label>
+                                </div>
+                            </dd>
+                        </dl>
+                                            <dl>
+                            <dt>자기주도 학습 태도</dt>
+                            <dd>
+                                <div class="inp-box">
+                                                                    <label>
+                                        <input type="radio" name="review6" value="습관이 잘 잡혀 있음" checked="">
+                                        습관이 잘 잡혀 있음                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review6" value="꾸준히 노력 중이며 보완 필요">
+                                        꾸준히 노력 중이며 보완 필요                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review6" value="" data-gtm-form-interact-field-id="4">
+                                        사용하지 않음
+                                    </label>
+                                </div>
+                            </dd>
+                        </dl>
+                                            <dl>
+                            <dt>학생의 정서적인 상태</dt>
+                            <dd>
+                                <div class="inp-box">
+                                                                    <label>
+                                        <input type="radio" name="review7" value="밝고 긍정적이며 안정감 있음" checked="">
+                                        밝고 긍정적이며 안정감 있음                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review7" value="약간의 감정적 변화 있음">
+                                        약간의 감정적 변화 있음                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review7" value="" data-gtm-form-interact-field-id="1">
+                                        사용하지 않음
+                                    </label>
+                                </div>
+                            </dd>
+                        </dl>
+                                            <dl>
+                            <dt>교사와의 관계</dt>
+                            <dd>
+                                <div class="inp-box">
+                                                                    <label>
+                                        <input type="radio" name="review8" value="친밀하고 예의 있음" checked="">
+                                        친밀하고 예의 있음                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review8" value="낯가림이 있지만 극복 중">
+                                        낯가림이 있지만 극복 중                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review8" value="" data-gtm-form-interact-field-id="2">
+                                        사용하지 않음
+                                    </label>
+                                </div>
+                            </dd>
+                        </dl>
+                                            <dl>
+                            <dt>수업 중 질문 활동</dt>
+                            <dd>
+                                <div class="inp-box">
+                                                                    <label>
+                                        <input type="radio" name="review9" value="적극적으로 질문함" checked="">
+                                        적극적으로 질문함                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review9" value="소극적이지만 대답은 잘함">
+                                        소극적이지만 대답은 잘함                                </label>
+                                                                    <label>
+                                        <input type="radio" name="review9" value="" data-gtm-form-interact-field-id="3">
+                                        사용하지 않음
+                                    </label>
+                                </div>
+                            </dd>
+                        </dl>
+                                        </div>
+                    <!-- //조건 8개 -->
+                </div>
+    
+                <div class="input-wrap review-bottom">
+                    <dl>
+                        <dt>맺음말</dt>
+                        <dd>
+                            <div class="inp-box">
+                                                        <label>
+                                    <input type="radio" name="review10" value="좋은 흐름 유지 (일반적 맺음)" checked="">
+                                    좋은 흐름 유지 (일반적 맺음)                            </label>
+                                                        <label>
+                                    <input type="radio" name="review10" value="조금 흔들리다 다시 회복되는 중">
+                                    조금 흔들리다 다시 회복되는 중                            </label>
+                                                        <label>
+                                    <input type="radio" name="review10" value="반편성 등 시간 변화 예고">
+                                    반편성 등 시간 변화 예고                            </label>
+                                                        <label>
+                                    <input type="radio" name="review10" value="평가 시험 예고">
+                                    평가 시험 예고                            </label>
+                                                        <label>
+                                    <input type="radio" name="review10" value="학습 상담 예고">
+                                    학습 상담 예고                            </label>
+                                                        <label>
+                                    <input type="radio" name="review10" value="보충학습 계획">
+                                    보충학습 계획                            </label>
+                                                    </div>
+                            <div class="inp-box">
+                                <input type="radio" name="review10" id="review-etc" value="기타" data-gtm-form-interact-field-id="7">
+                                <label for="review-etc">기타 (직접입력)</label>
+                                <div class="textarea-box">
+                                    <!-- <textarea name="review10_comment" id="review-etc-txtarea" data-max="750" placeholder="750자 이내로 작성해주세요.
+    상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다."></textarea> -->
 
-            <div class="input-wrap review-bottom">
-                <dl>
-                    <dt>맺음말</dt>
-                    <dd>
-                        <div class="inp-box">
-                            <label>
-                                <input type="radio" name="review10" value="좋은 흐름 유지 (일반적 맺음)" checked>
-                                좋은 흐름 유지 (일반적 맺음)
-                            </label>
-                            <label>
-                                <input type="radio" name="review10" value="조금 흔들리다 다시 회복되는 중">
-                                조금 흔들리다 다시 회복되는 중
-                            </label>
-                            <label>
-                                <input type="radio" name="review10" value="반편성 등 시간 변화 예고">
-                                반편성 등 시간 변화 예고
-                            </label>
-                            <label>
-                                <input type="radio" name="review10" value="평가 시험 예고">
-                                평가 시험 예고
-                            </label>
-                            <label>
-                                <input type="radio" name="review10" value="학습 상담 예고">
-                                학습 상담 예고
-                            </label>
-                            <label>
-                                <input type="radio" name="review10" value="보충학습 계획">
-                                보충학습 계획
-                            </label>
-                        </div>
-                        <div class="inp-box">
-                            <input type="radio" name="review10" id="review-etc">
-                            <label for="review-etc">기타 (직접입력)</label>
-                            <div class="textarea-box">
-                                <textarea name="review10" id="review-etc-txtarea" data-max="750" placeholder="750자 이내로 작성해주세요.
-상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다."></textarea>
+                                    <!-- 250430 조건 선택값 디폴트값이 전부 사용으로 변해서 디폴트 maxlength도 수정합니다 -->
+                                    <textarea name="review10_comment" id="review-etc-txtarea" data-max="250" placeholder="250자 이내로 작성해주세요.
+    상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다."></textarea>
+                                    <!-- //250430 디폴트 maxlength 수정 -->
+                                </div>
                             </div>
-                        </div>
-                    </dd>
-                </dl>
-                <!-- //맺음말 -->
+                        </dd>
+                    </dl>
+                    <!-- //맺음말 -->
+                </div>
             </div>
         </div>
-    </div>
-    <div class="modal-bottom-btn-box">
-        <button type="button" class="cancle-btn" data-bs-dismiss="modal">취소</button>
-        <button type="submit" class="save-btn">저장</button>
-    </div>
-    <!-- 250409 마크업 변경 끝 -->
-    </form>
+        </form>
+        <div class="modal-bottom-btn-box">
+            <button type="button" class="cancle-btn" data-bs-dismiss="modal">취소하기</button>
+            <button type="button" onclick="save_report();" class="save-btn">저장하기</button>
+        </div>
 </div>
 
 <!-- jQuery UI 한글 로케일 CDN -->
 <script src="https://code.jquery.com/ui/1.13.2/i18n/datepicker-ko.js"></script>
+
 <script type="text/javascript">
-    const form = document.getElementById("form_create");
-    const textarea = document.getElementById("review-etc-txtarea");
-    const listContainer = document.querySelector(".list");
 
-    const setTextareaLimits = (nonUseCount) => {
-        let max, height, placeholder;
-        if (nonUseCount < 2) {
-            max = 250;
-            height = "120px";
-            placeholder = `250자 이내로 작성해주세요.
-상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다.`;
-        } else if (nonUseCount < 4) {
-            max = 500;
-            height = "190px";
-            placeholder = `500자 이내로 작성해주세요.
-상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다.`;
-        } else {
-            max = 750;
-            height = "310px";
-            placeholder = `750자 이내로 작성해주세요.
-상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다.`;
+    function save_report()
+    {
+        const count = document.querySelectorAll('input[type="radio"][value=""]:checked').length;
+        if (count > 4) {
+            alert( "항목별 조건을 최소 4개 이상 사용해야 합니다." );
+            return;
         }
-        textarea.dataset.max = max;
-        textarea.style.height = height;
-        textarea.setAttribute("placeholder", placeholder);
-    };
-
-    const validateTextarea = () => {
-        const limit = parseInt(textarea.dataset.max, 10) || 750;
-        const plainText = textarea.value.replace(/<[^>]*>/g, "");
-        if (plainText.length > limit) {
-            textarea.value = plainText.substring(0, limit);
-            textarea.classList.add("error");
-            setTimeout(() => textarea.classList.remove("error"), 1000);
-        }
-    };
-
-    const limitTextareaHeight = () => {
-        while (textarea.scrollHeight > textarea.clientHeight) {
-            textarea.value = textarea.value.slice(0, -1);
-        }
-    };
-
-    // radio 변경 이벤트 감지
-    listContainer.addEventListener("change", function (e) {
-        if (e.target.type === "radio" && e.target.value) {
-            const nonUseCount = document.querySelectorAll('input[type="radio"][value="사용하지 않음"]:checked').length;
-            setTextareaLimits(nonUseCount);
+    
+        $("#form_create").submit();
+    }
+    
+        const listContainer = document.querySelector(".list");
+        const textarea = document.getElementById("review-etc-txtarea");
+    
+        const validateTextarea = () => {
+            const limit = parseInt(textarea.dataset.max, 10) || 750;
+            const plainText = textarea.value.replace(/<[^>]*>/g, "");
+            if (plainText.length > limit) {
+                textarea.value = plainText.substring(0, limit);
+                textarea.classList.add("error");
+                setTimeout(() => textarea.classList.remove("error"), 1000);
+            }
+        };
+    
+        const limitTextareaHeight = () => {
+            while (textarea.scrollHeight > textarea.clientHeight) {
+                textarea.value = textarea.value.slice(0, -1);
+            }
+        };
+    
+        const setTextareaLimits = (nonUseCount) => {
+            let max, height, placeholder;
+            if (nonUseCount < 2) {
+                max = 250;
+                height = "120px";
+                placeholder = `250자 이내로 작성해주세요.
+    상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다.`;
+            } else if (nonUseCount < 4) {
+                max = 500;
+                height = "190px";
+                placeholder = `500자 이내로 작성해주세요.
+    상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다.`;
+            } else {
+                max = 750;
+                height = "310px";
+                placeholder = `750자 이내로 작성해주세요.
+    상단 항목별 조건값에 따라 작성글자수는 달라질 수 있습니다.`;
+            }
+            textarea.dataset.max = max;
+            textarea.style.height = height;
+            textarea.setAttribute("placeholder", placeholder);
+        };
+    
+    
+        // radio 변경 이벤트 감지
+        listContainer.addEventListener("change", function (e) {
+            /* 250430 value=""인경우 false로 평가되어 nonUseCount가 체크되지 않아 e.target.value 삭제하였습니다 */
+            // if (e.target.type === "radio" && e.target.value) {
+            if (e.target.type === "radio") {
+                const nonUseCount = document.querySelectorAll('input[type="radio"][value=""]:checked').length;
+                setTextareaLimits(nonUseCount);
+                validateTextarea();
+                limitTextareaHeight();
+            }
+        });
+    
+        // textarea 입력 제한
+        textarea.addEventListener("input", function (e) {
+            if (!e.isTrusted) return;
             validateTextarea();
             limitTextareaHeight();
-        }
-    });
-
-    // textarea 입력 제한
-    textarea.addEventListener("input", function (e) {
-        if (!e.isTrusted) return;
-        validateTextarea();
-        limitTextareaHeight();
-    });
-
-    // textarea 높이 감지
-    new ResizeObserver(() => {
-        validateTextarea();
-        limitTextareaHeight();
-    }).observe(textarea);
-
-    // 폼 제출 전 유효성 검사
-    form.addEventListener("submit", function (e) {
-        const count = document.querySelectorAll('input[type="radio"][value="사용하지 않음"]:checked').length;
-        if (count >= 5) {
-            document.querySelector(".list").classList.add("error");
-            setTimeout(() => {
-                document.querySelector(".list").classList.remove("error");
-            }, 3000);
-            e.preventDefault();
-        }
-    });
-
-    /* 리포트 년월 변경 시 리포트명 자동 생성 */
-    const monthInput = document.getElementById('fx-form-report_mn');
-    const formNameInput = document.getElementById('fx-form-name');
-    monthInput.addEventListener('change', () => {
-        const selectedValue = monthInput.value;
-        if (selectedValue) {
-            const [year, month] = selectedValue.split('-');
-            formNameInput.value=`${month}월 학습리포트`;
-        }
-    });
-
-    /* 데이터피커 한글화 */
-    $.datepicker.setDefaults({
-        dateFormat: 'yy-mm-dd',
-        prevText: '이전 달',
-        nextText: '다음 달',
-        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-        monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
-        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-        showMonthAfterYear: true,
-        yearSuffix: '년'
-    });
+        });
     
-    // 캘린더 팝업 로직
-    $("#openCalendar").on("click", function () {
-        $("#calendarPopup").fadeIn().css("display", "flex");
-    });
-
-    $(document).on("mousedown", function (e) {
-        setTimeout(() => {
-            if (!$(e.target).closest("#calendarPopup, #openCalendar, .ui-datepicker").length) {
-                $("#calendarPopup").fadeOut();
+    
+    
+        // textarea 높이 감지
+        new ResizeObserver(() => {
+            validateTextarea();
+            limitTextareaHeight();
+        }).observe(textarea);
+    
+        /* 리포트 년월 변경 시 리포트명 자동 생성 */
+        const monthInput = document.getElementById('fx-form-report_mn');
+        const formNameInput = document.getElementById('fx-form-name');
+        monthInput.addEventListener('change', () => {
+            const selectedValue = monthInput.value;
+            if (selectedValue) {
+                const [year, month] = selectedValue.split('-');
+                formNameInput.value=`${month}월 학습리포트`;
             }
-        }, 10);
-    });
-
-    $("#calendarPopupClose").on("click", function () {
-        $("#calendarPopup").fadeOut();
-    });
-
-    $("#startCalendar").datepicker({
-        dateFormat: "yy-mm-dd",
-        onSelect: function(dateText) {
-            $("#fx-form-start_on").val(dateText);
-            $(".start-date").text(dateText);
-        }
-    });
-
-    $("#endCalendar").datepicker({
-        dateFormat: "yy-mm-dd",
-        onSelect: function (dateText) {
-            $("#fx-form-end_on").val(dateText);
-            $(".end-date").text(dateText);
-        }
-    });
-</script>
+        });
+    
+        /* 데이터피커 한글화 */
+        $.datepicker.setDefaults({
+            dateFormat: 'yy-mm-dd',
+            prevText: '이전 달',
+            nextText: '다음 달',
+            monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            showMonthAfterYear: true,
+            yearSuffix: '년'
+        });
+        
+        // 캘린더 팝업 로직
+        $("#openCalendar").on("click", function () {
+            $("#calendarPopup").fadeIn().css("display", "flex");
+        });
+    
+        $(document).on("mousedown", function (e) {
+            setTimeout(() => {
+                if (!$(e.target).closest("#calendarPopup, #openCalendar, .ui-datepicker").length) {
+                    $("#calendarPopup").fadeOut();
+                }
+            }, 10);
+        });
+    
+        $("#calendarPopupClose").on("click", function () {
+            $("#calendarPopup").fadeOut();
+        });
+    
+        $("#startCalendar").datepicker({
+            dateFormat: "yy-mm-dd",
+            onSelect: function(dateText) {
+                $("#fx-form-start_on").val(dateText);
+                $(".start-date").text(dateText);
+            }
+        });
+    
+        $("#endCalendar").datepicker({
+            dateFormat: "yy-mm-dd",
+            onSelect: function (dateText) {
+                $("#fx-form-end_on").val(dateText);
+                $(".end-date").text(dateText);
+            }
+        });
+    </script>
